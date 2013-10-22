@@ -1,0 +1,50 @@
+# Copyright (C) 2010 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/kc-widget-enhancements.php\n"
+"POT-Creation-Date: 2011-04-05 18:31:32+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2011-04-06 01:38+0700\n"
+"Last-Translator: Dzikri Aziz <kucrut@kucrut.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: kc-widget-enhancements.php:38
+msgid "Custom widget ID"
+msgstr "ID widget"
+
+#: kc-widget-enhancements.php:39
+msgid "Custom ID"
+msgstr "ID widget"
+
+#: kc-widget-enhancements.php:42
+msgid "Custom widget classes"
+msgstr "Kelas widget"
+
+#: kc-widget-enhancements.php:43
+msgid "Additional Classes <small>(separate with spaces)</small>"
+msgstr "Kelas tambahan <small>(pisahkan dengan spasi)</small>"
+
+#: kc-widget-enhancements.php:46
+msgid "Enable shortcode on text widgets"
+msgstr "Aktifkan shortcode pada widget teks"
+
+#: kc-widget-enhancements.php:81
+msgid "KC Widget Enhancements"
+msgstr "KC Widget Enhancements"
+
+#: kc-widget-enhancements.php:82
+msgid "KC Widget Enhancements Settings"
+msgstr "Pengaturan KC Widget Enhancements"
+
+#: kc-widget-enhancements.php:86
+msgid "General"
+msgstr "Umum"
+
+#: kc-widget-enhancements.php:90
+msgid "Components"
+msgstr "Komponen"
+

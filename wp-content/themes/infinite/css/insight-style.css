@@ -1,0 +1,36 @@
+.insight a {
+	color: #D30015;
+	}
+.insight .entry-title,
+.insight .entry-title a {
+	color: #D30015;
+	}
+.insight .landing-header-area {
+	background: #FFF url(../images/insight-header.jpg) no-repeat top right;
+	}
+.insight .sideNav ul li {
+	padding: 6px 20px;
+}
+.insight .nav-sidebar {
+	background: #D30015;
+	}
+.insight .landing-header-area .nav-sidebar {
+	background: #D30015 url(../images/dwn_arw_wht.png) no-repeat top center;
+	}
+.insight #breadcrumbs .breadcrumbs {
+	color: #D30015;
+	}
+.insight .blog-logo a {
+	background: url(../images/insight-logo.png) no-repeat center center;
+}
+.insight .entry-content h3 {
+	color: #D30015;
+}
+.insight .hentry .entry-content ul li:before {
+	color: #D30015;
+	}
+.insight .hentry .entry-content a {
+	color: #69000A;
+	}
+.insight .widget_msd_experts .links { background: #D30015;}
+.sidebar-wrapper .widget-container.style3 h4.widget-title {background: #D30015;}

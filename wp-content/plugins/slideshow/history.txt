@@ -1,0 +1,125 @@
+1.0.3 - 2010-10-19 - Dustin Bolton
+	Initial release.
+1.0.4 - 2010-10-20 - Dustin Bolton
+	Added improved handling of JS and CSS for multiple instances.
+1.0.5 - 2010-10-20 - Dustin Bolton
+	Added horizontal alignment options.
+	Upgraded MediaLibrary lib v0.0.3.
+1.0.6 - 2010-10-21 - Dustin Bolton
+	Fixed popup add image size.
+1.0.7 - 2010-10-22 - Dustin Bolton
+	Fixed lack of anchor tags on images that should have had links.
+1.0.9 - 2010-10-26 - Dustin Bolton
+	Fixed problem with img titles not stripping HTML in Cycle mode.
+1.0.10 - 2010-10-26 - Dustin Bolton
+	Added 0px border and padding styling to Cycle img tags.
+	Added MediaLibrary v0.0.5.
+1.0.11 - 2010-11-02 - Dustin Bolton
+	Added check for http prefix for linking slides.
+1.0.12 - 2010-11-09 - Dustin Bolton
+	Fixed current group in widget not being selected.
+1.0.13 - 2010-11-11 - Dustin Bolton
+	(Slider mode ONLY) Fixed Slider being only as tall as captions in IE8 when all images had links
+1.0.14 - 2011-01-07 - Dustin Bolton
+	Major performance enhancement for image resizing. Images could sometimes get stuck resizing when not needed.
+1.0.17 - 2011-01-25 - Dustin Bolton
+	Updated medialib to new version.
+1.0.18 - 2011-03-08 - Skyler Moore
+	Added alts to image tags.
+		Updated slideshow.php
+			line 397: Added $return .= ' alt="' . $attachment_data['post_title'] . '"';
+			line 491: Added $return .= ' alt="' . $attachment_data['post_title'] . '"';
+1.0.20 - 2011-03-24 - Dustin Bolton
+	Updated image downsize code to iteration 20.
+1.0.21 - 2011-06-07 - Skyler Moore
+	Added alts to image tags for the cycle side of the plugins.
+		Updated slideshow.php:
+			Line 480 Changed
+				$title_val = ' alt=""';
+				to
+				$title_val = ' alt="' . $attachment_data['post_title'] . '"';
+			Line 491 Removed $return .= ' alt="' . $attachment_data['post_title'] . '"';
+1.0.22 - 2011-06-13 - Skyler Moore
+	Updated to latest updater replaced lib/updater.
+1.0.23 - 2011-06-14 - Skyler Moore
+	Fixed cycle setting multiple group height and width.
+		layouts/cycle/default/init.txt:
+			Line 1 Replaced
+				$css .= '.pb_slideshow_cycle {';
+			With
+				$css .= '#pb_slideshow_cycle-' . $this->instance_count . ' {';
+1.0.24 - 2011-06-16 - Skyler Moore
+	Fixed cycle to set width and height attributes for images.
+		slideshow.php:
+			Line 491 added $return .= ' width="' . $group['image_width'] . '" height="' . $group['image_height'] . '" ';
+1.0.25 - 2011-07-01 - Skyler Moore
+	Updated to the latest updater replaced lib/updater to fix changelog.
+1.0.26 - 2011-07-06 - Josh Benham
+	Updating the Nivo Slider JS library for WordPress 3.2
+1.0.27 - 2011-07-07 - Dustin Bolton
+	Added 8 new Slider transitions: slideInRight, slideInLeft, boxRandom, boxRain, boxRainReverse, boxRainGrow, boxRainGrowReverse
+	Updated Slider CSS for new transitions.
+	Added support for user roles.
+1.0.28 - 2011-07-26 - Josh Benham 
+	Added support for user roles
+	updated save system to latest 
+1.0.29 - 2011-8-9 - Josh Benham
+	Updated updater lib to newest version 
+1.0.30 - 2011-8-19 - Daniel Harzheim
+	Added the ability to disable CSS files 
+1.0.31 - 2011-8-19 - Bes Zain
+	Commented out the unwanted echo output
+1.0.32 - 2011-09-22 - Ronald Huereca
+	Fixing updater issue
+1.0.33 - 2011-09-22 - Ronald Huereca
+	Fixing updater issue
+1.0.34 - 2011-10-26 - Josh Benham
+	Fixed issues PBSS-4 and PBSS-18
+	PBSS-4: Nivoslider bottom margin
+	PBSS-18: Slideshow thumbnails overlapping other content. 
+1.0.35 - 2011-12-7 - Josh Benham
+	Added support for new 3.3 media uploader
+1.0.36 - 2011-12-8 - Josh Benham 
+	Removed dev code oops
+1.0.37 - 2011-12-12 - Daniel Harzheim
+	added displaybuddy admin menu icon
+1.0.38 - 2011-12-16 - Josh Benham 
+	Updated updater
+1.0.39 - 2012-1-18 - Josh Benham 
+	fixed styling issues
+1.0.40 - 2012-1-18 - Josh Benham 
+	Added Ronald's fixes to the styling. 
+1.0.42 - 2012-2-10 - Josh Benham 
+	fixed getting started 
+1.0.43 - 2012-5-3 - Josh Benham 
+	Fixed button with the text "Disabled" 
+1.0.44 - 2012-5-30 - Josh Benham	
+	fixed media library css
+1.0.45 - 2012-06-14 - Daniel Harzheim
+	3.4 medialib fix
+2.0.0 - 2012-11-2012 - Josh Benham 
+	Fixed - Plugin Access limits include Network Admin on non-multisite installations.
+	Fixed - Widget is not adding any div wrappers.
+	Fixed - DISABLED button in Images Editor duplicates images.
+	Fixed - Change plugin name to something less generic.
+	Fixed - Improper Escaping of apostrophe in group titles
+	Added - jquery.cycle2.js
+	Added - jquery.nivo.slider.js v 3.1
+	Added - Responsive styles for both new jquery libraries.
+	Added - new layout for slider responsive mode.
+	Added - new simple layout for cycle responsive mode.
+2.0.1 - 2012-11-15 - Josh Benham
+	Fixed unkown group issue,
+	Fixed rslider-controlNavThumbs undefined index.
+2.0.2 - 2012-11-15 - Josh Benham
+	Fixed widget unknown group. copy pasta went wrong.
+2.0.3 - 2012-11-20 - Josh Benham
+	Fixed no bullets appearing in slideshow responsive.
+2.0.4 - 2012-11-21 - Josh Benham 
+	Removed call to undefined function.
+2.0.5 - 2012-11-21 - Glenn Ansley
+	Complete Revert of 3.5 Code
+2.0.6 - 2012-11-29 - Josh Benham
+	Fixed unclosed div.
+2.0.7 - 2012-12-11 - Josh Benham
+	Added fix for 3.5 media library.

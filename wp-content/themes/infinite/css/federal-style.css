@@ -1,0 +1,36 @@
+.federal a {
+	color: #822B91;
+	}
+.federal .entry-title,
+.federal .entry-title a {
+	color: #822B91;
+	}
+.federal .landing-header-area {
+	background: #FFF url(../images/federal-header.jpg) no-repeat top right;
+	}
+.federal .nav-sidebar {
+	background: #822B91;
+	}
+.federal .landing-header-area .nav-sidebar {
+	background: #822B91 url(../images/dwn_arw_wht.png) no-repeat top center;
+	}
+.federal .landing-header-area .nav-sidebar ul li {
+	padding: 3px 20px;
+	}
+.federal #breadcrumbs .breadcrumbs {
+	color: #822B91;
+	}
+.federal .blog-logo a {
+	background: url(../images/federal-logo.png) no-repeat center center;
+}
+.federal .entry-content h3 {
+	color: #822B91;
+}
+.federal .hentry .entry-content ul li:before {
+	color: #822B91;
+	}
+.federal .hentry .entry-content a {
+	color: #3F1547;
+	}
+.federal .widget_msd_experts .links { background: #822B91;}
+.sidebar-wrapper .widget-container.style3 h4.widget-title {background: #822B91;}

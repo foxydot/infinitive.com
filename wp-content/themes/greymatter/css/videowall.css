@@ -1,0 +1,42 @@
+.page-template-page-videowall-php .page-content-wrapper{
+	padding: 0;
+	margin:0;
+	background: #fff;
+	width: 960px;
+	float: none;
+}
+.page-template-page-videowall-php .hentry {
+	margin-bottom: 10px;
+}
+.page-template-page-videowall-php .entry-title {
+	margin-bottom: 1em;
+}
+.page-template-page-videowall-php .content-wrapper #container {
+	width: 730px;
+}
+iframe { display: block; }
+.video {
+	border: 1px solid #EDEDED;
+    float: left;
+    margin: 0 12px 24px;
+    width: 320px;
+    }
+.video h5 {
+	padding: 4px 12px;
+	background: #E68031;
+	color: #fff;
+}
+.analytics .video h5,
+.video.analytics h5
+ {
+	background: #7EC65D;
+	}
+.insight .video h5,
+.video.insight h5 {
+	background: #D30015;
+}
+.federal .video h5,
+.video.federal h5 {
+	background: #822B91;
+}
+.entry-utility {clear: both;}
