@@ -98,7 +98,8 @@ function infinite_setup() {
 
 	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation', 'infinite' ),
+        'primary' => __( 'Primary Navigation', 'infinite' ),
+        'secondary' => __( 'Secondary Navigation', 'infinite' ),
 		'header' => __( 'Header Navigation', 'infinite' ),
 		'side' => __( 'Sidebar Navigation', 'infinite' ),
 		'footer' => __( 'Footer Navigation', 'infinite' ),

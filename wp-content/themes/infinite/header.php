@@ -70,6 +70,7 @@
 				<!-- This adds the page menu controlled from the wp admin section -->
 			<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
 			<?php wp_nav_menu( array( 'container_class' => 'mainNav', 'theme_location' => 'primary' ) ); ?>
+			<?php wp_nav_menu( array( 'container_class' => 'solutionsNav', 'theme_location' => 'secondary' ) ); ?>
 			<div class="clear"></div>
 		</div>
 		
