@@ -58,7 +58,6 @@
 
 		
 <body <?php body_class(); ?>>
-	<?php switch_to_blog(1); ?>
 	<div id="body-wrapper" class="body-wrapper">
 		<div id="header" class="header">
 			<div class="preheader">
@@ -75,4 +74,3 @@
 		</div>
 		
 		<div id="content-wrapper" class="content-wrapper">
-		<?php restore_current_blog(); ?>

@@ -1,1 +1,0 @@
-(function() {v48fv.tinymce();})();

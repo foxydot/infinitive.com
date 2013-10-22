@@ -10,7 +10,6 @@
  * @since infinite 3.1
  */
 ?>
-<?php switch_to_blog(1); ?>
 <div class="clear"></div>
 		</div>
 		</div><?php //close body wrapper?>
@@ -35,4 +34,3 @@
 ?>
 </body>
 </html>
-<?php restore_current_blog(); ?>

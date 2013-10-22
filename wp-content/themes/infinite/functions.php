@@ -548,10 +548,8 @@ function add_scripts() {
 // add classes for subdomain, IE
 add_filter('wp_print_styles','add_styles');
 function add_styles() {
-	$site = get_current_site()->domain;
 	$url = get_bloginfo('url');
 	$sub = preg_replace('@http://@i','',$url);
-	$sub = preg_replace('@'.$site.'@i','',$sub);
 	$sub = preg_replace('@\.@i','',$sub);
 	if($sub != '')
 		wp_enqueue_style( $sub.'-style', get_bloginfo('template_url').'/css/'.$sub.'-style.css', FALSE, '0.1', 'all' );
@@ -624,10 +622,8 @@ function browser_body_class($classes) {
 add_filter('body_class','subdomain_body_class');
 function subdomain_body_class($classes) {
 	global $subdomain;
-	$site = get_current_site()->domain;
 	$url = get_bloginfo('url');
 	$sub = preg_replace('@http://@i','',$url);
-	$sub = preg_replace('@'.$site.'@i','',$sub);
 	$sub = preg_replace('@\.@i','',$sub);
     $classes[] = $sub;
     $subdomain = $sub;

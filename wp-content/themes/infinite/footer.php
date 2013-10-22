@@ -10,7 +10,6 @@
  * @since infinite 3.1
  */
 ?>
-<?php switch_to_blog(1); ?>
 <div class="clear"></div>
 		</div>
 		</div><?php //close body wrapper?>
@@ -30,7 +29,6 @@
 			<div class="clear"></div>
 		</div>
 	</div>
-<?php restore_current_blog(); ?>
 <?php
 	/* Always have wp_footer() just before the closing </body>
 	 * tag of your theme, or you will break many plugins, which
