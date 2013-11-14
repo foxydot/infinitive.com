@@ -53,6 +53,6 @@ define( 'SLIDEDECK2_UPDATE_SITE',                    'http://update.slidedeck.co
 define( 'SLIDEDECK2_RENEWAL_URL',                    'http://www.dtelepathy.com/dte-directbuy?item_id=11845' );
 
 // SlideDeck anonymous user hash
-define( 'SLIDEDECK2_USER_HASH', sha1( $_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR'] ) );
+define( 'SLIDEDECK2_USER_HASH', sha1( ( isset( $_SERVER['HTTP_USER_AGENT'] ) ? $_SERVER['HTTP_USER_AGENT'] : '' ) . $_SERVER['REMOTE_ADDR'] ) );
 // KISS Metrics API Key
 define( 'SLIDEDECK2_KMAPI_KEY', "e1a603779b1d37b049548f9c8d7a804954ec7a36" );

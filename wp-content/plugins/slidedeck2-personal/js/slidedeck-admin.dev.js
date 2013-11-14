@@ -1809,18 +1809,18 @@ var tb_position = updateTBSize;
              * That is, it doesn't use Ajax to load every time. 
              */
             if( !$thisContentSource.hasClass('hidden') ) {
-	            // Bind the click event to the body
-            	$('body').bind( "click.hideFlyout", function( event ){
-            		if( $(event.target).parents('div.slidedeck-content-source').length == 0 ){
-            			if( !$(event.target).parent().hasClass('configure-source') ){
-            				// TODO: Dave wants to make the flyouts not use Ajax when re-opening befiore we turn this back on.
-	            			//$('.slidedeck-content-source .actions .cancel').trigger('click');
-            			}
-            		}
-            	});
+                // Bind the click event to the body
+                $('body').bind( "click.hideFlyout", function( event ){
+                    if( $(event.target).parents('div.slidedeck-content-source').length == 0 ){
+                        if( !$(event.target).parent().hasClass('configure-source') ){
+                            // TODO: Dave wants to make the flyouts not use Ajax when re-opening befiore we turn this back on.
+                            //$('.slidedeck-content-source .actions .cancel').trigger('click');
+                        }
+                    }
+                });
             }else{
-            	// Unbind the click event on the body
-            	$('body').unbind( "click.hideFlyout" );
+                // Unbind the click event on the body
+                $('body').unbind( "click.hideFlyout" );
             }
         });
         

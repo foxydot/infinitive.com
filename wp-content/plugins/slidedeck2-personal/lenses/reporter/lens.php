@@ -186,7 +186,7 @@ class SlideDeckLens_Reporter extends SlideDeckLens_Scaffold {
 	            $date_format = isset( $slidedeck['options']['nav-date-format'] ) ? $slidedeck['options']['nav-date-format'] : "none";
 	            switch( $date_format ) {
 	                case "timeago":
-	                    $nodes['nav_created_at'] = human_time_diff( $nodes['unfiltered_created_at'], current_time( 'timestamp', 1 ) ) . " ago";
+	                    $nodes['nav_created_at'] = human_time_diff( $nodes['unfiltered_created_at'], current_time( 'timestamp', 1 ) ) . __( " ago", $this->namespace );
 	                break;
 	                case "human-readable":
 	                    $nodes['nav_created_at'] = date( "F j, Y", $nodes['unfiltered_created_at'] );

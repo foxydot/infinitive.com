@@ -801,7 +801,7 @@ msgid "Fetching Latest Tweets..."
 msgstr ""
 
 #: ../views/manage.php:136
-msgid "A product of"
+msgid "Made by"
 msgstr ""
 
 #: ../views/manage.php:137

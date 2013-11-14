@@ -60,6 +60,7 @@ var ie = (function(){
     return v > 4 ? v : undef;
 }());
 
+
 // SlideDeck Fading Navigation Class
 var SlideDeckFadingNav = function(elem){
     this.elems = {};
@@ -2084,13 +2085,32 @@ var SlideDeckCover = function(elem){
 
 /**
  * *****************************************
- * SlideDeck Bug Link to New Tab/Window
+ * SlideDeck Bug Link to New Tab/Window + Toggle
  * *****************************************
  */
 (function($){
-    var slideDeckBugExternal = {
+    var slideDeckBugExternalToggle = {
         linkTargets: function(c){
-            this.setContext(c).context.find('.slidedeck-frame a.slidedeck-2-bug[rel*="external"]').attr('target','_blank');
+            var timer = new Array();
+            var links = this.setContext(c).context.find('.slidedeck-frame a.slidedeck-2-bug[rel*="external"]');
+            links.attr('target','_blank');
+            
+            links.each( function( ind ) {
+                var $bug = $(this);
+                $bug.addClass('open');
+                
+                timer[ind] = window.setTimeout( function(){
+                    $bug.removeClass('open');
+                }, 3000 );
+                
+                $bug.on( 'mouseenter', function( event ) {
+                    window.clearTimeout( timer[ind] );
+                    $bug.addClass( 'open' );
+                } ).on( 'mouseleave', function( event ) {
+                    $bug.removeClass( 'open' );
+                } );
+            } );
+
             return this;
         },
         setContext: function(c){
@@ -2107,10 +2127,9 @@ var SlideDeckCover = function(elem){
         }
     };
     $(document).ready(function(){
-        slideDeckBugExternal.initialize();
+        slideDeckBugExternalToggle.initialize();
     });
 })(jQuery);
-
 
 /*!
 // ┌────────────────────────────────────────────────────────────────────┐ \\

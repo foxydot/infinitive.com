@@ -1,3 +1,17 @@
+/* Pre Header */
+.pre-header{
+  background: @ltgrey;
+  .wrap{
+    text-align: right;
+    .social-media{
+      display: inline-block;
+      }
+    .search-form{
+      display: inline-block;
+      }
+  }
+}
+
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
@@ -66,14 +80,15 @@ Site Header
 /* Logo, hide text */
 
 .header-image .site-header .wrap {
-  background: url(images/logo.png) no-repeat left;
   padding: 0;
 }
 
 .header-image .site-title a {
   float: left;
-  min-height: 164px;
-  width: 100%;
+  min-height: 55px;
+  width: 220px;
+  background: url(../img/logo.png) no-repeat center center;
+  
 }
 
 /* Widget Area
@@ -83,6 +98,7 @@ Site Header
   float: right;
   text-align: right;
   width: 800px;
+  display: none;
 }
 
 .header-image .site-header .widget-area {

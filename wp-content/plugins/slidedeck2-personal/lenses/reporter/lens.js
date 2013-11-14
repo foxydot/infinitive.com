@@ -76,6 +76,11 @@
             var imageRatio = width / height;
             var containerRatio = containerWidth / containerHeight;
 
+            // Don't go through with it if the values were weird.
+            if( parseInt( width )< 1 || parseInt( height ) < 1 ) {
+                return false;
+            }
+
             // If the image is taller than it's container...
             if( (outerHeight > containerHeight) ) {
                 $image.css({

@@ -1,13 +1,22 @@
 <?php
+require_once('genesis_tweak_functions.php');
 /*** GENERAL ***/
 add_theme_support( 'html5' );//* Add HTML5 markup structure
 add_theme_support( 'genesis-responsive-viewport' );//* Add viewport meta tag for mobile browsers
 add_theme_support( 'custom-background' );//* Add support for custom background
 
 /*** HEADER ***/
-add_filter( 'genesis_search_text', 'msdlab_custom_search_text' ); //customizes the serach bar placeholder
+add_filter( 'genesis_search_text', 'msdlab_search_text' ); //customizes the serach bar placeholder
+add_action('genesis_before_header','msdlab_pre_header');
 /*** NAV ***/
-/*** SIDEBARS ***/
+/**
+ * Move nav into header
+ */
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'genesis_do_nav' );
+
+
+//*** SIDEBARS ***/
 //add_action('genesis_before', 'msdlab_ro_layout_logic'); //This ensures that the primary sidebar is always to the left.
 add_action('after_setup_theme','msdlab_add_legacy_sidebars');
 add_filter('widget_text', 'do_shortcode');//shortcodes in widgets
@@ -32,4 +41,4 @@ remove_action('genesis_footer','genesis_do_footer'); //replace the footer
 add_action('after_setup_theme','msdlab_add_homepage_hero_flex_sidebars'); //creates widget areas for a hero and flexible widget area
 //add_action('after_setup_theme','msdlab_add_homepage_callout_sidebars'); //creates a widget area for a callout bar, usually between the hero and the widget area
 
-add_action('wp_head', 'collections');
+//add_action('wp_head', 'collections');

@@ -698,7 +698,7 @@ class SlideDeckLens {
                 break;
                 
                 case "timeago":
-                    $nodes['created_at'] = human_time_diff( $nodes['created_at'], current_time( 'timestamp', 1 ) ) . " ago";
+                    $nodes['created_at'] = human_time_diff( $nodes['created_at'], current_time( 'timestamp', 1 ) ) . __( " ago", $this->namespace );
                 break;
                 
                 case "human-readable":

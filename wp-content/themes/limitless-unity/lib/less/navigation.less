@@ -4,34 +4,29 @@ Site Navigation
 
 .genesis-nav-menu {
   clear: both;
-  color: #999;
+  color: @dkgrey;
   font-family: Lato, sans-serif;
   line-height: 1.5;
   width: 100%;
-}
-
-.genesis-nav-menu .menu-item {
-  display: inline-block;
-  text-align: left;
-}
-
-.genesis-nav-menu a {
-  border: none;
-  color: #999;
-  display: block;
-  padding: 28px 24px;
-  padding: 2.8rem 2.4rem;
-  position: relative;
-}
-
-.genesis-nav-menu a:hover,
-.genesis-nav-menu .current-menu-item > a,
-.genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-  color: #333;
-}
-
-.genesis-nav-menu .sub-menu .current-menu-item > a {
-  color: #999;
+  .menu-item {
+    display: inline-block;
+    text-align: left;
+    a {
+      border: none;
+      color: @dkgrey;
+      display: block;
+      padding: 28px 24px;
+      padding: 2rem 2.4rem;
+      position: relative;
+    }
+    a:hover{
+     color: @orange;
+     text-decoration: none;
+    }
+   }
+   .current-menu-item>a{
+     color: @orange;
+   }
 }
 
 .genesis-nav-menu > .menu-item > a {
@@ -49,18 +44,17 @@ Site Navigation
   transition:         opacity .4s ease-in-out;
   width: 200px;
   z-index: 99;
-}
-
-.genesis-nav-menu .sub-menu a {
-  background-color: #fff;
-  border: 1px solid #eee;
-  border-top: none;
-  font-size: 14px;
-  font-size: 1.4rem;
-  padding: 16px 20px;
-  padding: 1.6rem 2rem;
-  position: relative;
-  width: 200px;
+  a {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-top: none;
+    font-size: 14px;
+    font-size: 1.4rem;
+    padding: 16px 20px;
+    padding: 1.6rem 2rem;
+    position: relative;
+    width: 200px;
+  }
 }
 
 .genesis-nav-menu .sub-menu .sub-menu {
@@ -123,21 +117,42 @@ Site Navigation
 --------------------------------------------- */
 
 .nav-primary {
-  background-color: #333;
+  background-color: @white;
+  display: inline-block;
 }
 
 .nav-primary a:hover,
 .nav-primary .current-menu-item > a {
-  color: #fff;
+  color: @orange;
 }
 
 .nav-primary .sub-menu a:hover {
-  color: #333;
+  color: @orange;
 }
 
 /* Secondary Navigation
 --------------------------------------------- */
 
 .nav-secondary {
-  background-color: #fff;
+  background-color: @dkgrey;
+  padding: 0.5rem 0;
+  li.menu-item{
+    width:24.7%;
+    border-right: 1px solid @white;
+    a{
+      padding: 0.5rem 4rem 0.5rem 8rem;
+      color: @ltgrey;
+    }
+    a:hover{
+      color:white;
+    }
+  }
+  li.menu-item.last-child{
+    border: 0;
+  }
+  li.hover{
+    a{
+      color:@white;
+    }
+  }
 }

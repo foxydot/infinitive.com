@@ -3,7 +3,7 @@
 Plugin Name: SlideDeck 2 - Professional Addon Package
 Plugin URI: http://www.slidedeck.com/wordpress
 Description: Professional level addons for SlideDeck 2
-Version: 2.3.4
+Version: 2.3.5
 Author: digital-telepathy
 Author URI: http://www.dtelepathy.com
 License: GPL3
@@ -28,7 +28,7 @@ along with SlideDeck.  If not, see <http://www.gnu.org/licenses/>.
 
 if( !defined( "SLIDEDECK2_PROFESSIONAL_DIRNAME" ) ) define( "SLIDEDECK2_PROFESSIONAL_DIRNAME", dirname( __FILE__ ) );
 if( !defined( "SLIDEDECK2_PROFESSIONAL_URLPATH" ) ) define( "SLIDEDECK2_PROFESSIONAL_URLPATH", trailingslashit( plugins_url() ) . basename( SLIDEDECK2_PROFESSIONAL_DIRNAME ) );
-if( !defined( "SLIDEDECK2_PROFESSIONAL_VERSION" ) ) define( "SLIDEDECK2_PROFESSIONAL_VERSION", "2.3.4" );
+if( !defined( "SLIDEDECK2_PROFESSIONAL_VERSION" ) ) define( "SLIDEDECK2_PROFESSIONAL_VERSION", "2.3.5" );
 
 class SlideDeckPluginProfessional {
     var $namespace = "slidedeck-professional";

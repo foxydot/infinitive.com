@@ -37,6 +37,13 @@ Where 1644 is the SlideDeck's ID. You can also see this code snippet when you sa
 
 
 == Changelog ==
+= 2.3.5 =
+* Fixed an issue when the user agent server variable is not set.
+* Reporter Lens: Improved the reliability of and Lazy Loading when using crossfade.
+* Fixed a potential file inclusion vulnerability reported by one of our users.
+* Custom image slides from the media library now automatically fill the title/caption fields.
+* Added the ability to filter the admin roles for SlideDeck with: `add_filter( 'slidedeck_roles', 'function' );`
+
 = 2.3.4 =
 * Updated Half-Moon Lens linking within Iframe and RESS modes
 * Re-introduced the start slide option for Custom Content sources
@@ -402,6 +409,9 @@ Where 1644 is the SlideDeck's ID. You can also see this code snippet when you sa
 * Initial beta release.
 
 == Upgrade Notice ==
+= 2.3.5 =
+Improved the reliability of and Lazy Loading when using crossfade
+
 = 2.3.4 =
 Fixed an issue due to the new WordPress 3.7 plugin API version 1.1 (auto updates)
 

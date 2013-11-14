@@ -1,13 +1,29 @@
 <?php
 /*** HEADER ***/
+/**
+ * Add pre-header with social and search
+ */
+function msdlab_pre_header(){
+    print '<div class="pre-header">
+        <div class="wrap">';
+           do_shortcode('[msd-social]');
+           get_search_form();
+    print '
+        </div>
+    </div>';
+}
+
  /**
  * Customize search form input
  */
 function msdlab_search_text($text) {
-    return esc_attr( 'Begin your search here...' );
+    $text = esc_attr( 'Begin your search here...' );
+    $text = 'XXXXXXXXXXXXXX';
+    return $text;
 }
 
 /*** NAV ***/
+
 
 /*** SIDEBARS ***/
 /**

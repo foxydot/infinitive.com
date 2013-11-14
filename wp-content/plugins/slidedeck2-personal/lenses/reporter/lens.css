@@ -783,17 +783,14 @@
     top: auto;
     bottom: 62px;
 }
-.lens-reporter.sd2-nav-titles a.slidedeck-2-bug { bottom: 56px; }
 .lens-reporter.sd2-nav-dates a.slidedeck-2-bug {
     top: auto;
     bottom: 60px;
 }
-.lens-reporter.sd2-nav-dates a.slidedeck-2-bug { bottom: 56px; }
 .lens-reporter.sd2-nav-dots a.slidedeck-2-bug {
     top: auto;
     bottom: 43px;
 }
-.lens-reporter.sd2-nav-dots a.slidedeck-2-bug { bottom: 40px; }
 
 /* hide-slide-content override */
 .lens-reporter dd.hide-slide-content .slide-content,

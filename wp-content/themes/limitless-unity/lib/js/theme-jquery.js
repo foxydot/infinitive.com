@@ -32,4 +32,11 @@ jQuery(document).ready(function($) {
 		}
 	});
 	
+	//bootstrap
+    $('.site-inner').addClass('container');
+    //$('.wrap').addClass('row');
+    $('.content-sidebar .content-sidebar-wrap').addClass('row');
+    $('.content-sidebar .content').addClass('col-lg-8');
+    $('.content-sidebar .sidebar').addClass('col-lg-4');
+	
 });

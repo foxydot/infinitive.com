@@ -48,6 +48,7 @@ class SlideDeckSlideType_Image extends SlideDeckSlideModel {
 		add_action( "wp_ajax_{$this->namespace}_html4_image_upload_form", array( &$this, 'ajax_html4_image_upload_form' ) );
 		add_action( "wp_ajax_{$this->namespace}_slide_upload_image", array( &$this, 'ajax_slide_upload_image' ) );
         add_action( "wp_ajax_{$this->namespace}_slide_add_from_medialibrary", array( &$this, 'ajax_slide_add_from_medialibrary' ) );
+        add_action( "wp_ajax_{$this->namespace}_query_image_from_medialibrary", array( &$this, 'ajax_query_image_from_medialibrary' ) );
         add_action( "wp_ajax_{$this->namespace}_slide_bulk_upload", array( &$this, 'ajax_slide_bulk_upload' ) );
 
 		add_filter( "{$this->namespace}_custom_slide_nodes", array( &$this, 'slidedeck_slide_nodes' ), 10, 3 );
@@ -274,6 +275,40 @@ class SlideDeckSlideType_Image extends SlideDeckSlideModel {
             $response['filename'] = basename( $response['media_meta']['meta']['file'] );
         }
         
+        die( json_encode( $response ) );
+    }
+    
+    /**
+     * AJAX response for querying an image from the media library
+     * 
+     * @uses wp_verify_nonce()
+     */
+    function ajax_query_image_from_medialibrary() {
+        $response = array(
+            'valid' => true,
+            'error' => "",
+            'data' => false
+        );
+        
+        if( !wp_verify_nonce( $_REQUEST['_wpnonce'], "{$this->namespace}-medialibrary-add-images" ) ) {
+            $response['valid'] = false;
+            $response['error'] = __( "Validation failed", $this->namespace );
+        }
+        
+        // Make sure media_id and slide_id are passed in
+        if( !isset( $_REQUEST['media_id'] ) ) {
+            $response['valid'] = false;
+            $response['error'] = __( "You did not pass a valid slide or media ID", $this->namespace );
+        }
+
+        if( $response['valid'] === true ) {
+            // Clean passed in data
+            $media_id = intval( $_REQUEST['media_id'] );
+            $media = get_post($media_id);
+            $response['data']['title'] = $media->post_title;
+            $response['data']['excerpt'] = $media->post_excerpt;
+        }
+
         die( json_encode( $response ) );
     }
     
