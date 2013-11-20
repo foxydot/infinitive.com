@@ -1,0 +1,30 @@
+.blog-header{
+  position: relative;
+  border-bottom: 1px dotted @medgrey;
+  h3{
+    width: auto;
+    background: @orange;
+    padding: 1rem 2rem 1.5rem;
+    color: @white;
+    .border-radius(12px);
+    font-size: 3rem;
+    font-weight: normal;
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+  h3:after{
+    content: "";
+    width: 0; 
+    height: 0; 
+    border-left: 2rem solid transparent;
+    border-right: 0rem solid transparent;
+    border-top: 2rem solid @orange;
+    position: absolute;
+    display: block;
+    top: 6rem;
+    left: 5rem;
+  }
+  p{
+    margin: 1em 0;
+  }
+}

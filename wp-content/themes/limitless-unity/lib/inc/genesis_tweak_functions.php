@@ -172,3 +172,19 @@ function msdlab_do_social_footer(){
 register_nav_menus( array(
     'footer_menu' => 'Footer Menu'
 ) );
+
+
+/*** Blog Header ***/
+function msd_add_blog_header(){
+    global $post;
+    if(get_post_type() == 'post'){
+        $header = '
+        <div id="blog-header" class="blog-header">
+            <h3>Infinitive Difference Blog</h3>
+            <p>Get in the know and keep current with big-picture thinking and actionable insights.</p>
+        </div>';
+    } else {
+        ts_data(get_post_type());
+    }
+    print $header;
+}

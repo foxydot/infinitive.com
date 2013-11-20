@@ -42,4 +42,6 @@ add_action('genesis_footer','msdlab_do_social_footer');//with a msdsocial suppor
 add_action('after_setup_theme','msdlab_add_homepage_hero_flex_sidebars'); //creates widget areas for a hero and flexible widget area
 //add_action('after_setup_theme','msdlab_add_homepage_callout_sidebars'); //creates a widget area for a callout bar, usually between the hero and the widget area
 
+/*** Blog Header ***/
+add_action('genesis_before_loop','msd_add_blog_header');
 //add_action('wp_head', 'collections');
