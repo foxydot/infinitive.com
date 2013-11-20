@@ -17,9 +17,27 @@ function msdlab_pre_header(){
  * Customize search form input
  */
 function msdlab_search_text($text) {
-    $text = esc_attr( 'Begin your search here...' );
-    $text = 'XXXXXXXXXXXXXX';
+    $text = esc_attr( 'Search...' );
     return $text;
+} 
+ 
+ /**
+ * Customize search button text
+ */
+function msdlab_search_button($text) {
+    $text = "&#xF002;";
+    return $text;
+}
+
+/**
+ * Customize search form 
+ */
+function msdlab_search_form($form, $search_text, $button_text, $label){
+   if ( genesis_html5() )
+        $form = sprintf( '<form method="get" class="search-form" action="%s" role="search">%s<input type="search" name="s" placeholder="%s" /><input type="submit" value="%s" /></form>', home_url( '/' ), esc_html( $label ), esc_attr( $search_text ), esc_attr( $button_text ) );
+    else
+        $form = sprintf( '<form method="get" class="searchform search-form" action="%s" role="search" >%s<input type="text" value="%s" name="s" class="s search-input" onfocus="%s" onblur="%s" /><input type="submit" class="searchsubmit search-submit" value="%s" /></form>', home_url( '/' ), esc_html( $label ), esc_attr( $search_text ), esc_attr( $onfocus ), esc_attr( $onblur ), esc_attr( $button_text ) );
+    return $form;
 }
 
 /*** NAV ***/
@@ -136,15 +154,15 @@ function msdlab_breadcrumb_args($args) {
  */
 function msdlab_do_social_footer(){
     global $msd_social;
-    if(has_nav_menu('footer_library_link')){$copyright .= wp_nav_menu( array( 'theme_location' => 'footer_library_link','container_class' => 'ftr-menu','echo' => FALSE ) ).'<br />';}
-    if($msd_social){
-        $copyright .= '&copy;Copyright '.date('Y').' '.$msd_social->get_bizname().' &middot; All Rights Reserved';
-    } else {
-        $copyright .= '&copy;Copyright '.date('Y').' '.get_bloginfo('name').' &middot; All Rights Reserved ';
-    }
     if(has_nav_menu('footer_menu')){$copyright .= wp_nav_menu( array( 'theme_location' => 'footer_menu','container_class' => 'ftr-menu ftr-links','echo' => FALSE ) );}
+    
+    if($msd_social){
+        $copyright .= '&copy; Copyright '.date('Y').' '.$msd_social->get_bizname().' &middot; All Rights Reserved';
+    } else {
+        $copyright .= '&copy; Copyright '.date('Y').' '.get_bloginfo('name').' &middot; All Rights Reserved ';
+    }
+    
     print '<div id="copyright" class="copyright gototop">'.$copyright.'</div><div id="social" class="social creds">';
-    if($msd_social){do_shortcode('[msd-social]');}
     print '</div>';
 }
 

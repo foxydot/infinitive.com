@@ -3,19 +3,26 @@ Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-  background-color: #fff;
-  color: #999;
+  background-color: @dkgrey;
+  color: @white;
   font-size: 14px;
   font-size: 1.4rem;
   padding: 40px 0;
-  padding: 4rem 0;
+  padding: 1rem 0;
   text-align: center;
-}
-
-.site-footer a {
-  border-bottom: 1px solid #ddd;
-}
-
-.site-footer p {
-  margin-bottom: 0;
+  p {
+    margin-bottom: 0;
+  }
+  a {
+    color: @white;
+  }
+  .ftr-menu{
+    .menu{
+      list-style: none outside none;
+      li{
+        padding: 0 0.5em;
+        display: inline-block;
+      }
+    }
+  }
 }

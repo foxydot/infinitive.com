@@ -5,7 +5,7 @@ Site Navigation
 .genesis-nav-menu {
   clear: both;
   color: @dkgrey;
-  font-family: Lato, sans-serif;
+  .customsanserif;
   line-height: 1.5;
   width: 100%;
   .menu-item {
@@ -16,7 +16,7 @@ Site Navigation
       color: @dkgrey;
       display: block;
       padding: 28px 24px;
-      padding: 2rem 2.4rem;
+      padding: 2rem 2.2rem;
       position: relative;
     }
     a:hover{
@@ -140,11 +140,18 @@ Site Navigation
     width:24.7%;
     border-right: 1px solid @white;
     a{
-      padding: 0.5rem 4rem 0.5rem 8rem;
+      font-size: 0.8em;
+      line-height: 1.2em;
+      padding: 0.5rem 4rem 0.5rem 10rem;
       color: @ltgrey;
     }
     a:hover{
       color:white;
+    }
+  }
+  li.menu-item.digital-ad{
+    a{
+      padding-right: 8rem;
     }
   }
   li.menu-item.last-child{

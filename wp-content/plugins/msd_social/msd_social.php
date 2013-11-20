@@ -79,31 +79,31 @@ function social_media($attr){
 	?>
 	<div id="social-media" class="social-media">
 			<?php if(get_option('msdsocial_linkedin_link')!=""){ ?>
-			<a href="<?php echo get_option('msdsocial_linkedin_link'); ?>" class="li" title="LinkedIn" target="_blank">LinkedIn</a>
+</i><span>			<a href="<?php echo get_option('msdsocial_linkedin_link'); ?>" class="li" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_twitter_user')!=""){ ?>
-			<a href="http://www.twitter.com/<?php echo get_option('msdsocial_twitter_user'); ?>" class="tw" title="Follow Us on Twitter!" target="_blank">Twitter</a>
+</i><span>			<a href="http://www.twitter.com/<?php echo get_option('msdsocial_twitter_user'); ?>" class="tw" title="Follow Us on Twitter!" target="_blank"><i class="fa fa-twitter"></i><span>Twitter</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_google_link')!=""){ ?>
-			<a href="<?php echo get_option('msdsocial_google_link'); ?>" class="gl" title="Google+" target="_blank">Google+</a>
+</i><span>			<a href="<?php echo get_option('msdsocial_google_link'); ?>" class="gl" title="Google+" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_facebook_link')!=""){ ?>
-			<a href="<?php echo get_option('msdsocial_facebook_link'); ?>" class="fb" title="Join Us on Facebook!" target="_blank">Facebook</a>
+</i><span>			<a href="<?php echo get_option('msdsocial_facebook_link'); ?>" class="fb" title="Join Us on Facebook!" target="_blank"><i class="fa fa-facebook"></i><span>Facebook</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_flickr_link')!=""){ ?>
-			<a href="<?php echo get_option('msdsocial_flickr_link'); ?>" class="fl" title="Flickr" target="_blank">Flickr</a>
+</i><span>			<a href="<?php echo get_option('msdsocial_flickr_link'); ?>" class="fl" title="Flickr" target="_blank"><i class="fa fa-flickr"></i><span>Flickr</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_youtube_link')!=""){ ?>
-			<a href="<?php echo get_option('msdsocial_youtube_link'); ?>" class="yt" title="YouTube" target="_blank">YouTube</a>
+</i><span>			<a href="<?php echo get_option('msdsocial_youtube_link'); ?>" class="yt" title="YouTube" target="_blank"><i class="fa fa-youtube"></i><span>YouTube</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_sharethis_link')!=""){ ?>
-			<a href="<?php echo get_option('msdsocial_sharethis_link'); ?>" class="st" title="ShareThis" target="_blank">ShareThis</a>
+</i><span>			<a href="<?php echo get_option('msdsocial_sharethis_link'); ?>" class="st" title="ShareThis" target="_blank"><i class="fa fa-share"></i><span>ShareThis</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_pinterest_link')!=""){ ?>
-			<a href="<?php echo get_option('msdsocial_pinterest_link'); ?>" class="pin" title="Pinterest" target="_blank">Pinterest</a>
+</i><span>			<a href="<?php echo get_option('msdsocial_pinterest_link'); ?>" class="pin" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_show_feed')!=""){ ?>
-			<a href="<?php bloginfo('rss2_url'); ?>" class="rss" title="RSS Feed" target="_blank">RSS Feed</a>
+</i><span>			<a href="<?php bloginfo('rss2_url'); ?>" class="rss" title="RSS Feed" target="_blank"><i class="fa fa-rss"></i><span>RSS Feed</span></a>
 			<?php }?>
 		</div>
 		<?php 
