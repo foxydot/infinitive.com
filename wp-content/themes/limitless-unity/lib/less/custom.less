@@ -28,3 +28,68 @@
     margin: 1em 0;
   }
 }
+
+/*custom Font*/
+@font-face {
+  font-family: "infinitive";
+  src:url("../infinitive-icon-font/fonts/infinitive.eot");
+  src:url("../infinitive-icon-font/fonts/infinitive.eot?#iefix") format("embedded-opentype"),
+    url("../infinitive-icon-font/fonts/infinitive.ttf") format("truetype"),
+    url("../infinitive-icon-font/fonts/infinitive.svg#infinitive") format("svg"),
+    url("../infinitive-icon-font/fonts/infinitive.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+[data-icon]:before {
+  font-family: "infinitive" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  text-transform: none !important;
+}
+ 
+[class^="icon-"] i,
+[class*=" icon-"] i {
+  display: inline-block;
+  float: left;
+  font-size: 2em;
+  margin: 0.2em 0.5rem;
+}
+[class^="icon-"] i:before,
+[class*=" icon-"] i:before {
+  font-family: "infinitive" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  text-transform: none !important;
+} 
+ 
+.icon-enterprise i:before {
+   content: "a"; 
+} 
+ 
+.icon-intelligence i:before {
+   content: "b"; 
+} 
+ 
+.icon-risk i:before {
+   content: "c"; 
+} 
+ 
+.icon-solutions i:before {
+   content: "d"; 
+}

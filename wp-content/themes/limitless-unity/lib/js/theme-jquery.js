@@ -38,5 +38,8 @@ jQuery(document).ready(function($) {
     $('.content-sidebar .content-sidebar-wrap').addClass('row');
     $('.content-sidebar .content').addClass('col-lg-8');
     $('.content-sidebar .sidebar').addClass('col-lg-4');
+    
+    //icons
+    $('.menu li[class*="icon-"] a').prepend('<i></i>');
 	
 });

@@ -14,7 +14,9 @@ function msdlab_add_styles() {
         //use local
             //wp_enqueue_style('bootstrap-style',get_stylesheet_directory_uri().'/lib/bootstrap/css/bootstrap.css');
             //wp_enqueue_style('font-awesome-style',get_stylesheet_directory_uri().'/lib/font-awesome/css/font-awesome.css',array('bootstrap-style'));
-        wp_enqueue_style('msd-style',get_stylesheet_directory_uri().'/lib/css/style.css',array('bootstrap-style','font-awesome-style'));
+            
+            //wp_enqueue_style('infinitive-icon-font-style',get_stylesheet_directory_uri().'/lib/infinitive-icon-font/styles.css',array('bootstrap-style','font-awesome-style'));
+            wp_enqueue_style('msd-style',get_stylesheet_directory_uri().'/lib/css/style.css',array('bootstrap-style','font-awesome-style'));
         if($is_IE){
             wp_enqueue_script('ie-style',get_stylesheet_directory_uri().'/lib/css/ie.css');
         }
