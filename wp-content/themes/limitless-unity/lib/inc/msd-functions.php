@@ -73,8 +73,14 @@ if(is_multisite()){
 add_action('template_redirect','set_section');
 function set_section(){
 	global $post, $section;
-	$post_data = get_post(get_topmost_parent($post->ID));
-	$section = $post_data->post_name;
+	$section = get_section();
+}
+
+function get_section(){
+    global $post;
+    $post_data = get_post(get_topmost_parent($post->ID));
+    $section = $post_data->post_name;
+    return $section;
 }
 
 function get_topmost_parent($post_id){

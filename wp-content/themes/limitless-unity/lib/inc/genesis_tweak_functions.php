@@ -177,14 +177,12 @@ register_nav_menus( array(
 /*** Blog Header ***/
 function msd_add_blog_header(){
     global $post;
-    if(get_post_type() == 'post'){
+    if(get_post_type() == 'post' || get_section()=='blog'){
         $header = '
         <div id="blog-header" class="blog-header">
             <h3>Infinitive Difference Blog</h3>
             <p>Get in the know and keep current with big-picture thinking and actionable insights.</p>
         </div>';
-    } else {
-        ts_data(get_post_type());
     }
     print $header;
 }
