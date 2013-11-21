@@ -31,6 +31,7 @@ remove_action( 'genesis_before_post_content', 'genesis_post_info' ); //remove th
 remove_action( 'genesis_after_post_content', 'genesis_post_meta' ); //remove the meta (filed under, tags, etc.)
 
 add_action( 'genesis_before_post', 'msdlab_post_image', 8 ); //add feature image across top of content on *pages*.
+add_action('template_redirect','msdlab_blog_grid');
  
 /*** FOOTER ***/
 add_theme_support( 'genesis-footer-widgets', 1 ); //adds automatic footer widgets
