@@ -6486,8 +6486,8 @@ Site Header
 }
 .header-image .site-title a {
   float: left;
-  min-height: 55px;
-  width: 220px;
+  min-height: 60px;
+  width: 260px;
   background: url(../img/logo.png) no-repeat center center;
 }
 /* Widget Area
@@ -6640,8 +6640,8 @@ Site Navigation
 .nav-secondary li.menu-item a:hover {
   color: white;
 }
-.nav-secondary li.menu-item.digital-ad a {
-  padding-right: 8rem;
+.nav-secondary li.menu-item.icon-solutions a {
+  padding: 0.5rem 7rem;
 }
 .nav-secondary li.menu-item.last-child {
   border: 0;
