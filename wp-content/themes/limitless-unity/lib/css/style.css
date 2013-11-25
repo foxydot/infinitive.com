@@ -6553,7 +6553,7 @@ Site Navigation
   z-index: 99;
 }
 .genesis-nav-menu .sub-menu a {
-  background-color: #fff;
+  background: #ffffff;
   border: 1px solid #eee;
   border-top: none;
   font-size: 14px;
@@ -6613,12 +6613,26 @@ Site Navigation
   background-color: #ffffff;
   display: inline-block;
 }
-.nav-primary a:hover,
-.nav-primary .current-menu-item > a {
-  color: #ed7e3c;
+.nav-primary li.menu-item .sub-menu {
+  border: none;
 }
-.nav-primary .sub-menu a:hover {
-  color: #ed7e3c;
+.nav-primary li.menu-item .sub-menu li.menu-item a {
+  background: #333333;
+  border: none;
+  color: white;
+}
+.nav-primary li:hover,
+.nav-primary li.current-menu-item,
+.nav-primary li.current-menu-ancestor {
+  background: #333333;
+}
+.nav-primary li:hover a,
+.nav-primary li.current-menu-item a,
+.nav-primary li.current-menu-ancestor a,
+.nav-primary li:hover a:hover,
+.nav-primary li.current-menu-item a:hover,
+.nav-primary li.current-menu-ancestor a:hover {
+  color: #ffffff;
 }
 /* Secondary Navigation
 --------------------------------------------- */

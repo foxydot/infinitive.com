@@ -45,7 +45,7 @@ Site Navigation
   width: 200px;
   z-index: 99;
   a {
-    background-color: #fff;
+    background: @white;
     border: 1px solid #eee;
     border-top: none;
     font-size: 14px;
@@ -119,16 +119,25 @@ Site Navigation
 .nav-primary {
   background-color: @white;
   display: inline-block;
+  li.menu-item{
+    a{}
+    .sub-menu{
+      border: none;
+      li.menu-item{
+        a{
+          background: darken(@dkgrey,20%);
+          border: none;
+          color: white;
+        }
+      }
+    }
+  }
+  li:hover, li.current-menu-item, li.current-menu-ancestor{
+    background: darken(@dkgrey,20%);
+    a, a:hover{color:@white}
+  }
 }
 
-.nav-primary a:hover,
-.nav-primary .current-menu-item > a {
-  color: @orange;
-}
-
-.nav-primary .sub-menu a:hover {
-  color: @orange;
-}
 
 /* Secondary Navigation
 --------------------------------------------- */

@@ -83,7 +83,7 @@ function msdlab_add_legacy_sidebars(){
             'before_title' => '<h4 class="widget-title">',
             'after_title' => '</h4>',
         ) );register_sidebar( array(
-        'name' => __( 'Homepage Footer Widget Area', 'infinite' ),
+        'name' => __( 'Homepage Footer Widget Area (probably delete)', 'infinite' ),
         'id' => 'homepage-footer-widget-area',
         'description' => __( 'The homepage footer widget area. Three widgets are recommended.', 'infinite' ),
         'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
@@ -105,7 +105,7 @@ function msdlab_add_legacy_sidebars(){
 
     // Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
     register_sidebar( array(
-        'name' => __( 'Secondary Widget Area', 'infinite' ),
+        'name' => __( 'Secondary Widget Area (probably delete)', 'infinite' ),
         'id' => 'secondary-widget-area',
         'description' => __( 'The secondary widget area', 'infinite' ),
         'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
@@ -126,7 +126,7 @@ function msdlab_add_legacy_sidebars(){
     ) );
     // Area 3, located in the footer. Empty by default.
     register_sidebar( array(
-        'name' => __( 'Footer Widget Area', 'infinite' ),
+        'name' => __( 'Footer Widget Area (probably delete)', 'infinite' ),
         'id' => 'footer-widget-area',
         'description' => __( 'The footer widget area. Two widgets are recommended.', 'infinite' ),
         'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
