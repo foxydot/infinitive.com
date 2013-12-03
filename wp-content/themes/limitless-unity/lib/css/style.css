@@ -6473,7 +6473,7 @@ Site Header
 /* Full width header, no widgets */
 .header-full-width .title-area,
 .header-full-width .site-title {
-  width: 100%;
+  /*width: 100%;*/
 }
 .header-image .site-description,
 .header-image .site-title a {
@@ -6633,6 +6633,83 @@ Site Navigation
 .nav-primary li.current-menu-item a:hover,
 .nav-primary li.current-menu-ancestor a:hover {
   color: #ffffff;
+}
+/* Infinitive For You Navigation */
+#menu-primary-links > li.first-child ul,
+#menu-primary-links > li.first-child li {
+  display: block;
+  visibility: visible;
+}
+#menu-primary-links > li.first-child ul.sub-menu {
+  background: #333333;
+}
+#menu-primary-links > li.first-child > ul.sub-menu {
+  min-height: 280px;
+}
+#menu-primary-links > li.first-child > ul.sub-menu a {
+  width: auto;
+}
+#menu-primary-links > li.first-child > ul.sub-menu > li {
+  position: relative;
+}
+#menu-primary-links > li.first-child > ul.sub-menu > li > ul.sub-menu {
+  left: 199px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0px;
+  height: 280px;
+  font-size: 1em;
+  width: 484px;
+}
+#menu-primary-links > li.first-child > ul.sub-menu > li > ul.sub-menu > li {
+  width: 120px;
+  display: inline-block;
+  float: left;
+  position: relative;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  padding: 3px 10px;
+  margin: 0;
+  font-family: 'News Cycle', Helvetica, "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+}
+#menu-primary-links > li.first-child > ul.sub-menu > li > ul.sub-menu > li > a {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+#menu-primary-links > li.first-child > ul.sub-menu > li > ul.sub-menu > li > ul {
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  left: 0;
+  border-top: 1px solid #B8B7B9;
+  background: none;
+  width: 120px;
+  display: block;
+  line-height: 1.2em;
+}
+#menu-primary-links > li.first-child > ul.sub-menu > li > ul.sub-menu > li > ul > li {
+  text-transform: none;
+  width: 120px;
+  padding: 3px 0;
+  opacity: 1;
+  top: 0;
+  left: 0;
+}
+#menu-primary-links > li.first-child > ul.sub-menu > li > ul.sub-menu > li > ul > li > a {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 1em;
+  font-size: 1rem;
+}
+#menu-primary-links > li.first-child > ul.sub-menu li.title > ul.sub-menu {
+  height: 227px;
+  width: 604px;
+}
+.mainNav > ul > li.first > ul > li.title > ul > li > ul > li {
+  padding: 3px 0;
 }
 /* Secondary Navigation
 --------------------------------------------- */

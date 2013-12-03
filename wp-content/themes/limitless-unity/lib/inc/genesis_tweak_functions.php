@@ -65,7 +65,7 @@ function msdlab_ro_layout_logic() {
  */
 function msdlab_add_legacy_sidebars(){
     register_sidebar( array(
-            'name' => __( 'Main Homepage Feature Area', 'infinite' ),
+            'name' => __( 'Main Homepage Feature Area(probably delete)', 'infinite' ),
             'id' => 'main-feature-area',
             'description' => __( 'The feature area on the homepage. One slideshow is recommended.', 'infinite' ),
             'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
@@ -75,7 +75,7 @@ function msdlab_add_legacy_sidebars(){
         ) );
         // Area 3, located in the footer. Empty by default.
         register_sidebar( array(
-            'name' => __( 'Main Homepage Footer Widget Area', 'infinite' ),
+            'name' => __( 'Main Homepage Footer Widget Area(probably delete)', 'infinite' ),
             'id' => 'main-footer-widget-area',
             'description' => __( 'The main homepage footer widget area. Three widgets are recommended.', 'infinite' ),
             'before_widget' => '<li id="%1$s" class="widget-container %2$s">',

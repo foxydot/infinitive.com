@@ -139,6 +139,84 @@ Site Navigation
 }
 
 
+/* Infinitive For You Navigation */
+#menu-primary-links>li.first-child{
+    ul,li{
+      display: block;
+      visibility: visible;
+    }
+    ul.sub-menu{
+      background: darken(@dkgrey,20%);
+    }
+    >ul.sub-menu{
+      min-height: 280px;
+      a{width: auto;}
+      >li{
+        position: relative;
+      }
+      >li>ul.sub-menu{
+        left: 199px;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0px;
+        height: 280px;
+        font-size: 1em;
+        width: 484px;
+        >li{
+          width: 120px;
+          display: inline-block;
+          float: left;
+          position: relative;
+          opacity: 1;
+          top: 0;
+          left: 0;
+          padding: 3px 10px;
+          margin: 0;
+          font-family: 'News Cycle', Helvetica, "Helvetica Neue", Arial, sans-serif;
+          text-transform: uppercase;
+          >a{
+            padding-top: 2px;
+            padding-bottom: 2px;
+          }
+          >ul{
+            margin: 0;
+            padding: 0;
+            opacity: 1;
+            left: 0;
+            border-top: 1px solid #B8B7B9;
+            background: none;
+            width: 120px;
+            display: block;
+            line-height: 1.2em;
+            >li{
+              text-transform: none;
+              width: 120px;
+              padding: 3px 0;
+              opacity: 1;
+              top: 0;
+              left: 0;
+              >a{
+                padding-top: 2px;
+                padding-bottom: 2px;
+                font-size: 1em;
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+      li.title>ul.sub-menu{
+        height: 227px;
+        width: 604px;
+      }
+    }
+  }
+.mainNav>ul>li.first>ul>li.title>ul>li>ul>li {
+  padding: 3px 0;
+}
+
+
 /* Secondary Navigation
 --------------------------------------------- */
 
