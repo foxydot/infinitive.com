@@ -2,6 +2,9 @@
 //remove sidebars (jsut in case)
 remove_all_actions('genesis_sidebar');
 remove_all_actions('genesis_sidebar_alt');
+//remove loop
+remove_all_actions('genesis_loop');
+
 /**
  * hero + 3 widgets
  */
