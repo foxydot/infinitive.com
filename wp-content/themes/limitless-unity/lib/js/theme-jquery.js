@@ -11,10 +11,14 @@ jQuery(document).ready(function($) {
 	$('tr td:last-child').addClass('last-child');
 	$('tr td:nth-child(even)').addClass('even');
 	$('tr td:nth-child(odd)').addClass('odd');
-	$('div:first-child').addClass('first-child');
-	$('div:last-child').addClass('last-child');
-	$('div:nth-child(even)').addClass('even');
-	$('div:nth-child(odd)').addClass('odd');
+    $('div:first-child').addClass('first-child');
+    $('div:last-child').addClass('last-child');
+    $('div:nth-child(even)').addClass('even');
+    $('div:nth-child(odd)').addClass('odd');
+    $('section:first-child').addClass('first-child');
+    $('section:last-child').addClass('last-child');
+    $('section:nth-child(even)').addClass('even');
+    $('section:nth-child(odd)').addClass('odd');
 
 
 	$('#footer-widgets div.widget:first-child').addClass('first-child');

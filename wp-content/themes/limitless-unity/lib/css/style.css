@@ -5861,7 +5861,10 @@ html {
   /* 10px browser default */
 }
 body {
-  background-color: #ffffff;
+  background-color: #f5f4ef;
+  background-image: url(../img/bkg-body.png);
+  background-repeat: repeat-x;
+  background-position: top center;
   color: #666666;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -6296,6 +6299,9 @@ img.alignright,
 /*
 Widgets
 ---------------------------------------------------------------------------------------------------- */
+.widget ul li {
+  list-style: none inside none;
+}
 /* Featured Content
 --------------------------------------------- */
 .featured-content .entry {

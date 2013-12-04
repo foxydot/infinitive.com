@@ -1,2 +1,30 @@
 @import 'lesshat';
 @import 'mixins';
+
+#hp-callout{
+  .textwidget{
+    .customsanserif;
+    font-size: 1.4rem;
+    margin: 2.8rem auto 1.4rem;
+    text-align: center;
+  }
+}
+.slidedeck-iframe-embed{
+  margin: 0 auto;
+  border:1px solid @ltgrey;
+}
+#homepage-widgets{
+  section.widget{
+    display: inline-block;
+    .widget-wrap{
+      background: @white;
+      padding:1.4rem;
+    }
+  }
+  section.widget.first-child{
+    padding-left: 0;
+  }
+  section.widget.last-child{
+    padding-right: 0;
+  }
+}
