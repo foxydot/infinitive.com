@@ -6130,6 +6130,8 @@ main.content {
   float: right;
   background: #ffffff;
   padding: 0;
+  margin-bottom: 40px;
+  margin-bottom: 4rem;
   /*width: 740px;*/
 }
 .content-sidebar .content,
@@ -6304,23 +6306,33 @@ Widgets
 .widget ul li {
   list-style: none inside none;
 }
+.widget .widget-title {
+  background: #ed7e3c;
+  padding: 0.4rem;
+  color: #ffffff;
+}
 /* Featured Content
 --------------------------------------------- */
 .featured-content .entry {
   border-bottom: 2px solid #f5f5f5;
   margin-bottom: 20px;
   margin-bottom: 2rem;
-  padding: 0 0 24px;
-  padding: 0 0 2.4rem;
+  padding: 0 10px 24px;
+  padding: 0 1rem 2.4rem;
 }
 .featured-content .entry-title {
   border: none;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.2;
+  margin-bottom: 0;
+  margin-top: -0.4rem;
 }
 .featured-content .entry-title a {
   border: none;
+}
+.featured-content .alignleft {
+  margin-right: 1rem;
 }
 /*
 Plugins
@@ -7022,11 +7034,9 @@ Sidebars
 }
 .sidebar .widget {
   background-color: #fff;
-  border-radius: 3px;
-  margin-bottom: 40px;
-  margin-bottom: 4rem;
-  padding: 40px;
-  padding: 4rem;
+  border-radius: 0px;
+  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 .sidebar .enews-widget {
   background-color: #333;
