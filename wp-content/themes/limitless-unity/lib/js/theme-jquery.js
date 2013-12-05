@@ -44,6 +44,6 @@ jQuery(document).ready(function($) {
     $('.content-sidebar .sidebar').addClass('col-md-4');
     
     //icons
-    $('.menu li[class*="icon-"] a').prepend('<i></i>');
+    $('.menu li[class*="icon-"]>a').prepend('<i></i>');
 	
 });

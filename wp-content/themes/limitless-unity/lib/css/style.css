@@ -6267,11 +6267,11 @@ img.alignright,
 /* Titles
 --------------------------------------------- */
 .entry-title {
-  font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 24px;
+  font-size: 2rem;
   line-height: 1;
   color: #ed7e3c;
-  font-weight: normal;
+  font-weight: bold;
 }
 .entry-title a,
 .sidebar .widget-title a {
@@ -6724,26 +6724,50 @@ Site Navigation
   color: #ffffff;
   padding: 0.5rem 0;
 }
-.nav-secondary li.menu-item {
+.nav-secondary .wrap li.menu-item {
   width: 24.7%;
   border-right: 1px solid #ffffff;
 }
-.nav-secondary li.menu-item a {
+.nav-secondary .wrap li.menu-item > a {
   font-size: 0.8em;
   line-height: 1.2em;
   padding: 0.5rem 5rem;
   color: #cccccc;
 }
-.nav-secondary li.menu-item a:hover {
+.nav-secondary .wrap li.menu-item > a:hover {
   color: white;
 }
-.nav-secondary li.menu-item.icon-solutions a {
+.nav-secondary .wrap li.menu-item ul.sub-menu {
+  width: 100%;
+  position: absolute;
+  background: #cccccc;
+  text-align: center;
+  left: 0;
+  margin-top: 6px;
+}
+.nav-secondary .wrap li.menu-item ul.sub-menu li.menu-item {
+  border: 0;
+  border-right: 1px solid #ed7e3c;
+  display: inline-block;
+  background: none;
+  width: auto;
+  margin: 4px 0;
+  padding: 0 0.5rem 0 0;
+}
+.nav-secondary .wrap li.menu-item ul.sub-menu li.menu-item a {
+  border: 0;
+  background: none;
+  color: #666666;
+  padding: 0.5rem;
+  width: auto;
+}
+.nav-secondary .wrap li.menu-item.icon-solutions > a {
   padding: 0.5rem 7rem;
 }
-.nav-secondary li.menu-item.last-child {
+.nav-secondary .wrap li.menu-item.last-child {
   border: 0;
 }
-.nav-secondary li.hover a {
+.nav-secondary .wrap li.hover a {
   color: #ffffff;
 }
 /*
