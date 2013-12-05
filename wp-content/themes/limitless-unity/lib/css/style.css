@@ -6308,8 +6308,12 @@ Widgets
 }
 .widget .widget-title {
   background: #ed7e3c;
-  padding: 0.4rem;
+  padding: 0.4rem 1rem;
   color: #ffffff;
+}
+.widget .widget-title i {
+  float: right;
+  padding-top: 2px;
 }
 /* Featured Content
 --------------------------------------------- */
