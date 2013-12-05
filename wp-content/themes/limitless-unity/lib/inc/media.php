@@ -3,7 +3,7 @@
  * Add new image sizes
  */
 add_image_size('post-thumb', 225, 160, TRUE);
-add_image_size( 'post-image', 540, 150, TRUE ); //image to float at the top of the post. Reversed Out does these a lot.
+add_image_size( 'post-image', 760, 230, TRUE ); //image to float at the top of the post. Reversed Out does these a lot.
 
 add_image_size('child_full', 730, 380, TRUE);
 add_image_size('child_thumbnail', 350, 170, TRUE);
@@ -15,7 +15,7 @@ function msd_post_image() {
     //setup thumbnail image args to be used with genesis_get_image();
     $size = 'post-image'; // Change this to whatever add_image_size you want
     $default_attr = array(
-            'class' => "alignright attachment-$size $size",
+            'class' => "alignnone attachment-$size $size",
             'alt'   => $post->post_title,
             'title' => $post->post_title,
     );
