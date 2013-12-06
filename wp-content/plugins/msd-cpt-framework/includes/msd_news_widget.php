@@ -37,7 +37,7 @@ class MSDNewsWidget extends WP_Widget {
 	     	<li>
 				<h3>'.$item->post_title.'</h3>
 				<div class="subtitle">
-	     			<div class="img">'.$thumb.'</div>
+	     			<div class="img alignleft">'.$thumb.'</div>
 					'.$subtitle->get_the_value('subtitle').'
 				</div>
 				<h4 class="link alignright">Read the Announcement ></h4>

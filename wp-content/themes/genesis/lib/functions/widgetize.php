@@ -101,7 +101,6 @@ add_action( 'genesis_setup', 'genesis_register_default_widget_areas' );
  * @uses genesis_register_sidebar() Register widget areas.
  */
 function genesis_register_default_widget_areas() {
-
 	genesis_register_sidebar(
 		array(
 			'id'               => 'header-right',

@@ -60,79 +60,74 @@ function msdlab_ro_layout_logic() {
     }
 }
 
+function msdlab_register_sidebar_defaults($args){
+    $args = array(
+            'before_widget' => genesis_markup( array(
+                'html5' => '<section id="%1$s" class="widget %2$s">',
+                'xhtml' => '<div id="%1$s" class="widget %2$s">',
+                'echo'  => false,
+            ) ),
+            'after_widget'  => genesis_markup( array(
+                'html5' => '</div></section>' . "\n",
+                'xhtml' => '</div></div>' . "\n",
+                'echo'  => false
+            ) ),
+            'before_title'  => '<h4 class="widget-title widgettitle">',
+            'after_title'   => genesis_markup( array(
+                'html5' => '</h4>'."\n".'<div class="widget-wrap">',
+                'xhtml' => '</h4>'."\n".'<div class="widget-wrap">',
+                'echo'  => false,
+            ) ),
+        );
+   return $args;
+}
+
 /**
  * Legacy widget areas
  */
 function msdlab_add_legacy_sidebars(){
-    register_sidebar( array(
+    genesis_register_sidebar( array(
             'name' => __( 'Main Homepage Feature Area(probably delete)', 'infinite' ),
             'id' => 'main-feature-area',
             'description' => __( 'The feature area on the homepage. One slideshow is recommended.', 'infinite' ),
-            'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-            'after_widget' => '</li>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
         ) );
         // Area 3, located in the footer. Empty by default.
-        register_sidebar( array(
+        genesis_register_sidebar( array(
             'name' => __( 'Main Homepage Footer Widget Area(probably delete)', 'infinite' ),
             'id' => 'main-footer-widget-area',
             'description' => __( 'The main homepage footer widget area. Three widgets are recommended.', 'infinite' ),
-            'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-            'after_widget' => '</li>',
-            'before_title' => '<h4 class="widget-title">',
-            'after_title' => '</h4>',
-        ) );register_sidebar( array(
+        ) );
+        genesis_register_sidebar( array(
         'name' => __( 'Homepage Footer Widget Area (probably delete)', 'infinite' ),
         'id' => 'homepage-footer-widget-area',
         'description' => __( 'The homepage footer widget area. Three widgets are recommended.', 'infinite' ),
-        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-        'after_widget' => '</li>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
     ) );
 
     // Area 1, located at the top of the sidebar.
-    register_sidebar( array(
+    genesis_register_sidebar( array(
         'name' => __( 'Primary Widget Area', 'infinite' ),
         'id' => 'primary-widget-area',
         'description' => __( 'The primary widget area', 'infinite' ),
-        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-        'after_widget' => '</li>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
     ) );
 
     // Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
-    register_sidebar( array(
+    genesis_register_sidebar( array(
         'name' => __( 'Secondary Widget Area (probably delete)', 'infinite' ),
         'id' => 'secondary-widget-area',
         'description' => __( 'The secondary widget area', 'infinite' ),
-        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-        'after_widget' => '</li>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
     ) );
 
     // Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
-    register_sidebar( array(
+    genesis_register_sidebar( array(
         'name' => __( 'Blog Widget Area', 'infinite' ),
         'id' => 'blog-widget-area',
         'description' => __( 'The blog widget area', 'infinite' ),
-        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-        'after_widget' => '</li>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
     ) );
     // Area 3, located in the footer. Empty by default.
-    register_sidebar( array(
+    genesis_register_sidebar( array(
         'name' => __( 'Footer Widget Area (probably delete)', 'infinite' ),
         'id' => 'footer-widget-area',
         'description' => __( 'The footer widget area. Two widgets are recommended.', 'infinite' ),
-        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-        'after_widget' => '</li>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>',
     ) );
 }
 

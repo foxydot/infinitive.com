@@ -1,6 +1,46 @@
 @import 'lesshat';
 @import 'mixins';
 
+#hp-top{
+  .widget-title{display: none;}
+  #menu-homepage-feature-section-menu{
+    li{
+      display: inline-block;
+      margin-right: 0.75%;
+      width: 19.05%;
+      a{
+        background: @white;
+        display: block;
+        text-decoration: none;
+        .image{
+          background-position: center top;
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: block;
+          height: 100px;
+          width: 100%;
+        }
+        .text{
+          .customsanserif;
+          color: @dkgrey;
+          padding: 0.8rem;
+          line-height: 1em;
+          .link_title{
+            font-weight: bold;
+          }
+        }
+       }
+    }
+    li.binoculars a .image {background-image: url("../img/homepage_feature_binoculars.png");}
+    li.code a .image {background-image: url("../img/homepage_feature_code.png");}
+    li.smile a .image {background-image: url("../img/homepage_feature_customer_intel.jpg");}
+    li.clock a .image {background-image: url("../img/homepage_feature_compass.png");}
+    li.question a .image {background-image: url("../img/homepage_feature_question.png");}
+    li.last-child{
+      margin-right: 0;
+    }
+  }
+}
 #hp-callout{
   .textwidget{
     .customsanserif;
@@ -13,12 +53,16 @@
   margin: 0 auto;
   border:1px solid @ltgrey;
 }
+.site-inner{
+  display: none;
+}
 #homepage-widgets{
+  margin: 24px 0;
+  margin: 2.4rem 0;
   section.widget{
     display: inline-block;
     .widget-wrap{
       background: @white;
-      padding:1.4rem;
     }
   }
   section.widget.first-child{
