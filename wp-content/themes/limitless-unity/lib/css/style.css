@@ -6130,10 +6130,12 @@ Structure and Layout
 main.content {
   float: right;
   background: #ffffff;
-  padding: 0;
   margin-bottom: 40px;
   margin-bottom: 4rem;
   /*width: 740px;*/
+}
+.page main.content {
+  padding: 0;
 }
 .content-sidebar .content,
 .content-sidebar-sidebar .content,
@@ -6274,6 +6276,7 @@ img.alignright,
 .entry-title {
   font-size: 24px;
   font-size: 2.4rem;
+  font-weight: normal;
   line-height: 1;
   color: #ed7e3c;
 }
@@ -6964,19 +6967,27 @@ li.comment {
 }
 /* Featured Post Grid
 ------------------------------------------------------------ */
-.genesis-grid-even {
-  float: right;
-  padding: 0 0 15px;
-  width: 48%;
+main hr.grid-separator {
+  border-top: 1px dotted #cccccc;
+  clear: both;
+  float: none;
+  height: 1px;
+  width: 100%;
+  display: block;
+  margin: 0;
 }
-.genesis-grid-odd {
+main .genesis-grid-even {
+  border-left: 1px dotted #cccccc;
+  float: right;
+  width: 49%;
+}
+main .genesis-grid-odd {
   clear: both;
   float: left;
-  padding: 0 0 15px;
-  width: 48%;
+  width: 49%;
 }
-.genesis-grid-even,
-.genesis-grid-odd {
+main .genesis-grid-even,
+main .genesis-grid-odd {
   margin: 0 0 20px;
 }
 #content hr {
@@ -6987,9 +6998,6 @@ li.comment {
   clear: both;
   margin-bottom: 30px;
   width: 100%;
-}
-.genesis-grid.post {
-  border-bottom: medium none;
 }
 .more .comments {
   color: #888888;

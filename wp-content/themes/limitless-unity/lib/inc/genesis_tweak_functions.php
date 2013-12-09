@@ -147,12 +147,15 @@ function msdlab_breadcrumb_args($args) {
  */
 // Setup Grid Loop
 function msdlab_blog_grid(){
+    global $loop_counter;
+    if(!isset($loop_counter)){$loop_counter=0;}
+    add_action('genesis_after_entry','msd_add_loop_counter_to_html5_loop',1);
     if(is_home()){
         remove_action( 'genesis_loop', 'genesis_do_loop' );
         add_action( 'genesis_loop', 'msdlab_grid_loop_helper' );
-        add_action('genesis_before_post', 'msdlab_switch_content');
-        remove_action( 'genesis_after_post_content', 'genesis_post_meta' );
-        add_filter('genesis_grid_loop_post_class', 'msdlab_grid_add_bootstrap');
+        add_action('genesis_before_entry', 'msdlab_switch_content');
+        remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+        //add_filter('genesis_grid_loop_post_class', 'msdlab_grid_add_bootstrap');
     }
 }
 function msdlab_grid_loop_helper() {
@@ -160,13 +163,13 @@ function msdlab_grid_loop_helper() {
         genesis_grid_loop( array(
         'features' => 1,
         'feature_image_size' => 'child_full',
-        'feature_image_class' => 'aligncenter post-image',
+        'feature_image_class' => 'alignleft post-image',
         'feature_content_limit' => 0,
         'grid_image_size' => 'child_thumbnail',
-        'grid_image_class' => 'alignright post-image',
+        'grid_image_class' => 'alignnone post-image',
         'grid_content_limit' => 0,
         'more' => __( '[Continue reading...]', 'adaptation' ),
-        'posts_per_page' => 7,
+        'posts_per_page' => 6,
         ) );
     } else {
         genesis_standard_loop();
@@ -175,10 +178,10 @@ function msdlab_grid_loop_helper() {
 
 // Customize Grid Loop Content
 function msdlab_switch_content() {
-    remove_action('genesis_post_content', 'genesis_grid_loop_content');
-    add_action('genesis_post_content', 'msdlab_grid_loop_content');
-    add_action('genesis_after_post', 'msdlab_grid_divider');
-    add_action('genesis_before_post_title', 'msdlab_grid_loop_image');
+    remove_action('genesis_entry_content', 'genesis_grid_loop_content');
+    add_action('genesis_entry_content', 'msdlab_grid_loop_content');
+    add_action('genesis_after_entry', 'msdlab_grid_divider');
+    add_action('genesis_entry_header', 'msdlab_grid_loop_image', 4);
 }
 
 function msdlab_grid_loop_content() {
@@ -190,16 +193,11 @@ function msdlab_grid_loop_content() {
             printf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image( array( 'size' => $_genesis_loop_args['feature_image_size'], 'attr' => array( 'class' => esc_attr( $_genesis_loop_args['feature_image_class'] ) ) ) ) );
         }
 
-        the_excerpt();
-        $num_comments = get_comments_number();
-        if ($num_comments == '1') $comments = '<span>'.$num_comments.'</span> ' . __( 'comment', 'adaptation' );
-        else $comments = '<span>'.$num_comments.'</span> ' . __( 'comments', 'adaptation' );
-        echo '<p class="to_comments"><span class="bracket">{</span><a href="'.get_permalink().'/#comments" rel="nofollow">'.$comments.'</a><span class="bracket">}</span></p>';
-        
+        the_excerpt();     
     }
     else {
 
-        the_excerpt();
+        //the_excerpt();
         $num_comments = get_comments_number();
         if ($num_comments == '1') $comments = $num_comments.' ' . __( 'comment', 'adaptation' );
         else $comments = $num_comments.' ' . __( 'comments', 'adaptation' );
@@ -215,9 +213,15 @@ function msdlab_grid_loop_image() {
     }
 }
 
+function msd_add_loop_counter_to_html5_loop(){
+    global $loop_counter;
+    $loop_counter++;
+}
+
 function msdlab_grid_divider() {
     global $loop_counter, $paged;
-    if ((($loop_counter + 1) % 2 == 0) && !($paged == 0 && $loop_counter < 2)) echo '<hr />';
+    if($loop_counter == 1 && $paged == 0){print '<div class="blog-header"><h4 class="recent-posts-header">Recent Posts</h4></div>';}
+    if ((($loop_counter + 1) % 2 == 0) && !($paged == 0 && $loop_counter < 2)) echo '<hr class="grid-separator" />';
 }
 
  function msdlab_grid_add_bootstrap($classes){
