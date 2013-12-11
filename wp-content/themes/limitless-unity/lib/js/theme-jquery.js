@@ -47,5 +47,8 @@ jQuery(document).ready(function($) {
     $('.menu li[class*="icon-"]>a').prepend('<i></i>');
     $('.widget .widget-title').append('<i class="fa fa-lg"></i>');
     $('.widget.featured-content .widget-title i').addClass('fa-rss');
+    
+    //nav
+    $('.nav-secondary .menu-item .sub-menu').wrap('<div class="subnav-wrapper"></div>');
 	
 });

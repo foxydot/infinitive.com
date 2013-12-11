@@ -6781,15 +6781,22 @@ Site Navigation
 .nav-secondary .wrap li.menu-item > a:hover {
   color: white;
 }
-.nav-secondary .wrap li.menu-item ul.sub-menu {
+.nav-secondary .wrap li.menu-item .subnav-wrapper {
+  width: 100%;
+  position: absolute;
+  margin-top: 0;
+  padding: 0.4rem 0;
+  left: 0;
+  display: none;
+}
+.nav-secondary .wrap li.menu-item .subnav-wrapper ul.sub-menu {
   width: 100%;
   position: absolute;
   background: #cccccc;
   text-align: center;
   left: 0;
-  margin-top: 6px;
 }
-.nav-secondary .wrap li.menu-item ul.sub-menu li.menu-item {
+.nav-secondary .wrap li.menu-item .subnav-wrapper ul.sub-menu li.menu-item {
   border: 0;
   border-right: 1px solid #ed7e3c;
   display: inline-block;
@@ -6798,7 +6805,7 @@ Site Navigation
   margin: 4px 0;
   padding: 0 0.5rem 0 0;
 }
-.nav-secondary .wrap li.menu-item ul.sub-menu li.menu-item a {
+.nav-secondary .wrap li.menu-item .subnav-wrapper ul.sub-menu li.menu-item a {
   border: 0;
   background: none;
   color: #666666;
@@ -6811,8 +6818,14 @@ Site Navigation
 .nav-secondary .wrap li.menu-item.last-child {
   border: 0;
 }
-.nav-secondary .wrap li.hover a {
+.nav-secondary .wrap li.menu-item:hover a {
   color: #ffffff;
+}
+.nav-secondary .wrap li.menu-item:hover > .subnav-wrapper {
+  display: block;
+}
+.nav-secondary .wrap li.menu-item:hover > .subnav-wrapper > .sub-menu {
+  display: block;
 }
 /*
 Content Area

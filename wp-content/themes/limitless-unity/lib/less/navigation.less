@@ -255,27 +255,34 @@ Site Navigation
       >a:hover{
         color:white;
       }
-      ul.sub-menu{
+      .subnav-wrapper{
         width: 100%;
         position:absolute;
-        background:@ltgrey;
-        text-align: center;
+        margin-top: 0;
+        padding: 0.4rem 0;
         left: 0;
-        margin-top: 6px;
-        li.menu-item{
-          border: 0;
-          border-right: 1px solid @orange;
-          display: inline-block;
-          background: none;
-          width: auto;
-          margin: 4px 0;
-          padding: 0 0.5rem 0 0;
-          a{
+        display: none;
+        ul.sub-menu{
+          width: 100%;
+          position:absolute;
+          background:@ltgrey;
+          text-align: center;
+          left: 0;
+          li.menu-item{
             border: 0;
+            border-right: 1px solid @orange;
+            display: inline-block;
             background: none;
-            color: @dkgrey;
-            padding: 0.5rem;
             width: auto;
+            margin: 4px 0;
+            padding: 0 0.5rem 0 0;
+            a{
+              border: 0;
+              background: none;
+              color: @dkgrey;
+              padding: 0.5rem;
+              width: auto;
+            }
           }
         }
       }
@@ -288,9 +295,15 @@ Site Navigation
     li.menu-item.last-child{
       border: 0;
     }
-    li.hover{
+    li.menu-item:hover{
       a{
         color:@white;
+      }
+      >.subnav-wrapper{
+        display: block;
+        >.sub-menu{
+          display: block;
+        }
       }
     }
   }
