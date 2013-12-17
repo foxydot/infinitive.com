@@ -31,14 +31,14 @@ You should have received a copy of the GNU General Public License
 along with SlideDeck.  If not, see <http://www.gnu.org/licenses/>.
 */
 class SlideDeckFlashMessage {
-    static $namespace = 'slidedeck-flash-message';
+    static $flash_namespace = 'slidedeck-flash-message';
     static $version = '1.1.0';
     
     static $flash = "";
     static $flash_error = false;
     
     static function cookie_name( $name ) {
-        return implode( "-", array( self::$namespace, $name ) );
+        return implode( "-", array( self::$flash_namespace, $name ) );
     }
     
     static function delete_cookie( $name ) {

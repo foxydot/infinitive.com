@@ -301,11 +301,11 @@ if( !function_exists( 'slidedeck2_flash' ) ) {
             $fade = -1;
         }
         
-        $html = '<div class="' . SlideDeckFlashMessage::$namespace . ' ' . $message_class . '"><p>' . SlideDeckFlashMessage::$flash . '</p></div>';
+        $html = '<div class="' . SlideDeckFlashMessage::$flash_namespace . ' ' . $message_class . '"><p>' . SlideDeckFlashMessage::$flash . '</p></div>';
         
         // Output message fading JavaScript if needed
         if( $fade > -1 )
-            $html.= '<script type="text/javascript">(function($){if(typeof($)!="undefined"){$(document).ready(function(){setTimeout(function(){$("#' . SlideDeckFlashMessage::$namespace . '").fadeOut("slow");},' . $fade . ');});}})(jQuery);</script>';
+            $html.= '<script type="text/javascript">(function($){if(typeof($)!="undefined"){$(document).ready(function(){setTimeout(function(){$("#' . SlideDeckFlashMessage::$flash_namespace . '").fadeOut("slow");},' . $fade . ');});}})(jQuery);</script>';
         
         if( $echo === true )
             echo $html;
@@ -838,7 +838,7 @@ if( !function_exists( 'slidedeck2_km' ) ) {
         }
         
         // Setup for events that should be traccked once
-        $once_events_option_name = SlideDeckPlugin::$namespace . "_completed_once_events";
+        $once_events_option_name = SlideDeckPlugin::$st_namespace . "_completed_once_events";
         $once_events = array(
             'SlideDeck Installed' => false
         );
@@ -910,7 +910,7 @@ if( !function_exists( 'slidedeck2_km_link' ) ) {
 if( !function_exists( 'slidedeck2_cache_group' ) ){
     function slidedeck2_cache_group( $group_key ){
         $cache_groups = array_combine( SlideDeckPlugin::$cache_groups, SlideDeckPlugin::$cache_groups );
-        $cache_group = SlideDeckPlugin::$namespace . "-" . $cache_groups[$group_key];
+        $cache_group = SlideDeckPlugin::$st_namespace . "-" . $cache_groups[$group_key];
 
         return $cache_group;
     }

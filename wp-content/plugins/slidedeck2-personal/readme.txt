@@ -37,6 +37,14 @@ Where 1644 is the SlideDeck's ID. You can also see this code snippet when you sa
 
 
 == Changelog ==
+= 2.3.6 =
+* Addressing PHP strict notices and warnings.
+* Fixing static warning in SlideDeck widget.
+* Removing warning from undefined `anonymous_stats_optin` key.
+* Moving `slideDeck2AddonsURL` JavaScript variable to the admin views only.
+* Fixed PHP warning associated with the scheduling of a cleanup event.
+* Fixed WPML compatibility with the WPML Media plugin and the `posts_where_filter` filter.
+
 = 2.3.5 =
 * Fixed an issue when the user agent server variable is not set.
 * Reporter Lens: Improved the reliability of and Lazy Loading when using crossfade.
@@ -409,6 +417,9 @@ Where 1644 is the SlideDeck's ID. You can also see this code snippet when you sa
 * Initial beta release.
 
 == Upgrade Notice ==
+= 2.3.6 =
+Fixed WPML compatibility with the WPML Media plugin and the `posts_where_filter` filter.
+
 = 2.3.5 =
 Improved the reliability of and Lazy Loading when using crossfade
 

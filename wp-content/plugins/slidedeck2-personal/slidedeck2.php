@@ -3,7 +3,7 @@
  Plugin Name: SlideDeck 2 Personal
  Plugin URI: http://www.slidedeck.com/wordpress
  Description: Create SlideDecks on your WordPress blogging platform and insert them into templates and posts. Get started creating SlideDecks from the new SlideDeck menu in the left hand navigation.
- Version: 2.3.5
+ Version: 2.3.6
  Author: digital-telepathy
  Author URI: http://www.dtelepathy.com
  License: GPL3
@@ -29,8 +29,8 @@
 
 class SlideDeckPlugin {
     var $package_slug = 'single';
-    static $namespace = "slidedeck";
-    static $friendly_name = "SlideDeck 2";
+    static $st_namespace = "slidedeck";
+    static $st_friendly_name = "SlideDeck 2";
     
     static $cohort_name = 'afe4523';
     static $cohort_variation = '';
@@ -38,7 +38,7 @@ class SlideDeckPlugin {
         'ecf3509'
     );
     
-    static $version = '2.3.5';
+    static $version = '2.3.6';
     static $license = 'PRO';
 
     // Generally, we are not installing addons. If we are, this gets set to true.
@@ -175,8 +175,8 @@ class SlideDeckPlugin {
     function __construct( ) {
         SlideDeckPlugin::load_constants();
         
-        $this->friendly_name = SlideDeckPlugin::$friendly_name;
-        $this->namespace = SlideDeckPlugin::$namespace;
+        $this->friendly_name = SlideDeckPlugin::$st_friendly_name;
+        $this->namespace = SlideDeckPlugin::$st_namespace;
 
         /**
          * Make this plugin available for translation.
@@ -2959,6 +2959,7 @@ class SlideDeckPlugin {
         $defaults = array(
             'always_load_assets' => true,
             'disable_wpautop' => false,
+            'anonymous_stats_optin' => false,
             'dont_enqueue_scrollwheel_library' => false,
             'dont_enqueue_easing_library' => false,
             'disable_edit_create' => false,
@@ -3297,7 +3298,7 @@ class SlideDeckPlugin {
         if( !isset( $this->constants_printed ) ) {
             echo '<script type="text/javascript">' . "\n";
             echo 'var slideDeck2URLPath = "' . SLIDEDECK2_URLPATH . '";' . "\n";
-            echo 'var slideDeck2AddonsURL = "' . slidedeck2_action( "/upgrades" ) . '";' . "\n";
+            if( is_admin() ) echo 'var slideDeck2AddonsURL = "' . slidedeck2_action( "/upgrades" ) . '";' . "\n";
             echo 'var slideDeck2iframeByDefault = ' . var_export( $this->get_option( 'iframe_by_default' ), true ) . ';' . "\n";
             echo '</script>' . "\n";
             
@@ -3567,8 +3568,8 @@ class SlideDeckPlugin {
         );
         
         // Only set the cohort if it does not exist. 
-        if( get_option( self::$namespace . '_cohort', false ) === false ) {
-            add_option( self::$namespace . '_cohort', $data );
+        if( get_option( self::$st_namespace . '_cohort', false ) === false ) {
+            add_option( self::$st_namespace . '_cohort', $data );
         }
     }
     
@@ -3579,7 +3580,7 @@ class SlideDeckPlugin {
      * @uses add_option()
      */
     static function get_cohort_data() {
-        return get_option( self::$namespace . '_cohort', false );
+        return get_option( self::$st_namespace . '_cohort', false );
     }
 
     /**

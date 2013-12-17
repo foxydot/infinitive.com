@@ -1084,7 +1084,7 @@ class SlideDeck {
         ) );
         
         if( $post_status == 'auto-draft' ) {
-            wp_schedule_single_event( time() + 30, "{$this->namespace}_cleanup_create", $slidedeck_id );
+            wp_schedule_single_event( time() + 86400, "{$this->namespace}_cleanup_create", array( $slidedeck_id ) );
         }
         
         // Set SlideDeck source
