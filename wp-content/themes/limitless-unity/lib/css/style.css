@@ -7253,3 +7253,130 @@ Site Footer
 .icon-solutions i:before {
   content: "d";
 }
+.post-type-archive-msd_casestudy main article.msd_casestudy header,
+.all-case-studies main article.msd_casestudy header {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #ed7e3c;
+  font-size: 1.4em;
+  font-size: 1.4rem;
+  line-height: 1.4em;
+  line-height: 1.4rem;
+  font-family: 'News Cycle', Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-weight: normal;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .post-type-archive-msd_casestudy main article.msd_casestudy header,
+  .all-case-studies main article.msd_casestudy header {
+    float: left;
+    width: 33.33333333333333%;
+  }
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy header a,
+.all-case-studies main article.msd_casestudy header a {
+  color: #ffffff;
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy header a img,
+.all-case-studies main article.msd_casestudy header a img {
+  height: 14rem;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #999999;
+  display: block;
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy header a .header-caption,
+.all-case-studies main article.msd_casestudy header a .header-caption {
+  padding: 1rem;
+  display: block;
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy header a:hover,
+.all-case-studies main article.msd_casestudy header a:hover {
+  text-decoration: none;
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy content,
+.all-case-studies main article.msd_casestudy content {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .post-type-archive-msd_casestudy main article.msd_casestudy content,
+  .all-case-studies main article.msd_casestudy content {
+    float: left;
+    width: 66.66666666666666%;
+  }
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy content i,
+.all-case-studies main article.msd_casestudy content i {
+  display: block;
+  float: none;
+  line-height: 0.5rem;
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy content h3.entry-title,
+.all-case-studies main article.msd_casestudy content h3.entry-title {
+  font-size: 1.6em;
+  font-size: 1.6rem;
+  line-height: 2.6em;
+  line-height: 2.6rem;
+  font-weight: bold;
+  color: #666666;
+  margin: 0;
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy content .entry-content,
+.all-case-studies main article.msd_casestudy content .entry-content {
+  font-size: 1.6em;
+  font-size: 1.6rem;
+  font-family: 'News Cycle', Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-weight: normal;
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy content a.readmore,
+.all-case-studies main article.msd_casestudy content a.readmore {
+  background-color: #999999;
+  color: #ffffff;
+  padding: 0 1em;
+  padding: 0 1rem;
+  float: right;
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy content a.readmore:hover,
+.all-case-studies main article.msd_casestudy content a.readmore:hover {
+  text-decoration: none;
+  background: #ed7e3c;
+}
+.post-type-archive-msd_casestudy main article.business-intelligence-and-big-data header a img,
+.all-case-studies main article.business-intelligence-and-big-data header a img {
+  background-image: url(../img/feature-business-intelligence.png);
+}
+.post-type-archive-msd_casestudy main article.business-intelligence-and-big-data content i:before,
+.all-case-studies main article.business-intelligence-and-big-data content i:before {
+  content: "a";
+}
+.post-type-archive-msd_casestudy main article.customer-intelligence header a img,
+.all-case-studies main article.customer-intelligence header a img {
+  background-image: url(../img/feature-customer-intelligence.png);
+}
+.post-type-archive-msd_casestudy main article.customer-intelligence content i:before,
+.all-case-studies main article.customer-intelligence content i:before {
+  content: "b";
+}
+.post-type-archive-msd_casestudy main article.digital-analytics header a img,
+.all-case-studies main article.digital-analytics header a img {
+  background-image: url(../img/feature-digital-analytics.png);
+}
+.post-type-archive-msd_casestudy main article.digital-analytics content i:before,
+.all-case-studies main article.digital-analytics content i:before {
+  content: "c";
+}
+.post-type-archive-msd_casestudy main article.risk-management-practice-area header a img,
+.all-case-studies main article.risk-management-practice-area header a img {
+  background-image: url(../img/feature-risk-management.png);
+}
+.post-type-archive-msd_casestudy main article.risk-management-practice-area content i:before,
+.all-case-studies main article.risk-management-practice-area content i:before {
+  content: "d";
+}

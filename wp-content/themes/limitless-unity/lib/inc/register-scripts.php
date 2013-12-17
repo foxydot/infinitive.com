@@ -23,6 +23,9 @@ function msdlab_add_styles() {
         if(is_front_page()){
             wp_enqueue_style('msd-homepage-style',get_stylesheet_directory_uri().'/lib/css/homepage.css',array('bootstrap-style','font-awesome-style'));
         }
+        if(is_cpt('msd_casestudy')){
+          // wp_enqueue_style('msd-casestudy-style',get_stylesheet_directory_uri().'/lib/css/casestudy.css',array('bootstrap-style','font-awesome-style'));
+        }
     }
 }
 

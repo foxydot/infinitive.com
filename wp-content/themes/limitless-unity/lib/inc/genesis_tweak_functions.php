@@ -275,7 +275,7 @@ function msdlab_casestudies_special($args){
                     'xhtml' => '<div class="header">',
                     'echo' => false,
                 ) ); 
-                $ret .= '<a href=""><img class="header-img" /><div class="header-caption">More '.$result['term']->name.' ></div></a>';
+                $ret .= '<a href="'.get_term_link($result['term']).'"><img class="header-img" /><div class="header-caption">More '.$result['term']->name.' ></div></a>';
             $ret .= genesis_markup( array(
                     'html5' => '</header>',
                     'xhtml' => '</div>',
@@ -288,8 +288,8 @@ function msdlab_casestudies_special($args){
                 ) ); 
                 $ret .= '<i class="icon-'.$case_study_key.'"></i>
                     <h3 class="entry-title">'.$post->post_title.'</h3>
-                    <div class="entry-content">'.$post->post_excerpt.'</div>
-                    <a href="" class="readmore">Read More ></a>';
+                    <div class="entry-content">'.msdlab_excerpt($post->ID).'</div>
+                    <a href="'.get_permalink($post->ID).'" class="readmore">Read More ></a>';
             $ret .= genesis_markup( array(
                     'html5' => '</content>',
                     'xhtml' => '</div>',

@@ -36,6 +36,8 @@ remove_action( 'genesis_after_post_content', 'genesis_post_meta' ); //remove the
 
 add_action( 'genesis_before_post', 'msdlab_post_image', 8 ); //add feature image across top of content on *pages*.
 add_action('template_redirect','msdlab_blog_grid');
+
+add_shortcode('casestudies', 'msdlab_casestudies_special_loop_shortcode_handler');
  
 /*** FOOTER ***/
 add_theme_support( 'genesis-footer-widgets', 1 ); //adds automatic footer widgets
