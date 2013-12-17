@@ -93,7 +93,7 @@ if( SlideDeckPlugin::$slidedeck_addons_installing ) {
             }
             
             function footer() {
-                echo '<p><a href="' . admin_url( '/admin.php?page=' . basename( SLIDEDECK2_BASENAME ) ) . "/upgrades" .  '">Back to ' . SlideDeckPlugin::$friendly_name . ' Upgrades</a></p>';
+                echo '<p><a href="' . admin_url( '/admin.php?page=' . basename( SLIDEDECK2_BASENAME ) ) . "/upgrades" .  '">Back to ' . SlideDeckPlugin::$st_friendly_name . ' Upgrades</a></p>';
             }
             
             function bulk_header() {
@@ -112,16 +112,16 @@ if( SlideDeckPlugin::$slidedeck_addons_installing ) {
                 $this->plugin = $this->upgrader->plugin_info();
                 $full_path_to_plugin = WP_PLUGIN_DIR . '/' . $this->plugin;
                 
-                show_message( __( 'Activating the plugin&#8230;', SlideDeckPlugin::$namespace ) );
+                show_message( __( 'Activating the plugin&#8230;', SlideDeckPlugin::$st_namespace ) );
                 
                 // Clear the existing plugins available for install cache so that the addon activates properly
                 wp_cache_delete( 'plugins', 'plugins' );
                 
                 $result = activate_plugin( $full_path_to_plugin );
                 if( !is_wp_error( $result ) ) {
-                    show_message( __('Plugin Activated Successfully!'), SlideDeckPlugin::$namespace );
+                    show_message( __('Plugin Activated Successfully!'), SlideDeckPlugin::$st_namespace );
                 }else{
-                    show_message( __('Could not activate the plugin.'), SlideDeckPlugin::$namespace );
+                    show_message( __('Could not activate the plugin.'), SlideDeckPlugin::$st_namespace );
                 }
                 echo '</div>';
             }

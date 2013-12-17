@@ -53,7 +53,7 @@ class SlideDeck2Widget extends WP_Widget {
      * 
      * @uses register_widget()
      */
-    function init() {
+    static function init() {
         register_widget( "SlideDeck2Widget" );
     }
     

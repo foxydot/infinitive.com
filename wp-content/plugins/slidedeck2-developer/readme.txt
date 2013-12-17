@@ -21,6 +21,9 @@ The SlideDeck 2 Developers Addon adds the ability to edit lenses, copy lenses as
 * [Support](http://dtelepathy.zendesk.com/)
 
 == Changelog ==
+= 2.3.6 =
+* Addressing PHP strict notices and warnings.
+
 = 2.3.5 =
 * Updated version number to keep parity with core
 
