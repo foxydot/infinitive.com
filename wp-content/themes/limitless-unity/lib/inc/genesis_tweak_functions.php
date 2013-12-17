@@ -231,7 +231,99 @@ function msdlab_grid_divider() {
      return $classes;
  }
 
+/**Case Studies **/
+function msdlab_casestudies_special_loop(){
+    $args = array(
+    );
+    print msdlab_casestudies_special($args);
+}
+function msdlab_casestudies_special_loop_shortcode_handler($atts){
+    $args = shortcode_atts( array(
+    ), $atts );
+    return msdlab_casestudies_special($args);
+}
+function msdlab_casestudies_special($args){
+    global $post,$case_study_key;
+    $origpost = $post;
+    $defaults = array(
+        'posts_per_page' => 1,
+        'post_type' => 'msd_casestudy',
+    );
+    $args = array_merge($defaults,$args);
+    //set up result array
+    $results = array();
+    //get all practice areas
+    $terms = get_terms('msd_practice-area');
+    //do a query for each practice area?
+    foreach($terms AS $term){
+        $args['msd_practice-area'] = $term->slug;
+        $this_result = get_posts($args);
+        $results[$term->slug] = $this_result;
+        $results[$term->slug]['term'] = $term;
+    }
+    //format result
+    foreach($results AS $case_study_key => $result){
+        $post = $result[0];
+        $ret .= genesis_markup( array(
+                'html5'   => '<article %s>',
+                'xhtml'   => sprintf( '<div class="%s">', implode( ' ', get_post_class() ) ),
+                'context' => 'casestudy',
+                'echo' => false,
+            ) );
+            $ret .= genesis_markup( array(
+                    'html5' => '<header>',
+                    'xhtml' => '<div class="header">',
+                    'echo' => false,
+                ) ); 
+                $ret .= '<a href=""><img class="header-img" /><div class="header-caption">More '.$result['term']->name.' ></div></a>';
+            $ret .= genesis_markup( array(
+                    'html5' => '</header>',
+                    'xhtml' => '</div>',
+                    'echo' => false,
+                ) ); 
+            $ret .= genesis_markup( array(
+                    'html5' => '<content>',
+                    'xhtml' => '<div class="content">',
+                    'echo' => false,
+                ) ); 
+                $ret .= '<i class="icon-'.$case_study_key.'"></i>
+                    <h3 class="entry-title">'.$post->post_title.'</h3>
+                    <div class="entry-content">'.$post->post_excerpt.'</div>
+                    <a href="" class="readmore">Read More ></a>';
+            $ret .= genesis_markup( array(
+                    'html5' => '</content>',
+                    'xhtml' => '</div>',
+                    'echo' => false,
+                ) ); 
+        $ret .= genesis_markup( array(
+                'html5' => '</article>',
+                'xhtml' => '</div>',
+                'context' => 'casestudy',
+                'echo' => false,
+            ) );
+    }
+    //return
+    $post = $origpost;
+    return $ret;
+}
 
+add_filter( 'genesis_attr_casestudy', 'custom_add_casestudy_attr' );
+/**
+ * Callback for dynamic Genesis 'genesis_attr_$context' filter.
+ * 
+ * Add custom attributes for the custom filter.
+ * 
+ * @param array $attributes The element attributes
+ * @return array $attributes The element attributes
+ */
+function custom_add_casestudy_attr( $attributes ){
+        global $case_study_key;
+        $attributes['class']     = join( ' ', get_post_class(array($case_study_key,'icon-'.$case_study_key)) );
+        $attributes['itemtype']  = 'http://schema.org/CreativeWork';
+        $attributes['itemprop']  = 'caseStudy';
+        // return the attributes
+        return $attributes;      
+}
 /*** FOOTER ***/
 
 /**

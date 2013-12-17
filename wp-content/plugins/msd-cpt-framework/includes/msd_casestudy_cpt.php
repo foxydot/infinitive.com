@@ -36,7 +36,7 @@ class MSDCaseStudyCPT {
             'show_tagcloud' => false,
             'hierarchical' => true,
     
-            'rewrite' => array('slug'=>'infinitive-case-studies','with_front'=>false),
+            'rewrite' => array('slug'=>'client-experience/case-studies','with_front'=>false),
             'query_var' => true
         );
     
@@ -78,7 +78,7 @@ class MSDCaseStudyCPT {
 	        'has_archive' => true,
 	        'query_var' => true,
 	        'can_export' => true,
-	        'rewrite' => array('slug'=>'infinitive-case-study','with_front'=>false),
+	        'rewrite' => array('slug'=>'client-experience/case-studies','with_front'=>false),
 	        'capability_type' => 'post'
 	    );
 	
