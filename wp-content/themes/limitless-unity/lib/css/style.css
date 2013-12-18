@@ -7253,6 +7253,10 @@ Site Footer
 .icon-solutions i:before {
   content: "d";
 }
+.post-type-archive-msd_casestudy main article.msd_casestudy,
+.all-case-studies main article.msd_casestudy {
+  border-bottom: 1px dotted #cccccc;
+}
 .post-type-archive-msd_casestudy main article.msd_casestudy header,
 .all-case-studies main article.msd_casestudy header {
   position: relative;
@@ -7347,6 +7351,10 @@ Site Footer
 .all-case-studies main article.msd_casestudy content a.readmore:hover {
   text-decoration: none;
   background: #ed7e3c;
+}
+.post-type-archive-msd_casestudy main article.msd_casestudy.last-child,
+.all-case-studies main article.msd_casestudy.last-child {
+  border: none;
 }
 .post-type-archive-msd_casestudy main article.business-intelligence-and-big-data header a img,
 .all-case-studies main article.business-intelligence-and-big-data header a img {
