@@ -7388,10 +7388,22 @@ Site Footer
 .all-case-studies main article.risk-management-practice-area content i:before {
   content: "d";
 }
+.single-msd_casestudy .section-header h3 {
+  color: #ed7e3c;
+  text-transform: uppercase;
+}
+.single-msd_casestudy .entry-header .entry-title {
+  color: #999999;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px dotted #cccccc;
+}
 .single-msd_casestudy .entry-header .entry-title span {
   display: block;
   float: left;
   line-height: 0.5rem;
+}
+.single-msd_casestudy .entry-header .entry-title span i {
+  margin: 0.5rem 1rem 0 0;
 }
 .single-msd_casestudy .entry-header .entry-title .icon-business-intelligence-and-big-data i:before {
   content: "a";
@@ -7404,4 +7416,11 @@ Site Footer
 }
 .single-msd_casestudy .entry-header .entry-title .icon-risk-management-practice-area i:before {
   content: "d";
+}
+.single-msd_casestudy .prev-link {
+  float: left;
+}
+.single-msd_casestudy .next-link {
+  float: right;
+  text-align: right;
 }

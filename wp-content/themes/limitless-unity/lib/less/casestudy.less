@@ -1,7 +1,7 @@
 .post-type-archive-msd_casestudy, .all-case-studies{
   main{
     article.msd_casestudy{
-      border-bottom: 1px dotted @ltgrey;
+      border-bottom: @theborder;
       header{
         .make-sm-column(4);
         background: @orange;
@@ -130,12 +130,24 @@
 
 
 .single-msd_casestudy{
+  .section-header{
+    h3{
+      color: @orange;
+      text-transform: uppercase;
+    }
+  }
   .entry-header{
     .entry-title{
+      color: @medgrey;
+      padding-bottom: 1.6rem;
+      border-bottom: @theborder;
       span{
         display: block;
         float: left;
         line-height: 0.5rem;
+        i{
+          margin: 0.5rem 1rem 0 0;
+        }
       }
       .icon-business-intelligence-and-big-data i:before{
         content:"a";
@@ -150,5 +162,12 @@
         content:"d";
       }
     }
+  }
+  .prev-link{
+    float: left;
+  }
+  .next-link{
+    float: right;
+    text-align: right;
   }
 }

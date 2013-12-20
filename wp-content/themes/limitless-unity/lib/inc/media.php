@@ -25,6 +25,13 @@ function msd_post_image() {
     if ( has_post_thumbnail() && is_page() ) {
         printf( '<a title="%s" href="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), genesis_get_image( array( 'size' => $size, 'attr' => $default_attr ) ) );
     }
+    if ( has_post_thumbnail() && is_cpt('msd_casestudy') ) {
+        printf( '%s', genesis_get_image( array( 'size' => 'post-thumb', 'attr' => array(
+            'class' => "alignleft attachment-$size $size",
+            'alt'   => $post->post_title,
+            'title' => $post->post_title,
+    ) ) ) );
+    }
 
 }
 
