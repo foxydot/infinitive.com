@@ -36,7 +36,7 @@ class MSDCaseStudyCPT {
             'show_tagcloud' => false,
             'hierarchical' => true,
     
-            'rewrite' => array('slug'=>'client-experience/case-studies','with_front'=>false),
+            'rewrite' => array('slug'=>'client-experience/practice-area','with_front'=>true),
             'query_var' => true
         );
     

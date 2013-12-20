@@ -7388,3 +7388,20 @@ Site Footer
 .all-case-studies main article.risk-management-practice-area content i:before {
   content: "d";
 }
+.single-msd_casestudy .entry-header .entry-title span {
+  display: block;
+  float: left;
+  line-height: 0.5rem;
+}
+.single-msd_casestudy .entry-header .entry-title .icon-business-intelligence-and-big-data i:before {
+  content: "a";
+}
+.single-msd_casestudy .entry-header .entry-title .icon-customer-intelligence i:before {
+  content: "b";
+}
+.single-msd_casestudy .entry-header .entry-title .icon-digital-analytics i:before {
+  content: "c";
+}
+.single-msd_casestudy .entry-header .entry-title .icon-risk-management-practice-area i:before {
+  content: "d";
+}
