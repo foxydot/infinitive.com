@@ -1,5 +1,7 @@
 // jQuery File Tree Plugin
 //
+// Abandoned; new maintainer?: See https://github.com/daverogers/jQueryFileTree
+//
 // Version 1.01
 //
 // Cory S.N. LaViska
@@ -82,6 +84,12 @@ if(jQuery) (function($){
 								$(this).parent().removeClass('expanded').addClass('collapsed');
 							}
 						} else {
+							if( $(this).parent().hasClass('file') ) { // If file then we dont want to exclude on click, only when hitting the minus image next to it.
+								if ( ! $(e.target).is('img') ) {
+									//j($(this).attr('rel'));
+									return false;
+								}
+							}
 							h($(this).attr('rel'));
 						}
 						return false;

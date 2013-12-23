@@ -26,26 +26,9 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 		 *	@return		null
 		 *
 		 */
-		function __construct( &$status_callback = '' ) {
-			$this->status_callback = &$status_callback;
+		function __construct( ) {
 		}
 		
-		
-		/**
-		 *	status()
-		 *	
-		 *	Pass status back to callback class. If there is no callback then this this is ignored.
-		 *	
-		 *	@param		string		$table		Status message type.
-		 *	@param		string		$message	Status message.
-		 *	@return		null
-		 *
-		 */
-		function status( $type = '', $message = '' ) {
-			if ( isset( $this->status_callback ) ) {
-				$this->status_callback->status( $type, $message );
-			}
-		}
 		
 		
 		/**
@@ -84,7 +67,8 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 				}
 			}
 			
-			return mysql_query( "UPDATE `{$table}` SET " . implode( ',', $rows_sql ) . ";" );
+			global $wpdb;
+			return $wpdb->query( "UPDATE `{$table}` SET " . implode( ',', $rows_sql ) . ";" );
 		}
 		
 		
@@ -111,28 +95,29 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 				$rows = array( $rows );
 			}
 			
+			global $wpdb;
+			
 			// Prevent trying to replace data with the same data for performance.
 			$this->remove_matching_array_elements( $olds, $news );
-			$key_result = mysql_query( "show keys from {$table} WHERE Key_name='PRIMARY';" );
-			if ( $key_result === false ) {
-				$this->status( 'details', 'Table `' . $table . '` does not exist; skipping migration of this table.' );
+			$key_results = $wpdb->get_results( "show keys from {$table} WHERE Key_name='PRIMARY';", ARRAY_A );
+			if ( $key_results === false ) {
+				pb_backupbuddy::status( 'details', 'Table `' . $table . '` does not exist; skipping migration of this table.' );
 				return;
 			}
 			
 			// No primary key found; unsafe to edit this table. @since 2.2.32.
-			if ( mysql_num_rows( $key_result ) == 0 ) {
-				$this->status( 'message', 'Error #9029: Table `'.  $table .'` does not contain a primary key; BackupBuddy cannot safely modify the contents of this table. Skipping migration of this table. (serialized()).' );
+			if ( count( $key_results ) == 0 ) {
+				pb_backupbuddy::status( 'message', 'Error #9029: Table `'.  $table .'` does not contain a primary key; BackupBuddy cannot safely modify the contents of this table. Skipping migration of this table. (serialized()).' );
 				return;
 			}
 			
-			$key_result = mysql_fetch_array( $key_result );
-			$primary_key = $key_result['Column_name'];
+			$primary_key = $key_results[0]['Column_name'];
 			unset( $key_result );
 			
-			$result = mysql_query( "SELECT `" . implode( '`,`', $rows ) . "`,`{$primary_key}` FROM `{$table}`");
+			$rows = $wpdb->get_results( "SELECT `" . implode( '`,`', $rows ) . "`,`{$primary_key}` FROM `{$table}`" );
 			
 			$updated = false;
-			while ( $row = mysql_fetch_array( $result, MYSQL_ASSOC ) ) {
+			foreach( $rows as $row ) {
 				$needs_update = false;
 				$sql_update = array();
 				
@@ -149,12 +134,13 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 				
 				if ( $needs_update === true ) {
 					$updated = true;
-					mysql_query( "UPDATE `{$table}` SET " . implode( ',', $sql_update ) . " WHERE `{$primary_key}` = '{$primary_key_value}' LIMIT 1" );
+					$wpdb->query( "UPDATE `{$table}` SET " . implode( ',', $sql_update ) . " WHERE `{$primary_key}` = '{$primary_key_value}' LIMIT 1" );
 				}
 			}
+			unset( $rows );
 			
 			if ( $updated === true ) {
-				$this->status( 'details', 'Updated serialized data in ' . $table . '.' );
+				pb_backupbuddy::status( 'details', 'Updated serialized data in ' . $table . '.' );
 			}
 		}
 		
@@ -163,6 +149,7 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 		 *	replace_maybe_serialized()
 		 *	
 		 *	Replaces possibly serialized (or non-serialized) text if a change is needed. Returns false if there was no change.
+		 *  Note: As of BB v3.2.x supports double serialized data.
 		 *	
 		 *	@param		string		$table		Text (possibly serialized) to update.
 		 *	@param		mixed		$olds		Text to search for to replace. May be an array of strings to search for.
@@ -185,12 +172,24 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 			}
 			if ( $unserialized !== false ) { // Serialized data.
 				$type = 'serialized';
+				
+				$double_serialized = false;
+				if ( is_serialized( $unserialized ) ) { // double-serialized data (opposite of a double rainbow). Some plugins seem to double-serialize for some unknown wacky reason...
+					$unserialized = @unserialize( $unserialized ); // unserialise - if false is returned we won't try to process it as serialised.
+					$double_serialized = true;
+				}
+				
 				$i = 0;
 				foreach ( $olds as $old ) {
 					$this->recursive_array_replace( $old, $news[$i], $unserialized );
 					$i++;
 				}
+				
 				$edited_data = serialize( $unserialized );
+				if ( true === $double_serialized ) {
+					$edited_data = serialize( $edited_data );
+				}
+				
 			}	else { // Non-serialized data.
 				$type = 'text';
 				$edited_data = $data;
@@ -212,17 +211,18 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 		
 		/**
 		 *	bruteforce_table()
-		 *	
+		 *
+		 *	!!! HANDLES SERIALIZED DATA !!!!
 		 *	Replaces text, serialized or not, within the entire table. Bruteforce method iterates through every row & column in the entire table and replaces if needed.
 		 *	
 		 *	@param		string		$table		Text (possibly serialized) to update.
 		 *	@param		mixed		$olds		Text to search for to replace. May be an array of strings to search for.
 		 *	@param		mixed		$news		New value(s) to be replaced with. May be a string or array. If array there must be the same number of values as $olds.
-		 *	@return		boolean					Always true currently.
+		 *	@return		int						Number of rows changed.
 		 *
 		 */
 		function bruteforce_table( $table, $olds, $news ) {
-			$this->status( 'message', 'Starting brute force data migration for table `' . $table . '`...' );
+			pb_backupbuddy::status( 'message', 'Starting brute force data migration for table `' . $table . '`...' );
 			if ( !is_array( $olds ) ) {
 				$olds = array( $olds );
 			}
@@ -233,7 +233,9 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 			$count_items_checked = 0;
 			$count_items_changed = 0;
 			
-			$fields_list = mysql_query( "DESCRIBE `" . $table . "`" );
+			global $wpdb;
+			
+			$fields = $wpdb->get_results( "DESCRIBE `" . $table . "`", ARRAY_A );
 			$index_fields = '';  // Reset fields for each table.
 			$column_name = '';
 			$table_index = '';
@@ -241,9 +243,9 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 			
 			$found_primary_key = false;
 			
-			while ( $field_rows = mysql_fetch_array( $fields_list ) ) {
-				$column_name[$i++] = $field_rows['Field'];
-				if ( $field_rows['Key'] == 'PRI' ) {
+			foreach( $fields as $field ) {
+				$column_name[$i++] = $field['Field'];
+				if ( $field['Key'] == 'PRI' ) {
 					$table_index[$i] = true;
 					$found_primary_key = true;
 				}
@@ -251,17 +253,17 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 			
 			// Skips migration of this table if there is no primary key. Modifying on any other key is not safe. mysql automatically returns a PRIMARY if a UNIQUE non-primary is found according to http://dev.mysql.com/doc/refman/5.1/en/create-table.html  @since 2.2.32.
 			if ( $found_primary_key === false ) {
-				$this->status( 'message', 'Error #9029: Table `'.  $table .'` does not contain a primary key; BackupBuddy cannot safely modify the contents of this table. Skipping migration of this table. (bruteforce_table()).' );
+				pb_backupbuddy::status( 'message', 'Error #9029: Table `'.  $table .'` does not contain a primary key; BackupBuddy cannot safely modify the contents of this table. Skipping migration of this table. (bruteforce_table()).' );
 				return false;
 			}
 			
-			$data = mysql_query( "SELECT * FROM `" . $table . "`" );
-			if (!$data) {
-				$this->status( 'error', 'ERROR #44545343 ... SQL ERROR: ' . mysql_error() );
+			$data = $wpdb->get_results( "SELECT * FROM `" . $table . "`", ARRAY_A );
+			if ( false === $data ) {
+				pb_backupbuddy::status( 'error', 'ERROR #44545343 ... SQL ERROR: ' . mysql_error() );
 			}
 			
 			$row_loop = 0;
-			while ( $row = mysql_fetch_array( $data ) ) {
+			foreach( $data as $row ) {
 				$need_to_update = false;
 				$UPDATE_SQL = 'UPDATE `' . $table . '` SET ';
 				$WHERE_SQL = ' WHERE ';
@@ -271,8 +273,8 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 					$j++;
 					$count_items_checked++;
 					$row_loop++;
-					if ( $row_loop > 5000 ) {
-						$this->status( 'message', 'Working...' );
+					if ( $row_loop > 20000 ) {
+						pb_backupbuddy::status( 'message', 'Working... ' . $count_items_checked . ' rows checked.' );
 						$row_loop = 0;
 					}
 					
@@ -294,18 +296,18 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 				if ( $need_to_update ) {
 					$WHERE_SQL = substr( $WHERE_SQL , 0, -4 ); // Strip off the excess AND - the easiest way to code this without extra flags, etc.
 					$UPDATE_SQL = $UPDATE_SQL . $WHERE_SQL;
-					$result = mysql_query( $UPDATE_SQL );
-					if ( !$result ) {
-						$this->status( 'error', 'ERROR: mysql error updating db: ' . mysql_error() . '. SQL Query: ' . htmlentities( $UPDATE_SQL ) );
+					$result = $wpdb->query( $UPDATE_SQL );
+					if ( false === $result ) {
+						pb_backupbuddy::status( 'error', 'ERROR: mysql error updating db: ' . mysql_error() . '. SQL Query: ' . htmlentities( $UPDATE_SQL ) );
 					} 
 				}
 				
 			}
 			
 			unset( $main_result );
-			$this->status( 'message', 'Brute force data migration for table `' . $table . '` complete. Checked ' . $count_items_checked . ' items; ' . $count_items_changed . ' changed.' );
+			pb_backupbuddy::status( 'message', 'Brute force data migration for table `' . $table . '` complete. Checked ' . $count_items_checked . ' items; ' . $count_items_changed . ' changed.' );
 			
-			return true;
+			return $count_items_changed;
 		}
 		
 		
@@ -406,6 +408,9 @@ if (!class_exists("pluginbuddy_dbreplace")) {
 					unset( $b[$i] );
 				}
 			}
+			
+			$a = array_merge( $a ); // Reset numbering of keys.
+			$b = array_merge( $b ); // Reset numbering of keys.
 		}
 		
 		

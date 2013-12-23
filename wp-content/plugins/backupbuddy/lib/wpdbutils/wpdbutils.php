@@ -4,12 +4,11 @@
  *
  *  Provides utility functions for helping with WordPress database handling
  *	
- *	Version: 1.0.0
+ *	Version: 1.0.1
  *	Author:
  *	Author URI:
  *
  *  @param		$db			object		Mandatory WordPress database object which is the database to operate on
- *	@param		$parent		object		Optional parent object which can provide functions for reporting, etc.
  *	@return		null
  *
  */
@@ -20,7 +19,7 @@ if ( !class_exists( "pluginbuddy_wpdbutils" ) ) {
 		// status method type parameter values - would like a class for this
 		const STATUS_TYPE_DETAILS = 'details';
 
-		public $_version = '1.0';
+		public $_version = '1.0.1';
 
         /**
          * wpdb object 
@@ -56,14 +55,13 @@ if ( !class_exists( "pluginbuddy_wpdbutils" ) ) {
 		 *	Default constructor. Sets up optional status() function linkage if applicable.
 		 *	
 		 *  @param		reference	&$db			[mandatory] Reference to the database object
-		 *	@param		reference	&$parent		[optional] Reference to the object containing the status() function for status updates.
 		 *	@return		null
 		 *
 		 */
-		public function __construct( wpdb &$db, &$parent = NULL ) {
-		
+		public function __construct( &$db ) { // removed wpdb type hint Jan 9, 2013.
+			
+			pb_backupbuddy::status( 'details', 'Database kicker database object class: `' . get_class( $db ) . '`.' );
 			$this->_db = &$db;
-			$this->_parent = &$parent;
 			
 		}
 				
@@ -78,66 +76,9 @@ if ( !class_exists( "pluginbuddy_wpdbutils" ) ) {
 		public function __destruct( ) {
 
 		}
-				
-		/**
-		 *	set_status_callback()
-		 *
-		 *	Sets a reference to the function to call for each status update.
-		 *  Argument must at least be a non-empty array with 2 elements
-		 *
-		 *	@param		array 	$callback	Object->method to call for status updates.
-		 *	@return		null
-		 *
-		 */
-		public function set_status_callback( $callback = array() ) {
 		
-			if ( is_array( $callback ) && !empty( $callback ) && ( 2 == count( $callback ) ) ) {
-			
-				$this->_status_callback = $callback;
-				$this->_have_status_callback = true;
-
-			}
-			
-		}
 		
-		/**
-		 *	status()
-		 *	
-		 *	Invoke status method of parent if it exists
-		 *  Must be at least one parameter otherwise ignore the call
-		 *	
-		 *	@param		string		$type		(Expected) Status message type.
-		 *	@param		string		$message	(Expected) Status message.
-		 *	@return		null
-		 *
-		 */
-		public function status() {
 		
-			if ( $this->_have_status_callback && ( func_num_args() > 0 ) ) {
-
-				$args = func_get_args();
-				call_user_func_array( $this->_status_callback, $args );
-				
-			}
-			
-		}
-		
-		/**
-		 *	status()
-		 *	
-		 *	Invoke status() method of parent if it exists
-		 *	
-		 *	@param		string		$type		Status message type.
-		 *	@param		string		$message	Status message.
-		 *	@return		null
-		 *
-		 */
-		public function old_status( $type = '', $message = '' ) {
-		
-			( $this->_parent_has_status_method && $this->_parent->status( $type, $message ) );
-			
-		}
-				
 		/**
 		 *	kick()
 		 *	
@@ -156,7 +97,7 @@ if ( !class_exists( "pluginbuddy_wpdbutils" ) ) {
 			if ( !mysql_ping( $this->_db->dbh ) ) {
 			
 			  // Database connection appears to have gone away
-			  $this->status( self::STATUS_TYPE_DETAILS, __('Database Server has gone away, attempting to reconnect.', 'it-l10n-backupbuddy') );
+			  pb_backupbuddy::status( self::STATUS_TYPE_DETAILS, __('Database Server has gone away, attempting to reconnect.','it-l10n-backupbuddy' ) );
 			  
 			  // Close things down cleanly (from a local perspective)
 			  @mysql_close( $this->_db->dbh );
@@ -170,7 +111,7 @@ if ( !class_exists( "pluginbuddy_wpdbutils" ) ) {
 			  if ( ( NULL == $this->_db->dbh ) || ( !mysql_ping( $this->_db->dbh ) ) ) {
 			  
 			    // Reconnection failed, make sure user knows
-			    $this->status( self::STATUS_TYPE_DETAILS, __('Database Server reconnection failed.', 'it-l10n-backupbuddy') );
+			    pb_backupbuddy::status( self::STATUS_TYPE_DETAILS, __('Database Server reconnection failed.','it-l10n-backupbuddy' ) );
 					
 				// Make sure failure is notified (no need to close things down locally as it's a wrap anyway)
 				$result = false;
@@ -178,7 +119,7 @@ if ( !class_exists( "pluginbuddy_wpdbutils" ) ) {
 			  } else {
 			  
 			    // Reconnection successful, make sure user knows
-			  	$this->status( self::STATUS_TYPE_DETAILS, __('Database Server reconnection successful.', 'it-l10n-backupbuddy') );
+			  	pb_backupbuddy::status( self::STATUS_TYPE_DETAILS, __('Database Server reconnection successful.','it-l10n-backupbuddy' ) );
 			  	$result = true;
 			  	
 			  }
@@ -186,7 +127,7 @@ if ( !class_exists( "pluginbuddy_wpdbutils" ) ) {
 			} else {
 			
 			  // Just to let user know that database is still connected
-			  $this->status( self::STATUS_TYPE_DETAILS, __('Database Server connection status verified.', 'it-l10n-backupbuddy') );
+			  pb_backupbuddy::status( self::STATUS_TYPE_DETAILS, __('Database Server connection status verified.','it-l10n-backupbuddy' ) );
 			  $result = true;
 			  
 			}

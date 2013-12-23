@@ -1,17 +1,11 @@
 jQuery(document).ready(function() {
-	jQuery('.pluginbuddy_tip').tooltip({ 
-		track: true, 
-		delay: 0, 
-		showURL: false, 
-		showBody: " - ", 
-		fade: 250 
-	});
-	
 	
 	jQuery('.pb_backupbuddy_remotetest').click(function(e) {
-		jQuery(this).html('Testing ...');
+		jQuery( '.pb_backupbuddy_loading' ).show();
+		//jQuery(this).html('Testing ...');
 		jQuery.post( jQuery(this).attr( 'alt' ), jQuery(this).closest( 'form' ).serialize(), 
 			function(data) {
+				jQuery( '.pb_backupbuddy_loading' ).hide();
 				alert( data );
 			}
 		); //,"json");
@@ -19,12 +13,58 @@ jQuery(document).ready(function() {
 		return false;
 	});
 	
-	jQuery('.pluginbuddy_pop').click(function(e) {
-		showpopup('#'+jQuery(this).attr('href'),'',e);
+	
+	
+	jQuery('.pb_backupbuddy_refresh_stats').click(function(e) {
+		loading = jQuery(this).children( '.pb_backupbuddy_loading' );
+		loading.show();
+		
+		result_obj = jQuery( '#pb_stats_' + jQuery(this).attr( 'rel' ) );
+		
+		jQuery.post( jQuery(this).attr( 'alt' ), jQuery(this).closest( 'form' ).serialize(), 
+			function(data) {
+				//alert(data);
+				loading.hide();
+				result_obj.html( data );
+			}
+		); //,"json");
+		
 		return false;
 	});
 	
-	jQuery('.toggle').click(function(e) {
-		jQuery( '#toggle-' + jQuery(this).attr('id') ).slideToggle();
+	
+	
+	// NOT CURRENTLY BEING USED.
+	jQuery( '.pb_backupbuddy_sendlog' ).click( function(e) {
+		if ( confirm( 'This will send the logging information in the box above to PluginBuddy.com support. You will be given a unique identifier code that you may provide and post in the support forum so that support staff may view your sensitive logs without having to post them publicly in the forum. You will NOT receive a response to your submitted logs unless you open a support request via the forum. Are you sure you want to submit this data?' ) ) {
+			alert("You pressed OK!");
+		} else {
+		  alert("You pressed Cancel!");
+		}
+		
+		/*
+		result_obj = jQuery( '#pb_stats_' + jQuery(this).attr( 'rel' ) );
+		
+		jQuery.post( jQuery(this).attr( 'alt' ), jQuery(this).closest( 'form' ).serialize(), 
+			function(data) {
+				loading.hide();
+				result_obj.html( data );
+			}
+		); //,"json");
+		*/
+		return false;
 	});
+	
+	
+	
+	/*
+	jQuery('.pb_backupbuddy_selectdestination').click(function(e) {
+		var win = window.dialogArguments || opener || parent || top;
+		win.pb_backupbuddy_selectdestination( jQuery(this).attr( 'href' ), jQuery(this).attr( 'alt' ), '<?php if ( !empty( $_GET['callback_data'] ) ) { echo $_GET['callback_data']; } ?>' );
+		win.tb_remove();
+		return false;
+	});
+	*/
+	
+	
 });

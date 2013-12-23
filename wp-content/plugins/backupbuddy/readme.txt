@@ -1,3 +1,4 @@
+ * Website: http://pluginbuddy.com
  *
  * Installation:
  * 
