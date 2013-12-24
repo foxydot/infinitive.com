@@ -2,13 +2,13 @@
 remove_action('genesis_entry_header','genesis_post_info',12);
 remove_action('genesis_entry_footer','genesis_post_meta');
 
-add_action('genesis_before_sidebar_widget_area','msd_add_team_headshot');
+add_action('genesis_entry_header','msd_add_team_headshot', 5);
 function msd_add_team_headshot(){
     global $post;
     //setup thumbnail image args to be used with genesis_get_image();
     $size = 'headshot'; // Change this to whatever add_image_size you want
     $default_attr = array(
-            'class' => "alignnone attachment-$size $size",
+            'class' => "alignleft attachment-$size $size",
             'alt'   => $post->post_title,
             'title' => $post->post_title,
     );
@@ -18,41 +18,36 @@ function msd_add_team_headshot(){
         printf( '%s', genesis_get_image( array( 'size' => $size, 'attr' => $default_attr ) ) );
     }
 }
-add_action('genesis_before_entry_content','msd_team_contact_info');
+add_action('genesis_entry_header','msd_team_contact_info',12);
 function msd_team_contact_info(){
     global $post,$contact_info;
-    $fields = array(
-            'phone' => 'phone',
-            'mobile' => 'mobile-phone',
-            'linkedin' => 'linkedin-sign',
-            'vcard' => 'download-alt',
-            'email' => 'envelope-alt',
-    );
     ?>
+    <?php $contact_info->the_field('_team_title'); ?>
+    <?php if($contact_info->get_the_value() != ''){ ?>
+        <h4 class="title"><?php print $contact_info->get_the_value(); ?></h4>
+    <?php } ?>
     <ul class="team-contact-info">
         <?php $contact_info->the_field('_team_phone'); ?>
         <?php if($contact_info->get_the_value() != ''){ ?>
             <li class="phone"><i class="icon-phone icon-large"></i> <?php print msd_str_fmt($contact_info->get_the_value(),'phone'); ?></li>
         <?php } ?>
-        
         <?php $contact_info->the_field('_team_mobile'); ?>
         <?php if($contact_info->get_the_value() != ''){ ?>
             <li class="mobile"><i class="icon-mobile-phone icon-large"></i> <?php print msd_str_fmt($contact_info->get_the_value(),'phone'); ?></li>
         <?php } ?>
-        
-        <?php $contact_info->the_field('_team_linked_in'); ?>
-        <?php if($contact_info->get_the_value() != ''){ ?>
-            <li class="linkedin"><a href="<?php print $contact_info->get_the_value(); ?>"><i class="icon-linkedin-sign icon-large"></i> Connect</a></li>
-        <?php } ?>
-        
-        <?php $contact_info->the_field('_team_bio_sheet'); ?>
-        <?php if($contact_info->get_the_value() != ''){ ?>
-            <li class="vcard"><a href="<?php print $contact_info->get_the_value(); ?>"><i class="icon-download-alt icon-large"></i> Download Bio</a></li>
-        <?php } ?>
-        
         <?php $contact_info->the_field('_team_email'); ?>
         <?php if($contact_info->get_the_value() != ''){ ?>
             <li class="email"><i class="icon-envelope-alt icon-large"></i> <?php print msd_str_fmt($contact_info->get_the_value(),'email'); ?></li>
+        <?php } ?>
+    </ul>
+    <ul class="team-social-media">
+        <?php $contact_info->the_field('_team_twitter'); ?>
+        <?php if($contact_info->get_the_value() != ''){ ?>
+            <li class="linkedin"><a href="<?php print $contact_info->get_the_value(); ?>"><i class="icon-linkedin-sign icon-large"></i> Connect</a></li>
+        <?php } ?>
+        <?php $contact_info->the_field('_team_linked_in'); ?>
+        <?php if($contact_info->get_the_value() != ''){ ?>
+            <li class="linkedin"><a href="<?php print $contact_info->get_the_value(); ?>"><i class="icon-linkedin-sign icon-large"></i> Connect</a></li>
         <?php } ?>
     </ul>
     <?php

@@ -88,7 +88,7 @@ if (!class_exists('MSDTeamCPT')) {
                 'labels' => $labels,
                 'hierarchical' => false,
                 'description' => 'Team Member',
-                'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields' ),
+                'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'excerpt' ),
                 'taxonomies' => array( 'team_practice_area' ),
                 'public' => true,
                 'show_ui' => true,
