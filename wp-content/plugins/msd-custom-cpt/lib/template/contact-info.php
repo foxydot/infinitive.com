@@ -1,14 +1,27 @@
 <?php global $wpalchemy_media_access; ?>
 <ul class="team_meta_control gform_fields top_label description_below" id="gform_fields_4">
 	<?php $mb->the_field('_team_last_name'); ?>
-	<li class="gfield"
-		id="field_team_last_name"><label for="<?php $mb->the_name(); ?>" class="gfield_label">Last Name (for alphabetizing)
-	</label>
-	<div class="ginput_container">
-			<input type="text" tabindex="24" class="medium" value="<?php $mb->the_value(); ?>"
-				id="<?php $mb->the_name(); ?>" name="<?php $mb->the_name(); ?>">
-		</div>
-	</li>
+    <li class="gfield"
+        id="field_team_last_name"><label for="<?php $mb->the_name(); ?>" class="gfield_label">Last Name (for alphabetizing)
+    </label>
+    <div class="ginput_container">
+            <input type="text" tabindex="24" class="medium" value="<?php $mb->the_value(); ?>"
+                id="<?php $mb->the_name(); ?>" name="<?php $mb->the_name(); ?>">
+        </div>
+    </li>
+    <?php $mb->the_field('_team_user_id'); ?>
+    <li class="gfield"
+        id="field_team_user_id"><label for="<?php $mb->the_name(); ?>" class="gfield_label">Blog User (for blog posts)
+    </label>
+    <div class="ginput_container">
+            <?php $blogusers = get_users(); ?>
+            <select id="<?php $mb->the_name(); ?>" name="<?php $mb->the_name(); ?>">
+                <?php foreach($blogusers AS $bu){ ?>
+                    <option value="<?php print $bu->ID; ?>"<?php $mb->the_select_state($bu->ID); ?>><?php print $bu->display_name; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+    </li>
     <?php $mb->the_field('_team_title'); ?>
     <li class="gfield"
         id="field_team_title"><label for="<?php $mb->the_name(); ?>" class="gfield_label">Title

@@ -7165,6 +7165,10 @@ Site Footer
   padding: 0 0.5em;
   display: inline-block;
 }
+.section-header h3 {
+  color: #ed7e3c;
+  text-transform: uppercase;
+}
 .blog-header {
   position: relative;
   border-bottom: 1px dotted #999999;
@@ -7388,10 +7392,6 @@ Site Footer
 .all-case-studies main article.risk-management-practice-area content i:before {
   content: "d";
 }
-.single-msd_casestudy .section-header h3 {
-  color: #ed7e3c;
-  text-transform: uppercase;
-}
 .single-msd_casestudy .entry-header .entry-title {
   color: #999999;
   padding-bottom: 1.6rem;
@@ -7423,4 +7423,51 @@ Site Footer
 .single-msd_casestudy .next-link {
   float: right;
   text-align: right;
+}
+.single-team_member .entry-header .entry-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #666666;
+  margin-bottom: 0;
+}
+.single-team_member .team-title {
+  font-weight: normal;
+}
+.single-team_member .team-contact-info {
+  list-style: none outside none;
+}
+.single-team_member .team-contact-info li {
+  font-weight: bold;
+}
+.single-team_member .team-social-media {
+  list-style: none outside none;
+}
+.single-team_member .team-social-media li {
+  display: inline-block;
+}
+.single-team_member .team-additional-info {
+  list-style: none outside none;
+}
+.single-team_member h3.insights-header {
+  color: #ed7e3c;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dotted #cccccc;
+}
+.single-team_member .insights-blogs article {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .single-team_member .insights-blogs article {
+    float: left;
+    width: 50%;
+  }
+}
+.single-team_member .insights-blogs article.even {
+  border-left: 1px dotted #cccccc;
 }

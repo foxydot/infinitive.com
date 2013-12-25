@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {	
-	$('ul li:first-child').addClass('first-child');
-	$('ul li:last-child').addClass('last-child');
-	$('ul li:nth-child(even)').addClass('even');
-	$('ul li:nth-child(odd)').addClass('odd');
+    $('ul li:first-child').addClass('first-child');
+    $('ul li:last-child').addClass('last-child');
+    $('ul li:nth-child(even)').addClass('even');
+    $('ul li:nth-child(odd)').addClass('odd');
 	$('table tr:first-child').addClass('first-child');
 	$('table tr:last-child').addClass('last-child');
 	$('table tr:nth-child(even)').addClass('even');
