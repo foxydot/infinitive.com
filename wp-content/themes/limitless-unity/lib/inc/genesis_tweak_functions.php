@@ -414,8 +414,8 @@ function msdlab_team_member_special($args){
                     'xhtml' => '<div class="content">',
                     'echo' => false,
                 ) ); 
-                if($contact_info->get_the_value('_team_personal_quote')){
-                    $ret .= '<div class="personal-quote">'.$contact_info->get_the_value('_team_personal_quote').'</div>';
+                if($contact_info->get_the_value('_team_quote')){
+                    $ret .= '<div class="personal-quote">'.$contact_info->get_the_value('_team_quote').'</div>';
                 }
                 $ret .= '
                     <div class="entry-content">'.msdlab_excerpt($post->ID).'</div>
