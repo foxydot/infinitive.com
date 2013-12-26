@@ -324,6 +324,112 @@ function custom_add_casestudy_attr( $attributes ){
         // return the attributes
         return $attributes;      
 }
+
+/** Team **/
+function msdlab_team_member_special_loop(){
+    $args = array(
+    );
+    print msdlab_team_member_special($args);
+}
+function msdlab_team_member_special_loop_shortcode_handler($atts){
+    $args = shortcode_atts( array(
+    ), $atts );
+    return msdlab_team_member_special($args);
+}
+function msdlab_team_member_special($args){
+    global $post,$contact_info;
+    $origpost = $post;
+    $defaults = array(
+        'posts_per_page' => -1,
+        'post_type' => 'team_member',
+    );
+    $args = array_merge($defaults,$args);
+    //set up result array
+    $results = array();
+    $results = get_posts($args);
+    //format result
+    foreach($results AS $result){
+        $post = $result;
+        $titlearray = explode(" ",$post->post_title);
+        $firstname = $titlearray[0];
+        $firstname = (substr($firstname, -1) == 's')?$firstname."'":$firstname."'s";
+        $ret .= genesis_markup( array(
+                'html5'   => '<article %s>',
+                'xhtml'   => sprintf( '<div class="%s">', implode( ' ', get_post_class() ) ),
+                'context' => 'team_member',
+                'echo' => false,
+            ) );
+            $ret .= genesis_markup( array(
+                    'html5' => '<aside>',
+                    'xhtml' => '<div class="aside">',
+                    'echo' => false,
+                ) ); 
+            $ret .= get_the_post_thumbnail($result->ID,'mini-headshot');
+            $ret .= '<ul><li class="insights-header"><a href="'.get_permalink($result->ID).'"><span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+</span>'.$firstname.' Insights</a></li>
+            <li class="linkedin"><a href="'.$contact_info->get_the_value().'"><i class="fa fa-linkedin-square fa-2x"></i></a></li></ul>';
+            
+            $ret .= genesis_markup( array(
+                    'html5' => '</aside>',
+                    'xhtml' => '</div>',
+                    'echo' => false,
+                ) ); 
+            $ret .= genesis_markup( array(
+                    'html5' => '<header>',
+                    'xhtml' => '<div class="header">',
+                    'echo' => false,
+                ) ); 
+            $ret .= '<h3 class="entry-title">'.$post->post_title.'</h3>
+                    <h4 class="team-title">'.$contact_info->get_the_value('_team_title').'</h4>';
+            $ret .= genesis_markup( array(
+                    'html5' => '</header>',
+                    'xhtml' => '</div>',
+                    'echo' => false,
+                ) ); 
+            $ret .= genesis_markup( array(
+                    'html5' => '<content>',
+                    'xhtml' => '<div class="content">',
+                    'echo' => false,
+                ) ); 
+                $ret .= '
+                    <div class="personal-quote">'.$contact_info->get_the_value('_team_personal_quote').'</div>
+                    <div class="entry-content">'.msdlab_excerpt($post->ID).'</div>
+                    <a href="'.get_permalink($post->ID).'" class="readmore">Read More ></a>';
+            $ret .= genesis_markup( array(
+                    'html5' => '</content>',
+                    'xhtml' => '</div>',
+                    'echo' => false,
+                ) ); 
+        $ret .= genesis_markup( array(
+                'html5' => '</article>',
+                'xhtml' => '</div>',
+                'context' => 'team_member',
+                'echo' => false,
+            ) );
+    }
+    //return
+    $post = $origpost;
+    return $ret;
+}
+
+add_filter( 'genesis_attr_team_member', 'custom_add_team_member_attr' );
+/**
+ * Callback for dynamic Genesis 'genesis_attr_$context' filter.
+ * 
+ * Add custom attributes for the custom filter.
+ * 
+ * @param array $attributes The element attributes
+ * @return array $attributes The element attributes
+ */
+function custom_add_team_member_attr( $attributes ){
+        $attributes['itemtype']  = 'http://schema.org/CreativeWork';
+        $attributes['itemprop']  = 'caseStudy';
+        // return the attributes
+        return $attributes;      
+}
+
 /*** FOOTER ***/
 
 /**

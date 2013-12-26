@@ -56,7 +56,7 @@ function msd_team_contact_info(){
     <ul class="team-social-media">
         <?php $contact_info->the_field('_team_twitter'); ?>
         <?php if($contact_info->get_the_value() != ''){ ?>
-            <li class="linkedin"><a href="<?php print $contact_info->get_the_value(); ?>"><i class="fa fa-linkedin-square fa-2x"></i> Follow</a></li>
+            <li class="twitter"><a href="<?php print $contact_info->get_the_value(); ?>"><i class="fa fa-twitter-square fa-2x"></i> Follow</a></li>
         <?php } ?>
         <?php $contact_info->the_field('_team_linked_in'); ?>
         <?php if($contact_info->get_the_value() != ''){ ?>
