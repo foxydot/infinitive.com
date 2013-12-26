@@ -7490,6 +7490,8 @@ Site Footer
   min-height: 1px;
   padding-left: 0;
   padding-right: 0;
+  height: 24rem;
+  overflow: auto;
 }
 @media (min-width: 768px) {
   .post-type-archive-team_member main article.team_member .wrap main,
