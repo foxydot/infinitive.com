@@ -6709,7 +6709,7 @@ Site Navigation
   top: 0px;
   height: 227px;
   font-size: 1em;
-  width: 484px;
+  width: 724px;
 }
 #menu-primary-links > li.first-child > ul.sub-menu > li > ul.sub-menu > li {
   width: 120px;
@@ -6725,8 +6725,7 @@ Site Navigation
   text-transform: uppercase;
 }
 #menu-primary-links > li.first-child > ul.sub-menu > li > ul.sub-menu > li > a {
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 0.2rem 0;
 }
 #menu-primary-links > li.first-child > ul.sub-menu > li > ul.sub-menu > li > ul {
   margin: 0;
@@ -6748,15 +6747,15 @@ Site Navigation
   left: 0;
 }
 #menu-primary-links > li.first-child > ul.sub-menu > li > ul.sub-menu > li > ul > li > a {
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 0.2rem 0.6rem;
   font-size: 1em;
   font-size: 1rem;
+  line-height: 1.2em;
+  line-height: 1.2rem;
 }
 #menu-primary-links > li.first-child > ul.sub-menu li.title > ul.sub-menu {
   top: -5.3rem;
   height: 227px;
-  width: 604px;
 }
 .mainNav > ul > li.first > ul > li.title > ul > li > ul > li {
   padding: 3px 0;
