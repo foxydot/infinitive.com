@@ -7174,6 +7174,9 @@ Site Footer
   padding: 0 0.5em;
   display: inline-block;
 }
+.sitemap ul.children {
+  margin-left: 1.2rem;
+}
 .section-header h3 {
   color: #ed7e3c;
   text-transform: uppercase;
