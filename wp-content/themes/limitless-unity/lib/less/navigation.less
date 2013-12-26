@@ -284,6 +284,9 @@ Site Navigation
               width: auto;
             }
           }
+          li.menu-item.last-child{
+            border-right: 0px;
+          }
         }
       }
     }
@@ -295,7 +298,7 @@ Site Navigation
     li.menu-item.last-child{
       border: 0;
     }
-    li.menu-item:hover{
+    li.menu-item:hover, li.current-menu-ancestor, li.current-menu-item{
       a{
         color:@white;
       }

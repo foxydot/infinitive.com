@@ -6812,19 +6812,28 @@ Site Navigation
   padding: 0.5rem;
   width: auto;
 }
+.nav-secondary .wrap li.menu-item .subnav-wrapper ul.sub-menu li.menu-item.last-child {
+  border-right: 0px;
+}
 .nav-secondary .wrap li.menu-item.icon-solutions > a {
   padding: 0.5rem 7rem;
 }
 .nav-secondary .wrap li.menu-item.last-child {
   border: 0;
 }
-.nav-secondary .wrap li.menu-item:hover a {
+.nav-secondary .wrap li.menu-item:hover a,
+.nav-secondary .wrap li.current-menu-ancestor a,
+.nav-secondary .wrap li.current-menu-item a {
   color: #ffffff;
 }
-.nav-secondary .wrap li.menu-item:hover > .subnav-wrapper {
+.nav-secondary .wrap li.menu-item:hover > .subnav-wrapper,
+.nav-secondary .wrap li.current-menu-ancestor > .subnav-wrapper,
+.nav-secondary .wrap li.current-menu-item > .subnav-wrapper {
   display: block;
 }
-.nav-secondary .wrap li.menu-item:hover > .subnav-wrapper > .sub-menu {
+.nav-secondary .wrap li.menu-item:hover > .subnav-wrapper > .sub-menu,
+.nav-secondary .wrap li.current-menu-ancestor > .subnav-wrapper > .sub-menu,
+.nav-secondary .wrap li.current-menu-item > .subnav-wrapper > .sub-menu {
   display: block;
 }
 /*
