@@ -372,7 +372,7 @@ function msdlab_team_member_special($args){
                     'echo' => false,
                 ) ); 
             $ret .= get_the_post_thumbnail($result->ID,'mini-headshot',array('itemprop'=>'image'));
-            $ret .= '<ul><li class="insights-header"><a href="'.get_permalink($result->ID).'"><span class="fa-stack fa-lg pull-left">
+            $ret .= '<ul><li class="insights-header"><a href="'.get_permalink($result->ID).'#insights"><span class="fa-stack fa-lg pull-left">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
 </span>'.$firstname.' Insights</a></li>';

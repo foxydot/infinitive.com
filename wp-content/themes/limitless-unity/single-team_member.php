@@ -105,7 +105,7 @@ function msd_team_insights(){
     $titlearray = explode(" ",$post->post_title);
     $firstname = $titlearray[0];
     $firstname = (substr($firstname, -1) == 's')?$firstname."'":$firstname."'s";
-    print '<h3 class="insights-header">'.$firstname.' Insights</h3>';
+    print '<h3 class="insights-header" id="insights">'.$firstname.' Insights</h3>';
     $args = array(
         'author' => $contact_info->get_the_value('_team_user_id'),
         'posts_per_page' => '4',
