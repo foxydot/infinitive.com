@@ -7472,6 +7472,7 @@ Site Footer
 .meet-the-team main article.team_member .wrap aside ul {
   list-style: none outside none;
   padding: 0.4rem;
+  margin: 0;
 }
 .post-type-archive-team_member main article.team_member .wrap aside ul li,
 .meet-the-team main article.team_member .wrap aside ul li {
