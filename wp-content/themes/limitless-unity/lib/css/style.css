@@ -7224,6 +7224,9 @@ Site Footer
   top: 0;
   width: 100%;
 }
+.widget_sp_image .link {
+  text-align: right;
+}
 /*custom Font*/
 @font-face {
   font-family: "infinitive";
