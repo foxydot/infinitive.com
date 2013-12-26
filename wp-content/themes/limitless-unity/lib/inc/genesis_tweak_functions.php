@@ -355,6 +355,7 @@ function msdlab_team_member_special($args){
         $titlearray = explode(" ",$post->post_title);
         $firstname = $titlearray[0];
         $firstname = (substr($firstname, -1) == 's')?$firstname."'":$firstname."'s";
+        $contact_info->the_meta($result->ID);
         $ret .= genesis_markup( array(
                 'html5'   => '<article %s>',
                 'xhtml'   => sprintf( '<div class="%s">', implode( ' ', get_post_class() ) ),
