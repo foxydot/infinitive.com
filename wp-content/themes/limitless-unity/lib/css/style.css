@@ -7415,35 +7415,44 @@ Site Footer
 .all-case-studies main article.risk-management-practice-area content i:before {
   content: "d";
 }
-.single-msd_casestudy .entry-header .entry-title {
+.single-msd_casestudy .entry-header .entry-title,
+.tax-msd_practice-area .entry-header .entry-title {
   color: #999999;
   padding-bottom: 1.6rem;
   border-bottom: 1px dotted #cccccc;
 }
-.single-msd_casestudy .entry-header .entry-title span {
+.single-msd_casestudy .entry-header .entry-title span,
+.tax-msd_practice-area .entry-header .entry-title span {
   display: block;
   float: left;
   line-height: 0.5rem;
 }
-.single-msd_casestudy .entry-header .entry-title span i {
+.single-msd_casestudy .entry-header .entry-title span i,
+.tax-msd_practice-area .entry-header .entry-title span i {
   margin: 0.5rem 1rem 0 0;
 }
-.single-msd_casestudy .entry-header .entry-title .icon-business-intelligence-and-big-data i:before {
+.single-msd_casestudy .entry-header .entry-title .icon-business-intelligence-and-big-data i:before,
+.tax-msd_practice-area .entry-header .entry-title .icon-business-intelligence-and-big-data i:before {
   content: "a";
 }
-.single-msd_casestudy .entry-header .entry-title .icon-customer-intelligence i:before {
+.single-msd_casestudy .entry-header .entry-title .icon-customer-intelligence i:before,
+.tax-msd_practice-area .entry-header .entry-title .icon-customer-intelligence i:before {
   content: "b";
 }
-.single-msd_casestudy .entry-header .entry-title .icon-digital-analytics i:before {
+.single-msd_casestudy .entry-header .entry-title .icon-digital-analytics i:before,
+.tax-msd_practice-area .entry-header .entry-title .icon-digital-analytics i:before {
   content: "c";
 }
-.single-msd_casestudy .entry-header .entry-title .icon-risk-management-practice-area i:before {
+.single-msd_casestudy .entry-header .entry-title .icon-risk-management-practice-area i:before,
+.tax-msd_practice-area .entry-header .entry-title .icon-risk-management-practice-area i:before {
   content: "d";
 }
-.single-msd_casestudy .prev-link {
+.single-msd_casestudy .prev-link,
+.tax-msd_practice-area .prev-link {
   float: left;
 }
-.single-msd_casestudy .next-link {
+.single-msd_casestudy .next-link,
+.tax-msd_practice-area .next-link {
   float: right;
   text-align: right;
 }
