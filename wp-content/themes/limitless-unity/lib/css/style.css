@@ -7435,6 +7435,115 @@ Site Footer
   float: right;
   text-align: right;
 }
+.post-type-archive-team_member main article.team_member,
+.all-team-members main article.team_member {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0.75rem 0;
+}
+@media (min-width: 768px) {
+  .post-type-archive-team_member main article.team_member,
+  .all-team-members main article.team_member {
+    float: left;
+    width: 50%;
+  }
+}
+.post-type-archive-team_member main article.team_member .wrap,
+.all-team-members main article.team_member .wrap {
+  background: #cccccc;
+}
+.post-type-archive-team_member main article.team_member .wrap aside,
+.all-team-members main article.team_member .wrap aside {
+  position: relative;
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 768px) {
+  .post-type-archive-team_member main article.team_member .wrap aside,
+  .all-team-members main article.team_member .wrap aside {
+    float: left;
+    width: 33.33333333333333%;
+  }
+}
+.post-type-archive-team_member main article.team_member .wrap aside ul,
+.all-team-members main article.team_member .wrap aside ul {
+  list-style: none outside none;
+  padding: 0.4rem;
+}
+.post-type-archive-team_member main article.team_member .wrap aside ul li,
+.all-team-members main article.team_member .wrap aside ul li {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  display: block;
+  float: left;
+}
+.post-type-archive-team_member main article.team_member .wrap aside ul li.insights-header,
+.all-team-members main article.team_member .wrap aside ul li.insights-header {
+  width: 69%;
+}
+.post-type-archive-team_member main article.team_member .wrap main,
+.all-team-members main article.team_member .wrap main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 768px) {
+  .post-type-archive-team_member main article.team_member .wrap main,
+  .all-team-members main article.team_member .wrap main {
+    float: left;
+    width: 66.66666666666666%;
+  }
+}
+.post-type-archive-team_member main article.team_member .wrap main header,
+.all-team-members main article.team_member .wrap main header {
+  background: #666666;
+  padding: 1rem;
+}
+.post-type-archive-team_member main article.team_member .wrap main header h3,
+.all-team-members main article.team_member .wrap main header h3,
+.post-type-archive-team_member main article.team_member .wrap main header h4,
+.all-team-members main article.team_member .wrap main header h4 {
+  color: #ffffff;
+  margin: 0;
+}
+.post-type-archive-team_member main article.team_member .wrap main header h3,
+.all-team-members main article.team_member .wrap main header h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.post-type-archive-team_member main article.team_member .wrap main header h4,
+.all-team-members main article.team_member .wrap main header h4 {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+.post-type-archive-team_member main article.team_member .wrap main content,
+.all-team-members main article.team_member .wrap main content {
+  font-size: 1.2rem;
+}
+.post-type-archive-team_member main article.team_member .wrap main content .personal-quote,
+.all-team-members main article.team_member .wrap main content .personal-quote,
+.post-type-archive-team_member main article.team_member .wrap main content .entry-content,
+.all-team-members main article.team_member .wrap main content .entry-content {
+  padding: 0.75rem;
+}
+.post-type-archive-team_member main article.team_member .wrap main content .personal-quote,
+.all-team-members main article.team_member .wrap main content .personal-quote {
+  font-weight: bold;
+  font-style: italic;
+}
+.post-type-archive-team_member main article.team_member .wrap main content a.readmore,
+.all-team-members main article.team_member .wrap main content a.readmore {
+  color: #ffffff;
+  background: #ed7e3c;
+  padding: 0 0.4rem;
+  float: right;
+  font-size: 1rem;
+  margin: 1rem;
+}
 .single-team_member .entry-header .entry-title {
   font-size: 1.6rem;
   font-weight: bold;

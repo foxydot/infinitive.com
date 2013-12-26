@@ -342,6 +342,8 @@ function msdlab_team_member_special($args){
     $defaults = array(
         'posts_per_page' => -1,
         'post_type' => 'team_member',
+        'order_by' => '_team_last_name',
+        'order' => ASC
     );
     $args = array_merge($defaults,$args);
     //set up result array
@@ -360,16 +362,29 @@ function msdlab_team_member_special($args){
                 'echo' => false,
             ) );
             $ret .= genesis_markup( array(
+                    'html5' => '<div class="wrap">',
+                    'xhtml' => '<div class="wrap">',
+                    'echo' => false,
+                ) ); 
+            $ret .= genesis_markup( array(
                     'html5' => '<aside>',
                     'xhtml' => '<div class="aside">',
                     'echo' => false,
                 ) ); 
-            $ret .= get_the_post_thumbnail($result->ID,'mini-headshot');
-            $ret .= '<ul><li class="insights-header"><a href="'.get_permalink($result->ID).'"><span class="fa-stack fa-lg">
+            $ret .= get_the_post_thumbnail($result->ID,'mini-headshot',array('itemprop'=>'image'));
+            $ret .= '<ul><li class="insights-header"><a href="'.get_permalink($result->ID).'"><span class="fa-stack fa-lg pull-left">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-</span>'.$firstname.' Insights</a></li>
-            <li class="linkedin"><a href="'.$contact_info->get_the_value().'"><i class="fa fa-linkedin-square fa-2x"></i></a></li></ul>';
+</span>'.$firstname.' Insights</a></li>';
+            if($contact_info->get_the_value('_team_linked_in')){
+                $ret .= '<li class="linkedin"><a href="'.$contact_info->get_the_value('_team_linked_in').'" target="_linkedin"><span class="fa-stack fa-lg pull-right">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+</span></a></li>';
+            }
+            
+
+            $ret .= '</ul>';
             
             $ret .= genesis_markup( array(
                     'html5' => '</aside>',
@@ -377,12 +392,17 @@ function msdlab_team_member_special($args){
                     'echo' => false,
                 ) ); 
             $ret .= genesis_markup( array(
+                'html5' => '<main>',
+                'xhtml' => '<div class="main">',
+                'echo' => false,
+            ) ); 
+            $ret .= genesis_markup( array(
                     'html5' => '<header>',
                     'xhtml' => '<div class="header">',
                     'echo' => false,
                 ) ); 
-            $ret .= '<h3 class="entry-title">'.$post->post_title.'</h3>
-                    <h4 class="team-title">'.$contact_info->get_the_value('_team_title').'</h4>';
+            $ret .= '<h3 class="entry-title" itemprop="name">'.$post->post_title.'</h3>
+                    <h4 class="team-title" itemprop="jobTitle">'.$contact_info->get_the_value('_team_title').'</h4>';
             $ret .= genesis_markup( array(
                     'html5' => '</header>',
                     'xhtml' => '</div>',
@@ -393,15 +413,28 @@ function msdlab_team_member_special($args){
                     'xhtml' => '<div class="content">',
                     'echo' => false,
                 ) ); 
+                if($contact_info->get_the_value('_team_personal_quote')){
+                    $ret .= '<div class="personal-quote">'.$contact_info->get_the_value('_team_personal_quote').'</div>';
+                }
                 $ret .= '
-                    <div class="personal-quote">'.$contact_info->get_the_value('_team_personal_quote').'</div>
                     <div class="entry-content">'.msdlab_excerpt($post->ID).'</div>
-                    <a href="'.get_permalink($post->ID).'" class="readmore">Read More ></a>';
+                    <a href="'.get_permalink($post->ID).'" class="readmore">more ></a>';
             $ret .= genesis_markup( array(
                     'html5' => '</content>',
                     'xhtml' => '</div>',
                     'echo' => false,
                 ) ); 
+                
+            $ret .= genesis_markup( array(
+                'html5' => '</main>',
+                'xhtml' => '</div>',
+                'echo' => false,
+            ) ); 
+            $ret .= genesis_markup( array(
+                'html5' => '</div>',
+                'xhtml' => '</div>',
+                'echo' => false,
+            ) ); 
         $ret .= genesis_markup( array(
                 'html5' => '</article>',
                 'xhtml' => '</div>',
@@ -424,8 +457,7 @@ add_filter( 'genesis_attr_team_member', 'custom_add_team_member_attr' );
  * @return array $attributes The element attributes
  */
 function custom_add_team_member_attr( $attributes ){
-        $attributes['itemtype']  = 'http://schema.org/CreativeWork';
-        $attributes['itemprop']  = 'caseStudy';
+        $attributes['itemtype']  = 'http://schema.org/Person';
         // return the attributes
         return $attributes;      
 }
