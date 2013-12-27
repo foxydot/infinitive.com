@@ -7227,14 +7227,22 @@ Site Footer
 .blog-header p {
   margin: 1em 0;
 }
-.msd_news_widget .news-list li a {
-  background: url("../img/blank.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
-  display: block;
-  height: 280px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
+.msd_news_widget .news-list li {
+  /*a {
+    background: url("../img/blank.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 280px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }*/
+}
+.msd_news_widget .news-list li .subtitle {
+  font-size: 1.4rem;
+}
+.msd_news_widget .news-list li .link a {
+  position: relative;
 }
 .widget_sp_image .link {
   text-align: right;
