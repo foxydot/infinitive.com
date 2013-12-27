@@ -143,6 +143,7 @@ Site Navigation
     a{}
     .sub-menu{
       border: none;
+      z-index: 300;
       li.menu-item{
         display: block;
         a{
@@ -153,7 +154,7 @@ Site Navigation
       }
     }
   }
-  li:hover, li.current-menu-item, li.current-menu-ancestor{
+  li:hover, li.current-menu-item{
     background: darken(@dkgrey,20%);
     a, a:hover{color:@white}
   }
@@ -303,8 +304,16 @@ Site Navigation
       }
       >.subnav-wrapper{
         display: block;
+        z-index: 200;
         >.sub-menu{
           display: block;
+        }
+      }
+    }
+    li.current-menu-ancestor, li.current-menu-item{
+      >.subnav-wrapper{
+        z-index: 100;
+        >.sub-menu{
         }
       }
     }
