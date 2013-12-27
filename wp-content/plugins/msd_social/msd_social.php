@@ -79,34 +79,34 @@ function social_media($attr){
 	?>
 	<div id="social-media" class="social-media">
 			<?php if(get_option('msdsocial_contact_link')!=""){ ?>
-</i><span>          <a href="<?php echo get_option('msdsocial_contact_link'); ?>" class="li" title="Contact" target="_blank"><span>Contact</span></a>
+                <a href="<?php echo get_option('msdsocial_contact_link'); ?>" class="li" title="Contact" target="_blank"><span>Contact</span></a>
             <?php }?>
             <?php if(get_option('msdsocial_linkedin_link')!=""){ ?>
-</i><span>          <a href="<?php echo get_option('msdsocial_linkedin_link'); ?>" class="li" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a>
+                <a href="<?php echo get_option('msdsocial_linkedin_link'); ?>" class="li" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a>
             <?php }?>
 			<?php if(get_option('msdsocial_twitter_user')!=""){ ?>
-</i><span>			<a href="http://www.twitter.com/<?php echo get_option('msdsocial_twitter_user'); ?>" class="tw" title="Follow Us on Twitter!" target="_blank"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+                <a href="http://www.twitter.com/<?php echo get_option('msdsocial_twitter_user'); ?>" class="tw" title="Follow Us on Twitter!" target="_blank"><i class="fa fa-twitter"></i><span>Twitter</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_google_link')!=""){ ?>
-</i><span>			<a href="<?php echo get_option('msdsocial_google_link'); ?>" class="gl" title="Google+" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a>
+                <a href="<?php echo get_option('msdsocial_google_link'); ?>" class="gl" title="Google+" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_facebook_link')!=""){ ?>
-</i><span>			<a href="<?php echo get_option('msdsocial_facebook_link'); ?>" class="fb" title="Join Us on Facebook!" target="_blank"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+                <a href="<?php echo get_option('msdsocial_facebook_link'); ?>" class="fb" title="Join Us on Facebook!" target="_blank"><i class="fa fa-facebook"></i><span>Facebook</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_flickr_link')!=""){ ?>
-</i><span>			<a href="<?php echo get_option('msdsocial_flickr_link'); ?>" class="fl" title="Flickr" target="_blank"><i class="fa fa-flickr"></i><span>Flickr</span></a>
+			    <a href="<?php echo get_option('msdsocial_flickr_link'); ?>" class="fl" title="Flickr" target="_blank"><i class="fa fa-flickr"></i><span>Flickr</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_youtube_link')!=""){ ?>
-</i><span>			<a href="<?php echo get_option('msdsocial_youtube_link'); ?>" class="yt" title="YouTube" target="_blank"><i class="fa fa-youtube"></i><span>YouTube</span></a>
+			    <a href="<?php echo get_option('msdsocial_youtube_link'); ?>" class="yt" title="YouTube" target="_blank"><i class="fa fa-youtube"></i><span>YouTube</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_sharethis_link')!=""){ ?>
-</i><span>			<a href="<?php echo get_option('msdsocial_sharethis_link'); ?>" class="st" title="ShareThis" target="_blank"><i class="fa fa-share"></i><span>ShareThis</span></a>
+                <a href="<?php echo get_option('msdsocial_sharethis_link'); ?>" class="st" title="ShareThis" target="_blank"><i class="fa fa-share"></i><span>ShareThis</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_pinterest_link')!=""){ ?>
-</i><span>			<a href="<?php echo get_option('msdsocial_pinterest_link'); ?>" class="pin" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
+                <a href="<?php echo get_option('msdsocial_pinterest_link'); ?>" class="pin" title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
 			<?php }?>
 			<?php if(get_option('msdsocial_show_feed')!=""){ ?>
-</i><span>			<a href="<?php bloginfo('rss2_url'); ?>" class="rss" title="RSS Feed" target="_blank"><i class="fa fa-rss"></i><span>RSS Feed</span></a>
+			    <a href="<?php bloginfo('rss2_url'); ?>" class="rss" title="RSS Feed" target="_blank"><i class="fa fa-rss"></i><span>RSS Feed</span></a>
 			<?php }?>
 		</div>
 		<?php 
