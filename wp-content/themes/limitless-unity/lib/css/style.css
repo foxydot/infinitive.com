@@ -7403,37 +7403,37 @@ Site Footer
 .all-case-studies main article.msd_casestudy.last-child {
   border: none;
 }
-.post-type-archive-msd_casestudy main article.business-intelligence-and-big-data header a img,
-.all-case-studies main article.business-intelligence-and-big-data header a img {
+.post-type-archive-msd_casestudy main article.enterprise-transformation-case-studies header a img,
+.all-case-studies main article.enterprise-transformation-case-studies header a img {
   background-image: url(../img/feature-business-intelligence.png);
 }
-.post-type-archive-msd_casestudy main article.business-intelligence-and-big-data content i:before,
-.all-case-studies main article.business-intelligence-and-big-data content i:before {
+.post-type-archive-msd_casestudy main article.enterprise-transformation-case-studies content i:before,
+.all-case-studies main article.enterprise-transformation-case-studies content i:before {
   content: "a";
 }
-.post-type-archive-msd_casestudy main article.customer-intelligence header a img,
-.all-case-studies main article.customer-intelligence header a img {
-  background-image: url(../img/feature-customer-intelligence.png);
+.post-type-archive-msd_casestudy main article.customer-audience-intelligence-case-studies header a img,
+.all-case-studies main article.customer-audience-intelligence-case-studies header a img {
+  background-image: url(../img/feature-customer-intelligence.jpg);
 }
-.post-type-archive-msd_casestudy main article.customer-intelligence content i:before,
-.all-case-studies main article.customer-intelligence content i:before {
+.post-type-archive-msd_casestudy main article.customer-audience-intelligence-case-studies content i:before,
+.all-case-studies main article.customer-audience-intelligence-case-studies content i:before {
   content: "b";
 }
-.post-type-archive-msd_casestudy main article.digital-analytics header a img,
-.all-case-studies main article.digital-analytics header a img {
-  background-image: url(../img/feature-digital-analytics.png);
+.post-type-archive-msd_casestudy main article.digital-ad-solutions-case-studies header a img,
+.all-case-studies main article.digital-ad-solutions-case-studies header a img {
+  background-image: url(../img/feature-digital-analytics.jpg);
 }
-.post-type-archive-msd_casestudy main article.digital-analytics content i:before,
-.all-case-studies main article.digital-analytics content i:before {
-  content: "c";
+.post-type-archive-msd_casestudy main article.digital-ad-solutions-case-studies content i:before,
+.all-case-studies main article.digital-ad-solutions-case-studies content i:before {
+  content: "d";
 }
-.post-type-archive-msd_casestudy main article.risk-management-practice-area header a img,
-.all-case-studies main article.risk-management-practice-area header a img {
+.post-type-archive-msd_casestudy main article.risk-management-case-studies header a img,
+.all-case-studies main article.risk-management-case-studies header a img {
   background-image: url(../img/feature-risk-management.png);
 }
-.post-type-archive-msd_casestudy main article.risk-management-practice-area content i:before,
-.all-case-studies main article.risk-management-practice-area content i:before {
-  content: "d";
+.post-type-archive-msd_casestudy main article.risk-management-case-studies content i:before,
+.all-case-studies main article.risk-management-case-studies content i:before {
+  content: "c";
 }
 .single-msd_casestudy .entry-header .entry-title,
 .tax-msd_practice-area .entry-header .entry-title {
@@ -7451,20 +7451,20 @@ Site Footer
 .tax-msd_practice-area .entry-header .entry-title span i {
   margin: 0.5rem 1rem 0 0;
 }
-.single-msd_casestudy .entry-header .entry-title .icon-business-intelligence-and-big-data i:before,
-.tax-msd_practice-area .entry-header .entry-title .icon-business-intelligence-and-big-data i:before {
+.single-msd_casestudy .entry-header .entry-title .icon-enterprise-transformation-case-studies i:before,
+.tax-msd_practice-area .entry-header .entry-title .icon-enterprise-transformation-case-studies i:before {
   content: "a";
 }
-.single-msd_casestudy .entry-header .entry-title .icon-customer-intelligence i:before,
-.tax-msd_practice-area .entry-header .entry-title .icon-customer-intelligence i:before {
+.single-msd_casestudy .entry-header .entry-title .icon-customer-audience-intelligence-case-studies i:before,
+.tax-msd_practice-area .entry-header .entry-title .icon-customer-audience-intelligence-case-studies i:before {
   content: "b";
 }
-.single-msd_casestudy .entry-header .entry-title .icon-digital-analytics i:before,
-.tax-msd_practice-area .entry-header .entry-title .icon-digital-analytics i:before {
+.single-msd_casestudy .entry-header .entry-title .icon-risk-management-case-studies i:before,
+.tax-msd_practice-area .entry-header .entry-title .icon-risk-management-case-studies i:before {
   content: "c";
 }
-.single-msd_casestudy .entry-header .entry-title .icon-risk-management-practice-area i:before,
-.tax-msd_practice-area .entry-header .entry-title .icon-risk-management-practice-area i:before {
+.single-msd_casestudy .entry-header .entry-title .icon-digital-ad-solutions-case-studies i:before,
+.tax-msd_practice-area .entry-header .entry-title .icon-digital-ad-solutions-case-studies i:before {
   content: "d";
 }
 .single-msd_casestudy .prev-link,
