@@ -32,15 +32,16 @@ class MSDNewsWidget extends WP_Widget {
 		print '<ul class="news-list">';
 		foreach($items AS $item){ 
 	    	$subtitle->the_meta($item->ID);
+            $excerpt = $subtitle->get_the_value('subtitle')?$subtitle->get_the_value('subtitle'):msdlab_excerpt($item->ID);
 	    	$thumb = get_the_post_thumbnail($item->ID)?get_the_post_thumbnail($item->ID):'<img src="'.get_bloginfo('template_url').'/images/news.png" />';
 	    	$news_list .= '
 	     	<li>
 				<h3>'.$item->post_title.'</h3>
 				<div class="subtitle">
 	     			<div class="img alignleft">'.$thumb.'</div>
-					'.$subtitle->get_the_value('subtitle').'
+					'.$excerpt.'
 				</div>
-				<h4 class="link alignright">Read the Announcement ></h4>
+				<h4 class="link alignright"><a href="'.get_permalink($item->ID).'">Read the Announcement ></a></h4>
 	     		<a href="'.get_permalink($item->ID).'"></a>';
 				$news_list .= '<div class="clear"></div>
 			</li>';

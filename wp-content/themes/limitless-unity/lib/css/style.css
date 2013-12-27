@@ -6666,6 +6666,7 @@ Site Navigation
 }
 .nav-primary li.menu-item .sub-menu {
   border: none;
+  z-index: 300;
 }
 .nav-primary li.menu-item .sub-menu li.menu-item {
   display: block;
@@ -6676,16 +6677,13 @@ Site Navigation
   color: white;
 }
 .nav-primary li:hover,
-.nav-primary li.current-menu-item,
-.nav-primary li.current-menu-ancestor {
+.nav-primary li.current-menu-item {
   background: #333333;
 }
 .nav-primary li:hover a,
 .nav-primary li.current-menu-item a,
-.nav-primary li.current-menu-ancestor a,
 .nav-primary li:hover a:hover,
-.nav-primary li.current-menu-item a:hover,
-.nav-primary li.current-menu-ancestor a:hover {
+.nav-primary li.current-menu-item a:hover {
   color: #ffffff;
 }
 /* Infinitive For You Navigation */
@@ -6829,11 +6827,16 @@ Site Navigation
 .nav-secondary .wrap li.current-menu-ancestor > .subnav-wrapper,
 .nav-secondary .wrap li.current-menu-item > .subnav-wrapper {
   display: block;
+  z-index: 200;
 }
 .nav-secondary .wrap li.menu-item:hover > .subnav-wrapper > .sub-menu,
 .nav-secondary .wrap li.current-menu-ancestor > .subnav-wrapper > .sub-menu,
 .nav-secondary .wrap li.current-menu-item > .subnav-wrapper > .sub-menu {
   display: block;
+}
+.nav-secondary .wrap li.current-menu-ancestor > .subnav-wrapper,
+.nav-secondary .wrap li.current-menu-item > .subnav-wrapper {
+  z-index: 100;
 }
 /*
 Content Area
