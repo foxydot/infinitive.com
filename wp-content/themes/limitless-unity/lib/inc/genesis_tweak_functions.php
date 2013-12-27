@@ -381,10 +381,7 @@ function msdlab_team_member_special($args){
                     'echo' => false,
                 ) ); 
             $ret .= get_the_post_thumbnail($result->ID,'mini-headshot',array('itemprop'=>'image'));
-            $ret .= '<ul><li class="insights-header"><a href="'.get_permalink($result->ID).'#insights"><span class="fa-stack fa-lg pull-left">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-</span>'.$firstname.' Insights</a></li>';
+            $ret .= '<ul>';
             if($contact_info->get_the_value('_team_linked_in')){
                 $ret .= '<li class="linkedin"><a href="'.$contact_info->get_the_value('_team_linked_in').'" target="_linkedin"><span class="fa-stack fa-lg pull-right">
   <i class="fa fa-square fa-stack-2x"></i>
@@ -393,7 +390,10 @@ function msdlab_team_member_special($args){
             }
             
 
-            $ret .= '</ul>';
+            $ret .= '<li class="insights-header"><a href="'.get_permalink($result->ID).'#insights"><span class="fa-stack fa-lg pull-left">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+</span>'.$firstname.' Insights</a></li></ul>';
             
             $ret .= genesis_markup( array(
                     'html5' => '</aside>',
@@ -426,8 +426,10 @@ function msdlab_team_member_special($args){
                     $ret .= '<div class="personal-quote">'.$contact_info->get_the_value('_team_quote').'</div>';
                 }
                 $ret .= '
-                    <div class="entry-content">'.msdlab_excerpt($post->ID,40).'</div>
+                    <div class="entry-content">'.msdlab_excerpt($post->ID,40).'</div>';
+                if($contact_info->get_the_value('_team_position')=='true'){ $ret .= '
                     <a href="'.get_permalink($post->ID).'" class="readmore">more ></a>';
+                    }
             $ret .= genesis_markup( array(
                     'html5' => '</content>',
                     'xhtml' => '</div>',
