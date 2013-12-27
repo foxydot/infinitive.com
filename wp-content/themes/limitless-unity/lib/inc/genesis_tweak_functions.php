@@ -388,12 +388,12 @@ function msdlab_team_member_special($args){
   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
 </span></a></li>';
             }
-            
-
             $ret .= '<li class="insights-header"><a href="'.get_permalink($result->ID).'#insights"><span class="fa-stack fa-lg pull-left">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-</span>'.$firstname.' Insights</a></li></ul>';
+</span>'.$firstname.' Insights</a></li>';
+
+            $ret .= '</ul>';
             
             $ret .= genesis_markup( array(
                     'html5' => '</aside>',

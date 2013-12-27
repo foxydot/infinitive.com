@@ -16,6 +16,7 @@
     <div class="ginput_container">
             <?php $blogusers = get_users(); ?>
             <select id="<?php $mb->the_name(); ?>" name="<?php $mb->the_name(); ?>">
+                <option>No Insights</option>
                 <?php foreach($blogusers AS $bu){ ?>
                     <option value="<?php print $bu->ID; ?>"<?php $mb->the_select_state($bu->ID); ?>><?php print $bu->display_name; ?></option>
                 <?php } ?>
