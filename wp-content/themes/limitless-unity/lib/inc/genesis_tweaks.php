@@ -30,6 +30,7 @@ add_filter('genesis_breadcrumb_args', 'msdlab_breadcrumb_args'); //customize the
 remove_action('genesis_before_loop', 'genesis_do_breadcrumbs'); //move the breadcrumbs 
 add_action('genesis_before_content_sidebar_wrap', 'genesis_do_breadcrumbs'); //to outside of the loop area
 add_action('genesis_before_entry','msd_post_image');//add the image above the entry
+add_action('wp_head','msdlab_sharethis_removal');
 
 remove_action( 'genesis_before_post_content', 'genesis_post_info' ); //remove the info (date, posted by,etc.)
 remove_action( 'genesis_after_post_content', 'genesis_post_meta' ); //remove the meta (filed under, tags, etc.)

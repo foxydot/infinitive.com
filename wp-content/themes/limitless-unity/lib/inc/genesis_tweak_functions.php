@@ -142,6 +142,14 @@ function msdlab_breadcrumb_args($args) {
     return $args;
 }
 
+function msdlab_sharethis_removal(){
+    global $post;
+    if($post->post_type != 'post'){
+        remove_action('the_content', 'st_add_link');
+        remove_action('the_content', 'st_add_widget');
+    }    
+}
+
 /**
  * Custom blog loop
  */
