@@ -78,9 +78,12 @@ function copyright($address = TRUE){
 function social_media($attr){
 	?>
 	<div id="social-media" class="social-media">
-			<?php if(get_option('msdsocial_linkedin_link')!=""){ ?>
-</i><span>			<a href="<?php echo get_option('msdsocial_linkedin_link'); ?>" class="li" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a>
-			<?php }?>
+			<?php if(get_option('msdsocial_contact_link')!=""){ ?>
+</i><span>          <a href="<?php echo get_option('msdsocial_contact_link'); ?>" class="li" title="Contact" target="_blank"><span>Contact</span></a>
+            <?php }?>
+            <?php if(get_option('msdsocial_linkedin_link')!=""){ ?>
+</i><span>          <a href="<?php echo get_option('msdsocial_linkedin_link'); ?>" class="li" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i><span>LinkedIn</span></a>
+            <?php }?>
 			<?php if(get_option('msdsocial_twitter_user')!=""){ ?>
 </i><span>			<a href="http://www.twitter.com/<?php echo get_option('msdsocial_twitter_user'); ?>" class="tw" title="Follow Us on Twitter!" target="_blank"><i class="fa fa-twitter"></i><span>Twitter</span></a>
 			<?php }?>
