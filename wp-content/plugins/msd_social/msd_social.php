@@ -78,6 +78,7 @@ function copyright($address = TRUE){
 function social_media($attr){
 	?>
 	<div id="social-media" class="social-media">
+	    <?php ts_data(get_option('msdsocial_contact_link')); ?>
 			<?php if(get_option('msdsocial_contact_link')!=""){ ?>
                 <a href="<?php echo get_option('msdsocial_contact_link'); ?>" class="li" title="Contact" target="_blank"><span>Contact</span></a>
             <?php }?>
