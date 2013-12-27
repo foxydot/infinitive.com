@@ -155,7 +155,7 @@ if(!function_exists('msdlab_excerpt')){
         $the_post = get_post( $post_id );
         $the_excerpt = strip_tags( strip_shortcodes( $the_post->post_excerpt ) );
          
-        if ( empty( $the_excerpt ) )
+        if ( empty( $the_excerpt ) ){
         $the_excerpt = strip_tags( strip_shortcodes( $the_post->post_content ) );
          
         $words = explode( ' ', $the_excerpt, $excerpt_length + 1 );
@@ -164,6 +164,7 @@ if(!function_exists('msdlab_excerpt')){
         $words = array_slice( $words, 0, $excerpt_length );
          
         $the_excerpt = implode( ' ', $words ) . ' <a href="'.get_post_permalink($post_id).'">'.$trailing_character.'</a>';
+        }
         return $the_excerpt;
     }
 }

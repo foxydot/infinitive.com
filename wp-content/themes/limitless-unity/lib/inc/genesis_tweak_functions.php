@@ -418,7 +418,7 @@ function msdlab_team_member_special($args){
                     $ret .= '<div class="personal-quote">'.$contact_info->get_the_value('_team_quote').'</div>';
                 }
                 $ret .= '
-                    <div class="entry-content">'.msdlab_excerpt($post->ID).'</div>
+                    <div class="entry-content">'.msdlab_excerpt($post->ID,40).'</div>
                     <a href="'.get_permalink($post->ID).'" class="readmore">more ></a>';
             $ret .= genesis_markup( array(
                     'html5' => '</content>',
