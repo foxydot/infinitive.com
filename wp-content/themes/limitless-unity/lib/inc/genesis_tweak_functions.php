@@ -388,7 +388,7 @@ function msdlab_team_member_special($args){
   <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
 </span></a></li>';
             }
-            if($contact_info->get_the_value('_team_user_id')!=''){
+            if($contact_info->get_the_value('_team_user_id')!=0){
             $ret .= '<li class="insights-header"><a href="'.get_permalink($result->ID).'#insights"><span class="fa-stack fa-lg pull-left">
   <i class="fa fa-circle fa-stack-2x"></i>
   <i class="fa fa-rss fa-stack-1x fa-inverse"></i>

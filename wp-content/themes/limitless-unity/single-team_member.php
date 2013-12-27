@@ -106,23 +106,25 @@ function msd_team_insights(){
     $firstname = $titlearray[0];
     $firstname = (substr($firstname, -1) == 's')?$firstname."'":$firstname."'s";
     print '<h3 class="insights-header" id="insights">'.$firstname.' Insights</h3>';
-    $args = array(
-        'author' => $contact_info->get_the_value('_team_user_id'),
-        'posts_per_page' => '4',
-    );
-    $blogs = get_posts($args);
-    if($blogs){
-        print '<div class="insights-blogs">';
-        print '<h3 class="insights-header">Blog Posts</h3>';
-        $i = 0;
-        foreach($blogs AS $blog){
-            if($i%2==0){
-                print '<hr class="grid-separator">';
+    if($contact_info->get_the_value('_team_user_id')!=0){
+        $args = array(
+            'author' => $contact_info->get_the_value('_team_user_id'),
+            'posts_per_page' => '4',
+        );
+        $blogs = get_posts($args);
+        if($blogs){
+            print '<div class="insights-blogs">';
+            print '<h3 class="insights-header">Blog Posts</h3>';
+            $i = 0;
+            foreach($blogs AS $blog){
+                if($i%2==0){
+                    print '<hr class="grid-separator">';
+                }
+                team_display_blog($blog,$i);
+                $i++;
             }
-            team_display_blog($blog,$i);
-            $i++;
+            print '</div>';
         }
-        print '</div>';
     }
 }
 
