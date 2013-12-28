@@ -7277,6 +7277,12 @@ Site Footer
   width: 100%;
   text-indent: -9999px;
 }
+a.readmore-button {
+  background: #999999;
+  padding: 0.2rem 1rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
 /*custom Font*/
 @font-face {
   font-family: "infinitive";
