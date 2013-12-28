@@ -56,3 +56,8 @@ function msd_insert_custom_image_sizes( $sizes ) {
 }
 }
 add_filter( 'image_size_names_choose', 'msd_insert_custom_image_sizes' );
+
+add_filter( 'genesis_pre_load_favicon', 'sp_favicon_filter' );
+function sp_favicon_filter( $favicon_url ) {
+    return get_stylesheet_directory_uri().'/lib/img/favicon.ico';
+}
