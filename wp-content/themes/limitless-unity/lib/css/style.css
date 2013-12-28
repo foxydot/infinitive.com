@@ -7247,6 +7247,30 @@ Site Footer
 .widget_sp_image .link {
   text-align: right;
 }
+.video-grid ul.grid {
+  list-style: none outside none;
+  margin: 0;
+}
+.video-grid ul.grid li {
+  list-style: none outside none;
+  margin: 1rem 0;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .video-grid ul.grid li {
+    float: left;
+    width: 50%;
+  }
+}
+.video-grid ul.grid li a.thumb {
+  display: block;
+  height: 180px;
+  width: 100%;
+  text-indent: -9999px;
+}
 /*custom Font*/
 @font-face {
   font-family: "infinitive";

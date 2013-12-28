@@ -58,11 +58,32 @@
     }
   }
 }
+
 .widget_sp_image{
   .link{
     text-align: right;
   }
 }
+
+.video-grid{
+  ul.grid{
+    list-style: none outside none;
+    margin: 0;
+    li{
+      list-style: none outside none;
+      margin: 1rem 0;
+      .make-sm-column(6);
+      a.thumb{
+        display: block;
+        height: 180px;
+        width: 100%;
+        text-indent: -9999px;
+      }
+    }
+  }
+}
+
+
 /*custom Font*/
 @font-face {
   font-family: "infinitive";

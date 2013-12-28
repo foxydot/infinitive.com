@@ -254,7 +254,7 @@ class MSDVideoCPT {
         function msd_video_grid( $atts ){
             global $video,$post;
             extract( shortcode_atts( array(
-            'tags' => '',
+            'tags' => array(),
             'cols' => 4,
             ), $atts ) );
             $tags = explode(',',$tags);
@@ -270,28 +270,32 @@ class MSDVideoCPT {
                 $featured_image = $this->get_video_grid_image($item);
                 $content = $this->get_video_content($item);
         
-                $menu .= '<li class="tab-'.$item->post_name.'" style="background:url('.$featured_image.') no-repeat center center;background-size:cover;"><a href="#'.$item->post_name.'" title="'.$item->post_title.'" data-toggle="modal">'.$item->post_title.'</a></li>'."\n";
+                $menu .= '<li class="tab-'.$item->post_name.'"><a href="#'.$item->post_name.'" data-target="#'.$item->post_name.'" title="'.$item->post_title.'" data-toggle="modal" class="thumb" style="background:url('.$featured_image.') no-repeat center center;background-size:cover;">'.$item->post_title.'</a><h4>'.$item->post_title.'</h4></li>'."\n";
                 $j = 0;
                     foreach ($content AS $piece){
                         if(!empty($piece['image'])){
                             $key = $j==0?'':'-'.$j;
-                            $slides .=  '<div id="'.$item->post_name.$key.'" class="modal hide fade div-'.$item->post_name.$key.'" role="dialog">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            $slides .=  '<div id="'.$item->post_name.'" class="modal fade div-'.$item->post_name.$key.'" role="dialog">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="video-piece">'.remove_wpautop(apply_filters('the_content', $piece['image'])).'</div>
+                                            <h3 class="video-piece-title">'.$piece['title'].'</h3>
+                                            <div class="entry-content">'.remove_wpautop(apply_filters('the_content', $piece['description'])).'</div>
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-                                        <div class="video-piece">'.remove_wpautop(apply_filters('the_content', $piece['image'])).'</div>
-                                        <h3 class="video-piece-title">'.$piece['title'].'</h3>
-                                        <div class="entry-content">'.remove_wpautop(apply_filters('the_content', $piece['description'])).'</div>
-                                    </div>
-                                </div>';
+                                </div>
+                            </div>';
                             $j++;
                         }
                     }
                 $i++;
             }
         
-            return "\n".'<div class="video-grid video-'.$ID.'">'."\n".'<ul class="nav">'."\n".$menu."\n".'</ul>'."\n".'<div class="content">'."\n".$slides."\n".'</div>'."\n".$nav."\n".'</div>';
+            return "\n".'<div class="video-grid video-'.$ID.'">'."\n".'<ul class="grid">'."\n".$menu."\n".'</ul>'."\n".'<div class="content">'."\n".$slides."\n".'</div>'."\n".$nav."\n".'</div>';
         }
         function msd_video_list( $atts ){
             global $video,$post;
