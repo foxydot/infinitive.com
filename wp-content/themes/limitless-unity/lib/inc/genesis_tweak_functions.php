@@ -155,13 +155,40 @@ function msdlab_grid_loop_helper() {
         'feature_content_limit' => 0,
         'grid_image_size'       => 'child_thumbnail',
         'grid_image_class'      => 'alignnone post-image',
-        'grid_content_limit'    => 8,
+        'grid_content_limit'    => 0,
         'more' => __( '[Continue reading...]', 'adaptation' ),
-        'posts_per_page' => 6,
         ) );
     } else {
         genesis_standard_loop();
     }
+}
+
+add_filter( 'pre_get_posts', 'be_archive_query' ,20);
+/**
+ * Archive Query
+ *
+ * Sets all archives to 27 per page
+ * @since 1.0.0
+ * @link http://www.billerickson.net/customize-the-wordpress-query/
+ *
+ * @param object $query
+ */
+function be_archive_query( $query ) {
+    if( $query->is_main_query() && $query->is_home() && !($query->is_paged())) {
+        $query->set( 'posts_per_page', 7 );
+    }
+}
+
+add_action ( 'genesis_before_entry', 'msdlab_add_pagination');
+function msdlab_add_pagination() {
+    if ( is_single() && is_cpt('post') ) {
+        add_action( 'genesis_entry_footer', 'msdlab_post_navigation_links' );
+    }
+}
+
+function msdlab_post_navigation_links() {
+    previous_post_link('<div class="prev-link alignleft page-nav"><i class="fa fa-arrow-left"></i> %link</div>', 'Previous'); 
+    next_post_link('<div class="next-link alignright page-nav">%link <i class="fa fa-arrow-right"></i></div>', 'Next');
 }
 
 // Customize Grid Loop Content
