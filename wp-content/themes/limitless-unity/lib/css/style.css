@@ -7045,7 +7045,7 @@ main .genesis-grid-odd {
 }
 main .genesis-grid-even,
 main .genesis-grid-odd {
-  margin: 0 0 20px;
+  margin: 0;
 }
 #content hr {
   background: #fff;
