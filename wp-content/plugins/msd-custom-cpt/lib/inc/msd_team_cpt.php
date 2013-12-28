@@ -119,7 +119,7 @@ if (!class_exists('MSDTeamCPT')) {
             if($current_screen->post_type == $this->cpt){
                 wp_enqueue_script('media-upload');
                 wp_enqueue_script('thickbox');
-                wp_register_script('my-upload', plugin_dir_url(dirname(__FILE__)).'/js/msd-upload-file.js', array('jquery','media-upload','thickbox'),FALSE,TRUE);
+                wp_register_script('my-upload', plugin_dir_url(dirname(__FILE__)).'/lib/js/msd-upload-file.js', array('jquery','media-upload','thickbox'),FALSE,TRUE);
                 wp_enqueue_script('my-upload');
             }
         }
@@ -128,7 +128,7 @@ if (!class_exists('MSDTeamCPT')) {
             global $current_screen;
             if($current_screen->post_type == $this->cpt){
                 wp_enqueue_style('thickbox');
-                wp_enqueue_style('custom_meta_css',plugin_dir_url(dirname(__FILE__)).'/css/meta.css');
+                wp_enqueue_style('custom_meta_css',plugin_dir_url(dirname(__FILE__)).'/lib/css/meta.css');
             }
         }   
             
