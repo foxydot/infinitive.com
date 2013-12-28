@@ -120,6 +120,15 @@ function msdlab_sharethis_removal(){
     }    
 }
 
+//* Customize the post info function
+add_filter( 'genesis_post_info', 'sp_post_info_filter' );
+function sp_post_info_filter($post_info) {
+    if ( !is_page() ) {
+        $post_info = 'Posted by [post_author_posts_link]<br />
+        [post_date]&nbsp;&nbsp;&nbsp;'.msdlab_get_comments_number();
+        return $post_info;
+}}
+
 /**
  * Custom blog loop
  */
@@ -138,19 +147,42 @@ function msdlab_blog_grid(){
 }
 function msdlab_grid_loop_helper() {
     if ( function_exists( 'genesis_grid_loop' ) ) {
-        genesis_grid_loop( array(
-        'features' => 1,
-        'feature_image_size' => 'child_full',
-        'feature_image_class' => 'alignleft post-image',
-        'feature_content_limit' => 0,
-        'grid_image_size' => 'child_thumbnail',
-        'grid_image_class' => 'alignnone post-image',
-        'grid_content_limit' => 0,
-        'more' => __( '[Continue reading...]', 'adaptation' ),
-        'posts_per_page' => 6,
-        ) );
+        if(!is_paged()){
+                genesis_grid_loop( array(
+                'features' => 1,
+                'feature_image_size' => 'child_full',
+                'feature_image_class' => 'alignleft post-image',
+                'feature_content_limit' => 0,
+                'grid_image_size' => 'child_thumbnail',
+                'grid_image_class' => 'alignnone post-image',
+                'grid_content_limit' => 0,
+                'more' => __( '[Continue reading...]', 'adaptation' ),
+                'posts_per_page' => 6,
+                ) );
+            } else {
+                genesis_grid_loop( array(
+                'features' => 0,
+                'feature_image_size' => 'child_full',
+                'feature_image_class' => 'alignleft post-image',
+                'feature_content_limit' => 0,
+                'grid_image_size' => 'child_thumbnail',
+                'grid_image_class' => 'alignnone post-image',
+                'grid_content_limit' => 0,
+                'more' => __( '[Continue reading...]', 'adaptation' ),
+                'posts_per_page' => 10,
+                ) );
+            }
     } else {
         genesis_standard_loop();
+    }
+}
+
+add_filter( 'pre_get_posts', 'be_archive_query', 14 );
+function be_archive_query( $query ) {
+    if(is_home() && !is_paged()){
+    if( $query->is_main_query() && $query->is_archive() ) {
+     $query->set( 'posts_per_page', 7 );
+    }
     }
 }
 
@@ -176,10 +208,6 @@ function msdlab_grid_loop_content() {
     else {
 
         //the_excerpt();
-        $num_comments = get_comments_number();
-        if ($num_comments == '1') $comments = $num_comments.' ' . __( 'comment', 'adaptation' );
-        else $comments = $num_comments.' ' . __( 'comments', 'adaptation' );
-        echo '<p class="more"><a class="comments" href="'.get_permalink().'/#comments">'.$comments.'</a> <a href="'.get_permalink().'">' . __( 'Read the full article &#187;', 'adaptation' ) . '</a></p>';
     }
 
 }
@@ -198,8 +226,13 @@ function msd_add_loop_counter_to_html5_loop(){
 
 function msdlab_grid_divider() {
     global $loop_counter, $paged;
-    if($loop_counter == 1 && $paged == 0){print '<div class="blog-header"><h4 class="recent-posts-header">Recent Posts</h4></div>';}
-    if ((($loop_counter + 1) % 2 == 0) && !($paged == 0 && $loop_counter < 2)) echo '<hr class="grid-separator" />';
+    if($loop_counter == 1 && $paged == 0){print '<div class="section-header"><h3 class="recent-posts-header">Recent Posts</h3></div><hr class="grid-separator" />';}
+    if(is_paged()){
+        if ((($loop_counter) % 2 == 0) && !($paged == 0 && $loop_counter < 2)) echo '<hr class="grid-separator" />';
+    } else {
+        if ((($loop_counter + 1) % 2 == 0) && !($paged == 0 && $loop_counter < 2)) echo '<hr class="grid-separator" />';
+    }
+    
 }
 
  function msdlab_grid_add_bootstrap($classes){
@@ -208,7 +241,12 @@ function msdlab_grid_divider() {
      }
      return $classes;
  }
-
+function msdlab_get_comments_number(){
+    $num_comments = get_comments_number();
+    if ($num_comments == '1') $comments = $num_comments.' ' . __( 'comment', 'adaptation' );
+    else $comments = $num_comments.' ' . __( 'comments', 'adaptation' );
+    return '<a class="comments" href="'.get_permalink().'/#comments">'.$comments.'</a>';
+}
 /**Case Studies **/
 function msdlab_casestudies_special_loop(){
     $args = array(
