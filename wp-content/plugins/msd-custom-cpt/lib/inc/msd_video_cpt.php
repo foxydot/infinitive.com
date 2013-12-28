@@ -30,7 +30,7 @@ class MSDVideoCPT {
         add_action('admin_print_scripts', array(&$this,'add_admin_scripts') );
         add_action('admin_print_styles', array(&$this,'add_admin_styles') );
         
-        add_shortcode( 'video', array(&$this,'msd_video_grid') );
+        add_shortcode( 'video-grid', array(&$this,'msd_video_grid') );
         add_shortcode( 'video-slider', array(&$this,'msd_video_slider') );  
         add_shortcode( 'video-popup-slider', array(&$this,'msd_video_popup_slider') );  
         add_shortcode( 'video-all', array(&$this,'all_video_items') );
