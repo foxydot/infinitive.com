@@ -146,43 +146,21 @@ function msdlab_blog_grid(){
     }
 }
 function msdlab_grid_loop_helper() {
-    if ( function_exists( 'genesis_grid_loop' ) ) {
-        if(!is_paged()){
-                genesis_grid_loop( array(
-                'features' => 1,
-                'feature_image_size' => 'child_full',
-                'feature_image_class' => 'alignleft post-image',
-                'feature_content_limit' => 0,
-                'grid_image_size' => 'child_thumbnail',
-                'grid_image_class' => 'alignnone post-image',
-                'grid_content_limit' => 0,
-                'more' => __( '[Continue reading...]', 'adaptation' ),
-                'posts_per_page' => 6,
-                ) );
-            } else {
-                genesis_grid_loop( array(
-                'features' => 0,
-                'feature_image_size' => 'child_full',
-                'feature_image_class' => 'alignleft post-image',
-                'feature_content_limit' => 0,
-                'grid_image_size' => 'child_thumbnail',
-                'grid_image_class' => 'alignnone post-image',
-                'grid_content_limit' => 0,
-                'more' => __( '[Continue reading...]', 'adaptation' ),
-                'posts_per_page' => 10,
-                ) );
-            }
+    if ( function_exists( 'genesis_grid_loop' ) ) {                
+        genesis_grid_loop( array(
+        'features' => 1,
+        'features_on_all'       => false,
+        'feature_image_size'    => 'child_full',
+        'feature_image_class'   => 'alignleft post-image',
+        'feature_content_limit' => 0,
+        'grid_image_size'       => 'child_thumbnail',
+        'grid_image_class'      => 'alignnone post-image',
+        'grid_content_limit'    => 8,
+        'more' => __( '[Continue reading...]', 'adaptation' ),
+        'posts_per_page' => 6,
+        ) );
     } else {
         genesis_standard_loop();
-    }
-}
-
-add_filter( 'pre_get_posts', 'be_archive_query', 14 );
-function be_archive_query( $query ) {
-    if(is_home() && !is_paged()){
-    if( $query->is_main_query() && $query->is_archive() ) {
-     $query->set( 'posts_per_page', 7 );
-    }
     }
 }
 
