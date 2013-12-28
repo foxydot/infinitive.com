@@ -253,11 +253,11 @@ class MSDVideoCPT {
 
         function msd_video_grid( $atts ){
             global $video,$post;
+            $atts['tags'] = explode(',',$atts['tags']);
             extract( shortcode_atts( array(
             'tags' => array(),
-            'cols' => 4,
+            'cols' => 2,
             ), $atts ) );
-            $tags = explode(',',$tags);
             $ID = $tags[0];
                 
             $items = $this->get_video_items($tags);
