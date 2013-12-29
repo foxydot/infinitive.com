@@ -38,6 +38,7 @@ class Ithemes_Updater_Functions {
 		$name = str_replace( '-', ' ', $name );
 		$name = ucwords( $name );
 		$name = str_replace( 'buddy', 'Buddy', $name );
+		$name = str_replace( 'Ithemes', 'iThemes', $name );
 		
 		return $name;
 	}

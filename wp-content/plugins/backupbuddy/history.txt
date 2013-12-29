@@ -440,5 +440,7 @@
 	Updated alpha iThemes Sync functionality.
 4.2.11.0 - 2013-12-23 - Dustin Bolton
 	Fixed Profile Add button not working on Backups page.
-4.2.11.2 - 2013-12-23 - Dustin Bolton
-	Multisite: Fixed missing icon for subsite Multisite Export menu item.
+4.2.12.0 - 2013-12-23 - Dustin Bolton
+	Multisite: Fixed missing icon for subsite Multisite Export menu item & clicking going to a non-existant 404 page.
+4.2.12.1 - 2013-12-23 - Dustin Bolton
+	Multisite: Fixed bug where users would be skipped on import even though they did not already exist.

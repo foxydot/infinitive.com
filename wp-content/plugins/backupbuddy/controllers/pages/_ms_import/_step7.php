@@ -102,9 +102,11 @@ foreach ( $users as $user ) { // For each source user to migrate.
 	
 	$old_user_id = $user->ID;
 	$old_user_pass = $user->user_pass;
-	$sql = "select ID from {$wpdb->users} where user_login = '{$user->user_login}' or user_email = %d"; // Get user if they already exist on network.
-	$user_id = $wpdb->get_var( $wpdb->prepare( $sql, $user->user_email ) ); // We will see if user already exists; 
-	if ( !$user_id ) { // User does NOT already exist in network.
+	$sql = "select ID from {$wpdb->users} where user_login = '{$user->user_login}' or user_email = %s"; // Get user if they already exist on network.
+	$sql = $wpdb->prepare( $sql, $user->user_email );
+	$user_id = $wpdb->get_var( $sql ); // We will see if user already exists; 
+	
+	if ( null === $user_id ) { // User does NOT already exist in network.
 		$new_destination_user_args = array();
 		foreach ( $user as $key => $user_param ) { // Loop through all user parameters.
 			$new_destination_user_args[ $key ] = $user_param;

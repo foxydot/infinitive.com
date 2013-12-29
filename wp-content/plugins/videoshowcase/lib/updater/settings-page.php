@@ -293,7 +293,12 @@ class Ithemes_Updater_Settings_Page {
 		
 ?>
 	<div class="wrap">
-		<?php screen_icon(); ?>
+		<?php
+			if ( version_compare( $GLOBALS['wp_version'], '3.7.10', '<=' ) ) {
+				screen_icon();
+			}
+		?>
+		
 		<h2><?php _e( 'iThemes Licensing', 'it-l10n-videoshowcase' ); ?></h2>
 		
 		<?php $this->list_licensed_products( $licensed, $post_data, $action ); ?>
@@ -422,7 +427,6 @@ class Ithemes_Updater_Settings_Page {
 							else if ( $time_left <= 0 )
 								$class = 'expired';
 							
-							
 							if ( 'expired' == $data['status'] ) {
 								$class = 'expired';
 								$remaining = '&nbsp;';
@@ -430,6 +434,11 @@ class Ithemes_Updater_Settings_Page {
 							
 							
 							$status = ucfirst( $class );
+							
+							
+							if ( ++$count % 2 ) {
+								$class .= ' alt';
+							}
 							
 							
 							$check_id = "cb-select-{$data['package']}";
@@ -514,17 +523,24 @@ class Ithemes_Updater_Settings_Page {
 					</tr>
 				</thead>
 				<tbody>
+					<?php $count = 0; ?>
 					<?php foreach ( $products as $name => $data ) : ?>
 						<?php
 							$check_id = "cb-select-{$data['package']}";
-							
 							
 							if ( 'license_packages' == $action )
 								$checked = ( in_array( $data['package'], $post_data['packages'] ) ) ? ' checked' : '';
 							else
 								$checked = ' checked';
+							
+							if ( ++$count % 2 ) {
+								$class = 'alt';
+							} else {
+								$class = '';
+							}
+							
 						?>
-						<tr>
+						<tr class="<?php echo $class; ?>">
 							<th class="check-column" scope="row">
 								<label class="screen-reader-text" for="<?php echo $check_id; ?>"><?php printf( __( 'Select %s' ), $name ); ?></label>
 								<label for="<?php echo $check_id; ?>">
@@ -578,14 +594,21 @@ class Ithemes_Updater_Settings_Page {
 				</tr>
 			</thead>
 			<tbody>
+				<?php $count = 0; ?>
 				<?php foreach ( $products as $name => $data ) : ?>
 					<?php
 						if ( ( 'error' == $data['status'] ) && ( ! empty( $data['error']['message'] ) ) )
 							$response = "{$data['error']['message']} ({$data['error']['code']})";
 						else
 							$response = __( 'Unknown Error', 'it-l10n-videoshowcase' );
+						
+						if ( ++$count % 2 ) {
+							$class = 'alt';
+						} else {
+							$class = '';
+						}
 					?>
-					<tr>
+					<tr class="<?php echo $class; ?>">
 						<td><?php echo $name; ?></td>
 						<td><?php echo $data['type']; ?></td>
 						<td><?php echo $data['package']; ?></td>

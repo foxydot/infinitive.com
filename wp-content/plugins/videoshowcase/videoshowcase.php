@@ -5,7 +5,7 @@
  * Plugin Name: Video Showcase
  * Plugin URI: http://ithemes.com/purchase/displaybuddy/
  * Description: DisplayBuddy Series - Embed thickbox videos with image links.
- * Version: 1.1.57
+ * Version: 1.1.60
  * Author: iThemes.com
  * Author URI: http://ithemes.com/
  * iThemes Package: videoshowcase

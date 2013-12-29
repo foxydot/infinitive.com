@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  \n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/videoshowcase\n"
-"POT-Creation-Date: 2013-10-28 11:18-0500\n"
+"POT-Creation-Date: 2013-12-19 15:01-0600\n"
 "PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Chris Jean <support@ithemes.com>\n"
 "Language: \n"
@@ -191,7 +191,7 @@ msgid ""
 msgstr ""
 
 #: lib/updater/admin.php:138 lib/updater/admin.php:144
-#: lib/updater/settings-page.php:297
+#: lib/updater/settings-page.php:302
 msgid "iThemes Licensing"
 msgstr ""
 
@@ -229,7 +229,22 @@ msgid ""
 "response from iThemes API server.</p>"
 msgstr ""
 
-#: lib/updater/server.php:129
+#: lib/updater/server.php:72
+#, php-format
+msgid ""
+"The server could not be contacted. Requests are delayed for %d minute to "
+"allow the server to recover."
+msgid_plural ""
+"The server could not be contacted. Requests are delayed for %d minutes to "
+"allow the server to recover."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/updater/server.php:150
+msgid "The server was unable to be contacted."
+msgstr ""
+
+#: lib/updater/server.php:160
 #, php-format
 msgid ""
 "An error occurred when communicating with the iThemes update server: %s (%s)"
@@ -372,19 +387,19 @@ msgstr[1] ""
 msgid "Unable to remove license from %1$s. Reason: %2$s"
 msgstr ""
 
-#: lib/updater/settings-page.php:319
+#: lib/updater/settings-page.php:324
 msgid "Settings"
 msgstr ""
 
-#: lib/updater/settings-page.php:325
+#: lib/updater/settings-page.php:330
 msgid "Quick Release Updates"
 msgstr ""
 
-#: lib/updater/settings-page.php:332
+#: lib/updater/settings-page.php:337
 msgid "Enable quick release updates"
 msgstr ""
 
-#: lib/updater/settings-page.php:335
+#: lib/updater/settings-page.php:340
 msgid ""
 "Some products have quick releases that are created to solve specific issues "
 "that some users experience. In order to avoid causing users to have updates "
@@ -396,90 +411,90 @@ msgid ""
 "confirming that the quick release solves the issue for you."
 msgstr ""
 
-#: lib/updater/settings-page.php:342
+#: lib/updater/settings-page.php:347
 msgid "Save Settings"
 msgstr ""
 
-#: lib/updater/settings-page.php:361 lib/updater/settings-page.php:392
-#: lib/updater/settings-page.php:512 lib/updater/settings-page.php:573
+#: lib/updater/settings-page.php:366 lib/updater/settings-page.php:397
+#: lib/updater/settings-page.php:521 lib/updater/settings-page.php:589
 msgid "Product"
 msgstr ""
 
-#: lib/updater/settings-page.php:362 lib/updater/settings-page.php:394
+#: lib/updater/settings-page.php:367 lib/updater/settings-page.php:399
 msgid "Member"
 msgstr ""
 
-#: lib/updater/settings-page.php:363 lib/updater/settings-page.php:396
+#: lib/updater/settings-page.php:368 lib/updater/settings-page.php:401
 msgid "Expiration"
 msgstr ""
 
-#: lib/updater/settings-page.php:364 lib/updater/settings-page.php:397
+#: lib/updater/settings-page.php:369 lib/updater/settings-page.php:402
 msgid "Remaining Licenses"
 msgstr ""
 
-#: lib/updater/settings-page.php:380
+#: lib/updater/settings-page.php:385
 msgid "Licensed Products"
 msgstr ""
 
-#: lib/updater/settings-page.php:386 lib/updater/settings-page.php:506
+#: lib/updater/settings-page.php:391 lib/updater/settings-page.php:515
 msgid "Select All"
 msgstr ""
 
-#: lib/updater/settings-page.php:395
+#: lib/updater/settings-page.php:400
 msgid "Product Status"
 msgstr ""
 
-#: lib/updater/settings-page.php:405
+#: lib/updater/settings-page.php:410
 msgid "unlimited"
 msgstr ""
 
-#: lib/updater/settings-page.php:442 lib/updater/settings-page.php:529
+#: lib/updater/settings-page.php:451 lib/updater/settings-page.php:545
 #, php-format
 msgid "Select %s"
 msgstr ""
 
-#: lib/updater/settings-page.php:462
+#: lib/updater/settings-page.php:471
 msgid "Remove Licenses"
 msgstr ""
 
-#: lib/updater/settings-page.php:496
+#: lib/updater/settings-page.php:505
 msgid "Unlicensed Products"
 msgstr ""
 
-#: lib/updater/settings-page.php:498
+#: lib/updater/settings-page.php:507
 msgid ""
 "The following products have not been licensed. Licensing a product gives you "
 "access to automatic updates from within WordPress."
 msgstr ""
 
-#: lib/updater/settings-page.php:499
+#: lib/updater/settings-page.php:508
 msgid ""
 "To license products, select the products you wish to license, enter your "
 "iThemes membership username and password, and press the License Products "
 "button."
 msgstr ""
 
-#: lib/updater/settings-page.php:500
+#: lib/updater/settings-page.php:509
 #, php-format
 msgid "Need help? <a href=\"%s\">Click here for a quick video tutorial</a>."
 msgstr ""
 
-#: lib/updater/settings-page.php:545
+#: lib/updater/settings-page.php:561
 msgid "License Products"
 msgstr ""
 
-#: lib/updater/settings-page.php:565
+#: lib/updater/settings-page.php:581
 msgid "Unrecognized Products"
 msgstr ""
 
-#: lib/updater/settings-page.php:567
+#: lib/updater/settings-page.php:583
 msgid ""
 "The following products were not recognized by the licensing system. This can "
 "be due to a bug in the product code, a temporary server issue, or because "
 "the product is no longer supported."
 msgstr ""
 
-#: lib/updater/settings-page.php:568
+#: lib/updater/settings-page.php:584
 #, php-format
 msgid ""
 "Please check this page again at a later time to see if the problem resolves "
@@ -487,55 +502,55 @@ msgid ""
 "support</a> and provide them with the details given below."
 msgstr ""
 
-#: lib/updater/settings-page.php:574
+#: lib/updater/settings-page.php:590
 msgid "Type"
 msgstr ""
 
-#: lib/updater/settings-page.php:575
+#: lib/updater/settings-page.php:591
 msgid "Package"
 msgstr ""
 
-#: lib/updater/settings-page.php:576
+#: lib/updater/settings-page.php:592
 msgid "Version"
 msgstr ""
 
-#: lib/updater/settings-page.php:577
+#: lib/updater/settings-page.php:593
 msgid "Server Response"
 msgstr ""
 
-#: lib/updater/settings-page.php:586
+#: lib/updater/settings-page.php:603
 msgid "Unknown Error"
 msgstr ""
 
-#: lib/updater/settings-page.php:619
+#: lib/updater/settings-page.php:642
 #, php-format
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/updater/settings-page.php:621
+#: lib/updater/settings-page.php:644
 #, php-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/updater/settings-page.php:623
+#: lib/updater/settings-page.php:646
 #, php-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/updater/settings-page.php:625
+#: lib/updater/settings-page.php:648
 #, php-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/updater/settings-page.php:628
+#: lib/updater/settings-page.php:651
 #, php-format
 msgid "%s ago"
 msgstr ""

@@ -55,6 +55,13 @@
 .widefat.ithemes-updater-listing tr.expiring {
 	background-color: #FFFFE0;
 }
+.widefat.ithemes-updater-listing tr.expiring.alt {
+	background-color: #F5F5D2;
+}
+
 .widefat.ithemes-updater-listing tr.expired {
 	background-color: #FFEBE8;
+}
+.widefat.ithemes-updater-listing tr.expired.alt {
+	background-color: #F9E1DD;
 }

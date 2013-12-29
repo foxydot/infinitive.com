@@ -3,7 +3,7 @@
 /*
 Provides details formatted for use in "View version *** details" boxes.
 Written by Chris Jean for iThemes.com
-Version 1.1.0
+Version 1.1.1
 
 Version History
 	1.0.0 - 2013-04-11 - Chris Jean
@@ -12,6 +12,8 @@ Version History
 		Updated requires to not use dirname().
 	1.1.0 - 2013-10-02 - Chris Jean
 		Added get_theme_information().
+	1.1.1 - 2013-12-18 - Chris Jean
+		Removed unneeded code that checked package-info.ithemes.com.
 */
 
 
@@ -29,21 +31,6 @@ class Ithemes_Updater_Information {
 		
 		
 		$package = $details['packages'][$path];
-		
-		$url = "http://package-info.ithemes.com/{$package['package']}/information.json";
-		$response = wp_remote_get( $url );
-		
-		if ( ! is_wp_error( $response ) && isset( $response['body'] ) ) {
-			$info = json_decode( $response['body'] );
-			
-			if ( is_object( $info ) && ! empty( $info->name ) && ! empty( $info->version ) ) {
-				$info->slug = dirname( $path );
-				$info->download_link = $package['package-url'];
-				
-				return $info;
-			}
-		}
-		
 		
 		require_once( $GLOBALS['ithemes_updater_path'] . '/functions.php' );
 		require_once( $GLOBALS['ithemes_updater_path'] . '/information.php' );

@@ -31,6 +31,8 @@ class Ithemes_Updater_Settings {
 	private $options_modified = false;
 	private $do_flush = false;
 	private $initialized = false;
+	private $plugins_cleaned = false;
+	private $themes_cleaned = false;
 	
 	private $default_options = array(
 		'server-cache'   => 30,
@@ -189,8 +191,30 @@ class Ithemes_Updater_Settings {
 		if ( ! is_array( $this->options ) || ! isset( $this->options['update_plugins'] ) )
 			$this->load();
 		
-		if ( isset( $this->options['update_plugins'] ) && is_array( $this->options['update_plugins'] ) )
+		if ( isset( $this->options['update_plugins'] ) && is_array( $this->options['update_plugins'] ) ) {
+			if ( ! $this->plugins_cleaned ) {
+				@include_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+				
+				if ( is_callable( 'get_plugin_data' ) ) {
+					foreach ( $this->options['update_plugins'] as $plugin => $update_data ) {
+						$plugin_data = get_plugin_data( WP_PLUGIN_DIR . "/$plugin", false, false );
+						
+						if ( $plugin_data['Version'] == $update_data->new_version ) {
+							unset( $this->options['update_plugins'][$plugin] );
+							$this->plugins_cleaned = true;
+						}
+					}
+				}
+				
+				if ( $this->plugins_cleaned ) {
+					$this->options_modified = true;
+				}
+				
+				$this->plugins_cleaned = true;
+			}
+			
 			$update_plugins->response = array_merge( $update_plugins->response, $this->options['update_plugins'] );
+		}
 		
 		return $update_plugins;
 	}
@@ -208,8 +232,26 @@ class Ithemes_Updater_Settings {
 		if ( ! is_array( $this->options ) || ! isset( $this->options['update_themes'] ) )
 			$this->load();
 		
-		if ( isset( $this->options['update_themes'] ) && is_array( $this->options['update_themes'] ) )
+		if ( isset( $this->options['update_themes'] ) && is_array( $this->options['update_themes'] ) ) {
+			if ( ! $this->themes_cleaned ) {
+				foreach ( $this->options['update_themes'] as $theme => $update_data ) {
+					$theme_data = wp_get_theme( $theme );
+					
+					if ( $theme_data->get( 'Version' ) == $update_data['new_version'] ) {
+						unset( $this->options['update_themes'][$theme] );
+						$this->themes_cleaned = true;
+					}
+				}
+				
+				if ( $this->themes_cleaned ) {
+					$this->options_modified = true;
+				}
+				
+				$this->themes_cleaned = true;
+			}
+			
 			$update_themes->response = array_merge( $update_themes->response, $this->options['update_themes'] );
+		}
 		
 		return $update_themes;
 	}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  \n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/backupbuddy\n"
-"POT-Creation-Date: 2013-12-23 16:44-0600\n"
+"POT-Creation-Date: 2013-12-23 21:29-0600\n"
 "PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Chris Jean <support@ithemes.com>\n"
 "Language: \n"
@@ -446,7 +446,7 @@ msgstr ""
 msgid "Fatal Error #9034.2342348. Unable to access fileoptions data."
 msgstr ""
 
-#: controllers/ajax.php:1169 views/_backup-home.php:513
+#: controllers/ajax.php:1169 views/_backup-home.php:510
 msgid "Unable to access fileoptions data file."
 msgstr ""
 
@@ -467,7 +467,7 @@ msgstr ""
 #: controllers/pages/server_info/permissions.php:69
 #: controllers/pages/server_info/remote_sends.php:152
 #: controllers/pages/server_info/server.php:908
-#: controllers/pages/server_info/server.php:920 views/_backup-home.php:578
+#: controllers/pages/server_info/server.php:920 views/_backup-home.php:575
 #: views/_backup_listing.php:75 views/scheduling.php:57
 msgid "Status"
 msgstr ""
@@ -831,19 +831,19 @@ msgstr ""
 
 #: controllers/pages/_backup-perform.php:48
 #: controllers/pages/_backup-perform.php:73
-#: controllers/pages/destinations.php:62 views/_backup-home.php:180
+#: controllers/pages/destinations.php:62 views/_backup-home.php:177
 #: views/multisite_export.php:67
 msgid "You will be notified by email if any problems are encountered."
 msgstr ""
 
 #: controllers/pages/_backup-perform.php:71
-#: controllers/pages/destinations.php:60 views/_backup-home.php:173
+#: controllers/pages/destinations.php:60 views/_backup-home.php:170
 #: views/multisite_export.php:65
 msgid "Error starting remote send"
 msgstr ""
 
 #: controllers/pages/_backup-perform.php:73
-#: controllers/pages/destinations.php:62 views/_backup-home.php:180
+#: controllers/pages/destinations.php:62 views/_backup-home.php:177
 #: views/multisite_export.php:67
 msgid "Your file has been scheduled to be sent now. It should arrive shortly."
 msgstr ""
@@ -1241,7 +1241,7 @@ msgstr ""
 msgid "Continue Database Import"
 msgstr ""
 
-#: controllers/pages/_ms_import/_step7.php:241
+#: controllers/pages/_ms_import/_step7.php:243
 msgid "Next"
 msgstr ""
 
@@ -1534,7 +1534,7 @@ msgid "Fatal Error #9034.32393. Unable to access fileoptions data."
 msgstr ""
 
 #: controllers/pages/server_info/remote_sends.php:101
-#: views/_backup-home.php:533
+#: views/_backup-home.php:530
 msgid "Backup Process Technical Details"
 msgstr ""
 
@@ -1555,7 +1555,7 @@ msgid "Destination"
 msgstr ""
 
 #: controllers/pages/server_info/remote_sends.php:150
-#: views/_backup-home.php:577
+#: views/_backup-home.php:574
 msgid "Trigger"
 msgstr ""
 
@@ -1884,7 +1884,7 @@ msgstr ""
 msgid "Server"
 msgstr ""
 
-#: controllers/pages/server_tools.php:76 views/_backup-home.php:376
+#: controllers/pages/server_tools.php:76 views/_backup-home.php:373
 #: views/settings/_advanced.php:157 views/settings/_includeexclude.php:137
 msgid "Database"
 msgstr ""
@@ -2138,7 +2138,7 @@ msgstr ""
 
 #: destinations/dropbox/_manage.php:88 destinations/dropbox/_manage.php:99
 #: destinations/ftp/_manage.php:210 destinations/ftp/_manage.php:225
-#: views/_backup-home.php:576 views/_backup_listing.php:74
+#: views/_backup-home.php:573 views/_backup_listing.php:74
 msgid "File Size"
 msgstr ""
 
@@ -4481,71 +4481,71 @@ msgstr[1] ""
 msgid "Backups page tutorial"
 msgstr ""
 
-#: views/_backup-home.php:136 views/migrate-home.php:61
+#: views/_backup-home.php:133 views/migrate-home.php:61
 #: views/multisite_export.php:36
 msgid ""
 "Enter a short descriptive note to apply to this archive for your reference. "
 "(175 characters max)"
 msgstr ""
 
-#: views/_backup-home.php:146 views/migrate-home.php:71
+#: views/_backup-home.php:143 views/migrate-home.php:71
 #: views/multisite_export.php:46
 msgid "Error"
 msgstr ""
 
-#: views/_backup-home.php:176
+#: views/_backup-home.php:173
 msgid "The local backup will be deleted upon successful transfer as selected."
 msgstr ""
 
-#: views/_backup-home.php:365
+#: views/_backup-home.php:362
 msgid "Choose a backup profile to run:"
 msgstr ""
 
-#: views/_backup-home.php:378 views/settings/_includeexclude.php:110
+#: views/_backup-home.php:375 views/settings/_includeexclude.php:110
 msgid "Full"
 msgstr ""
 
-#: views/_backup-home.php:380
+#: views/_backup-home.php:377
 msgid "Files"
 msgstr ""
 
-#: views/_backup-home.php:387
+#: views/_backup-home.php:384
 msgid "Configure this profile's settings."
 msgstr ""
 
-#: views/_backup-home.php:394
+#: views/_backup-home.php:391
 msgid "Create new profile."
 msgstr ""
 
-#: views/_backup-home.php:405
+#: views/_backup-home.php:402
 msgid "Database only"
 msgstr ""
 
-#: views/_backup-home.php:406
+#: views/_backup-home.php:403
 msgid "Full (DB + Files)"
 msgstr ""
 
-#: views/_backup-home.php:407
+#: views/_backup-home.php:404
 msgid "Files only (BETA)"
 msgstr ""
 
-#: views/_backup-home.php:410
+#: views/_backup-home.php:407
 msgid "New profile title..."
 msgstr ""
 
-#: views/_backup-home.php:411
+#: views/_backup-home.php:408
 msgid "Add"
 msgstr ""
 
-#: views/_backup-home.php:495
+#: views/_backup-home.php:492
 msgid "No backups have been created recently."
 msgstr ""
 
-#: views/_backup-home.php:574
+#: views/_backup-home.php:571
 msgid "Backups (Start Time)"
 msgstr ""
 
-#: views/_backup-home.php:575
+#: views/_backup-home.php:572
 msgid "Type | Profile"
 msgstr ""
 

@@ -64,9 +64,6 @@ if ( pb_backupbuddy::_POST( 'add_profile' ) == 'true' ) {
 		
 		
 		jQuery( '.profile_item_select' ).click( function() {
-			if ( jQuery(this).hasClass( 'profile_item_add_select' ) ) {
-				return;
-			}
 			var url = jQuery(this).attr( 'href' );
 			url = url + '&after_destination=' + jQuery( '#pb_backupbuddy_backup_remotedestination' ).val();
 			url = url + '&delete_after=' + jQuery( '#pb_backupbuddy_backup_deleteafter' ).val();
@@ -246,7 +243,7 @@ if ( pb_backupbuddy::_POST( 'add_profile' ) == 'true' ) {
 		border-right: 1px solid #EBEBEB;
 	}
 	
-	.profile_item_select {
+	.profile_item_select,.profile_item_noselect {
 		display: block;
 		background: #fff;
 		border: 1px solid #e7e7e7;
@@ -272,10 +269,10 @@ if ( pb_backupbuddy::_POST( 'add_profile' ) == 'true' ) {
 	
 	
 	
-	.profile_item_select:hover {
+	.profile_item_select:hover,.profile_item_noselect:hover {
 		color: #da2828;
 	}
-	.profile_item_select:active, .profile_item_select:focus {
+	.profile_item_select:active, .profile_item_select:focus,.profile_item_noselect:active, .profile_item_noselect:focus {
 		box-shadow: inset 0 0 5px #da2828;
 	}
 	
@@ -391,13 +388,13 @@ if ( pb_backupbuddy::_POST( 'add_profile' ) == 'true' ) {
 	?>
 	
 	<div class="profile_item" id="pb_backupbuddy_profileadd_plusbutton">
-		<a class="profile_item_select profile_item_add_select" title="<?php _e( 'Create new profile.', 'it-l10n-backupbuddy' ); ?>">
+		<a class="profile_item_noselect profile_item_add_select" title="<?php _e( 'Create new profile.', 'it-l10n-backupbuddy' ); ?>">
 			<span class="profile_add"></span>
 		</a>
 	</div>
 	
 	<div class="profile_item" id="pb_backupbuddy_profileadd" style="display: none;" href="<?php echo pb_backupbuddy::ajax_url( 'backup_profile_settings' ); ?>&profile=<?php echo $profile_id; ?>">
-		<div class="profile_item_select" style="padding: 11px;">
+		<div class="profile_item_noselect" style="padding: 11px;">
 			<form method="post" action="?page=pb_backupbuddy_backup" style="white-space:nowrap;">
 				<input type="hidden" name="add_profile" value="true">
 				<span class="profile_type">
