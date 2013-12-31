@@ -45,5 +45,9 @@ function msdlab_add_scripts() {
         if(is_front_page()){
             wp_enqueue_script('msd-homepage-jquery',get_stylesheet_directory_uri().'/lib/js/homepage-jquery.js',array('jquery','bootstrap-jquery'));
         }
+        if(is_page('meet-the-team')){
+        	wp_enqueue_script('blackandwhite-jquery',get_stylesheet_directory_uri().'/lib/js/jquery.BlackAndWhite.js',array('jquery','bootstrap-jquery'));
+        	wp_enqueue_script('msd-team-jquery',get_stylesheet_directory_uri().'/lib/js/team-jquery.js');
+        }
     }
 }
