@@ -6843,6 +6843,12 @@ Site Navigation
 .nav-secondary .wrap li.current-menu-item > .subnav-wrapper > .sub-menu {
   display: block;
 }
+.nav-secondary .wrap li.current-menu-ancestor a,
+.nav-secondary .wrap li.current-menu-item a,
+.nav-secondary .wrap li.current-menu-ancestor:hover a,
+.nav-secondary .wrap li.current-menu-item:hover a {
+  color: #ed7e3c;
+}
 .nav-secondary .wrap li.current-menu-ancestor > .subnav-wrapper,
 .nav-secondary .wrap li.current-menu-item > .subnav-wrapper {
   z-index: 100;
@@ -7544,6 +7550,11 @@ a.readmore-button {
     float: left;
     width: 33.33333333333333%;
   }
+}
+.post-type-archive-team_member main article.team_member .wrap aside .bwWrapper,
+.meet-the-team main article.team_member .wrap aside .bwWrapper {
+  position: relative;
+  display: block;
 }
 .post-type-archive-team_member main article.team_member .wrap aside ul,
 .meet-the-team main article.team_member .wrap aside ul {
