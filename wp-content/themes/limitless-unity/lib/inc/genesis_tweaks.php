@@ -9,6 +9,7 @@ add_theme_support( 'custom-background' );//* Add support for custom background
 add_filter( 'genesis_search_text', 'msdlab_search_text' ); //customizes the serach bar placeholder
 add_filter('genesis_search_button_text', 'msdlab_search_button'); //customize the search form to add fontawesome search button.
 add_action('genesis_before_header','msdlab_pre_header');
+
 /*** NAV ***/
 /**
  * Move nav into header
@@ -43,7 +44,7 @@ add_shortcode('teammembers', 'msdlab_team_member_special_loop_shortcode_handler'
 add_shortcode('team-members', 'msdlab_team_member_special_loop_shortcode_handler');
  
 /*** FOOTER ***/
-add_theme_support( 'genesis-footer-widgets', 1 ); //adds automatic footer widgets
+//add_theme_support( 'genesis-footer-widgets', 1 ); //adds automatic footer widgets
 
 remove_action('genesis_footer','genesis_do_footer'); //replace the footer
 add_action('genesis_footer','msdlab_do_social_footer');//with a msdsocial support one
