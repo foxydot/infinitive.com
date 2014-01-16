@@ -21,10 +21,12 @@ add_action( 'genesis_header', 'genesis_do_nav' );
 //*** SIDEBARS ***/
 //add_action('genesis_before', 'msdlab_ro_layout_logic'); //This ensures that the primary sidebar is always to the left.
 add_action('after_setup_theme','msdlab_add_legacy_sidebars');
+add_action('template_redirect','msdlab_select_sidebars');
 add_filter('widget_text', 'do_shortcode');//shortcodes in widgets
 remove_action( 'genesis_setup', 'genesis_register_default_widget_areas' ); //remove initial setup of default widgets
 add_action( 'after_setup_theme', 'genesis_register_default_widget_areas' ); //move them to AFTER the theme files are loaded
 add_filter('genesis_register_sidebar_defaults','msdlab_register_sidebar_defaults'); //and here's the filter
+
 
 /*** CONTENT ***/
 add_filter('genesis_breadcrumb_args', 'msdlab_breadcrumb_args'); //customize the breadcrumb output
