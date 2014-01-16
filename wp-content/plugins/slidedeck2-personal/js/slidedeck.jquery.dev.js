@@ -1,5 +1,5 @@
 /*!
- * SlideDeck 1.4.3 Pro - 2012-12-10
+ * SlideDeck 1.4.4 Pro - 2014-01-09
  * 
  * More information on this project:
  * http://www.slidedeck.com/
@@ -52,7 +52,7 @@ var SlideDeckLens = {};
             distribution  = window.slideDeck2Distribution;
         }
         
-        var VERSION = versionPrefix + "1.4.3";
+        var VERSION = versionPrefix + "1.4.4";
         
         this.options = {
             speed: 500,
@@ -535,6 +535,8 @@ var SlideDeckLens = {};
                         '-webkit-transform-origin': spine_half_width + 'px 0px',
                         '-moz-transform': 'rotate(270deg)',
                         '-moz-transform-origin': spine_half_width + 'px 0px',
+                        '-ms-transform': 'rotate(270deg)',
+                        '-ms-transform-origin': spine_half_width + 'px 0px',
                         '-o-transform': 'rotate(270deg)',
                         '-o-transform-origin': spine_half_width + 'px 0px',
                         textAlign: 'right'
@@ -559,7 +561,7 @@ var SlideDeckLens = {};
                         spine[0].style.msTransform = 'rotate(270deg)';
                         spine[0].style.msTransformOrigin = Math.round(parseInt(el[0].style.height, 10) / 2) + 'px ' + Math.round(parseInt(el[0].style.height, 10) / 2) + 'px';
                     }
-                    
+
                 } else {
                     if(typeof(spine) != "undefined"){
                         spine.hide();
@@ -626,6 +628,13 @@ var SlideDeckLens = {};
                     
                     if(self.browser.msie9 || self.browser.msie10){
                         spine.find('.' + self.classes.index)[0].style.msTransform = 'rotate(90deg)';
+                    }
+
+                    if(!self.browser.msie){
+                        spine.find('.' + self.classes.index).css({
+                            '-ms-transform': 'rotate(90deg)',
+                            '-ms-transform-origin': spine_half_width + 'px 0px'
+                        });
                     }
 
                     FixIEAA(spine);

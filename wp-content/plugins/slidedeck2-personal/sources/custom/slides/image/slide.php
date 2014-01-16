@@ -57,13 +57,7 @@ class SlideDeckSlideType_Image extends SlideDeckSlideModel {
 	function admin_init() {
 		wp_register_script( "{$this->namespace}-medialibrary-media-upload-popup", $this->url . '/js/medialibrary.js', array( 'jquery' ), '1.0.0' );
 		wp_register_script( "{$this->namespace}-browserplus", 'http://bp.yahooapis.com/2.4.21/browserplus-min.js', array( 'jquery' ), '1.5.4' );
-		wp_register_script( "{$this->namespace}-plupload", $this->url . '/js/plupload.js', array( 'jquery' ), '1.5.4' );
-		wp_register_script( "{$this->namespace}-plupload-gears", $this->url . '/js/plupload.gears.js', array( 'jquery', "{$this->namespace}-plupload" ), '1.5.4' );
-		wp_register_script( "{$this->namespace}-plupload-silverlight", $this->url . '/js/plupload.silverlight.js', array( 'jquery', "{$this->namespace}-plupload" ), '1.5.4' );
-		wp_register_script( "{$this->namespace}-plupload-flash", $this->url . '/js/plupload.flash.js', array( 'jquery', "{$this->namespace}-plupload" ), '1.5.4' );
-		wp_register_script( "{$this->namespace}-plupload-browserplus", $this->url . '/js/plupload.browserplus.js', array( 'jquery', "{$this->namespace}-plupload" ), '1.5.4' );
-		wp_register_script( "{$this->namespace}-plupload-html4", $this->url . '/js/plupload.html4.js', array( 'jquery', "{$this->namespace}-plupload" ), '1.5.4' );
-		wp_register_script( "{$this->namespace}-plupload-html5", $this->url . '/js/plupload.html5.js', array( 'jquery', "{$this->namespace}-plupload" ), '1.5.4' );
+		wp_register_script( "{$this->namespace}-plupload", $this->url . '/js/plupload.full.min.js', array( 'jquery' ), '2.1' );
 	}
     
     /**
@@ -83,12 +77,6 @@ class SlideDeckSlideType_Image extends SlideDeckSlideModel {
         if( in_array( 'custom', $SlideDeckPlugin->SlideDeck->current_source ) ) {
             wp_enqueue_script( "{$this->namespace}-browserplus" );
             wp_enqueue_script( "{$this->namespace}-plupload" );
-            wp_enqueue_script( "{$this->namespace}-plupload-gears" );
-            wp_enqueue_script( "{$this->namespace}-plupload-silverlight" );
-            wp_enqueue_script( "{$this->namespace}-plupload-flash" );
-            wp_enqueue_script( "{$this->namespace}-plupload-browserplus" );
-            wp_enqueue_script( "{$this->namespace}-plupload-html4" );
-            wp_enqueue_script( "{$this->namespace}-plupload-html5" );
         }
     }
     
@@ -521,13 +509,7 @@ class SlideDeckSlideType_Image extends SlideDeckSlideModel {
 		
 		$scripts = array(
 			"{$this->namespace}-browserplus",
-			"{$this->namespace}-plupload",
-			"{$this->namespace}-plupload-gears",
-			"{$this->namespace}-plupload-silverlight",
-			"{$this->namespace}-plupload-flash",
-			"{$this->namespace}-plupload-browserplus",
-			"{$this->namespace}-plupload-html4",
-			"{$this->namespace}-plupload-html5"
+			"{$this->namespace}-plupload"
 		);
 		
 		include( dirname( __FILE__ ) . '/views/_image-upload.php' );

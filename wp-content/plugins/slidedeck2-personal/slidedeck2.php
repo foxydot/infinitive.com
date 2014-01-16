@@ -3,7 +3,7 @@
  Plugin Name: SlideDeck 2 Personal
  Plugin URI: http://www.slidedeck.com/wordpress
  Description: Create SlideDecks on your WordPress blogging platform and insert them into templates and posts. Get started creating SlideDecks from the new SlideDeck menu in the left hand navigation.
- Version: 2.3.6
+ Version: 2.3.7
  Author: digital-telepathy
  Author URI: http://www.dtelepathy.com
  License: GPL3
@@ -38,7 +38,7 @@ class SlideDeckPlugin {
         'ecf3509'
     );
     
-    static $version = '2.3.6';
+    static $version = '2.3.7';
     static $license = 'PRO';
 
     // Generally, we are not installing addons. If we are, this gets set to true.
@@ -2919,7 +2919,10 @@ class SlideDeckPlugin {
      */
     function page_manage( ) {
         $order_options = $this->order_options;
-        $orderby = get_option( "{$this->namespace}_manage_table_sort", reset( array_keys( $this->order_options ) ) );
+        $options = $this->order_options;
+        $option_keys = array_keys( $options );
+        $first_key = reset( $option_keys );
+        $orderby = get_option( "{$this->namespace}_manage_table_sort", $first_key );
         $order = $orderby == 'post_modified' ? 'DESC' : 'ASC';
 
         // Get a list of all SlideDecks in the system
