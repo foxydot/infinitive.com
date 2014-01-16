@@ -86,13 +86,6 @@ function msdlab_register_sidebar_defaults($args){
  * Legacy widget areas
  */
 function msdlab_add_legacy_sidebars(){
-     // Area 1, located at the top of the sidebar.
-    genesis_register_sidebar( array(
-        'name' => __( 'Primary Widget Area', 'infinite' ),
-        'id' => 'primary-widget-area',
-        'description' => __( 'The primary widget area', 'infinite' ),
-    ) );
-
     // Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
     genesis_register_sidebar( array(
         'name' => __( 'Blog Widget Area', 'infinite' ),
