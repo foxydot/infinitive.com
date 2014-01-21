@@ -82,22 +82,46 @@ function msdlab_register_sidebar_defaults($args){
    return $args;
 }
 
+function msdlab_select_sidebars(){
+    global $post;
+    if((is_home() || is_archive() || is_single()) && $post->post_type == "post" ){
+        remove_action('genesis_sidebar', 'genesis_do_sidebar');
+        add_action('genesis_sidebar', 'msdlab_do_blog_sidebar');
+    }
+}
+
+function msdlab_do_blog_sidebar() {
+
+    if ( ! dynamic_sidebar( 'blog-widget-area' )  ) {
+    }
+
+}
+
 /**
  * Legacy widget areas
  */
 function msdlab_add_legacy_sidebars(){
-     // Area 1, located at the top of the sidebar.
-    genesis_register_sidebar( array(
-        'name' => __( 'Primary Widget Area', 'infinite' ),
-        'id' => 'primary-widget-area',
-        'description' => __( 'The primary widget area', 'infinite' ),
-    ) );
-
     // Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
     genesis_register_sidebar( array(
         'name' => __( 'Blog Widget Area', 'infinite' ),
         'id' => 'blog-widget-area',
         'description' => __( 'The blog widget area', 'infinite' ),
+        'before_widget' => genesis_markup( array(
+                'html5' => '<section id="%1$s" class="widget %2$s">',
+                'xhtml' => '<div id="%1$s" class="widget %2$s">',
+                'echo'  => false,
+            ) ),
+            'after_widget'  => genesis_markup( array(
+                'html5' => '</div></section>' . "\n",
+                'xhtml' => '</div></div>' . "\n",
+                'echo'  => false
+            ) ),
+            'before_title'  => '<h4 class="widget-title widgettitle">',
+            'after_title'   => genesis_markup( array(
+                'html5' => '</h4>'."\n".'<div class="widget-wrap">',
+                'xhtml' => '</h4>'."\n".'<div class="widget-wrap">',
+                'echo'  => false,
+            ) ),
     ) );
 }
 

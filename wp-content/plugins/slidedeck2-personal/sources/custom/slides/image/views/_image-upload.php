@@ -11,14 +11,11 @@
 <script type="text/javascript">
 	(function($, window, undefined){
 		window.uploader = new plupload.Uploader({
-			runtimes : 'gears,html5,flash,silverlight,browserplus,html4',
 			browse_button : 'slidedeck-slide-upload-browse',
 			container: 'slidedeck-slide-image',
 			multi_selection: false,
 			max_file_size : '<?php echo $max_filesize; ?>',
 			url : '<?php echo admin_url( 'admin-ajax.php' ) . '?action=slidedeck_slide_upload_image&slide_id=' . $slide_id . '&slidedeck=' . $slidedeck_id . '&_wpnonce=' . wp_create_nonce( "{$namespace}-slide-upload-image" ); ?>',
-			flash_swf_url : '<?php echo $url; ?>/js/plupload.flash.swf',
-			silverlight_xap_url : '<?php echo $url; ?>/js/plupload.silverlight.xap',
 			filters : [
 				{title : "Image files", extensions : "jpg,gif,png,jpeg"}
 			]

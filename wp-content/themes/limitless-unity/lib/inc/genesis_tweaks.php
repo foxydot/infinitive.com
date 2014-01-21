@@ -9,6 +9,7 @@ add_theme_support( 'custom-background' );//* Add support for custom background
 add_filter( 'genesis_search_text', 'msdlab_search_text' ); //customizes the serach bar placeholder
 add_filter('genesis_search_button_text', 'msdlab_search_button'); //customize the search form to add fontawesome search button.
 add_action('genesis_before_header','msdlab_pre_header');
+
 /*** NAV ***/
 /**
  * Move nav into header
@@ -20,10 +21,12 @@ add_action( 'genesis_header', 'genesis_do_nav' );
 //*** SIDEBARS ***/
 //add_action('genesis_before', 'msdlab_ro_layout_logic'); //This ensures that the primary sidebar is always to the left.
 add_action('after_setup_theme','msdlab_add_legacy_sidebars');
+add_action('template_redirect','msdlab_select_sidebars');
 add_filter('widget_text', 'do_shortcode');//shortcodes in widgets
 remove_action( 'genesis_setup', 'genesis_register_default_widget_areas' ); //remove initial setup of default widgets
 add_action( 'after_setup_theme', 'genesis_register_default_widget_areas' ); //move them to AFTER the theme files are loaded
 add_filter('genesis_register_sidebar_defaults','msdlab_register_sidebar_defaults'); //and here's the filter
+
 
 /*** CONTENT ***/
 add_filter('genesis_breadcrumb_args', 'msdlab_breadcrumb_args'); //customize the breadcrumb output
@@ -43,7 +46,7 @@ add_shortcode('teammembers', 'msdlab_team_member_special_loop_shortcode_handler'
 add_shortcode('team-members', 'msdlab_team_member_special_loop_shortcode_handler');
  
 /*** FOOTER ***/
-add_theme_support( 'genesis-footer-widgets', 1 ); //adds automatic footer widgets
+//add_theme_support( 'genesis-footer-widgets', 1 ); //adds automatic footer widgets
 
 remove_action('genesis_footer','genesis_do_footer'); //replace the footer
 add_action('genesis_footer','msdlab_do_social_footer');//with a msdsocial support one

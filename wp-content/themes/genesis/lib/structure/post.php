@@ -546,6 +546,7 @@ add_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
  * @uses genesis_numeric_posts_nav()     Numbered links.
  */
 function genesis_posts_nav() {
+
 	if ( 'numeric' === genesis_get_option( 'posts_nav' ) )
 		genesis_numeric_posts_nav();
 	else
@@ -567,6 +568,7 @@ function genesis_prev_next_posts_nav() {
 
 	$prev = $prev_link ? '<div class="pagination-previous alignleft">' . $prev_link . '</div>' : '';
 	$next = $next_link ? '<div class="pagination-next alignright">' . $next_link . '</div>' : '';
+
 	$nav = genesis_markup( array(
 		'html5'   => '<div %s>',
 		'xhtml'   => '<div class="navigation">',

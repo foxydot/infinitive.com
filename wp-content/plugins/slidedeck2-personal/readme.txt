@@ -3,7 +3,7 @@ Contributors: dtelepathy, kynatro, jamie3d, dtrenkner, oriontimbers, nielsfogt, 
 Donate link: http://www.slidedeck.com/
 Tags: Slider, dynamic, responsive, image gallery, dtelepathy, digital telepathy, digital-telepathy, iPad, jquery, media, photo, pictures, plugin, posts, Search Engine Optimized, seo, skinnable, slide, slide show, slider, slideshow, theme, touch support, video, widget, Flickr, Instagram, 500px, RSS, Pinterest, Google+, YouTube, Vimeo, Dailymotion, Picasa, Dribbble
 Requires at least: 3.3
-Tested up to: 3.7
+Tested up to: 3.8
 Stable tag: trunk
 License: GPLv3
 
@@ -37,6 +37,10 @@ Where 1644 is the SlideDeck's ID. You can also see this code snippet when you sa
 
 
 == Changelog ==
+= 2.3.7 =
+* Updated the core slidedeck.js to be more compatible with IE11
+* Updated version of plupload to 2.1 which resolved an XSS vulnerability
+
 = 2.3.6 =
 * Addressing PHP strict notices and warnings.
 * Fixing static warning in SlideDeck widget.
@@ -415,6 +419,10 @@ Where 1644 is the SlideDeck's ID. You can also see this code snippet when you sa
 
 = 2.0.0beta1 =
 * Initial beta release.
+
+== Upgrade Notice ==
+= 2.3.7 =
+Repaired IE11 support
 
 == Upgrade Notice ==
 = 2.3.6 =
