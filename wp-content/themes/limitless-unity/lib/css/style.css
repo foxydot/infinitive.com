@@ -6700,7 +6700,7 @@ Site Navigation
   background: #333333;
 }
 #menu-primary-links > li.first-child > ul.sub-menu {
-  min-height: 227px;
+  min-height: 260px;
 }
 #menu-primary-links > li.first-child > ul.sub-menu a {
   width: auto;
@@ -6714,7 +6714,7 @@ Site Navigation
   padding: 0;
   position: absolute;
   top: 0px;
-  height: 227px;
+  height: 260px;
   font-size: 1em;
   width: 724px;
 }
@@ -6762,7 +6762,7 @@ Site Navigation
 }
 #menu-primary-links > li.first-child > ul.sub-menu li.title > ul.sub-menu {
   top: -5.3rem;
-  height: 227px;
+  height: 260px;
 }
 .mainNav > ul > li.first > ul > li.title > ul > li > ul > li {
   padding: 3px 0;
