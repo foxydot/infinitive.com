@@ -41,7 +41,7 @@ class MSDNewsWidget extends WP_Widget {
 	     			<div class="img alignleft">'.$thumb.'</div>
 					'.$excerpt.'
 				</div>
-				<h4 class="link alignright"><a href="'.get_permalink($item->ID).'">Read the Announcement ></a></h4>
+				<a href="'.get_permalink($item->ID).'" class="link alignright">Learn More ></a>
 	     		<a href="'.get_permalink($item->ID).'"></a>';
 				$news_list .= '<div class="clear"></div>
 			</li>';
