@@ -156,6 +156,7 @@ function sp_post_info_filter($post_info) {
 /**
  * Custom blog loop
  */
+ 
 // Setup Grid Loop
 function msdlab_blog_grid(){
     global $loop_counter;
@@ -197,9 +198,17 @@ add_filter( 'pre_get_posts', 'be_archive_query' ,20);
  *
  * @param object $query
  */
+ 
 function be_archive_query( $query ) {
-    if( $query->is_main_query() && $query->is_home() && !($query->is_paged())) {
-        $query->set( 'posts_per_page', 7 );
+    if( $query->is_main_query() && $query->is_home() ){
+        $mainppp = 7;
+        if(!($query->is_paged())){
+            $query->set( 'posts_per_page', $mainppp );
+        } else {
+            $ppp = $query->query_vars['posts_per_page']!=''?$query->query_vars['posts_per_page']:get_option( 'posts_per_page' );
+            $offset = (($query->query_vars['paged']-1)*$ppp)-($ppp-$mainppp);
+            $query->set( 'offset', $offset);
+        }
     }
 }
 
@@ -265,7 +274,6 @@ function msdlab_grid_divider() {
     }
     
 }
-
  function msdlab_grid_add_bootstrap($classes){
      if(in_array('genesis-grid',$classes)){
          $classes[] = 'col-md-6';
