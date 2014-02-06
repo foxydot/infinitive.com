@@ -136,7 +136,7 @@ if(!function_exists('msd_str_fmt')){
     function msd_str_fmt($str,$format = FALSE){
         switch($format){
             case 'email':
-                $ret = '<a href="mailto:'.antispambot($str).'?CC='.antispambot('info@rendigs.com').'" class="email">'.antispambot($str).'</a>';
+                $ret = '<a href="mailto:'.antispambot($str).'" class="email">'.antispambot($str).'</a>';
                 break;
             case 'phone':
                 $str = preg_replace("/[^0-9]/", "", $str);
