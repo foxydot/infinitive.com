@@ -94,6 +94,9 @@ jQuery(document).ready(function(){
             } else {
                 jQuery(this).removeClass( 'closed' ).addClass( 'opened' );
                 jQuery(this).next('.sub-menu').slideDown( 500 );
+                if(jQuery(this).attr('href')!='#'){
+                    window.location.replace(jQuery(this).attr('href'));
+                }
             }
             return false;
         } );
