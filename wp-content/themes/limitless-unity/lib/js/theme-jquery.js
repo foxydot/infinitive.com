@@ -87,6 +87,17 @@ jQuery(document).ready(function(){
             return false;
         } );
         
+        append_to.find('a').click(function(){
+            if ( jQuery(this).hasClass('opened') ){
+                jQuery(this).removeClass( 'opened' ).addClass( 'closed' );
+                jQuery(this).next('.sub-menu').slideUp( 500 );
+            } else {
+                jQuery(this).removeClass( 'closed' ).addClass( 'opened' );
+                jQuery(this).next('.sub-menu').slideDown( 500 );
+            }
+            return false;
+        } );
+        
         append_to.find('a').click( function(event){
             event.stopPropagation();
         } );
