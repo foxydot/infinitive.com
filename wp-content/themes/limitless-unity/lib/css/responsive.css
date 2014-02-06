@@ -53,6 +53,9 @@ a#subpull {
   }
 }
 @media screen and (max-width: 769px) {
+  #hp-top .slidedeck2_widget {
+    display: none;
+  }
   #hp-top #menu-homepage-feature-section-menu li {
     margin-right: 0;
     width: 100%;
