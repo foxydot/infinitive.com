@@ -92,10 +92,11 @@ jQuery(document).ready(function(){
                 jQuery(this).removeClass( 'opened' ).addClass( 'closed' );
                 jQuery(this).next('.sub-menu').slideUp( 500 );
             } else {
-                jQuery(this).removeClass( 'closed' ).addClass( 'opened' );
-                jQuery(this).next('.sub-menu').slideDown( 500 );
                 if(jQuery(this).attr('href')!='#'){
                     window.location.replace(jQuery(this).attr('href'));
+                } else {
+                    jQuery(this).removeClass( 'closed' ).addClass( 'opened' );
+                    jQuery(this).next('.sub-menu').slideDown( 500 );
                 }
             }
             return false;
