@@ -23,21 +23,22 @@ function msdlab_add_styles() {
             //$css_queue[] = 'infinitive-icon-font-style';
             wp_enqueue_style('msd-style',get_stylesheet_directory_uri().'/lib/css/style.css',$css_queue);
             $css_queue[] = 'msd-style';
-        if($is_IE){
-            wp_enqueue_script('ie-style',get_stylesheet_directory_uri().'/lib/css/ie.css');
-            $css_queue[] = 'ie-style';
-        }
+         
         if(is_front_page()){
             wp_enqueue_style('msd-homepage-style',get_stylesheet_directory_uri().'/lib/css/homepage.css',$css_queue);
             $css_queue[] = 'msd-homepage-style';
+        }   
+        //add responsive
+        wp_enqueue_style('msd-responsive',get_stylesheet_directory_uri().'/lib/css/responsive.css',$css_queue);
+        $css_queue[] = 'msd-responsive';
+        if($is_IE){
+            wp_enqueue_script('ie-style',get_stylesheet_directory_uri().'/lib/css/ie.css');
+            $css_queue[] = 'ie-style';
         }
         if(is_cpt('msd_casestudy')){
           // wp_enqueue_style('msd-casestudy-style',get_stylesheet_directory_uri().'/lib/css/casestudy.css',$css_queue);
             //$css_queue[] = 'msd-casestudy-style';
         }
-        //add responsive
-        wp_enqueue_style('msd-responsive',get_stylesheet_directory_uri().'/lib/css/responsive.css',$css_queue);
-        $css_queue[] = 'msd-responsive';
     }
 }
 
