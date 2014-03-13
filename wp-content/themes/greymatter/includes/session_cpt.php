@@ -63,7 +63,8 @@ class MSDSessionCPT {
 	function subtitle_footer_hook()
 	{
 		?><script type="text/javascript">
-		jQuery('#titlediv').after(jQuery('#_session_info_metabox'));
+        jQuery('#titlediv').after(jQuery('#_subtitle_metabox'));
+        jQuery('#_subtitle_metabox').after(jQuery('#_session_info_metabox'));
 		</script><?php
 	}
 		
@@ -113,19 +114,30 @@ class MSDSessionCPT {
 }
 $msd_sessions = new MSDSessionCPT;
 
-
+global $session_info,$subtitle;
 // add a custom meta box
-	$session_info = new WPAlchemy_MetaBox(array
-	(
-		'id' => '_session_info',
-		'title' => 'Session Information',
-		'types' => array('msd_session'), 
-		'context' => 'normal', 
-		'priority' => 'high', 
-		'template' => dirname(__FILE__).'/template/session_info.php',
-		'mode' => WPALCHEMY_MODE_EXTRACT,
-		'prefix' => '_msd_'
-	));
+    $session_info = new WPAlchemy_MetaBox(array
+    (
+        'id' => '_session_info',
+        'title' => 'Session Information',
+        'types' => array('msd_session'), 
+        'context' => 'normal', 
+        'priority' => 'high', 
+        'template' => dirname(__FILE__).'/template/session_info.php',
+        'mode' => WPALCHEMY_MODE_EXTRACT,
+        'prefix' => '_msd_'
+    )); 
+    $subtitle = new WPAlchemy_MetaBox(array
+    (
+        'id' => '_subtitle',
+        'title' => 'Subtitle',
+        'types' => array('msd_session'), 
+        'context' => 'normal', 
+        'priority' => 'high', 
+        'template' => dirname(__FILE__).'/template/subtitle.php',
+        'mode' => WPALCHEMY_MODE_EXTRACT,
+        'prefix' => '_msd_'
+    ));
 
 $tracks = array('Business Intelligence and Big Data','Digital Analytics','Digital Advertising Solutions','Digital CRM','Risk Management');
 $timeslots = array('7:30AM - 8:45AM','8:45AM - 9:30AM','9:40AM - 10:40AM','11:00AM - 12:00PM','12:00PM - 1:20PM','1:35PM - 2:50PM','3:00PM - 4:00PM');

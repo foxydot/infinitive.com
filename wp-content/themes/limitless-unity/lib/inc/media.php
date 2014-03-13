@@ -26,7 +26,8 @@ function msd_post_image() {
 
     // This is the most important part!  Checks to see if the post has a Post Thumbnail assigned to it. You can delete the if conditional if you want and assume that there will always be a thumbnail
     if ( has_post_thumbnail() && is_page() ) {
-        printf( '<a title="%s" href="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), genesis_get_image( array( 'size' => $size, 'attr' => $default_attr ) ) );
+        //printf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), genesis_get_image( array( 'size' => $size, 'attr' => $default_attr ) ) );
+        print genesis_get_image( array( 'size' => $size, 'attr' => $default_attr ) );
     }
     if ( has_post_thumbnail() && is_cpt('msd_casestudy') ) {
         printf( '%s', genesis_get_image( array( 'size' => 'post-thumb', 'attr' => array(
