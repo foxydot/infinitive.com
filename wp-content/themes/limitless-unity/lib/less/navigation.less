@@ -144,21 +144,24 @@ Site Navigation
     .sub-menu{
       border: none;
       z-index: 300;
+      
+    .box-shadow(0 10px 10px rgba(20,20,20,0.5));
       li.menu-item{
         display: block;
         a{
-          background: darken(@dkgrey,20%);
-          border: none;
-          color: white;
         }
       }
     }
   }
   li:hover, li.current-menu-item{
-    background: darken(@dkgrey,20%);
-    a, a:hover{color:@white}
+    >a, >a:hover{color:@orange}
   }
 }
+
+.menu-primary>li:hover{
+    z-index: 500;
+    .box-shadow(0 1px 10px rgba(20,20,20,0.5));
+  }
 
 
 /* Infinitive For You Navigation */
