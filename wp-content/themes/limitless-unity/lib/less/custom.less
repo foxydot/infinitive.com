@@ -88,7 +88,31 @@
    font-size: 1.2rem;
    color: @white;
  }
-
+.site-inner{
+  .search-form{
+    display: inline-block;
+    padding: 1rem 0 1rem 1rem;
+    position: relative;
+    input[type="search"] {
+      padding: 0.5rem;
+      border: 1px solid @ltgrey;
+    }
+    input[type="submit"] {
+      .fontawesome;
+      font-size: 1.4rem;
+      border: 0;
+      clip: auto;
+      height: auto;
+      margin: 0;
+      padding: 0.5rem;
+      position: absolute;
+      width: auto;
+      background: none;
+      right: 0.5rem;
+      color: @medgrey;
+    }
+  }
+}
 /*custom Font*/
 @font-face {
   font-family: "infinitive";

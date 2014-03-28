@@ -58,3 +58,7 @@ add_action('after_setup_theme','msdlab_add_homepage_callout_sidebars'); //create
 /*** Blog Header ***/
 add_action('genesis_before_loop','msd_add_blog_header');
 //add_action('wp_head', 'collections');
+
+
+/*** SITEMAP ***/
+add_action('after_404','msdlab_sitemap');
