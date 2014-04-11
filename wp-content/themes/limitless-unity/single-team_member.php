@@ -138,6 +138,32 @@ function team_display_blog($blog,$count = 0){
         '.mysql2date('F j, Y', $blog->post_date).'</div>
     </article>';
 }
+add_action('genesis_after_entry_content','msd_team_videos');
+function msd_team_videos(){
+    global $post;
+    $video = new MSDVideoCPT;
+    $videos = $video->get_video_items_for_team_member($post->ID);
+    $i = 1;
+    if(count($videos)>0){
+        print'<div class="insights-blogs odd">
+<h3 class="insights-header">Videos</h3>
+<hr class="grid-separator">';
+        foreach($videos AS $vid){
+            $class = $i%2==0?'even':'odd';
+            print '<article class="'.$class.'">';
+            print wp_oembed_get($vid->youtube_url);
+            print '<h4>
+<a href="'.get_permalink($vid->ID).'">'.$vid->post_title.'</a>
+</h4>';
+            print '</article>';
+            if($i%2==0){
+                print '<hr class="grid-separator">';
+            }
+            $i++;
+        }
+        print '</div>';
+    }
+}
 
 function font_awesome_lists($str){
     $str = strip_tags($str,'<a><li><ul><h3><b><strong><i>');

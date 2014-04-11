@@ -183,6 +183,31 @@ class MSDVideoCPT {
             }
             return get_posts($args);
         }
+
+        function get_video_items_for_team_member($team_id){
+            global $video;
+            $args = array( 
+                'post_type' => 'msd_video', 
+                'numberposts' => -1,
+                'order' => 'ASC',
+                'orderby' => 'menu_order',
+                'meta_query' => array(
+                   array(
+                       'key' => '_video_team_members',
+                       'value' => '"'.$team_id.'"',
+                       'compare' => 'LIKE',
+                   )
+               )
+            );
+            $the_videos = get_posts($args);
+            $i=0;
+            foreach($the_videos AS $vid){
+                $video->the_meta($vid->ID);
+                $the_videos[$i]->youtube_url = $video->get_the_value('youtube');
+                $i++;
+            }
+            return($the_videos);
+        }
         
         function get_video_grid_image($item){
             global $video,$post;
