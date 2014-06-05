@@ -134,7 +134,7 @@ function team_display_blog($blog,$count = 0){
     print '<article class="'.$classes.'">
         <a href="'.get_permalink($blog->ID).'">'.$thumbnail.'</a>
         <h4><a href="'.get_permalink($blog->ID).'">'.$blog->post_title.'</a></h4>
-        <div class="meta">Posted by '.$blog->post_author.'<br>
+        <div class="meta">Posted by '.get_the_author_meta('display_name',$blog->post_author).'<br>
         '.mysql2date('F j, Y', $blog->post_date).'</div>
     </article>';
 }
