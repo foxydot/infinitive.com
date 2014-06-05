@@ -176,10 +176,13 @@ function msd_team_news(){
 <hr class="grid-separator">';
         foreach($newses AS $press){
             $class = $i%2==0?'even':'odd';
-            print '<article class="'.$class.'">';
-            print '<h4>
-<a href="'.get_permalink($press->ID).'">'.$press->post_title.'</a>
-</h4>';
+            $thumbnail = get_the_post_thumbnail($press->ID,'thumbnail',array('class' => 'aligncenter'));
+            
+            print '<article class="'.$class.'">
+                <a href="'.get_permalink($press->ID).'">'.$thumbnail.'</a>
+                <h4><a href="'.get_permalink($press->ID).'">'.$press->post_title.'</a></h4>
+                <div class="meta">Posted by <br>
+                '.mysql2date('F j, Y', $press->post_date).'</div>';
             print '</article>';
             if($i%2==0){
                 print '<hr class="grid-separator">';
