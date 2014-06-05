@@ -134,7 +134,7 @@ function team_display_blog($blog,$count = 0){
     print '<article class="'.$classes.'">
         <a href="'.get_permalink($blog->ID).'">'.$thumbnail.'</a>
         <h4><a href="'.get_permalink($blog->ID).'">'.$blog->post_title.'</a></h4>
-        <div class="meta">Posted by <br>
+        <div class="meta">Posted by '.$blog->post_author.'<br>
         '.mysql2date('F j, Y', $blog->post_date).'</div>
     </article>';
 }
@@ -181,8 +181,7 @@ function msd_team_news(){
             print '<article class="'.$class.'">
                 <a href="'.get_permalink($press->ID).'">'.$thumbnail.'</a>
                 <h4><a href="'.get_permalink($press->ID).'">'.$press->post_title.'</a></h4>
-                <div class="meta">Posted by <br>
-                '.mysql2date('F j, Y', $press->post_date).'</div>';
+                <div class="meta">'.mysql2date('F j, Y', $press->post_date).'</div>';
             print '</article>';
             if($i%2==0){
                 print '<hr class="grid-separator">';
