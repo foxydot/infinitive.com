@@ -92,4 +92,23 @@ class MSDNewsCPT {
 		
 		return '<ul class="publication-list news-items">'.$publication_list.'</ul><div class="clear"></div>';
 	}	
+
+        function get_news_items_for_team_member($team_id){
+            global $news;
+            $args = array( 
+                'post_type' => 'msd_news', 
+                'numberposts' => -1,
+                'order' => 'ASC',
+                'orderby' => 'menu_order',
+                'meta_query' => array(
+                   array(
+                       'key' => '_news_team_members',
+                       'value' => '"'.$team_id.'"',
+                       'compare' => 'LIKE',
+                   )
+               )
+            );
+            $the_news = get_posts($args);
+            return($the_news);
+        }
 }

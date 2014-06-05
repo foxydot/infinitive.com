@@ -164,6 +164,31 @@ function msd_team_videos(){
         print '</div>';
     }
 }
+add_action('genesis_after_entry_content','msd_team_news');
+function msd_team_news(){
+    global $post;
+    $news = new MSDNewsCPT;
+    $newses = $news->get_news_items_for_team_member($post->ID);
+    $i = 1;
+    if(count($newses)>0){
+        print'<div class="insights-blogs odd">
+<h3 class="insights-header">Press</h3>
+<hr class="grid-separator">';
+        foreach($newses AS $press){
+            $class = $i%2==0?'even':'odd';
+            print '<article class="'.$class.'">';
+            print '<h4>
+<a href="'.get_permalink($press->ID).'">'.$press->post_title.'</a>
+</h4>';
+            print '</article>';
+            if($i%2==0){
+                print '<hr class="grid-separator">';
+            }
+            $i++;
+        }
+        print '</div>';
+    }
+}
 
 function font_awesome_lists($str){
     $str = strip_tags($str,'<a><li><ul><h3><b><strong><i>');
