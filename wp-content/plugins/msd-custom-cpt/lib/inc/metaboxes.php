@@ -1,6 +1,6 @@
 <?php 
 global $project_info,$location_info,$client_info,$additional_files,$contact_info,$additional_info,$primary_practice_area;
-global $subtitle,$documents,$video;
+global $subtitle,$documents,$video,$news;
 
 $video = new WPAlchemy_MetaBox(array
     (
@@ -13,6 +13,18 @@ $video = new WPAlchemy_MetaBox(array
         'autosave' => TRUE,
         'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
         'prefix' => '_video_' // defaults to NULL
+    ));
+$news = new WPAlchemy_MetaBox(array
+    (
+        'id' => '_news',
+        'title' => 'News Information',
+        'types' => array('msd_news'),
+        'context' => 'normal',
+        'priority' => 'high',
+        'template' => WP_PLUGIN_DIR.'/'.plugin_dir_path('msd-custom-cpt/msd-custom-cpt.php').'lib/template/news-information.php',
+        'autosave' => TRUE,
+        'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
+        'prefix' => '_news_' // defaults to NULL
     ));
 
 $subtitle = new WPAlchemy_MetaBox(array
