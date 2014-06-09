@@ -31,12 +31,13 @@ add_filter('genesis_register_sidebar_defaults','msdlab_register_sidebar_defaults
 /*** CONTENT ***/
 add_filter('genesis_breadcrumb_args', 'msdlab_breadcrumb_args'); //customize the breadcrumb output
 remove_action('genesis_before_loop', 'genesis_do_breadcrumbs'); //move the breadcrumbs 
+add_action('genesis_before_loop', 'msdlab_remove_meta');
 add_action('genesis_before_content_sidebar_wrap', 'genesis_do_breadcrumbs'); //to outside of the loop area
 add_action('genesis_before_entry','msd_post_image');//add the image above the entry
 add_action('wp_head','msdlab_sharethis_removal');
 
 //remove_action( 'genesis_entry_header', 'genesis_post_info' ); //remove the info (date, posted by,etc.)
-remove_action( 'genesis_entry_footer', 'genesis_post_meta' ); //remove the meta (filed under, tags, etc.)
+//remove_action( 'genesis_entry_footer', 'genesis_post_meta' ); //remove the meta (filed under, tags, etc.)
 
 add_action( 'genesis_before_post', 'msdlab_post_image', 8 ); //add feature image across top of content on *pages*.
 add_action('template_redirect','msdlab_blog_grid');

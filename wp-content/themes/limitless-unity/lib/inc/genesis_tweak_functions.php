@@ -144,6 +144,13 @@ function msdlab_sharethis_removal(){
     }    
 }
 
+function msdlab_remove_meta(){
+    global $post;
+    if($post->post_type == 'msd_news'){
+        remove_action( 'genesis_entry_footer', 'genesis_post_meta' ); //remove the meta (filed under, tags, etc.)
+    }
+}
+
 //* Customize the post info function
 add_filter( 'genesis_post_info', 'sp_post_info_filter' );
 function sp_post_info_filter($post_info) {
