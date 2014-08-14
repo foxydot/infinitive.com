@@ -1,14 +1,14 @@
 === Image Widget ===
-Contributors: ModernTribe, peterchester, mattwiebe, Produced by Modern Tribe, Inc.
+Contributors: ModernTribe, peterchester, mattwiebe
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4BSPTNFFY6AL6
-Tags: widget, image, ad, banner, simple, upload, sidebar, admin, thickbox, resize
-Requires at least: 3.0
-Tested up to: 3.3.1
-Stable tag: 3.3.4
+Tags: widget, image, ad, banner, simple, upload, sidebar, admin, thickbox, resize, arabic, brazilian portuguese, dutch, german, hebrew, italian, japanese, polish, spanish, swedish, widget-only
+Requires at least: 3.5
+Tested up to: 3.6
+Stable tag: 4.0.9
 
 == Description ==
 
-Simple image widget that uses native Wordpress upload thickbox to add image widgets to your site.
+A simple image widget that uses the native WordPress media manager to add image widgets to your site.
 
 * MU Compatible
 * Handles image resizing and alignment
@@ -17,23 +17,35 @@ Simple image widget that uses native Wordpress upload thickbox to add image widg
 * Very versatile.  All fields are optional.
 * Upload, link to external image, or select an image from your media collection using the built in thickbox browser.
 * Supports override of template so that you can override the template for your theme!
-* Supports HTTPS
+* Responsive
 
-Supported Languages (feel free to contribute other languages):
+Supported Languages:
 
-* French
+* Arabic
+* Brazilian Portuguese
+* Dutch
 * German
+* Hebrew
+* Italian
 * Japanese
-* Portuguese
-* Romanian
+* Polish
+* Spanish
 * Swedish
+
+If you would like your own language to be supported, please contribute translations here:
+
+http://wordpress.org/support/topic/image-widget-40-translations-needed-2
 
 This plugin is actively supported and we will do our best to help you. In return we simply as 3 things:
 
 1. Help Out. If you see a question on the forum you can help with or have a great idea and want to code it up and submit a patch, that would be just plain awesome and we will shower your with praise. Might even be a good way to get to know us and lead to some paid work if you freelance.  Also, we are happy to post translations if you provide them.
 1. Donate - if this is generating enough revenue to support our time it makes all the difference in the world
 https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4BSPTNFFY6AL6
-1. Support us by buying our Premium plugins. In particular, check out our Events Calendar Pro http://tri.be/wordpress-events-calendar-pro/
+1. Support us by buying our Premium plugins. In particular, check out our Events Calendar Pro http://tri.be/wordpress-events-calendar-pro/?src=imagewidget
+
+Note, we're also on github in case you want to add some pull requests or a fork!
+
+https://github.com/moderntribe/image-widget
 
 == Installation ==
 
@@ -51,7 +63,7 @@ Please visit the forum for questions or comments: http://wordpress.org/tags/imag
 = Requirements =
 
 * PHP 5.1 or above
-* WordPress 3.0 or above
+* WordPress 3.5 or above
 
 == Documentation ==
 
@@ -70,7 +82,172 @@ function my_template_filter($template) {
 	return get_template_directory() . '/my-custom-templates/my-custom-name.php';
 }`
 
+= Filters =
+
+There are a number of filters in the code that will allow you to override data as you see fit. The best way to learn what filters are available is always by simply searching the code for 'apply_filters'. But all the same, here are a few of the more essential filters:
+
+*widget_title*
+
+This is actually a pretty typical filter in widgets and is applied to the widget title.
+
+*widget_text*
+
+Another very typical widget filter that is applied to the description body text. This filter also takes 2 additional arguments for $args and $instance so that you can learn more about the specific widget instance in the process of filtering the content.
+
+*image_widget_image_attachment_id*
+
+Filters the attachment id of the image.
+Accepts additional $args and $instance arguments.
+
+*image_widget_image_url*
+
+Filters the url of the image displayed in the widget.
+Accepts additional $args and $instance arguments.
+THIS IS DEPRECATED AND WILL EVENTUALLY BE DELETED
+
+*image_widget_image_width*
+
+Filters the display width of the image.
+Accepts additional $args and $instance arguments.
+
+*image_widget_image_height*
+
+Filters the display height of the image.
+Accepts additional $args and $instance arguments.
+
+*image_widget_image_maxwidth*
+
+Filters the inline max-width style of the image. Hint: override this to use this in responsive designs :)
+Accepts additional $args and $instance arguments.
+Return null to remove this css from the image output (defaults to '100%').
+
+*image_widget_image_maxheight*
+
+Filters the inline max-height style of the image.
+Accepts additional $args and $instance arguments.
+Return null to remove this css from the image output (defaults to null)
+
+*image_widget_image_size*
+
+Filters the selected image 'size' corresponding to WordPress registered sizes.
+If this is set to 'tribe_image_widget_custom' then the width and height are used instead.
+Accepts additional $args and $instance arguments.
+
+*image_widget_image_align*
+
+Filters the display alignment of the image.
+Accepts additional $args and $instance arguments.
+
+*image_widget_image_alt*
+
+Filters the alt text of the image.
+Accepts additional $args and $instance arguments.
+
+*image_widget_image_link*
+
+Filters the url that the image links to.
+Accepts additional $args and $instance arguments.
+
+*image_widget_image_link_target*
+
+Filters the link target of the image link.
+Accepts additional $args and $instance arguments.
+
+*image_widget_image_attributes*
+
+Filters a list of image attributes used in the image output. Similar to 'wp_get_attachment_image_attributes'
+Accepts $instance arguments
+
+*image_widget_link_attributes*
+
+Filters a list of attributes used in the image link. Similar to 'wp_get_attachment_image_attributes'
+Accepts $instance arguments
+
+= Have You Supported the Image Widget? =
+
+If so, then THANK YOU! Also, feel free to add this line to your wp-config.php file to prevent the image widget from displaying a message after upgrades.
+
+define( 'I_HAVE_SUPPORTED_THE_IMAGE_WIDGET', true );
+
+For more info on the philosophy here, check out our blog post: http://tri.be/define-i-have-donated-true/
+
 == Changelog ==
+
+= 4.0.9 =
+
+* Fix image stretching bug in admin (Thanks @kyleunzicker)
+* Add polish translation (thank you @difreo)
+* Add hebrew translation (thank you Ariel Klikstein)
+* Add german translation (thank you Daniel Schmidt)
+* Fix "Alt" text in the widget source to use actual "Alt" text (thanks @adoliver and @Degas)
+
+= 4.0.8 =
+
+* Responsive support in honor of Josh Broton's WordCamp SF talk about responsive design. max-width now defaults to 100%;
+
+= 4.0.7 =
+
+* Add Spanish translation (thank you @mzaweb)
+
+= 4.0.6 =
+
+* Rename all language files and implement a couple more minor language bug fixes a la @understandard
+* Added support for the constant 'I_HAVE_SUPPORTED_THE_IMAGE_WIDGET' to turn off the message that appears after upgrading.  (@crienoloog, i hope this puts a smile on your face.)
+
+= 4.0.5 =
+
+* Added Japanese (and fixed a minor language string bug - thank you @understandard)
+* Added Arabic (thank you @modmenpc)
+
+= 4.0.4 =
+
+Super minor fix to enable saving of a blank caption. (thanks @crdunst)
+
+= 4.0.3 =
+
+Fixed javascript bug caused by log message.
+
+= 4.0.2 =
+
+Fix oversized screenshot.
+
+= 4.0.1 =
+
+Language updates:
+
+* Brazilian Portuguese (Thank you @guhemama)
+* Spanish (Thank you @javiandgo)
+
+= 4.0 =
+
+* Significant upgrades to support the new WordPress media manager (Thank you @kyleunzicker, @dancameron, @dudekpj, @JakePT)
+* Significant improvements the administrative user interface.
+* Abstracted support for older versions of WordPress so that that we don't break old versions with this upgrade (Though there's no reason you should up grade this widget and NOT your WP install! You should always keep WordPress core up to date!)
+* Added 'image_widget_link_attributes' filter to easily process link attributes and to default to having the link 'title' be the 'alt' or 'title' content. (Thank you @ZeroGravity, @pixelyzed, and @javiandgo)
+* Updated Translations
+** Swedish (Tomas Lindhoff <tomas@xhost.se>)
+** Dutch (Presis <contact@presis.nl>)
+** Italian (@maxgx)
+
+= 3.3.8 =
+
+* Added italian translations courtesy of @maxgx
+
+= 3.3.7 =
+
+* Add filters so that people can more easily adjust the output of the widget as per @TCBarrett's request.
+
+= 3.3.6 =
+
+* Czech translation courtesy of Vladislav Musilek at blogísek (http://blog.musilda.cz).
+
+= 3.3.5 =
+
+* Fix filtered media library inserts thanks to @miraclemaker as well as @oxyc, @BjornW and innumerable others in the support forum (http://wordpress.org/support/topic/plugin-image-widget-add-image-upload-an-image-select-insert-into-widget-no-image-is-shown)
+* Adjusted HTTPS/SSL handling so that it's only applied in the view. ( thanks @TheFluffyDoneky and @aerobrent )
+* Added a filter for the image url: 'image_widget_image_url'
+* Add Dutch language translation ( thank you Carsten Alsemgeest - presis.nl )
+* Rename all language files to lowercase image_widget to match the localization string.
 
 = 3.3.4 =
 
@@ -251,10 +428,20 @@ Thank you @smurkas, @squigie and @laurie!!!  Special thanks to Cameron Clark fro
 * WP 2.7.1 Compatibility
 * Class encapsulation
 
+== Upgrade Notice ==
+
+= 4.0 =
+
+Please be advised that this is a significant upgrade. You should definitely back up your database before updating in case your existing image widgets have any problems.
+
+Also, several languages will no longer be supported until new translations are submitted. Currently, we have support for Italian, Dutch, and Swedish. If you would like to contribute your own language files, please post links here:
+
+http://wordpress.org/support/topic/image-widget-40-translations-needed-2
+
 == Screenshots ==
 
 1. Image Widget admin screen.
-1. Thickbox uploader for the Image Widget
+1. Media manager integration.
 1. Image Widget on the front of a plain Wordpress install.
 
 == Frequently Asked Questions ==
