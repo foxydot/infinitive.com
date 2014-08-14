@@ -7169,6 +7169,7 @@ Site Footer
 .blog-header {
   position: relative;
   border-bottom: 1px dotted #999999;
+  cursor: pointer;
 }
 .blog-header h3 {
   width: auto;

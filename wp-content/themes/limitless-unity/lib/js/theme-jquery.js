@@ -29,6 +29,10 @@ jQuery(document).ready(function($) {
 	var numwidgets = $('#footer-widgets div.widget').length;
 	$('#footer-widgets').addClass('cols-'+numwidgets);
 	
+	$('#blog-header').click(function(){
+	    window.location.href = '/hot-topics/blog/';
+	});
+	
 	//special for lifestyle
 	$('.ftr-menu ul.menu>li').after(function(){
 		if(!$(this).hasClass('last-child') && $(this).hasClass('menu-item') && $(this).css('display')!='none'){
