@@ -10,6 +10,7 @@ class MSDNewsWidget extends WP_Widget {
 
 	function widget( $args, $instance ) {
 		extract($args);
+        $widget_area = $args['id'];
 		$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
 		$posttype = 'msd_news';	
 		$taxonomy = 'msd_genre';
@@ -28,27 +29,41 @@ class MSDNewsWidget extends WP_Widget {
 		global $subtitle;
 		
 		echo $before_widget;
-		if ( !empty( $title ) ) { print $before_title.$title.$after_title; } 
-		print '<ul class="news-list">';
+        if ( !empty( $title ) ) { print $before_title.$title.$after_title; } 
+        print '<ul class="news-list">';
 		foreach($items AS $item){ 
 	    	$subtitle->the_meta($item->ID);
             $excerpt = $subtitle->get_the_value('subtitle')?$subtitle->get_the_value('subtitle'):msdlab_excerpt($item->ID);
 	    	$thumb = get_the_post_thumbnail($item->ID)?get_the_post_thumbnail($item->ID):'<img src="'.get_bloginfo('template_url').'/images/news.png" />';
-	    	$news_list .= '
-	     	<li>
-				<h3>'.$item->post_title.'</h3>
-				<div class="subtitle">
-	     			<div class="img alignleft">'.$thumb.'</div>
-					'.$excerpt.'
-				</div>
-				<a href="'.get_permalink($item->ID).'" class="link alignright">Learn More ></a>
-	     		<a href="'.get_permalink($item->ID).'"></a>';
-				$news_list .= '<div class="clear"></div>
-			</li>';
-	
-	     }
-	    print $news_list;
-		print '</ul>';
+    	
+            if($widget_area == 'homepage-widgets'){
+                $news_list .= '
+    	     	<li>
+    				<h3>'.$item->post_title.'</h3>
+    				<div class="subtitle">
+    	     			<div class="img alignleft">'.$thumb.'</div>
+    					'.$excerpt.'
+    				</div>
+    				<a href="'.get_permalink($item->ID).'" class="link alignright">Learn More ></a>
+    	     		<a href="'.get_permalink($item->ID).'"></a>';
+    				$news_list .= '<div class="clear"></div>
+    			</li>';
+    	     } else {
+    	         $news_list .= '
+                <li>
+                    <div class="img" style="text-align: center;">'.$thumb.'</div>
+                    <h3>'.$item->post_title.'</h3>
+                    <div class="subtitle">
+                        '.$excerpt.'
+                    </div>
+                    <a href="'.get_permalink($item->ID).'" class="link alignright">Learn More ></a>
+                    <a href="'.get_permalink($item->ID).'"></a>';
+                    $news_list .= '<div class="clear"></div>
+                </li>';
+             }
+        }
+        print $news_list;
+        print '</ul>';
 		echo $after_widget;
 	}
 	
