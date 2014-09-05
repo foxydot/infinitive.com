@@ -25,14 +25,15 @@ wp-content/*
 
 # Ignore everything in the "plugins" directory, except the plugins you
 # specify (see the commented-out examples for hints on how to do this.)
-# wp-content/plugins/*
-# !wp-content/plugins/my-single-file-plugin.php
+wp-content/plugins/*
+!wp-content/plugins/msd*
+!wp-content/plugins/slidedeck-lenses
 # !wp-content/plugins/my-directory-plugin/
 
 # Ignore everything in the "themes" directory, except the themes you
 # specify (see the commented-out example for a hint on how to do this.)
-# wp-content/themes/*
-# !wp-content/themes/my-theme/
+wp-content/themes/twenty*
+wp-content/themes/genesis
 
 .DS_Store
 .AppleDouble
@@ -43,7 +44,33 @@ Icon
 # Thumbnails
 ._*
 
+
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
 
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
