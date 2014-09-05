@@ -11,6 +11,8 @@ add_image_size( 'post-image', 760, 230, TRUE ); //image to float at the top of t
 add_image_size('tiny_thumb', 45, 45, TRUE);
 add_image_size('child_full', 730, 380, TRUE);
 add_image_size('child_thumbnail', 350, 170, TRUE);
+
+add_image_size('table_press',220,150,TRUE);
 /**
  * Manipulate the featured image
  */

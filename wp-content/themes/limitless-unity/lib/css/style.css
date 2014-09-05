@@ -7331,14 +7331,20 @@ a.readmore-button {
 .tablepress .odd td,
 .tablepress .even td {
   background-color: transparent;
+  line-height: 1.4;
+}
+.tablepress .odd td img.aligncenter,
+.tablepress .even td img.aligncenter {
+  margin: 0 auto;
 }
 .tablepress .odd td br,
 .tablepress .even td br {
-  height: 0;
+  display: none;
 }
 .tablepress .odd td a,
 .tablepress .even td a {
   font-weight: 600;
+  display: block;
 }
 .tablepress.two-col td {
   width: 49%;
