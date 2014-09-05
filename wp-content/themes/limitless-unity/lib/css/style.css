@@ -7330,7 +7330,7 @@ a.readmore-button {
 }
 .tablepress .odd td,
 .tablepress .even td {
-  background-color: transparent;
+  background-color: transparent !important;
   line-height: 1.4;
 }
 .tablepress .odd td img.aligncenter,
