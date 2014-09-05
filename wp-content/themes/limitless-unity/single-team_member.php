@@ -112,6 +112,10 @@ function msd_team_insights(){
             'posts_per_page' => '4',
         );
         $blogs = get_posts($args);
+        //$authorblogs = get_posts($args);
+        //TODO: Add get blog posts by subject tag of user
+        //merge blogs http://wordpress.org/support/topic/multiple-queries-compiling-into-one-loop
+        //possibly use posts_where filter http://codex.wordpress.org/Plugin_API/Filter_Reference#Advanced_WordPress_Filters
         if($blogs){
             print '<div class="insights-blogs">';
             print '<h3 class="insights-header">Blog Posts</h3>';
