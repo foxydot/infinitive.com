@@ -101,20 +101,27 @@ function msd_team_additional_info(){
 
 add_action('genesis_after_entry_content','msd_team_insights');
 function msd_team_insights(){
-    global $post,$contact_info;
+    global $post,$contact_info,$teamblogs;
     $titlearray = explode(" ",$post->post_title);
     $firstname = $titlearray[0];
     $firstname = (substr($firstname, -1) == 's')?$firstname."'":$firstname."'s";
     print '<h3 class="insights-header" id="insights">'.$firstname.' Insights</h3>';
     if($contact_info->get_the_value('_team_user_id')!=0){
+        //TODO: Add get blog posts by subject tag of user
+        $teamblogs = get_post_items_for_team_member($post->ID);
+        //merge blogs http://wordpress.org/support/topic/multiple-queries-compiling-into-one-loop
         $args = array(
             'author' => $contact_info->get_the_value('_team_user_id'),
             'posts_per_page' => '4',
         );
+        if(count($teamblogs)>0){
+            $args['suppress_filters'] = FALSE;
+            add_filter('posts_where','msdlab_modify_posts_where');
+        } 
         $blogs = get_posts($args);
-        //$authorblogs = get_posts($args);
-        //TODO: Add get blog posts by subject tag of user
-        //merge blogs http://wordpress.org/support/topic/multiple-queries-compiling-into-one-loop
+        if(count($teamblogs)>0){
+            remove_filter('posts_where','msdlab_modify_posts_where');
+        }
         //possibly use posts_where filter http://codex.wordpress.org/Plugin_API/Filter_Reference#Advanced_WordPress_Filters
         if($blogs){
             print '<div class="insights-blogs">';
@@ -195,7 +202,32 @@ function msd_team_news(){
         print '</div>';
     }
 }
-
+function get_post_items_for_team_member($team_id){
+    $args = array( 
+        'post_type' => 'post', 
+        'numberposts' => -1,
+        'meta_query' => array(
+           array(
+               'key' => '_msdlab_team_members',
+               'value' => '"'.$team_id.'"',
+               'compare' => 'LIKE',
+           )
+       )
+    );
+    return(get_posts($args));
+}
+function msdlab_modify_posts_where($data){
+    global $teamblogs,$wpdb;
+    foreach($teamblogs AS $k=>$v){
+        $blogids[] = $v->ID;
+    }
+    $ids = implode(',',$blogids);
+    $or_where = ' OR '.$wpdb->posts.'.ID IN ('.$ids.')';
+    $pattern = '@(AND )('.$wpdb->posts.'.post_author IN \(\d+\))(.*)@';
+    preg_match($pattern,$data,$matches);
+    $new_data = $matches[1].'('.$matches[2].$or_where.')'.$matches[3];
+    return($new_data);
+}
 function font_awesome_lists($str){
     $str = strip_tags($str,'<a><li><ul><h3><b><strong><i>');
     $str = preg_replace('/<ul(.*?)>/i','<ul class="icons-ul"\1>',$str);
