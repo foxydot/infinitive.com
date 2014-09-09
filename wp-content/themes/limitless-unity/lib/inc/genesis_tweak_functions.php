@@ -528,7 +528,22 @@ function custom_add_team_member_attr( $attributes ){
         // return the attributes
         return $attributes;      
 }
-
+function msdlab_modify_posts_where($data){
+    global $teamblogs,$wpdb;
+    if(count($teamblogs)>0){
+    foreach($teamblogs AS $k=>$v){
+        $blogids[] = $v->ID;
+    }
+    $ids = implode(',',$blogids);
+    $or_where = ' OR '.$wpdb->posts.'.ID IN ('.$ids.')';
+    $pattern = '@(AND )('.$wpdb->posts.'.post_author IN \(\d+\))(.*)@';
+    preg_match($pattern,$data,$matches);
+    $new_data = $matches[1].'('.$matches[2].$or_where.')'.$matches[3];
+    return($new_data);
+    } else {
+        return($data);
+    }
+}
 /*** FOOTER ***/
 
 /**
