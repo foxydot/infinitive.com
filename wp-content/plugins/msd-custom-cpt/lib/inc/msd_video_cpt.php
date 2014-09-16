@@ -103,7 +103,7 @@ class MSDVideoCPT {
             'labels' => $labels,
             'hierarchical' => true,
             'description' => 'Customer Videos',
-            'supports' => array( 'title', 'editor', 'author', 'thumbnail'),
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail','page-attributes'),
             'taxonomies' => array('msd_video_tag'),
             'public' => true,
             'show_ui' => true,
