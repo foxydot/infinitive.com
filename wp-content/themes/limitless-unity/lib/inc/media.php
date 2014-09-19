@@ -12,7 +12,7 @@ add_image_size('tiny_thumb', 45, 45, TRUE);
 add_image_size('child_full', 730, 380, TRUE);
 add_image_size('child_thumbnail', 350, 170, TRUE);
 
-add_image_size('table_press',220,150,TRUE);
+add_image_size('table_press',220,150,FALSE);
 /**
  * Manipulate the featured image
  */
