@@ -116,6 +116,7 @@
 #homepage-widgets section.widget .widget-wrap p {
   font-size: 14px;
   font-size: 1.4rem;
+  margin-bottom: 0;
   line-height: 1.625;
 }
 #homepage-widgets section.widget.first-child {
