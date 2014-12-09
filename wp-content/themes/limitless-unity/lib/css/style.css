@@ -7692,10 +7692,19 @@ a.readmore-button {
   padding-top: 1rem;
   border-top: 1px dotted #cccccc;
 }
-.single-team_member .insights-blogs {
+.single-team_member .insights-section {
   clear: both;
 }
-.single-team_member .insights-blogs article {
+.single-team_member .insights-section h3.insights-header {
+  border-bottom: 0;
+  color: #999999;
+  text-transform: none;
+  font-size: 2.4rem;
+}
+.single-team_member .insights-section article {
+  padding: 0.5rem 0;
+}
+.single-team_member .insights-videos article {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -7703,11 +7712,11 @@ a.readmore-button {
   padding: 1rem;
 }
 @media (min-width: 768px) {
-  .single-team_member .insights-blogs article {
+  .single-team_member .insights-videos article {
     float: left;
     width: 50%;
   }
 }
-.single-team_member .insights-blogs article.even {
+.single-team_member .insights-videos article.even {
   border-left: 1px dotted #cccccc;
 }

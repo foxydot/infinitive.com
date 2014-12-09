@@ -176,8 +176,7 @@ function msd_team_news(){
     $i = 1;
     if(count($newses)>0){
         print'<div class="insights-press insights-section">
-<h3 class="insights-header">In the News</h3>
-<hr class="grid-separator">';
+<h3 class="insights-header">In the News</h3>';
         foreach($newses AS $press){
             $thumbnail = get_the_post_thumbnail($press->ID,'thumbnail',array('class' => 'aligncenter'));
             
