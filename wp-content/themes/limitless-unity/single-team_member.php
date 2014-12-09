@@ -99,7 +99,7 @@ function msd_team_additional_info(){
     <?php
 }
 
-add_action('genesis_after_entry_content','msd_team_insights');
+add_action('genesis_after_entry_content','msd_team_insights', 20);
 function msd_team_insights(){
     global $post,$contact_info,$teamblogs;
     $titlearray = explode(" ",$post->post_title);
@@ -124,13 +124,10 @@ function msd_team_insights(){
         }
         //possibly use posts_where filter http://codex.wordpress.org/Plugin_API/Filter_Reference#Advanced_WordPress_Filters
         if($blogs){
-            print '<div class="insights-blogs">';
+            print '<div class="insights-blogs insights-section">';
             print '<h3 class="insights-header">Blog Posts</h3>';
             $i = 0;
             foreach($blogs AS $blog){
-                if($i%2==0){
-                    print '<hr class="grid-separator">';
-                }
                 team_display_blog($blog,$i);
                 $i++;
             }
@@ -141,22 +138,18 @@ function msd_team_insights(){
 
 function team_display_blog($blog,$count = 0){
     $thumbnail = get_the_post_thumbnail($blog->ID,'thumbnail',array('class' => 'aligncenter'));
-    $classes = $count%2==0?'odd':'even';
-    print '<article class="'.$classes.'">
-        <a href="'.get_permalink($blog->ID).'">'.$thumbnail.'</a>
+    print '<article>
         <h4><a href="'.get_permalink($blog->ID).'">'.$blog->post_title.'</a></h4>
-        <div class="meta">Posted by '.get_the_author_meta('display_name',$blog->post_author).'<br>
-        '.mysql2date('F j, Y', $blog->post_date).'</div>
     </article>';
 }
-add_action('genesis_after_entry_content','msd_team_videos');
+add_action('genesis_after_entry_content','msd_team_videos',40);
 function msd_team_videos(){
     global $post;
     $video = new MSDVideoCPT;
     $videos = $video->get_video_items_for_team_member($post->ID);
     $i = 1;
     if(count($videos)>0){
-        print'<div class="insights-blogs odd">
+        print'<div class="insights-videos insights-section">
 <h3 class="insights-header">Videos</h3>
 <hr class="grid-separator">';
         foreach($videos AS $vid){
@@ -175,29 +168,22 @@ function msd_team_videos(){
         print '</div>';
     }
 }
-add_action('genesis_after_entry_content','msd_team_news');
+add_action('genesis_after_entry_content','msd_team_news', 30);
 function msd_team_news(){
     global $post;
     $news = new MSDNewsCPT;
     $newses = $news->get_news_items_for_team_member($post->ID);
     $i = 1;
     if(count($newses)>0){
-        print'<div class="insights-blogs odd">
-<h3 class="insights-header">Press</h3>
+        print'<div class="insights-press insights-section">
+<h3 class="insights-header">In the News</h3>
 <hr class="grid-separator">';
         foreach($newses AS $press){
-            $class = $i%2==0?'even':'odd';
             $thumbnail = get_the_post_thumbnail($press->ID,'thumbnail',array('class' => 'aligncenter'));
             
-            print '<article class="'.$class.'">
-                <a href="'.get_permalink($press->ID).'">'.$thumbnail.'</a>
+            print '<article>
                 <h4><a href="'.get_permalink($press->ID).'">'.$press->post_title.'</a></h4>
-                <div class="meta">'.mysql2date('F j, Y', $press->post_date).'</div>';
-            print '</article>';
-            if($i%2==0){
-                print '<hr class="grid-separator">';
-            }
-            $i++;
+                </article>';
         }
         print '</div>';
     }
