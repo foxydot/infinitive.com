@@ -4,12 +4,12 @@ Plugin Name: Lyte Helper
 Plugin URI: http://blog.futtta.be/category/wp-youtube-lyte/
 Description: Lyte Helper contains some helper functions to make WP YouTube Lyte even more flexible
 Author: Frank Goossens (futtta)
-Version: 0.1
+Version: 0.2
 Author URI: http://blog.futtta.be/
 */
 
 /**
-available filter hooks: lyte_settings, lyte_content_preparse, lyte_match_preparse_fragment, lyte_match_postparse_template, lyte_content_postparse, lyte_css
+available filter hooks: lyte_settings, lyte_content_preparse, lyte_match_preparse_fragment, lyte_match_postparse_template, lyte_content_postparse, lyte_css, lyte_docaptions, lyte_match_thumburl
 available action hooks; lyte_actionsfilters
 */
 
@@ -22,7 +22,7 @@ function lyte_force_widgets() {
 /** force wp youtube lyte to act on normal youtube url's as well using lyte_content_preparse filter */
 // add_filter('lyte_content_preparse','lyte_force_nonhttpv',10,1);
 function lyte_force_nonhttpv($content) {
-        $content=preg_replace('/https?:\/\/(www.)?youtu(be.com|.be)\/(watch\?v=)?/','httpv://www.youtube.com/watch?v=',$content);
+	$content=preg_replace('/^https?:\/\/(www.)?youtu(be.com|.be)\/(watch\?v=)?/m','httpv://www.youtube.com/watch?v=',$content);
         return $content;
         }
 
@@ -76,6 +76,12 @@ function lyte_change_settings($settingsArray) {
 	return $settingsArray;
 }
 
+/** disable captions lookup */
+// add_filter('lyte_docaptions','lyte_nocaptions',10,0);
+function lyte_nocaptions() {
+	return false;
+}
+
 /** force lyte javascript (which includes css) to be loaded in head instead of footer */
 // lyte_force_jshead();
 function lyte_force_jshead() {
@@ -88,5 +94,11 @@ function lyte_force_jshead() {
 // add_filter('aioseop_description','lyte_filter_aioseop_description');
 function lyte_filter_aioseop_description($description) {
 	return preg_replace('/\shttp(v|a):\/\/([^\s<]*)/','',$description);
+}
+
+/** function to override thumbnail used for a video */
+// add_filter('lyte_match_thumburl','lyte_my_own_thumburl');
+function lyte_my_own_thumburl($thumb) {
+        return "http://images.vrt.be/mobile320/2014/08/05/8570f3aa-1c9e-11e4-b923-00163edf75b7.jpg";
 }
 ?>

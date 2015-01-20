@@ -50,9 +50,8 @@ $default_caption_position = $slide->meta['_caption_position'];
     </li>
     
     <li class="slide-copy option">
-        <label><?php _e( "Description", $namespace ); ?><br />
-            <textarea class="slidedeck_mceEditor" name="post_excerpt" cols="40" rows="5" id="slidedeck-slide-caption-description"><?php echo esc_textarea( wpautop( $slide->post_excerpt ) ); ?></textarea>
-        </label>
+        <label><?php _e( "Description", $namespace ); ?></label>
+        <textarea class="slidedeck_mceEditor" name="post_excerpt" cols="40" rows="5" id="slidedeck-slide-caption-description-<?php echo $slide->ID; ?>"><?php echo esc_textarea( wpautop( $slide->post_excerpt ) ); ?></textarea>
     </li>
     
     <li class="preferred-image-size">

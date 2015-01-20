@@ -1,55 +1,55 @@
 <?php
 class SlideDeckLens_ToolKit extends SlideDeckLens_Scaffold {
-	var $options_model = array(
+    var $options_model = array(
         'Appearance' => array(
             'accentColor' => array(
                 'value' => "#3ea0c1"
             ),
-			'frame' => array(
-				'name' => 'frame',
-				'type' => 'select',
-				'value' => 'frame',
-				'values' => array(
+            'frame' => array(
+                'name' => 'frame',
+                'type' => 'select',
+                'value' => 'frame',
+                'values' => array(
                     'frame' => 'Thick',
-					'hairline' => 'Hairline',
+                    'hairline' => 'Hairline',
                     'none' => 'None',
-				),
-				'label' => 'Border/Frame',
-				'description' => "Choose the thickness of the frame around your SlideDeck",
-				'weight' => 40
-			),
-			'text-position' => array(
-				'name' => 'text-position',
-				'type' => 'select',
-				'values' => array(
-					'title-pos-top' => 'Top',
-					'title-pos-bottom' => 'Bottom',
-					'title-pos-left' => 'Left',
+                ),
+                'label' => 'Border/Frame',
+                'description' => "Choose the thickness of the frame around your SlideDeck",
+                'weight' => 40
+            ),
+            'text-position' => array(
+                'name' => 'text-position',
+                'type' => 'select',
+                'values' => array(
+                    'title-pos-top' => 'Top',
+                    'title-pos-bottom' => 'Bottom',
+                    'title-pos-left' => 'Left',
                     'title-pos-right' => 'Right',
                     'title-pos-fill' => 'Fill Slide'
-                    				),
-				'value' => 'title-pos-top',
-				'label' => 'Caption Position',
-				'description' => "Choose where to place the caption text on the slide",
-				'weight' => 50
-			),
-			'text-color' => array(
-				'name' => 'text-color',
-				'type' => 'select',
-				'values' => array(
-					'title-dark' => 'Dark',
-					'title-light' => 'Light'
-				),
-				'value' => 'title-dark',
-				'label' => 'Text Color Variation',
-				'weight' => 60
-			),
+                                    ),
+                'value' => 'title-pos-top',
+                'label' => 'Caption Position',
+                'description' => "Choose where to place the caption text on the slide",
+                'weight' => 50
+            ),
+            'text-color' => array(
+                'name' => 'text-color',
+                'type' => 'select',
+                'values' => array(
+                    'title-dark' => 'Dark',
+                    'title-light' => 'Light'
+                ),
+                'value' => 'title-dark',
+                'label' => 'Text Color Variation',
+                'weight' => 60
+            ),
             'hideSpines' => array(
                 'type' => 'hidden',
                 'value' => true
             )
         ),
-		'Navigation' => array(
+        'Navigation' => array(
             'navigation-position' => array(
                 'name' => 'navigation-position',
                 'type' => 'radio',
@@ -67,78 +67,78 @@ class SlideDeckLens_ToolKit extends SlideDeckLens_Scaffold {
                 'description' => "Choose where the navigation panel resides",
                 'weight' => 10
             ),
-			'navigation-type' => array(
-				'name' => 'navigation-type',
-				'type' => 'select',
-				'values' => array(
-					'nav-dots' => 'Dots',
-					'nav-thumb' => 'Thumbnails',
-					'no-nav' => 'Turn Navigation Off'
-				),
-				'value' => 'nav-dots',
-				'label' => 'Navigation Type',
-				'description' => "Note: Dots Navigation Type is limited to a max of 10. If you have more than 10 slides, Thumbnails is better for your users.",
-				'weight' => 20
-			),
-			'navigation-style' => array(
-				'name' => 'navigation-style',
-				'type' => 'select',
-				'values' => array(
-					'nav-default' => 'Inside slide area',
-					'nav-bar' => 'In its own bar',
-					'nav-hanging' => 'Hanging outside'
-				),
-				'value' => 'nav-default',
-				'label' => 'Navigation Style',
-				'description' => "Change the location of the SlideDeck's navigation elements. This may cause the caption position to be chnaged.",
-				'weight' => 30
-			),
-			'arrow-style' => array(
-				'name' => 'arrow-style',
-				'type' => 'select',
-				'values' => array(
-					'arrowstyle-1' => 'Default',
-					'arrowstyle-2' => 'Pointer Arrow',
-					'arrowstyle-3' => 'Hairline Arrow',
-					'arrowstyle-4' => 'Short Small Arrow',
-					'arrowstyle-5' => 'Circle Hairline Button Arrow',
-					'arrowstyle-6' => 'Circle Play Button Arrow',
-					'arrowstyle-7' => 'Circle Pointer Button Arrow',
-					'arrowstyle-8' => 'Circle Play Arrow',
-					'arrowstyle-9' => 'Circle Pointer Arrow'
-				),
-				'value' => 'arrowstyle-7',
-				'label' => 'Arrow Style',
-				'description' => "Pick an arrow style that best matches your website's design.",
-				'weight' => 40,
-				'interface' => array(
-				    'type' => 'thumbnails-flyout',
-				    'values' => array(
-				        'arrowstyle-1' => '/lenses/tool-kit/images/arrowstyle_1.thumb.png',
-				        'arrowstyle-2' => '/lenses/tool-kit/images/arrowstyle_2.thumb.png',
-				        'arrowstyle-3' => '/lenses/tool-kit/images/arrowstyle_3.thumb.png',
-				        'arrowstyle-4' => '/lenses/tool-kit/images/arrowstyle_4.thumb.png',
-				        'arrowstyle-5' => '/lenses/tool-kit/images/arrowstyle_5.thumb.png',
-				        'arrowstyle-6' => '/lenses/tool-kit/images/arrowstyle_6.thumb.png',
-				        'arrowstyle-7' => '/lenses/tool-kit/images/arrowstyle_7.thumb.png',
-				        'arrowstyle-8' => '/lenses/tool-kit/images/arrowstyle_8.thumb.png',
-				        'arrowstyle-9' => '/lenses/tool-kit/images/arrowstyle_9.thumb.png',
+            'navigation-type' => array(
+                'name' => 'navigation-type',
+                'type' => 'select',
+                'values' => array(
+                    'nav-dots' => 'Dots',
+                    'nav-thumb' => 'Thumbnails',
+                    'no-nav' => 'Turn Navigation Off'
+                ),
+                'value' => 'nav-dots',
+                'label' => 'Navigation Type',
+                'description' => "Note: Dots Navigation Type is limited to a max of 10. If you have more than 10 slides, Thumbnails is better for your users.",
+                'weight' => 20
+            ),
+            'navigation-style' => array(
+                'name' => 'navigation-style',
+                'type' => 'select',
+                'values' => array(
+                    'nav-default' => 'Inside slide area',
+                    'nav-bar' => 'In its own bar',
+                    'nav-hanging' => 'Hanging outside'
+                ),
+                'value' => 'nav-default',
+                'label' => 'Navigation Style',
+                'description' => "Change the location of the SlideDeck's navigation elements. This may cause the caption position to be chnaged.",
+                'weight' => 30
+            ),
+            'arrow-style' => array(
+                'name' => 'arrow-style',
+                'type' => 'select',
+                'values' => array(
+                    'arrowstyle-1' => 'Default',
+                    'arrowstyle-2' => 'Pointer Arrow',
+                    'arrowstyle-3' => 'Hairline Arrow',
+                    'arrowstyle-4' => 'Short Small Arrow',
+                    'arrowstyle-5' => 'Circle Hairline Button Arrow',
+                    'arrowstyle-6' => 'Circle Play Button Arrow',
+                    'arrowstyle-7' => 'Circle Pointer Button Arrow',
+                    'arrowstyle-8' => 'Circle Play Arrow',
+                    'arrowstyle-9' => 'Circle Pointer Arrow'
+                ),
+                'value' => 'arrowstyle-7',
+                'label' => 'Arrow Style',
+                'description' => "Pick an arrow style that best matches your website's design.",
+                'weight' => 40,
+                'interface' => array(
+                    'type' => 'thumbnails-flyout',
+                    'values' => array(
+                        'arrowstyle-1' => '/lenses/tool-kit/images/arrowstyle_1.thumb.png',
+                        'arrowstyle-2' => '/lenses/tool-kit/images/arrowstyle_2.thumb.png',
+                        'arrowstyle-3' => '/lenses/tool-kit/images/arrowstyle_3.thumb.png',
+                        'arrowstyle-4' => '/lenses/tool-kit/images/arrowstyle_4.thumb.png',
+                        'arrowstyle-5' => '/lenses/tool-kit/images/arrowstyle_5.thumb.png',
+                        'arrowstyle-6' => '/lenses/tool-kit/images/arrowstyle_6.thumb.png',
+                        'arrowstyle-7' => '/lenses/tool-kit/images/arrowstyle_7.thumb.png',
+                        'arrowstyle-8' => '/lenses/tool-kit/images/arrowstyle_8.thumb.png',
+                        'arrowstyle-9' => '/lenses/tool-kit/images/arrowstyle_9.thumb.png',
                     )
                 )
-			),
+            ),
             'nav-arrow-style' => array(
                 'name' => 'nav-arrow-style',
-				'type' => 'select',
-				'values' => array(
-					'nav-arrow-style-1' => 'Button',
-					'nav-arrow-style-2' => 'Arrow'
-				),
-				'value' => 'nav-arrow-style-1',
-				'label' => 'Thumbnail Arrow Style',
-				'weight' => 50,
-				'description' => "Pick an arrow style for the Thumbnail Navigation"
-			),
-		)
+                'type' => 'select',
+                'values' => array(
+                    'nav-arrow-style-1' => 'Button',
+                    'nav-arrow-style-2' => 'Arrow'
+                ),
+                'value' => 'nav-arrow-style-1',
+                'label' => 'Thumbnail Arrow Style',
+                'weight' => 50,
+                'description' => "Pick an arrow style for the Thumbnail Navigation"
+            ),
+        )
     );
     
     function __construct(){
@@ -169,18 +169,18 @@ class SlideDeckLens_ToolKit extends SlideDeckLens_Scaffold {
     }
     
     function slidedeck_render_slidedeck_before($html, $slidedeck){
-		if( $this->is_valid( $slidedeck['lens'] ) ) {
-			$html .= '<div class="sd-wrapper">';
-		}
-		return $html;
-	}
-	
-	function slidedeck_render_slidedeck_after($html, $slidedeck){
-		if( $this->is_valid( $slidedeck['lens'] ) ) {
-			$html .= '</div>';
-		}
-		return $html;
-	}
+        if( $this->is_valid( $slidedeck['lens'] ) ) {
+            $html .= '<div class="sd-wrapper">';
+        }
+        return $html;
+    }
+    
+    function slidedeck_render_slidedeck_after($html, $slidedeck){
+        if( $this->is_valid( $slidedeck['lens'] ) ) {
+            $html .= '</div>';
+        }
+        return $html;
+    }
     
     /**
      * Add appropriate classes for this Lens to the SlideDeck frame
@@ -194,49 +194,49 @@ class SlideDeckLens_ToolKit extends SlideDeckLens_Scaffold {
     function slidedeck_frame_classes( $slidedeck_classes, $slidedeck ) {
         if( $this->is_valid( $slidedeck['lens'] ) ) {
         
-	        $slidedeck_classes[] = $this->prefix . $slidedeck['options']['navigation-type'];
-	        $slidedeck_classes[] = $this->prefix . $slidedeck['options']['frame'];
-	        $slidedeck_classes[] = $this->prefix . $slidedeck['options']['navigation-style'];
-	        $slidedeck_classes[] = $this->prefix . $slidedeck['options']['navigation-position'];
-	        $slidedeck_classes[] = $this->prefix . $slidedeck['options']['text-position'];
-	        $slidedeck_classes[] = $this->prefix . $slidedeck['options']['text-color'];
-	        $slidedeck_classes[] = $this->prefix . $slidedeck['options']['show-title'];
-	        $slidedeck_classes[] = $this->prefix . $slidedeck['options']['nav-arrow-style'];
-	        $slidedeck_classes[] = $this->prefix . $slidedeck['options']['arrow-style'];
+            $slidedeck_classes[] = $this->prefix . $slidedeck['options']['navigation-type'];
+            $slidedeck_classes[] = $this->prefix . $slidedeck['options']['frame'];
+            $slidedeck_classes[] = $this->prefix . $slidedeck['options']['navigation-style'];
+            $slidedeck_classes[] = $this->prefix . $slidedeck['options']['navigation-position'];
+            $slidedeck_classes[] = $this->prefix . $slidedeck['options']['text-position'];
+            $slidedeck_classes[] = $this->prefix . $slidedeck['options']['text-color'];
+            $slidedeck_classes[] = $this->prefix . $slidedeck['options']['show-title'];
+            $slidedeck_classes[] = $this->prefix . $slidedeck['options']['nav-arrow-style'];
+            $slidedeck_classes[] = $this->prefix . $slidedeck['options']['arrow-style'];
         }
         
         return $slidedeck_classes;
     }
     
     function slidedeck_dimensions( &$width, &$height, &$outer_width, &$outer_height, &$slidedeck ) {
-    	global $SlideDeckPlugin;
-    	if( $this->is_valid( $slidedeck['lens'] ) ) {
-    			
-    		$og_w = $width;
-			$og_h = $height;
-			$og_ow = $outer_width;
-			$og_oh = $outer_height;
-			
-			$size = $SlideDeckPlugin->SlideDeck->get_closest_size($slidedeck);
-    	
-    		switch( $slidedeck['options']['frame'] ){
+        global $SlideDeckPlugin;
+        if( $this->is_valid( $slidedeck['lens'] ) ) {
+                
+            $og_w = $width;
+            $og_h = $height;
+            $og_ow = $outer_width;
+            $og_oh = $outer_height;
+            
+            $size = $SlideDeckPlugin->SlideDeck->get_closest_size($slidedeck);
+        
+            switch( $slidedeck['options']['frame'] ){
                 case 'frame':
-        			$width = $og_w - 24;
-        			$height = $og_h - 24;
+                    $width = $og_w - 24;
+                    $height = $og_h - 24;
                     if( $slidedeck['options']['navigation-type'] != 'no-nav' ) {
-            			if( $slidedeck['options']['navigation-style'] == 'nav-hanging' ) {
-            				if( $slidedeck['options']['navigation-type'] == 'nav-thumb' ) {
-        					    /**
+                        if( $slidedeck['options']['navigation-style'] == 'nav-hanging' ) {
+                            if( $slidedeck['options']['navigation-type'] == 'nav-thumb' ) {
+                                /**
                                  * This conditional handles the thumbnails when the nav
                                  * is hanging on the outside of the deck.
                                  */
                                 switch( $size ){
                                     case 'large':
                                     case 'medium':
-            							$height = $og_h - 94;
+                                        $height = $og_h - 94;
                                     break;
                                     case 'small':
-            							$height = $og_h - 70;
+                                        $height = $og_h - 70;
                                     break;
                                 }
                                 
@@ -247,21 +247,21 @@ class SlideDeckLens_ToolKit extends SlideDeckLens_Scaffold {
                                         $width = $og_w - 94;
                                     break;
                                 }
-        					}
-        					if( $slidedeck['options']['navigation-type'] == 'nav-dots' ) {
-        					    /**
+                            }
+                            if( $slidedeck['options']['navigation-type'] == 'nav-dots' ) {
+                                /**
                                  * This conditional handles the nav dots when the nav
                                  * is hanging on the outside of the deck.
                                  */
-        					    switch( $size ){
+                                switch( $size ){
                                     case 'large':
                                     case 'medium':
                                         $height = $og_h - 57;
                                     break;
                                     case 'small':
-            							$height = $og_h - 47;
+                                        $height = $og_h - 47;
                                     break;
-        					    }
+                                }
                                 
                                 switch( $slidedeck['options']['navigation-position'] ){
                                     case 'nav-pos-top':
@@ -279,26 +279,26 @@ class SlideDeckLens_ToolKit extends SlideDeckLens_Scaffold {
                                     break;
                                 }
                                 
-            				}
-            			}
-            			if( $slidedeck['options']['navigation-style'] == 'nav-bar' ) {
-            			    /**
+                            }
+                        }
+                        if( $slidedeck['options']['navigation-style'] == 'nav-bar' ) {
+                            /**
                              * The following conditionals apply to the navigation in its own bar
                              */
-            				if( $size == 'large' ) {
-        						$height = $og_h - 66;
-        					}
+                            if( $size == 'large' ) {
+                                $height = $og_h - 66;
+                            }
                             switch( $slidedeck['options']['navigation-position'] ){
                                 case 'nav-pos-top':
                                     switch( $slidedeck['options']['navigation-type'] ){
                                         case 'nav-dots':
-                		    				$height = $og_h - 44;
+                                            $height = $og_h - 44;
                                         break;
                                         case 'nav-thumb':
                                             $height = $og_h - 85;
-                		    				if( $size == 'small' ) {
-                		    					$height = $og_h - 68;
-                		    				}
+                                            if( $size == 'small' ) {
+                                                $height = $og_h - 68;
+                                            }
                                         break;
                                     }
                                 break;
@@ -342,14 +342,14 @@ class SlideDeckLens_ToolKit extends SlideDeckLens_Scaffold {
                                     }
                                 break;
                             }
-            			}
+                        }
                     }
                 break;
                 case 'none':
                 case 'hairline':
                     if( $slidedeck['options']['frame'] == 'hairline' ){
-            			$width = $og_w - 2;
-            			$height = $og_h - 2;
+                        $width = $og_w - 2;
+                        $height = $og_h - 2;
                     }
                     
                     switch( $slidedeck['options']['navigation-position'] ){
@@ -402,65 +402,65 @@ class SlideDeckLens_ToolKit extends SlideDeckLens_Scaffold {
                         case 'nav-pos-top':
                         case 'nav-pos-bottom':
                             if( $slidedeck['options']['navigation-type'] != 'no-nav' ) {
-                    			if( $slidedeck['options']['navigation-style'] == 'nav-bar' ) {
-                    				if($slidedeck['options']['navigation-type'] == 'nav-dots'  ) {
-                    				    if($slidedeck['options']['navigation-position'] == 'nav-pos-top'  ) {
-                    	    				if( $size == 'small' || $size == 'medium' ){
-                    	    					$height = $og_h - 2;
+                                if( $slidedeck['options']['navigation-style'] == 'nav-bar' ) {
+                                    if($slidedeck['options']['navigation-type'] == 'nav-dots'  ) {
+                                        if($slidedeck['options']['navigation-position'] == 'nav-pos-top'  ) {
+                                            if( $size == 'small' || $size == 'medium' ){
+                                                $height = $og_h - 2;
                                             }
-                    	    				if( $size == 'large' ){
-                    	    					$height = $og_h - 32;
-                    	    				}
+                                            if( $size == 'large' ){
+                                                $height = $og_h - 32;
+                                            }
                                         }else{
                                             $height = $og_h - 34;
                                         }
-                    				}
-                    				if( $slidedeck['options']['navigation-type'] == 'nav-thumb'  ) {
-                	    				if( $size == 'large' ) {
-                	    					$height = $og_h - 71;
-                    					}
-                	    				if( $size == 'medium' ) {
-                	    					$height = $og_h - 74;
-                    					}
-                    					if( $size == 'small' ){
-                    						$height = $og_h - 60;
-                    					}
-                    				}
-                    			}
-                				if( $slidedeck['options']['navigation-style'] == 'nav-hanging' ) {
-                					if( $slidedeck['options']['navigation-type'] == 'nav-thumb' ) {
-                						if( $size == 'large' || $size == 'medium' ) {
-                	    					$height = $og_h - 72;
-                						}
-                						if( $size == 'small' ){
-                							$height = $og_h - 66;
-                						}
-                					}
-                					if( $slidedeck['options']['navigation-type'] == 'nav-dots' ) {
-                						if($slidedeck['options']['navigation-position'] == 'nav-pos-top'  ) {
-                    						if( $size == 'large' || $size == 'medium' ) {
-                    	    					$height = $og_h - 36;
-                    						}
-                    						if( $size == 'small' ){
-                    							$height = $og_h - 54;
+                                    }
+                                    if( $slidedeck['options']['navigation-type'] == 'nav-thumb'  ) {
+                                        if( $size == 'large' ) {
+                                            $height = $og_h - 71;
+                                        }
+                                        if( $size == 'medium' ) {
+                                            $height = $og_h - 74;
+                                        }
+                                        if( $size == 'small' ){
+                                            $height = $og_h - 60;
+                                        }
+                                    }
+                                }
+                                if( $slidedeck['options']['navigation-style'] == 'nav-hanging' ) {
+                                    if( $slidedeck['options']['navigation-type'] == 'nav-thumb' ) {
+                                        if( $size == 'large' || $size == 'medium' ) {
+                                            $height = $og_h - 72;
+                                        }
+                                        if( $size == 'small' ){
+                                            $height = $og_h - 66;
+                                        }
+                                    }
+                                    if( $slidedeck['options']['navigation-type'] == 'nav-dots' ) {
+                                        if($slidedeck['options']['navigation-position'] == 'nav-pos-top'  ) {
+                                            if( $size == 'large' || $size == 'medium' ) {
+                                                $height = $og_h - 36;
+                                            }
+                                            if( $size == 'small' ){
+                                                $height = $og_h - 54;
                                                 $outer_height = $og_h - 26;
-                    						}
-                						}else{
-                    						if( $size == 'large' || $size == 'medium' ) {
-                    	    					$height = $og_h - 36;
-                    						}
-                    						if( $size == 'small' ){
-                    							$height = $og_h - 34;
-                    						}
-                						}    
-                					}
-                				}
+                                            }
+                                        }else{
+                                            if( $size == 'large' || $size == 'medium' ) {
+                                                $height = $og_h - 36;
+                                            }
+                                            if( $size == 'small' ){
+                                                $height = $og_h - 34;
+                                            }
+                                        }    
+                                    }
+                                }
                             }
                         break;
                     }
                 break;
-    		}
-    	}
+            }
+        }
     }
 
     /**

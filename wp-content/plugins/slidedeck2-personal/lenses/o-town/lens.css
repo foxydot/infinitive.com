@@ -60,6 +60,9 @@
     bottom: 0;
     left: 42px;
 }
+.lens-o-town dl.slidedeck .slide-type-video .video-wrapper {
+    z-index: 2;
+}
 .lens-o-town.sd2-nav-thumb dl.slidedeck .slide-type-video .video-wrapper,
 .lens-o-town.sd2-nav-thumb dl.slidedeck .slide-source-custom .sd2-content-wrapper {
     left: 75px;

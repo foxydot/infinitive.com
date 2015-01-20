@@ -3,8 +3,8 @@ Contributors: futtta
 Tags: youtube, video, lyte, lite youtube embeds, html5 video, widget, youtube audio, audio, playlist, performance, accessibility, sidebar, lazy load, responsive, microdata, videoobject
 Donate link: http://blog.futtta.be/2013/10/21/do-not-donate-to-me/
 Requires at least: 2.9
-Tested up to: 3.7
-Stable tag: 1.3.3
+Tested up to: 4.1
+Stable tag: 1.5.0
 
 High performance YouTube video, playlist and audio-only embeds which don't slow down your blog and offer optimal accessibility.
 
@@ -25,6 +25,8 @@ Or using shortcodes:
 `[lyte id="_SQkWbRublY" /]`
 `[lyte id="_SQkWbRublY" audio="true" /]`
 `[lyte id="A486E741B25F8E00" playlist="true" /]`
+
+As from 1.5.0 WP YouTube Lyte can also parse normal YouTube links (i.e. without httpv or not using lyte shortcodes). This feature can be enabled and disabled in the settings-page.
 
 WP YouTube Lyte has been written with optimal performance as primary goal, but has been tested for maximum browser-compatibility (iPad included) while keeping an eye on accessibility. Starting with version 1.2.0 lyte embeds are fully responsive and can automatically embed [videoObject microdata](http://support.google.com/webmasters/bin/answer.py?hl=en&answer=2413309) as well. The plugin is fully multi-language, with support for Catalan, Dutch, English, French, German, Hebrew, Romanian, Spanish and Slovene.
 
@@ -69,13 +71,16 @@ This was added as a beta feature in version 1.1.0; add ?enablejsapi=1 to the htt
 * The videoobject microdata is NOT added for audio-only embeds, playlists or widgets
 * Google will not always display the thumbnail, this presumably depends of the relevance of the video to the rest of the page.
 
+= How does captions-support get added to the microdata? =
+In January 2014 [Benetech](http://benetech.org/), a U.S. nonprofit that develops and uses technology to create positive social change, offered a patch that adds the [accessibilityFeature property](http://schema.org/accessibilityFeature) to the microdata for videos that have captions. If you have microdata enabled, WP YouTube Lyte will automatically try to check (in a seperate, asynchronous call via a proxy-webservice, as YouTube only offers captions in their API v3 which requires authentication) if captions are available and if so, adds the accessibilityFeature property with value captions to the microdata. This can be disabled by either disabling microdata or, if you want microdata but not the accessibilityFeature-property by using the "lyte_docaptions"-filter to set captions to false (example-code is in lyte_helper.php_example). 
+
 = Responsive LYTE embeds =
 * The video width in posts and pages will adapt to the width of the container (the div) in which your blogposts/ pages are shown. This means that if your theme is responsive, WP YouTube Lyte will follow.
 * Widgets are not responsive.
 * if the content div width gets to around 200 pixels, the LYTE UI will become garbled (YouTube requires the minimum embed width to be 200px as well).
 
 = Can I use WP YouTube Lyte on normal YouTube links? =
-Yes, using the API you can make WP YouTube Lyte parse normal YouTube links. The code for this is in lyte_helper.php_example.
+Yes, starting with version 1.5.0 normal YouTube links are automatically transferred in Lyte embeds as well. You will automagically also get a (non-Lyte) preview of the video in your visual post edit screen. 
 
 = What can I do with the API? =
 A whole lot; there are filters to pre-parse the_content, to change settings, to change the CSS, to change the HTML of the LYTE-div, ... There are examples for all filters (and one action) in lyte_helper.php_example
@@ -105,6 +110,29 @@ Just tell me, I like the feedback! Use the [Contact-page on my blog](http://blog
 * [Rate my plugin on wordpress.org](http://wordpress.org/extend/plugins/wp-youtube-lyte/)
 
 == Changelog ==
+
+= 1.5.0 =
+* New: WP YouTube Lyte can now also act on normal YouTube URL's. This behavior is by default active on new installations and is by default off for upgrades (from 1.4.x) to avoid unexpected behavior.
+* Improvement (API): apply lyte_settings filter after after_setup_theme actoin as [proposed by Yun](http://blog.futtta.be/wp-youtube-lyte/#comment-61923)
+* Improvement (API): added lyte_match_thumburl filter to set thumbnail as [requested by Simon Barnett](https://wordpress.org/support/topic/hqthumb1-not-reflecting-on-playlists-in-custom-fields?replies=6#post-5861751)
+* Bugfix: for audio-only player make title visible to improve accessibility (for screenreaders) as [requested](http://blog.futtta.be/wp-youtube-lyte/#comment-61928) by [Octocorn](http://www.nemoviz.org/)
+* Bugfix: some playlists were not working, as [reported by jpress](https://wordpress.org/support/topic/individual-playlist-not-working)
+* Updated most translations, added Ukranian (by [Michael Yunat of getvoip.com](http://getvoip.com/blog) and Serbian [by Ogi Djuraskovic of firstsiteguide.com](http://firstsiteguide.com/), kudo's to all who helped!
+
+= 1.4.2 =
+* Bugfix: Playlists in rss-feeds were broken
+* Bugfix: YouTube-link under a playlist was wrong
+* Improvement: example code in lyte_helper.php to also parse http-youtube-links now only triggers if the link is on a new line
+* Tested with WordPress 3.9
+
+= 1.4.1 =
+* set interval for captionscheck to 30 days
+
+= 1.4.0 =
+* new: if microdata is enabled, check if captions are available and if so add the accessibilityFeature=captions markup. Gracefully contributed [by Benetech](http://benetech.org/)
+* bugfix: widgets with youtu.be short URL's were broken (as observed by [Robert of audio-times.com](http://www.audio-times.com/).
+* bugfix: in some cases iframe size on mobile was not correct (reported by [David of webquarry.com](http://www.webquarry.com/).
+* bugfix: mobile rotation handled more efficiently (based on [feedback from Skyfield](http://wordpress.org/support/topic/rotation-bug-on-iphoneipad#post-5102835)
 
 = 1.3.3 =
 * fix for playlist shortcode as [reported by pete777](http://wordpress.org/support/topic/playlist-via-shortcode-broken)

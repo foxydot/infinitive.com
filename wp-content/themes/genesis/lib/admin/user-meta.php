@@ -29,25 +29,8 @@ function genesis_user_contactmethods( array $contactmethods ) {
 
 }
 
-add_action( 'admin_init', 'genesis_add_user_profile_fields' );
-/**
- * Hook in the additional user profile fields.
- *
- * @since 1.9.0
- */
-function genesis_add_user_profile_fields() {
-
-	add_action( 'show_user_profile', 'genesis_user_options_fields' );
-	add_action( 'edit_user_profile', 'genesis_user_options_fields' );
-	add_action( 'show_user_profile', 'genesis_user_archive_fields' );
-	add_action( 'edit_user_profile', 'genesis_user_archive_fields' );
-	add_action( 'show_user_profile', 'genesis_user_seo_fields' );
-	add_action( 'edit_user_profile', 'genesis_user_seo_fields' );
-	add_action( 'show_user_profile', 'genesis_user_layout_fields' );
-	add_action( 'edit_user_profile', 'genesis_user_layout_fields' );
-
-}
-
+add_action( 'show_user_profile', 'genesis_user_options_fields' );
+add_action( 'edit_user_profile', 'genesis_user_options_fields' );
 /**
  * Add fields for user permissions for Genesis features to the user edit screen.
  *
@@ -78,8 +61,10 @@ function genesis_user_options_fields( $user ) {
 					<label for="meta[genesis_admin_menu]"><input id="meta[genesis_admin_menu]" name="meta[genesis_admin_menu]" type="checkbox" value="1" <?php checked( get_the_author_meta( 'genesis_admin_menu', $user->ID ) ); ?> />
 					<?php _e( 'Enable Genesis Admin Menu?', 'genesis' ); ?></label><br />
 
+					<?php if ( ! genesis_seo_disabled() ) : ?>
 					<label for="meta[genesis_seo_settings_menu]"><input id="meta[genesis_seo_settings_menu]" name="meta[genesis_seo_settings_menu]" type="checkbox" value="1" <?php checked( get_the_author_meta( 'genesis_seo_settings_menu', $user->ID ) ); ?> />
 					<?php _e( 'Enable SEO Settings Submenu?', 'genesis' ); ?></label><br />
+					<?php endif; ?>
 
 					<label for="meta[genesis_import_export_menu]"><input id="meta[genesis_import_export_menu]" name="meta[genesis_import_export_menu]" type="checkbox" value="1" <?php checked( get_the_author_meta( 'genesis_import_export_menu', $user->ID ) ); ?> />
 					<?php _e( 'Enable Import/Export Submenu?', 'genesis' ); ?></label>
@@ -91,6 +76,8 @@ function genesis_user_options_fields( $user ) {
 
 }
 
+add_action( 'show_user_profile', 'genesis_user_archive_fields' );
+add_action( 'edit_user_profile', 'genesis_user_archive_fields' );
 /**
  * Add fields for author archives contents to the user edit screen.
  *
@@ -152,6 +139,8 @@ function genesis_user_archive_fields( $user ) {
 
 }
 
+add_action( 'show_user_profile', 'genesis_user_seo_fields' );
+add_action( 'edit_user_profile', 'genesis_user_seo_fields' );
 /**
  * Add fields for author archive SEO to the user edit screen.
  *
@@ -179,7 +168,7 @@ function genesis_user_seo_fields( $user ) {
 		return false;
 
 	?>
-	<h3><?php _e( 'Theme SEO Settings', 'genesis' ); ?></h3>
+	<h3><?php _e( 'Author Archive SEO Settings', 'genesis' ); ?></h3>
 	<p><span class="description"><?php _e( 'These settings apply to this author\'s archive pages.', 'genesis' ); ?></span></p>
 	<table class="form-table">
 		<tbody>
@@ -224,6 +213,8 @@ function genesis_user_seo_fields( $user ) {
 
 }
 
+add_action( 'show_user_profile', 'genesis_user_layout_fields' );
+add_action( 'edit_user_profile', 'genesis_user_layout_fields' );
 /**
  * Add author archive layout selector to the user edit screen.
  *
@@ -253,7 +244,7 @@ function genesis_user_layout_fields( $user ) {
 				<td>
 					<div class="genesis-layout-selector">
 						<p>
-							<input type="radio" name="meta[layout]" class="default-layout" id="default-layout" value="" <?php checked( $layout, '' ); ?> />
+							<input type="radio" name="meta[layout]" class="default-layout" id="default-layout"  value="" <?php checked( $layout, '' ); ?> />
 							<label class="default" for="default-layout"><?php printf( __( 'Default Layout set in <a href="%s">Theme Settings</a>', 'genesis' ), menu_page_url( 'genesis', 0 ) ); ?></label>
 						</p>
 
@@ -286,25 +277,35 @@ function genesis_user_meta_save( $user_id ) {
 	if ( ! isset( $_POST['meta'] ) || ! is_array( $_POST['meta'] ) )
 		return;
 
-	$meta = wp_parse_args(
-		$_POST['meta'],
-		array(
-			'genesis_admin_menu'         => '',
-			'genesis_seo_settings_menu'  => '',
-			'genesis_import_export_menu' => '',
-			'genesis_author_box_single'  => '',
-			'genesis_author_box_archive' => '',
-			'headline'                   => '',
-			'intro_text'                 => '',
-			'doctitle'                   => '',
-			'meta_description'           => '',
-			'meta_keywords'              => '',
-			'noindex'                    => '',
-			'nofollow'                   => '',
-			'noarchive'                  => '',
-			'layout'                     => '',
-		)
+	$defaults = array(
+		'genesis_admin_menu'         => '',
+		'genesis_seo_settings_menu'  => '',
+		'genesis_import_export_menu' => '',
+		'genesis_author_box_single'  => '',
+		'genesis_author_box_archive' => '',
+		'headline'                   => '',
+		'intro_text'                 => '',
+		'doctitle'                   => '',
+		'meta_description'           => '',
+		'meta_keywords'              => '',
+		'noindex'                    => '',
+		'nofollow'                   => '',
+		'noarchive'                  => '',
+		'layout'                     => '',
 	);
+
+	/**
+	 * Filter the user meta defaults array.
+	 *
+	 * Allows developer to filter the default array of user meta key => value pairs.
+	 *
+	 * @since 2.1.0
+	 * 
+	 * @param array $defaults Default user meta array.
+	 */
+	$defaults = apply_filters( 'genesis_user_meta_defaults', $defaults );
+
+	$meta = wp_parse_args( $_POST['meta'], $defaults );
 
 	$meta['headline']   = strip_tags( $meta['headline'] );
 	$meta['intro_text'] = current_user_can( 'unfiltered_html' ) ? $meta['intro_text'] : genesis_formatting_kses( $meta['intro_text'] );

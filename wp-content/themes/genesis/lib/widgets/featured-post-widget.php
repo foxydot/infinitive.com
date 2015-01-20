@@ -80,6 +80,10 @@ class Genesis_Featured_Post extends WP_Widget {
 	 *
 	 * @since 0.1.8
 	 *
+	 * @global WP_Query $wp_query               Query object.
+	 * @global array    $_genesis_displayed_ids Array of displayed post IDs.
+	 * @global $integer $more
+	 *
 	 * @param array $args Display arguments including before_title, after_title, before_widget, and after_widget.
 	 * @param array $instance The settings for the particular instance of the widget
 	 */
@@ -87,16 +91,14 @@ class Genesis_Featured_Post extends WP_Widget {
 
 		global $wp_query, $_genesis_displayed_ids;
 
-		extract( $args );
-
 		//* Merge with defaults
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 
-		echo $before_widget;
+		echo $args['before_widget'];
 
 		//* Set up the author bio
 		if ( ! empty( $instance['title'] ) )
-			echo $before_title . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $after_title;
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $args['after_title'];
 
 		$query_args = array(
 			'post_type' => 'post',
@@ -143,12 +145,14 @@ class Genesis_Featured_Post extends WP_Widget {
 				echo genesis_html5() ? '<header class="entry-header">' : '';
 
 				if ( ! empty( $instance['show_title'] ) ) {
-					
+
+					$title = get_the_title() ? get_the_title() : __( '(no title)', 'genesis' );
+
 					if ( genesis_html5() )
-						printf( '<h2 class="entry-title"><a href="%s" title="%s">%s</a></h2>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() );
+						printf( '<h2 class="entry-title"><a href="%s">%s</a></h2>', get_permalink(), esc_html( $title ) );
 					else
-						printf( '<h2><a href="%s" title="%s">%s</a></h2>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() );
-				
+						printf( '<h2><a href="%s">%s</a></h2>', get_permalink(), esc_html( $title ) );
+
 				}
 
 				if ( ! empty( $instance['show_byline'] ) && ! empty( $instance['post_info'] ) )
@@ -197,7 +201,7 @@ class Genesis_Featured_Post extends WP_Widget {
 		//* The EXTRA Posts (list)
 		if ( ! empty( $instance['extra_num'] ) ) {
 			if ( ! empty( $instance['extra_title'] ) )
-				echo $before_title . esc_html( $instance['extra_title'] ) . $after_title;
+				echo $args['before_title'] . esc_html( $instance['extra_title'] ) . $args['after_title'];
 
 			$offset = intval( $instance['posts_num'] ) + intval( $instance['posts_offset'] );
 
@@ -215,7 +219,7 @@ class Genesis_Featured_Post extends WP_Widget {
 				while ( have_posts() ) {
 					the_post();
 					$_genesis_displayed_ids[] = get_the_ID();
-					$listitems .= sprintf( '<li><a href="%s" title="%s">%s</a></li>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() );
+					$listitems .= sprintf( '<li><a href="%s">%s</a></li>', get_permalink(), get_the_title() );
 				}
 
 				if ( mb_strlen( $listitems ) > 0 )
@@ -234,7 +238,7 @@ class Genesis_Featured_Post extends WP_Widget {
 				esc_html( $instance['more_from_category_text'] )
 			);
 
-		echo $after_widget;
+		echo $args['after_widget'];
 
 	}
 
@@ -386,6 +390,7 @@ class Genesis_Featured_Post extends WP_Widget {
 						<option value="alignnone">- <?php _e( 'None', 'genesis' ); ?> -</option>
 						<option value="alignleft" <?php selected( 'alignleft', $instance['image_alignment'] ); ?>><?php _e( 'Left', 'genesis' ); ?></option>
 						<option value="alignright" <?php selected( 'alignright', $instance['image_alignment'] ); ?>><?php _e( 'Right', 'genesis' ); ?></option>
+						<option value="aligncenter" <?php selected( 'aligncenter', $instance['image_alignment'] ); ?>><?php _e( 'Center', 'genesis' ); ?></option>
 					</select>
 				</p>
 

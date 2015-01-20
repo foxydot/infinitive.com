@@ -27,7 +27,7 @@
         footerStyles.text(cssText);
         
         // Fall back for IE < 9
-        if(ie < 9){
+        if(slidedeck_ie < 9){
             SlideDeckPreview.elems.slidedeckFrame.find('.sd2-spine-background-color').css('background-color', value);
         }
     };
@@ -39,7 +39,7 @@
         footerStyles.text(cssText);
         
         // Fall back for IE < 9
-        if(ie < 9){
+        if(slidedeck_ie < 9){
             SlideDeckPreview.elems.slidedeckFrame.find('.sd2-spine-background-color:hover').css('background-color', value);
             SlideDeckPreview.elems.slidedeckFrame.find('.sd2-spine-background-color.active').css('background-color', value);
         }
@@ -52,7 +52,7 @@
         footerStyles.text(cssText);
         
         // Fall back for IE < 9
-        if(ie < 9){
+        if(slidedeck_ie < 9){
             SlideDeckPreview.elems.slidedeckFrame.find('.sd2-spine-title-color').css('color', value);
         }
     };
@@ -64,7 +64,7 @@
         footerStyles.text(cssText);
         
         // Fall back for IE < 9
-        if(ie < 9){
+        if(slidedeck_ie < 9){
             SlideDeckPreview.elems.slidedeckFrame.find('.sd2-spine-title-color:hover').css('color', value);
             SlideDeckPreview.elems.slidedeckFrame.find('.sd2-spine-title-color.active').css('color', value);
         }

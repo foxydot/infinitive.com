@@ -66,41 +66,23 @@ class Genesis_Admin_Upgraded extends Genesis_Admin_Basic {
 			<h3><?php _e( 'What&#8217;s New', 'genesis' ); ?></h3>
 			<div class="feature-section">
 
-				<h4><?php _e( 'HTML5 Markup', 'genesis' ); ?></h4>
-				<p><?php _e( 'Genesis has always been on the cutting edge of web technology, and Genesis 2.0 continues in that excellent tradition. With a single line of code in a child theme, Genesis will now output HTML5 markup in place of the old XHTML tags. Also, every theme we build in the future will be developed on HTML5.', 'genesis' ); ?></p>
-
-				<h4><?php _e( 'Microdata', 'genesis' ); ?></h4>
-				<p><?php printf( __( 'If you\'re using a theme with HTML5 enabled, Genesis will also output your markup using microdata.. Not sure what that is? We don\'t blame you. Take a look at <a href="%s" target="_blank">this explanation</a>. Still confused? Don\'t worry. That\'s why you\'re using a framework. We did all the research and modified the markup to serve search engines the Microdata they\'re looking for, so you don\'t have to. It\'s good to be a Genesis user.', 'genesis' ), 'http://html5doctor.com/microdata/' ); ?></p>
-
-				<h4><?php _e( 'A Brand New Design', 'genesis' ); ?></h4>
-				<p><?php _e( 'Genesis is sporting a fresh new look. And we\'ve taken advantage of the new HTML5 markup, as well as some snazzy CSS3. We think you\'re gonna love this.', 'genesis' ); ?></p>
+				<h4><?php _e( 'Customizer', 'genesis' ); ?></h4>
+				<p><?php _e( 'Many of the settings you would normally find on the theme settings page can now also be found in the customizer. So, you can now adjust things like the layout, breadcrumbs, and the way your content archives, and watch the changes happen in real time.', 'genesis' ); ?></p>
 
 				<h4><?php _e( 'Removing Features', 'genesis' ); ?></h4>
-				<p><?php _e( 'We want to keep Genesis as lightweight as possible for you, nobody wants to use bloated software. So we\'ve removed the Latest Tweets widget, eNews widget, the "post templates" feature, and the "fancy dropdowns" setting. But fear not! If you want those features back, click below to install the handy plugins we created for you.', 'genesis' ); ?></p>
-
-				<p>
-					<ul>
-						<li><?php echo genesis_plugin_install_link( 'genesis-latest-tweets', __( 'Genesis Latest Tweets Widget', 'genesis' ) ); ?></li>
-						<li><?php echo genesis_plugin_install_link( 'genesis-enews-extended', __( 'Genesis eNews Extended', 'genesis' ) ); ?></li>
-						<li><?php echo genesis_plugin_install_link( 'single-post-template', __( 'Single Post Template', 'genesis' ) ); ?></li>
-						<li><?php echo genesis_plugin_install_link( 'genesis-fancy-dropdowns', __( 'Fancy Dropdowns', 'genesis' ) ); ?></li>
-					</ul>
-				</p>
+				<p><?php printf( __( 'For users installing Genesis for the first time on a site, we have disabled the "Primary Navigation Extras" setting. If you would like to add custom links like Twitter or RSS, just use a custom menu item and give it a CSS class of <code>right</code> and it will float right. If you wish to display the date or a search form in the navigation menu, <a href="%s" target="_blank">follow this tutorial</a>.', 'genesis' ), 'http://my.studiopress.com/snippets/nav-extras' ); ?></p>
 
 				<h4><?php _e( 'Boring, but important', 'genesis' ); ?></h4>
 				<p><?php _e( 'We\'re always improving. Call it a sickness, but we like to make things work really, really well. Here\'s a list of the technical changes in this latest release.', 'genesis' ); ?></p>
 
 				<p>
 					<ul>
-						<li><?php _e( 'Better named loop hooks for HTML5.', 'genesis' ); ?></li>
-						<li><?php _e( 'Network Upgrade now upgrades the Genesis database for all sites in a network when running WordPress in multisite mode.', 'genesis' ); ?></li>
-						<li><?php _e( 'Widget classes are now coded in PHP5 format.', 'genesis' ); ?></li>
-						<li><?php _e( 'Admin CSS and Javascript are now minified.', 'genesis' ); ?></li>
-						<li><?php _e( 'Inline HTML comments have been removed to reduce page size.', 'genesis' ); ?></li>
-						<li><?php _e( 'The Scripts option now has its own metabox when editing an entry.', 'genesis' ); ?></li>
-						<li><?php _e( 'Custom Post Type archive pages now have a settings page so you can control the output.', 'genesis' ); ?></li>
-						<li><?php _e( 'Genesis tracks displayed entry IDs so you can exclude entries from showing twice on a page.', 'genesis' ); ?></li>
-						<li><?php _e( 'Entries without titles now display a permalink after the post content.', 'genesis' ); ?></li>
+						<li><?php _e( 'Support Feedblitz as a feed redirection option.', 'genesis' ); ?></li>
+						<li><?php _e( 'Prevent unnecessary calls to update server.', 'genesis' ); ?></li>
+						<li><?php _e( 'Fixed a breadcrumb compatibility issue with WordPress SEO.', 'genesis' ); ?></li>
+						<li><?php _e( 'Fixed IE11 bug in layout selector.', 'genesis' ); ?></li>
+						<li><?php _e( 'Added support for RTL in the dashboard for Genesis elements.', 'genesis' ); ?></li>
+						<li><?php _e( 'Many other improvements and bug fixes.', 'genesis' ); ?></li>
 					</ul>
 				<p>
 

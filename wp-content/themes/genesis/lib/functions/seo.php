@@ -74,7 +74,7 @@ function genesis_seo_disabled() {
 
 }
 
-add_action( 'after_setup_theme', 'genesis_seo_compatibility_check', 5 );
+add_action( 'after_setup_theme', 'genesis_seo_compatibility_check' );
 /**
  * Check for the existence of popular SEO plugins and disable the Genesis SEO features if one or more of the plugins
  * is active.

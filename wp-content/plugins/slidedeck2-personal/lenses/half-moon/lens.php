@@ -70,7 +70,7 @@ class SlideDeckLens_HalfMoon extends SlideDeckLens_Scaffold {
         return $slidedeck_classes;
     }
     
-    function slidedeck_dimensions($width, $height, $outer_width, $outer_height, $slidedeck){
+    function slidedeck_dimensions(&$width, &$height, &$outer_width, &$outer_height, &$slidedeck){
 		if( $this->is_valid( $slidedeck['lens'] ) ) {
 			$width = $outer_width - 2;
 			$height = $outer_height - 2;

@@ -1249,9 +1249,14 @@ class SlideDeck {
 	            usort( $slides, array( &$this, '_sort_by_time' ) );
         	}
         }
+
+        $slides = apply_filters( "{$this->namespace}_after_sort", $slides, $slidedeck );
         
         $total_slides = $slidedeck['options']['total_slides'];
         if( in_array( "custom", $slidedeck['source'] ) ) $total_slides = 9999;
+        
+        // Filter hook in to override total slide count
+        $total_slides = apply_filters( "{$this->namespace}_total_slides", $total_slides, $slidedeck );
 
         // Truncate the slides down to the limit the user specified
         $slides = array_slice( $slides, 0, $total_slides );
@@ -2001,7 +2006,7 @@ class SlideDeck {
      * 
      * @return string
      */
-    final public function render( $id, $styles = array(), $include_lens_files = true, $preview = false, $echo_js = false, $start = false ) {
+    final public function render( $id, $styles = array(), $include_lens_files = true, $preview = false, $echo_js = false, $start = false, $post = null, $front_page ) {
         global $SlideDeckPlugin;
         
         $slidedeck = $this->get( $id );
@@ -2129,7 +2134,7 @@ class SlideDeck {
         
         $html.= '</dl>';
         
-        $html.= $this->render_overlays( $slidedeck, $slidedeck_unique_id );
+        $html.= $this->render_overlays( $slidedeck, $slidedeck_unique_id, $post, $front_page );
         
         // Default navigation
         $html .= '<a class="deck-navigation horizontal prev" href="#prev-horizontal"><span>Previous</span></a>';
@@ -2329,16 +2334,29 @@ class SlideDeck {
      * 
      * @return string
      */
-    function render_overlays( $slidedeck, $slidedeck_unique_id ) {
-        global $SlideDeckPlugin, $post;
+    function render_overlays( $slidedeck, $slidedeck_unique_id, $post, $front_page ) {
+        global $SlideDeckPlugin;
         
         $html = '<div class="slidedeck-overlays" data-for="' . $slidedeck_unique_id . '">';
         $html.= '<a href="#slidedeck-overlays" class="slidedeck-overlays-showhide">Overlays<span class="open-icon"></span><span class="close-icon"></span></a>';
         
         $permalink = "";
-        if( isset( $post->ID ) )
+        if( isset( $post->ID ) ) {
             $permalink = get_permalink( $post->ID );
-        
+        } else {
+            $permalink = get_permalink( slidedeck2_sanitize( $_REQUEST['post_id'] ) );
+        }
+
+        if( slidedeck2_sanitize( $_REQUEST['front_page'] ) === "true" ) {
+            $front_page = true;
+        }
+
+        if( $front_page ) {
+            $permalink = get_home_url();
+        }
+
+        $permalink = trailingslashit( $permalink );
+
         $permalink .= "#$slidedeck_unique_id";
         $tweet_text = "Check out this SlideDeck!";
         

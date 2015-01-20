@@ -96,8 +96,6 @@ add_action( 'admin_enqueue_scripts', 'genesis_load_admin_scripts' );
  * @uses genesis_update_check()  Ping http://api.genesistheme.com/ asking if a new version of this theme is available.
  * @uses genesis_seo_disabled()  Detect whether or not Genesis SEO has been disabled.
  *
- * @global WP_Post $post Post object.
- *
  * @param string $hook_suffix Admin page identifier.
  */
 function genesis_load_admin_scripts( $hook_suffix ) {
@@ -113,12 +111,11 @@ function genesis_load_admin_scripts( $hook_suffix ) {
 	if ( genesis_is_menu_page( 'genesis' ) || genesis_is_menu_page( 'seo-settings' ) || genesis_is_menu_page( 'design-settings' ) )
 		genesis_load_admin_js();
 
-	global $post;
-
 	//* If we're viewing an edit post page, make sure we need Genesis SEO JS
 	if ( in_array( $hook_suffix, array( 'post-new.php', 'post.php' ) ) ) {
-		if ( ! genesis_seo_disabled() && post_type_supports( $post->post_type, 'genesis-seo' ) )
+		if ( ! genesis_seo_disabled() && post_type_supports( get_post_type(), 'genesis-seo' ) ) {
 			genesis_load_admin_js();
+		}
 	}
 
 }
@@ -151,7 +148,7 @@ function genesis_load_admin_js() {
 	$toggles = array(
 		// Checkboxes - when checked, show extra settings
 		'update'                    => array( '#genesis-settings\\[update\\]', '#genesis_update_notification_setting', '_checked' ),
-		'content_archive_thumbnail' => array( '#genesis-settings\\[content_archive_thumbnail\\]', '#genesis_image_size', '_checked' ),
+		'content_archive_thumbnail' => array( '#genesis-settings\\[content_archive_thumbnail\\]', '#genesis_image_extras', '_checked' ),
 		// Checkboxed - when unchecked, show extra settings
 		'semantic_headings'         => array( '#genesis-seo-settings\\[semantic_headings\\]', '#genesis_seo_h1_wrap', '_unchecked' ),
 		// Select toggles

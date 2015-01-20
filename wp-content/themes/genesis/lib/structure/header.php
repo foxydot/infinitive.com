@@ -67,25 +67,20 @@ function genesis_html5_doctype() {
 
 }
 
-add_filter( 'wp_title', 'genesis_doctitle_wrap', 20 );
+add_action( 'genesis_title', 'genesis_do_title' );
 /**
- * Wraps the page title in a `title` element.
+ * Output the title, wrapped in title tags.
  *
- * Only applies, if not currently in admin, or for a feed.
- *
- * @since 1.3.0
- *
- * @param string $title Page title.
- *
- * @return string Plain text or HTML markup
+ * @since 2.1.0
  */
-function genesis_doctitle_wrap( $title ) {
+function genesis_do_title() {
 
-	return is_feed() || is_admin() ? $title : sprintf( "<title>%s</title>\n", $title );
+	echo '<title>';
+	wp_title( '' );
+	echo '</title>';
 
 }
 
-add_action( 'genesis_title', 'wp_title' );
 add_filter( 'wp_title', 'genesis_default_title', 10, 3 );
 /**
  * Return filtered post title.
@@ -226,7 +221,7 @@ add_action( 'genesis_meta', 'genesis_seo_meta_description' );
  * @uses genesis_get_seo_option()   Get SEO setting value.
  * @uses genesis_get_custom_field() Get custom field value.
  *
- * @global WP_Query $wp_query Query object
+ * @global WP_Query $wp_query Query object.
  */
 function genesis_seo_meta_description() {
 
@@ -300,7 +295,7 @@ add_action( 'genesis_meta', 'genesis_seo_meta_keywords' );
  * @uses genesis_get_seo_option()   Get SEO setting value.
  * @uses genesis_get_custom_field() Get custom field value.
  *
- * @global WP_Query $wp_query Query object
+ * @global WP_Query $wp_query Query object.
  */
 function genesis_seo_meta_keywords() {
 
@@ -625,13 +620,11 @@ add_action( 'wp_head', 'genesis_rel_author' );
  *
  * @uses genesis_get_seo_option() Get SEO setting value.
  *
- * @global WP_Post $post Post object.
- *
  * @return null Return null on failure.
  */
 function genesis_rel_author() {
 
-	global $post;
+	$post = get_post();
 
 	if ( is_singular() && post_type_supports( $post->post_type, 'genesis-rel-author' ) && isset( $post->post_author ) && $gplus_url = get_user_option( 'googleplus', $post->post_author ) ) {
 		printf( '<link rel="author" href="%s" />' . "\n", esc_url( $gplus_url ) );
@@ -702,11 +695,11 @@ add_action( 'after_setup_theme', 'genesis_custom_header' );
  */
 function genesis_custom_header() {
 
-	$custom_header = get_theme_support( 'genesis-custom-header' );
+	$genesis_custom_header = get_theme_support( 'genesis-custom-header' );
 	$wp_custom_header = get_theme_support( 'custom-header' );
 
-	//* If not active (Genesis of WP custom header), do nothing
-	if ( ! $custom_header && ! $wp_custom_header )
+	//* If not active (Genesis or WP custom header), do nothing
+	if ( ! $genesis_custom_header && ! $wp_custom_header )
 		return;
 
 	//* Blog title option is obsolete when custom header is active
@@ -717,11 +710,11 @@ function genesis_custom_header() {
 		return;
 
 	//* Cast, if necessary
-	$custom_header = isset( $custom_header[0] ) && is_array( $custom_header[0] ) ? $custom_header[0] : array();
+	$genesis_custom_header = isset( $genesis_custom_header[0] ) && is_array( $genesis_custom_header[0] ) ? $genesis_custom_header[0] : array();
 
 	//* Merge defaults with passed arguments
 	$args = wp_parse_args(
-		$custom_header,
+		$genesis_custom_header,
 		apply_filters(
 			'genesis_custom_header_defaults',
 			array(
@@ -906,7 +899,7 @@ add_action( 'genesis_site_title', 'genesis_seo_site_title' );
 function genesis_seo_site_title() {
 
 	//* Set what goes inside the wrapping tags
-	$inside = sprintf( '<a href="%s" title="%s">%s</a>', trailingslashit( home_url() ), esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
+	$inside = sprintf( '<a href="%s">%s</a>', trailingslashit( home_url() ), get_bloginfo( 'name' ) );
 
 	//* Determine which wrapping tags to use
 	$wrap = is_home() && 'title' === genesis_get_seo_option( 'home_h1_on' ) ? 'h1' : 'p';

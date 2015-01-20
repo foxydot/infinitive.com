@@ -49,7 +49,7 @@ function genesis_markup( $args = array() ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	//* Short circuit filter
-	$pre = apply_filters( 'genesis_markup_' . $args['context'], false, $args );
+	$pre = apply_filters( "genesis_markup_{$args['context']}", false, $args );
 	if ( false !== $pre )
 		return $pre;
 
@@ -65,7 +65,7 @@ function genesis_markup( $args = array() ) {
 	}
 
 	//* Contextual filter
-	$tag = $args['context'] ? apply_filters( 'genesis_markup_' . $args['context'] . '_output', $tag, $args ) : $tag;
+	$tag = $args['context'] ? apply_filters( "genesis_markup_{$args['context']}_output", $tag, $args ) : $tag;
 
 	if ( $args['echo'] )
 		echo $tag;
@@ -95,7 +95,7 @@ function genesis_parse_attr( $context, $attributes = array() ) {
     $attributes = wp_parse_args( $attributes, $defaults );
 
     //* Contextual filter
-    return apply_filters( 'genesis_attr_' . $context, $attributes, $context );
+    return apply_filters( "genesis_attr_{$context}", $attributes, $context );
 
 }
 
@@ -126,7 +126,7 @@ function genesis_attr( $context, $attributes = array() ) {
         $output .= sprintf( '%s="%s" ', esc_html( $key ), esc_attr( $value ) );
     }
 
-    $output = apply_filters( 'genesis_attr_' . $context . '_output', $output, $attributes, $context );
+    $output = apply_filters( "genesis_attr_{$context}_output", $output, $attributes, $context );
 
     return trim( $output );
 
@@ -305,22 +305,18 @@ add_filter( 'genesis_attr_entry', 'genesis_attributes_entry' );
  *
  * @since 2.0.0
  *
- * @global WP_Post $post Post object.
- *
  * @param array $attributes Existing attributes.
  *
  * @return array Amended attributes.
  */
 function genesis_attributes_entry( $attributes ) {
 
-	global $post;
-
 	$attributes['class']     = join( ' ', get_post_class() );
 	$attributes['itemscope'] = 'itemscope';
 	$attributes['itemtype']  = 'http://schema.org/CreativeWork';
 
 	//* Blog posts microdata
-	if ( 'post' === $post->post_type ) {
+	if ( 'post' === get_post_type() ) {
 
 		$attributes['itemtype']  = 'http://schema.org/BlogPosting';
 
@@ -346,7 +342,7 @@ add_filter( 'genesis_attr_entry-image', 'genesis_attributes_entry_image' );
  */
 function genesis_attributes_entry_image( $attributes ) {
 
-	$attributes['class']    = 'alignleft post-image entry-image';
+	$attributes['class']    = genesis_get_option( 'image_alignment' ) . ' post-image entry-image';
 	$attributes['itemprop'] = 'image';
 
 	return $attributes;
@@ -359,17 +355,13 @@ add_filter( 'genesis_attr_entry-image-widget', 'genesis_attributes_entry_image_w
  *
  * @since 2.0.0
  *
- * @global WP_Post $post Post object.
- *
  * @param array $attributes Existing attributes.
  *
  * @return array Amended attributes.
  */
 function genesis_attributes_entry_image_widget( $attributes ) {
 
-	global $post;
-
-	$attributes['class']    = 'entry-image attachment-' . $post->post_type;
+	$attributes['class']    = 'entry-image attachment-' . get_post_type();
 	$attributes['itemprop'] = 'image';
 
 	return $attributes;
@@ -470,6 +462,25 @@ function genesis_attributes_entry_time( $attributes ) {
 
 }
 
+add_filter( 'genesis_attr_entry-modified-time', 'genesis_attributes_entry_modified_time' );
+/**
+ * Add attributes for modified time element for an entry.
+ *
+ * @since 2.1.0
+ *
+ * @param array $attributes Existing attributes.
+ *
+ * @return array Amended attributes.
+ */
+function genesis_attributes_entry_modified_time( $attributes ) {
+
+	$attributes['itemprop'] = 'dateModified';
+	$attributes['datetime'] = get_the_modified_time( 'c' );
+
+	return $attributes;
+
+}
+
 add_filter( 'genesis_attr_entry-title', 'genesis_attributes_entry_title' );
 /**
  * Add attributes for entry title element.
@@ -501,6 +512,25 @@ add_filter( 'genesis_attr_entry-content', 'genesis_attributes_entry_content' );
 function genesis_attributes_entry_content( $attributes ) {
 
 	$attributes['itemprop'] = 'text';
+
+	return $attributes;
+
+}
+
+add_filter( 'genesis_attr_entry-meta-before-content', 'genesis_attributes_entry_meta' );
+add_filter( 'genesis_attr_entry-meta-after-content', 'genesis_attributes_entry_meta' );
+/**
+ * Add attributes for entry meta elements.
+ *
+ * @since 2.1.0
+ *
+ * @param array $attributes Existing attributes.
+ *
+ * @return array Amended attributes.
+ */
+function genesis_attributes_entry_meta( $attributes ) {
+
+	$attributes['class'] = 'entry-meta';
 
 	return $attributes;
 
@@ -581,6 +611,80 @@ function genesis_attributes_comment_author( $attributes ) {
 	$attributes['itemprop']  = 'creator';
 	$attributes['itemscope'] = 'itemscope';
 	$attributes['itemtype']  = 'http://schema.org/Person';
+
+	return $attributes;
+
+}
+
+add_filter( 'genesis_attr_comment-author-link', 'genesis_attributes_comment_author_link' );
+/**
+ * Add attributes for comment author link element.
+ *
+ * @since 2.1.0
+ *
+ * @param array $attributes Existing attributes.
+ *
+ * @return array Amended attributes.
+ */
+function genesis_attributes_comment_author_link( $attributes ) {
+
+	$attributes['rel']      = 'external nofollow';
+	$attributes['itemprop'] = 'url';
+
+	return $attributes;
+
+}
+
+add_filter( 'genesis_attr_comment-time', 'genesis_attributes_comment_time' );
+/**
+ * Add attributes for comment time element.
+ *
+ * @since 2.1.0
+ *
+ * @param array $attributes Existing attributes.
+ *
+ * @return array Amended attributes.
+ */
+function genesis_attributes_comment_time( $attributes ) {
+
+	$attributes['datetime'] = esc_attr( get_comment_time( 'c' ) );
+	$attributes['itemprop'] = 'commentTime';
+
+	return $attributes;
+
+}
+
+add_filter( 'genesis_attr_comment-time-link', 'genesis_attributes_comment_time_link' );
+/**
+ * Add attributes for comment time link element.
+ *
+ * @since 2.1.0
+ *
+ * @param array $attributes Existing attributes.
+ *
+ * @return array Amended attributes.
+ */
+function genesis_attributes_comment_time_link( $attributes ) {
+
+	$attributes['itemprop'] = 'url';
+
+	return $attributes;
+
+}
+
+add_filter( 'genesis_attr_comment-content', 'genesis_attributes_comment_content' );
+/**
+ * Add attributes for comment content container.
+ *
+ * @since 2.1.0
+ *
+ * @param array $attributes Existing attributes.
+ *
+ * @return array Amended attributes.
+ */
+function genesis_attributes_comment_content( $attributes ) {
+
+	$attributes['itemprop'] = 'commentText';
 
 	return $attributes;
 

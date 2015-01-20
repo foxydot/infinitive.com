@@ -48,7 +48,7 @@ along with SlideDeck.  If not, see <http://www.gnu.org/licenses/>.
  
 // UPDATE: Now using Live NodeList idea from @jdalton
  
-var ie = (function(){
+var slidedeck_ie = (function(){
     var undef,
         v = 3,
         div = document.createElement('div'),
@@ -288,7 +288,7 @@ function briBriFlex(elem, max){
             });
             
             // Only for IE - detect background image url and update style for DD element
-            if( ie <= 8.0 ){
+            if( slidedeck_ie <= 8.0 ){
                 var cover = thisButton.parents('.cover');
                 if( cover.css('background-image') != 'none' ){
                     var imgurl = cover.css('background-image').match( /url\([\"\'](.*)[\"\']\)/ )[1];
@@ -1377,8 +1377,8 @@ function briBriFlex(elem, max){
             if(!$.data(this, 'SlideDeckLazyLoad')) $.data(this, 'SlideDeckLazyLoad', new SlideDeckLazyLoad(this));
             
             // Only for IE - detect background image url and update style for DD element
-            if( ie ){
-                if( ie <= 8.0 ){
+            if( slidedeck_ie ){
+                if( slidedeck_ie <= 8.0 ){
                     $slidedeck.find('.sd2-slide-background').each(function(){
                         var $slideBackground = $(this);
                         var $slide = $slideBackground.closest('dd');

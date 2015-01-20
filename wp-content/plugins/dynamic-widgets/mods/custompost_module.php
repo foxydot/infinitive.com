@@ -2,7 +2,7 @@
 /**
  * Custom Post Type Module
  *
- * @version $Id: custompost_module.php 758215 2013-08-19 06:38:01Z qurl $
+ * @version $Id: custompost_module.php 863947 2014-02-24 09:53:16Z qurl $
  * @copyright 2011 Jacco Drabbe
  */
 
@@ -211,9 +211,9 @@
 									$childs = $opt_ct_archive_childs->act;
 								}
 
-								echo '<input type="hidden" id="' . $ct . '_act" name="' . $ct . '_act" value="' . implode(',', $opt_ct_archive->act) . '" />';
+								echo '<input type="hidden" id="' . $ct . '_act" name="' . $ct . '_act" value="' . ( (is_array($opt_ct_archive->act)) ? implode(',', $opt_ct_archive->act) : '' ) . '" />';
 								if ( isset($opt_ct_archive_childs) ) {
-									echo '<input type="hidden" id="' . $ct . '_childs_act" name="' . $ct . '_childs_act" value="' . implode(',', $opt_tax_childs->act) . '" />';
+									echo '<input type="hidden" id="' . $ct . '_childs_act" name="' . $ct . '_childs_act" value="' . ( (is_array($opt_tax_childs->act)) ? implode(',', $opt_tax_childs->act) : '' ) . '" />';
 								}
 
 								self::prtTax($widget_id, $tax->name, $tree, $opt_ct_archive->act, $childs, $ct);

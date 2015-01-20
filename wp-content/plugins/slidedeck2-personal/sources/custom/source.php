@@ -26,7 +26,7 @@ class SlideDeckSource_CustomContent extends SlideDeck {
             )
         )
     );
-    
+
     var $wp_editor_settings = array(
         'media_buttons' => false,
         'quicktags' => false,
@@ -102,6 +102,7 @@ class SlideDeckSource_CustomContent extends SlideDeck {
     }
     
     function admin_print_footer_scripts() {
+        global $wp_version;
         if( !$this->is_valid( $this->current_source ) ) {
             return false;
         }
@@ -109,6 +110,15 @@ class SlideDeckSource_CustomContent extends SlideDeck {
         if ( ! class_exists( '_WP_Editors' ) )
             require( ABSPATH . WPINC . '/class-wp-editor.php' );
         
+        if ( $wp_version >= 3.9 ) {
+            $updated_wp_editor_settings = array(
+                'tinymce' => array(
+                    'fontsize_formats' => "10px 12px 14px 16px 18px 20px 24px 28px 32px",
+                    'toolbar1' => "bold,italic,underline,strikethrough,sup,sub,fontsizeselect,separator,bullist,numlist,indent,outdent,separator,link,unlink,separator,undo,redo,separator,removeformat,cleanup"
+                )
+            );
+            $this->wp_editor_settings = array_replace( $this->wp_editor_settings, $updated_wp_editor_settings );
+        }
         /**
          * TODO: Make this not so hacky :)
          * 

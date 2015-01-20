@@ -80,7 +80,10 @@ function genesis_standard_loop() {
 		return;
 	}
 
-	if ( have_posts() ) : while ( have_posts() ) : the_post();
+	if ( have_posts() ) :
+
+		do_action( 'genesis_before_while' );
+		while ( have_posts() ) : the_post();
 
 			do_action( 'genesis_before_entry' );
 
@@ -89,9 +92,11 @@ function genesis_standard_loop() {
 				do_action( 'genesis_entry_header' );
 
 				do_action( 'genesis_before_entry_content' );
+
 				printf( '<div %s>', genesis_attr( 'entry-content' ) );
-					do_action( 'genesis_entry_content' );
-				echo '</div>'; //* end .entry-content
+				do_action( 'genesis_entry_content' );
+				echo '</div>';
+
 				do_action( 'genesis_after_entry_content' );
 
 				do_action( 'genesis_entry_footer' );
@@ -412,7 +417,7 @@ add_action( 'genesis_after_entry', 'genesis_add_id_to_global_exclude' );
  *
  * @since 2.0.0
  *
- * @global $_genesis_displayed_ids Array of displayed post IDs.
+ * @global array $_genesis_displayed_ids Array of displayed post IDs.
  */
 function genesis_add_id_to_global_exclude() {
 

@@ -66,6 +66,9 @@ class Genesis_Featured_Page extends WP_Widget {
 	 *
 	 * @since 0.1.8
 	 *
+	 * @global WP_Query $wp_query Query object.
+	 * @global integer  $more
+	 *
 	 * @param array $args Display arguments including before_title, after_title, before_widget, and after_widget.
 	 * @param array $instance The settings for the particular instance of the widget
 	 */
@@ -73,16 +76,14 @@ class Genesis_Featured_Page extends WP_Widget {
 
 		global $wp_query;
 
-		extract( $args );
-
 		//* Merge with defaults
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 
-		echo $before_widget;
+		echo $args['before_widget'];
 
 		//* Set up the author bio
 		if ( ! empty( $instance['title'] ) )
-			echo $before_title . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $after_title;
+			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $args['after_title'];
 
 		$wp_query = new WP_Query( array( 'page_id' => $instance['page_id'] ) );
 
@@ -106,10 +107,12 @@ class Genesis_Featured_Page extends WP_Widget {
 
 			if ( ! empty( $instance['show_title'] ) ) {
 
+				$title = get_the_title() ? get_the_title() : __( '(no title)', 'genesis' );
+
 				if ( genesis_html5() )
-					printf( '<header class="entry-header"><h2 class="entry-title"><a href="%s" title="%s">%s</a></h2></header>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() );
+					printf( '<header class="entry-header"><h2 class="entry-title"><a href="%s">%s</a></h2></header>', get_permalink(), esc_html( $title ) );
 				else
-					printf( '<h2><a href="%s" title="%s">%s</a></h2>', get_permalink(), the_title_attribute( 'echo=0' ), get_the_title() );
+					printf( '<h2><a href="%s">%s</a></h2>', get_permalink(), esc_html( $title ) );
 
 			}
 
@@ -120,9 +123,13 @@ class Genesis_Featured_Page extends WP_Widget {
 				if ( empty( $instance['content_limit'] ) ) {
 
 					global $more;
+
+					$orig_more = $more;
 					$more = 0;
 
 					the_content( $instance['more_text'] );
+
+					$more = $orig_more;
 
 				} else {
 					the_content_limit( (int) $instance['content_limit'], esc_html( $instance['more_text'] ) );
@@ -143,7 +150,7 @@ class Genesis_Featured_Page extends WP_Widget {
 		//* Restore original query
 		wp_reset_query();
 
-		echo $after_widget;
+		echo $args['after_widget'];
 
 	}
 
@@ -216,6 +223,7 @@ class Genesis_Featured_Page extends WP_Widget {
 				<option value="alignnone">- <?php _e( 'None', 'genesis' ); ?> -</option>
 				<option value="alignleft" <?php selected( 'alignleft', $instance['image_alignment'] ); ?>><?php _e( 'Left', 'genesis' ); ?></option>
 				<option value="alignright" <?php selected( 'alignright', $instance['image_alignment'] ); ?>><?php _e( 'Right', 'genesis' ); ?></option>
+				<option value="aligncenter" <?php selected( 'aligncenter', $instance['image_alignment'] ); ?>><?php _e( 'Center', 'genesis' ); ?></option>
 			</select>
 		</p>
 

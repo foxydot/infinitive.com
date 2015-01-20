@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Dynamic Widgets
- * Plugin URI: http://www.qurl.nl/dynamic-widgets/
+ * Plugin URI: http://dynamic-widgets.com/
  * Description: Dynamic Widgets gives you full control on which pages your widgets will appear. It lets you dynamicly show or hide widgets on WordPress pages.
  * Author: Qurl
- * Version: 1.5.6
+ * Version: 1.5.9
  * Author URI: http://www.qurl.nl/
  * Tags: widget, widgets, dynamic, sidebar, custom, rules, logic, admin, condition, conditional tags, hide, show, wpml, qtranslate, wpec, buddypress, pods
  *
@@ -15,21 +15,24 @@
  *
  * Released under the GPL v.2, http://www.gnu.org/copyleft/gpl.html
  *
- * @version $Id: dynamic-widgets.php 786532 2013-10-11 18:10:01Z qurl $
- * @copyright 2011 Jacco Drabbe
+ * @version $Id: dynamic-widgets.php 949624 2014-07-16 12:56:39Z qurl $
+ * @copyright 2014 Jacco Drabbe
  *
  * Thanks to Alexis Nomine for the contribution of the French (fr_FR) language files, several L10N fixes and change of the edit options UI.
  * Thanks to Daniel Bihler for the contribution of the German (de_DE) language files.
  * Thanks to Eduardo Larequi for the contribution of the Spanish (es_ES) language files and several L10N fixes.
  * Thanks to Hanolex for the contribution of the Chinese (Simplified) (zh_CN) language files.
- * Thanks to Liudas Ališauskas for the contribution of the Lithuanian (lt_LT) language files.
+ * Thanks to Liudas AliÅ¡auskas for the contribution of the Lithuanian (lt_LT) language files.
  * Thanks to Pedro Nave for the contribution of the Portuguese (pt_PT) language files.
  * Thanks to Renato Tavares for the contribution of the Brazil Portuguese (pt_BR) language files.
  * Thanks to Pavel Bilek for the contribution of the Chech (cs_CZ) language files.
  * Thanks to Morten Nalholm for the contribution of the Danish (da_DK) language files.
  * Thanks to Scott Kingsley Clark for the help to get the Pods module upgraded to support Pods v2.
- * Thanks to Sébastien Christy for the help finding a PHP bug preventing the exposure of class properties while in the right scope.
+ * Thanks to SÃ©bastien Christy for the help finding a PHP bug preventing the exposure of class properties while in the right scope.
  * Thanks to Rick Anderson from Build Your Own Business Website (http://www.byobwebsite.com/) for the financial contribution to implement the AJAX lazy load taxonomy tree and the modules filter
+ * Thanks to Advancis (http://advancis.net/) for the help and financial contribution to find and fix a WPML category bug.
+ * Thanks to Borisa Djuraskovic for the contribution of the Serbo-Croatian (sr_RS) languages files.
+ * Thanks to Leon Juranic from DefenseCode to run it's scanner over the source code and finding a few vulnerabilities.
  *
  *
  * WPML Plugin support via API
@@ -74,7 +77,7 @@
   define('DW_PLUGIN', dirname(__FILE__) . '/' . 'plugin/');
   define('DW_TIME_LIMIT', 86400);				// 1 day
   define('DW_URL_AUTHOR', 'http://www.qurl.nl');
-  define('DW_VERSION', '1.5.6');
+  define('DW_VERSION', '1.5.9');
 	define('DW_WPML_API', '/inc/wpml-api.php');			// WPML Plugin support - API file relative to ICL_PLUGIN_PATH
 	define('DW_WPML_ICON', 'img/wpml_icon.png');	// WPML Plugin support - WPML icon
 
@@ -542,6 +545,15 @@
   }
 
   /**
+   * dynwid_disabled_add_admin_menu() Menu entry for disabled page.
+   * @since 1.5.6.1
+   *
+   */
+	function dynwid_disabled_add_admin_menu() {
+		add_submenu_page('themes.php', __('Dynamic Widgets', DW_L10N_DOMAIN), __('Dynamic Widgets', DW_L10N_DOMAIN), 'edit_theme_options', 'dynwid-config', 'dynwid_disabled_page');
+	}
+
+  /**
    * dynwid_disabled_page() Error boxes to show in admin when DW can not be initialised due to not meeting sysreq.
    * @since 1.5b1
    *
@@ -555,7 +567,6 @@
   		echo '<div class="error" id="message"><p>';
   		_e('<b>ERROR</b> Your host is running a too low version of PHP. Dynamic Widgets needs at least version', DW_L10N_DOMAIN);
   		echo ' ' . DW_MINIMUM_PHP . '.';
-  		echo '<br />See <a href="' . DW_URL_AUTHOR . '/question/my-hoster-is-still-using-php4-so-what/">this page</a> why.';
   		echo '</p></div>';
   	}
 
@@ -629,8 +640,10 @@
   			}
   		}
   	} else {
-  		// Show errors in the admin page
-  		add_submenu_page('themes.php', __('Dynamic Widgets', DW_L10N_DOMAIN), __('Dynamic Widgets', DW_L10N_DOMAIN), 'edit_theme_options', 'dynwid-config', 'dynwid_disabled_page');
+  		if ( is_admin() ) {
+  			// Show errors in the admin page
+  			add_action('admin_menu', 'dynwid_disabled_add_admin_menu');
+  		}
   	}
   }
 

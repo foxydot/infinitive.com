@@ -101,7 +101,7 @@
     			
 				var thumbnailUrl = $horizontalSlide.attr('data-thumbnail-src');
 				
-    			if( ie <= 8.0 ){
+    			if( slidedeck_ie <= 8.0 ){
     				elems.navigationImageTips.eq(ind).css({
     					background: 'none'
     				});

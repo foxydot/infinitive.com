@@ -262,7 +262,7 @@
     					    }
     					    
                             // Only for IE - detect background image url and update style for DD element
-                            if( ie <= 8.0 ){
+                            if( slidedeck_ie <= 8.0 ){
                                 elems.frame.find('span.sd-thumb .inner-image').eq(i-1)[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + elems.slides.eq(i-1).attr('data-thumbnail-src') + "', sizingMethod='scale')";
                             }else{
         						elems.frame.find('span.sd-thumb .inner-image').eq(i-1).css('background-image', 'url('+elems.slides.eq(i-1).attr('data-thumbnail-src')+')' )

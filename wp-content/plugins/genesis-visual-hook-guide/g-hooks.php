@@ -3,7 +3,7 @@
 Plugin Name: Genesis Visual Hook Guide
 Plugin URI: http://genesistutorials.com
 Description: Find Genesis hooks (action and filter hooks) quick and easily by seeing their actual locations inside your theme.
-Version: 0.9.0
+Version: 0.9.5
 Author: Christopher Cochran
 Author URI: http://christophercochran.me
 License: GPLv2
@@ -68,6 +68,21 @@ global $wp_admin_bar;
 			'position' => 10,
 		)
 	);
+	$wp_admin_bar->add_menu(
+		array(
+			'id'	   => 'ghooks_clear',
+			'parent'   => 'ghooks',
+			'title'    => __( 'Clear', 'gvisualhookguide' ),
+			'href'     => remove_query_arg(
+				array(
+					'g_hooks',
+					'g_filters',
+					'g_markup',
+				)
+			),
+			'position' => 10,
+		)
+	);
 
 }
 
@@ -91,6 +106,10 @@ function gvhg_hooks_stylesheet() {
 add_action('get_header', 'gvhg_genesis_hooker' );
 function gvhg_genesis_hooker() {
 global $gvhg_genesis_action_hooks;
+
+	 if ( !('show' == isset( $_GET['g_hooks'] ) ) && !('show' == isset( $_GET['g_filters'] ) ) && !('show' == isset( $_GET['g_markup'] ) ) ) {
+		 return;  // BAIL without hooking into anyhting if not displaying anything
+	 }
 
 	$gvhg_genesis_action_hooks = array(
 
@@ -463,6 +482,14 @@ global $gvhg_genesis_action_hooks;
 
 }
 
+function gvhg_hook_name( $function, $element = null, $description = null ) {
+    $function_name = str_replace( 'gvhg', 'genesis', $function );
+    if ( $element ) {
+        return '<' . $element . ' class="filter" title="' . $description . '">' . $function_name . '</' . $element . '>';
+    }
+    return $function;
+}
+
 add_action( 'wp', 'gvhg_filter_logic' );
 function gvhg_filter_logic() {
 
@@ -498,43 +525,35 @@ function gvhg_filter_logic() {
 }
 
 function gvhg_genesis_seo_title( $title, $inside, $wrap ) {
-	$title = sprintf('<%s id="title" title="Applied to the output of the genesis_seo_site_title function which depending on the SEO option set by the user will either wrap the title in <h1> or <p> tags. Default value: $title, $inside, $wrap"><span class="filter">genesis_seo_site_title</span></%s>', $wrap, $wrap);
-	return $title;
+	return sprintf('<%s id="title">' . gvhg_hook_name( __FUNCTION__, 'span', 'Applied to the output of the genesis_seo_site_title function which depending on the SEO option set by the user will either wrap the title in <h1> or <p> tags. Default value: $title, $inside, $wrap' ) . '</%s>', $wrap, $wrap);
 }
 
 function gvhg_genesis_seo_description( $description, $inside, $wrap ) {
-	$description = sprintf('<%s id="title" title="Applied to the output of the genesis_seo_site_description function which depending on the SEO option set by the user will either wrap the description in <h1> or <p> tags. Default value: $description, $inside, $wrap"><span class="filter">genesis_seo_description</span></%s>', $wrap, $wrap);
-	return $description;
+	return sprintf('<%s id="title">' . gvhg_hook_name( __FUNCTION__, 'span', 'Applied to the output of the genesis_seo_site_description function which depending on the SEO option set by the user will either wrap the description in <h1> or <p> tags. Default value: $description, $inside, $wrap' ) . '</%s>', $wrap, $wrap);
 }
 
 function gvhg_author_box_title() {
-	$title = '<strong><span class="filter">genesis_author_box_title</span></strong>';
-	return $title;
+	return '<strong>' . gvhg_hook_name( __FUNCTION__, 'span' ) . '</strong>';
 }
 
-function gvhg_comment_author_says_text($text) {
-	$text = '<span class="filter">comment_author_says_text</span>';
-	return $text;
+function gvhg_comment_author_says_text() {
+	return gvhg_hook_name( __FUNCTION__, 'span' );
 }
 
-function gvhg_ping_author_says_text($text) {
-	$text = '<span class="filter">comment_author_says_text</span>';
-	return $text;
+function gvhg_ping_author_says_text() {
+	return gvhg_hook_name( __FUNCTION__, 'span' );
 }
 
-function gvhg_footer_backtotop_text($backtotop_text) {
-    $backtotop_text = '<div class="filter">genesis_footer_backtotop_text</div>';
-    return $backtotop_text;
+function gvhg_footer_backtotop_text() {
+    return gvhg_hook_name( __FUNCTION__, 'div' );
 }
 
-function gvhg_footer_creds_text($creds) {
-    $creds = '<div class="filter">genesis_footer_creds_text</div>';
-    return $creds;
+function gvhg_footer_creds_text() {
+    return gvhg_hook_name( __FUNCTION__, 'div' );
 }
 
 function gvhg_footer_output($output, $backtotop_text, $creds) {
-    $output = '<div class="filter">genesis_footer_output</div>' . $backtotop_text . $creds;
-    return $output;
+    return gvhg_hook_name( __FUNCTION__, 'div' ) . $backtotop_text . $creds;
 }
 
 function gvhg_breadcrumb_args($args) {
@@ -547,23 +566,23 @@ function gvhg_breadcrumb_args($args) {
 }
 
 function gvhg_title_pings() {
-    echo '<h3 class="filter">genesis_title_pings</h3>';
+    echo gvhg_hook_name( __FUNCTION__, 'h3' );
 }
 
 function gvhg_no_pings_text() {
-    echo '<p class="filter">genesis_no_pings_text</p>';
+    echo gvhg_hook_name( __FUNCTION__, 'p' );
 }
 
 function gvhg_title_comments() {
-    echo '<h3 class="filter">genesis_title_comments</h3>';
+    echo gvhg_hook_name( __FUNCTION__, 'h3' );
 }
 
 function gvhg_comments_closed_text() {
-    echo '<p class="filter">genesis_comments_closed_text</p>';
+    echo gvhg_hook_name( __FUNCTION__, 'p' );
 }
 
 function gvhg_no_comments_text() {
-    echo '<p class="filter">genesis_no_comments_text</p>';
+    echo gvhg_hook_name( __FUNCTION__, 'p' );
 }
 
 function gvhg_comment_form_args($args) {
@@ -575,26 +594,23 @@ function gvhg_comment_form_args($args) {
 }
 
 function gvhg_favicon_url() {
-    $favicon = 'genesis_favicon_url';
-    return $favicon;
+    return 'genesis_favicon_url';
 }
 
-function gvhg_post_info($post_info) {
-    $post_info = '<span class="filter">genesis_post_info</span>';
-    return $post_info;
+function gvhg_post_info() {
+    return gvhg_hook_name( __FUNCTION__, 'span' );
 }
 
-function gvhg_post_meta($post_meta) {
-    $post_meta = '<span class="filter">genesis_post_meta</span>';
-    return $post_meta;
+function gvhg_post_meta() {
+    return gvhg_hook_name( __FUNCTION__, 'span' );
 }
 
 function gvhg_post_title_text() {
-	return '<span class="filter">genesis_post_title_text</span>';
+	return gvhg_hook_name( __FUNCTION__, 'span' );
 }
 
 function gvhg_noposts_text() {
-	return '<span class="filter">genesis_noposts_text</span>';
+	return gvhg_hook_name( __FUNCTION__, 'span' );
 }
 
 function gvhg_search_text() {
@@ -606,5 +622,5 @@ function gvhg_search_button_text() {
 }
 
 function gvhg_nav_home_text() {
-	return '<span class="filter">genesis_nav_home_text</span>';
+	return gvhg_hook_name( __FUNCTION__, 'span' );
 }

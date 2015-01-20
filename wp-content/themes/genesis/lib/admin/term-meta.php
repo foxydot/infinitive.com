@@ -21,7 +21,7 @@ add_action( 'admin_init', 'genesis_add_taxonomy_archive_options' );
  */
 function genesis_add_taxonomy_archive_options() {
 
-	foreach ( get_taxonomies( array( 'show_ui' => true ) ) as $tax_name )
+	foreach ( get_taxonomies( array( 'public' => true ) ) as $tax_name )
 		add_action( $tax_name . '_edit_form', 'genesis_taxonomy_archive_options', 10, 2 );
 
 }
@@ -75,7 +75,7 @@ add_action( 'admin_init', 'genesis_add_taxonomy_seo_options' );
  */
 function genesis_add_taxonomy_seo_options() {
 
-	foreach ( get_taxonomies( array( 'show_ui' => true ) ) as $tax_name )
+	foreach ( get_taxonomies( array( 'public' => true ) ) as $tax_name )
 		add_action( $tax_name . '_edit_form', 'genesis_taxonomy_seo_options', 10, 2 );
 
 }
@@ -149,7 +149,7 @@ add_action( 'admin_init', 'genesis_add_taxonomy_layout_options' );
  */
 function genesis_add_taxonomy_layout_options() {
 
-	foreach ( get_taxonomies( array( 'show_ui' => true ) ) as $tax_name )
+	foreach ( get_taxonomies( array( 'public' => true ) ) as $tax_name )
 		add_action( $tax_name . '_edit_form', 'genesis_taxonomy_layout_options', 10, 2 );
 
 }
@@ -188,6 +188,81 @@ function genesis_taxonomy_layout_options( $tag, $taxonomy ) {
 		</tbody>
 	</table>
 	<?php
+
+}
+
+add_filter( 'get_term', 'genesis_get_term_filter', 10, 2 );
+/**
+ * Merge term meta data into options table.
+ *
+ * Genesis is forced to create its own term-meta data structure in the options table, since it is not support in core WP.
+ *
+ * Applies `genesis_term_meta_defaults`, `genesis_term_meta_{field}` and `genesis_term_meta` filters.
+ *
+ * @since 1.2.0
+ *
+ * @param object $term     Database row object.
+ * @param string $taxonomy Taxonomy name that $term is part of.
+ *
+ * @return object $term Database row object.
+ */
+function genesis_get_term_filter( $term, $taxonomy ) {
+
+	//* Do nothing, if $term is not object
+	if ( ! is_object( $term ) ) {
+		return $term;
+	}
+
+	//* Do nothing, if called in the context of creating a term via an ajax call
+	if ( did_action( 'wp_ajax_add-tag' ) ) {
+		return $term;
+	}
+
+
+	$db = get_option( 'genesis-term-meta' );
+	$term_meta = isset( $db[$term->term_id] ) ? $db[$term->term_id] : array();
+
+	$term->meta = wp_parse_args( $term_meta, apply_filters( 'genesis_term_meta_defaults', array(
+		'headline'            => '',
+		'intro_text'          => '',
+		'display_title'       => 0, //* vestigial
+		'display_description' => 0, //* vestigial
+		'doctitle'            => '',
+		'description'         => '',
+		'keywords'            => '',
+		'layout'              => '',
+		'noindex'             => 0,
+		'nofollow'            => 0,
+		'noarchive'           => 0,
+	) ) );
+
+	//* Sanitize term meta
+	foreach ( $term->meta as $field => $value )
+		$term->meta[$field] = apply_filters( "genesis_term_meta_{$field}", stripslashes( wp_kses_decode_entities( $value ) ), $term, $taxonomy );
+
+	$term->meta = apply_filters( 'genesis_term_meta', $term->meta, $term, $taxonomy );
+
+	return $term;
+
+}
+
+add_filter( 'get_terms', 'genesis_get_terms_filter', 10, 2 );
+/**
+ * Add Genesis term-meta data to functions that return multiple terms.
+ *
+ * @since 2.0.0
+ *
+ * @param array  $terms    Database row objects.
+ * @param string $taxonomy Taxonomy name that $terms are part of.
+ *
+ * @return array $terms Database row objects.
+ */
+function genesis_get_terms_filter( array $terms, $taxonomy ) {
+
+	foreach( $terms as $term )
+		$term = genesis_get_term_filter( $term, $taxonomy );
+
+	return $terms;
 
 }
 

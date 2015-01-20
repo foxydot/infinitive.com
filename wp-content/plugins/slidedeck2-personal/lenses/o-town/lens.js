@@ -33,7 +33,7 @@
         
         if( !isThumbnailNav ){
             // Only for IE - detect background image url and update style for DD element
-            if( ie <= 8.0 ){
+            if( slidedeck_ie <= 8.0 ){
                 elems.verticalSlides.each(function(ind){
                     if( $(elems.verticalSlides[ind]).css('background-image') != 'none' ){
                         var imgurl = $(elems.verticalSlides[ind]).css('background-image').match( /url\([\"\'](.*)[\"\']\)/ )[1];
@@ -182,7 +182,7 @@
                         navigation.verticalNavLinksInner.eq(ind).addClass('no-thumb');
                     } else {
                         // Only for IE - detect background image url and update style for DD element
-                        if( ie <= 8.0  ){
+                        if( slidedeck_ie <= 8.0  ){
                             if( backgroundImage != 'none' ){
                                 var imgurl = backgroundImage.match( /url\([\"\'](.*)[\"\']\)/ )[1];
                                 navigation.verticalNavLinksInner.eq(ind).css({

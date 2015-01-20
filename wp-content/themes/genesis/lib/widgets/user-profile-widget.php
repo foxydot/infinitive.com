@@ -67,15 +67,13 @@ class Genesis_User_Profile_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 
-		extract( $args );
-
 		//* Merge with defaults
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 
-		echo $before_widget;
+		echo $args['before_widget'];
 
 			if ( ! empty( $instance['title'] ) )
-				echo $before_title . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $after_title;
+				echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $args['after_title'];
 
 			$text = '';
 
@@ -101,7 +99,7 @@ class Genesis_User_Profile_Widget extends WP_Widget {
 			if ( $instance['posts_link'] )
 				printf( '<div class="posts_link posts-link"><a href="%s">%s</a></div>', get_author_posts_url( $instance['user'] ), __( 'View My Blog Posts', 'genesis' ) );
 
-		echo $after_widget;
+		echo $args['after_widget'];
 
 	}
 

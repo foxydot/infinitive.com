@@ -11,7 +11,7 @@
             elems.horizontalSlides = deck.slides;
 		
 		// Only for IE - detect background image url and update style for DD element
-    	if( ie <= 8.0 ){
+    	if( slidedeck_ie <= 8.0 ){
     		elems.horizontalSlides.each(function(ind){
     			if( $(elems.horizontalSlides[ind]).css('background-image') != 'none' ){
     				var imgurl = $(elems.horizontalSlides[ind]).css('background-image').match( /url\([\"\'](.*)[\"\']\)/ )[1];

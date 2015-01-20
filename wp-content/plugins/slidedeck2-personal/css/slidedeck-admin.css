@@ -1727,6 +1727,10 @@ fieldset.slidedeck-form-section#slidedeck-section-preview {
     text-decoration: none;
     background-image: url('../images/options-icons.png');
     background-repeat: no-repeat;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
 }
 #slidedeck-options-groups .verticalSlideNav li.active a {
     padding-top: 47px;

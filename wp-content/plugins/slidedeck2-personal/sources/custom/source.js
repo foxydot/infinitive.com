@@ -1,11 +1,12 @@
 var sd_layoutoptions = {};
 
 (function($, window, undefined){
-	window.SlideDeckSourceCustom = {
-		elems: {},
-		editId: null,
-		currentModal: "",
-		
+    window.SlideDeckSourceCustom = {
+        elems: {},
+        editId: null,
+        currentEditor: {},
+        currentModal: "",
+        
         addSlide: function(elem){
             var self = this;
             var url = elem.href;
@@ -46,141 +47,142 @@ var sd_layoutoptions = {};
         },
         
         // Delete a slide from a SlideDeck and update the slides list
-		deleteSlide: function(elem){
-			var self = this;
-			var $elem = $(elem);
-			
-			// Close any active slide editor flyout
-			SlideDeckSourceCustom.close();
-			
-			$.ajax({
-				url: elem.href,
-				type: "POST",
-				success: function(data){
-					if(data == "true"){
-						$elem.closest('.slide').fadeOut(250, function(){
-							$(this).remove();
-							
-							var $slides = SlideDeckSourceCustom.elems.contentControl.find('.slide');
-							if($slides.length == 1){
-								$slides.find('.remove').hide();
-							} else {
-								$slides.find('.remove').show();
-							}
-							
-							self.renumber();
-							
-							SlideDeckPreview.ajaxUpdate();
-						});
-					}
-				}
-			})
-		},
-		
-		// Edit a slide
-		editSlide: function(elem){
-			var self = this;
-			var $elem = $(elem);
-			var url = elem.href;
-			var $loading = $.data(elem, '$loading');
-			var $slide = $.data(elem, '$slide');
-			
-			// Current modal open is this modal already
-			if(this.currentModal == elem){
-			    this.close();
-			    return false;
-			}
-			
-			if(!$slide){
-			    $slide = $elem.closest('li.slide');
-			    $.data(elem, '$slide', $slide);
-			}
-			
-			if(!$loading){
-			    $slide.append('<span class="slide-loading"></span>');
-			    $loading = $slide.find('.slide-loading');
-			    $.data(elem, '$loading', $loading);
-			}
-			
-			$slide.addClass('loading');
-			
-			$.ajax({
-			    url: url,
-			    cache: false,
-			    success: function(html){
-			        self.open(html, elem, 'edit-slide');
-			    }
-			})
-		},
-		
-		renumber: function(){
-		    var $slides = this.elems.contentControl.find('.slide');
-		    $slides.each(function(ind){
-		        $slides.eq(ind).find('.slide-number').text(ind + 1);
-		    });
-		},
-		
-		// Update the slide management area and the SlideDeck preview
-		updateContentControl: function(html, callback){
-			var self = this;
-			
-			if(typeof(html) != 'undefined'){
-				this.elems.contentControl.html(html);
-				SlideDeckPreview.ajaxUpdate();
-			}
-			
-			this.elems.contentControl.find('.slides-sortable').sortable({
-			    items: 'li.slide',
-			    start: function(event, ui){
-			        SlideDeckSourceCustom.close();
-			    },
-				update: function(event, ui){
-					var data = $('#slidedeck-update-form').serialize();
-						// Modify the default action
-						data = data.replace(/action\=([a-zA-Z0-9\-_+]+)/, "action=slidedeck_update_slide_order");
-						// Remove the _wpnonce value to prevent default actions
-						data = data.replace(/\&_wpnonce\=([a-zA-Z0-9\-_+]+)/, "");
-					
-					$.ajax({
-						url: ajaxurl,
-						data: data,
-						type: "POST",
-						success: function(data){
-							SlideDeckPreview.ajaxUpdate();
-						}
-					});
-					
-					var $sortableList = ui.item.parent();
-					var $sortableLis = $sortableList.find('li.slide');
-					
-					for( var i = 0; i < $sortableLis.length; i++ ){
-					    $( $sortableLis[i] ).find('.slide-number').html( i + 1 );
-					}
-				}
-			});
+        deleteSlide: function(elem){
+            var self = this;
+            var $elem = $(elem);
+            
+            // Close any active slide editor flyout
+            SlideDeckSourceCustom.close();
+            
+            $.ajax({
+                url: elem.href,
+                type: "POST",
+                success: function(data){
+                    if(data == "true"){
+                        $elem.closest('.slide').fadeOut(250, function(){
+                            $(this).remove();
+                            
+                            var $slides = SlideDeckSourceCustom.elems.contentControl.find('.slide');
+                            if($slides.length == 1){
+                                $slides.find('.remove').hide();
+                            } else {
+                                $slides.find('.remove').show();
+                            }
+                            
+                            self.renumber();
+                            
+                            SlideDeckPreview.ajaxUpdate();
+                        });
+                    }
+                }
+            });
+        },
+        
+        // Edit a slide
+        editSlide: function(elem){
+            var self = this;
+            var $elem = $(elem);
+            var url = elem.href;
+            var $loading = $.data(elem, '$loading');
+            var $slide = $.data(elem, '$slide');
+            
+            // Current modal open is this modal already
+            if(this.currentModal == elem){
+                this.close();
+                return false;
+            }
+            
+            if(!$slide){
+                $slide = $elem.closest('li.slide');
+                $.data(elem, '$slide', $slide);
+            }
+            
+            if(!$loading){
+                $slide.append('<span class="slide-loading"></span>');
+                $loading = $slide.find('.slide-loading');
+                $.data(elem, '$loading', $loading);
+            }
+            
+            $slide.addClass('loading');
+            
+            $.ajax({
+                url: url,
+                cache: false,
+                success: function(html){
+                    self.open(html, elem, 'edit-slide');
+                }
+            });
+        },
+        
+        renumber: function(){
+            var $slides = this.elems.contentControl.find('.slide');
+            $slides.each(function(ind){
+                $slides.eq(ind).find('.slide-number').text(ind + 1);
+            });
+        },
+        
+        // Update the slide management area and the SlideDeck preview
+        updateContentControl: function(html, callback){
+            var self = this;
+            
+            if(typeof(html) != 'undefined'){
+                this.elems.contentControl.html(html);
+                SlideDeckPreview.ajaxUpdate();
+            }
+            
+            this.elems.contentControl.find('.slides-sortable').sortable({
+                items: 'li.slide',
+                start: function(event, ui){
+                    SlideDeckSourceCustom.close();
+                },
+                update: function(event, ui){
+                    var data = $('#slidedeck-update-form').serialize();
+                        // Modify the default action
+                        data = data.replace(/action\=([a-zA-Z0-9\-_+]+)/, "action=slidedeck_update_slide_order");
+                        // Remove the _wpnonce value to prevent default actions
+                        data = data.replace(/\&_wpnonce\=([a-zA-Z0-9\-_+]+)/, "");
+                    
+                    $.ajax({
+                        url: ajaxurl,
+                        data: data,
+                        type: "POST",
+                        success: function(data){
+                            SlideDeckPreview.ajaxUpdate();
+                        }
+                    });
+                    
+                    var $sortableList = ui.item.parent();
+                    var $sortableLis = $sortableList.find('li.slide');
+                    
+                    for( var i = 0; i < $sortableLis.length; i++ ){
+                        $( $sortableLis[i] ).find('.slide-number').html( i + 1 );
+                    }
+                }
+            });
             
             if(typeof(callback) == 'function'){
                 callback();
             }
-		},
-		
-		// Open the flyout
-		open: function(html, elem, classname){
-		    var $elem = $(elem);
-		    var classname = classname || "";
-		    
-		    // If this is not a thumbnail link, adjust $elem's context to be the thumbnail link
-		    if(!$elem.hasClass('thumbnail')){
-		        // Only adjust $elem context if the elem link has a Slide ID
-		        if(elem.href.match(/slide_id=([\d]+)/)){
-    		        var slideId = elem.href.match(/slide_id=([\d]+)/)[1];
-    		        var $elem = this.elems.contentControl.find('.slides-sortable .slide-id-' + slideId + ' .thumbnail');
-		        }
-		    }
-		    
-		    var offset = $elem.offset();
-		    
-		    this.elems.slideEditor.html('<span class="hanging-chad"></span>' + html).css({
+        },
+        
+        // Open the flyout
+        open: function(html, elem, classname){
+            var self = this,
+                $elem = $(elem),
+                classname = classname || "";
+            
+            // If this is not a thumbnail link, adjust $elem's context to be the thumbnail link
+            if(!$elem.hasClass('thumbnail')){
+                // Only adjust $elem context if the elem link has a Slide ID
+                if(elem.href.match(/slide_id=([\d]+)/)){
+                    var slideId = elem.href.match(/slide_id=([\d]+)/)[1];
+                    var $elem = this.elems.contentControl.find('.slides-sortable .slide-id-' + slideId + ' .thumbnail');
+                }
+            }
+            
+            var offset = $elem.offset();
+            
+            this.elems.slideEditor.html('<span class="hanging-chad"></span>' + html).css({
                 top: offset.top,
                 left: "-999em"
             }).show().find('.fancy').fancy();
@@ -192,7 +194,7 @@ var sd_layoutoptions = {};
             var $windowWidth = $(window).width();
             
             if((offset.left + $width) > $windowWidth){
-                var correction = (((offset.left + $width) - $windowWidth) - 10)
+                var correction = (((offset.left + $width) - $windowWidth) - 10);
                 
                 offset.left = offset.left - correction;
                 this.elems.slideEditor.find('.hanging-chad').css({
@@ -203,43 +205,59 @@ var sd_layoutoptions = {};
             this.elems.slideEditor.css({
                 left: offset.left
             });
-            
+
             var tinyParams = tinyMCEPreInit.mceInit.slidedeck;
             tinyParams.mode = "specific_textareas";
-            tinyParams.editor_selector = "slidedeck_mceEditor";
-            
-            tinyMCE.init(tinyParams);
-            
+
+            if(tinyMCE.majorVersion === "4"){
+                // Updated for WordPress 3.9
+                if(!$.isEmptyObject(self.currentEditor)){
+                    self.currentEditor.remove();
+                }
+
+                tinyParams.selector = ".slidedeck_mceEditor";
+                
+                tinyMCE.init($.extend(tinyParams,{
+                    init_instance_callback : function(editor) {
+                        self.currentEditor = editor;
+                    }
+                }));
+            }else{
+                // Legacy
+                tinyParams.editor_selector = "slidedeck_mceEditor";
+                tinyMCE.init(tinyParams);
+            }
+
             this.currentModal = elem;
-		},
-		
-		initialize: function(){
-			var self = this;
-			
-			this.elems.contentControl = $('#slidedeck-content-control');
-			
-			// Fail silently if this isn't a custom SlideDeck
-			if(!this.elems.contentControl.hasClass('custom-slidedeck'))
-				return false;
-			
-			this.elems.slideEditor = $('#slidedeck-custom-slide-editor');
-			if(this.elems.slideEditor.length < 1){
-			    $('body').append('<div id="slidedeck-custom-slide-editor"></div>');
-			    this.elems.slideEditor = $('#slidedeck-custom-slide-editor');
-			}
-			
-			// Slide management interactions
+        },
+        
+        initialize: function(){
+            var self = this;
+            
+            this.elems.contentControl = $('#slidedeck-content-control');
+            
+            // Fail silently if this isn't a custom SlideDeck
+            if(!this.elems.contentControl.hasClass('custom-slidedeck'))
+                return false;
+            
+            this.elems.slideEditor = $('#slidedeck-custom-slide-editor');
+            if(this.elems.slideEditor.length < 1){
+                $('body').append('<div id="slidedeck-custom-slide-editor"></div>');
+                this.elems.slideEditor = $('#slidedeck-custom-slide-editor');
+            }
+            
+            // Slide management interactions
             this.elems.contentControl.delegate('.slide .thumbnail', 'click', function(event){
-            	event.preventDefault();
-            	self.editSlide(this);
+                event.preventDefault();
+                self.editSlide(this);
             }).delegate('.slide .remove', 'click', function(event){
-            	event.preventDefault();
-            	if(confirm("Are you sure you want to delete this slide?")){
-	            	self.deleteSlide(this);
-            	}
+                event.preventDefault();
+                if(confirm("Are you sure you want to delete this slide?")){
+                    self.deleteSlide(this);
+                }
             }).delegate('.add-new-slide a', 'click', function(event){
-            	event.preventDefault();
-            	self.addSlide(this);
+                event.preventDefault();
+                self.addSlide(this);
             });
             
             // Generic Upgrade modal
@@ -359,10 +377,10 @@ var sd_layoutoptions = {};
             }
             
             this.updateContentControl();
-		}
-	};
-	
-	$(function(){
-		SlideDeckSourceCustom.initialize();
-	});
+        }
+    };
+    
+    $(function(){
+        SlideDeckSourceCustom.initialize();
+    });
 })(jQuery, window, null);

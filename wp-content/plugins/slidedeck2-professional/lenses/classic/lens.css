@@ -649,6 +649,11 @@ header iframe.slidedeck-iframe-embed { margin: 0; }
 	right: 25%;
 }
 
+/* Zeroes out the SD background element for Custom Video Slides */
+.lens-classic .slide-source-custom.slide-type-video .video-wrapper .cover.sd2-slide-background {
+  left: 0 !important; /* As much as we hate to do it... */
+}
+
 
 /*Text-Only*/
 .lens-classic.sd2-small .slide-source-custom.slide-type-textonly .sd2-node-caption {

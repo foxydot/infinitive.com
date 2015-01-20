@@ -97,9 +97,9 @@ class Genesis_Admin_Import_Export extends Genesis_Admin_Basic {
 		//* Add help sidebar
 		$screen->set_help_sidebar(
 			'<p><strong>' . __( 'For more information:', 'genesis' ) . '</strong></p>' .
-			'<p><a href="http://my.studiopress.com/help/" target="_blank" title="' . __( 'Get Support', 'genesis' ) . '">' . __( 'Get Support', 'genesis' ) . '</a></p>' .
-			'<p><a href="http://my.studiopress.com/snippets/" target="_blank" title="' . __( 'Genesis Snippets', 'genesis' ) . '">' . __( 'Genesis Snippets', 'genesis' ) . '</a></p>' .
-			'<p><a href="http://my.studiopress.com/tutorials/" target="_blank" title="' . __( 'Genesis Tutorials', 'genesis' ) . '">' . __( 'Genesis Tutorials', 'genesis' ) . '</a></p>'
+			'<p><a href="http://my.studiopress.com/help/" target="_blank">' . __( 'Get Support', 'genesis' ) . '</a></p>' .
+			'<p><a href="http://my.studiopress.com/snippets/" target="_blank">' . __( 'Genesis Snippets', 'genesis' ) . '</a></p>' .
+			'<p><a href="http://my.studiopress.com/tutorials/" target="_blank">' . __( 'Genesis Tutorials', 'genesis' ) . '</a></p>'
 		);
 
 	}
@@ -118,7 +118,6 @@ class Genesis_Admin_Import_Export extends Genesis_Admin_Basic {
 
 		?>
 		<div class="wrap">
-			<?php screen_icon( 'tools' ); ?>
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 			<table class="form-table">

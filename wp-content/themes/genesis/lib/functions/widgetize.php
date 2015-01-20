@@ -20,7 +20,7 @@
  * A typical usage is:
  *
  * ~~~
- * genesis_register_sidebar(
+ * genesis_register_widget_area(
  *     array(
  *         'id'          => 'my-sidebar',
  *         'name'        => __( 'My Sidebar', 'my-theme-text-domain' ),
@@ -29,7 +29,7 @@
  * );
  * ~~~
  *
- * @since 1.0.1
+ * @since 2.1.0
  *
  * @uses genesis_markup() Contextual markup.
  *
@@ -37,31 +37,56 @@
  *
  * @return string The sidebar ID that was added.
  */
-function genesis_register_sidebar( $args ) {
+function genesis_register_widget_area( $args ) {
 
-	$defaults = (array) apply_filters(
-		'genesis_register_sidebar_defaults',
-		array(
-			'before_widget' => genesis_markup( array(
-				'html5' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
-				'xhtml' => '<div id="%1$s" class="widget %2$s"><div class="widget-wrap">',
-				'echo'  => false,
-			) ),
-			'after_widget'  => genesis_markup( array(
-				'html5' => '</div></section>' . "\n",
-				'xhtml' => '</div></div>' . "\n",
-				'echo'  => false
-			) ),
-			'before_title'  => '<h4 class="widget-title widgettitle">',
-			'after_title'   => "</h4>\n",
-		),
-		$args
+	$defaults = array(
+		'before_widget' => genesis_markup( array(
+			'html5' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
+			'xhtml' => '<div id="%1$s" class="widget %2$s"><div class="widget-wrap">',
+			'echo'  => false,
+		) ),
+		'after_widget'  => genesis_markup( array(
+			'html5' => '</div></section>' . "\n",
+			'xhtml' => '</div></div>' . "\n",
+			'echo'  => false
+		) ),
+		'before_title'  => '<h4 class="widget-title widgettitle">',
+		'after_title'   => "</h4>\n",
 	);
+
+	/**
+	 * A filter on the default parameters used by `genesis_register_widget_area()`. For backward compatibility.
+	 *
+	 * @since 1.0.1
+	 */
+	$defaults = apply_filters( 'genesis_register_sidebar_defaults', $defaults, $args );
+
+	/**
+	 * A filter on the default parameters used by `genesis_register_widget_area()`.
+	 *
+	 * @since 2.1.0
+	 */
+	$defaults = apply_filters( 'genesis_register_widget_area_defaults', $defaults, $args );
 
 	$args = wp_parse_args( $args, $defaults );
 
 	return register_sidebar( $args );
 
+}
+
+/**
+ * An alias for `genesis_register_widget_area()`.
+ *
+ * @since 1.0.1
+ * 
+ * @uses genesis_register_widget_area()
+ *
+ * @param string|array $args Name, ID, description and other widget area arguments.
+ *
+ * @return string The sidebar ID that was added.
+ */
+function genesis_register_sidebar( $args ) {
+	return genesis_register_widget_area( $args );
 }
 
 add_action( 'after_setup_theme', '_genesis_builtin_sidebar_params' );
@@ -71,7 +96,8 @@ add_action( 'after_setup_theme', '_genesis_builtin_sidebar_params' );
  * @since 2.0.0
  *
  * @uses genesis_html5() Check if HTML5 is supported.
- * @global $wp_registered_sidebars
+ * 
+ * @global $wp_registered_sidebars Holds all of the registered sidebars.
  */
 function _genesis_builtin_sidebar_params() {
 
@@ -98,20 +124,20 @@ add_action( 'genesis_setup', 'genesis_register_default_widget_areas' );
  *
  * @since 1.6.0
  *
- * @uses genesis_register_sidebar() Register widget areas.
+ * @uses genesis_register_widget_area() Register widget areas.
  */
 function genesis_register_default_widget_areas() {
 
-	genesis_register_sidebar(
+	genesis_register_widget_area(
 		array(
 			'id'               => 'header-right',
 			'name'             => is_rtl() ? __( 'Header Left', 'genesis' ) : __( 'Header Right', 'genesis' ),
-			'description'      => __( 'This is the widget area in the header.', 'genesis' ),
+			'description'      => __( 'This is the header widget area. It typically appears the the right of the site title or logo. This widget area is not equipped to display any widget, and works best with a custom menu, a search form, or possibly a text widget.', 'genesis' ),
 			'_genesis_builtin' => true,
 		)
 	);
 
-	genesis_register_sidebar(
+	genesis_register_widget_area(
 		array(
 			'id'               => 'sidebar',
 			'name'             => __( 'Primary Sidebar', 'genesis' ),
@@ -120,7 +146,7 @@ function genesis_register_default_widget_areas() {
 		)
 	);
 
-	genesis_register_sidebar(
+	genesis_register_widget_area(
 		array(
 			'id'               => 'sidebar-alt',
 			'name'             => __( 'Secondary Sidebar', 'genesis' ),
@@ -137,7 +163,7 @@ add_action( 'after_setup_theme', 'genesis_register_footer_widget_areas' );
  *
  * @since 1.6.0
  *
- * @uses genesis_register_sidebar() Register footer widget areas.
+ * @uses genesis_register_widget_area() Register footer widget areas.
  *
  * @return null Return early if there's no theme support.
  */
@@ -153,7 +179,7 @@ function genesis_register_footer_widget_areas() {
 	$counter = 1;
 
 	while ( $counter <= $footer_widgets ) {
-		genesis_register_sidebar(
+		genesis_register_widget_area(
 			array(
 				'id'               => sprintf( 'footer-%d', $counter ),
 				'name'             => sprintf( __( 'Footer %d', 'genesis' ), $counter ),
@@ -164,6 +190,32 @@ function genesis_register_footer_widget_areas() {
 
 		$counter++;
 	}
+
+}
+
+add_action( 'after_setup_theme', 'genesis_register_after_entry_widget_area' );
+/**
+ * Register after-entry widget area if user specifies in the child theme.
+ *
+ * @since 2.1.0
+ *
+ * @uses genesis_register_widget_area() Register widget area.
+ *
+ * @return null Return early if there's no theme support.
+ */
+function genesis_register_after_entry_widget_area() {
+
+	if ( ! current_theme_supports( 'genesis-after-entry-widget-area' ) )
+		return;
+
+	genesis_register_widget_area(
+		array(
+			'id'          => 'after-entry',
+			'name'        => __( 'After Entry', 'genesis' ),
+			'description' => __( 'Widgets in this widget area will display after single entries.', 'genesis' ),
+			'_builtin'    => true,
+		)
+	);
 
 }
 

@@ -181,8 +181,25 @@ function genesis_is_customizer() {
 
 	global $wp_customize;
 
-	if ( isset( $wp_customize ) )
+	return is_a( $wp_customize, 'WP_Customize_Manager' ) && $wp_customize->is_preview(); 
+
+}
+
+/**
+ * Helper function to determine if the blog_page.php template should be used.
+ *
+ * @since 2.1.0
+ * 
+ * @uses get_post_meta() Get post metadata.
+ * @uses get_queried_object_id() Get queried object ID.
+ *
+ * @return bool
+ */
+function genesis_is_blog_template() {
+
+	if ( 'page_blog.php' == get_post_meta( get_queried_object_id(), '_wp_page_template', true ) ) {
 		return true;
+	}
 
 	return false;
 
@@ -193,8 +210,6 @@ function genesis_is_customizer() {
  *
  * @since 2.0.0
  *
- * @global WP_Post $post Post object.
- *
  * @param string $post_type_name Post type name.
  *
  * @return string
@@ -202,9 +217,9 @@ function genesis_is_customizer() {
 function genesis_get_global_post_type_name( $post_type_name = '' ) {
 
 	if ( ! $post_type_name ) {
-		global $post;
-		$post_type_name = $post->post_type;
+		$post_type_name = get_post_type();
 	}
+
 	return $post_type_name;
 
 }
@@ -301,7 +316,7 @@ function genesis_has_post_type_archive_support( $post_type_name = '' ) {
  *
  * @since 2.0.0
  *
- * @return bool True if current theme supports genesis-html5, false otherwise.
+ * @return bool True if current theme supports html5, false otherwise.
  */
 function genesis_html5() {
 
@@ -328,9 +343,7 @@ function genesis_plugin_install_link( $plugin_slug = '', $text = '' ) {
 		$url = admin_url( 'plugin-install.php?tab=plugin-information&plugin=' . $plugin_slug . '&TB_iframe=true&width=600&height=550' );
 	}
 
-	$title_text = sprintf( __( 'Install %s', 'genesis' ), $text );
-
-	return sprintf( '<a href="%s" class="thickbox" title="%s">%s</a>', esc_url( $url ), esc_attr( $title_text ), esc_html( $text ) );
+	return sprintf( '<a href="%s" class="thickbox">%s</a>', esc_url( $url ), esc_html( $text ) );
 
 }
 
@@ -344,86 +357,139 @@ function genesis_plugin_install_link( $plugin_slug = '', $text = '' ) {
 function genesis_contributors() {
 
 	return array(
+		/*
 		array(
 			'name'     => 'Jared Atchison',
 			'url'      => 'http://twitter.com/jaredatch',
 			'gravatar' => '//0.gravatar.com/avatar/e341eca9e1a85dcae7127044301b4363?s=120',
 		),
+		/**/
+		/*
 		array(
 			'name'     => 'Chris Cochran',
 			'url'      => 'http://twitter.com/tweetsfromchris',
 			'gravatar' => '//0.gravatar.com/avatar/aa0bea067ea6bfb854387d73f595aa1c?s=120',
 		),
+		/**/
+		/*
 		array(
 			'name'     => 'Nick Croft',
 			'url'      => 'http://twitter.com/nick_thegeek',
 			'gravatar' => '//0.gravatar.com/avatar/3241d4eab93215b5487e162b87569e42?s=120',
 		),
+		/**/
+		/*
 		array(
 			'name'     => 'David Decker',
 			'url'      => 'http://twitter.com/deckerweb',
 			'gravatar' => '//0.gravatar.com/avatar/28d02f8d09fc32fccc0282efdc23a4e5?s=120',
 		),
+		/**/
+		//*
 		array(
 			'name'     => 'Remkus de Vries',
 			'url'      => 'http://twitter.com/DeFries',
 			'gravatar' => '//0.gravatar.com/avatar/e15799da17422f3fa7a6157339501e2c?s=120',
 		),
+		/**/
+		//*
+		array(
+			'name'     => 'Joost de Valk',
+			'url'      => 'https://twitter.com/yoast',
+			'gravatar' => '//0.gravatar.com/avatar/f08c3c3253bf14b5616b4db53cea6b78?s=120'
+		),
+		/**/
+		/*
 		array(
 			'name'     => 'Bill Erickson',
 			'url'      => 'http://twitter.com/billerickson',
 			'gravatar' => '//0.gravatar.com/avatar/ae510affa31e5b946623bda4ff969b67?s=120',
 		),
+		/**/
+		//*
+		array(
+			'name'     => 'Sal Ferrarello',
+			'url'      => 'https://twitter.com/salcode',
+			'gravatar' => '//0.gravatar.com/avatar/f7bea39ff77df472cc4e3c29e40d3e46?s=120'
+		),
+		/**/
+		/*
 		array(
 			'name'     => 'Thomas Griffin',
 			'url'      => 'http://twitter.com/jthomasgriffin',
 			'gravatar' => '//0.gravatar.com/avatar/fe4225114bfd1f8993c6d20d32227537?s=120',
 		),
+		/**/
+		//*
 		array(
 			'name'     => 'Mark Jaquith',
 			'url'      => 'http://twitter.com/markjaquith',
 			'gravatar' => '//0.gravatar.com/avatar/682b7a49f9ed567186c4d1f707fe4523?s=120',
 		),
+		/**/
+		//*
 		array(
 			'name'     => 'Gary Jones',
 			'url'      => 'http://twitter.com/garyj',
 			'gravatar' => '//0.gravatar.com/avatar/e70d4086e89c2e1e081870865be68485?s=120',
 		),
+		/**/
+		//*
 		array(
 			'name'     => 'Brandon Kraft',
 			'url'      => 'http://twitter.com/kraft',
 			'gravatar' => '//0.gravatar.com/avatar/fa4976cfd706b9be00f6494df9aa99d9?s=120',
 		),
+		/**/
+		/*
 		array(
 			'name'     => 'Lauren Mancke',
 			'url'      => 'http://twitter.com/laurenmancke',
 			'gravatar' => '//0.gravatar.com/avatar/f7478b09179c624a91ba6c45422fbf4e?s=120',
 		),
+		/**/
+		/*
 		array(
 			'name'     => 'Andrew Norcross',
 			'url'      => 'http://twitter.com/norcross',
 			'gravatar' => '//0.gravatar.com/avatar/26ab8f9b2c86b10e7968b882403b3bf8?s=120',
 		),
+		/**/
+		/*
 		array(
 			'name'     => 'Travis Northcutt',
 			'url'      => 'http://twitter.com/tnorthcutt',
 			'gravatar' => '//0.gravatar.com/avatar/a3b6222854e90883765f5f30375718bf?s=120',
 		),
+		/**/
+		//*
+		array(
+			'name'     => 'Jeremy Pry',
+			'url'      => 'http://twitter.com/JPry',
+			'gravatar' => '//0.gravatar.com/avatar/84552f74b71a1a3e6aae380aa9ab3bd3?s=120',
+		),
+		/**/
+		/*
 		array(
 			'name'     => 'Greg Rickaby',
 			'url'      => 'http://twitter.com/GregRickaby',
 			'gravatar' => '//0.gravatar.com/avatar/28af3e39c0a1fe4c31367c7e9a8bcac3?s=120',
 		),
+		/**/
+		//*
 		array(
 			'name'     => 'Travis Smith',
 			'url'      => 'http://twitter.com/wp_smith',
 			'gravatar' => '//0.gravatar.com/avatar/7e673cdf99e6d7448f3cbaf1424c999c?s=120',
 		),
+		/**/
+		/*
 		array(
 			'name'     => 'Rafal Tomal',
 			'url'      => 'http://twitter.com/rafaltomal',
 			'gravatar' => '//0.gravatar.com/avatar/c9f7b936cd19bd5aba8831ddea21f05d?s=120',
 		),
+		/**/
 	);
 
 }

@@ -3,7 +3,7 @@ Contributors: dtelepathy, kynatro, jamie3d, dtrenkner, oriontimbers, nielsfogt, 
 Donate link: http://www.slidedeck.com/
 Tags: Slider, dynamic, responsive, image gallery, dtelepathy, digital telepathy, digital-telepathy, iPad, jquery, media, photo, pictures, plugin, posts, Search Engine Optimized, seo, skinnable, slide, slide show, slider, slideshow, theme, touch support, video, widget, Flickr, Instagram, 500px, RSS, Pinterest, Google+, YouTube, Vimeo, Dailymotion, Picasa, Dribbble
 Requires at least: 3.3
-Tested up to: 3.8
+Tested up to: 3.9
 Stable tag: trunk
 License: GPLv3
 
@@ -37,6 +37,28 @@ Where 1644 is the SlideDeck's ID. You can also see this code snippet when you sa
 
 
 == Changelog ==
+= 2.3.10 =
+* Addresses some display issues in custom slide media library modal.
+* Addresses very minor JavaScript variable namespacing error.
+* Fixed an issue with TinyMCE fix in previous version for issue introduced in WordPress 3.9
+* Fixed an issue with the Polarad Lens where some of the layout options were not working correctly
+* Added a Content option to Polarad to hide the Image Link
+* Fixed an issue where the stack transition type was not looping correctly
+* Fixed an issue with the start slide value not outputting properly for RESS and Iframe decks
+
+= 2.3.9 =
+* Addresses TinyMCE issue introduced in WordPress 3.9.
+* Addresses very minor JavaScript error in the editor.
+
+= 2.3.8 =
+* Fixed loss of `$post` context when rendering a deck inside of an iFrame.
+* Fixed issue of missing trailing slash on share overlay links.
+* Share overlay permalink now handles the `front_page` and `home_page` URLs differently.
+* Addressed a z-index issue with the O-Town lens when using videos.
+* Fixed the issue where a vertical deck would not get an `active` class on the current slide.
+* Cleaned up core JavaScript library and linted it using JSHint.
+* Removing the inherited CSS transition for the editor interface links.
+
 = 2.3.7 =
 * Updated the core slidedeck.js to be more compatible with IE11
 * Updated version of plupload to 2.1 which resolved an XSS vulnerability
@@ -421,6 +443,15 @@ Where 1644 is the SlideDeck's ID. You can also see this code snippet when you sa
 * Initial beta release.
 
 == Upgrade Notice ==
+= 2.3.10 =
+Addresses some interface display issues, a minor TinyMCE fixed introduced in the previous version and some lens updates
+
+= 2.3.9 =
+Addresses TinyMCE issue introduced in WordPress 3.9
+
+= 2.3.8 =
+Fixes for vertical decks and video, the O-Town lens, the sharing overlay
+
 = 2.3.7 =
 Repaired IE11 support
 

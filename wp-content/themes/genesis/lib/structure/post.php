@@ -126,8 +126,6 @@ add_action( 'genesis_before_post_title', 'genesis_do_post_format_image' );
  * @uses CHILD_DIR
  * @uses CHILD_URL
  *
- * @global WP_Post $post Post object.
- *
  * @return null Return early if post formats are not supported, or `genesis-post-format-images` is not supported
  */
 function genesis_do_post_format_image() {
@@ -196,7 +194,7 @@ function genesis_do_post_title() {
 
 	//* Link it, if necessary
 	if ( ! is_singular() && apply_filters( 'genesis_link_post_title', true ) )
-		$title = sprintf( '<a href="%s" title="%s" rel="bookmark">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), $title );
+		$title = sprintf( '<a href="%s" rel="bookmark">%s</a>', get_permalink(), $title );
 
 	//* Wrap in H1 on singular pages
 	$wrap = is_singular() ? 'h1' : 'h2';
@@ -233,23 +231,24 @@ add_action( 'genesis_before_post_content', 'genesis_post_info' );
  *
  * @uses genesis_markup() Contextual markup.
  *
- * @global WP_Post $post Post object.
- *
  * @return null Return early if on a page.
  */
 function genesis_post_info() {
 
-	global $post;
-
-	if ( 'page' === get_post_type( $post->ID ) )
+	if ( 'page' === get_post_type() )
 		return;
 
-	$post_info = apply_filters( 'genesis_post_info', '[post_date] ' . __( 'by', 'genesis' ) . ' [post_author_posts_link] [post_comments] [post_edit]' );
-
-	genesis_markup( array(
-		'html5' => sprintf( '<p class="entry-meta">%s</p>', $post_info ),
-		'xhtml' => sprintf( '<div class="post-info">%s</div>', $post_info ),
+	$output = genesis_markup( array(
+		'html5'   => '<p %s>',
+		'xhtml'   => '<div class="post-info">',
+		'context' => 'entry-meta-before-content',
+		'echo'    => false,
 	) );
+
+	$output .= apply_filters( 'genesis_post_info', '[post_date] ' . __( 'by', 'genesis' ) . ' [post_author_posts_link] [post_comments] [post_edit]' );;
+	$output .= genesis_html5() ? '</p>' : '</div>';	
+
+	echo $output;
 
 }
 
@@ -300,16 +299,13 @@ add_action( 'genesis_post_content', 'genesis_do_post_content' );
  * @uses genesis_get_option() Get theme setting value.
  * @uses the_content_limit()  Limited content.
  *
- * @global WP_Post $post Post object.
  */
 function genesis_do_post_content() {
-
-	global $post;
 
 	if ( is_singular() ) {
 		the_content();
 
-		if ( is_single() && 'open' === get_option( 'default_ping_status' ) && post_type_supports( $post->post_type, 'trackbacks' ) ) {
+		if ( is_single() && 'open' === get_option( 'default_ping_status' ) && post_type_supports( get_post_type(), 'trackbacks' ) ) {
 			echo '<!--';
 			trackback_rdf();
 			echo '-->' . "\n";
@@ -373,7 +369,7 @@ function genesis_do_post_permalink() {
 
 	$permalink = get_permalink();
 
-	echo apply_filters( 'genesis_post_permalink', sprintf( '<p class="entry-permalink"><a href="%s" title="%s" rel="bookmark">%s</a></p>', esc_url( $permalink ), __( 'Permalink', 'genesis' ), esc_html( $permalink ) ) );
+	echo apply_filters( 'genesis_post_permalink', sprintf( '<p class="entry-permalink"><a href="%s" rel="bookmark">%s</a></p>', esc_url( $permalink ), esc_html( $permalink ) ) );
 
 }
 
@@ -434,23 +430,24 @@ add_action( 'genesis_after_post_content', 'genesis_post_meta' );
  *
  * @uses genesis_markup() Contextual markup.
  *
- * @global WP_Post $post Post object.
- *
  * @return null Return early if on a page
  */
 function genesis_post_meta() {
 
-	global $post;
-
-	if ( 'page' === get_post_type( $post->ID ) )
+	if ( 'page' === get_post_type() )
 		return;
 
-	$post_meta = apply_filters( 'genesis_post_meta', '[post_categories] [post_tags]' );
-
-	genesis_markup( array(
-		'html5' => sprintf( '<p class="entry-meta">%s</p>', $post_meta ),
-		'xhtml' => sprintf( '<div class="post-meta">%s</div>', $post_meta ),
+	$output = genesis_markup( array(
+		'html5'   => '<p %s>',
+		'xhtml'   => '<div class="post-meta">',
+		'context' => 'entry-meta-after-content',
+		'echo'    => false,
 	) );
+
+	$output .= apply_filters( 'genesis_post_meta', '[post_categories] [post_tags]' );
+	$output .= genesis_html5() ? '</p>' : '</div>';
+
+	echo $output;
 
 }
 
@@ -508,10 +505,26 @@ function genesis_author_box( $context = '', $echo = true ) {
 	//* The author box markup, contextual
 	if ( genesis_html5() ) {
 
-		$title = apply_filters( 'genesis_author_box_title', sprintf( '%s <span itemprop="name">%s</span>', __( 'About', 'genesis' ), get_the_author() ), $context );
+		$title = __( 'About', 'genesis' ) . ' <span itemprop="name">' . get_the_author() . '</span>';
+
+		/**
+		 * Author box title filter.
+		 * 
+		 * Allows you to filter the title of the author box. $context passed as second parameter to allow for contextual filtering.
+		 *
+		 * @since unknown
+		 * 
+		 * @param string $title Assembled Title.
+		 * @param string $context Context. 
+		 */
+		$title = apply_filters( 'genesis_author_box_title', $title, $context );
 
 		$pattern  = sprintf( '<section %s>', genesis_attr( 'author-box' ) );
-		$pattern .= '%s<h1 class="author-box-title">%s</h1>';
+		if ( 'single' === $context && ! genesis_get_seo_option( 'semantic_headings' ) ) {
+			$pattern .= '%s<h4 class="author-box-title">%s</h4>';
+		} else {
+			$pattern .= '%s<h1 class="author-box-title">%s</h1>';
+		}
 		$pattern .= '<div class="author-box-content" itemprop="description">%s</div>';
 		$pattern .= '</section>';
 
@@ -524,12 +537,49 @@ function genesis_author_box( $context = '', $echo = true ) {
 
 	}
 
-	$output = apply_filters( 'genesis_author_box', sprintf( $pattern, $gravatar, $title, $description ), $context, $pattern, $gravatar, $title, $description );
+	$output = sprintf( $pattern, $gravatar, $title, $description );
+
+	/**
+	 * Author box output filter.
+	 * 
+	 * Allows you to filter the full output of the author box.
+	 *
+	 * @since unknown
+	 * 
+	 * @param string $output Assembled output.
+	 * @param string $context Context.
+	 * @param string $pattern (s)printf pattern. 
+	 * @param string $context Gravatar. 
+	 * @param string $context Title. 
+	 * @param string $context Description. 
+	 */
+	$output = apply_filters( 'genesis_author_box', $output, $context, $pattern, $gravatar, $title, $description );
 
 	if ( $echo )
 		echo $output;
 	else
 		return $output;
+
+}
+
+add_action( 'genesis_after_entry', 'genesis_after_entry_widget_area' );
+/**
+ * Display after-entry widget area on the genesis_after_entry action hook.
+ *
+ * @since 2.1.0
+ * 
+ * @uses genesis_widget_area() Output widget area.
+ */
+function genesis_after_entry_widget_area() {
+
+	if ( ! is_singular( 'post' ) || ! current_theme_supports( 'genesis-after-entry-widget-area' ) ) {
+		return;
+	}
+
+	genesis_widget_area( 'after-entry', array(
+		'before' => '<div class="after-entry widget-area">',
+		'after'  => '</div>',
+	) );
 
 }
 

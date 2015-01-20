@@ -12,6 +12,40 @@
  */
 
 /**
+ * Deprecated. Wraps the page title in a `title` element.
+ *
+ * Only applies, if not currently in admin, or for a feed.
+ *
+ * @since 1.3.0
+ * @deprecated 2.1.0
+ *
+ * @param string $title Page title.
+ *
+ * @return string Plain text or HTML markup
+ */
+function genesis_doctitle_wrap( $title ) {
+
+	_deprecated_function( __FUNCTION__, '2.1.0' );
+
+	return is_feed() || is_admin() ? $title : sprintf( "<title>%s</title>\n", $title );
+
+}
+
+/**
+ * Deprecated. Push individual setting (or group of setting) into an options db entry stored as an array.
+ *
+ * @since 1.7.0
+ * @deprecated 2.1.0
+ */
+function _genesis_update_settings( $new, $setting = null ) {
+
+	_deprecated_function( __FUNCTION__, '2.1.0', "genesis_update_setting" );
+
+	genesis_update_settings( $new, $setting );
+
+}
+
+/**
  * Deprecated. Used to output archive pagination in older/newer format.
  *
  * Should now use `genesis_prev_next_posts_nav()` instead.
@@ -42,6 +76,8 @@ function genesis_older_newer_posts_nav() {
  * @uses PARENT_THEME_VERSION
  * @uses CHILD_DIR
  * @uses genesis_get_option() Get theme setting value
+ *
+ * @global string $wp_version WordPress version string.
  *
  * @return null Return early if `show_info` setting is off
  */

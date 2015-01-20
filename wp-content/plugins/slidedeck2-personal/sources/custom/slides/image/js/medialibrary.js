@@ -179,7 +179,8 @@ var SlideDeckMediaLibrary = function(){
     // Route which tab initialize routine to run
     SlideDeckMediaLibrary.prototype.initialize = function(){
         // Get the current tab
-        var location = document.location.search.match(/tab\=([a-zA-Z0-9\-_]+)/);
+        var location = document.location.search.match(/tab\=([a-zA-Z0-9\-_]+)/),
+            styles = '';
         if(location)
             this.tab = location[1];
         
@@ -191,8 +192,18 @@ var SlideDeckMediaLibrary = function(){
         else {
             this.initializeBulkUpload();
         }
-        
-        $('head').append('<style type="text/css">#gallery-settings,#save-all,#gallery-form table.widefat,#sort-buttons,#save,#filter>.subsubsub,.menu_order,.media-item table.describe > tbody tr[class] {display:none !important;}</style>');
+
+        styles += '<style type="text/css">';
+        styles += '#gallery-settings,#save-all,#gallery-form table.widefat,#sort-buttons,#save,#filter>.subsubsub,.menu_order,.media-item table.describe > tbody tr[class] {display:none !important;}';
+        styles += '.media-upload-form {background: #fff;}';
+        styles += '#media-upload #filter {position: relative;}';
+        styles += '.slidedeck-add-multiple, .add-to-slidedeck-button {margin-top: 6px;}';
+        styles += '.tablenav .tablenav-pages {height: auto; width: auto; margin-bottom: 0;}';
+        styles += 'p.search-box {display: none;}';
+        styles += 'form {padding-top: 1em; margin-top: 0;}';
+        styles += '</style>';
+
+        $('head').append(styles);
         
         switch(this.tab){
             case "upload":
@@ -270,7 +281,7 @@ var SlideDeckMediaLibrary = function(){
             if(self.isBulkUpload){
                 $this.before('<input type="checkbox" value="' + mediaId + '" class="' + self.addMultipleCheckboxClass + '" style="float:right;margin:12px 15px 0 5px;" />');
             } else {
-                $this.before('<button value="' + mediaId + '" class="' + self.singleAddClass + '" style="float:right;margin:12px 15px 0 5px;">Add to SlideDeck</button>');
+                $this.before('<button value="' + mediaId + '" class="' + self.singleAddClass + '" style="float:right;margin:7px 15px 0 5px;">Add to SlideDeck</button>');
             }
         });
         

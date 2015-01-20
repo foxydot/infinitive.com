@@ -17,6 +17,7 @@
  * @since 0.1.6
  *
  * @global Genesis_Breadcrumb $_genesis_breadcrumb
+ *
  * @param array $args Breadcrumb arguments
  */
 function genesis_breadcrumb( $args = array() ) {
@@ -58,14 +59,17 @@ function genesis_do_breadcrumbs() {
 		bcn_display();
 		echo '</div>';
 	}
-	elseif ( function_exists( 'yoast_breadcrumb' ) ) {
-		yoast_breadcrumb( '<div class="breadcrumb">', '</div>' );
-	}
 	elseif ( function_exists( 'breadcrumbs' ) ) {
 		breadcrumbs();
 	}
 	elseif ( function_exists( 'crumbs' ) ) {
 		crumbs();
+	}
+	elseif ( class_exists( 'WPSEO_Breadcrumbs' ) && genesis_get_option( 'breadcrumbs-enable', 'wpseo_internallinks' ) ) {
+		yoast_breadcrumb( '<div class="breadcrumb" itemprop="breadcrumb">', '</div>' );
+	}
+	elseif( function_exists( 'yoast_breadcrumb' ) && ! class_exists( 'WPSEO_Breadcrumbs' ) ) {
+		yoast_breadcrumb( '<div class="breadcrumb" itemprop="breadcrumb">', '</div>' );
 	}
 	else {
 		genesis_breadcrumb();
