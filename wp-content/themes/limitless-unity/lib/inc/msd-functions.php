@@ -92,13 +92,7 @@ function get_topmost_parent($post_id){
 	}
 	return $parent_id;
 }
-add_filter( 'the_content', 'msd_remove_msword_formatting' );
-function msd_remove_msword_formatting($content){
-	global $allowedposttags;
-	$allowedposttags['span']['style'] = false;
-	$content = wp_kses($content,$allowedposttags);
-	return $content;
-}
+
 add_action('init','msd_allow_all_embeds');
 function msd_allow_all_embeds(){
 	global $allowedposttags;
@@ -125,6 +119,10 @@ function msd_allow_all_embeds(){
 			"height" => array(),
 			"width" => array()
 	);
+    $allowedposttags['script'] = array( //for calls to action
+        'type' => array(),
+        'src' => array(),
+    );
 }
 
 /* ---------------------------------------------------------------------- */
