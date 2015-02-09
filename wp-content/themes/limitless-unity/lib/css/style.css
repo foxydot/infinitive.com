@@ -6997,6 +6997,10 @@ li.comment {
 }
 /* Featured Post Grid
 ------------------------------------------------------------ */
+main .genesis-feature .featured_image_wrapper {
+  display: block;
+  text-align: center;
+}
 main hr.grid-separator {
   border-top: 1px dotted #cccccc;
   clear: both;
