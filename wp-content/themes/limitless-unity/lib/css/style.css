@@ -6997,6 +6997,10 @@ li.comment {
 }
 /* Featured Post Grid
 ------------------------------------------------------------ */
+main .genesis-feature .featured_image_wrapper {
+  display: block;
+  text-align: center;
+}
 main hr.grid-separator {
   border-top: 1px dotted #cccccc;
   clear: both;
@@ -7048,6 +7052,8 @@ main .genesis-grid-odd {
 }
 .genesis-grid .thumbnail {
   margin-bottom: 10px;
+  text-align: center;
+  border: 0;
 }
 .to_comments a {
   color: #666666;

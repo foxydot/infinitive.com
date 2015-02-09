@@ -183,10 +183,10 @@ function msdlab_grid_loop_helper() {
         'features' => 1,
         'features_on_all'       => false,
         'feature_image_size'    => 'child_full',
-        'feature_image_class'   => 'alignleft post-image',
+        'feature_image_class'   => 'alignnone post-image child_full',
         'feature_content_limit' => 0,
         'grid_image_size'       => 'child_thumbnail',
-        'grid_image_class'      => 'alignnone post-image',
+        'grid_image_class'      => 'alignnone post-image child_thumbnail',
         'grid_content_limit'    => 0,
         'more' => __( '[Continue reading...]', 'adaptation' ),
         ) );
@@ -245,7 +245,7 @@ function msdlab_grid_loop_content() {
 
     if ( in_array( 'genesis-feature', get_post_class() ) ) {
         if ( $_genesis_loop_args['feature_image_size'] ) {
-            printf( '<a href="%s" title="%s">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image( array( 'size' => $_genesis_loop_args['feature_image_size'], 'attr' => array( 'class' => esc_attr( $_genesis_loop_args['feature_image_class'] ) ) ) ) );
+            printf( '<a href="%s" title="%s" class="featured_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image( array( 'size' => $_genesis_loop_args['feature_image_size'], 'attr' => array( 'class' => esc_attr( $_genesis_loop_args['feature_image_class'] ) ) ) ) );
         }
 
         the_excerpt();  
