@@ -8,7 +8,7 @@ Author URI: http://msdlab.com/biological-assets/catherine-obrien-sandrick/
 License: GPL v2
 */
 
-add_filter('robots_txt','msdlab_bot_blocker', 15, 2);
+add_filter('robots_txt','msdlab_bot_blocker', 10, 2);
 function msdlab_bot_blocker($output,$public){
     $server = $_SERVER["SERVER_NAME"];
     $pattern = "@(?:[^\.]+\.)?msdlab2.com@";
@@ -16,7 +16,5 @@ function msdlab_bot_blocker($output,$public){
         $output = "User-agent: *\n";
         $output .= "Disallow: /\n";
     }   
-        $output = "User-agent: *\n";
-        $output .= "Disallow: /\n";
     return $output;
 }
