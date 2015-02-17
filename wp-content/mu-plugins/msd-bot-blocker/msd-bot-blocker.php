@@ -9,13 +9,14 @@ License: GPL v2
 */
 
 add_filter('robots_txt','msdlab_bot_blocker', 15, 2);
-function msdlab_bot_blocker($output){
+function msdlab_bot_blocker($output,$public){
     $server = $_SERVER["SERVER_NAME"];
     $pattern = "@(?:[^\.]+\.)?msdlab2.com@";
-    ts_data($output);
     if(preg_match($pattern, $server)){   
         $output = "User-agent: *\n";
         $output .= "Disallow: /\n";
     }   
+        $output = "User-agent: *\n";
+        $output .= "Disallow: /\n";
     return $output;
 }
