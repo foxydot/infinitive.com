@@ -16,5 +16,6 @@ function msdlab_bot_blocker($output,$public){
         $output = "User-agent: *\n";
         $output .= "Disallow: /\n";
     }   
+    $output .= $server."\n";
     return $output;
 }
