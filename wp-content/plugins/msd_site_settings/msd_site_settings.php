@@ -225,7 +225,6 @@ function copyright($address = TRUE){
 function social_media($atts = array()){
     extract( shortcode_atts( array(
             ), $atts ) );
-    
     $ret = '<div id="social-media" class="social-media">';
     if(get_option('msdsocial_facebook_link')!=""){
         $ret .= '<a href="'.get_option('msdsocial_facebook_link').'" class="fa fa-facebook" title="Join Us on Facebook!" target="_blank"></a>';

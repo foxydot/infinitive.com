@@ -6376,8 +6376,9 @@ img#wpstats {
 }
 .pre-header .wrap .social-media {
   display: inline-block;
+  float: none;
 }
-.pre-header .wrap .social-media a i.fa {
+.pre-header .wrap .social-media a {
   background: #666666;
   color: #ffffff;
   width: 2em;
@@ -6390,10 +6391,9 @@ img#wpstats {
   -moz-background-clip: padding;
   border-radius: 100%;
   background-clip: padding-box;
-}
-.pre-header .wrap .social-media a span {
-  text-indent: -9999px;
-  display: none;
+  margin: 1rem 0.5rem;
+  float: none;
+  display: inline-block;
 }
 .pre-header .wrap .social-media a.contact span {
   text-indent: 0;
