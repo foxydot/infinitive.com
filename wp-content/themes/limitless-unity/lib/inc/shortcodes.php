@@ -93,3 +93,59 @@ function be_sitemap() {
     <?php
 }
 add_shortcode('sitemap','be_sitemap');
+
+
+remove_shortcode('msd-social');
+add_shortcode('msd-social','social_media');
+function social_media($atts = array()){
+    extract( shortcode_atts( array(
+            ), $atts ) );
+    $ret = '<div id="social-media" class="social-media">';   
+    if(get_option('msdsocial_contact_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_contact_link').'" class="contact" title="Contact Us" target="_blank">CONTACT</a>';
+    }    
+    if(get_option('msdsocial_facebook_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_facebook_link').'" class="fa fa-facebook" title="Join Us on Facebook!" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_twitter_user')!=""){
+        $ret .= '<a href="http://www.twitter.com/'.get_option('msdsocial_twitter_user').'" class="fa fa-twitter" title="Follow Us on Twitter!" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_pinterest_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_pinterest_link').'" class="fa fa-pinterest" title="Pinterest" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_google_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_google_link').'" class="fa fa-google-plus" title="Google+" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_linkedin_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_linkedin_link').'" class="fa fa-linkedin" title="LinkedIn" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_instagram_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_instagram_link').'" class="fa fa-instagram" title="Instagram" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_tumblr_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_tumblr_link').'" class="fa fa-tumblr" title="Tumblr" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_reddit_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_reddit_link').'" class="fa fa-reddit" title="Reddit" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_flickr_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_flickr_link').'" class="fa fa-flickr" title="Flickr" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_youtube_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_youtube_link').'" class="fa fa-youtube" title="YouTube" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_vimeo_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_vimeo_link').'" class="fa fa-vimeo-square" title="Vimeo" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_vine_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_vine_link').'" class="fa fa-vine" title="Vine" target="_blank"></a>';
+    }    
+    if(get_option('msdsocial_sharethis_link')!=""){
+        $ret .= '<a href="'.get_option('msdsocial_sharethis_link').'" class="fa fa-share-alt" title="ShareThis" target="_blank"></a>';
+    } 
+    if(get_option('msdsocial_show_feed')!=""){
+        $ret .= '<a href="'.get_bloginfo('rss2_url').'" class="fa fa-rss" title="RSS Feed" target="_blank"></a>';
+    }
+    $ret .= '</div>';
+    return $ret;
+}
