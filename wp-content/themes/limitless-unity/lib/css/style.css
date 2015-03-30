@@ -6395,14 +6395,28 @@ img#wpstats {
   float: none;
   display: inline-block;
 }
-.pre-header .wrap .social-media a.contact span {
-  text-indent: 0;
+.pre-header .wrap .social-media a.contact {
+  background: transparent;
+  width: auto;
+  height: auto;
+  font-size: 2.4rem;
+  text-align: center;
+  line-height: 0;
+  -webkit-border-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 0;
+  -moz-background-clip: padding;
+  border-radius: 0;
+  background-clip: padding-box;
+  margin: 1rem 0.5rem;
+  float: none;
   display: inline-block;
+  text-indent: 0;
   font-family: 'News Cycle', Helvetica, "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   color: #666666;
   text-transform: uppercase;
-  padding: 0 1rem;
+  top: 0.4rem;
 }
 .pre-header .wrap .search-form {
   display: inline-block;

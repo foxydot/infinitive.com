@@ -1,8 +1,10 @@
 <?php
 /*** HEADER ***/
+//customize msd-social shortcode
+
 /**
  * Add pre-header with social and search
- */
+ */ 
 function msdlab_pre_header(){
     print '<div class="pre-header">
         <div class="wrap">';
