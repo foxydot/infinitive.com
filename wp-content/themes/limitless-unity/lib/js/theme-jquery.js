@@ -56,6 +56,8 @@ jQuery(document).ready(function($) {
     
     //nav
     $('.nav-secondary .menu-item .sub-menu').wrap('<div class="subnav-wrapper"></div>');
+    
+    $('.lyte-wrapper').css('max-width','100%').css('width','100%');
 	
 });
 
