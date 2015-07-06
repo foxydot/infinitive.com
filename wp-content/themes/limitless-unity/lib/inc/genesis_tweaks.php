@@ -62,4 +62,4 @@ add_action('genesis_before_loop','msd_add_blog_header');
 
 
 /*** SITEMAP ***/
-add_action('after_404','msdlab_sitemap');
+//add_action('after_404','msdlab_sitemap');

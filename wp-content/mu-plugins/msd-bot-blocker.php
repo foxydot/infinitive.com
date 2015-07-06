@@ -12,6 +12,7 @@ add_filter('robots_txt','msdlab_bot_blocker', 10, 2);
 function msdlab_bot_blocker($output,$public){
     $server = $_SERVER["SERVER_NAME"];
     $pattern = "@(?:[^\.]+\.)?msdlab2.com@";
+    //$pattern = "@(?:[^\.]+\.)?.oc@";
     if(preg_match($pattern, $server)){   
         $output = "User-agent: *\n";
         $output .= "Disallow: /\n";
