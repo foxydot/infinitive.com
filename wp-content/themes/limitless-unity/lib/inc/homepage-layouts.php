@@ -34,8 +34,8 @@ function msdlab_hero(){
 		print '<div id="hp-top">';
 		print '<div class="wrap">';
 		dynamic_sidebar('homepage-top');
-        $walker = new Infinitive_Solutions_Walker;
-        wp_nav_menu( array( 'menu' => 'Homepage Feature Section Menu','container' => '','walker' => $walker ) );
+        //$walker = new Infinitive_Solutions_Walker;
+        //wp_nav_menu( array( 'menu' => 'Homepage Feature Section Menu','container' => '','walker' => $walker ) );
 		print '</div>';
 		print '</div>';
 	}
