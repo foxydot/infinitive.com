@@ -149,3 +149,26 @@ function social_media($atts = array()){
     $ret .= '</div>';
     return $ret;
 }
+
+add_shortcode('career-features','msdlab_career_features_handler');
+function msdlab_career_features_handler(){
+    return '<img class="aligncenter" src="'.WP_CONTENT_URL.'/uploads/2011/09/ARROWS.png" />';
+}
+
+add_shortcode('icon','msdlab_icon_shortcodes');
+function msdlab_icon_shortcodes($atts){
+    $classes[] = 'msd-icon icon';
+    foreach($atts AS $att){
+        switch($att){
+            case "circle":
+            case "square":
+            case "block":
+                $classes[] = $att;
+                break;
+            default:
+                $classes[] = 'icon-'.$att;
+                break;
+        }
+    }
+    return '<i class="'.implode(" ",$classes).'"></i>';
+}
