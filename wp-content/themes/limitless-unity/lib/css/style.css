@@ -7331,7 +7331,8 @@ a.readmore-button {
   margin: 0.2em 0.5rem;
 }
 [class^="icon-"] i:before,
-[class*=" icon-"] i:before {
+[class*=" icon-"] i:before,
+.msd-icon:before {
   font-family: "infinitive" !important;
   font-style: normal !important;
   font-weight: normal !important;
