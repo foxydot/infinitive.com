@@ -7356,6 +7356,13 @@ a.readmore-button {
 .icon-solutions i:before {
   content: "d";
 }
+.msd-icon:before {
+  float: left;
+  display: block;
+  font-size: 2em;
+  margin-right: 0.5em;
+  color: #999999;
+}
 .msd-icon.icon-enterprise:before {
   content: "a";
 }
@@ -7388,6 +7395,27 @@ a.readmore-button {
 }
 .tablepress.two-col td {
   width: 49%;
+}
+.page.careers strong {
+  color: orange;
+}
+.page.careers .portal-button {
+  font-family: 'News Cycle', Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-weight: normal;
+  background: url(../img/portal.png) no-repeat 2em center #f0f0f0;
+  border-radius: 20px;
+  font-size: 1.25em;
+  display: inline-block;
+  padding: 1em 2em 2em 10em;
+  color: #999999;
+}
+.page.careers .portal-button:hover {
+  text-decoration: none;
+}
+.page.careers .portal-button strong {
+  font-size: 2em;
+  font-weight: 700;
+  color: #ed7e3c;
 }
 .post-type-archive-msd_casestudy main article.msd_casestudy,
 .all-case-studies main article.msd_casestudy {

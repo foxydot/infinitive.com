@@ -2131,6 +2131,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/lib\/img\/portal.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2361,
+		"inputAbbreviatedPath": "\/lib\/img\/portal.png",
+		"outputAbbreviatedPath": "\/lib\/img\/portal.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/lib\/img\/responsivebg.png": {
 		"fileType": 32768,
 		"ignore": 0,

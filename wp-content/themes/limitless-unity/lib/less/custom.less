@@ -150,7 +150,8 @@
   margin: 0.2em 0.5rem;
 }
 [class^="icon-"] i:before,
-[class*=" icon-"] i:before, .msd-icon:before {
+[class*=" icon-"] i:before, 
+.msd-icon:before {
   font-family: "infinitive" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -178,6 +179,14 @@
  
 .icon-solutions i:before {
    content: "d"; 
+}
+
+.msd-icon:before{
+  float: left;
+  display: block;
+  font-size: 2em;
+  margin-right: 0.5em;
+  color: @medgrey;
 }
 
 .msd-icon.icon-enterprise:before {
@@ -217,4 +226,27 @@
 }
 .tablepress.two-col{
   td{width: 49%;}
+}
+
+.page.careers{
+  strong{
+    color: orange;
+  }
+  .portal-button{
+    .customsanserif;
+    background: url(../img/portal.png) no-repeat 2em center  @offwhite;
+    border-radius: 20px;
+    font-size: 1.25em;
+    display: inline-block;
+    padding: 1em 2em 2em 10em;
+    color: @medgrey;
+    &:hover{
+      text-decoration: none;
+    }
+    strong{
+      font-size: 2em;
+      font-weight: 700;
+      color: @orange;
+    }
+  }
 }
