@@ -239,7 +239,7 @@ class MSDVideoCPT {
             $video->the_meta($item->ID);
             $youtube = $video->get_the_value('youtube');
             if($youtube!=''){
-                $youtube = preg_replace('@http(s)?\:\/\/@i', 'httpv://', $youtube);
+                //$youtube = preg_replace('@http(s)?\:\/\/@i', 'httpv://', $youtube);
                 $norelated = strrpos($youtube,'?')>1?'&rel=0':'?rel=0';
                 $content = $youtube.$norelated;
                 if(function_exists('lyte_parse')) { $content = lyte_parse($content); }
