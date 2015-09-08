@@ -6747,6 +6747,9 @@ Site Navigation
   top: -5.4rem;
   height: 260px;
 }
+#menu-primary-links > li.first-child > ul.sub-menu li.industry > ul.sub-menu {
+  height: auto;
+}
 .mainNav > ul > li.first > ul > li.title > ul > li > ul > li {
   padding: 3px 0;
 }
