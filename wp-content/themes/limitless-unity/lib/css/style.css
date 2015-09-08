@@ -6748,9 +6748,7 @@ Site Navigation
   height: 260px;
 }
 #menu-primary-links > li.first-child > ul.sub-menu li.industry > ul.sub-menu {
-  top: -10.8rem;
-  height: 260px;
-  width: 14rem;
+  height: auto;
 }
 .mainNav > ul > li.first > ul > li.title > ul > li > ul > li {
   padding: 3px 0;
