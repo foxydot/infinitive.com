@@ -167,7 +167,42 @@ if(!function_exists('msdlab_excerpt')){
     }
 }
 
+if(!function_exists('strip_empty_tags')){
+    function strip_empty_tags($content){
+        // clean up p tags around block elements
+        $content = preg_replace( array(
+            '#<p>\s*<(div|aside|section|article|header|footer)#',
+            '#</(div|aside|section|article|header|footer)>\s*</p>#',
+            '#</(div|aside|section|article|header|footer)>\s*<br ?/?>#',
+            '#<(div|aside|section|article|header|footer)(.*?)>\s*</p>#',
+            '#<p>\s*</(div|aside|section|article|header|footer)#',
+        ), array(
+            '<$1',
+            '</$1>',
+            '</$1>',
+            '<$1$2>',
+            '</$1',
+        ), $content );
+        return preg_replace('#<p>(\s|&nbsp;)*+(<br\s*/*>)*(\s|&nbsp;)*</p>#i', '', $content);
+    }
+}
 
+if(!function_exists('trim_whitespace')){
+    function trim_whitespace($content){
+        $content = preg_replace( array(
+            '#^(<br\s*\/?>)(.*?)#s',
+            '#^(\s*)(.*?)#s',
+            '#(.*?)(<br\s*\/?>)$#s',
+            '#(.*?)(\s*)$#s',
+        ), array(
+            '$2',
+            '$2',
+            '$1',
+            '$1',
+        ), $content );
+        return $content;
+    }
+}
 
 /**
  * Check if a post is a particular post type.

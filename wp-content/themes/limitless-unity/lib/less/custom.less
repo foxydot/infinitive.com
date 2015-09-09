@@ -250,3 +250,33 @@
     }
   }
 }
+
+.page-template-showcase{
+  .banner{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 350px;
+    min-width: 100%;
+  }
+  .box{
+    border: 1px solid @ltgrey;
+    border-radius: 4px;
+    padding: 1.5em;
+    .button{
+      color: @white;
+      background-color: @orange;
+      &:hover{
+        background-color: darken(@orange,10%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) { // iPhone landscape
+  .page-template-showcase{
+    .banner{
+      min-height: 200px;
+    }
+  }
+}

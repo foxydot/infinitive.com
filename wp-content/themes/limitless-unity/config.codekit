@@ -2960,6 +2960,15 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/showcase.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/showcase.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/single-msd_casestudy.php": {
 		"fileType": 8192,
 		"ignore": 0,
