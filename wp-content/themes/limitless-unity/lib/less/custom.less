@@ -271,6 +271,52 @@
       }
     }
   }
+  .showcase-footer{
+    background-color: @orange;
+    .gform_heading,.gform_footer{
+      text-align: center;
+      h3{
+        color: @white;
+      }
+      .gform_button{
+        border: 2px solid @white;
+        background-color: fade(@white,0);
+        padding: 0.5em 4em;
+        &:hover{
+          background-color: fade(@white, 15%);
+        }
+      }
+    }
+   .gform_body{
+     .gf_left_third,.gf_middle_third,.gf_right_third{
+       margin-top: 1em !important;
+     }
+     label{
+       display: none;
+     }
+     input, select, textarea{
+       background-color: fade(@white, 20%);
+       border: 0;
+       box-shadow: 0 0 0 transparent;
+       color: @white;
+     }
+     ::-webkit-input-placeholder {
+         color: fade(@white,50%);
+      }
+      
+      :-moz-placeholder { /* Firefox 18- */
+         color: fade(@white,50%);  
+      }
+      
+      ::-moz-placeholder {  /* Firefox 19+ */
+         color: fade(@white,50%);  
+      }
+      
+      :-ms-input-placeholder {  
+         color: fade(@white,50%);  
+      }
+   }
+  }
 }
 
 @media screen and (max-width: 480px) { // iPhone landscape

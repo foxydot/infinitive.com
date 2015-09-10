@@ -7439,6 +7439,57 @@ a.readmore-button {
 .page-template-showcase .box .button:hover {
   background-color: #e16115;
 }
+.page-template-showcase .showcase-footer {
+  background-color: #ed7e3c;
+}
+.page-template-showcase .showcase-footer .gform_heading,
+.page-template-showcase .showcase-footer .gform_footer {
+  text-align: center;
+}
+.page-template-showcase .showcase-footer .gform_heading h3,
+.page-template-showcase .showcase-footer .gform_footer h3 {
+  color: #ffffff;
+}
+.page-template-showcase .showcase-footer .gform_heading .gform_button,
+.page-template-showcase .showcase-footer .gform_footer .gform_button {
+  border: 2px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0.5em 4em;
+}
+.page-template-showcase .showcase-footer .gform_heading .gform_button:hover,
+.page-template-showcase .showcase-footer .gform_footer .gform_button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.page-template-showcase .showcase-footer .gform_body .gf_left_third,
+.page-template-showcase .showcase-footer .gform_body .gf_middle_third,
+.page-template-showcase .showcase-footer .gform_body .gf_right_third {
+  margin-top: 1em !important;
+}
+.page-template-showcase .showcase-footer .gform_body label {
+  display: none;
+}
+.page-template-showcase .showcase-footer .gform_body input,
+.page-template-showcase .showcase-footer .gform_body select,
+.page-template-showcase .showcase-footer .gform_body textarea {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0;
+  box-shadow: 0 0 0 transparent;
+  color: #ffffff;
+}
+.page-template-showcase .showcase-footer .gform_body ::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.page-template-showcase .showcase-footer .gform_body :-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(255, 255, 255, 0.5);
+}
+.page-template-showcase .showcase-footer .gform_body ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(255, 255, 255, 0.5);
+}
+.page-template-showcase .showcase-footer .gform_body :-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
 @media screen and (max-width: 480px) {
   .page-template-showcase .banner {
     min-height: 200px;
