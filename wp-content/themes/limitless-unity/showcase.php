@@ -2,6 +2,7 @@
 /*
 Template Name: Showcase Page
 */
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 remove_action('genesis_before_entry','msd_post_image');
 add_action('genesis_after_header','msd_showcase_post_image');
 add_shortcode('box','msdlab_box_shortcode_output');
