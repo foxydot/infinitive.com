@@ -7427,10 +7427,19 @@ a.readmore-button {
   min-height: 350px;
   min-width: 100%;
 }
+.page-template-showcase .row {
+  height: auto;
+}
 .page-template-showcase .box {
   border: 1px solid #cccccc;
   border-radius: 4px;
-  padding: 1.5em;
+  padding: 1.5em 1.5em 3em;
+  margin-bottom: 1.5em;
+  position: relative;
+}
+.page-template-showcase .box .button-wrapper {
+  position: absolute;
+  bottom: 1.5em;
 }
 .page-template-showcase .box .button {
   color: #ffffff;

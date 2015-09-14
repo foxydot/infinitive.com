@@ -259,10 +259,19 @@
     min-height: 350px;
     min-width: 100%;
   }
+  .row{
+    height: auto;
+  }
   .box{
     border: 1px solid @ltgrey;
     border-radius: 4px;
-    padding: 1.5em;
+    padding: 1.5em 1.5em 3em;
+    margin-bottom: 1.5em;
+    position: relative;
+    .button-wrapper{
+      position: absolute;
+      bottom: 1.5em;
+    }
     .button{
       color: @white;
       background-color: @orange;
