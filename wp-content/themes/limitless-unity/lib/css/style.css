@@ -7424,7 +7424,7 @@ a.readmore-button {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 350px;
+  min-height: 250px;
   min-width: 100%;
 }
 .page-template-showcase .row {
@@ -7501,7 +7501,7 @@ a.readmore-button {
 }
 @media screen and (max-width: 480px) {
   .page-template-showcase .banner {
-    min-height: 200px;
+    min-height: 150px;
   }
 }
 .post-type-archive-msd_casestudy main article.msd_casestudy,
