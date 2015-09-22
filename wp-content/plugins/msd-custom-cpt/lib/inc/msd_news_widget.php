@@ -1,4 +1,46 @@
 <?php
+function msdlab_get_news_widget_content($atts){
+        extract($atts);
+        $posttype = 'msd_news'; 
+        $taxonomy = 'msd_genre';
+        $args = array();
+        $args['post_type'] = $posttype; 
+        if(!empty($category)){ 
+            $args['tax_query'][0]['taxonomy'] = $taxonomy;
+            $args['tax_query'][0]['field'] = 'slug';
+            $args['tax_query'][0]['terms'] = $category;
+        }
+        $args['numberposts'] = !empty($numberposts)?$numberposts:1;
+        
+        $items = get_posts($args);
+        return $items;
+}
+add_shortcode('news_widget','msdlab_news_widget_output');
+function msdlab_news_widget_output($atts){
+    $atts = shortcode_atts( array(
+        'taxonomy' => '',
+        'category' => '',
+        'numberposts' => ''
+    ), $atts );
+    global $subtitle;
+    $items = msdlab_get_news_widget_content($atts);
+        foreach($items AS $item){ 
+            $subtitle->the_meta($item->ID);
+            $excerpt = $subtitle->get_the_value('subtitle')?$subtitle->get_the_value('subtitle'):msdlab_excerpt($item->ID);
+            $thumb = get_the_post_thumbnail($item->ID)?get_the_post_thumbnail($item->ID):'<img src="'.get_bloginfo('stylesheet_url').'/images/news.png" />';
+            $news_list .= '
+                <div class="alignnone size-full">'.$thumb.'</div>
+                <h3>'.$item->post_title.'</h3>
+                <div class="subtitle">
+                    '.$excerpt.'
+                </div>';
+                $news_list .= '<div class="button-wrapper">
+<a target="_self" href="'.get_permalink($item->ID).'" class="button">Learn More</a>
+</div>';
+        }
+        $ret .= $news_list;
+        return $ret;
+}
 
 class MSDNewsWidget extends WP_Widget {
     /** constructor */
@@ -12,22 +54,10 @@ class MSDNewsWidget extends WP_Widget {
 		extract($args);
         $widget_area = $args['id'];
 		$title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance );
-		$posttype = 'msd_news';	
-		$taxonomy = 'msd_genre';
-		$category = strip_tags($instance['category']);	
-		$numberposts = strip_tags($numberposts);
-		$args = array();
-		$args['post_type'] = $posttype; 
-		if(!empty($category)){ 
-			$args['tax_query'][0]['taxonomy'] = $taxonomy;
-			$args['tax_query'][0]['field'] = 'slug';
-			$args['tax_query'][0]['terms'] = $category;
-		}
-		$args['numberposts'] = !empty($numberposts)?$numberposts:1;
-		
-		$items = get_posts($args);
-		global $subtitle;
-		
+        $atts['category'] = $category = strip_tags($instance['category']);  
+        $atts['numberposts'] = $numberposts = strip_tags($numberposts);
+		$items = msdlab_get_news_widget_content($atts);
+        global $subtitle;
 		echo $before_widget;
         if ( !empty( $title ) ) { print $before_title.$title.$after_title; } 
         print '<ul class="news-list">';
