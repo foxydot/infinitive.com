@@ -1,0 +1,68 @@
+backupbuddy-get-overview
+	Description:
+		Get any overview of BackupBuddy information for this site.
+	Arguments:
+		none
+	Return Array:
+			api- API version of this function. Increments of the output of this function changes.
+			status- Whether or not the action succeeded. Possible values: ok, error
+			message- Text status message.
+			overview- Array of overview information.
+				backupbuddyVersion- BackupBuddy version.
+				lastBackupStart- Timestamp last backup began.
+				lastBackupFinish- Timestamp last backup succeeded.
+				editsSinceLastBackup- Number of edits made to posts/page since the last backup succeeded.
+				scheduleCount- Number of schedules.
+				profileCount- Number of profiles.
+				destinationCount- Number of destinations.
+				notifications- Array of string notifications, such as that backups are failing.
+
+
+
+backupbuddy-list-profiles
+	Description:
+		Get a list of profiles currently in existance.
+	Arguments:
+		none
+	Return Array:
+			api- API version of this function. Increments of the output of this function changes.
+			status- Whether or not the action succeeded. Possible values: ok, error
+			message- Text status message.
+			profiles- Array of profiles
+				title- User-specified title of profile. Tags stripped.
+				type- Type of profile. Valid values: full, db, files
+				id- Numeric identifier for this profile.
+
+
+
+backupbuddy-run-backup
+	Description:
+		Run a backup by profile.
+	Arguments:
+		profile- Profile ID number to run. Alternatively this can be "full" or "db" which will run the built-in non-deletable full or database profiles.
+	Return Array:
+			api- API version of this function. Increments of the output of this function changes.
+			status- Whether or not the action succeeded. Possible values: ok, error
+			message- Text status message.
+
+
+
+backupbuddy-list-schedules
+	Description:
+		Get a list of backup schedules.
+	Arguments:
+		none
+	Return Array:
+			api- API version of this function. Increments of the output of this function changes.
+			status- Whether or not the action succeeded. Possible values: ok, error
+			message- Text status message.
+			schedules- Array of profiles
+				title- User-specified title of schedule. Tags stripped.
+				profileID- Numeric identifier for the profile this schedule will run.
+				interval- Tag interval for schedule for WP cron. ie. hourly, daily, twicedaily, weekly, twiceweekly, monthly, twicemonthly
+				lastRun- Timestamp the schedule last ran.
+				enabled- Whether or not the schedule is currently enabled. Valid values: 1, 0
+				id- Numeric identifier for this schedule.
+
+
+
