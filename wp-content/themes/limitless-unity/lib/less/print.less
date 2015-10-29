@@ -1,0 +1,17 @@
+@media print {
+  a[href]:after {
+    content: none;
+  }
+  .pre-header,.site-header,.nav-primary,#mobile-nav,.nav-secondary,#hp-callout,#hp-top,.sidebar,.page-nav,.comment-respond,.ftr-menu{
+    display: none;
+  }
+  
+  .site-container:before {
+    content: url(../img/logo.png);
+    margin: 0 auto;
+    display: block;
+  }
+  .col-sm-4{
+    width: 100%;
+  }
+}
