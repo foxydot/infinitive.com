@@ -395,6 +395,7 @@ function msdlab_team_member_special_loop(){
     );
     print msdlab_team_member_special($args);
 }
+
 function msdlab_team_member_special_loop_shortcode_handler($atts){
     $args = shortcode_atts( array(
     ), $atts );
@@ -436,7 +437,7 @@ function msdlab_team_member_special($args){
                     'xhtml' => '<div class="aside">',
                     'echo' => false,
                 ) ); 
-            $ret .= '<div class="bwWrapper">'.get_the_post_thumbnail($result->ID,'mini-headshot',array('itemprop'=>'image')).'</div>';
+            //$ret .= '<div class="bwWrapper">'.get_the_post_thumbnail($result->ID,'mini-headshot',array('itemprop'=>'image')).'</div>';
             $ret .= '<ul>';
             if($contact_info->get_the_value('_team_linked_in')){
                 $ret .= '<li class="linkedin"><a href="'.$contact_info->get_the_value('_team_linked_in').'" target="_linkedin"><span class="fa-stack fa-lg pull-right">
