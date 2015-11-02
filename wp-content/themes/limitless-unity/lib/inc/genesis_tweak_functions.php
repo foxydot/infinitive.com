@@ -413,6 +413,7 @@ function msdlab_team_member_special($args){
     //set up result array
     $results = array();
     $results = get_posts($args);
+    ts_data($results);
     //format result
     foreach($results AS $result){
         $post = $result;
@@ -420,6 +421,7 @@ function msdlab_team_member_special($args){
         $firstname = $titlearray[0];
         $firstname = (substr($firstname, -1) == 's')?$firstname."'":$firstname."'s";
         $contact_info->the_meta($result->ID);
+        ts_data($result);
         $ret .= genesis_markup( array(
                 'html5'   => '<article %s>',
                 'xhtml'   => sprintf( '<div class="%s">', implode( ' ', get_post_class() ) ),
