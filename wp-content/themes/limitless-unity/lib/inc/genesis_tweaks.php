@@ -63,3 +63,8 @@ add_action('genesis_before_loop','msd_add_blog_header');
 
 /*** SITEMAP ***/
 //add_action('after_404','msdlab_sitemap');
+
+
+/*** Attempt to fix timeouts ****/
+remove_filter( 'image_downsize', 'ithemes_filter_image_downsize', 10 ); // Latch in when a custom image size is called.
+remove_filter( 'intermediate_image_sizes_advanced', 'ithemes_filter_image_downsize_blockextra', 10 ); // Custom image size blocker to block generation of thumbs for sizes other sizes except when called.
