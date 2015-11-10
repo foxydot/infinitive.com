@@ -298,9 +298,36 @@
       }
     }
    .gform_body{
-     .gf_left_third,.gf_middle_third,.gf_right_third{
+     .gf_float{
        margin-top: 1em !important;
+       margin-bottom: 1em !important;
+       clear: none;
+       padding: 0;
      }
+     
+     li.gfield.gf_left_fourth, li.gfield.gf_middle_left_fourth, li.gfield.gf_middle_right_fourth, li.gfield.gf_right_fourth {
+    width: 23.6%;
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+}
+li.gfield.gf_right_fourth { margin: 0 0 .5em 0 }
+li.gfield.gf_middle_left_fourth, li.gfield.gf_middle_right_fourth, li.gfield.gf_left_fourth {
+    margin-bottom: .5em;
+    margin-right: 1.3% !important;
+    margin-top: 0;
+}
+li.gfield.gfield_error.gf_left_fourth, li.gfield.gfield_error.gf_middle_left_fourth, li.gfield.gfield_error.gf_middle_right_fourth, li.gfield.gfield_error.gf_right_fourth { width: 31.5% }
+li.gfield.gf_left_fourth { clear: left !important }
+li.gfield.gf_middle_left_fourth, li.gfield.gf_middle_right_fourth { clear: none !important }
+li.gfield.gfield_error.gf_middle_left_fourth, li.gfield.gfield_error.gf_middle_right_fourth {
+
+}
+li.gfield.gf_right_fourth { clear: right !important }
+li.gfield.gf_left_fourth input.medium, li.gfield.gf_left_fourth input.large, li.gfield.gf_left_fourth select.medium, li.gfield.gf_left_fourth select.large, li.gfield.gf_middle_left_fourth input.medium, li.gfield.gf_middle_left_fourth input.large, li.gfield.gf_middle_left_fourth select.medium, li.gfield.gf_middle_left_fourth select.large, li.gfield.gf_middle_right_fourth input.medium, li.gfield.gf_middle_right_fourth input.large, li.gfield.gf_middle_right_fourth select.medium, li.gfield.gf_middle_right_fourth select.large, li.gfield.gf_right_fourth input.medium, li.gfield.gf_right_fourth input.large, li.gfield.gf_right_fourth select.medium, li.gfield.gf_right_fourth select.large { width: 97.5% }
+li.gfield.gf_left_fourth+li.gsection, li.gfield.gf_right_fourth+li.gsection { padding: 1em 0 0.50em 0 }
+li.gfield.gf_left_fourth+li.gfield, li.gfield.gf_middle_left_fourth+li.gfield, li.gfield.gf_middle_right_fourth+li.gfield, li.gfield.gf_right_fourth+li.gfield, li.gfield.gf_left_fourth+.gform_footer, li.gfield.gf_middle_left_fourth+.gform_footer, li.gfield.gf_middle_right_fourth+.gform_footer, li.gfield.gf_right_fourth+.gform_footer { clear: both }
+     
      label{
        display: none;
      }

@@ -7473,10 +7473,78 @@ a.readmore-button {
 .page-template-showcase .showcase-footer .gform_footer .gform_button:hover {
   background-color: rgba(255, 255, 255, 0.15);
 }
-.page-template-showcase .showcase-footer .gform_body .gf_left_third,
-.page-template-showcase .showcase-footer .gform_body .gf_middle_third,
-.page-template-showcase .showcase-footer .gform_body .gf_right_third {
+.page-template-showcase .showcase-footer .gform_body .gf_float {
   margin-top: 1em !important;
+  margin-bottom: 1em !important;
+  clear: none;
+  padding: 0;
+}
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_left_fourth,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_left_fourth,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_right_fourth,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_right_fourth {
+  width: 23.6%;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+}
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_right_fourth {
+  margin: 0 0 0.5em 0;
+}
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_left_fourth,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_right_fourth,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_left_fourth {
+  margin-bottom: .5em;
+  margin-right: 1.3% !important;
+  margin-top: 0;
+}
+.page-template-showcase .showcase-footer .gform_body li.gfield.gfield_error.gf_left_fourth,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gfield_error.gf_middle_left_fourth,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gfield_error.gf_middle_right_fourth,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gfield_error.gf_right_fourth {
+  width: 31.5%;
+}
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_left_fourth {
+  clear: left !important;
+}
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_left_fourth,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_right_fourth {
+  clear: none !important;
+}
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_right_fourth {
+  clear: right !important;
+}
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_left_fourth input.medium,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_left_fourth input.large,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_left_fourth select.medium,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_left_fourth select.large,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_left_fourth input.medium,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_left_fourth input.large,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_left_fourth select.medium,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_left_fourth select.large,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_right_fourth input.medium,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_right_fourth input.large,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_right_fourth select.medium,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_right_fourth select.large,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_right_fourth input.medium,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_right_fourth input.large,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_right_fourth select.medium,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_right_fourth select.large {
+  width: 97.5%;
+}
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_left_fourth + li.gsection,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_right_fourth + li.gsection {
+  padding: 1em 0 0.5em 0;
+}
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_left_fourth + li.gfield,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_left_fourth + li.gfield,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_right_fourth + li.gfield,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_right_fourth + li.gfield,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_left_fourth + .gform_footer,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_left_fourth + .gform_footer,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_middle_right_fourth + .gform_footer,
+.page-template-showcase .showcase-footer .gform_body li.gfield.gf_right_fourth + .gform_footer {
+  clear: both;
 }
 .page-template-showcase .showcase-footer .gform_body label {
   display: none;
