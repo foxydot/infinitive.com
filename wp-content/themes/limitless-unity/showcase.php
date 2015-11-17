@@ -70,6 +70,9 @@ jQuery(window).load(function() {
   jQuery('.box').css('height',function(){
      return (jQuery(this).parent('.col-md-4').height() - 30) + "px"; 
   });
+  jQuery('body.ie .box').css('height',function(){
+     return (jQuery(this).parent('.col-md-4').height()) + "px"; 
+  });
 });
 
 
