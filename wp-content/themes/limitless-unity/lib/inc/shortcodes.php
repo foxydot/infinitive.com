@@ -24,6 +24,7 @@ function column_shortcode($atts, $content = null){
 	extract( shortcode_atts( array(
 	'cols' => '3',
 	'position' => '',
+	'class' => ''
 	), $atts ) );
 	switch($cols){
 		case 5:
@@ -31,13 +32,23 @@ function column_shortcode($atts, $content = null){
 			break;
 		case 4:
 			$classes[] = 'one-fouth';
+            $classes[] = 'col-md-3';
+            $classes[] = 'col-xs-12';
 			break;
 		case 3:
 			$classes[] = 'one-third';
+            $classes[] = 'col-md-4';
+            $classes[] = 'col-xs-12';
 			break;
-		case 2:
-			$classes[] = 'one-half';
-			break;
+        case 2:
+            $classes[] = 'one-half';
+            $classes[] = 'col-md-6';
+            $classes[] = 'col-xs-12';
+            break;
+        case 1:
+            $classes[] = 'col-md-12';
+            $classes[] = 'col-xs-12';
+            break;
 	}
 	switch($position){
 		case 'first':
@@ -46,11 +57,22 @@ function column_shortcode($atts, $content = null){
 		case 'last':
 			$classes[] = 'last';
 	}
+    $classes[] = $class;
 	return '<div class="'.implode(' ',$classes).'">'.$content.'</div>';
 }
 
 add_shortcode('columns','column_shortcode');
 
+function row_shortcode($atts, $content = null){
+    return '<div class="row">'.do_shortcode($content).'</div>';
+}
+
+add_shortcode('row','row_shortcode');
+
+
+
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 12);
 /**
  * 404 Sitemap
  * @author Bill Erickson 

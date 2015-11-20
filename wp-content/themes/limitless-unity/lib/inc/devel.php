@@ -23,5 +23,7 @@ if(!function_exists('ts_var')){
 //add_action('genesis_footer','msdlab_trace_actions');
 function msdlab_trace_actions(){
     global $wp_filter;
-    ts_var( $wp_filter['genesis_before_entry'] );
+    global $shortcode_tags;
+    //ts_var( $wp_filter['genesis_before_entry'] );
+    ts_data($shortcode_tags);
 }
