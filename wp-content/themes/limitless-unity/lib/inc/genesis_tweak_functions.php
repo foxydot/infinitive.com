@@ -303,6 +303,7 @@ function msdlab_casestudies_special_loop(){
 function msdlab_casestudies_special_loop_shortcode_handler($atts){
     $args = shortcode_atts( array(
     ), $atts );
+    remove_filter('the_content','wpautop',12);
     return msdlab_casestudies_special($args);
 }
 function msdlab_casestudies_special($args){

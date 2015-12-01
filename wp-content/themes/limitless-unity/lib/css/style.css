@@ -7441,6 +7441,33 @@ a.readmore-button {
   margin-bottom: 1.5em;
   position: relative;
 }
+.page-template-showcase .box:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.page-template-showcase .box:after:before,
+.page-template-showcase .box:after:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.page-template-showcase .box:after:after {
+  clear: both;
+}
+.page-template-showcase .box:after:before,
+.page-template-showcase .box:after:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.page-template-showcase .box:after:after {
+  clear: both;
+}
 .page-template-showcase .box .button-wrapper {
   position: absolute;
   bottom: 1.5em;

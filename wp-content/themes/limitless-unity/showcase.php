@@ -68,10 +68,9 @@ var $=jQuery;
 jQuery(window).load(function() {
   equalheight('.col-md-4');
   jQuery('.box').css('height',function(){
-     return (jQuery(this).parent('.col-md-4').height() - 30) + "px"; 
-  });
-  jQuery('body.ie .box').css('height',function(){
-     return (jQuery(this).parent('.col-md-4').height()) + "px"; 
+     var baseheight = jQuery(this).parent('.col-md-4').height();
+     jQuery(this).parent('.col-md-4').css('height',(baseheight+30) + 'px');
+     return baseheight + "px"; 
   });
 });
 
@@ -79,7 +78,9 @@ jQuery(window).load(function() {
 jQuery(window).resize(function(){
   equalheight('.col-md-4');
   jQuery('.box').css('height',function(){
-     return (jQuery(this).parent('.col-md-4').height() - 30) + "px"; 
+     var baseheight = jQuery(this).parent('.col-md-4').height();
+     jQuery(this).parent('.col-md-4').css('height',(baseheight+30) + 'px');
+     return baseheight + "px"; 
   });
 });
 
