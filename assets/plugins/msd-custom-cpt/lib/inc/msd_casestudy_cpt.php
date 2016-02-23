@@ -25,9 +25,11 @@ class MSDCaseStudyCPT {
         add_action( 'init', array(&$this,'register_cpt_casestudy') );
         
         //Filters
+        add_filter( 'genesis_attr_casestudy', array(&$this,'custom_add_casestudy_attr') );
         
         //Shortcodes
         add_shortcode( 'case-studies', array(&$this,'list_case_studies') );
+        add_shortcode('casestudies',  array(&$this,'msdlab_casestudies_special_loop_shortcode_handler'));
     }
 	
     public function register_taxonomy_practice_area() {
@@ -130,4 +132,121 @@ class MSDCaseStudyCPT {
 		
 		return '<ul class="publication-list case-studies">'.$publication_list.'</ul><div class="clear"></div>';
 	}	
+    
+    function msdlab_casestudies_special_loop(){
+        $args = array(
+        );
+        print $this->msdlab_casestudies_special($args);
+    }
+    function msdlab_casestudies_special_loop_shortcode_handler($atts){
+        $args = shortcode_atts( array(
+        ), $atts );
+        remove_filter('the_content','wpautop',12);
+        return $this->msdlab_casestudies_special($args);
+    }
+    
+    function msdlab_casestudies_special($args){
+        global $post,$case_study_key;
+        $origpost = $post;
+        $defaults = array(
+            'posts_per_page' => 1,
+            'post_type' => 'msd_casestudy',
+        );
+        $args = array_merge($defaults,$args);
+        //set up result array
+        $results = array();
+        //get all practice areas
+        $terms = get_terms('msd_practice-area');
+        //do a query for each practice area?
+        foreach($terms AS $term){
+            $args['msd_practice-area'] = $term->slug;
+            $this_result = get_posts($args);
+            $results[$term->slug] = $this_result;
+            $results[$term->slug]['term'] = $term;
+        }
+        //format result
+        foreach($results AS $case_study_key => $result){
+            $post = $result[0];
+            $ret .= genesis_markup( array(
+                    'html5'   => '<article %s>',
+                    'xhtml'   => sprintf( '<div class="%s">', implode( ' ', get_post_class() ) ),
+                    'context' => 'casestudy',
+                    'echo' => false,
+                ) );
+                $ret .= genesis_markup( array(
+                        'html5' => '<header>',
+                        'xhtml' => '<div class="header">',
+                        'echo' => false,
+                    ) ); 
+                    $ret .= '<a href="'.get_term_link($result['term']).'"><img class="header-img" /><div class="header-caption">More '.$result['term']->name.' ></div></a>';
+                $ret .= genesis_markup( array(
+                        'html5' => '</header>',
+                        'xhtml' => '</div>',
+                        'echo' => false,
+                    ) ); 
+                $ret .= genesis_markup( array(
+                        'html5' => '<content>',
+                        'xhtml' => '<div class="content">',
+                        'echo' => false,
+                    ) ); 
+                    $ret .= '<i class="icon-'.$case_study_key.'"></i>
+                        <h3 class="entry-title">'.$post->post_title.'</h3>
+                        <div class="entry-content">'.msdlab_excerpt($post->ID).'</div>
+                        <a href="'.get_permalink($post->ID).'" class="readmore">Read More ></a>';
+                $ret .= genesis_markup( array(
+                        'html5' => '</content>',
+                        'xhtml' => '</div>',
+                        'echo' => false,
+                    ) ); 
+            $ret .= genesis_markup( array(
+                    'html5' => '</article>',
+                    'xhtml' => '</div>',
+                    'context' => 'casestudy',
+                    'echo' => false,
+                ) );
+        }
+        //return
+        $post = $origpost;
+        return $ret;
+    }
+    /**
+     * Callback for dynamic Genesis 'genesis_attr_$context' filter.
+     * 
+     * Add custom attributes for the custom filter.
+     * 
+     * @param array $attributes The element attributes
+     * @return array $attributes The element attributes
+     */
+    function custom_add_casestudy_attr( $attributes ){
+            global $case_study_key;
+            $attributes['class']     = join( ' ', get_post_class(array($case_study_key,'icon-'.$case_study_key)) );
+            $attributes['itemtype']  = 'http://schema.org/CreativeWork';
+            $attributes['itemprop']  = 'caseStudy';
+            // return the attributes
+            return $attributes;      
+    }
+    function msdlab_do_casestudy_excerpt() {
+
+        global $post;
+    
+        if ( is_singular() ) {
+            the_content();
+    
+            if ( is_single() && 'open' === get_option( 'default_ping_status' ) && post_type_supports( $post->post_type, 'trackbacks' ) ) {
+                echo '<!--';
+                trackback_rdf();
+                echo '-->' . "\n";
+            }
+    
+            if ( is_page() && apply_filters( 'genesis_edit_post_link', true ) )
+                edit_post_link( __( '(Edit)', 'genesis' ), '', '' );
+        }
+        else {
+                    $ret .= '
+                        <div>'.msdlab_excerpt($post->ID).'</div>
+                        <a href="'.get_permalink($post->ID).'" class="readmore">Read More ></a>';
+                print $ret;
+        }
+    
+    }
 }
