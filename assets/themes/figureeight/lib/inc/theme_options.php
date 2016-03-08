@@ -31,7 +31,7 @@ function msdlab_blue_options_scripts(){
 }
 function msdlab_blue_defaults( $defaults ) {
 
-    $defaults['color'] = '';
+    $defaults['color'] = 'grey';
     $defaults['logo'] = '';
     return $defaults;
 }
@@ -106,9 +106,8 @@ $modal_update_href = esc_url( add_query_arg( array(
         <label class="col-md-3">Color Scheme</label>
         <div class="col-md-9">
         <select name="<?php echo GENESIS_SETTINGS_FIELD; ?>[color]">
-            <option value="blue"<?php print $color == 'blue'?' selected':''; ?>>Blue</option>
-            <option value="green"<?php print $color == 'green'?' selected':''; ?>>Green</option>
-            <option value="purple"<?php print $color == 'purple'?' selected':''; ?>>Purple</option>
+            <option value="grey"<?php print $color == 'grey'?' selected':''; ?>>Grey</option>
+            <option value="white"<?php print $color == 'white'?' selected':''; ?>>White</option>
         </select>
         </div>
     </div>

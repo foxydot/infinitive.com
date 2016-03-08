@@ -1,30 +1,26 @@
 @import 'lesshat';
 /* Import Fonts
 ------------------------------------------------------------ */
-@import url(//fonts.googleapis.com/css?family=Raleway:400,300,700);
+@import url(//fonts.googleapis.com/css?family=Josefin+Slab:400,100,300,600,700|Amatic+SC:400,700|Rock+Salt);
 
 /* Font Stacks */
 .customserif(@size:1.6) {
-  font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: unit((@size*10),px);
   font-size: unit(@size,rem);
   line-height: 1.625;
 }
 .custombody(@size:1.6) {
-  font-family: "Raleway","Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Josefin Slab","Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: unit((@size*10),px);
   font-size: unit(@size,rem);
   line-height: 1.625;
 }
 
-.custombodythin(@size:1.6){
-  .custombody(@size);
-  font-family: "Helvetica Neue Thin", "Trebuchet MS", Calibri, sans-serif;
-}
 .customheader(@size:1.6) {
-  font-family: "Raleway","Trebuchet MS", Calibri, sans-serif;
+  font-family: "Amatic SC","Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: unit((@size*10),px);
   font-size: unit(@size,rem);
@@ -41,7 +37,7 @@
 
 /* Colors */
 @red: #f00;
-@orange: #F16528;
+@orange: #FF7D23;
 @yellow: #ff0;
 @green: #9CA728;
 @blue: #0F6BAE;
@@ -73,7 +69,7 @@
 @ltgrey: #959595;
 @mdgrey: #7F7F7F;
 @medgrey: @mdgrey;
-@dkgrey: #353535;
+@dkgrey: #3D3C3D;
 @black: #000;
 
 //mixins for social colors
@@ -92,6 +88,35 @@
 @sharethis: #00BF00;
 @contact: #999999;
 @rss: #F37D2A;
+
+/* Buttons */
+.button(@background:@white,@color:@white) {
+  padding: 6px 24px;
+  .customserif(1.6);
+  color: @color;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: table;
+  margin: 12px 0;
+  text-decoration: none;
+  background-color: fade(@background,0%);
+  border: 1px solid @color;
+}
+
+.button{
+  .button();
+}
+
+.button-hover(@background:@white,@color:@white) {
+  .button(@background,@color);
+  background-color: fade(@background,40%);
+}
+
+.button:hover,
+.button a:hover, {
+  .button-hover();
+}
 
 /* Arrows */
 .arrow-down(@color:@white){
@@ -200,34 +225,6 @@
     right: 0;
     width: 50%;
   }
-}
-
-
-/* Buttons */
-.button(@color:@orange) {
-  background-color: @color;
-  border-radius: 30px;
-  padding: 6px 24px;
-  .customsanserif;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: normal;
-  text-transform: uppercase;
-  display: table;
-  margin: 12px auto;
-  text-decoration: none;
-  width: 80%;
-}
-
-
-.button-hover(@color:@orange) {
-  .button(@color);
-  background-color: darken(@color,10%);
-}
-
-.button:hover,
-.button a:hover, {
-  .button-hover();
 }
 
 /* Clears */

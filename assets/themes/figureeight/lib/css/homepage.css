@@ -1,10 +1,10 @@
 /* Import Fonts
 ------------------------------------------------------------ */
-@import url(//fonts.googleapis.com/css?family=Raleway:400,300,700);
+@import url(//fonts.googleapis.com/css?family=Josefin+Slab:400,100,300,600,700|Amatic+SC:400,700|Rock+Salt);
 /* Font Stacks */
 .customsansserif,
 .customsanserif {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -15,28 +15,44 @@
 }
 /* Colors */
 /* Neutrals */
-/* Arrows */
 /* Buttons */
-.button:hover,
-.button a:hover {
-  background-color: #f16528;
-  border-radius: 30px;
+.button {
   padding: 6px 24px;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  color: #FFFFFF;
+  color: #FFF;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 700;
   text-transform: uppercase;
   display: table;
-  margin: 12px auto;
+  margin: 12px 0;
   text-decoration: none;
-  width: 80%;
-  background-color: #d84b0e;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #FFF;
 }
+.button:hover,
+.button a:hover {
+  padding: 6px 24px;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: table;
+  margin: 12px 0;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #FFF;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+/* Arrows */
 /* Clears */
 .msd-clearfix {
   content: ".";
@@ -45,15 +61,9 @@
   clear: both;
   visibility: hidden;
 }
-.site-inner div {
-  text-align: center;
-}
 .site-inner .button,
 .site-inner .button:hover {
   width: auto;
-}
-.sectioned-page-wrapper .section {
-  text-align: center;
 }
 .sectioned-page-wrapper .section-products .row {
   margin: 3rem 0;

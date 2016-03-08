@@ -12,7 +12,7 @@ Template Name: Front Page
  * hero + 3 widgets
  */
 //add the hero
-add_action('genesis_after_header','msdlab_hero');
+//add_action('genesis_after_header','msdlab_hero');
 //add the callout
 //add_action('genesis_after_header','msd_call_to_action');
 //move footer and add three homepage widgets
