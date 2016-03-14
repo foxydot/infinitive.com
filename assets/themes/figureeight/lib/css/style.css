@@ -6737,12 +6737,13 @@ article.entry {
   width: 50%;
 }
 .entry-meta {
-  color: #999;
+  color: #FFF;
   font-size: 14px;
   font-size: 1.4rem;
 }
 .entry-meta a {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 0;
+  color: #FF7D23;
 }
 .entry-header .entry-meta {
   margin-bottom: 24px;
@@ -6798,14 +6799,29 @@ article.entry {
 .archive-pagination li {
   display: inline;
 }
-.archive-pagination li a {
-  background-color: #333;
-  border-radius: 3px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  padding: 8px 12px;
-  padding: 0.8rem 1.2rem;
+.archive-pagination a {
+  padding: 6px 24px;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: table;
+  margin: 12px 0;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #FFF;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  margin: 0;
+  clear: both;
 }
 .archive-pagination li a:hover,
 .archive-pagination li.active a {
@@ -6885,23 +6901,6 @@ li.comment {
   padding: 24px;
   padding: 2.4rem;
 }
-/* Featured Post Grid
------------------------------------------------------------- */
-.genesis-grid-even {
-  float: right;
-  padding: 0 0 15px;
-  width: 48%;
-}
-.genesis-grid-odd {
-  clear: both;
-  float: left;
-  padding: 0 0 15px;
-  width: 48%;
-}
-.genesis-grid-even,
-.genesis-grid-odd {
-  margin: 0 0 20px;
-}
 #content hr {
   background: #fff;
   border: 0;
@@ -6911,18 +6910,11 @@ li.comment {
   margin-bottom: 30px;
   width: 100%;
 }
-.genesis-grid.post {
-  border-bottom: medium none;
-}
 .more .comments {
   color: #888888;
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
-}
-.genesis-grid p {
-  font-size: 13px;
-  line-height: 21px;
 }
 .to_comments span {
   color: #111111;
@@ -6931,17 +6923,10 @@ li.comment {
 .to_comments .bracket {
   color: #ccc;
 }
-.genesis-grid .thumbnail {
-  margin-bottom: 10px;
-}
 .to_comments a {
   color: #666666;
   font-size: 12px;
   padding: 0 5px;
-}
-.genesis-grid h2 a {
-  font-size: 20px;
-  line-height: 22px;
 }
 /*
 Sidebars
@@ -7427,6 +7412,115 @@ Site Footer
   .sectioned-page-wrapper .section.summary .section-body .bkg-white .content {
     margin-left: 0px;
   }
+}
+.blog-header h3 {
+  width: auto;
+  font-size: 4rem;
+  padding: 0.4rem 2rem 2.4rem;
+  background: url(../img/blog_bubble.png) no-repeat top left;
+  margin: 0;
+  letter-spacing: 0.4rem;
+}
+.blog-header p {
+  margin-top: -1.4rem;
+  margin-left: 6rem;
+  max-width: 36rem;
+}
+.genesis-grid .thumbnail {
+  border-radius: 0;
+}
+.genesis-grid .entry-header .entry-title {
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.625;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+.genesis-feature:before,
+.genesis-feature:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.genesis-feature:after {
+  clear: both;
+}
+.genesis-feature:before,
+.genesis-feature:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.genesis-feature:after {
+  clear: both;
+}
+.genesis-feature .entry-header .entry-title {
+  background: #FF7D23;
+  margin-left: -100rem;
+  padding-left: 100rem;
+  padding-right: 10rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.625;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #FFF;
+}
+.genesis-feature .entry-content .readmore-button {
+  padding: 6px 24px;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: table;
+  margin: 12px 0;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #FFF;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  margin: 0;
+}
+.section-header .recent-posts-header {
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #FFF;
+}
+/* Featured Post Grid
+------------------------------------------------------------ */
+.genesis-grid-even {
+  float: right;
+  padding: 0 0 15px;
+  width: 48%;
+}
+.genesis-grid-odd {
+  clear: both;
+  float: left;
+  padding: 0 0 15px;
+  width: 48%;
+}
+.genesis-grid-even,
+.genesis-grid-odd {
+  margin: 0 0 20px;
+}
+.genesis-grid.post {
+  border-bottom: medium none;
 }
 .msd-fa.block,
 .msd-icon.block {

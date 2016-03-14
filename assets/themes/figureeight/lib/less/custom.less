@@ -1,3 +1,89 @@
+//blog custom
+.blog-header{
+  h3{
+    width: auto;
+    font-size: 4rem;
+    padding: 0.4rem 2rem 2.4rem;
+    background: url(../img/blog_bubble.png) no-repeat top left;
+    margin: 0;
+    letter-spacing: 0.4rem;
+  }  
+  p{
+    margin-top: -1.4rem;
+    margin-left: 6rem;
+    max-width: 36rem;
+  }
+}
+.genesis-grid{
+  .thumbnail{
+    border-radius: 0;
+  }
+  .entry-header{
+    .entry-title{
+      .customserif(1.8);
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+  }
+}
+.genesis-feature{
+  .clearfix();
+  .entry-header{
+    .entry-title{
+      background: @orange;
+      margin-left: -100rem;
+      padding-left: 100rem;
+      padding-right: 10rem;
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+      .customserif(1.8);
+      font-weight: 700;
+      line-height: 1.25;
+      text-transform: uppercase;
+      color: @white;
+    }
+  }
+  .entry-content{
+    .readmore-button{
+      .button();
+      margin: 0;
+    }
+  }
+}
+.section-header{
+  .recent-posts-header{
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid @white;
+  }
+}
+/* Featured Post Grid
+------------------------------------------------------------ */
+
+.genesis-grid-even {
+  float: right;
+  padding: 0 0 15px;
+  width: 48%;
+}
+
+.genesis-grid-odd {
+  clear: both;
+  float: left;
+  padding: 0 0 15px;
+  width: 48%;
+}
+
+.genesis-grid-even,
+.genesis-grid-odd {
+  margin: 0 0 20px;
+}
+
+
+.genesis-grid.post {
+    border-bottom: medium none;
+}
+
+
+//icons
 .msd-fa, .msd-icon{
   &.block{
     display: block;

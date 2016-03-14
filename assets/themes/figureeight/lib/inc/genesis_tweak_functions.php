@@ -337,7 +337,7 @@ function msdlab_blog_grid(){
         add_action( 'genesis_loop', 'msdlab_grid_loop_helper' );
         add_action('genesis_before_entry', 'msdlab_switch_content');
         remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
-        //add_filter('genesis_grid_loop_post_class', 'msdlab_grid_add_bootstrap');
+        add_filter('genesis_grid_loop_post_class', 'msdlab_grid_add_bootstrap');
     }
 }
 function msdlab_grid_loop_helper() {
@@ -435,12 +435,12 @@ function msd_add_loop_counter_to_html5_loop(){
 
 function msdlab_grid_divider() {
     global $loop_counter, $paged;
-    if($loop_counter == 1 && $paged == 0){print '<div class="section-header"><h3 class="recent-posts-header">Recent Posts</h3></div><hr class="grid-separator" />';}
-    if(is_paged()){
+    if($loop_counter == 1 && $paged == 0){print '<div class="section-header"><h3 class="recent-posts-header">Recent Posts</h3></div>';}
+    /*if(is_paged()){
         if ((($loop_counter) % 2 == 0) && !($paged == 0 && $loop_counter < 2)) echo '<hr class="grid-separator" />';
     } else {
         if ((($loop_counter + 1) % 2 == 0) && !($paged == 0 && $loop_counter < 2)) echo '<hr class="grid-separator" />';
-    }
+    }*/
     
 }
  function msdlab_grid_add_bootstrap($classes){

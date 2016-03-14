@@ -65,9 +65,9 @@ add_action('genesis_after_header', 'genesis_do_breadcrumbs'); //to outside of th
 add_filter('excerpt_more', 'sp_read_more_link');
 add_filter( 'the_content_more_link', 'sp_read_more_link' );
 
-remove_action( 'genesis_before_post_content', 'genesis_post_info', 12 ); //remove the info (date, posted by,etc.)
+//remove_action( 'genesis_before_post_content', 'genesis_post_info', 12 ); //remove the info (date, posted by,etc.)
 remove_action( 'genesis_after_post_content', 'genesis_post_meta' ); //remove the meta (filed under, tags, etc.)
-remove_action( 'genesis_entry_header', 'genesis_post_info', 12 ); //remove the info (date, posted by,etc.)
+//remove_action( 'genesis_entry_header', 'genesis_post_info', 12 ); //remove the info (date, posted by,etc.)
 remove_action( 'genesis_entry_footer', 'genesis_post_meta'); //remove the meta (filed under, tags, etc.)
 //add_action( 'msdlab_title_area', 'msdlab_do_post_subtitle' );
 
