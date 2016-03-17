@@ -25,9 +25,9 @@ function msdlab_favicon_filter( $favicon_url ) {
 
 //add_action('genesis_before_content','msd_post_image');
 /**
- * Manipulate the featured image
+ * Manipulate the featured image there is some WTF going on here.
  */
-function msd_post_image() {
+function msdlab_post_image() {
     global $post;
     //setup thumbnail image args to be used with genesis_get_image();
     $size = 'post-image'; // Change this to whatever add_image_size you want
@@ -36,20 +36,20 @@ function msd_post_image() {
             'alt'   => $post->post_title,
             'title' => $post->post_title,
     );
-
     // This is the most important part!  Checks to see if the post has a Post Thumbnail assigned to it. You can delete the if conditional if you want and assume that there will always be a thumbnail
-    if ( has_post_thumbnail() && is_page() ) {
-        msdlab_page_banner();
-    } elseif ( has_post_thumbnail() && is_cpt('project') ) {
-        if( is_single() ){
+    if ( has_post_thumbnail() ){
+        if(is_page() ) {
             msdlab_page_banner();
+        } elseif ( is_cpt('project') ) {
+            if( is_single() ){
+                msdlab_page_banner();
+            }
+        } else {
+            print '<section class="header-image">';
+            printf( '<a title="%s" href="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), genesis_get_image( array( 'size' => $size, 'attr' => $default_attr ) ) );
+            print '</section>';
         }
-    } elseif ( has_post_thumbnail() ){
-        print '<section class="header-image">';
-        printf( '<a title="%s" href="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), genesis_get_image( array( 'size' => $size, 'attr' => $default_attr ) ) );
-        print '</section>';
-    }
-
+    } 
 }
 
 /**

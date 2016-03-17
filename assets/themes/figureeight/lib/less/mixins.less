@@ -118,6 +118,21 @@
   .button-hover();
 }
 
+/* Special header */
+.overflow-header(@background-color: @orange,@color: @white){
+      background: @background-color;
+      margin-left: -100rem;
+      padding-left: 100rem;
+      padding-right: 10rem;
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+      .customserif(1.8);
+      font-weight: 700;
+      line-height: 1.25;
+      text-transform: uppercase;
+      color: @color;
+}
+
 /* Arrows */
 .arrow-down(@color:@white){
   position: relative;
@@ -235,3 +250,9 @@
     clear: both;
     visibility: hidden;
 }
+
+/*
+ * Questions
+ * 1) On the blog, are we going to use the featured image on the single blog page, or apply the image in the content (as we've done in the past.)
+ * 
+ */

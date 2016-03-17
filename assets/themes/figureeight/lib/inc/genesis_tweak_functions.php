@@ -397,6 +397,7 @@ function msdlab_post_navigation_links() {
 // Customize Grid Loop Content
 function msdlab_switch_content() {
     remove_action('genesis_entry_content', 'genesis_grid_loop_content');
+    remove_action( 'genesis_entry_header', 'msdlab_do_post_subtitle', 13);
     add_action('genesis_entry_content', 'msdlab_grid_loop_content');
     add_action('genesis_after_entry', 'msdlab_grid_divider');
     add_action('genesis_entry_header', 'msdlab_grid_loop_image', 4);
@@ -409,7 +410,7 @@ function msdlab_grid_loop_content() {
         if ( $_genesis_loop_args['feature_image_size'] ) {
             printf( '<a href="%s" title="%s" class="featured_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image( array( 'size' => $_genesis_loop_args['feature_image_size'], 'attr' => array( 'class' => esc_attr( $_genesis_loop_args['feature_image_class'] ) ) ) ) );
         }
-
+msdlab_do_post_subtitle();
         the_excerpt();  
         printf( '<a href="%s" title="%s" class="readmore-button alignright">%s</a>', get_permalink(), the_title_attribute('echo=0'), 'Continue Reading >' );
            
@@ -462,7 +463,7 @@ function msd_add_blog_header(){
     if(get_post_type() == 'post' || get_section()=='blog'){
         $header = '
         <div id="blog-header" class="blog-header">
-            <h3>Infinitive Difference Blog</h3>
+            <h3><a href="'.get_permalink( get_option( 'page_for_posts' ) ).'">Infinitive Difference Blog</a></h3>
             <p>Get in the know and keep current with big-picture thinking and actionable insights.</p>
         </div>';
     }

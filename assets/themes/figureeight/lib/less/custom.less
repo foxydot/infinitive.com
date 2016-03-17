@@ -7,6 +7,15 @@
     background: url(../img/blog_bubble.png) no-repeat top left;
     margin: 0;
     letter-spacing: 0.4rem;
+    a{
+      &:hover{
+        color: @orange;
+        text-decoration: none;
+      }
+    }
+    &:hover{
+      opacity: .9;
+    }
   }  
   p{
     margin-top: -1.4rem;
@@ -26,24 +35,25 @@
     }
   }
 }
-.genesis-feature{
+main .genesis-feature,
+.single-post main .post{
   .clearfix();
   .entry-header{
     .entry-title{
-      background: @orange;
-      margin-left: -100rem;
-      padding-left: 100rem;
-      padding-right: 10rem;
-      padding-top: 0.4rem;
-      padding-bottom: 0.4rem;
-      .customserif(1.8);
-      font-weight: 700;
-      line-height: 1.25;
-      text-transform: uppercase;
+      .overflow-header();
+    }
+    .entry-subtitle{
+      .customheader(3);
+      font-weight: 300;
       color: @white;
+      background-color: transparent;
+      line-height: 1.25;
     }
   }
   .entry-content{
+    h2:not(.entry-subtitle){
+      .overflow-header();
+    }
     .readmore-button{
       .button();
       margin: 0;
