@@ -7,10 +7,10 @@
       article.team_member{
         .make-sm-column(6,15px);
         .make-xs-column(12,15px);
-        min-height: 275px;
         margin-bottom: 15px;
         .wrap{
           background-color: @medgrey;
+          min-height: 300px;
           .clearfix();
         }
         ul{
@@ -67,6 +67,116 @@
         }
       }
     }
+    }
+  }
+}
+
+.single-team_member{
+  .section-header{
+    margin: 0 1rem;
+    h3{
+      font-size: 3.6rem;
+    }
+   }
+  main.content{
+    article{
+      background-color: @medgrey;
+      .clearfix();
+      aside.headshot{
+        .make-xs-column(3);
+        padding: 0;
+        ul{
+          li{
+            list-style: none outside none;
+            padding: 0 1rem;
+            font-weight: 700;
+            a{
+              text-transform: uppercase;
+              color: @white;
+              i{
+                color: @orange;
+              }
+              &.email{
+                text-transform: none;
+              }
+            }
+          }
+        }
+      }
+      content{
+        .make-xs-column(9);
+        padding: 0;
+          header,.entry-content,footer{
+            display: block;
+            padding: 1rem;
+          }
+          header{
+            background: @orange;
+            .entry-title,.team-title{
+              .customserif(2.0);
+              color: @white;
+              font-weight: 700;
+              line-height: 1.25;
+              margin: 0;
+            }
+            .entry-title{
+              text-transform: uppercase;
+            }
+          }
+          .entry-content{
+            h2{
+              .customserif(1.8);
+              text-transform: uppercase;
+              font-weight: 700;
+              margin-bottom: 0;
+            }
+          }
+          footer{
+            text-align: right;
+            .button{
+              display: inline-block;
+              margin: 0;
+            }
+          }
+      }
+    }
+  }
+  aside.sidebar-primary{
+    .widget{
+      padding: 1rem;
+      margin: 2rem 0;
+      color: @white;
+      &.first-child{
+        margin-top: 0;
+      }
+      &.widget-insights{
+        background: @orange;
+      }
+      &.widget-news{
+        background: @medgrey;
+      }
+      &.widget-video{
+        background: @medgrey;
+      }
+      .insights-header{
+        margin: 0;
+      }
+      .widget-title{
+        text-transform: uppercase;
+        font-weight: 700;
+        color: @white;
+      }
+      .insights-section{
+        .customserif();
+        line-height: 1.25;
+        article{
+          margin-bottom: 0.25em;
+        }
+      }
+      a,a:link,a:visited{
+        color: @white;
+        border-bottom: 0;
+      }
     }
   }
 }

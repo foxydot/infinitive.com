@@ -249,7 +249,7 @@ if (!class_exists('MSDTeamCPT')) {
                             'xhtml' => '<div class="aside">',
                             'echo' => false,
                         ) ); 
-                    $ret .= get_the_post_thumbnail($result->ID,'mini-headshot',array('itemprop'=>'image'));
+                    $ret .= get_the_post_thumbnail($result->ID,'team-mini-headshot',array('itemprop'=>'image'));
                                 $ret .= '
                                 <ul>';
                     if($contact_info->get_the_value('_team_linked_in')){

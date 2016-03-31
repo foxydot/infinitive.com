@@ -4,17 +4,9 @@
  */
 add_image_size('tiny-post-thumb', 45, 45, TRUE);
 add_image_size('nav-post-thumb', 540, 300, true);
-add_image_size('headshot-lg', 330, 330, array('center','top'));
-add_image_size('headshot-md', 220, 220, array('center','top'));
-add_image_size('headshot-sm', 178,220, array('center','top'));
 add_image_size('mini-headshot', 178,220, array('center','top'));
-add_image_size('mini-thumbnail', 90, 90, TRUE);
-add_image_size('medlg', 500, 500, FALSE);
 add_image_size('facebook', 200, 200, TRUE);
 add_image_size('linkedin', 180, 110, TRUE);
-
-
-add_image_size('tiny_thumb', 45, 45, TRUE);
 add_image_size('child_full', 730, 380, false);
 add_image_size('child_thumbnail', 350, 170, false);
 
