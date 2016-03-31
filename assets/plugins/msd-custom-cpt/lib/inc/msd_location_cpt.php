@@ -83,8 +83,6 @@ if (!class_exists('MSDLocationCPT')) {
 			if($current_screen->post_type == $this->cpt){
 				wp_enqueue_script('media-upload');
 				wp_enqueue_script('thickbox');
-				wp_register_script('my-upload', plugin_dir_url(dirname(__FILE__)).'/js/msd-upload-file.js', array('jquery','media-upload','thickbox'),FALSE,TRUE);
-				wp_enqueue_script('my-upload');
 			}
 		}
 		

@@ -1,5 +1,5 @@
 <?php 
-global $project_info,$location_info,$client_info,$additional_files,$contact_info,$additional_info,$primary_practice_area;
+global $project_info,$location_info,$client_info,$additional_files,$contact_info,$additional_info;
 global $subtitle,$documents,$video,$news;
 
 $video = new WPAlchemy_MetaBox(array
@@ -130,7 +130,7 @@ $additional_info = new WPAlchemy_MetaBox(array
         'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
         'prefix' => '_team_member_' // defaults to NULL
     ));
-        
+/*        
 $primary_practice_area = new WPAlchemy_MetaBox(array
     (
         'id' => '_primary_practice_area',
@@ -143,3 +143,5 @@ $primary_practice_area = new WPAlchemy_MetaBox(array
         'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
         'prefix' => '_team_member_' // defaults to NULL
     ));
+ * /
+ */

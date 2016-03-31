@@ -10,6 +10,12 @@ add_image_size('linkedin', 180, 110, TRUE);
 add_image_size('child_full', 730, 380, false);
 add_image_size('child_thumbnail', 350, 170, false);
 
+// force WP to try GD before IM
+//add_filter( 'wp_image_editors', 'change_graphic_lib' );
+function change_graphic_lib($array) {
+  return array( 'WP_Image_Editor_GD', 'WP_Image_Editor_Imagick' );
+}
+
 /* Display a custom favicon */
 add_filter( 'genesis_pre_load_favicon', 'msdlab_favicon_filter' );
 function msdlab_favicon_filter( $favicon_url ) {
