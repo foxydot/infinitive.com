@@ -17,7 +17,6 @@ if (!class_exists('MSDTeamDisplay')) {
             //"Constants" setup
             $this->plugin_url = plugin_dir_url('msd-custom-cpt/msd-custom-cpt.php');
             $this->plugin_path = plugin_dir_path('msd-custom-cpt/msd-custom-cpt.php');
-            add_image_size('team-mini-headshot',178,220, array('center','top'));
             //Actions
                         
             //Filters

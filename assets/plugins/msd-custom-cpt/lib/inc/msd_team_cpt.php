@@ -36,6 +36,8 @@ if (!class_exists('MSDTeamCPT')) {
             add_shortcode('teammembers', array(&$this,'msdlab_team_member_special_loop_shortcode_handler'));
             add_shortcode('team-members', array(&$this,'msdlab_team_member_special_loop_shortcode_handler'));
             
+            add_image_size('team-mini-headshot',178,220, array('center','top'));
+            
         }
         
         public function register_tax_practice_areas() {
@@ -234,10 +236,9 @@ if (!class_exists('MSDTeamCPT')) {
                 $firstname = $titlearray[0];
                 $firstname = (substr($firstname, -1) == 's')?$firstname."'":$firstname."'s";
                 $contact_info->the_meta($result->ID);
-                
                 $ret .= genesis_markup( array(
                         'html5'   => '<article %s>',
-                        'xhtml'   => sprintf( '<div class="%s">', implode( ' ', get_post_class() ) ),
+                        'xhtml'   => '<div class="team_member type-team_member status-publish has-post-thumbnail entry">',
                         'context' => 'team_member',
                         'echo' => false,
                     ) );
@@ -298,7 +299,7 @@ if (!class_exists('MSDTeamCPT')) {
                             'xhtml' => '<div class="content">',
                             'echo' => false,
                         ) ); 
-                    //$ret .= msdlab_get_excerpt($post->ID,40,'');
+                    $ret .= msdlab_get_excerpt($post->ID,40,'');
                     $ret .= genesis_markup( array(
                             'html5' => '</content>',
                             'xhtml' => '</div>',
@@ -309,9 +310,9 @@ if (!class_exists('MSDTeamCPT')) {
                             'xhtml' => '<div class="footer">',
                             'echo' => false,
                         ) );   
-                        //if($contact_info->get_the_value('_team_position')=='true'){ $ret .= '
-                          //  <a href="'.get_permalink($post->ID).'" class="readmore button">Read More ></a>';
-                            //}
+                        if($contact_info->get_the_value('_team_position')=='true'){ $ret .= '
+                           <a href="'.get_permalink($post->ID).'" class="readmore button">Read More ></a>';
+                        }
                     $ret .= genesis_markup( array(
                             'html5' => '</footer>',
                             'xhtml' => '</div>',
