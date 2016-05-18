@@ -851,5 +851,3 @@ if(!function_exists('msdlab_custom_hooks_management')){
         if(get_option('site_lockout')){print '<div style="width: 100%; position: fixed; top: 0; z-index: 100000; background-color: red; padding: 12px; color: white; font-weight: bold; font-size: 24px;text-align: center;">'.get_option('site_lockout').'</div>';}
     }
 }
-
-

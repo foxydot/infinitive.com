@@ -1,25 +1,4 @@
 <?php
-function msdlab_excerpt($content){
-    global $post;
-    return msdlab_get_excerpt($post->ID);
-}
-
-function msdlab_get_excerpt( $post_id, $excerpt_length = 50, $trailing_character = '&nbsp;<i class="fa fa-arrow-circle-right"></i>' ) {
-    $the_post = get_post( $post_id );
-    $the_excerpt = strip_tags( strip_shortcodes( $the_post->post_excerpt ) );
-     
-    if ( empty( $the_excerpt ) )
-        $the_excerpt = strip_tags( strip_shortcodes( $the_post->post_content ) );
-     
-    $words = explode( ' ', $the_excerpt, $excerpt_length + 1 );
-     
-    if( count( $words ) > $excerpt_length )
-        $words = array_slice( $words, 0, $excerpt_length );
-     
-    $the_excerpt = implode( ' ', $words ) . '<a href="'.get_permalink($post_id).'">'.$trailing_character.'</a>';
-    return $the_excerpt;
-}
-
 // cleanup tinymce for SEO
 function fb_change_mce_buttons( $initArray ) {
 	//@see http://wiki.moxiecode.com/index.php/TinyMCE:Control_reference
@@ -120,14 +99,7 @@ function get_topmost_parent($post_id){
 	}
 	return $parent_id;
 }
-//add_filter( 'the_content', 'msd_remove_msword_formatting' );
-function msd_remove_msword_formatting($content){
-	global $allowedposttags;
-    $allowedposttags['div']['style'] = true;
-    $allowedposttags['span']['style'] = false;
-	$content = wp_kses($content,$allowedposttags);
-	return $content;
-}
+
 add_action('init','msd_allow_all_embeds');
 function msd_allow_all_embeds(){
 	global $allowedposttags;
@@ -154,6 +126,10 @@ function msd_allow_all_embeds(){
 			"height" => array(),
 			"width" => array()
 	);
+    $allowedposttags['script'] = array( //for calls to action
+        'type' => array(),
+        'src' => array(),
+    );
 }
 
 /* ---------------------------------------------------------------------- */
@@ -176,6 +152,70 @@ if ( !function_exists('msdlab_has_shortcode') ) {
         // return our results
         return $found;
     
+    }
+}
+
+if(!function_exists('msdlab_excerpt')){    
+    function msdlab_excerpt($post_id, $excerpt_length = 50, $trailing_character = '&nbsp;<i class="fa fa-arrow-circle-right"></i>'){
+        if(!$post_id){
+            global $post;
+            $post_id = $post->ID;
+        }
+        return msdlab_get_excerpt($post_id);
+    }
+    
+    function msdlab_get_excerpt( $post_id, $excerpt_length = 50, $trailing_character = '&nbsp;<i class="fa fa-arrow-circle-right"></i>' ) {
+        $the_post = get_post( $post_id );
+        $the_excerpt = strip_tags( strip_shortcodes( $the_post->post_excerpt ) );
+         
+        if ( empty( $the_excerpt ) )
+            $the_excerpt = strip_tags( strip_shortcodes( $the_post->post_content ) );
+         
+        $words = explode( ' ', $the_excerpt, $excerpt_length + 1 );
+         
+        if( count( $words ) > $excerpt_length )
+            $words = array_slice( $words, 0, $excerpt_length );
+         
+        $the_excerpt = implode( ' ', $words ) . '<a href="'.get_permalink($post_id).'">'.$trailing_character.'</a>';
+        return $the_excerpt;
+    }
+    
+}
+
+if(!function_exists('strip_empty_tags')){
+    function strip_empty_tags($content){
+        // clean up p tags around block elements
+        $content = preg_replace( array(
+            '#<p>\s*<(div|aside|section|article|header|footer)#',
+            '#</(div|aside|section|article|header|footer)>\s*</p>#',
+            '#</(div|aside|section|article|header|footer)>\s*<br ?/?>#',
+            '#<(div|aside|section|article|header|footer)(.*?)>\s*</p>#',
+            '#<p>\s*</(div|aside|section|article|header|footer)#',
+        ), array(
+            '<$1',
+            '</$1>',
+            '</$1>',
+            '<$1$2>',
+            '</$1',
+        ), $content );
+        return preg_replace('#<p>(\s|&nbsp;)*+(<br\s*/*>)*(\s|&nbsp;)*</p>#i', '', $content);
+    }
+}
+
+if(!function_exists('trim_whitespace')){
+    function trim_whitespace($content){
+        $content = preg_replace( array(
+            '#^(<br\s*\/?>)(.*?)#s',
+            '#^(\s*)(.*?)#s',
+            '#(.*?)(<br\s*\/?>)$#s',
+            '#(.*?)(\s*)$#s',
+        ), array(
+            '$2',
+            '$2',
+            '$1',
+            '$1',
+        ), $content );
+        return $content;
     }
 }
 

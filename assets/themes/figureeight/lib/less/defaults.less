@@ -73,21 +73,17 @@ ul {
   padding: 0;
 }
 
-blockquote,
-blockquote::before {
-  color: @medgrey;
-}
-
 blockquote {
   margin: 40px 40px 24px;
   margin: 4rem 4rem 2.4rem;
   border: none;
   p{
-    .customsanserif;
+    .customsanserif();
   }
 }
 
 blockquote::before {
+  .customsanserif();
   content: "\201C";
   display: block;
   font-size: 30px;
@@ -117,13 +113,10 @@ address{
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4 {
   .customheader();
   line-height: 1.2;
-  margin: 0 0 16px;
-  margin: 0 0 1.6rem;
+  margin: 0.5em 0 0.25em;
 }
 
 h1 {
@@ -146,14 +139,14 @@ h4 {
   font-size: 2rem;
 }
 
+h5,h6 {
+  .custombody();
+}
 h5 {
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-weight: 700;
 }
 
 h6 {
-  font-size: 16px;
-  font-size: 1.6rem;
 }
 
 /* Objects

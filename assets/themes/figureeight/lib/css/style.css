@@ -4,7 +4,7 @@ HTML5 Reset
 /* Baseline Normalize
   normalize.css v2.1.2 | MIT License | git.io/normalize
 --------------------------------------------- */
-@import url(//fonts.googleapis.com/css?family=Josefin+Slab:400,100,300,600,700|Amatic+SC:400,700|Rock+Salt);
+@import url(//fonts.googleapis.com/css?family=Josefin+Slab:400,100,300,600,700|Amatic+SC:400,700|Rock+Salt|Open+Sans:400,400italic,700,700italic);
 article,
 aside,
 details,
@@ -5571,10 +5571,10 @@ td.visible-print {
 /* Font Stacks */
 .customsansserif,
 .customsanserif {
-  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.625;
 }
 .fontawesome {
@@ -5625,7 +5625,6 @@ td.visible-print {
   background-color: rgba(255, 255, 255, 0.4);
 }
 /* Special header */
-/* Arrows */
 /* Clears */
 .msd-clearfix {
   content: ".";
@@ -5651,10 +5650,10 @@ html {
 body {
   background-color: #3D3C3D;
   color: #FFF;
-  font-family: "Josefin Slab", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.625;
 }
 a,
@@ -5706,23 +5705,24 @@ ul {
   margin: 0;
   padding: 0;
 }
-blockquote,
-blockquote::before {
-  color: #7F7F7F;
-}
 blockquote {
   margin: 40px 40px 24px;
   margin: 4rem 4rem 2.4rem;
   border: none;
 }
 blockquote p {
-  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.625;
 }
 blockquote::before {
+  font-family: "Open Sans", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.625;
   content: "\201C";
   display: block;
   font-size: 30px;
@@ -5747,17 +5747,15 @@ address {
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+h4 {
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
+  text-transform: uppercase;
   line-height: 1.2;
-  margin: 0 0 16px;
-  margin: 0 0 1.6rem;
+  margin: 0.5em 0 0.25em;
 }
 h1 {
   font-size: 36px;
@@ -5775,13 +5773,16 @@ h4 {
   font-size: 20px;
   font-size: 2rem;
 }
-h5 {
-  font-size: 18px;
-  font-size: 1.8rem;
-}
+h5,
 h6 {
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-family: "Open Sans", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.625;
+}
+h5 {
+  font-weight: 700;
 }
 /* Objects
 --------------------------------------------- */
@@ -6080,10 +6081,10 @@ img.alignright,
   padding: 4rem;
 }
 .author-box-title {
-  font-family: "Josefin Slab", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.625;
   color: #3D3C3D;
   margin-bottom: 4px;
@@ -6168,7 +6169,7 @@ Widgets
   padding: 1rem;
 }
 .sidebar .widget.featured-content .entry .entry-header .entry-title {
-  font-family: "Josefin Slab", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6292,11 +6293,12 @@ Site Header
 --------------------------------------------- */
 .title-area {
   float: left;
-  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
+  text-transform: uppercase;
   font-weight: 700;
   padding: 16px 0;
   padding: 1.6rem 0;
@@ -6603,7 +6605,7 @@ Site Navigation
   position: relative;
 }
 .nav-secondary .wrap li.menu-item > a {
-  font-family: "Josefin Slab", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 14px;
   font-size: 1.4rem;
@@ -6714,10 +6716,6 @@ article.entry {
   margin-bottom: 40px;
   margin-bottom: 4rem;
 }
-.entry-content h3 {
-  color: #3D3C3D;
-  font-weight: 700;
-}
 .entry-content .attachment a,
 .entry-content .gallery a {
   border: none;
@@ -6726,26 +6724,78 @@ article.entry {
 .entry-content p,
 .entry-content ul,
 .quote-caption {
-  margin-bottom: 26px;
-  margin-bottom: 2.6rem;
+  margin-bottom: 1em;
+}
+.entry-content .search-form {
+  width: 50%;
+}
+.entry-content h1 {
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 36px;
+  font-size: 3.6rem;
+  line-height: 1.625;
+  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  text-transform: uppercase;
+}
+.entry-content h2 {
+  background: #FF7D23;
+  margin-left: -100rem;
+  padding-left: 100rem;
+  padding-right: 10rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.625;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #FFF;
+}
+.entry-content h3 {
+  display: table;
+  border-image: url(../img/chalkbox.png) 5 stretch;
+  -webkit-border-image: url(../img/chalkbox.png) 5 stretch;
+  border-style: solid;
+  border-width: 0 0 5px 0;
+}
+.entry-content blockquote {
+  border-image: url(../img/chalkbox.png) 5 stretch;
+  -webkit-border-image: url(../img/chalkbox.png) 5 stretch;
+  border-style: solid;
+  border-width: 5px 0;
+}
+.entry-content blockquote p {
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
 }
 .entry-content ol,
 .entry-content ul {
-  margin-left: 40px;
-  margin-left: 4rem;
+  margin-left: 2em;
+}
+.entry-content ol ol,
+.entry-content ul ol,
+.entry-content ol ul,
+.entry-content ul ul {
+  margin-bottom: 0;
 }
 .entry-content ol li {
   list-style-type: decimal;
 }
+.entry-content ol ol li {
+  list-style-type: lower-alpha;
+}
 .entry-content ul li {
   list-style-type: disc;
 }
-.entry-content ol ol,
-.entry-content ul ul {
-  margin-bottom: 0;
-}
-.entry-content .search-form {
-  width: 50%;
+.entry-content ul ul li {
+  list-style-type: circle;
 }
 .entry-meta {
   color: #FFF;
@@ -6776,26 +6826,34 @@ article.entry {
   display: block;
 }
 .entry-header .entry-title {
-  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 36px;
   font-size: 3.6rem;
   line-height: 1.625;
+  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  text-transform: uppercase;
   font-weight: 500;
   color: #FFF;
   line-height: 1.25;
   margin: 0;
 }
 .entry-header .entry-subtitle {
-  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  background: #FF7D23;
+  margin-left: -100rem;
+  padding-left: 100rem;
+  padding-right: 10rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.625;
-  font-weight: 300;
-  color: #FFF;
-  background-color: #FF7D23;
+  font-weight: 700;
   line-height: 1.25;
+  text-transform: uppercase;
+  color: #FFF;
 }
 /* Pagination
 --------------------------------------------- */
@@ -6965,7 +7023,7 @@ Sidebars
   border-radius: 0px;
 }
 .sidebar .widget .widget-title {
-  font-family: "Josefin Slab", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 24px;
   font-size: 2.4rem;
@@ -7157,10 +7215,23 @@ Footer Widgets
 }
 .footer-widgets .connected-social .social-media {
   float: right;
-  padding: 8rem 0;
-  background-image: url(../img/bkg-ftr-connect.png);
-  background-position: bottom center;
+  padding: 8rem 0 0;
+}
+.footer-widgets .connected-social .social-media:after {
+  background-image: url("../img/bkg-ftr-connect.png");
+  background-position: center top;
   background-repeat: no-repeat;
+  bottom: -70px;
+  color: #3D3C3D;
+  content: "Connect with us!";
+  display: block;
+  font-weight: 700;
+  left: 44px;
+  line-height: 1.25;
+  padding: 25px;
+  position: absolute;
+  text-align: center;
+  width: 130px;
 }
 .footer-widgets .connected-social .social-media a.fa {
   background: none;
@@ -7270,11 +7341,12 @@ Site Footer
 }
 .sectioned-page-wrapper .section .section-subtitle,
 .sectioned-page-wrapper .section h4 {
-  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.625;
+  text-transform: uppercase;
   font-weight: 500;
   color: #FFF;
   background-color: #FF7D23;
@@ -7285,18 +7357,19 @@ Site Footer
   margin-bottom: 2rem;
 }
 .sectioned-page-wrapper .section h3 {
-  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.625;
+  text-transform: uppercase;
   font-weight: 700;
   color: #7F7F7F;
   line-height: 1.25;
   margin-bottom: 0.5em;
 }
 .sectioned-page-wrapper .section .section-title h3 {
-  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 24px;
   font-size: 2.4rem;
@@ -7330,57 +7403,6 @@ Site Footer
 .sectioned-page-wrapper .section.bkg-white {
   background-color: #FFF;
 }
-.sectioned-page-wrapper .section.bkg-grey.arrow-down {
-  position: relative;
-}
-.sectioned-page-wrapper .section.bkg-grey.arrow-down:after {
-  left: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(242, 247, 250, 0);
-  border-top-color: #F2F7FA;
-  border-width: 20px 40px;
-  margin-left: -40px;
-  z-index: 300;
-}
-.sectioned-page-wrapper .section.bkg-blue.arrow-down {
-  position: relative;
-}
-.sectioned-page-wrapper .section.bkg-blue.arrow-down:after {
-  left: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(15, 107, 174, 0);
-  border-top-color: #0F6BAE;
-  border-width: 20px 40px;
-  margin-left: -40px;
-  z-index: 300;
-}
-.sectioned-page-wrapper .section.bkg-white.arrow-down {
-  position: relative;
-}
-.sectioned-page-wrapper .section.bkg-white.arrow-down:after {
-  left: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(255, 255, 255, 0);
-  border-top-color: #FFF;
-  border-width: 20px 40px;
-  margin-left: -40px;
-  z-index: 300;
-}
 .sectioned-page-wrapper .section.title-bar .section-title h3 {
   padding-bottom: 2rem;
 }
@@ -7389,26 +7411,6 @@ Site Footer
 }
 .sectioned-page-wrapper .section.title-bar.title-bar-blue .section-title h3 {
   color: #FFF;
-}
-.sectioned-page-wrapper .section.title-bar-blue.arrow-down .section-title {
-  position: relative;
-}
-.sectioned-page-wrapper .section.title-bar-blue.arrow-down .section-title:after {
-  left: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: rgba(15, 107, 174, 0);
-  border-top-color: #0F6BAE;
-  border-width: 20px 40px;
-  margin-left: -40px;
-  z-index: 300;
-}
-.sectioned-page-wrapper .section.title-bar.arrow-down .section-body {
-  padding-top: 3rem;
 }
 @media only screen and (max-width: 767px) {
   .sectioned-page-wrapper .section.summary .section-body .bkg-white .section-title h3 {
@@ -7787,11 +7789,12 @@ main .genesis-feature .entry-header .entry-title,
 }
 main .genesis-feature .entry-header .entry-subtitle,
 .single-post main .post .entry-header .entry-subtitle {
-  font-family: "Amatic SC", "Trebuchet MS", Calibri, sans-serif;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 30px;
   font-size: 3rem;
   line-height: 1.625;
+  text-transform: uppercase;
   font-weight: 300;
   color: #FFF;
   background-color: transparent;

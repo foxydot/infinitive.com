@@ -113,10 +113,23 @@ Footer Widgets
   .connected-social{
     .social-media{
       float: right;
-      padding: 8rem 0;
-      background-image: url(../img/bkg-ftr-connect.png);
-      background-position: bottom center;
-      background-repeat: no-repeat;
+      padding: 8rem 0 0;
+      &:after{
+        background-image: url("../img/bkg-ftr-connect.png");
+        background-position: center top;
+        background-repeat: no-repeat;
+        bottom: -70px;
+        color: @dkgrey;
+        content: "Connect with us!";
+        display: block;
+        font-weight: 700;
+        left: 44px;
+        line-height: 1.25;
+        padding: 25px;
+        position: absolute;
+        text-align: center;
+        width: 130px;
+      }
       a.fa{
         background: none;
         margin: 10px;
