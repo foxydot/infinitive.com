@@ -63,8 +63,8 @@ add_action('genesis_after_header', 'genesis_do_breadcrumbs'); //to outside of th
 //add_action('genesis_before_entry','msd_post_image');//add the image above the entry
 //add_action('genesis_entry_header','msdlab_project_gallery',-5);//add the image above the entry
 
-add_filter('excerpt_more', 'sp_read_more_link');
-add_filter( 'the_content_more_link', 'sp_read_more_link' );
+//add_filter('excerpt_more', 'sp_read_more_link');
+//add_filter( 'the_content_more_link', 'sp_read_more_link' );
 
 //remove_action( 'genesis_before_post_content', 'genesis_post_info', 12 ); //remove the info (date, posted by,etc.)
 remove_action( 'genesis_after_post_content', 'genesis_post_meta' ); //remove the meta (filed under, tags, etc.)

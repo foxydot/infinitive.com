@@ -128,14 +128,6 @@ body.blog .genesis-grid .entry-header .entry-title {
   text-transform: uppercase;
   line-height: 1.25;
 }
-body.blog main .genesis-feature,
-body.blog .single-post main .post {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
 body.blog main .genesis-feature .entry-header .entry-title,
 body.blog .single-post main .post .entry-header .entry-title {
   background: #FF7D23;
