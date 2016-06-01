@@ -423,16 +423,17 @@ function msdlab_grid_loop_content() {
            
     }
     else {
-
-        //the_excerpt();
+        return false;
     }
 
 }
 
 function msdlab_grid_loop_image() {
+    
+    global $_genesis_loop_args;
     if ( in_array( 'genesis-grid', get_post_class() ) ) {
         global $post;
-        echo '<p class="thumbnail"><a href="'.get_permalink().'">'.get_the_post_thumbnail($post->ID, 'child_thumbnail').'</a></p>';
+        echo '<p class="thumbnail"><a href="'.get_permalink().'">'.genesis_get_image( array( 'size' => $_genesis_loop_args['grid_image_size'], 'attr' => array( 'class' => esc_attr( $_genesis_loop_args['grid_image_class'] ) ) ) ).'</a></p>';
     }
 }
 

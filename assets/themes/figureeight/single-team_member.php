@@ -4,6 +4,7 @@ remove_action('genesis_sidebar', 'genesis_do_sidebar');
 remove_action('genesis_entry_header','genesis_post_info',12);
 remove_action('genesis_entry_footer','genesis_post_meta');
 add_action('genesis_before_content','msd_add_team_title',5);
+add_action('wp_enqueue_scripts', 'msdlab_add_team_styles');
 function msd_add_team_title(){
     global $post,$contact_info;
     /*if($contact_info->get_the_value('_team_position')=='true'){

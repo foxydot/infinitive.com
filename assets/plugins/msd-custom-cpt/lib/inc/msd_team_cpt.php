@@ -106,10 +106,10 @@ if (!class_exists('MSDTeamCPT')) {
                 'show_in_nav_menus' => true,
                 'publicly_queryable' => true,
                 'exclude_from_search' => false,
-                'has_archive' => true,
+                'has_archive' => false,
                 'query_var' => true,
                 'can_export' => true,
-                'rewrite' => array('slug'=>'team','with_front'=>false),
+                'rewrite' => array('slug'=>'about/meet-the-team','with_front'=>false),
                 'capability_type' => 'post'
             );
         

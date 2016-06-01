@@ -11,7 +11,7 @@ add_image_size('child_full', 730, 380, TRUE);
 add_image_size('child_thumbnail', 350, 170, TRUE);
 
 // force WP to try GD before IM
-add_filter( 'wp_image_editors', 'change_graphic_lib' );
+//add_filter( 'wp_image_editors', 'change_graphic_lib' );
 function change_graphic_lib($array) {
   return array( 'WP_Image_Editor_GD', 'WP_Image_Editor_Imagick' );
 }

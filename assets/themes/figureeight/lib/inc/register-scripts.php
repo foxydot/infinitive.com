@@ -70,3 +70,10 @@ function msdlab_add_scripts() {
         }
     }
 }
+
+
+function msdlab_add_team_styles() {
+    if(!is_admin()){
+        wp_enqueue_style('msd-team-style',get_stylesheet_directory_uri().'/lib/css/team.css');   
+    }
+}
