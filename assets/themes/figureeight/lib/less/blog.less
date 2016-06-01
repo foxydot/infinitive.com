@@ -1,0 +1,114 @@
+@import 'lesshat';
+@import 'mixins';
+
+.blog{
+  .sidebar{
+    margin-top: 138px;
+  }
+}
+.blog-header{
+  h3{
+    .customheader-chalk(3);
+    line-height: 1.65;
+    width: auto;
+    padding: 0.4rem 2rem 2.4rem;
+    background: url(../img/blog_bubble.png) no-repeat top left;
+    margin: 0;
+    a,a:visited,a:active{
+      color: @white;
+      &:hover{
+        color: @orange;
+        text-decoration: none;
+      }
+    }
+    &:hover{
+      opacity: .9;
+    }
+  }
+  p{
+    .customserif();
+    line-height: 1.25;
+    margin-top: -1.4rem;
+    margin-left: 6rem;
+    max-width: 36rem;
+  }
+}
+article{
+  .entry-header{
+    h2.entry-title{}
+    .entry-meta{
+      font-size: 0.9em;
+    }
+  }
+}
+
+body.blog{
+  .genesis-grid{
+    .thumbnail{
+      border-radius: 0;
+    }
+    .entry-header{
+      .entry-title{
+        .customserif(1.8);
+        text-transform: uppercase;
+        line-height: 1.25;
+      }
+    }
+  }
+  main .genesis-feature,
+  .single-post main .post{
+    .msd-clearfix();
+    .entry-header{
+      .entry-title{
+        .overflow-header();
+      }
+      .entry-subtitle{
+        .customheader(3);
+        font-weight: 300;
+        color: @white;
+        background-color: transparent;
+        line-height: 1.25;
+      }
+    }
+    .entry-content{
+      h2:not(.entry-subtitle){
+        .overflow-header();
+      }
+      .readmore-button{
+        .button();
+        margin: 0;
+      }
+    }
+  }
+  .section-header{
+    .recent-posts-header{
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid @white;
+    }
+  }
+  /* Featured Post Grid
+  ------------------------------------------------------------ */
+  
+  .genesis-grid-even {
+    float: right;
+    padding: 0 0 15px;
+    width: 48%;
+  }
+  
+  .genesis-grid-odd {
+    clear: both;
+    float: left;
+    padding: 0 0 15px;
+    width: 48%;
+  }
+  
+  .genesis-grid-even,
+  .genesis-grid-odd {
+    margin: 0 0 20px;
+  }
+  
+  
+  .genesis-grid.post {
+      border-bottom: medium none;
+  }
+}

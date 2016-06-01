@@ -22,6 +22,9 @@ function msdlab_add_styles() {
             wp_enqueue_style('msd-homepage-style',get_stylesheet_directory_uri().'/lib/css/homepage.css',$queue);
             $queue[] = 'msd-homepage-style';
         }    
+        if(get_post_type() == 'post' || get_section()=='blog'){
+             wp_enqueue_style('msd-blog-style',get_stylesheet_directory_uri().'/lib/css/blog.css',$queue);
+        }
         if($is_IE){
             wp_enqueue_style('ie-style',get_stylesheet_directory_uri().'/lib/css/ie.css',$queue);
             $queue[] = 'ie-style';
