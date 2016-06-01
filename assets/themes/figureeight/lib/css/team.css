@@ -190,7 +190,14 @@
   margin: 0 1rem;
 }
 .single-team_member .section-header h3 {
-  font-size: 3.6rem;
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 30px;
+  font-size: 3rem;
+  line-height: 1.625;
+  font-family: "Shadows Into Light Two", "Trebuchet MS", Calibri, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .single-team_member main.content article {
   background-color: #7F7F7F;
@@ -262,6 +269,9 @@
 .single-team_member main.content article content header .entry-title {
   text-transform: uppercase;
 }
+.single-team_member main.content article content header .team-title {
+  text-transform: none;
+}
 .single-team_member main.content article content .entry-content h2 {
   font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
@@ -270,7 +280,15 @@
   line-height: 1.625;
   text-transform: uppercase;
   font-weight: 700;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+.single-team_member main.content article content .entry-content a {
+  color: #FFF;
+}
+.single-team_member main.content article content .entry-content a:hover {
+  color: #FF7D23;
 }
 .single-team_member main.content article content footer {
   text-align: right;
