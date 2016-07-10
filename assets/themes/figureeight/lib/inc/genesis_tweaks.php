@@ -87,10 +87,8 @@ add_theme_support( 'genesis-footer-widgets', 1 ); //adds automatic footer widget
 //add_action('genesis_before_footer','msdlab_do_footer_menu', 20);
 remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 
-add_action('template_redirect','msdlab_blog_grid');
 
 /*** Blog Header ***/
-add_action('genesis_before_loop','msd_add_blog_header');
 add_action('genesis_before_footer','msdlab_do_footer_widget', 1);
 
 remove_action('genesis_footer','genesis_do_footer'); //replace the footer
@@ -104,5 +102,4 @@ add_action('after_setup_theme','msdlab_add_homepage_hero_flex_sidebars'); //crea
 add_action('after_404','msdlab_sitemap');
 
 /*** Blog Header ***/
-//add_action('genesis_before_loop','msd_add_blog_header');
 add_action('wp_head', 'msdlab_custom_hooks_management');
