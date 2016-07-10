@@ -41,12 +41,6 @@ article{
     }
   }
   .entry-content{
-    position: relative;
-    top: -5px;
-    background: @white;
-    border: 2px solid @ltgrey;
-    color: @dkgrey;
-    padding: 1em;
   }
 }
 
@@ -63,8 +57,8 @@ body.blog{
       }
     }
   }
-  main .genesis-feature,
-  .single-post main .post{
+  main {
+  .genesis-feature, .post{
     .entry-header{
       .entry-title{
         .overflow-header();
@@ -76,14 +70,14 @@ body.blog{
         background-color: transparent;
         line-height: 1.25;
       }
-    }
-    .entry-content{
-      h2:not(.entry-subtitle){
-        .overflow-header();
-      }
-      .readmore-button{
-        .button();
-        margin: 0;
+      .entry-content{
+        h2:not(.entry-subtitle){
+          .overflow-header();
+        }
+        .readmore-button{
+          .button();
+          margin: 0;
+        }
       }
     }
   }
@@ -117,5 +111,21 @@ body.blog{
   
   .genesis-grid.post {
       border-bottom: medium none;
+  }
+}
+}
+
+body.single-post{
+  main{
+    .post{
+      .entry-content{
+        position: relative;
+        padding: 1em;
+        top: -5px;
+        background: @white;
+        border: 2px solid @ltgrey;
+        color: @dkgrey;
+      }
+    }
   }
 }
