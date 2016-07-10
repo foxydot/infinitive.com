@@ -112,18 +112,6 @@
 article .entry-header .entry-meta {
   font-size: 0.9em;
 }
-article .entry-content {
-  position: relative;
-  top: -5px;
-  background: #FFF;
-  border: 2px solid #959595;
-  color: #3D3C3D;
-  padding: 1em;
-}
-body.blog {
-  /* Featured Post Grid
-  ------------------------------------------------------------ */
-}
 body.blog .genesis-grid .thumbnail {
   border-radius: 0;
 }
@@ -136,8 +124,12 @@ body.blog .genesis-grid .entry-header .entry-title {
   text-transform: uppercase;
   line-height: 1.25;
 }
+body.blog main {
+  /* Featured Post Grid
+  ------------------------------------------------------------ */
+}
 body.blog main .genesis-feature .entry-header .entry-title,
-body.blog .single-post main .post .entry-header .entry-title {
+body.blog main .post .entry-header .entry-title {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;
@@ -155,7 +147,7 @@ body.blog .single-post main .post .entry-header .entry-title {
   color: #FFF;
 }
 body.blog main .genesis-feature .entry-header .entry-subtitle,
-body.blog .single-post main .post .entry-header .entry-subtitle {
+body.blog main .post .entry-header .entry-subtitle {
   font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 30px;
@@ -167,8 +159,8 @@ body.blog .single-post main .post .entry-header .entry-subtitle {
   background-color: transparent;
   line-height: 1.25;
 }
-body.blog main .genesis-feature .entry-content h2:not(.entry-subtitle),
-body.blog .single-post main .post .entry-content h2:not(.entry-subtitle) {
+body.blog main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle),
+body.blog main .post .entry-header .entry-content h2:not(.entry-subtitle) {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;
@@ -185,8 +177,8 @@ body.blog .single-post main .post .entry-content h2:not(.entry-subtitle) {
   text-transform: uppercase;
   color: #FFF;
 }
-body.blog main .genesis-feature .entry-content .readmore-button,
-body.blog .single-post main .post .entry-content .readmore-button {
+body.blog main .genesis-feature .entry-header .entry-content .readmore-button,
+body.blog main .post .entry-header .entry-content .readmore-button {
   padding: 6px 24px;
   font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
@@ -204,25 +196,33 @@ body.blog .single-post main .post .entry-content .readmore-button {
   border: 1px solid #FFF;
   margin: 0;
 }
-body.blog .section-header .recent-posts-header {
+body.blog main .section-header .recent-posts-header {
   padding-bottom: 0.6rem;
   border-bottom: 1px solid #FFF;
 }
-body.blog .genesis-grid-even {
+body.blog main .genesis-grid-even {
   float: right;
   padding: 0 0 15px;
   width: 48%;
 }
-body.blog .genesis-grid-odd {
+body.blog main .genesis-grid-odd {
   clear: both;
   float: left;
   padding: 0 0 15px;
   width: 48%;
 }
-body.blog .genesis-grid-even,
-body.blog .genesis-grid-odd {
+body.blog main .genesis-grid-even,
+body.blog main .genesis-grid-odd {
   margin: 0 0 20px;
 }
-body.blog .genesis-grid.post {
+body.blog main .genesis-grid.post {
   border-bottom: medium none;
+}
+body.single-post main .post .entry-content {
+  position: relative;
+  padding: 1em;
+  top: -5px;
+  background: #FFF;
+  border: 2px solid #959595;
+  color: #3D3C3D;
 }
