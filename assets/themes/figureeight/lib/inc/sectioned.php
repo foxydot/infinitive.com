@@ -1,6 +1,6 @@
 <?php
 if(class_exists('MSDSectionedPage')){
-    class D2LSectionedPage extends MSDSectionedPage{
+    class CustomSectionedPage extends MSDSectionedPage{
     function default_output($section,$i){
         //ts_data($section);
         global $parallax_ids;
@@ -91,9 +91,11 @@ if(class_exists('MSDSectionedPage')){
             }
             $i++;
         }//close while
-        print '<div class="sectioned-page-wrapper">';
-        print implode("\n",$sections);
-        print '</div>';
+            if(count($sections)>0){
+                print '<div class="sectioned-page-wrapper">';
+                print implode("\n",$sections);
+                print '</div>';
+            }
         }//clsoe if
     }
   }
