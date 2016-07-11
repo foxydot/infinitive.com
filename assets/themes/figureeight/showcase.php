@@ -6,8 +6,8 @@ add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_c
 remove_action('genesis_before_entry','msd_post_image');
 add_action('genesis_after_header','msd_showcase_post_image');
 add_shortcode('box','msdlab_box_shortcode_output');
-add_filter('the_content','strip_empty_tags', 9999);
-add_action('genesis_before_footer','msdlab_showcase_footer',5);
+//add_filter('the_content','strip_empty_tags', 9999);
+//add_action('genesis_before_footer','msdlab_showcase_footer',5);
 add_action('wp_footer','msdlab_showcase_jquery');
 
 function msd_showcase_post_image(){

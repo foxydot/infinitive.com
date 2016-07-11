@@ -1,66 +1,170 @@
 <?php
-
-add_action('template_redirect','msdlab_blog_grid');
-add_action('genesis_before_loop','msd_add_blog_header');
- 
- /**
- * Custom blog loop
+/**
+ * Grid Loop Pagination
+ * Returns false if not grid loop.
+ * Returns an array describing pagination if is grid loop
+ *
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/a-better-and-easier-grid-loop/
+ *
+ * @param object $query
+ * @return bool is grid loop (true) or not (false)
  */
- 
-// Setup Grid Loop
-function msdlab_blog_grid(){
-    global $loop_counter;
-    if(!isset($loop_counter)){$loop_counter=0;}
-    add_action('genesis_after_entry','msd_add_loop_counter_to_html5_loop',1);
-    if(is_home()){
-        remove_action( 'genesis_loop', 'genesis_do_loop' );
-        add_action( 'genesis_loop', 'msdlab_grid_loop_helper' );
-        add_action('genesis_before_entry', 'msdlab_switch_content');
-        remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
-        add_filter('genesis_grid_loop_post_class', 'msdlab_grid_add_bootstrap');
-        add_filter( 'pre_get_posts', 'be_archive_query' ,20);
-    }
-}
-function msdlab_grid_loop_helper() {
-    if ( function_exists( 'genesis_grid_loop' ) ) {                
-        genesis_grid_loop( array(
-        'features' => 1,
-        'features_on_all'       => false,
-        'feature_image_size'    => 'child_full',
-        'feature_image_class'   => 'alignnone post-image child_full',
-        'feature_content_limit' => 0,
-        'grid_image_size'       => 'child_thumbnail',
-        'grid_image_class'      => 'alignnone post-image child_thumbnail',
-        'grid_content_limit'    => 0,
-        'more' => __( '[Continue reading...]', 'adaptation' ),
-        ) );
-    } else {
-        genesis_standard_loop();
-    }
+function be_grid_loop_pagination( $query = false ) {
+
+    // If no query is specified, grab the main query
+    global $wp_query;
+    if( !isset( $query ) || empty( $query ) || !is_object( $query ) )
+        $query = $wp_query;
+        
+    // Sections of site that should use grid loop   
+    if( ! ( $query->is_home() || $query->is_archive() ) )
+        return false;
+    if(!is_cpt('post'))  
+        return false;  
+    // Specify pagination
+    return array(
+        'features_on_front' => 1,
+        'teasers_on_front' => 10,
+        'features_inside' => 0,
+        'teasers_inside' => 12,
+    );
 }
 
 /**
- * Archive Query
+ * Grid Loop Query Arguments
  *
- * Sets all archives to 27 per page
- * @since 1.0.0
- * @link http://www.billerickson.net/customize-the-wordpress-query/
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/a-better-and-easier-grid-loop/
  *
  * @param object $query
+ * @return null
  */
- 
-function be_archive_query( $query ) {
-    if( $query->is_main_query() && $query->is_home() ){
-        $mainppp = 7;
-        if(!($query->is_paged())){
-            $query->set( 'posts_per_page', $mainppp );
+function be_grid_loop_query_args( $query ) {
+    $grid_args = be_grid_loop_pagination( $query );
+    if( $query->is_main_query() && !is_admin() && $grid_args ) {
+
+        // First Page
+        $page = $query->query_vars['paged'];
+        if( ! $page ) {
+            $query->set( 'posts_per_page', ( $grid_args['features_on_front'] + $grid_args['teasers_on_front'] ) );
+        // Other Pages
         } else {
-            $ppp = $query->query_vars['posts_per_page']!=''?$query->query_vars['posts_per_page']:get_option( 'posts_per_page' );
-            $offset = (($query->query_vars['paged']-1)*$ppp)-($ppp-$mainppp);
-            $query->set( 'offset', $offset);
+            $query->set( 'posts_per_page', ( $grid_args['features_inside'] + $grid_args['teasers_inside'] ) );
+            $query->set( 'offset', ( $grid_args['features_on_front'] + $grid_args['teasers_on_front'] ) + ( $grid_args['features_inside'] + $grid_args['teasers_inside'] ) * ( $page - 2 ) );
+            // Offset is posts on first page + posts on internal pages * ( current page - 2 )
         }
+
     }
 }
+add_action( 'pre_get_posts', 'be_grid_loop_query_args' );
+
+/**
+ * Grid Loop Post Classes
+ *
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/a-better-and-easier-grid-loop/
+ *
+ * @param array $classes
+ * @return array $classes
+ */
+function be_grid_loop_post_classes( $classes ) {
+    global $wp_query;
+    
+    // Only run on main query
+    if( ! $wp_query->is_main_query() )
+        return $classes;
+    
+    // Only run on grid loop
+    $grid_args = be_grid_loop_pagination();
+    if( !$grid_args || ! $wp_query->is_main_query() )
+        return $classes;
+        
+    if(!is_cpt('post'))  
+        return $classes;  
+    // First Page Classes
+    if( !$wp_query->query_vars['paged'] ) {
+    
+        // Features
+        if( $wp_query->current_post < $grid_args['features_on_front'] ) {
+            $classes[] = 'genesis-feature';
+            $classes[] = 'col-md-12';
+        
+        // Teasers
+        } else {
+            $classes[] = 'genesis-teaser';
+            $classes[] = 'col-md-6';
+        }
+        
+    // Inner Pages
+    } else {
+
+        // Features
+        if( $wp_query->current_post < $grid_args['features_inside'] ) {
+            $classes[] = 'genesis-feature';
+            $classes[] = 'col-md-12';
+        
+        // Teasers
+        } else {
+            $classes[] = 'genesis-teaser';
+            $classes[] = 'col-md-6';
+        }
+    
+    }
+    
+    return $classes;
+}
+add_filter( 'post_class', 'be_grid_loop_post_classes' );
+
+
+
+/**
+ * Grid Loop Featured Image
+ *
+ * @param string image size
+ * @return string
+ */
+function be_grid_loop_image( $defaults ) {
+    global $wp_query;
+    $grid_args = be_grid_loop_pagination();
+    if( ! $grid_args )
+        return $defaults;
+        
+    // Feature
+    if( ( ! $wp_query->query_vars['paged'] && $wp_query->current_post < $grid_args['features_on_front'] ) || ( $wp_query->query_vars['paged'] && $wp_query->current_post < $grid_args['features_inside'] ) )
+        $defaults['size'] = 'child_full';
+        
+    if( ( ! $wp_query->query_vars['paged'] && $wp_query->current_post > ( $grid_args['features_on_front'] - 1 ) ) || ( $wp_query->query_vars['paged'] && $wp_query->current_post > ( $grid_args['features_inside'] - 1 ) ) )
+        $defaults['size'] = 'child_thumbnail';
+        
+    return $defaults;
+}
+add_filter( 'genesis_get_image_default_args', 'be_grid_loop_image' );
+
+/**
+ * Fix Posts Nav
+ *
+ * The posts navigation uses the current posts-per-page to 
+ * calculate how many pages there are. If your homepage
+ * displays a different number than inner pages, there
+ * will be more pages listed on the homepage. This fixes it.
+ *
+ */
+function be_fix_posts_nav() {
+    
+    if( get_query_var( 'paged' ) )
+        return;
+        
+    global $wp_query;
+    $grid_args = be_grid_loop_pagination();
+    if( ! $grid_args )
+        return;
+
+    $max = ceil ( ( $wp_query->found_posts - $grid_args['features_on_front'] - $grid_args['teasers_on_front'] ) / ( $grid_args['features_inside'] + $grid_args['teasers_inside'] ) ) + 1;
+    $wp_query->max_num_pages = $max;
+    
+}
+add_filter( 'genesis_after_endwhile', 'be_fix_posts_nav', 5 );
 
 add_action ( 'genesis_before_entry', 'msdlab_add_pagination');
 function msdlab_add_pagination() {
@@ -75,21 +179,20 @@ function msdlab_post_navigation_links() {
 }
 
 // Customize Grid Loop Content
+add_action('genesis_before_entry', 'msdlab_switch_content');
 function msdlab_switch_content() {
-    remove_action('genesis_entry_content', 'genesis_grid_loop_content');
-    remove_action( 'genesis_entry_header', 'msdlab_do_post_subtitle', 13);
-    add_action('genesis_entry_content', 'msdlab_grid_loop_content');
-    add_action('genesis_after_entry', 'msdlab_grid_divider');
-    add_action('genesis_entry_header', 'msdlab_grid_loop_image', 4);
+    if(is_cpt('post') && (is_archive() || is_home())){
+        remove_action('genesis_entry_content', 'genesis_do_post_content');
+        remove_action( 'genesis_entry_header', 'msdlab_do_post_subtitle', 13);
+        add_action( 'genesis_entry_header', 'msdlab_grid_loop_header',4);
+        add_action('genesis_entry_content', 'msdlab_grid_loop_content');
+    }
 }
 
 function msdlab_grid_loop_content() {
-
     global $_genesis_loop_args;
     if ( in_array( 'genesis-feature', get_post_class() ) ) {
-        if ( $_genesis_loop_args['feature_image_size'] ) {
-           printf( '<a href="%s" title="%s" class="featured_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image( array( 'size' => $_genesis_loop_args['feature_image_size'], 'attr' => array( 'class' => esc_attr( $_genesis_loop_args['feature_image_class'] ) ) ) ) );
-        }
+        printf( '<a href="%s" title="%s" class="featured_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image() );
         the_excerpt();  
         printf( '<a href="%s" title="%s" class="readmore-button alignright">%s</a>', get_permalink(), the_title_attribute('echo=0'), 'Continue Reading >' );
            
@@ -97,47 +200,23 @@ function msdlab_grid_loop_content() {
     else {
         return false;
     }
-
 }
 
-function msdlab_grid_loop_image() {
+function msdlab_grid_loop_header() {
     global $_genesis_loop_args;
-    if ( in_array( 'genesis-grid', get_post_class() ) ) {
-        global $post;
-        $img = genesis_get_image( array( 'size' => $_genesis_loop_args['grid_image_size'], 'attr' => array( 'class' => esc_attr( $_genesis_loop_args['grid_image_class'] ) ) ) );
-        //ts_data($img);
-        //echo '<p class="thumbnail"><a href="'.get_permalink().'">'.$img.'</a></p>';
+    if ( in_array( 'genesis-feature', get_post_class() ) ) {
+        return false;           
+    }
+    else {
+        printf( '<a href="%s" title="%s" class="grid_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image() );  
     }
 }
-
-function msd_add_loop_counter_to_html5_loop(){
-    global $loop_counter;
-    $loop_counter++;
-}
-
-function msdlab_grid_divider() {
-    global $loop_counter, $paged;
-    if($loop_counter == 1 && $paged == 0){print '<div class="section-header"><h3 class="recent-posts-header">Recent Posts</h3></div>';}
-    /*if(is_paged()){
-        if ((($loop_counter) % 2 == 0) && !($paged == 0 && $loop_counter < 2)) echo '<hr class="grid-separator" />';
-    } else {
-        if ((($loop_counter + 1) % 2 == 0) && !($paged == 0 && $loop_counter < 2)) echo '<hr class="grid-separator" />';
-    }*/
-    
-}
- function msdlab_grid_add_bootstrap($classes){
-     if(in_array('genesis-grid',$classes)){
-         $classes[] = 'col-md-6';
-     }
-     return $classes;
- }
 function msdlab_get_comments_number(){ //not used
     $num_comments = get_comments_number();
     if ($num_comments == '1') $comments = $num_comments.' ' . __( 'comment', 'adaptation' );
     else $comments = $num_comments.' ' . __( 'comments', 'adaptation' );
     return '<a class="comments" href="'.get_permalink().'/#comments">'.$comments.'</a>';
 }
-
 /*** Blog Header ***/
 function msd_add_blog_header(){
     global $post;

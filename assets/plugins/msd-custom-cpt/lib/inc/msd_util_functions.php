@@ -111,6 +111,14 @@ if( ! function_exists('msd_is_plugin_active')){
 		return in_array($plugin, (array) get_option('active_plugins', array()));
 	}
 }
+if ( ! function_exists( 'msdlab_http_sanity_check' ) ) :
+function msdlab_http_sanity_check($url){
+    if(stripos($url,'http://')===FALSE && stripos($url,'https://')===FALSE){
+        $url = 'http://'.$url;
+    }
+    return $url;
+}
+endif;
 /*
  * A useful troubleshooting function. Displays arrays in an easy to follow format in a textarea.
 */

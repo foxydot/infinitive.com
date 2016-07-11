@@ -1,6 +1,13 @@
 <?php global $wpalchemy_media_access; ?>
 <div class="my_meta_control gform_wrapper">
 <ul class='gform_fields top_label description_below'>
+<li>
+    <p>
+        <?php $mb->the_field('newsurl'); ?>
+        <label>URL to News Article</label>
+        <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" placeholder="http://" />
+    </p>
+</li>
 <li class='gfield' ><label class='gfield_label'>Team Members</label>
 <div class='ginput_container'>
     <?php 

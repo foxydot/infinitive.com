@@ -112,10 +112,10 @@
 article .entry-header .entry-meta {
   font-size: 0.9em;
 }
-body.blog .genesis-grid .thumbnail {
+body.blog .thumbnail {
   border-radius: 0;
 }
-body.blog .genesis-grid .entry-header .entry-title {
+body.blog .entry-header .entry-title {
   font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 18px;
