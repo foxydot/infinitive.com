@@ -15,9 +15,11 @@ function msdlab_do_social_footer(){
     } else {
         $copyright .= '&copy; Copyright '.date('Y').' '.get_bloginfo('name').' &middot; All Rights Reserved ';
     }
-    print '<div class="row">';    
+    print '<div class="row">';  
+    print '<div class="copy">';  
     print '<nav class="footer-menu" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" role="navigation">'.$footer_menu.'</nav>';
-    print '<div class="social">'.$copyright.' '.$address.'</div>';
+    print $copyright.' '.$address.'</div>';
+    print '<div class="social">'.do_shortcode('[msd-social]').'</div>';
     print '</div>';
     //print '<div class="backtotop"><a href="#pre-header"><i class="fa fa-angle-up"></i></a></div>';
 }
