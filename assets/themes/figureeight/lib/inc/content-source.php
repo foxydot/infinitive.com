@@ -51,7 +51,7 @@ if(!class_exists('MSDContentSource')){
                 'query_var' => true
             );
         
-            register_taxonomy( 'content_source', array('page','post','product'), $args );
+            register_taxonomy( 'content_source', array('page','post','msd_casestudy','location','msd_news','project','team_member','msd_video'), $args );
         }
         
         function watermark_content($classes){
