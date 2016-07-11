@@ -5717,12 +5717,8 @@ blockquote p {
   font-size: 1.4rem;
   line-height: 1.625;
 }
-blockquote::before {
-  font-family: "Open Sans", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  font-size: 1.4rem;
-  line-height: 1.625;
+/*blockquote::before {
+  .customsanserif();
   content: "\201C";
   display: block;
   font-size: 30px;
@@ -5731,7 +5727,7 @@ blockquote::before {
   left: -20px;
   position: relative;
   top: -10px;
-}
+}*/
 .entry-content code {
   background-color: #3D3C3D;
   color: #c8c8c8;
