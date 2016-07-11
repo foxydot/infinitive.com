@@ -73,7 +73,7 @@ if(!class_exists('MSDContentSource')){
                         content: "FPO";
                         color: red;
                         font-size: 20vw;
-                        opacity: 0.25;
+                        opacity: 0.1;
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -85,6 +85,7 @@ if(!class_exists('MSDContentSource')){
                         transform: rotate(-30deg);
                         line-height: 1;
                         width: 100%;
+                        z-index: -1;
                     }
                 </style>
             ';
