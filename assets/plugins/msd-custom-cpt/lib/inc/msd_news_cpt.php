@@ -27,6 +27,7 @@ class MSDNewsCPT {
         
         //Shortcodes
         add_shortcode( 'news-items', array(&$this,'list_news_stories') );
+        add_shortcode( 'news-display', array(&$this,'display_news_stories') );
     }
         
 	
@@ -92,6 +93,37 @@ class MSDNewsCPT {
 		
 		return '<ul class="publication-list news-items">'.$publication_list.'</ul><div class="clear"></div>';
 	}	
+
+    function display_news_stories( $atts ) {
+        extract( shortcode_atts( array(
+        ), $atts ) );
+        
+        $args = array( 'post_type' => 'msd_news', 'numberposts' => 0, );
+
+        $items = get_posts($args);
+        foreach($items AS $item){ 
+            $url = get_post_meta($item->ID,'_news_newsurl',1);
+            $excerpt = $item->post_excerpt?$item->post_excerpt:msd_trim_headline($item->post_content);
+            $link = strlen($url)>4?msdlab_http_sanity_check($url):get_permalink($item->ID);
+            $publication_list .= '
+            <li>
+                <div class="col-sm-8">
+                    <h3><a href="'.$link.'">'.$item->post_title.' ></a></h3>
+                    '.date('F j, Y',strtotime($item->post_date)).'
+                    <div class="excerpt">'.$excerpt.'</div>
+                    '.do_shortcode('[button url="'.$link.'"]Read More[/button]').'
+                </div>
+                <div class="col-sm-4">
+                    <a href="'.$link.'">
+                        '.get_the_post_thumbnail($item->ID,'medium').'
+                    </a>
+                </div>
+            </li>';
+    
+         }
+        
+        return '<ul class="publication-list news-display">'.$publication_list.'</ul>';
+    }   
 
         function get_news_items_for_team_member($team_id){
             global $news;
