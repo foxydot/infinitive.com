@@ -105,18 +105,24 @@ class MSDNewsCPT {
             $url = get_post_meta($item->ID,'_news_newsurl',1);
             $excerpt = $item->post_excerpt?$item->post_excerpt:msd_trim_headline($item->post_content);
             $link = strlen($url)>4?msdlab_http_sanity_check($url):get_permalink($item->ID);
+            $background = msdlab_get_thumbnail_url($item->ID,'medium');
             $publication_list .= '
             <li>
                 <div class="col-sm-8">
+                    <div class="news-info">
                     <h3><a href="'.$link.'">'.$item->post_title.' ></a></h3>
-                    '.date('F j, Y',strtotime($item->post_date)).'
-                    <div class="excerpt">'.$excerpt.'</div>
-                    '.do_shortcode('[button url="'.$link.'"]Read More[/button]').'
+                        <div>
+                            '.date('F j, Y',strtotime($item->post_date)).'
+                            <div class="excerpt">'.$excerpt.'</div>
+                            '.do_shortcode('[button url="'.$link.'"]Read More[/button]').'
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm-4">
-                    <a href="'.$link.'">
-                        '.get_the_post_thumbnail($item->ID,'medium').'
-                    </a>
+                    <div class="news-logo">
+                        <a href="'.$link.'" style="background-image:url('.$background.')">&nbsp;
+                        </a>
+                    </div>
                 </div>
             </li>';
     

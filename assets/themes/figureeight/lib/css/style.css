@@ -7443,6 +7443,108 @@ body.page.core-values main.content article .entry-content h2.first-child {
   line-height: 1.25;
   text-transform: none;
 }
+body.page.press main.content article .entry-content ul.publication-list,
+body.page.resources main.content article .entry-content ul.publication-list,
+body.page.core-values main.content article .entry-content ul.publication-list {
+  margin: 1em 0;
+}
+body.page.press main.content article .entry-content ul.publication-list li,
+body.page.resources main.content article .entry-content ul.publication-list li,
+body.page.core-values main.content article .entry-content ul.publication-list li {
+  margin-left: -15px;
+  margin-right: -15px;
+  list-style: none outside none;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+body.page.press main.content article .entry-content ul.publication-list li:before,
+body.page.resources main.content article .entry-content ul.publication-list li:before,
+body.page.core-values main.content article .entry-content ul.publication-list li:before,
+body.page.press main.content article .entry-content ul.publication-list li:after,
+body.page.resources main.content article .entry-content ul.publication-list li:after,
+body.page.core-values main.content article .entry-content ul.publication-list li:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+body.page.press main.content article .entry-content ul.publication-list li:after,
+body.page.resources main.content article .entry-content ul.publication-list li:after,
+body.page.core-values main.content article .entry-content ul.publication-list li:after {
+  clear: both;
+}
+body.page.press main.content article .entry-content ul.publication-list li:before,
+body.page.resources main.content article .entry-content ul.publication-list li:before,
+body.page.core-values main.content article .entry-content ul.publication-list li:before,
+body.page.press main.content article .entry-content ul.publication-list li:after,
+body.page.resources main.content article .entry-content ul.publication-list li:after,
+body.page.core-values main.content article .entry-content ul.publication-list li:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+body.page.press main.content article .entry-content ul.publication-list li:after,
+body.page.resources main.content article .entry-content ul.publication-list li:after,
+body.page.core-values main.content article .entry-content ul.publication-list li:after {
+  clear: both;
+}
+body.page.press main.content article .entry-content ul.publication-list li .news-info,
+body.page.resources main.content article .entry-content ul.publication-list li .news-info,
+body.page.core-values main.content article .entry-content ul.publication-list li .news-info {
+  background: rgba(255, 255, 255, 0.05);
+}
+body.page.press main.content article .entry-content ul.publication-list li .news-info h3,
+body.page.resources main.content article .entry-content ul.publication-list li .news-info h3,
+body.page.core-values main.content article .entry-content ul.publication-list li .news-info h3 {
+  font-family: "Josefin Slab", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.625;
+  background: #FF7D23;
+  color: #FFF;
+  line-height: 1.25;
+  text-transform: none;
+  font-weight: 700;
+  padding: 0.5em;
+  margin-top: 0;
+}
+body.page.press main.content article .entry-content ul.publication-list li .news-info h3 a,
+body.page.resources main.content article .entry-content ul.publication-list li .news-info h3 a,
+body.page.core-values main.content article .entry-content ul.publication-list li .news-info h3 a,
+body.page.press main.content article .entry-content ul.publication-list li .news-info h3 a:visited,
+body.page.resources main.content article .entry-content ul.publication-list li .news-info h3 a:visited,
+body.page.core-values main.content article .entry-content ul.publication-list li .news-info h3 a:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+body.page.press main.content article .entry-content ul.publication-list li .news-info > div,
+body.page.resources main.content article .entry-content ul.publication-list li .news-info > div,
+body.page.core-values main.content article .entry-content ul.publication-list li .news-info > div {
+  padding: 0.5em;
+}
+body.page.press main.content article .entry-content ul.publication-list li .news-info .button,
+body.page.resources main.content article .entry-content ul.publication-list li .news-info .button,
+body.page.core-values main.content article .entry-content ul.publication-list li .news-info .button {
+  margin-right: 0;
+  margin-left: auto;
+}
+body.page.press main.content article .entry-content ul.publication-list li .news-logo,
+body.page.resources main.content article .entry-content ul.publication-list li .news-logo,
+body.page.core-values main.content article .entry-content ul.publication-list li .news-logo {
+  background: #FFF;
+  padding: 10px;
+}
+body.page.press main.content article .entry-content ul.publication-list li .news-logo a,
+body.page.resources main.content article .entry-content ul.publication-list li .news-logo a,
+body.page.core-values main.content article .entry-content ul.publication-list li .news-logo a {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 165px;
+}
 .msd-fa.block,
 .msd-icon.block {
   display: block;

@@ -11,6 +11,50 @@ body.page{
             line-height: 1.25;
             text-transform: none;
           }
+          ul.publication-list{
+            margin:1em 0;
+            li{
+              .make-row();
+              list-style: none outside none;
+              margin-top: 1em;
+              margin-bottom: 1em;
+              .news-info{
+                background: fade(@white,5%);
+                h3{
+                  .customserif(1.8);
+                  background: @orange;
+                  color: @white;
+                  line-height: 1.25;
+                  text-transform: none;
+                  font-weight: 700;
+                  padding: 0.5em;
+                  margin-top: 0;
+                  a,a:visited{
+                    color: @white;
+                    text-decoration: none;
+                  }
+                }
+                >div{
+                  padding: 0.5em;
+                }
+                .button{
+                  margin-right: 0;
+                  margin-left: auto;
+                }
+              }
+              .news-logo{
+                background: @white;
+                padding: 10px;
+                a{
+                  display: block;
+                  background-position: center center;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  min-height: 165px;
+                }
+              }
+            }
+          }
         }
       }
     }
