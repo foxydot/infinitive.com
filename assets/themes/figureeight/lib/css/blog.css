@@ -370,7 +370,7 @@ body.single-post main .post .entry-content {
   position: relative;
   padding: 1em;
   top: -5px;
-  background: #FFF;
+  background: rgba(255, 255, 255, 0.9);
   border: 2px solid #959595;
   color: #3D3C3D;
 }

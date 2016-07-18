@@ -7009,6 +7009,10 @@ article.entry {
 .entry-content ul ul li {
   list-style-type: circle;
 }
+.entry-content iframe {
+  background: rgba(255, 255, 255, 0.9);
+  border: 4px solid #959595;
+}
 .entry-meta {
   color: #FFF;
   font-size: 14px;

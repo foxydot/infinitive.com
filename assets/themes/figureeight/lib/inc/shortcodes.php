@@ -257,4 +257,53 @@ add_shortcode('column','bs_column');
     }
     return $data_props;
   }
-    
+   
+   
+function column_shortcode($atts, $content = null){
+    extract( shortcode_atts( array(
+    'cols' => '3',
+    'position' => '',
+    'class' => ''
+    ), $atts ) );
+    switch($cols){
+        case 5:
+            $classes[] = 'one-fifth';
+            break;
+        case 4:
+            $classes[] = 'one-fouth';
+            $classes[] = 'col-md-3';
+            $classes[] = 'col-xs-12';
+            break;
+        case 3:
+            $classes[] = 'one-third';
+            $classes[] = 'col-md-4';
+            $classes[] = 'col-xs-12';
+            break;
+        case 2:
+            $classes[] = 'one-half';
+            $classes[] = 'col-md-6';
+            $classes[] = 'col-xs-12';
+            break;
+        case 1:
+            $classes[] = 'col-md-12';
+            $classes[] = 'col-xs-12';
+            break;
+    }
+    switch($position){
+        case 'first':
+        case '1':
+            $classes[] = 'first';
+        case 'last':
+            $classes[] = 'last';
+    }
+    $classes[] = $class;
+    return '<div class="'.implode(' ',$classes).'">'.$content.'</div>';
+}
+
+add_shortcode('columns','column_shortcode');
+
+function row_shortcode($atts, $content = null){
+    return '<div class="row">'.do_shortcode($content).'</div>';
+}
+
+add_shortcode('row','row_shortcode'); 
