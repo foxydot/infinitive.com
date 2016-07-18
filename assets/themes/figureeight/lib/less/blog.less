@@ -56,7 +56,7 @@ body.blog{
       }
     }
   main {
-  .genesis-feature, .post{
+  .genesis-feature{
     .entry-header{
       .entry-title{
         .overflow-header();
@@ -79,6 +79,31 @@ body.blog{
       }
     }
   }
+  .genesis-teaser{
+    a.grid_image_wrapper{
+      display: block;
+    }
+    .entry-header{
+      .entry-title{
+        margin-top: 1em;
+      }
+      .entry-subtitle{
+        .customheader(3);
+        font-weight: 300;
+        color: @white;
+        background-color: transparent;
+        line-height: 1.25;
+      }
+      .entry-content{
+        h2:not(.entry-subtitle){
+          .overflow-header();
+        }
+        .readmore-button{
+          .button();
+          margin: 0;
+        }
+      }
+    }}
   .section-header{
     .recent-posts-header{
       padding-bottom: 0.6rem;
