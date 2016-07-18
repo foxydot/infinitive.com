@@ -7545,6 +7545,47 @@ body.page.core-values main.content article .entry-content ul.publication-list li
   background-size: contain;
   min-height: 165px;
 }
+.page-template-showcase .banner {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 250px;
+  min-width: 100%;
+}
+.page-template-showcase .row {
+  height: auto;
+}
+.page-template-showcase .box {
+  border: 1px solid #959595;
+  border-radius: 4px;
+  padding: 1.5em 1.5em 3em;
+  margin-bottom: 1.5em;
+  position: relative;
+}
+.page-template-showcase .box:after:before,
+.page-template-showcase .box:after:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.page-template-showcase .box:after:after {
+  clear: both;
+}
+.page-template-showcase .box:after:before,
+.page-template-showcase .box:after:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.page-template-showcase .box:after:after {
+  clear: both;
+}
+.page-template-showcase .box .button-wrapper {
+  position: absolute;
+  bottom: 1.5em;
+}
 .msd-fa.block,
 .msd-icon.block {
   display: block;

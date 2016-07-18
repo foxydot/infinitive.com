@@ -60,6 +60,33 @@ body.page{
     }
   }
 }
+
+.page-template-showcase{
+  .banner{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 250px;
+    min-width: 100%;
+  }
+  .row{
+    height: auto;
+  }
+  .box{
+    border: 1px solid @ltgrey;
+    border-radius: 4px;
+    padding: 1.5em 1.5em 3em;
+    margin-bottom: 1.5em;
+    position: relative;
+    &:after{
+      .clearfix;
+    }
+    .button-wrapper{
+      position: absolute;
+      bottom: 1.5em;
+    }
+  }
+}
 //icons
 .msd-fa, .msd-icon{
   &.block{
