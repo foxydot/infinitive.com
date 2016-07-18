@@ -192,7 +192,6 @@ function msdlab_switch_content() {
 function msdlab_grid_loop_content() {
     global $_genesis_loop_args;
     if ( in_array( 'genesis-feature', get_post_class() ) ) {
-        printf( '<a href="%s" title="%s" class="featured_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image() );
         the_excerpt();  
         printf( '<a href="%s" title="%s" class="readmore-button alignright">%s</a>', get_permalink(), the_title_attribute('echo=0'), 'Continue Reading >' );
            
@@ -205,7 +204,8 @@ function msdlab_grid_loop_content() {
 function msdlab_grid_loop_header() {
     global $_genesis_loop_args;
     if ( in_array( 'genesis-feature', get_post_class() ) ) {
-        return false;           
+                printf( '<a href="%s" title="%s" class="featured_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image() );           
+          
     }
     else {
         printf( '<a href="%s" title="%s" class="grid_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image() );  

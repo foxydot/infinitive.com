@@ -276,6 +276,10 @@ body.blog main {
   /* Featured Post Grid
   ------------------------------------------------------------ */
 }
+body.blog main .genesis-feature a.featured_image_wrapper {
+  display: block;
+  overflow: hidden;
+}
 body.blog main .genesis-feature .entry-header .entry-title {
   background: #FF7D23;
   margin-left: -100rem;
