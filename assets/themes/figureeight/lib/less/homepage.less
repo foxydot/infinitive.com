@@ -13,18 +13,139 @@
 .sectioned-page-wrapper{
   .section{
   }
-  
- .section-products{
-   .row{
-     margin: 3rem 0;
-   }
- }
- .section-morbidity{
-   .section-title{
-     padding-bottom: 2rem;
-   }
-   .section-body{
-     display: none;
-   }
- }
+  .section.section-solving{
+    .section-title{}
+    .section-body{
+      .column-1{
+        text-align: center;
+        .doodle-wrapper{
+          width: 27%;
+          margin: 0 3%;
+          display: inline-block;
+          a{
+            .customserif();
+            color: @white;
+            text-transform: uppercase;
+            font-size: 0.9em;
+          }
+        }
+      }
+      .column-2{
+        text-align: right;
+        .doodle-wrapper{
+          width: 27%;
+          margin: 0 3%;
+          display: inline-block;
+          a{
+            .customheader-chalk();
+            color: @white;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            i{
+              color: orange;
+            }
+            .doodle-title{
+              text-align: center;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+  .section.section-obsessed{
+    .section-title{}
+    .section-body{
+      .column-1{
+        text-align: center;
+        .doodle-wrapper{
+          width: 27%;
+          margin: 0 3%;
+          display: inline-block;
+          a{
+            .customserif();
+            color: @white;
+            text-transform: uppercase;
+            font-size: 0.9em;
+          }
+        }
+      }
+      .column-2{
+        text-align: right;
+        .doodle-wrapper{
+          width: 27%;
+          margin: 0 3%;
+          display: inline-block;
+          a{
+            .customheader-chalk();
+            color: @white;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            i{
+              color: orange;
+            }
+            .doodle-title{
+              text-align: center;
+            }
+          }
+        }
+      }
+      
+    }
+  }
+  .section.section-clients{
+    .section-title{
+      .wrap{
+        font-size: 0.8em;
+        font-weight: 600;
+        background-color: @orange;
+        text-align: left;
+        padding: 0.5em 1em;
+      }
+    }
+    .section-body{
+      .wrap{
+        background-color: fade(@white,10%);
+      }
+      .section-content{
+        padding: 0 2em;
+      }      
+    }
+  }
+  .section.section-focus{
+    .section-title{
+      .wrap{
+        font-weight: 600;
+        border-image: url(../img/chalkbox.png) 5 stretch;
+        -webkit-border-image: url(../img/chalkbox.png) 5 stretch;
+        border-style: solid;
+        border-width: 0 0 5px 0;
+        border-color: @orange;
+      }
+      }
+    .section-body{
+      .wrap{}
+      .section-content{
+        ul{
+          list-style: none outside none;
+          margin-left: 1em;
+          li{
+            list-style: none outside none;
+            &:before{
+              content: '\2022';
+              color: @orange;
+              padding-right: 0.5em;
+            }
+          }
+        }
+        .doodle-wrapper{
+          float: left;
+        }
+        &.column-2{
+          .customheader-chalk(1.8);
+          color: orange;
+        }
+      }      
+    }
+  }
 }

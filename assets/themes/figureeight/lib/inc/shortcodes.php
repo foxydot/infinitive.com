@@ -83,6 +83,26 @@ function msdlab_icon_shortcodes($atts){
     return '<i class="'.implode(" ",$classes).'"></i>';
 }
 
+add_shortcode('doodle','msdlab_doodle_shortcodes');
+function msdlab_doodle_shortcodes($atts){
+    extract( shortcode_atts( array(
+    'class' => '',
+    'url' => false,
+    'title' => false,
+    ), $atts ) );
+    $classes[] = $class;
+    $classes[] = 'msd-doodle doodle';
+    $doodle = '<i class="'.implode(" ",$classes).'"></i>';
+    if($title){
+        $title = '<div class="doodle-title">'.$title.'</div>';
+    }
+    if($url){
+       return '<div class="doodle-wrapper"><a href="'.$url.'" class="doodle-link">'.$doodle.$title.'</a></div>';
+    } else {
+       return '<div class="doodle-wrapper">'.$doodle.$title.'</div>';
+    }
+}
+
 //remove_shortcode('msd-social');
 //add_shortcode('msd-social','social_media');
 function social_media($atts = array()){
