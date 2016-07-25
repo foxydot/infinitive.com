@@ -14,7 +14,9 @@
   .section{
   }
   .section.section-solving{
-    .section-title{}
+    .section-title{
+      display: none;
+    }
     .section-body{
       .column-1{
         text-align: center;
@@ -32,6 +34,9 @@
       }
       .column-2{
         text-align: right;
+        background-image: url(../img/bkg-rocket.png);
+        background-repeat: no-repeat;
+        background-position: top left;
         .doodle-wrapper{
           width: 27%;
           margin: 0 3%;
@@ -54,7 +59,9 @@
     }
   }
   .section.section-obsessed{
-    .section-title{}
+    .section-title{
+      display: none;
+      }
     .section-body{
       .column-1{
         text-align: center;
@@ -146,6 +153,38 @@
           color: orange;
         }
       }      
+    }
+  }
+  .section.section-cross-channel{
+    .section-title{
+      display: none;
+    }
+    .section-body{
+      .wrap{
+        .section-content{
+          &.column-1{
+            background-image: url(../img/bkg-org-paint.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding: 2em;
+            .customheader(2);
+            line-height: 1.2;
+            text-align: left;
+            color: @dkgrey;
+            i{
+              color: @white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .section.section-brainfest{
+    .section-title{
+      display: none;
+    }
+    .section-body{
+      
     }
   }
 }

@@ -218,6 +218,9 @@
 .site-inner .button:hover {
   width: auto;
 }
+.sectioned-page-wrapper .section.section-solving .section-title {
+  display: none;
+}
 .sectioned-page-wrapper .section.section-solving .section-body .column-1 {
   text-align: center;
 }
@@ -238,6 +241,9 @@
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 {
   text-align: right;
+  background-image: url(../img/bkg-rocket.png);
+  background-repeat: no-repeat;
+  background-position: top left;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .doodle-wrapper {
   width: 27%;
@@ -261,6 +267,9 @@
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .doodle-wrapper a .doodle-title {
   text-align: center;
+}
+.sectioned-page-wrapper .section.section-obsessed .section-title {
+  display: none;
 }
 .sectioned-page-wrapper .section.section-obsessed .section-body .column-1 {
   text-align: center;
@@ -352,4 +361,28 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: orange;
+}
+.sectioned-page-wrapper .section.section-cross-channel .section-title {
+  display: none;
+}
+.sectioned-page-wrapper .section.section-cross-channel .section-body .wrap .section-content.column-1 {
+  background-image: url(../img/bkg-org-paint.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 2em;
+  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 1.625;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+  color: #3D3C3D;
+}
+.sectioned-page-wrapper .section.section-cross-channel .section-body .wrap .section-content.column-1 i {
+  color: #FFF;
+}
+.sectioned-page-wrapper .section.section-brainfest .section-title {
+  display: none;
 }
