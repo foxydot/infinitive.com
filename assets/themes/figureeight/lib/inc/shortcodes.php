@@ -90,16 +90,23 @@ function msdlab_doodle_shortcodes($atts){
     'url' => false,
     'title' => false,
     ), $atts ) );
-    $classes[] = $class;
+    $classes = explode(' ',$class);
+    if(is_array($classes)){
+        foreach($classes AS $k=>$v){
+            $classes[$k] = 'doodle-'.$v;
+        }
+    } else {
+        $classes[] = 'doodle-'.$class;
+    }
     $classes[] = 'msd-doodle doodle';
     $doodle = '<i class="'.implode(" ",$classes).'"></i>';
     if($title){
-        $title = '<div class="doodle-title">'.$title.'</div>';
+        $title = '<div class="msd-doodle-title">'.$title.'</div>';
     }
     if($url){
-       return '<div class="doodle-wrapper"><a href="'.$url.'" class="doodle-link">'.$doodle.$title.'</a></div>';
+       return '<div class="msd-doodle-wrapper"><a href="'.$url.'" class="msd-doodle-link">'.$doodle.$title.'</a></div>';
     } else {
-       return '<div class="doodle-wrapper">'.$doodle.$title.'</div>';
+       return '<div class="msd-doodle-wrapper">'.$doodle.$title.'</div>';
     }
 }
 
