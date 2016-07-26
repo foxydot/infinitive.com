@@ -74,8 +74,8 @@
 .sectioned-page-wrapper .section .section-title h3 {
   font-family: "Hand Of Sean", cursive;
   font-weight: 400;
-  font-size: 80px;
-  font-size: 8rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1;
 }
 .sectioned-page-wrapper .section .section-body .wrap {
@@ -208,12 +208,23 @@
   font-size: 1.4em;
 }
 .sectioned-page-wrapper .section.section-focus .section-title .wrap {
-  font-weight: 600;
   border-image: url(../img/chalkbox.png) 5 stretch;
   -webkit-border-image: url(../img/chalkbox.png) 5 stretch;
   border-style: solid;
   border-width: 0 0 5px 0;
   border-color: #FF7D23;
+  text-align: left;
+  padding: 2em 0 0.5em;
+}
+.sectioned-page-wrapper .section.section-focus .section-body .wrap {
+  padding: 1em 0;
+}
+.sectioned-page-wrapper .section.section-focus .section-body .section-content {
+  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
 }
 .sectioned-page-wrapper .section.section-focus .section-body .section-content ul {
   list-style: none outside none;
@@ -227,19 +238,27 @@
   color: #FF7D23;
   padding-right: 0.5em;
 }
-.sectioned-page-wrapper .section.section-focus .section-body .section-content .msd-doodle-wrapper {
+.sectioned-page-wrapper .section.section-focus .section-body .section-content .msd-doodle-wrapper i {
   float: left;
+  font-size: 1.5em;
+  margin-right: 2rem;
+}
+.sectioned-page-wrapper .section.section-focus .section-body .section-content .msd-doodle-wrapper .msd-doodle-title {
+  color: #FF7D23;
+  padding: 1em 0.5em;
 }
 .sectioned-page-wrapper .section.section-focus .section-body .section-content.column-2 {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Hand Of Sean", cursive;
   font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.625;
-  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: orange;
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 1;
+  line-height: 1.25;
+  color: #FF7D23;
+}
+.sectioned-page-wrapper .section.section-focus .section-body .section-content.column-2 .msd-doodle-wrapper {
+  color: #FFF;
+  font-size: 1em;
 }
 .sectioned-page-wrapper .section.section-cross-channel .section-title {
   display: none;
@@ -251,16 +270,28 @@
   padding: 2em;
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 22px;
+  font-size: 2.2rem;
   line-height: 1.625;
   text-transform: uppercase;
   line-height: 1.2;
   text-align: left;
   color: #3D3C3D;
 }
-.sectioned-page-wrapper .section.section-cross-channel .section-body .wrap .section-content.column-1 i {
+.sectioned-page-wrapper .section.section-cross-channel .section-body .wrap .section-content.column-1 .msd-doodle-wrapper {
+  text-align: center;
   color: #FFF;
+}
+.sectioned-page-wrapper .section.section-cross-channel .section-body .wrap .section-content.column-2 {
+  text-align: center;
+}
+.sectioned-page-wrapper .section.section-cross-channel .section-body .wrap .section-content.column-2 .msd-doodle-wrapper {
+  padding: 2.8em 0;
+  font-family: "Hand Of Sean", cursive;
+  font-weight: 400;
+  font-size: 28px;
+  font-size: 2.8rem;
+  line-height: 1;
 }
 .sectioned-page-wrapper .section.section-brainfest .section-title {
   display: none;
