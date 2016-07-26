@@ -6,10 +6,14 @@ function msdlab_make_it_homepage(){
     if(is_front_page()){
         //remove_action('genesis_entry_header', 'genesis_do_post_title');
         //add_action('genesis_after_header','msdlab_hero');
+        //add_action('genesis_after_header','msdlab_make_rocket_happen');
         remove_action('genesis_before_footer','genesis_footer_widget_areas');
         add_action('genesis_before_footer','msdlab_homepage_widgets',-4);
         add_action('genesis_before_footer','genesis_footer_widget_areas');
     }
+}
+function msdlab_make_rocket_happen(){
+    print '<div class="homepage-rocket-bkg"></div>';
 }
 /**
  * Alters loop params

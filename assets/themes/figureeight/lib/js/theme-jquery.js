@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {	
+    $('p:empty').remove();
     $('*:first-child').addClass('first-child');
     $('*:last-child').addClass('last-child');
     $('*:nth-child(even)').addClass('even');
