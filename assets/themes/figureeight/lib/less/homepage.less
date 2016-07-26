@@ -236,7 +236,36 @@
       display: none;
     }
     .section-body{
-      
+      .wrap{
+        border-image: url(../img/chalkbox.png) 5 stretch;
+        -webkit-border-image: url(../img/chalkbox.png) 5 stretch;
+        border-style: solid;
+        border-width:  5px 0 5px 0;
+        padding: 2em 0;
+        .section-content{
+          .script(2.4);
+          .msd-doodle-wrapper{
+            text-align: center;
+            a.msd-doodle-link{
+              color: @white;
+              &:hover{
+                i{
+                  color: @orange;
+                }
+              }
+              .msd-doodle-title{
+                .customserif(2.8);
+                text-transform: uppercase;
+                background: @orange;
+                margin: 1em;
+                line-height: 1;
+                letter-spacing: 0.15em;
+                padding: 0.5em;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
