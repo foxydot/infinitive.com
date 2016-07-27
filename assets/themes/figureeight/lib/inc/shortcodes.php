@@ -334,3 +334,15 @@ function row_shortcode($atts, $content = null){
 }
 
 add_shortcode('row','row_shortcode'); 
+
+add_shortcode('phone-video-display', 'msdlab_phone_wrapped_video');
+function msdlab_phone_wrapped_video($atts){
+    extract( shortcode_atts( array(
+      'video_url' => false,
+      ), $atts ) );
+      if(!$video_url){
+          return false;
+      }
+      $video = wp_oembed_get($video_url,array('width'=>335));
+      return '<div class="iphone-wrapper">'.$video.'</div>';
+}

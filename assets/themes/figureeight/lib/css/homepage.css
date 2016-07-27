@@ -260,10 +260,10 @@
   color: #FFF;
   font-size: 1em;
 }
-.sectioned-page-wrapper .section.section-cross-channel .section-title {
+.sectioned-page-wrapper .section.section-video .section-title {
   display: none;
 }
-.sectioned-page-wrapper .section.section-cross-channel .section-body .wrap .section-content.column-1 {
+.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1 {
   background-image: url(../img/bkg-org-paint.png);
   background-repeat: no-repeat;
   background-position: center center;
@@ -278,20 +278,35 @@
   text-align: left;
   color: #3D3C3D;
 }
-.sectioned-page-wrapper .section.section-cross-channel .section-body .wrap .section-content.column-1 .msd-doodle-wrapper {
+.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1 .msd-doodle-wrapper {
   text-align: center;
   color: #FFF;
 }
-.sectioned-page-wrapper .section.section-cross-channel .section-body .wrap .section-content.column-2 {
+.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-2 {
   text-align: center;
 }
-.sectioned-page-wrapper .section.section-cross-channel .section-body .wrap .section-content.column-2 .msd-doodle-wrapper {
+.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-2 .msd-doodle-wrapper {
   padding: 2.8em 0;
   font-family: "Hand Of Sean", cursive;
   font-weight: 400;
   font-size: 28px;
   font-size: 2.8rem;
   line-height: 1;
+}
+.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper {
+  background-image: url(../img/iphone6.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  padding-top: 51px;
+  padding-left: 66px;
+  padding-bottom: 50px;
+}
+.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper iframe {
+  -ms-transform: rotate(-11deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-11deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(-11deg);
 }
 .sectioned-page-wrapper .section.section-brainfest .section-title {
   display: none;
