@@ -6897,7 +6897,7 @@ Site Navigation
   padding: 0;
 }
 .nav-primary li.menu-item a {
-  padding: 1.8rem 2.2rem 0.8rem;
+  padding: 1.8rem 1.2rem 0.8rem;
   color: #F2F7FA;
   text-transform: uppercase;
 }
@@ -6911,11 +6911,12 @@ Site Navigation
   background-color: #FF7D23;
   margin-top: 0px;
   width: auto;
+  max-width: 250px;
 }
 .nav-primary li.menu-item .sub-menu li.menu-item {
   background-color: transparent;
   padding: 0 2rem;
-  display: inline-block;
+  display: block;
 }
 .nav-primary li.menu-item .sub-menu li.menu-item a {
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
