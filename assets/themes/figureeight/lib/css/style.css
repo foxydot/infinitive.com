@@ -7907,7 +7907,7 @@ body.page.core-values main.content article .entry-content ul.publication-list li
   text-align: center;
 }
 .page-template-page-landing .landing-page-wrapper a.feature .wrapper .feature-img {
-  max-height: 200px;
+  height: 200px;
   width: auto;
   padding: 1em;
   overflow: hidden;
@@ -7920,6 +7920,8 @@ body.page.core-values main.content article .entry-content ul.publication-list li
   padding: 0.2em 1em;
 }
 .page-template-page-landing .landing-page-wrapper a.feature .wrapper .feature-title {
+  height: 110px;
+  overflow: hidden;
   color: #FFF;
   background: #FF7D23;
   padding: 2em 1em 1em;
