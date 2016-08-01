@@ -274,6 +274,7 @@ class MSDVideoCPT {
             return FALSE;
         }
 
+ 
         function msd_video_grid( $atts ){
             global $video,$post;
             if($atts['tags']){$atts['tags'] = explode(',',$atts['tags']);}
@@ -284,37 +285,19 @@ class MSDVideoCPT {
             $ID = $tags[0];
                 
             $items = $this->get_video_items($tags);
-            $count = (floor(count($items)/$cols))*$cols;
+            //$count = (floor(count($items)/$cols))*$cols; //kill the orphans
+            $count = count($items);
+                        
             $items = array_slice($items, 0, $count);
             $i = 1;
             foreach($items AS $item){
                 $video->the_meta($item->ID);
-                $youtube = $video->get_the_value('youtube');
+                $video_url = $video->get_the_value('youtube');
+                //$video_url = preg_replace('@//vimeo.com/@i','//player.vimeo.com/video/',$video->get_the_value('video_url'));
                 $featured_image = $this->get_video_grid_image($item);
                 $content = $this->get_video_content($item);
         
-                $menu .= '<li class="tab-'.$item->post_name.'"><a href="#'.$item->post_name.'" data-target="#'.$item->post_name.'" title="'.$item->post_title.'" data-toggle="modal" class="thumb" style="background:url('.$featured_image.') no-repeat center center;background-size:cover;">'.$item->post_title.'</a><h4>'.$item->post_title.'</h4></li>'."\n";
-                $j = 0;
-                    foreach ($content AS $piece){
-                        if(!empty($piece['image'])){
-                            $key = $j==0?'':'-'.$j;
-                            $slides .=  '<div id="'.$item->post_name.'" class="modal fade div-'.$item->post_name.$key.'" role="dialog">
-                              <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="video-piece">'.remove_wpautop(apply_filters('the_content', $piece['image'])).'</div>
-                                            <h3 class="video-piece-title">'.$piece['title'].'</h3>
-                                            <div class="entry-content">'.remove_wpautop(apply_filters('the_content', $piece['description'])).'</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>';
-                            $j++;
-                        }
-                    }
+                $menu .= '<li class="tab-'.$item->post_name.' col-sm-'.(12/$cols).' equalize">'.wp_oembed_get($video_url).'<h4>'.$item->post_title.'</h4></li>'."\n";
                 $i++;
             }
         

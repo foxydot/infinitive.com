@@ -8061,6 +8061,20 @@ body.page.core-values main.content article .entry-content ul.publication-list li
   text-transform: uppercase;
   color: #FFF;
 }
+.video-grid ul.grid {
+  margin: 0;
+  list-style: none outside none;
+}
+.video-grid ul.grid li {
+  list-style: none outside none;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+.video-grid ul.grid li h4 {
+  background-color: #FF7D23;
+  margin: 0;
+  padding: 0.5em 1em;
+}
 .msd-fa.block,
 .msd-icon.block {
   display: block;
