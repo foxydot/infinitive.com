@@ -33,6 +33,7 @@
           width: 27%;
           margin: 0 3% 2em;
           display: inline-block;
+          display: inline-flex;
           a{
             .customserif();
             color: @white;
@@ -173,6 +174,13 @@
               content: '\2022';
               color: @orange;
               padding-right: 0.5em;
+            }
+            a{
+              color: @white;
+              &:hover{
+                text-decoration: none;
+                color: @orange;
+              }
             }
           }
         }

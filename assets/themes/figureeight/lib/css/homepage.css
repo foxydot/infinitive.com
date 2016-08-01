@@ -91,6 +91,7 @@
   width: 27%;
   margin: 0 3% 2em;
   display: inline-block;
+  display: inline-flex;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-1 .msd-doodle-wrapper a {
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
@@ -237,6 +238,13 @@
   content: '\2022';
   color: #FF7D23;
   padding-right: 0.5em;
+}
+.sectioned-page-wrapper .section.section-focus .section-body .section-content ul li a {
+  color: #FFF;
+}
+.sectioned-page-wrapper .section.section-focus .section-body .section-content ul li a:hover {
+  text-decoration: none;
+  color: #FF7D23;
 }
 .sectioned-page-wrapper .section.section-focus .section-body .section-content .msd-doodle-wrapper i {
   float: left;
