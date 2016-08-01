@@ -7935,6 +7935,9 @@ body.page.core-values main.content article .entry-content ul.publication-list li
 .page-template-page-landing .landing-page-wrapper a.feature:hover {
   text-decoration: none;
 }
+.page-template-page-landing .landing-widgets {
+  margin: 1em 0;
+}
 .msd-fa.block,
 .msd-icon.block {
   display: block;
