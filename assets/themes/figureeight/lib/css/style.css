@@ -8040,6 +8040,23 @@ body.page.core-values main.content article .entry-content ul.publication-list li
 .page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li.last-child h3:after {
   content: '';
 }
+.page.core-values .sectioned-page-wrapper .section.section-header .section-footer-area {
+  background: #FF7D23;
+  margin-left: -100rem;
+  padding-left: 100rem;
+  padding-right: 10rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.625;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #FFF;
+}
 .msd-fa.block,
 .msd-icon.block {
   display: block;
