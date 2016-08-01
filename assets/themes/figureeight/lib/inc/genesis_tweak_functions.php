@@ -213,6 +213,11 @@ function msdlab_add_extra_theme_sidebars(){
     'description' => 'Widgets on the Blog Pages',
     'id' => 'blog'
             ));
+    genesis_register_sidebar(array(
+    'name' => 'Landing Page Sidebar',
+    'description' => 'Widgets on bottom of landing pages',
+    'id' => 'landing'
+            ));
 }
 
 function msdlab_select_sidebars(){

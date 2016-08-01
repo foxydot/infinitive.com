@@ -32,5 +32,7 @@ jQuery(document).ready(function($) {
 	        $(this).html('LESS <i class="fa fa-angle-up"></i>');
 	    }
 	});
-	$('.genesis-teaser').equalHeightColumns();
+	if ( $( '.genesis-teaser' ).length ) {
+	   $('.genesis-teaser').equalHeightColumns();
+	   }
 });

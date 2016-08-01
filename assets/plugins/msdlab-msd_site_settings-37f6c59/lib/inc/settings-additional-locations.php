@@ -8,7 +8,7 @@
           <h2><?php print apply_filters('msdlab_social_additional_panel_title','Additional Locations'); ?></h2>
           <p>Show <select name="num_locations" id="num_locations"><?php print $numbers_select; ?></select> Additional Location(s)</p>
           <?php 
-            $additional_locations = get_option(msdsocial_adtl_locations);
+            $additional_locations = stripcslashes(get_option(msdsocial_adtl_locations));
           ?>
           <?php
             for($n=1;$n<10;$n++){

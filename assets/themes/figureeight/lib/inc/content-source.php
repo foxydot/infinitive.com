@@ -9,7 +9,6 @@ if(!class_exists('MSDContentSource')){
             add_action( 'wp_print_styles', array(&$this,'add_css') );
             
             //Filters
-            add_filter( 'pre_get_posts', array(&$this,'custom_query') );
             add_filter( 'body_class', array(&$this,'watermark_content') );
         }
         

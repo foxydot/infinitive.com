@@ -2,7 +2,7 @@
 /*
 Plugin Name: MSD Site Settings
 Description: Provides settings panel for several social/address options and widgets/shortcodes/functions for display.
-Version: 0.9.6
+Version: 0.9.7
 Author: Catherine M OBrien Sandrick (CMOS)
 Author URI: http://msdlab.com/biological-assets/catherine-obrien-sandrick/
 GitHub Plugin URI: https://github.com/msdlab/msd_site_settings
@@ -484,7 +484,7 @@ function print_notification_bar(){
     print $this->get_notification_bar();
 }
 function get_notification_bar(){
-    $content = apply_filters('the_content',get_option('msdsocial_notification_content'));
+    $content = apply_filters('the_content',stripcslashes(get_option('msdsocial_notification_content')));
     return '<div class="notification-bar"><div class="wrap">' . $content . '</div></div>';
 }
 

@@ -87,6 +87,47 @@ body.page{
     }
   }
 }
+
+.page-template-page-landing{
+  .landing-page-wrapper{
+    .make-row();
+    a.feature{
+      .make-xs-column(12);
+      .make-md-column(4);
+      .wrapper{
+        background: @white;
+        text-align: center;
+        .feature-img{
+          max-height: 200px;
+          width: auto;
+          padding: 1em;
+          overflow: hidden;
+        }
+        .feature-type{
+          color: @white;
+          background: @medgrey;
+          width: auto;
+          display: inline-block;
+          padding: 0.2em 1em;
+        }
+        .feature-title{
+          color: @white;
+          background: @orange;
+          padding: 2em 1em 1em;
+          margin-top: -1em;
+          h3{
+            text-transform: none;
+            font-size: 1.25em;
+            line-height: 1.25;
+          }
+        }
+      }
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
 //icons
 .msd-fa, .msd-icon{
   &.block{
