@@ -8004,6 +8004,10 @@ body.page.core-values main.content article .entry-content ul.publication-list li
 .page.core-values .sectioned-page-wrapper .section.bkg-gray {
   background: #B7B7B7;
 }
+.page.core-values .sectioned-page-wrapper .section.bkg-grey .section-title h3,
+.page.core-values .sectioned-page-wrapper .section.bkg-gray .section-title h3 {
+  color: #FFF;
+}
 .page.core-values .sectioned-page-wrapper .section.section-header {
   position: relative;
   min-height: 1px;
