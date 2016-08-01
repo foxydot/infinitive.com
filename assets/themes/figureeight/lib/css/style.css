@@ -7086,7 +7086,8 @@ article.entry {
 .entry-content .search-form {
   width: 50%;
 }
-.entry-content h1 {
+.entry-content h1,
+.section-body h1 {
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 39px;
@@ -7096,13 +7097,15 @@ article.entry {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-.entry-content blockquote {
+.entry-content blockquote,
+.section-body blockquote {
   border-image: url(../img/chalkbox.png) 5 stretch;
   -webkit-border-image: url(../img/chalkbox.png) 5 stretch;
   border-style: solid;
   border-width: 5px 0;
 }
-.entry-content blockquote p {
+.entry-content blockquote p,
+.section-body blockquote p {
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 16px;
@@ -7110,28 +7113,39 @@ article.entry {
   line-height: 1.625;
 }
 .entry-content ol,
-.entry-content ul {
+.section-body ol,
+.entry-content ul,
+.section-body ul {
   margin-left: 2em;
 }
 .entry-content ol ol,
+.section-body ol ol,
 .entry-content ul ol,
+.section-body ul ol,
 .entry-content ol ul,
-.entry-content ul ul {
+.section-body ol ul,
+.entry-content ul ul,
+.section-body ul ul {
   margin-bottom: 0;
 }
-.entry-content ol li {
+.entry-content ol li,
+.section-body ol li {
   list-style-type: decimal;
 }
-.entry-content ol ol li {
+.entry-content ol ol li,
+.section-body ol ol li {
   list-style-type: lower-alpha;
 }
-.entry-content ul li {
+.entry-content ul li,
+.section-body ul li {
   list-style-type: disc;
 }
-.entry-content ul ul li {
+.entry-content ul ul li,
+.section-body ul ul li {
   list-style-type: circle;
 }
-.entry-content iframe {
+.entry-content iframe,
+.section-body iframe {
   background: rgba(255, 255, 255, 0.9);
   border: 4px solid #959595;
 }
@@ -7938,6 +7952,93 @@ body.page.core-values main.content article .entry-content ul.publication-list li
 }
 .page-template-page-landing .landing-widgets {
   margin: 1em 0;
+}
+.page.core-values .sectioned-page-wrapper {
+  margin: 0 auto;
+  max-width: 1140px;
+  float: none;
+}
+.page.core-values .sectioned-page-wrapper:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.page.core-values .sectioned-page-wrapper .section {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 48%;
+  margin: 1%;
+}
+@media (min-width: 768px) {
+  .page.core-values .sectioned-page-wrapper .section {
+    float: left;
+    width: 50%;
+  }
+}
+.page.core-values .sectioned-page-wrapper .section .section-title h3 {
+  text-align: left;
+  padding: 0;
+  line-height: 1;
+  color: #FF7D23;
+}
+.page.core-values .sectioned-page-wrapper .section .section-body {
+  color: #3D3C3D;
+}
+.page.core-values .sectioned-page-wrapper .section .section-body .wrap {
+  padding: 0;
+}
+.page.core-values .sectioned-page-wrapper .section.bkg-orange {
+  background: #FF7D23;
+}
+.page.core-values .sectioned-page-wrapper .section.bkg-orange .section-title h3 {
+  color: #FFF;
+}
+.page.core-values .sectioned-page-wrapper .section.bkg-white {
+  background: #FFF;
+}
+.page.core-values .sectioned-page-wrapper .section.bkg-grey,
+.page.core-values .sectioned-page-wrapper .section.bkg-gray {
+  background: #B7B7B7;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .page.core-values .sectioned-page-wrapper .section.section-header {
+    float: left;
+    width: 100%;
+  }
+}
+.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul {
+  background: #FF7D23;
+  margin: 0 0 1em 0;
+  text-align: center;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li {
+  display: inline-flex;
+  padding: 0;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3 {
+  margin: 0;
+  font-size: 3.4em;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3 a {
+  color: #FFF;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3:after {
+  content: ' • ';
+  color: #3D3C3D;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li.last-child h3:after {
+  content: '';
 }
 .msd-fa.block,
 .msd-icon.block {
