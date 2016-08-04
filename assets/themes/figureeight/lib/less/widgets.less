@@ -48,6 +48,49 @@ Widgets
     margin-right: 1rem;
   }
 }
+.widget.widget_recent_entries{
+  clear: both;
+  .blog-bubble{
+    margin: 1.5em 0 0;
+    padding: 0.3em;
+    background: rgba(0, 0, 0, 0) url("../img/blog_bubble.png") no-repeat scroll center center;
+    background-size: contain;
+    .customheader-chalk(2.8);
+    text-align: center;
+    line-height: 1;
+    color: @white;
+  }
+  h4.widget-title{
+    background: @orange;
+    .customserif(1.8);
+    padding: 0.25em 0.5em 0;
+    color: @white;
+    margin-bottom: 0.5em;
+  }
+  ul{
+    li{
+      padding-bottom: 0.5em;
+      margin-bottom: 0.5em;
+      border-bottom: 1px solid fade(@white,10%);
+      .customserif(1.6);
+      color: @white;
+      a:link{
+        border: 0;
+      }
+      a.post-title{
+        display: block;
+        color: @orange;
+      }
+      span.date{
+        display: block;
+        color: @ltgrey;
+      }
+      &.last-child{
+        border: 0;
+      }
+    }
+  }
+}
 section.layerslider_widget{
   max-width: none;
   padding: 0;
