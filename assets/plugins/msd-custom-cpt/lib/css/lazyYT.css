@@ -33,7 +33,7 @@
 .lazyYT-container .html5-info-bar {
   position: absolute;
   top: 0;
-  z-index: 935;
+  z-index: 10;
   width: 100%;
   height: 30px;
   overflow: hidden;

@@ -6458,6 +6458,39 @@ Widgets
   padding: 0;
   margin: 0;
 }
+.sidebar .widget.widget_sp_image {
+  background: #F2F7FA;
+}
+.sidebar .widget.widget_sp_image h4.widget-title {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 32px;
+  font-size: 3.2rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #FF7D23;
+  line-height: 1;
+}
+.sidebar .widget.widget_sp_image .widget_sp_image-image-link {
+  display: block;
+  background: #FFF;
+  border: 0;
+}
+.sidebar .widget.widget_sp_image .widget_sp_image-image-link img {
+  margin: 0 auto;
+}
+.sidebar .widget.widget_sp_image .widget_sp_image-description {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.sidebar .widget.widget_sp_image .widget_sp_image-link {
+  display: block;
+  text-align: right;
+}
 /*
 Plugins
 ---------------------------------------------------------------------------------------------------- */
