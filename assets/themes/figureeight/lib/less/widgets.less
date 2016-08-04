@@ -92,6 +92,31 @@ Widgets
     }
   }
 }
+.widget.msd_news_widget{
+  background-color: @medgrey;
+  .clearfix();
+  h4.widget-title{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin: 0;
+    .customheader-chalk(3.2);
+    color: @white;
+  }
+  ul.news-list{
+    margin: 0 1em 1em;
+    li{
+      color: @white;
+      h3{
+        font-weight: 600;
+        text-transform: none;
+        font-size: 1.2em;
+      }
+      .link.alignright{
+        .button();
+      }
+    }
+  }
+}
 section.layerslider_widget{
   max-width: none;
   padding: 0;

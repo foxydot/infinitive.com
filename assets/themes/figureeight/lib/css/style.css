@@ -6517,6 +6517,76 @@ Widgets
 .sidebar .widget.widget_categories ul li.last-child {
   border: 0;
 }
+.sidebar .widget.msd_news_widget {
+  background-color: #7F7F7F;
+}
+.sidebar .widget.msd_news_widget:before,
+.sidebar .widget.msd_news_widget:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.sidebar .widget.msd_news_widget:after {
+  clear: both;
+}
+.sidebar .widget.msd_news_widget:before,
+.sidebar .widget.msd_news_widget:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.sidebar .widget.msd_news_widget:after {
+  clear: both;
+}
+.sidebar .widget.msd_news_widget h4.widget-title {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin: 0;
+  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 32px;
+  font-size: 3.2rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #FFF;
+}
+.sidebar .widget.msd_news_widget ul.news-list {
+  margin: 0 1em 1em;
+}
+.sidebar .widget.msd_news_widget ul.news-list li {
+  color: #FFF;
+}
+.sidebar .widget.msd_news_widget ul.news-list li h3 {
+  font-weight: 600;
+  text-transform: none;
+  font-size: 1.2em;
+}
+.sidebar .widget.msd_news_widget ul.news-list li .link.alignright {
+  padding: 6px 24px;
+  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: table;
+  margin: 12px 0;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #FFF;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
 .sidebar section.layerslider_widget {
   max-width: none;
   padding: 0;
