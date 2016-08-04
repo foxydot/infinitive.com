@@ -7,6 +7,8 @@
 class MSDVideoCPT {
      //Properties
     var $cpt = 'msd_video';
+    
+    static $add_script;
     //Methods
     /**
     * PHP 4 Compatible Constructor
@@ -25,6 +27,9 @@ class MSDVideoCPT {
         add_action( 'init', array(&$this,'register_cpt_video') );
         add_action( 'init', array(&$this,'register_taxonomy_video_tags') );
         add_action( 'init', array(&$this,'register_thumbnail') );
+        add_action( 'init', array(&$this,'register_scripts') );
+        
+        add_action('wp_footer', array(&$this, 'print_script'));
         //add_action('admin_head', array(&$this,'plugin_header'));
         
         add_action('admin_print_scripts', array(&$this,'add_admin_scripts') );
@@ -138,6 +143,21 @@ class MSDVideoCPT {
             wp_enqueue_style('custom_meta_css',plugin_dir_url(dirname(__FILE__)).'/css/meta.css');
         }
     }  
+    
+    function register_scripts() {
+        wp_register_script('jquery-lazyyt', plugin_dir_url(dirname(__FILE__)).'js/lazyYT.js', array('jquery'), '1.0', true);
+        wp_register_script('jquery-video-shortcode', plugin_dir_url(dirname(__FILE__)).'js/jqueryshortcode.js', array('jquery','jquery-lazyyt'), '1.0', true);
+        wp_register_style('css-lazyyt',plugin_dir_url(dirname(__FILE__)).'css/lazyYT.css');
+    }
+
+    function print_script() {
+        if ( ! self::$add_script )
+            return;
+
+        wp_print_scripts('jquery-lazyyt');
+        wp_print_scripts('jquery-video-shortcode');
+        wp_print_styles('css-lazyyt');
+    }
            
     function register_thumbnail(){
         if (class_exists('MultiPostThumbnails')) {
@@ -274,8 +294,13 @@ class MSDVideoCPT {
             return FALSE;
         }
 
+        function get_youtube_id($url){
+            preg_match('/^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i',$url,$matches);
+            return $matches[2];
+        }
  
         function msd_video_grid( $atts ){
+            self::$add_script = true;
             global $video,$post;
             if($atts['tags']){$atts['tags'] = explode(',',$atts['tags']);}
             extract( shortcode_atts( array(
@@ -293,11 +318,13 @@ class MSDVideoCPT {
             foreach($items AS $item){
                 $video->the_meta($item->ID);
                 $video_url = $video->get_the_value('youtube');
-                //$video_url = preg_replace('@//vimeo.com/@i','//player.vimeo.com/video/',$video->get_the_value('video_url'));
+                $video_id = $this->get_youtube_id($video_url);
                 $featured_image = $this->get_video_grid_image($item);
                 $content = $this->get_video_content($item);
+                
+                $lazyyt_embed = '<div class="js-lazyYT" data-youtube-id="'.$video_id.'" data-width="100%"></div>';
         
-                $menu .= '<li class="tab-'.$item->post_name.' col-sm-'.(12/$cols).' equalize">'.wp_oembed_get($video_url).'<h4>'.$item->post_title.'</h4></li>'."\n";
+                $menu .= '<li class="tab-'.$item->post_name.' col-sm-'.(12/$cols).' video-item">'.$lazyyt_embed.'<h4>'.$item->post_title.'</h4></li>'."\n";
                 $i++;
             }
         

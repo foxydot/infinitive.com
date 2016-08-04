@@ -24,7 +24,7 @@
                   <label for="state">State</label>
                   <div class="input">
                 <select name="state" id="state" class="regular-text" />
-                    <option>Select</option>
+                    <option value=''>Select</option>
                     <?php foreach($states AS $state => $st){ ?>
                         <option value="<?php print $st; ?>"<?php print get_option('msdsocial_state')==$st?' SELECTED':'';?>><?php print ucwords(strtolower($state)); ?></option>
                     <?php } ?>
