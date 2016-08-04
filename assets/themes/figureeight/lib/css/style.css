@@ -6575,6 +6575,19 @@ Widgets
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
+.sidebar .widget.widget_pluginbuddyvideoshowcase h4.widget-title {
+  background: #7F7F7F;
+  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 32px;
+  font-size: 3.2rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #F2F7FA;
+  padding: 0 0.5em;
+}
 .sidebar section.layerslider_widget {
   max-width: none;
   padding: 0;
