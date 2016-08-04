@@ -19,35 +19,7 @@ Widgets
 /* Featured Content
 --------------------------------------------- */
 .sidebar{
-.widget.featured-content{
-  background: @orange;
-  .widget-title{
-    padding: 1rem;
-    color: @white;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .entry {
-    margin-bottom: 0;
-    padding: 1rem;
-    .entry-header{
-      .entry-title {
-        .custombody(1.6);
-        a {
-          border: none;
-        }
-      }
-      .entry-meta{
-        margin-bottom: 0;
-      }
-    }
-  }
-  
-  
-  .alignleft{
-    margin-right: 1rem;
-  }
-}
+.widget.featured-content,
 .widget.widget_recent_entries,
 .widget.widget_categories{
   clear: both;
@@ -68,6 +40,15 @@ Widgets
     color: @white;
     margin-bottom: 0.5em;
   }
+  a:link{
+        border: 0;
+      }
+  a.post-title, .entry-title a{
+    display: block;
+    color: @orange;
+    .customserif(1.6);
+    text-transform: none;
+  }
   ul{
     li{
       padding-bottom: 0.5em;
@@ -75,13 +56,7 @@ Widgets
       border-bottom: 1px solid fade(@white,10%);
       .customserif(1.6);
       color: @white;
-      a:link{
-        border: 0;
-      }
-      a.post-title{
-        display: block;
-        color: @orange;
-      }
+      
       span.date{
         display: block;
         color: @ltgrey;
