@@ -8074,6 +8074,7 @@ body.page.core-values main.content article .entry-content ul.publication-list li
   background-color: #FF7D23;
   margin: 0;
   padding: 0.5em 1em;
+  min-height: 3.4em;
 }
 .msd-fa.block,
 .msd-icon.block {
