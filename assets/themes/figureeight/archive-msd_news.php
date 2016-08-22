@@ -1,14 +1,14 @@
 <?php
 function msdlab_press_special_loop(){
     global $post;
-    $url = get_post_meta($post->ID,'_news_newsurl',1);
-    $excerpt = $post->post_excerpt?$post->post_excerpt:msd_trim_headline($post->post_content);
-    $link = strlen($url)>4?msdlab_http_sanity_check($url):get_permalink($post->ID);
-    $background = msdlab_get_thumbnail_url($post->ID,'medium');
     if ( have_posts() ) :
         do_action( 'genesis_before_while' );
     print '<ul class="publication-list news-display">';
         while ( have_posts() ) : the_post();
+    $url = get_post_meta($post->ID,'_news_newsurl',1);
+    $excerpt = $post->post_excerpt?$post->post_excerpt:msd_trim_headline($post->post_content);
+    $link = strlen($url)>4?msdlab_http_sanity_check($url):get_permalink($post->ID);
+    $background = msdlab_get_thumbnail_url($post->ID,'medium');
     print '
     <li>
         <div class="col-sm-8">
