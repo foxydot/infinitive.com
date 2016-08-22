@@ -6429,25 +6429,6 @@ Widgets
 .sidebar .widget.widget_categories {
   clear: both;
 }
-.sidebar .widget.featured-content .blog-bubble,
-.sidebar .widget.widget_recent_entries .blog-bubble,
-.sidebar .widget.widget_categories .blog-bubble {
-  margin: 1.5em 0 0;
-  padding: 0.3em;
-  background: rgba(0, 0, 0, 0) url("../img/blog_bubble.png") no-repeat scroll center center;
-  background-size: contain;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 28px;
-  font-size: 2.8rem;
-  line-height: 1.625;
-  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  text-align: center;
-  line-height: 1;
-  color: #FFF;
-}
 .sidebar .widget.featured-content h4.widget-title,
 .sidebar .widget.widget_recent_entries h4.widget-title,
 .sidebar .widget.widget_categories h4.widget-title {

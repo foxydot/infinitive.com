@@ -99,38 +99,7 @@ class CustomConnected extends MSDConnected {
 
 add_action('widgets_init', create_function('', 'return register_widget("CustomConnected");'));
 }
-/**
- * Recent Posts Widget Class
- */
-class MSDLabRecentPostsPlus extends RecentPostsPlus {
-    private $my_default_config = array(
-        'widget_output_template' => '<li><a title="{TITLE_RAW}" href="{PERMALINK}">{TITLE}</a>{DATE}{EXCERPT}{ELLIPSIS}... <a href="{PERMALINK}">(more)</a>{/ELLIPSIS}</li>', //default format
-    );
 
-    /** @see WP_Widget::widget */
-    function widget( $args, $instance ) {
-        extract( $args );
-        echo $before_widget;
-        
-        $header = '<div class="blog-bubble">INFINITIVE DIFFERENCE BLOG</div>
-        ';
-        $title = apply_filters( 'widget_title', empty($instance['title']) ? 'Recent Posts' : $instance['title'], $instance, $this->id_base);        
-        $widget_output_template = (empty($instance['widget_output_template'])) ? $this->my_default_config['widget_output_template'] : $instance['widget_output_template'];
-        echo $header;
-        echo $before_title . $title . $after_title;
-        
-        $output = $this->parse_output($instance);
-        
-        //if the first tag of the widget_output_template is a <li> tag then wrap it in <ul>
-        if(stripos(ltrim($widget_output_template), '<li') === 0)
-            $output = '<ul>'.$output.'</ul>';
-        
-        echo apply_filters('recent_posts_plus_output',$output);
-        
-        echo $after_widget;
-    }
-} // class RecentPostsPlus
-add_action( 'widgets_init', create_function( '', 'return register_widget("MSDLabRecentPostsPlus");' ) );
 
 function add_more_button_to_rpp($output){
     $more = do_shortcode('[button url="/blog"]More Blog Posts[/button]');
