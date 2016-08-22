@@ -2,7 +2,7 @@
 /**
  * Add new image sizes
  */
-add_image_size('tiny-post-thumb', 45, 45, TRUE);
+add_image_size('tiny-post-thumb', 45, 45, FALSE);
 add_image_size('nav-post-thumb', 540, 300, true);
 add_image_size('mini-headshot', 178,220, array('center','top'));
 add_image_size('facebook', 200, 200, TRUE);

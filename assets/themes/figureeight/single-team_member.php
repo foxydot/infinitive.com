@@ -137,14 +137,18 @@ function msd_team_insights(){
         $args = array(
             'author' => $contact_info->get_the_value('_team_user_id'),
             'posts_per_page' => '4',
+            'post_status' => 'publish',
+            'post_type' => 'post'
         );
         if(count($teamblogs)>0){
             $args['suppress_filters'] = FALSE;
-            add_filter('posts_where','msdlab_modify_posts_where');
+            //add_filter('posts_where','msdlab_modify_posts_where');
         } 
         $blogs = get_posts($args);
+        //ts_data($args);
+        //ts_data($blogs);
         if(count($teamblogs)>0){
-            remove_filter('posts_where','msdlab_modify_posts_where');
+            //remove_filter('posts_where','msdlab_modify_posts_where');
         }
         //possibly use posts_where filter http://codex.wordpress.org/Plugin_API/Filter_Reference#Advanced_WordPress_Filters
         if($blogs){
@@ -178,9 +182,10 @@ function msd_team_news(){
 <h3 class="insights-header">In the News</h3>';
             print '<div class="insights-news insights-section">';
         foreach($newses AS $press){
-            $thumbnail = get_the_post_thumbnail($press->ID,'thumbnail',array('class' => 'aligncenter'));
+            $thumbnail = get_the_post_thumbnail($press->ID,'tiny-post-thumb',array('class' => 'alignleft'));
             
             print '<article>
+                '.$thumbnail.'
                 <a href="'.get_permalink($press->ID).'">'.$press->post_title.'</a>
                 </article>';
         }
