@@ -6442,9 +6442,9 @@ Widgets
   color: #FFF;
   margin-bottom: 0.5em;
 }
-.sidebar .widget.featured-content a:link,
-.sidebar .widget.widget_recent_entries a:link,
-.sidebar .widget.widget_categories a:link {
+.sidebar .widget.featured-content a:link:not(.button),
+.sidebar .widget.widget_recent_entries a:link:not(.button),
+.sidebar .widget.widget_categories a:link:not(.button) {
   border: 0;
 }
 .sidebar .widget.featured-content a.post-title,
