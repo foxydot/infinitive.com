@@ -7288,7 +7288,6 @@ article.entry {
 .entry-content blockquote,
 .section-body blockquote {
   border-image: url(../img/chalkbox.png) 5 stretch;
-  -webkit-border-image: url(../img/chalkbox.png) 5 stretch;
   border-style: solid;
   border-width: 5px 0;
 }
@@ -7365,7 +7364,10 @@ article.entry {
 .entry-tags {
   display: block;
 }
-.entry-header .entry-title {
+.entry-header .entry-title,
+.archive-description .entry-title,
+.entry-header .archive-title,
+.archive-description .archive-title {
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 58px;
@@ -7379,7 +7381,8 @@ article.entry {
   line-height: 1;
   margin: 0;
 }
-.entry-header .entry-subtitle {
+.entry-header .entry-subtitle,
+.archive-description .entry-subtitle {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;
@@ -8020,6 +8023,76 @@ body.page.core-values main.content article .entry-content ul.publication-list li
 body.page.press main.content article .entry-content ul.publication-list li .news-logo a,
 body.page.resources main.content article .entry-content ul.publication-list li .news-logo a,
 body.page.core-values main.content article .entry-content ul.publication-list li .news-logo a {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 165px;
+}
+body.archive.post-type-archive-msd_news ul.publication-list {
+  margin: 1em 0;
+}
+body.archive.post-type-archive-msd_news ul.publication-list li {
+  margin-left: -15px;
+  margin-right: -15px;
+  list-style: none outside none;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+body.archive.post-type-archive-msd_news ul.publication-list li:before,
+body.archive.post-type-archive-msd_news ul.publication-list li:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+body.archive.post-type-archive-msd_news ul.publication-list li:after {
+  clear: both;
+}
+body.archive.post-type-archive-msd_news ul.publication-list li:before,
+body.archive.post-type-archive-msd_news ul.publication-list li:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+body.archive.post-type-archive-msd_news ul.publication-list li:after {
+  clear: both;
+}
+body.archive.post-type-archive-msd_news ul.publication-list li .news-info {
+  background: rgba(255, 255, 255, 0.05);
+}
+body.archive.post-type-archive-msd_news ul.publication-list li .news-info h3 {
+  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.625;
+  background: #FF7D23;
+  color: #FFF;
+  line-height: 1.25;
+  text-transform: none;
+  font-weight: 700;
+  padding: 0.5em;
+  margin-top: 0;
+}
+body.archive.post-type-archive-msd_news ul.publication-list li .news-info h3 a,
+body.archive.post-type-archive-msd_news ul.publication-list li .news-info h3 a:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+body.archive.post-type-archive-msd_news ul.publication-list li .news-info > div {
+  padding: 0.5em;
+}
+body.archive.post-type-archive-msd_news ul.publication-list li .news-info .button {
+  margin-right: 0;
+  margin-left: auto;
+}
+body.archive.post-type-archive-msd_news ul.publication-list li .news-logo {
+  background: #FFF;
+  padding: 10px;
+}
+body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;

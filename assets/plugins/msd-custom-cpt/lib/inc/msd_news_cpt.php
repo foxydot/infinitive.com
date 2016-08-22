@@ -52,7 +52,7 @@ class MSDNewsCPT {
 	        'labels' => $labels,
 	        'hierarchical' => false,
 	        'description' => 'Customer News Items',
-	        'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail'),
+	        'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'genesis-cpt-archives-settings'),
 	        'taxonomies' => array( 'genre' ),
 	        'public' => true,
 	        'show_ui' => true,
@@ -65,7 +65,7 @@ class MSDNewsCPT {
 	        'has_archive' => true,
 	        'query_var' => true,
 	        'can_export' => true,
-	        'rewrite' => array('slug'=>'news-items','with_front'=>false),
+	        'rewrite' => array('slug'=>'about/press','with_front'=>false),
 	        'capability_type' => 'post'
 	    );
 	
