@@ -319,14 +319,6 @@
   font-weight: 700;
   color: #FFF;
 }
-.single-team_member aside.sidebar-primary .widget .insights-section {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.625;
-  line-height: 1.25;
-}
 .single-team_member aside.sidebar-primary .widget .insights-section article {
   padding-bottom: 0.5em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
