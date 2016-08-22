@@ -6455,11 +6455,6 @@ Widgets
 .sidebar .widget.widget_categories .entry-title a {
   display: block;
   color: #FF7D23;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.625;
   text-transform: none;
 }
 .sidebar .widget.featured-content ul li,
