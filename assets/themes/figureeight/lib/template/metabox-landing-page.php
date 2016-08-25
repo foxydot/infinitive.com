@@ -184,6 +184,8 @@ if (is_admin()){
                             <option value="eBOOK"<?php $mb->the_select_state('eBOOK'); ?>>eBook</option>
                             <option value="NEWS"<?php $mb->the_select_state('NEWS'); ?>>News</option>
                             <option value="INFOGRAPHIC"<?php $mb->the_select_state('INFOGRAPHIC'); ?>>Infographic</option>
+                            <option value="CASE STUDY"<?php $mb->the_select_state('CASE STUDY'); ?>>Case Study</option>
+                            <option value="VIDEO"<?php $mb->the_select_state('VIDEO'); ?>>Video</option>
                         </select>
                     </div>
                 </div>
