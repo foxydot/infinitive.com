@@ -6453,13 +6453,22 @@ Widgets
 .sidebar .widget.featured-content .entry-title a,
 .sidebar .widget.widget_recent_entries .entry-title a,
 .sidebar .widget.widget_categories .entry-title a {
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.625;
   display: block;
   color: #FF7D23;
   text-transform: none;
+  letter-spacing: 0;
 }
 .sidebar .widget.featured-content ul li,
 .sidebar .widget.widget_recent_entries ul li,
-.sidebar .widget.widget_categories ul li {
+.sidebar .widget.widget_categories ul li,
+.sidebar .widget.featured-content article,
+.sidebar .widget.widget_recent_entries article,
+.sidebar .widget.widget_categories article {
   padding-bottom: 0.5em;
   margin-bottom: 0.5em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -6467,13 +6476,19 @@ Widgets
 }
 .sidebar .widget.featured-content ul li span.date,
 .sidebar .widget.widget_recent_entries ul li span.date,
-.sidebar .widget.widget_categories ul li span.date {
+.sidebar .widget.widget_categories ul li span.date,
+.sidebar .widget.featured-content article span.date,
+.sidebar .widget.widget_recent_entries article span.date,
+.sidebar .widget.widget_categories article span.date {
   display: block;
   color: #959595;
 }
 .sidebar .widget.featured-content ul li.last-child,
 .sidebar .widget.widget_recent_entries ul li.last-child,
-.sidebar .widget.widget_categories ul li.last-child {
+.sidebar .widget.widget_categories ul li.last-child,
+.sidebar .widget.featured-content article.last-child,
+.sidebar .widget.widget_recent_entries article.last-child,
+.sidebar .widget.widget_categories article.last-child {
   border: 0;
 }
 .sidebar .widget.msd_news_widget {

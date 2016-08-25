@@ -34,24 +34,23 @@ Widgets
         border: 0;
       }
   a.post-title, .entry-title a{
+    .custombody();
     display: block;
     color: @orange;
     text-transform: none;
+    letter-spacing: 0;
   }
-  ul{
-    li{
-      padding-bottom: 0.5em;
-      margin-bottom: 0.5em;
-      border-bottom: 1px solid fade(@white,10%);
-      color: @white;
-      
-      span.date{
-        display: block;
-        color: @ltgrey;
-      }
-      &.last-child{
-        border: 0;
-      }
+  ul li, article{
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid fade(@white,10%);
+    color: @white;
+    span.date{
+      display: block;
+      color: @ltgrey;
+    }
+    &.last-child{
+      border: 0;
     }
   }
 }
