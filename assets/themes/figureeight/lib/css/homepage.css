@@ -270,6 +270,11 @@
 .sectioned-page-wrapper .section.section-video .section-title {
   display: none;
 }
+.sectioned-page-wrapper .section.section-video .section-body .wrap {
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
 .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1 {
   background-image: url(../img/bkg-org-paint.png);
   background-repeat: no-repeat;
