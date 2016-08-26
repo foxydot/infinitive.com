@@ -289,6 +289,7 @@
   line-height: 1.2;
   text-align: left;
   color: #3D3C3D;
+  min-height: 220px;
 }
 .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1 .msd-doodle-wrapper {
   text-align: center;
