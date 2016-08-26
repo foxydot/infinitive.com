@@ -286,6 +286,7 @@
   font-size: 2.2rem;
   line-height: 1.625;
   text-transform: uppercase;
+  text-transform: none;
   line-height: 1.2;
   text-align: left;
   color: #3D3C3D;
