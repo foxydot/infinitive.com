@@ -55,6 +55,9 @@ if(!class_exists('MSDContentSource')){
         
         function watermark_content($classes){
             global $post;
+            if(is_cpt('post')){
+                return $classes;
+            }
             if(!has_term('approved-content','content_source',$post)){
                 $classes[] = "watermark";
             }
