@@ -65,7 +65,8 @@
  * 1) On the blog, are we going to use the featured image on the single blog page, or apply the image in the content (as we've done in the past.)
  * 
  */
-.blog .sidebar {
+.blog .sidebar,
+.archive.category .sidebar {
   margin-top: 138px;
 }
 .blog-header h3 {
@@ -106,10 +107,12 @@
 article .entry-header .entry-meta {
   font-size: 0.9em;
 }
-body.blog .thumbnail {
+body.blog .thumbnail,
+body.archive.category .thumbnail {
   border-radius: 0;
 }
-body.blog .entry-header .entry-title {
+body.blog .entry-header .entry-title,
+body.archive.category .entry-header .entry-title {
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 18px;
@@ -118,20 +121,24 @@ body.blog .entry-header .entry-title {
   text-transform: uppercase;
   line-height: 1.25;
 }
-body.blog main {
+body.blog main,
+body.archive.category main {
   /* Featured Post Grid
   ------------------------------------------------------------ */
 }
-body.blog main .genesis-feature a.featured_image_wrapper {
+body.blog main .genesis-feature a.featured_image_wrapper,
+body.archive.category main .genesis-feature a.featured_image_wrapper {
   display: block;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.2);
   text-align: center;
 }
-body.blog main .genesis-feature a.featured_image_wrapper img {
+body.blog main .genesis-feature a.featured_image_wrapper img,
+body.archive.category main .genesis-feature a.featured_image_wrapper img {
   margin: 0 auto;
 }
-body.blog main .genesis-feature .entry-header .entry-title {
+body.blog main .genesis-feature .entry-header .entry-title,
+body.archive.category main .genesis-feature .entry-header .entry-title {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;
@@ -148,7 +155,8 @@ body.blog main .genesis-feature .entry-header .entry-title {
   text-transform: uppercase;
   color: #FFF;
 }
-body.blog main .genesis-feature .entry-header .entry-subtitle {
+body.blog main .genesis-feature .entry-header .entry-subtitle,
+body.archive.category main .genesis-feature .entry-header .entry-subtitle {
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 30px;
@@ -160,7 +168,8 @@ body.blog main .genesis-feature .entry-header .entry-subtitle {
   background-color: transparent;
   line-height: 1.25;
 }
-body.blog main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle) {
+body.blog main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle),
+body.archive.category main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle) {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;
@@ -177,7 +186,8 @@ body.blog main .genesis-feature .entry-header .entry-content h2:not(.entry-subti
   text-transform: uppercase;
   color: #FFF;
 }
-body.blog main .genesis-feature .entry-header .entry-content .readmore-button {
+body.blog main .genesis-feature .entry-header .entry-content .readmore-button,
+body.archive.category main .genesis-feature .entry-header .entry-content .readmore-button {
   padding: 6px 24px;
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
@@ -195,18 +205,22 @@ body.blog main .genesis-feature .entry-header .entry-content .readmore-button {
   border: 1px solid #FFF;
   margin: 0;
 }
-body.blog main .genesis-teaser a.grid_image_wrapper {
+body.blog main .genesis-teaser a.grid_image_wrapper,
+body.archive.category main .genesis-teaser a.grid_image_wrapper {
   display: block;
   background: rgba(255, 255, 255, 0.2);
   text-align: center;
 }
-body.blog main .genesis-teaser a.grid_image_wrapper img {
+body.blog main .genesis-teaser a.grid_image_wrapper img,
+body.archive.category main .genesis-teaser a.grid_image_wrapper img {
   margin: 0 auto;
 }
-body.blog main .genesis-teaser .entry-header .entry-title {
+body.blog main .genesis-teaser .entry-header .entry-title,
+body.archive.category main .genesis-teaser .entry-header .entry-title {
   margin-top: 1em;
 }
-body.blog main .genesis-teaser .entry-header .entry-subtitle {
+body.blog main .genesis-teaser .entry-header .entry-subtitle,
+body.archive.category main .genesis-teaser .entry-header .entry-subtitle {
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 30px;
@@ -218,7 +232,8 @@ body.blog main .genesis-teaser .entry-header .entry-subtitle {
   background-color: transparent;
   line-height: 1.25;
 }
-body.blog main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle) {
+body.blog main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle),
+body.archive.category main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle) {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;
@@ -235,7 +250,8 @@ body.blog main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtit
   text-transform: uppercase;
   color: #FFF;
 }
-body.blog main .genesis-teaser .entry-header .entry-content .readmore-button {
+body.blog main .genesis-teaser .entry-header .entry-content .readmore-button,
+body.archive.category main .genesis-teaser .entry-header .entry-content .readmore-button {
   padding: 6px 24px;
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
@@ -253,26 +269,32 @@ body.blog main .genesis-teaser .entry-header .entry-content .readmore-button {
   border: 1px solid #FFF;
   margin: 0;
 }
-body.blog main .section-header .recent-posts-header {
+body.blog main .section-header .recent-posts-header,
+body.archive.category main .section-header .recent-posts-header {
   padding-bottom: 0.6rem;
   border-bottom: 1px solid #FFF;
 }
-body.blog main .genesis-grid-even {
+body.blog main .genesis-grid-even,
+body.archive.category main .genesis-grid-even {
   float: right;
   padding: 0 0 15px;
   width: 48%;
 }
-body.blog main .genesis-grid-odd {
+body.blog main .genesis-grid-odd,
+body.archive.category main .genesis-grid-odd {
   clear: both;
   float: left;
   padding: 0 0 15px;
   width: 48%;
 }
 body.blog main .genesis-grid-even,
-body.blog main .genesis-grid-odd {
+body.archive.category main .genesis-grid-even,
+body.blog main .genesis-grid-odd,
+body.archive.category main .genesis-grid-odd {
   margin: 0 0 20px;
 }
-body.blog main .genesis-grid.post {
+body.blog main .genesis-grid.post,
+body.archive.category main .genesis-grid.post {
   border-bottom: medium none;
 }
 body.single-post main .post .entry-content {
@@ -285,10 +307,12 @@ body.single-post main .post .entry-content {
   color: #3D3C3D;
 }
 @media only screen and (min-width: 1023px) {
-  body.blog main .genesis-feature a.featured_image_wrapper {
+  body.blog main .genesis-feature a.featured_image_wrapper,
+  body.archive.category main .genesis-feature a.featured_image_wrapper {
     min-height: 380px;
   }
-  body.blog main .genesis-teaser a.grid_image_wrapper {
+  body.blog main .genesis-teaser a.grid_image_wrapper,
+  body.archive.category main .genesis-teaser a.grid_image_wrapper {
     min-height: 170px;
   }
 }
