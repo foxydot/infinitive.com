@@ -72,16 +72,18 @@
 .blog-header h3 {
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
-  font-size: 55px;
-  font-size: 5.5rem;
+  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-size: 9.5vw;
   line-height: 1;
   width: auto;
-  padding: 0.4rem 2rem 2.4rem;
+  padding: 0.04em 0.3em 0.35em;
   background: url(../img/blog_bubble.png) no-repeat top left;
+  background-size: contain;
   margin: 0;
 }
 .blog-header h3 a,
@@ -100,9 +102,23 @@
 }
 .blog-header p {
   line-height: 1.25;
-  margin-top: -1.4rem;
-  margin-left: 6rem;
-  max-width: 36rem;
+  margin-top: -0.5em;
+  margin-left: 3.5em;
+  max-width: 28em;
+}
+@media only screen and (min-width: 480px) {
+  .blog-header h3 {
+    font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 55px;
+    font-size: 5.5rem;
+    line-height: 1.625;
+    font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    background-size: auto;
+  }
 }
 article .entry-header .entry-meta {
   font-size: 0.9em;
@@ -299,11 +315,8 @@ body.archive.category main .genesis-grid.post {
 }
 body.single-post main .post .entry-content {
   position: relative;
-  padding: 1em 1em 1em 100em;
-  margin-left: -100em;
-  top: -5px;
+  padding: 1em;
   background: rgba(255, 255, 255, 0.9);
-  border: 2px solid #959595;
   color: #3D3C3D;
 }
 @media only screen and (min-width: 1023px) {
@@ -314,5 +327,11 @@ body.single-post main .post .entry-content {
   body.blog main .genesis-teaser a.grid_image_wrapper,
   body.archive.category main .genesis-teaser a.grid_image_wrapper {
     min-height: 182px;
+  }
+  body.single-post main .post .entry-content {
+    padding: 1em 1em 1em 100em;
+    margin-left: -100em;
+    top: -5px;
+    border: 2px solid #959595;
   }
 }

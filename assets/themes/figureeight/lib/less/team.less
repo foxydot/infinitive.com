@@ -16,6 +16,7 @@
         .wrap{
           background-color: @medgrey;
           min-height: 300px;
+          padding:0;
           .clearfix();
         }
         ul{
@@ -50,6 +51,7 @@
               line-height: 1.8rem;
               text-transform: uppercase;
               font-weight: 700;
+              font-size: 2.3vw;
               &.insights-header{
                 width: 74%;
               }
@@ -96,6 +98,27 @@
 }
 
 
+@media only screen and (min-width: 760px) {
+  .meet-the-team{
+    main.content{
+      >article{
+      >.entry-content{
+        article.team_member{
+          aside{
+            ul{
+              li{    
+                font-size: 1.4rem;
+              }
+            }
+          }
+        }
+      }
+      }
+    }
+  }
+}
+
+
 .single-team_member{
   .section-header{
     margin: 0 1rem;
@@ -108,8 +131,9 @@
       background-color: @medgrey;
       .clearfix();
       aside.headshot{
-        .make-xs-column(3);
+        .make-sm-column(3);
         width: 22%;
+        .make-xs-column(12);
         padding: 0;
         img.attachment-mini-headshot{
            .background-image(linear-gradient(to bottom, @vltgrey 0%,@offwhite 100%));
@@ -145,8 +169,9 @@
         }
       }
       content{
-        .make-xs-column(9);
+        .make-sm-column(9);
         width: 78%;
+        .make-xs-column(12);
         padding: 0;
           header,.entry-content,footer{
             display: block;

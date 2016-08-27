@@ -6379,9 +6379,15 @@ img.alignright,
 --------------------------------------------- */
 .section-title,
 .entry-title {
-  font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 4.2vw;
   line-height: 1;
+}
+@media only screen and (min-width: 1023px) {
+  .section-title,
+  .entry-title {
+    font-size: 36px;
+    font-size: 3.6rem;
+  }
 }
 .section-title a,
 .entry-title a,
@@ -6814,16 +6820,36 @@ img#wpstats {
 Pre Header
 ---------------------------------------------------------------------------------------------------- */
 .pre-header .widget-area {
-  text-align: right;
+  text-align: center;
 }
 .pre-header .widget-area .widget {
-  width: auto;
+  width: 100%;
   display: inline-block;
+}
+.pre-header .widget-area .widget_search {
+  margin-top: 0.5em;
 }
 .pre-header .widget-area .widget_search form.search-form input[type="search"] {
   border: 0;
-  max-width: 90%;
-  float: right;
+  width: 98%;
+  max-width: 98%;
+  float: none;
+}
+@media only screen and (min-width: 1023px) {
+  .pre-header .widget-area {
+    text-align: right;
+  }
+  .pre-header .widget-area .widget {
+    width: auto;
+  }
+  .pre-header .widget-area .widget_search {
+    margin-top: 0;
+  }
+  .pre-header .widget-area .widget_search form.search-form input[type="search"] {
+    width: auto;
+    max-width: 90%;
+    float: right;
+  }
 }
 /*
 Site Header
@@ -6835,7 +6861,7 @@ Site Header
 /* Title Area
 --------------------------------------------- */
 .title-area {
-  float: left;
+  float: none;
   font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 16px;
@@ -6845,7 +6871,7 @@ Site Header
   font-weight: 700;
   padding: 16px 0;
   padding: 1.6rem 0;
-  width: 33%;
+  width: 100%;
 }
 .header-image .title-area {
   padding: 0;
@@ -6885,14 +6911,24 @@ Site Header
   padding: 0;
 }
 .header-image .site-title a {
-  float: left;
+  float: none;
   min-height: 70px;
   width: 292px;
   height: 70px;
-  background: url(../img/logo.gif) no-repeat center left;
+  background: url(../img/logo.gif) no-repeat center center;
   background-size: contain;
   margin: 10px 0;
   margin: 1rem 0;
+}
+@media only screen and (min-width: 1023px) {
+  .title-area {
+    float: left;
+    width: 33%;
+  }
+  .header-image .site-title a {
+    float: left;
+    background-position: center left;
+  }
 }
 /* Widget Area
 --------------------------------------------- */
@@ -7396,6 +7432,9 @@ article.entry {
 .entry-header .entry-meta {
   margin-bottom: 1rem;
 }
+.entry-footer {
+  clear: both;
+}
 .entry-footer .entry-meta {
   border-top: 2px solid #f5f5f5;
   margin: 0 -40px;
@@ -7824,7 +7863,7 @@ Site Footer
   font-size: 12px;
   font-size: 1.2rem;
   line-height: 1.625;
-  text-align: left;
+  text-align: center;
   padding: 0;
 }
 .site-footer .wrap {
@@ -7841,17 +7880,50 @@ Site Footer
   .site-footer .wrap .copy,
   .site-footer .wrap .social {
     float: left;
-    width: 50%;
+    width: 100%;
   }
 }
 .site-footer .wrap .social {
-  text-align: right;
+  text-align: center;
+}
+.site-footer .wrap .social .social-media {
+  float: none;
+  margin: 0 auto;
+}
+.site-footer .wrap .social .social-media a.fa {
+  float: none;
+  display: inline-block;
 }
 .site-footer .wrap p {
   margin-bottom: 0;
 }
 .site-footer .wrap a {
   color: #F2F7FA;
+}
+@media only screen and (min-width: 1023px) {
+  .site-footer {
+    text-align: left;
+  }
+  .site-footer .wrap .copy,
+  .site-footer .wrap .social {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .site-footer .wrap .social {
+    text-align: right;
+  }
+  .site-footer .wrap .social .social-media {
+    flaot: right;
+  }
+}
+@media only screen and (min-width: 1023px) and (min-width: 768px) {
+  .site-footer .wrap .copy,
+  .site-footer .wrap .social {
+    float: left;
+    width: 50%;
+  }
 }
 .page-template-page-sectioned .site-container .site-inner {
   background: transparent;
@@ -8219,6 +8291,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: 1em;
 }
 @media (min-width: 992px) {
   .page-template-page-landing .landing-page-wrapper a.feature {
@@ -8275,18 +8348,8 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   visibility: hidden;
 }
 .page.core-values .sectioned-page-wrapper .section {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  max-width: 48%;
-  margin: 1%;
-}
-@media (min-width: 768px) {
-  .page.core-values .sectioned-page-wrapper .section {
-    float: left;
-    width: 50%;
-  }
+  margin: 15px;
+  padding: 15px;
 }
 .page.core-values .sectioned-page-wrapper .section .section-title h3 {
   text-align: left;
@@ -8323,6 +8386,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   padding-left: 15px;
   padding-right: 15px;
   max-width: 100%;
+  margin: 0;
 }
 @media (min-width: 768px) {
   .page.core-values .sectioned-page-wrapper .section.section-header {
@@ -8369,6 +8433,79 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   line-height: 1.25;
   text-transform: uppercase;
   color: #FFF;
+  margin-left: 0;
+  padding-left: 10rem;
+}
+@media only screen and (min-width: 480px) {
+  .page.core-values .sectioned-page-wrapper .section {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 48%;
+    margin: 1%;
+  }
+  .page.core-values .sectioned-page-wrapper .section.section-header {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 100%;
+  }
+  .page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul {
+    background: #FF7D23;
+    margin: 0 0 1em 0;
+    text-align: center;
+  }
+  .page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li {
+    display: inline-flex;
+    padding: 0;
+  }
+  .page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3 {
+    margin: 0;
+    font-size: 3.4em;
+  }
+  .page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3 a {
+    color: #FFF;
+  }
+  .page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3:after {
+    content: ' • ';
+    color: #3D3C3D;
+  }
+  .page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li.last-child h3:after {
+    content: '';
+  }
+  .page.core-values .sectioned-page-wrapper .section.section-header .section-footer-area {
+    background: #FF7D23;
+    margin-left: -100rem;
+    padding-left: 100rem;
+    padding-right: 10rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.625;
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: #FFF;
+    margin-left: 0;
+    padding-left: 10rem;
+  }
+}
+@media only screen and (min-width: 480px) and (min-width: 768px) {
+  .page.core-values .sectioned-page-wrapper .section {
+    float: left;
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 480px) and (min-width: 768px) {
+  .page.core-values .sectioned-page-wrapper .section.section-header {
+    float: left;
+    width: 100%;
+  }
 }
 .video-grid ul.grid {
   margin: 0;

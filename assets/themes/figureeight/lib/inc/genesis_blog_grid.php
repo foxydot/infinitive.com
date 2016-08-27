@@ -93,7 +93,8 @@ function be_grid_loop_post_classes( $classes ) {
         // Teasers
         } else {
             $classes[] = 'genesis-teaser';
-            $classes[] = 'col-md-6';
+            $classes[] = 'col-sm-6';
+            $classes[] = 'col-xs-12';
         }
         
     // Inner Pages
@@ -107,7 +108,8 @@ function be_grid_loop_post_classes( $classes ) {
         // Teasers
         } else {
             $classes[] = 'genesis-teaser';
-            $classes[] = 'col-md-6';
+            $classes[] = 'col-sm-6';
+            $classes[] = 'col-xs-12';
         }
     
     }

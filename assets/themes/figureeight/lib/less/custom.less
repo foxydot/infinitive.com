@@ -141,6 +141,7 @@ body.archive.post-type-archive-msd_news{
     a.feature{
       .make-xs-column(12);
       .make-md-column(4);
+      margin-bottom: 1em;
       .wrapper{
         background: @white;
         text-align: center;
@@ -189,9 +190,8 @@ body.archive.post-type-archive-msd_news{
       .msd-clearfix;
     }
     .section{
-      .make-sm-column(6);
-      max-width: 48%;
-      margin: 1%;
+      margin: 15px;
+      padding: 15px;
       .section-title{
         h3{
           text-align: left;
@@ -225,6 +225,7 @@ body.archive.post-type-archive-msd_news{
     .section.section-header{
       .make-sm-column(12);
       max-width: 100%;
+      margin: 0;
       .section-header-area{
         ul{
           background: @orange;
@@ -254,10 +255,61 @@ body.archive.post-type-archive-msd_news{
       }
       .section-footer-area{
         .overflow-header();
+           margin-left: 0;
+           padding-left: 10rem;
       }
     }
   }
 }
+
+@media only screen and (min-width: 480px) {
+  .page.core-values{
+    .sectioned-page-wrapper{
+        .section{
+        .make-sm-column(6);
+        max-width: 48%;
+        margin: 1%;
+      }
+      .section.section-header{
+        .make-sm-column(12);
+        max-width: 100%;
+        .section-header-area{
+          ul{
+            background: @orange;
+            margin: 0 0 1em 0;
+            text-align: center;
+            li{
+              display: inline-flex;
+              padding: 0;
+              h3{
+                margin: 0;
+                font-size: 3.4em;
+                a{
+                  color: @white;
+                }
+                &:after{
+                  content: ' • ';
+                  color: @dkgrey;
+                }
+              }
+              &.last-child{
+                h3:after{
+                  content: '';
+                }
+              }
+            }
+          }
+        }
+        .section-footer-area{
+          .overflow-header();
+             margin-left: 0;
+             padding-left: 10rem;
+        }
+      }
+    }
+  }
+}
+
 
 .video-grid{
   ul.grid{
