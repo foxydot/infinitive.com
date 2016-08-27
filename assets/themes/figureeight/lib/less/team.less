@@ -28,6 +28,18 @@
           padding: 0;
           img.attachment-team-mini-headshot{
              .background-image(linear-gradient(to bottom, @vltgrey 0%,@offwhite 100%));
+             -webkit-filter: grayscale(1);
+             -webkit-filter: grayscale(100%);
+             filter: gray;
+             filter: grayscale(100%);
+             filter: url(../img/desaturate.svg#greyscale);
+             &:hover{
+             -webkit-filter: none;
+             -webkit-filter: none;
+             filter: none;
+             filter: none;
+             filter: none;
+             }
           }
           ul{
             margin: 0;    
@@ -98,6 +110,21 @@
       aside.headshot{
         .make-xs-column(3);
         padding: 0;
+        img.attachment-mini-headshot{
+           .background-image(linear-gradient(to bottom, @vltgrey 0%,@offwhite 100%));
+           -webkit-filter: grayscale(1);
+           -webkit-filter: grayscale(100%);
+           filter: gray;
+           filter: grayscale(100%);
+           filter: url(../img/desaturate.svg#greyscale);
+           &:hover{
+           -webkit-filter: none;
+           -webkit-filter: none;
+           filter: none;
+           filter: none;
+           filter: none;
+           }
+        }
         ul{
           li{
             list-style: none outside none;
