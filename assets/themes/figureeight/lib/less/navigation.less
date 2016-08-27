@@ -99,6 +99,61 @@ Site Navigation
 .nav-primary {
   .customserif(1.4);
   letter-spacing: 0.1em;
+  width: 100%;
+  li.menu-item{
+    padding: 0;
+    a{
+      padding: 1.8rem 1.2rem 0.8rem;
+      color: @offwhite;
+      text-transform: uppercase;
+    }
+    .sub-menu{
+      background-color: @orange;
+      margin-top: 0px;
+      width: auto;
+      li.menu-item{
+        background-color: transparent;
+        padding: 0 2rem;
+        display: block;
+        a{
+          .customserif(1.4);
+          background-color: transparent;
+          border: 0;
+          color: @white;
+          padding: 0.5rem 0;
+          width: 100%;
+        }
+      }
+      li:hover>a{
+        color: @offwhite;
+        text-decoration: none;
+      }
+    }
+  }
+  li.separator {
+    color: @white;
+  }
+  li:hover, li.current-menu-item, li.current-menu-ancestor{
+    a, a:hover{
+      color: @white;
+      text-decoration: none;
+      }
+  }
+  li.current-menu-item, li.current-menu-ancestor{
+    a, a:hover{
+      }
+  }
+  li.last-child{
+  }
+}
+.mainNav>ul>li.first>ul>li.title>ul>li>ul>li {
+  padding: 3px 0;
+}
+
+
+@media only screen and (min-width: 1023px) {
+  
+.nav-primary {
   width: 66%;
   float: right;
   padding-top: 2rem;
@@ -163,6 +218,7 @@ Site Navigation
 }
 .mainNav>ul>li.first>ul>li.title>ul>li>ul>li {
   padding: 3px 0;
+}
 }
 
 /* Secondary Navigation

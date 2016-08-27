@@ -7068,10 +7068,7 @@ Site Navigation
   font-size: 1.4rem;
   line-height: 1.625;
   letter-spacing: 0.1em;
-  width: 66%;
-  float: right;
-  padding-top: 2rem;
-  text-align: right;
+  width: 100%;
 }
 .nav-primary li.menu-item {
   padding: 0;
@@ -7081,19 +7078,10 @@ Site Navigation
   color: #F2F7FA;
   text-transform: uppercase;
 }
-.nav-primary li.menu-item.first-child a {
-  padding-left: 0;
-}
-.nav-primary li.menu-item.last-child a {
-  padding-right: 0;
-}
 .nav-primary li.menu-item .sub-menu {
   background-color: #FF7D23;
-  -webkit-box-shadow: 0 0 12px 0 #3D3C3D;
-  box-shadow: 0 0 12px 0 #3D3C3D;
   margin-top: 0px;
   width: auto;
-  max-width: 250px;
 }
 .nav-primary li.menu-item .sub-menu li.menu-item {
   background-color: transparent;
@@ -7111,9 +7099,6 @@ Site Navigation
   color: #FFF;
   padding: 0.5rem 0;
   width: 100%;
-}
-.nav-primary li.menu-item .sub-menu li.last-child > a {
-  border: 0;
 }
 .nav-primary li.menu-item .sub-menu li:hover > a {
   color: #F2F7FA;
@@ -7133,6 +7118,75 @@ Site Navigation
 }
 .mainNav > ul > li.first > ul > li.title > ul > li > ul > li {
   padding: 3px 0;
+}
+@media only screen and (min-width: 1023px) {
+  .nav-primary {
+    width: 66%;
+    float: right;
+    padding-top: 2rem;
+    text-align: right;
+  }
+  .nav-primary li.menu-item {
+    padding: 0;
+  }
+  .nav-primary li.menu-item a {
+    padding: 1.8rem 1.2rem 0.8rem;
+    color: #F2F7FA;
+    text-transform: uppercase;
+  }
+  .nav-primary li.menu-item.first-child a {
+    padding-left: 0;
+  }
+  .nav-primary li.menu-item.last-child a {
+    padding-right: 0;
+  }
+  .nav-primary li.menu-item .sub-menu {
+    background-color: #FF7D23;
+    -webkit-box-shadow: 0 0 12px 0 #3D3C3D;
+    box-shadow: 0 0 12px 0 #3D3C3D;
+    margin-top: 0px;
+    width: auto;
+    max-width: 250px;
+  }
+  .nav-primary li.menu-item .sub-menu li.menu-item {
+    background-color: transparent;
+    padding: 0 2rem;
+    display: block;
+  }
+  .nav-primary li.menu-item .sub-menu li.menu-item a {
+    font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.625;
+    background-color: transparent;
+    border: 0;
+    color: #FFF;
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+  .nav-primary li.menu-item .sub-menu li.last-child > a {
+    border: 0;
+  }
+  .nav-primary li.menu-item .sub-menu li:hover > a {
+    color: #F2F7FA;
+    text-decoration: none;
+  }
+  .nav-primary li.separator {
+    color: #FFF;
+  }
+  .nav-primary li:hover a,
+  .nav-primary li.current-menu-item a,
+  .nav-primary li.current-menu-ancestor a,
+  .nav-primary li:hover a:hover,
+  .nav-primary li.current-menu-item a:hover,
+  .nav-primary li.current-menu-ancestor a:hover {
+    color: #FFF;
+    text-decoration: none;
+  }
+  .mainNav > ul > li.first > ul > li.title > ul > li > ul > li {
+    padding: 3px 0;
+  }
 }
 /* Secondary Navigation
 --------------------------------------------- */
@@ -8419,12 +8473,11 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   .nav-responsive a#pull > strong {
     color: #fff;
     text-decoration: none;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.78);
     font-size: 1.2rem;
   }
   .nav-responsive a#pull ul#mobile_menu {
     margin-top: 14px;
-    border-top: 1px solid #959595;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
   .nav-responsive a#pull ul#mobile_menu li {
     display: block;
@@ -8437,7 +8490,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
     display: block;
     width: 100%;
     padding: 0.5em;
-    border-bottom: 1px solid #959595;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 1.2rem;
   }
   .nav-responsive a#pull ul#mobile_menu li a .toggle-switch {
@@ -8480,7 +8533,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
     text-decoration: none;
   }
   .nav-responsive a#pull:after {
-    content: "\f0C9";
+    content: "\f039";
     font-family: 'FontAwesome';
     font-size: 2.2rem;
     text-indent: 0;

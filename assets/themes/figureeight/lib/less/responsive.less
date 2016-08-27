@@ -69,12 +69,11 @@
       > strong {
         color: #fff;
         text-decoration: none;
-        text-shadow:1px 1px 1px rgba(0, 0, 0, 0.78);
         font-size: 1.2rem;
       }
       ul#mobile_menu {
         margin-top: 14px;
-        border-top: 1px solid @ltgrey;
+        border-top: 1px solid fade(@white,20%);
         li{
           display: block;
           list-style: none;
@@ -85,7 +84,7 @@
             display: block;
             width: 100%;
             padding: 0.5em;
-            border-bottom: 1px solid @ltgrey;
+            border-bottom: 1px solid fade(@white,20%);
             font-size: 1.2rem;
             .toggle-switch{
               right: 15px;
@@ -142,7 +141,7 @@
     }
   } 
   .nav-responsive a#pull:after {
-    content:"\f0C9";
+    content:"\f039";
     font-family: 'FontAwesome';
     font-size: 2.2rem;
     text-indent: 0;
