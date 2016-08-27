@@ -227,6 +227,7 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  width: 22%;
   padding: 0;
 }
 .single-team_member main.content article aside.headshot img.attachment-mini-headshot {
@@ -267,6 +268,7 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  width: 78%;
   padding: 0;
 }
 .single-team_member main.content article content header,

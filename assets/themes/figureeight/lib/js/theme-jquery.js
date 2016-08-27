@@ -4,6 +4,7 @@ jQuery(document).ready(function($) {
     $('*:last-child').addClass('last-child');
     $('*:nth-child(even)').addClass('even');
     $('*:nth-child(odd)').addClass('odd');
+    $('body').css('opacity','1');
 	
 	var numwidgets = $('#footer-widgets div.widget').length;
 	$('#footer-widgets').addClass('cols-'+numwidgets);

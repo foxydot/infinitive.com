@@ -5924,6 +5924,12 @@ body {
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 1.625;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 a,
 button,
@@ -7083,6 +7089,8 @@ Site Navigation
 }
 .nav-primary li.menu-item .sub-menu {
   background-color: #FF7D23;
+  -webkit-box-shadow: 0 0 12px 0 #3D3C3D;
+  box-shadow: 0 0 12px 0 #3D3C3D;
   margin-top: 0px;
   width: auto;
   max-width: 250px;
