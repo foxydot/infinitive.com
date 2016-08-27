@@ -59,6 +59,11 @@ body.blog{
     a.featured_image_wrapper{
       display: block;
       overflow: hidden;
+      background: fade(@white,20%);
+      text-align: center;
+      img{
+        margin: 0 auto;
+      }
     }
     .entry-header{
       .entry-title{
@@ -85,6 +90,11 @@ body.blog{
   .genesis-teaser{
     a.grid_image_wrapper{
       display: block;
+      background: fade(@white,20%);
+      text-align: center;
+      img{
+        margin: 0 auto;
+      }
     }
     .entry-header{
       .entry-title{
@@ -155,4 +165,23 @@ body.single-post{
       }
     }
   }
+}
+
+
+@media only screen and (min-width: 1023px) {
+  
+body.blog{
+  main {
+  .genesis-feature{
+    a.featured_image_wrapper{
+      min-height: 380px;
+    }
+  }
+  .genesis-teaser{
+    a.grid_image_wrapper{
+      min-height: 170px;
+    }
+   }
+  }
+}
 }

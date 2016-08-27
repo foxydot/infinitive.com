@@ -125,6 +125,11 @@ body.blog main {
 body.blog main .genesis-feature a.featured_image_wrapper {
   display: block;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+body.blog main .genesis-feature a.featured_image_wrapper img {
+  margin: 0 auto;
 }
 body.blog main .genesis-feature .entry-header .entry-title {
   background: #FF7D23;
@@ -192,6 +197,11 @@ body.blog main .genesis-feature .entry-header .entry-content .readmore-button {
 }
 body.blog main .genesis-teaser a.grid_image_wrapper {
   display: block;
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+body.blog main .genesis-teaser a.grid_image_wrapper img {
+  margin: 0 auto;
 }
 body.blog main .genesis-teaser .entry-header .entry-title {
   margin-top: 1em;
@@ -273,4 +283,12 @@ body.single-post main .post .entry-content {
   background: rgba(255, 255, 255, 0.9);
   border: 2px solid #959595;
   color: #3D3C3D;
+}
+@media only screen and (min-width: 1023px) {
+  body.blog main .genesis-feature a.featured_image_wrapper {
+    min-height: 380px;
+  }
+  body.blog main .genesis-teaser a.grid_image_wrapper {
+    min-height: 170px;
+  }
 }
