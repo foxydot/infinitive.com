@@ -130,7 +130,7 @@ body.blog main .genesis-feature a.featured_image_wrapper,
 body.archive.category main .genesis-feature a.featured_image_wrapper {
   display: block;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.8);
   text-align: center;
 }
 body.blog main .genesis-feature a.featured_image_wrapper img,
@@ -208,7 +208,7 @@ body.archive.category main .genesis-feature .entry-header .entry-content .readmo
 body.blog main .genesis-teaser a.grid_image_wrapper,
 body.archive.category main .genesis-teaser a.grid_image_wrapper {
   display: block;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.8);
   text-align: center;
 }
 body.blog main .genesis-teaser a.grid_image_wrapper img,
