@@ -7,8 +7,8 @@ add_image_size('nav-post-thumb', 540, 300, true);
 add_image_size('mini-headshot', 178,220, array('center','top'));
 add_image_size('facebook', 200, 200, TRUE);
 add_image_size('linkedin', 180, 110, TRUE);
-add_image_size('child_full', 730, 380, FALSE);
-add_image_size('child_thumbnail', 350, 170, FALSE);
+add_image_size('child_full', 773, 380, FALSE);
+add_image_size('child_thumbnail', 371, 182, FALSE);
 
 // force WP to try GD before IM
 //add_filter( 'wp_image_editors', 'change_graphic_lib' );

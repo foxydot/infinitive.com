@@ -313,6 +313,6 @@ body.single-post main .post .entry-content {
   }
   body.blog main .genesis-teaser a.grid_image_wrapper,
   body.archive.category main .genesis-teaser a.grid_image_wrapper {
-    min-height: 170px;
+    min-height: 182px;
   }
 }
