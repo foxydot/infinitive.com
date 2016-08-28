@@ -480,3 +480,7 @@
     padding: 0.5em;
   }
 }
+body.ie .sectioned-page-wrapper .section.section-solving .section-body .column-1 .msd-doodle-wrapper a [class^="doodle-"]:before,
+body.ie .sectioned-page-wrapper .section.section-solving .section-body .column-1 .msd-doodle-wrapper a [class*=" doodle-"]:before {
+  font-size: inherit;
+}
