@@ -5913,8 +5913,8 @@ Defaults
 /* Typographical Elements
 --------------------------------------------- */
 html {
-  font-size: 62.5%;
-  /* 10px browser default */
+  font-size: 10px;
+  /* use if force needed */
 }
 body {
   background-color: #3D3C3D;
@@ -6834,6 +6834,7 @@ Pre Header
   width: 98%;
   max-width: 98%;
   float: none;
+  color: #3D3C3D;
 }
 @media only screen and (min-width: 1023px) {
   .pre-header .widget-area {
@@ -6993,6 +6994,7 @@ Site Header
   border-right: 1px solid #F2F7FA;
   border-radius: 3rem;
   line-height: 1;
+  color: #3D3C3D;
 }
 .site-header .widget-area .search-form input[type="submit"] {
   font-family: "FontAwesome";
@@ -7008,6 +7010,9 @@ Site Header
   width: 18px;
   right: 1rem;
   top: 0.9rem;
+}
+.site-header .widget-area .search-form:hover input[type="search"] {
+  color: #3D3C3D;
 }
 .header-image .site-header .widget-area {
   padding: 0;
