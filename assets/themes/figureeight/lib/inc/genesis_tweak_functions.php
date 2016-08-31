@@ -584,7 +584,7 @@ function msdlab_sitemap(){
             ';
 
             foreach( get_post_types( array('public' => true) ) as $post_type ) {
-              if ( in_array( $post_type, array('post','page','attachment') ) )
+              if ( in_array( $post_type, array('post','page','attachment','msd_video','msd_news') ) )
                 continue;
             
               $pt = get_post_type_object( $post_type );
