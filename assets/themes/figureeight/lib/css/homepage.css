@@ -296,14 +296,10 @@
     background-image: url(../img/iphone6.png);
     background-repeat: no-repeat;
     background-position: top center;
+    background-size: contain;
   }
   .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper iframe {
-    margin: 50px auto;
-    -ms-transform: rotate(-11deg);
-    /* IE 9 */
-    -webkit-transform: rotate(-11deg);
-    /* Chrome, Safari, Opera */
-    transform: rotate(-11deg);
+    margin: 28px auto 20px;
   }
 }
 @media only screen and (min-width: 1023px) {
@@ -431,15 +427,10 @@
     font-size: 2.8rem;
     line-height: 1;
   }
-  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper {
-    background-position: top left;
-    text-align: left;
-    padding-top: 51px;
-    padding-left: 66px;
-    padding-bottom: 50px;
-  }
   .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper iframe {
-    margin: 0 0;
+    max-height: 240px;
+    max-width: 424px;
+    margin: 20px auto;
   }
   .sectioned-page-wrapper .section.section-brainfest .section-title {
     display: none;
