@@ -5,6 +5,7 @@
 add_image_size('tiny-post-thumb', 45, 45, FALSE);
 add_image_size('nav-post-thumb', 540, 300, true);
 add_image_size('mini-headshot', 178,220, array('center','top'));
+add_image_size('headshot', 300,370, array('center','top'));
 add_image_size('facebook', 200, 200, TRUE);
 add_image_size('linkedin', 180, 110, TRUE);
 add_image_size('child_full', 773, 380, FALSE);

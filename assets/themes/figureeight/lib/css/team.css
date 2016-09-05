@@ -329,12 +329,6 @@
   padding: 0;
   background-color: transparent;
 }
-.single-team_member main.content article content .entry-content a {
-  color: #FFF;
-}
-.single-team_member main.content article content .entry-content a:hover {
-  color: #FF7D23;
-}
 .single-team_member main.content article content footer {
   text-align: right;
 }

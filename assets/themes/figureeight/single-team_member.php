@@ -36,7 +36,7 @@ add_action('msdlab_single_team_member_left','msd_add_team_headshot', 5);
 function msd_add_team_headshot(){
     global $post;
     //setup thumbnail image args to be used with genesis_get_image();
-    $size = 'mini-headshot'; // Change this to whatever add_image_size you want
+    $size = 'headshot'; // Change this to whatever add_image_size you want
     $default_attr = array(
             'class' => "alignnone attachment-$size $size",
             'alt'   => $post->post_title,
