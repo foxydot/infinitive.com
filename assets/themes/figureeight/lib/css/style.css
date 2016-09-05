@@ -8385,6 +8385,12 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
 .page.core-values .sectioned-page-wrapper .section.bkg-gray .section-title h3 {
   color: #FFF;
 }
+.page.core-values .sectioned-page-wrapper .section p.first-child {
+  margin: 0;
+}
+.page.core-values .sectioned-page-wrapper .section ul.last-child {
+  margin-bottom: 2em;
+}
 .page.core-values .sectioned-page-wrapper .section.section-header {
   position: relative;
   min-height: 1px;
