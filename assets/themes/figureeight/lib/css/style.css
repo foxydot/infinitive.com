@@ -6290,7 +6290,10 @@ Common Classes
   position: absolute;
   right: 0.5em;
   top: 0.25em;
-  color: #959595;
+  color: #3D3C3D;
+}
+input[type="search"] {
+  color: #3D3C3D;
 }
 img.centered,
 .aligncenter {
