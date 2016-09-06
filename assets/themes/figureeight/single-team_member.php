@@ -182,11 +182,13 @@ function msd_team_news(){
 <h3 class="insights-header">In the News</h3>';
             print '<div class="insights-news insights-section">';
         foreach($newses AS $press){
+            $url = get_post_meta($press->ID,'_news_newsurl',1);
+            $link = strlen($url)>4?msdlab_http_sanity_check($url):get_permalink($press->ID);
             $thumbnail = get_the_post_thumbnail($press->ID,'tiny-post-thumb',array('class' => 'alignleft'));
             
             print '<article>
                 '.$thumbnail.'
-                <a href="'.get_permalink($press->ID).'">'.$press->post_title.'</a>
+                <a href="'.$link.'">'.$press->post_title.'</a>
                 </article>';
         }
         print '</div>';
