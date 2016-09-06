@@ -5854,7 +5854,7 @@ td.visible-print {
 /* Buttons */
 .button {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -5877,7 +5877,7 @@ td.visible-print {
 .button:hover,
 .button a:hover {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6019,12 +6019,11 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  text-transform: uppercase;
   line-height: 1.2;
   margin: 0.5em 0 0.25em;
 }
@@ -6116,7 +6115,7 @@ input[type="submit"],
 .button,
 .entry-content .button {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6143,7 +6142,7 @@ input:hover[type="submit"],
 .button:hover,
 .entry-content .button:hover {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6445,7 +6444,7 @@ Widgets
 .sidebar .widget.widget_recent_entries h4.widget-title,
 .sidebar .widget.widget_categories h4.widget-title {
   background: #FF7D23;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-size: 1.8rem;
@@ -6530,7 +6529,7 @@ Widgets
   padding-left: 0.5em;
   padding-right: 0.5em;
   margin: 0;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 32px;
   font-size: 3.2rem;
@@ -6553,7 +6552,7 @@ Widgets
 }
 .sidebar .widget.msd_news_widget ul.news-list li .link.alignright {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -6575,7 +6574,7 @@ Widgets
 }
 .sidebar .widget.widget_pluginbuddyvideoshowcase h4.widget-title {
   background: #7F7F7F;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 32px;
   font-size: 3.2rem;
@@ -6597,7 +6596,7 @@ Widgets
 .sidebar .widget.widget_sp_image h4.widget-title {
   padding-left: 0.5em;
   padding-right: 0.5em;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 32px;
   font-size: 3.2rem;
@@ -6625,7 +6624,7 @@ Widgets
   text-align: right;
 }
 .sidebar .widget.widget_msd_experts .widget-title {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 36px;
   font-size: 3.6rem;
@@ -6863,12 +6862,11 @@ Site Header
 --------------------------------------------- */
 .title-area {
   float: none;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  text-transform: uppercase;
   font-weight: 700;
   padding: 16px 0;
   padding: 1.6rem 0;
@@ -7103,7 +7101,7 @@ Site Navigation
 /* Primary Navigation
 --------------------------------------------- */
 .nav-primary {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 14px;
   font-size: 1.4rem;
@@ -7117,7 +7115,6 @@ Site Navigation
 .nav-primary li.menu-item a {
   padding: 1.8rem 1.2rem 0.8rem;
   color: #F2F7FA;
-  text-transform: uppercase;
 }
 .nav-primary li.menu-item .sub-menu {
   background-color: #FF7D23;
@@ -7130,7 +7127,7 @@ Site Navigation
   display: block;
 }
 .nav-primary li.menu-item .sub-menu li.menu-item a {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 14px;
   font-size: 1.4rem;
@@ -7173,7 +7170,6 @@ Site Navigation
   .nav-primary li.menu-item a {
     padding: 1.8rem 1.2rem 0.8rem;
     color: #F2F7FA;
-    text-transform: uppercase;
   }
   .nav-primary li.menu-item.first-child a {
     padding-left: 0;
@@ -7195,7 +7191,7 @@ Site Navigation
     display: block;
   }
   .nav-primary li.menu-item .sub-menu li.menu-item a {
-    font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+    font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
     font-weight: 400;
     font-size: 14px;
     font-size: 1.4rem;
@@ -7365,7 +7361,7 @@ article.entry {
 }
 .entry-content h1,
 .section-body h1 {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 39px;
   font-size: 3.9rem;
@@ -7382,7 +7378,7 @@ article.entry {
 }
 .entry-content blockquote p,
 .section-body blockquote p {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -7460,7 +7456,7 @@ article.entry {
 .archive-description .entry-title,
 .entry-header .archive-title,
 .archive-description .archive-title {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 58px;
   font-size: 5.8rem;
@@ -7481,7 +7477,7 @@ article.entry {
   padding-right: 10rem;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-size: 1.8rem;
@@ -7507,7 +7503,7 @@ article.entry {
 }
 .archive-pagination a {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -7674,7 +7670,7 @@ Sidebars
 }
 .sidebar .widget_text .textwidget .readmore {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -7717,7 +7713,7 @@ Footer Widgets
 .footer-widgets {
   clear: both;
   padding: 0;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -7743,7 +7739,7 @@ Footer Widgets
   margin: 0 auto;
 }
 .footer-widgets .widget.msd-connected .connected-form .gform_heading h3.gform_title {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 39px;
   font-size: 3.9rem;
@@ -7791,7 +7787,7 @@ Footer Widgets
 .footer-widgets .widget.msd-connected .connected-form .gform_footer input[type="button"],
 .footer-widgets .widget.msd-connected .connected-form .gform_footer a.button {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -7815,7 +7811,7 @@ Footer Widgets
 .footer-widgets .widget.msd-connected .connected-form .gform_footer input[type="button"]:hover,
 .footer-widgets .widget.msd-connected .connected-form .gform_footer a.button:hover {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -7863,7 +7859,7 @@ Footer Widgets
 Site Footer
 ---------------------------------------------------------------------------------------------------- */
 .site-footer {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 12px;
   font-size: 1.2rem;
@@ -7949,7 +7945,7 @@ Site Footer
 }
 .sectioned-page-wrapper .section .section-subtitle,
 .sectioned-page-wrapper .section h4 {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 39px;
   font-size: 3.9rem;
@@ -7967,7 +7963,7 @@ Site Footer
   margin-bottom: 2rem;
 }
 .sectioned-page-wrapper .section h3 {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 39px;
   font-size: 3.9rem;
@@ -7981,7 +7977,7 @@ Site Footer
   margin-bottom: 0.5em;
 }
 .sectioned-page-wrapper .section .section-title h3 {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 58px;
   font-size: 5.8rem;
@@ -8044,7 +8040,7 @@ Site Footer
 body.page.press main.content article .entry-content h2.first-child,
 body.page.resources main.content article .entry-content h2.first-child,
 body.page.core-values main.content article .entry-content h2.first-child {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -8106,7 +8102,7 @@ body.page.core-values main.content article .entry-content ul.publication-list li
 body.page.press main.content article .entry-content ul.publication-list li .news-info h3,
 body.page.resources main.content article .entry-content ul.publication-list li .news-info h3,
 body.page.core-values main.content article .entry-content ul.publication-list li .news-info h3 {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-size: 1.8rem;
@@ -8188,7 +8184,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-info {
   background: rgba(255, 255, 255, 0.05);
 }
 body.archive.post-type-archive-msd_news ul.publication-list li .news-info h3 {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-size: 1.8rem;
@@ -8435,7 +8431,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   padding-right: 10rem;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-size: 1.8rem;
@@ -8493,7 +8489,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
     padding-right: 10rem;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
-    font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+    font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
     font-weight: 400;
     font-size: 18px;
     font-size: 1.8rem;
