@@ -17,7 +17,7 @@
 /* Buttons */
 .button {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -35,7 +35,7 @@
 .button:hover,
 .button a:hover {
   padding: 6px 24px;
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -93,13 +93,12 @@
   display: block;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-1 .msd-doodle-wrapper a {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
   color: #FFF;
-  text-transform: uppercase;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-1 .msd-doodle-wrapper a:hover {
   text-decoration: none;
@@ -177,7 +176,7 @@
   padding: 1em 0;
 }
 .sectioned-page-wrapper .section.section-focus .section-body .section-content {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
@@ -251,7 +250,7 @@
   color: #FF7D23;
 }
 .sectioned-page-wrapper .section.section-brainfest .section-body .wrap .section-content .msd-doodle-wrapper a.msd-doodle-link .msd-doodle-title {
-  font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 28px;
   font-size: 2.8rem;
@@ -326,7 +325,7 @@
     display: inline-block;
   }
   .sectioned-page-wrapper .section.section-obsessed .section-body .column-1 .msd-doodle-wrapper a {
-    font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+    font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
     font-weight: 400;
     font-size: 16px;
     font-size: 1.6rem;
@@ -345,7 +344,7 @@
     display: inline-block;
   }
   .sectioned-page-wrapper .section.section-obsessed .section-body .column-2 .msd-doodle-wrapper a {
-    font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+    font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
     font-weight: 400;
     font-size: 16px;
     font-size: 1.6rem;
@@ -398,12 +397,11 @@
     background-repeat: no-repeat;
     background-position: center center;
     padding: 2em;
-    font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+    font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
     font-weight: 400;
     font-size: 22px;
     font-size: 2.2rem;
     line-height: 1.625;
-    text-transform: uppercase;
     text-transform: none;
     line-height: 1.2;
     text-align: left;
@@ -458,7 +456,7 @@
     color: #FF7D23;
   }
   .sectioned-page-wrapper .section.section-brainfest .section-body .wrap .section-content .msd-doodle-wrapper a.msd-doodle-link .msd-doodle-title {
-    font-family: "Josefin Slab", "Josefin Slab Fallback", Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+    font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
     font-weight: 400;
     font-size: 28px;
     font-size: 2.8rem;
