@@ -168,6 +168,16 @@
   text-align: left;
   padding: 2em 0.5em 0.5em;
 }
+.sectioned-page-wrapper .section.section-focus .section-title .wrap span.first-child {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+}
+.sectioned-page-wrapper .section.section-focus .section-title .wrap span.last-child {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
 .sectioned-page-wrapper .section.section-focus .section-body .wrap {
   padding: 1em 0;
 }
