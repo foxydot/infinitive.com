@@ -12,7 +12,7 @@
 .sectioned-page-wrapper{
   .section{
     .section-title h3{
-      .script(3);
+      .customheader-chalk();
       font-size: 6vw;
     }
     .section-body{
@@ -46,28 +46,27 @@
         }
       }
       .column-2{
-        margin-left: -50px;
-        text-align: right;
-        background-image: url(../img/bkg-rocket.png);
-        background-repeat: no-repeat;
-        background-position: top left;
-        min-height: 370px;
         .msd-doodle-wrapper{
-          width: 27%;
-          margin: 10% 3% 0;
-          display: inline-block;
+          width: 70%;
+          margin: -4em auto 4em;
+          display: block;
           text-align: center;
-          position: absolute;
-          top: 15%;
-          right: 0;
           a{
-            .script();
-            line-height: 1.25;
+            .customheader-chalk();
+            font-size: 2em;
+            line-height: 1;
             color: @white;
             text-transform: uppercase;
-            font-size: 1.2em;
+            font-weight: 700;
+            strong{
+              color: @orange;
+              font-weight: 400;
+              font-size: 0.8em;
+            }
             i{
               color: @orange;
+              font-weight: 400;
+              font-size:0.6em;
             }
             .msd-doodle-title{
               text-align: center;
@@ -75,7 +74,6 @@
           }
         }
       }
-      
     }
   }
   .section.section-obsessed{
@@ -85,11 +83,10 @@
   .section.section-clients{
     .section-title{
       .wrap{
-        font-size: 0.8em;
         font-weight: 600;
         background-color: @orange;
         text-align: left;
-        padding: 0.5em 1em;
+        padding: 0 0.5em;
       }
     }
     .section-body{
@@ -114,7 +111,17 @@
         border-width: 0 0 5px 0;
         border-color: @orange;
         text-align: left;
-        padding: 2em 0.5em 0.5em;
+        span.first-child{
+          display: inline-block;
+          width: 50%;
+          text-align: left;
+        }
+        span.last-child{
+          display: inline-block;
+          width: 50%;
+          text-align: right;
+          
+        }
       }
       }
     .section-body{
@@ -185,7 +192,7 @@
         border-width:  5px 0 5px 0;
         padding: 2em 0;
         .section-content{
-          .script(2.4);
+          .customheader-chalk(2.4);
           .msd-doodle-wrapper{
             text-align: center;
             a.msd-doodle-link{
@@ -217,7 +224,8 @@
   .sectioned-page-wrapper{
     .section{
       .section-title h3{
-        .script(3);
+        .customheader-chalk(5);
+        line-height: 1;
       }
     }
     .section.section-solving{
@@ -231,9 +239,15 @@
           }
         }
         .column-2{
-          margin-top: -80px;
+          p.first-child{
+            width: 48%;
+            display: inline-block;
+          }
           .msd-doodle-wrapper{
-            margin: 0 3%;
+            display: inline-block;
+            margin-top: 4em;
+            position: absolute;
+            width: 48%;
           }
         }
         
@@ -289,7 +303,17 @@
     .section.section-solving{
       .section-body{
         .column-2{
-          min-height: 531px;
+          p.first-child{
+            width: 100%;
+            margin-top: -6em;
+          }
+          .msd-doodle-wrapper{
+            width: 80%;
+            margin: -7em auto 6em;
+            display: block;
+            text-align: center;
+            position: relative;
+          }
         }
       }
     }
@@ -356,12 +380,16 @@
           &.column-2{
             visibility: visible;
             display: block;
-            .script(2.4);
+            .customheader-chalk(2.4);
             line-height: 1.25;
             color: @orange;
             .msd-doodle-wrapper{
               color: @white;
-              font-size: 1em;
+              font-size: 2em;
+              line-height: 1;
+              i{
+                font-size: 0.75em;
+              }
             }
           }
         }      
@@ -398,7 +426,7 @@
               text-align: center;
               .msd-doodle-wrapper{
                 padding: 2.8em 0;
-                .script(2.8);
+                .customheader-chalk(2.8);
               }
             }
             .iphone-wrapper{
@@ -423,7 +451,7 @@
           border-width:  5px 0 5px 0;
           padding: 2em 0;
           .section-content{
-            .script(2.4);
+            .customheader-chalk(2.4);
             .msd-doodle-wrapper{
               text-align: center;
               a.msd-doodle-link{
