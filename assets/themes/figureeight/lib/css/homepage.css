@@ -326,9 +326,6 @@
   .site-inner article h1.entry-title {
     font-size: 7em;
   }
-  .sectioned-page-wrapper .section.section-solving .section-body .column-2 {
-    min-height: 34em;
-  }
   .sectioned-page-wrapper .section.section-solving .section-body .column-2 p.first-child {
     width: 100%;
     margin-top: -6em;
