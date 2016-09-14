@@ -111,7 +111,6 @@
         border-width: 0 0 5px 0;
         border-color: @orange;
         text-align: left;
-        padding: 2em 0.5em 0.5em;
         span.first-child{
           display: inline-block;
           width: 50%;
@@ -225,7 +224,8 @@
   .sectioned-page-wrapper{
     .section{
       .section-title h3{
-        .customheader-chalk(3);
+        .customheader-chalk(5);
+        line-height: 1;
       }
     }
     .section.section-solving{
@@ -385,7 +385,11 @@
             color: @orange;
             .msd-doodle-wrapper{
               color: @white;
-              font-size: 1em;
+              font-size: 2em;
+              line-height: 1;
+              i{
+                font-size: 0.75em;
+              }
             }
           }
         }      
