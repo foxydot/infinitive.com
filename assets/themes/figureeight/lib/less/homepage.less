@@ -46,28 +46,26 @@
         }
       }
       .column-2{
-        margin-left: -50px;
-        text-align: right;
-        background-image: url(../img/bkg-rocket.png);
-        background-repeat: no-repeat;
-        background-position: top left;
-        min-height: 370px;
         .msd-doodle-wrapper{
-          width: 27%;
-          margin: 10% 3% 0;
-          display: inline-block;
+          width: 80%;
+          margin: -4em auto 4em;
+          display: block;
           text-align: center;
-          position: absolute;
-          top: 15%;
-          right: 0;
           a{
             .script();
             line-height: 1.25;
             color: @white;
             text-transform: uppercase;
-            font-size: 1.2em;
+            font-size: 1.4em;
+            font-weight: 700;
+            span{
+              color: @orange;
+              font-weight: 400;
+              font-size: 0.8em;
+            }
             i{
               color: @orange;
+              font-weight: 400;
             }
             .msd-doodle-title{
               text-align: center;
@@ -231,9 +229,15 @@
           }
         }
         .column-2{
-          margin-top: -80px;
+          p.first-child{
+            width: 48%;
+            display: inline-block;
+          }
           .msd-doodle-wrapper{
-            margin: 0 3%;
+            display: inline-block;
+            margin-top: 4em;
+            position: absolute;
+            width: 48%;
           }
         }
         
@@ -289,7 +293,17 @@
     .section.section-solving{
       .section-body{
         .column-2{
-          min-height: 531px;
+          min-height: 34em;
+          p.first-child{
+            width: 100%;
+            margin-top: -6em;
+          }
+          .msd-doodle-wrapper{
+            width: 80%;
+            margin: -8em auto 6em;
+            display: block;
+            text-align: center;
+          }
         }
       }
     }

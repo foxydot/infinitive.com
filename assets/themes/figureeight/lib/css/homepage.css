@@ -108,22 +108,11 @@
 .sectioned-page-wrapper .section.section-solving .section-body .column-1 .msd-doodle-wrapper a [class*=" doodle-"]:before {
   font-size: 6em;
 }
-.sectioned-page-wrapper .section.section-solving .section-body .column-2 {
-  margin-left: -50px;
-  text-align: right;
-  background-image: url(../img/bkg-rocket.png);
-  background-repeat: no-repeat;
-  background-position: top left;
-  min-height: 370px;
-}
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper {
-  width: 27%;
-  margin: 10% 3% 0;
-  display: inline-block;
+  width: 80%;
+  margin: -4em auto 4em;
+  display: block;
   text-align: center;
-  position: absolute;
-  top: 15%;
-  right: 0;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a {
   font-family: "Hand Of Sean", cursive;
@@ -134,10 +123,17 @@
   line-height: 1.25;
   color: #FFF;
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a span {
+  color: #FF7D23;
+  font-weight: 400;
+  font-size: 0.8em;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a i {
   color: #FF7D23;
+  font-weight: 400;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a .msd-doodle-title {
   text-align: center;
@@ -276,11 +272,15 @@
     display: inline-block;
     display: inline-flex;
   }
-  .sectioned-page-wrapper .section.section-solving .section-body .column-2 {
-    margin-top: -80px;
+  .sectioned-page-wrapper .section.section-solving .section-body .column-2 p.first-child {
+    width: 48%;
+    display: inline-block;
   }
   .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper {
-    margin: 0 3%;
+    display: inline-block;
+    margin-top: 4em;
+    position: absolute;
+    width: 48%;
   }
   .sectioned-page-wrapper .section.section-clients .section-body .section-content.column-2 {
     visibility: visible;
@@ -306,7 +306,17 @@
     font-size: 7em;
   }
   .sectioned-page-wrapper .section.section-solving .section-body .column-2 {
-    min-height: 531px;
+    min-height: 34em;
+  }
+  .sectioned-page-wrapper .section.section-solving .section-body .column-2 p.first-child {
+    width: 100%;
+    margin-top: -6em;
+  }
+  .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper {
+    width: 80%;
+    margin: -8em auto 6em;
+    display: block;
+    text-align: center;
   }
   .sectioned-page-wrapper .section.section-obsessed {
     visibility: visible;
