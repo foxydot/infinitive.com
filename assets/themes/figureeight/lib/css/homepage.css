@@ -125,7 +125,7 @@
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   letter-spacing: 0.05em;
-  font-size: 2em;
+  font-size: 3em;
   line-height: 1;
   color: #FFF;
   text-transform: uppercase;
@@ -139,7 +139,7 @@
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a i {
   color: #FF7D23;
   font-weight: 400;
-  font-size: 0.6em;
+  font-size: 0.45em;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a .msd-doodle-title {
   text-align: center;
