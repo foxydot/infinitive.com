@@ -12,7 +12,7 @@
 .sectioned-page-wrapper{
   .section{
     .section-title h3{
-      .script(3);
+      .customheader-chalk();
       font-size: 6vw;
     }
     .section-body{
@@ -47,18 +47,18 @@
       }
       .column-2{
         .msd-doodle-wrapper{
-          width: 80%;
+          width: 70%;
           margin: -4em auto 4em;
           display: block;
           text-align: center;
           a{
-            .script();
-            line-height: 1.25;
+            .customheader-chalk();
+            font-size: 2em;
+            line-height: 1;
             color: @white;
             text-transform: uppercase;
-            font-size: 1.4em;
             font-weight: 700;
-            span{
+            strong{
               color: @orange;
               font-weight: 400;
               font-size: 0.8em;
@@ -66,6 +66,7 @@
             i{
               color: @orange;
               font-weight: 400;
+              font-size:0.6em;
             }
             .msd-doodle-title{
               text-align: center;
@@ -73,7 +74,6 @@
           }
         }
       }
-      
     }
   }
   .section.section-obsessed{
@@ -83,11 +83,10 @@
   .section.section-clients{
     .section-title{
       .wrap{
-        font-size: 0.8em;
         font-weight: 600;
         background-color: @orange;
         text-align: left;
-        padding: 0.5em 1em;
+        padding: 0 0.5em;
       }
     }
     .section-body{
@@ -194,7 +193,7 @@
         border-width:  5px 0 5px 0;
         padding: 2em 0;
         .section-content{
-          .script(2.4);
+          .customheader-chalk(2.4);
           .msd-doodle-wrapper{
             text-align: center;
             a.msd-doodle-link{
@@ -226,7 +225,7 @@
   .sectioned-page-wrapper{
     .section{
       .section-title h3{
-        .script(3);
+        .customheader-chalk(3);
       }
     }
     .section.section-solving{
@@ -311,9 +310,10 @@
           }
           .msd-doodle-wrapper{
             width: 80%;
-            margin: -8em auto 6em;
+            margin: -7em auto 6em;
             display: block;
             text-align: center;
+            position: relative;
           }
         }
       }
@@ -381,7 +381,7 @@
           &.column-2{
             visibility: visible;
             display: block;
-            .script(2.4);
+            .customheader-chalk(2.4);
             line-height: 1.25;
             color: @orange;
             .msd-doodle-wrapper{
@@ -423,7 +423,7 @@
               text-align: center;
               .msd-doodle-wrapper{
                 padding: 2.8em 0;
-                .script(2.8);
+                .customheader-chalk(2.8);
               }
             }
             .iphone-wrapper{
@@ -448,7 +448,7 @@
           border-width:  5px 0 5px 0;
           padding: 2em 0;
           .section-content{
-            .script(2.4);
+            .customheader-chalk(2.4);
             .msd-doodle-wrapper{
               text-align: center;
               a.msd-doodle-link{
