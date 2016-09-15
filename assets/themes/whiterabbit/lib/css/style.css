@@ -5827,11 +5827,6 @@ td.visible-print {
   visibility: hidden;
 }
 /*
- * Questions
- * 1) On the blog, are we going to use the featured image on the single blog page, or apply the image in the content (as we've done in the past.)
- * 
- */
-/*
 Defaults
 ---------------------------------------------------------------------------------------------------- */
 /* Typographical Elements
@@ -5841,8 +5836,8 @@ html {
   /* use if force needed */
 }
 body {
-  background-color: #3D3C3D;
-  color: #FFF;
+  background-color: #FFF;
+  color: #3D3C3D;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -6745,6 +6740,9 @@ img#wpstats {
 /*
 Pre Header
 ---------------------------------------------------------------------------------------------------- */
+.pre-header {
+  background-color: #3D3C3D;
+}
 .pre-header .widget-area {
   text-align: center;
 }
@@ -6781,6 +6779,9 @@ Pre Header
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
+.site-header {
+  background-color: #3D3C3D;
+}
 .site-header .wrap {
   padding: 40px 0;
   padding: 4rem 0;
@@ -7206,6 +7207,7 @@ Site Navigation
   padding: 0.5rem 0;
 }
 .nav-footer li.menu-item {
+  display: block;
   width: auto;
   position: relative;
 }
@@ -7786,6 +7788,7 @@ Footer Widgets
 Site Footer
 ---------------------------------------------------------------------------------------------------- */
 .site-footer {
+  background-color: #3D3C3D;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -7793,6 +7796,7 @@ Site Footer
   line-height: 1.625;
   text-align: center;
   padding: 0;
+  color: #FFF;
 }
 .site-footer .wrap {
   position: relative;

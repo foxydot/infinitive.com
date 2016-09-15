@@ -165,16 +165,6 @@ function msdlab_get_thumbnail_url($post_id = null, $size = 'post-thumbnail'){
     return $url;
 }
 
-function msdlab_page_banner(){
-    if(is_front_page())
-        return;
-    global $post;
-    $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'page_banner' );
-    $background = $featured_image[0];
-    $ret = '<div class="banner clearfix" style="background-image:url('.$background.')"></div>';
-    print $ret;
-}
-
 /*** NAV ***/
 function msdlab_do_nav() {
 
@@ -257,17 +247,14 @@ function msdlab_ro_layout_logic() {
 function msdlab_maybe_move_title(){
     global $post;
     $template_file = get_post_meta($post->ID,'_wp_page_template',TRUE);
-    if(is_page() && $template_file=='default'){
-        remove_action('genesis_entry_header','genesis_do_post_title'); //move the title out of the content area
+    if(is_page()){
+        //remove_action('genesis_entry_header','genesis_do_post_title'); //move the title out of the content area
         add_action('msdlab_title_area','msdlab_do_section_title');
         add_action('genesis_after_header','msdlab_do_title_area');
     }
 }
- 
+
 function msdlab_do_title_area(){
-    if(is_front_page()){
-        return FALSE;
-    }
     global $post;
     $postid = is_admin()?$_GET['post']:$post->ID;
     $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
@@ -283,13 +270,44 @@ function msdlab_do_title_area(){
 }
 
 function msdlab_do_section_title(){
-    if(is_page()){
+    if(is_front_page()){
+        return false;
+    } elseif(is_page()){
         global $post;
+        $myid = $post->ID;
+        $lvl = 2;
+        if(get_section_title()!=$post->post_title){
+            //add_action('genesis_entry_header','genesis_do_post_title',5);
+            //$lvl = 2;
+            $myid = get_topmost_parent($post->ID);
+        }
+        $background = strlen(msdlab_get_thumbnail_url($myid,'full'))>0?' style="background-image:url('.msdlab_get_thumbnail_url($myid,'full').')"':'';
+        print '<div class="banner clearfix"'.$background.'>';
+        print '<div class="texturize">';
+        print '<div class="gradient">';
         print '<div class="wrap">';
-        genesis_do_post_title();
+        print '<h'.$lvl.' class="section-title">';
+        print get_menu_tree_header($myid);
+        print '</h'.$lvl.'>';
         print '</div>';
-    } elseif(is_single()) {
-        genesis_do_post_title();
+        print '</div>';
+        print '</div>';
+        print '</div>';
+    } elseif(is_home() || is_single()) {
+        $blog_home = get_post(get_option( 'page_for_posts' ));
+        $title = apply_filters( 'genesis_post_title_text', $blog_home->post_title );//* Wrap in H1 on singular pages
+        $background = strlen(msdlab_get_thumbnail_url($myid,'full'))>0?' style="background-image:url('.msdlab_get_thumbnail_url($blog_home->ID,'full').')"':'';
+        print '<div class="banner clearfix"'.$background.'>';
+        print '<div class="texturize">';
+        print '<div class="gradient">';
+        print '<div class="wrap">';
+        print '<h2 class="section-title">';
+        print $title;
+        print '</h2>';
+        print '</div>';
+        print '</div>';
+        print '</div>';
+        print '</div>';
     } else {
         genesis_do_post_title();
     }
@@ -714,4 +732,9 @@ if(!function_exists('msdlab_custom_hooks_management')){
         if($actions !=''){ts_data($actions);}
         if(get_option('site_lockout')){print '<div style="width: 100%; position: fixed; top: 0; z-index: 100000; background-color: red; padding: 12px; color: white; font-weight: bold; font-size: 24px;text-align: center;">'.get_option('site_lockout').'</div>';}
     }
+}
+
+
+function get_menu_tree_header($id){
+    return get_post_meta($id,'_msdlab_subtitle',true);
 }

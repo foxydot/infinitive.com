@@ -15,12 +15,6 @@ jQuery(document).ready(function($) {
           return el.apply(this, arguments);
         };
       });
-
-	$('.nav-footer ul.menu>li').after(function(){
-		if(!$(this).hasClass('last-child') && $(this).hasClass('menu-item') && $(this).css('display')!='none'){
-			return '<li class="separator">|</li>';
-		}
-	});
 	
 	$('.section.expandable .expand').click(function(){
 	    var target = $(this).parents('.section-body').find('.content');

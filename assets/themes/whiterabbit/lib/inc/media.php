@@ -40,10 +40,6 @@ function msdlab_post_image() {
     if ( has_post_thumbnail() ){
         if(is_page() ) {
             msdlab_page_banner();
-        } elseif ( is_cpt('project') ) {
-            if( is_single() ){
-                msdlab_page_banner();
-            }
         } else {
             print '<section class="header-image">';
             printf( '<a title="%s" href="%s">%s</a>', get_permalink(), the_title_attribute( 'echo=0' ), genesis_get_image( array( 'size' => $size, 'attr' => $default_attr ) ) );
