@@ -1,0 +1,7 @@
+<svg:svg xmlns="http://www.w3.org/svg/2000">
+<svg:filter id="chalk" height="2" width="1.6" color-interpolation-filters="sRGB" y="-0.5" x="-0.3">
+  <svg:feTurbulence baseFrequency="0.5" seed="115" result="result1" numOctaves="1" type="turbulence"/>
+  <svg:feOffset result="result2" dx="-5" dy="-5"/>
+  <svg:feDisplacementMap scale="1" yChannelSelector="G" in2="result1" xChannelSelector="R" in="SourceGraphic"/>
+</svg:filter>
+</svg:svg>
