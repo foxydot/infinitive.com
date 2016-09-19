@@ -60,11 +60,10 @@
   clear: both;
   visibility: hidden;
 }
-/*
- * Questions
- * 1) On the blog, are we going to use the featured image on the single blog page, or apply the image in the content (as we've done in the past.)
- * 
- */
+body {
+  background-color: #3D3C3D;
+  color: #FFF;
+}
 .site-inner article {
   margin: 2em 0 0;
 }
