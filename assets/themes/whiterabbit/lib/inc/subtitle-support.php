@@ -10,7 +10,7 @@ add_action( 'genesis_entry_header', 'msdlab_do_post_subtitle', 13);
 
 
 function add_custom_metaboxes(){
-    global $subtitle_metabox,$menu_tree_header;
+    global $subtitle_metabox,$banner_content;
     $types = array('post','page','msd_video','team_member','msd_news','msd_casestudy');
     $subtitle_metabox = new WPAlchemy_MetaBox(array
     (

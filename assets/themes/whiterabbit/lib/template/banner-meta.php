@@ -4,7 +4,7 @@
     <div class="cell">
         <label>Replace Title with Header Text</label>
         <div class="input_container">
-            <?php $mb->the_field('header-area-bool'); ?>
+            <?php $mb->the_field('banner_text_bool'); ?>
             <div class="ui-toggle-btn">
               <input type="checkbox" name="<?php $mb->the_name(); ?>" value="1"<?php $mb->the_checkbox_state('1');?> />
               <div class="handle" data-on="ON" data-off="OFF"></div>
@@ -13,6 +13,24 @@
                 <?php $mb->the_field('banner_text'); ?>
                 <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" />
            </div>
+       </div>
+    </div>
+    <div class="cell">
+        <label>Doodle</label>
+        <div class="input_container">
+            <?php $mb->the_field('doodle'); ?>
+            <div class="doodle-choice"><span class="radiolabel"><i class="doodle"></i><span class="caption">No Doodle</span></span><input type="radio" name="<?php $mb->the_name(); ?>" value=""<?php $mb->the_select_state(''); ?>></input></div>
+            <?php
+                $doodlearray = array('arrowdown','videoplay','atbubble','balance','bargraph','bentarrowup','bullseye','calendar','ideamap','lockkey','piechart','radio','shield','usercycle');
+                foreach($doodlearray AS $doodlename){
+                    $checked = $mb->is_value($doodlename)?' checked="checked"':'';
+                    print '
+                    <div class="doodle-choice">
+                        <span class="radiolabel"><i class="doodle-'.$doodlename.'"></i><span class="caption">'.$doodlename.'</span></span>
+                        <input type="radio" name="'.$mb->get_the_name().'" value="'.$doodlename.'"'.$checked.'></input>
+                    </div>';
+                }
+            ?>
        </div>
     </div>
     </div>
@@ -172,6 +190,16 @@
       -o-transition: height 0.5s ease-in-out;
       transition: height 0.5s ease-in-out;
     }
+    .msdlab_meta_control .doodle-choice {
+        border: 1px solid #ddd;
+        margin: 0.5em;
+        padding: 0.5em;
+        display: inline-block;
+        width: 12em;
+        text-align: center;
+    }
+    .msdlab_meta_control .doodle-choice .radiolabel {display: block;}
+    .msdlab_meta_control .doodle-choice .radiolabel i {display: block;}
 </style>
 <script>
     jQuery(function($){

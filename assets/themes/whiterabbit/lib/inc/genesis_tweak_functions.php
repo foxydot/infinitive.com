@@ -273,39 +273,35 @@ function msdlab_do_section_title(){
     if(is_front_page()){
         return false;
     } elseif(is_page()){
-        global $post;
+        global $post, $banner_content;
         $myid = $post->ID;
         $lvl = 2;
-        if(get_section_title()!=$post->post_title){
-            //add_action('genesis_entry_header','genesis_do_post_title',5);
-            //$lvl = 2;
-            $myid = get_topmost_parent($post->ID);
+        $titlestr = '';
+        $banner_content->the_meta();
+        if($banner_content->get_the_value('banner_text_bool')==1){
+            $title = $banner_content->get_the_value('banner_text');
+            $type = 'banner';
+        } else {
+            $lvl = 1;
+            $title = get_the_title();
+            $type = 'entry';
+            remove_action('genesis_entry_header','genesis_do_post_title');
         }
-        $background = strlen(msdlab_get_thumbnail_url($myid,'full'))>0?' style="background-image:url('.msdlab_get_thumbnail_url($myid,'full').')"':'';
-        print '<div class="banner clearfix"'.$background.'>';
-        print '<div class="texturize">';
-        print '<div class="gradient">';
+        $doodle = $banner_content->get_the_value('doodle')!=''?'<i class="doodle-'.$banner_content->get_the_value('doodle').'"></i>':'';
+        $titlestr = '<h'.$lvl.' class="'.$type.'-title">'.$doodle.$title.'</h'.$lvl.'>';
+        print '<div class="banner clearfix">';
         print '<div class="wrap">';
-        print '<h'.$lvl.' class="section-title">';
-        print get_menu_tree_header($myid);
-        print '</h'.$lvl.'>';
-        print '</div>';
-        print '</div>';
+        print $titlestr;
         print '</div>';
         print '</div>';
     } elseif(is_home() || is_single()) {
         $blog_home = get_post(get_option( 'page_for_posts' ));
         $title = apply_filters( 'genesis_post_title_text', $blog_home->post_title );//* Wrap in H1 on singular pages
-        $background = strlen(msdlab_get_thumbnail_url($myid,'full'))>0?' style="background-image:url('.msdlab_get_thumbnail_url($blog_home->ID,'full').')"':'';
-        print '<div class="banner clearfix"'.$background.'>';
-        print '<div class="texturize">';
-        print '<div class="gradient">';
+        print '<div class="banner clearfix">';
         print '<div class="wrap">';
         print '<h2 class="section-title">';
         print $title;
         print '</h2>';
-        print '</div>';
-        print '</div>';
         print '</div>';
         print '</div>';
     } else {
