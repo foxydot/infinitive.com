@@ -17,7 +17,7 @@
     </div>
     <div class="cell">
         <label>Doodle</label>
-        <div class="input_container">
+        <div class="input_container" style="overflow:auto;height:14em;border:1px solid #ddd;">
             <?php $mb->the_field('doodle'); ?>
             <div class="doodle-choice"><span class="radiolabel"><i class="doodle"></i><span class="caption">No Doodle</span></span><input type="radio" name="<?php $mb->the_name(); ?>" value=""<?php $mb->the_select_state(''); ?>></input></div>
             <?php
