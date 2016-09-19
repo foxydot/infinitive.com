@@ -6298,23 +6298,27 @@ img.alignright,
 }
 /* Titles
 --------------------------------------------- */
+.banner-title,
 .section-title,
 .entry-title {
   font-size: 4.2vw;
   line-height: 1;
 }
 @media only screen and (min-width: 1023px) {
+  .banner-title,
   .section-title,
   .entry-title {
     font-size: 36px;
     font-size: 3.6rem;
   }
 }
+.banner-title a,
 .section-title a,
 .entry-title a,
 .sidebar .widget-title a {
   color: #FFF;
 }
+.banner-title a:hover,
 .section-title a:hover,
 .entry-title a:hover {
   color: #FFF;
@@ -7383,8 +7387,10 @@ article.entry {
 }
 .entry-header .entry-title,
 .archive-description .entry-title,
+.banner .entry-title,
 .entry-header .archive-title,
-.archive-description .archive-title {
+.archive-description .archive-title,
+.banner .archive-title {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 58px;
@@ -7399,7 +7405,8 @@ article.entry {
   margin: 0;
 }
 .entry-header .entry-subtitle,
-.archive-description .entry-subtitle {
+.archive-description .entry-subtitle,
+.banner .entry-subtitle {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;
@@ -7967,6 +7974,19 @@ Site Footer
   .sectioned-page-wrapper .section.summary .section-body .bkg-white .content {
     margin-left: 0px;
   }
+}
+.page-title-area {
+  background: #7F7F7F;
+}
+.page-title-area .banner .entry-title {
+  line-height: 1.5;
+}
+.page-title-area .banner .entry-title [class^="doodle-"]:before,
+.page-title-area .banner .entry-title [class*=" doodle-"]:before {
+  font-size: 1em;
+  margin-right: 0.25em;
+  position: relative;
+  top: 0.25em;
 }
 body.page.press main.content article .entry-content h2.first-child,
 body.page.resources main.content article .entry-content h2.first-child,

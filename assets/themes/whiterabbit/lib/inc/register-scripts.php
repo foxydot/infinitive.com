@@ -4,6 +4,7 @@
 */
 add_action('wp_enqueue_scripts', 'msdlab_add_styles');
 add_action('wp_enqueue_scripts', 'msdlab_add_scripts');
+add_action('admin_enqueue_scripts', 'msdlab_add_admin_styles');
 
 function msdlab_add_styles() {
     global $is_IE;
@@ -76,4 +77,9 @@ function msdlab_add_team_styles() {
     if(!is_admin()){
         wp_enqueue_style('msd-team-style',get_stylesheet_directory_uri().'/lib/css/team.css');   
     }
+}
+
+
+function msdlab_add_admin_styles() {
+        wp_enqueue_style('admin-style',get_stylesheet_directory_uri().'/lib/css/admin.css');
 }

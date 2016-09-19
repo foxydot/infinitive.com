@@ -1,7 +1,7 @@
 <?php
 /* Subtitle Support */
 if(!class_exists('WPAlchemy_MetaBox')){
-	include_once WP_CONTENT_DIR.'/wpalchemy/MetaBox.php';
+    include_once WP_CONTENT_DIR.'/wpalchemy/MetaBox.php';
 }
 add_action('init','add_custom_metaboxes');
 add_action('admin_footer','subtitle_footer_hook');
@@ -10,15 +10,28 @@ add_action( 'genesis_entry_header', 'msdlab_do_post_subtitle', 13);
 
 
 function add_custom_metaboxes(){
-	global $subtitle_metabox;
+    global $subtitle_metabox,$banner_content;
+    $types = array('post','page','msd_video','team_member','msd_news','msd_casestudy');
     $subtitle_metabox = new WPAlchemy_MetaBox(array
     (
         'id' => '_subtitle',
         'title' => 'Subtitle',
-        'types' => array('post','page'),
+        'types' => $types,
         'context' => 'normal', // same as above, defaults to "normal"
         'priority' => 'high', // same as above, defaults to "high"
         'template' => get_stylesheet_directory() . '/lib/template/subtitle-meta.php',
+        'autosave' => TRUE,
+        'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
+        'prefix' => '_msdlab_' // defaults to NULL
+    ));
+    $banner_content = new WPAlchemy_MetaBox(array
+    (
+        'id' => '_banner',
+        'title' => 'Banner Content',
+        'types' => $types,
+        'context' => 'normal', // same as above, defaults to "normal"
+        'priority' => 'high', // same as above, defaults to "high"
+        'template' => get_stylesheet_directory() . '/lib/template/banner-meta.php',
         'autosave' => TRUE,
         'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
         'prefix' => '_msdlab_' // defaults to NULL
@@ -27,9 +40,10 @@ function add_custom_metaboxes(){
 
 function subtitle_footer_hook()
 {
-	?><script type="text/javascript">
-		jQuery('#titlediv').after(jQuery('#_subtitle_metabox'));
-	</script><?php
+    ?><script type="text/javascript">
+        jQuery('#titlediv').before(jQuery('#_banner_metabox'));
+        jQuery('#titlediv').after(jQuery('#_subtitle_metabox'));
+    </script><?php
 }
 
 // include css to help style our custom meta boxes
@@ -43,14 +57,14 @@ function my_metabox_styles()
 }
 
 function msdlab_do_post_subtitle() {
-	global $subtitle_metabox;
-	$subtitle_metabox->the_meta();
-	$subtitle = $subtitle_metabox->get_the_value('subtitle');
+    global $subtitle_metabox;
+    $subtitle_metabox->the_meta();
+    $subtitle = $subtitle_metabox->get_the_value('subtitle');
 
-	if ( strlen( $subtitle ) == 0 )
-		return;
+    if ( strlen( $subtitle ) == 0 )
+        return;
 
-	$subtitle = sprintf( '<h2 class="entry-subtitle">%s</h2>', apply_filters( 'genesis_post_title_text', $subtitle ) );
-	echo apply_filters( 'genesis_post_title_output', $subtitle ) . "\n";
+    $subtitle = sprintf( '<h2 class="entry-subtitle">%s</h2>', apply_filters( 'genesis_post_title_text', $subtitle ) );
+    echo apply_filters( 'genesis_post_title_output', $subtitle ) . "\n";
 
 }
