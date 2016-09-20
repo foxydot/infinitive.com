@@ -6316,12 +6316,12 @@ img.alignright,
 .section-title a,
 .entry-title a,
 .sidebar .widget-title a {
-  color: #FFF;
+  color: #3D3C3D;
 }
 .banner-title a:hover,
 .section-title a:hover,
 .entry-title a:hover {
-  color: #FFF;
+  color: #3D3C3D;
 }
 .sidebar .widget-title a {
   border: none;
@@ -6370,11 +6370,6 @@ Widgets
 .sidebar .widget.widget_recent_entries h4.widget-title,
 .sidebar .widget.widget_categories h4.widget-title {
   background: #FF7D23;
-  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.625;
   padding: 0.25em 0.5em 0;
   color: #FFF;
   margin-bottom: 0.5em;
@@ -6408,8 +6403,7 @@ Widgets
 .sidebar .widget.widget_categories article {
   padding-bottom: 0.5em;
   margin-bottom: 0.5em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: #FFF;
+  border-bottom: 1px solid rgba(61, 60, 61, 0.1);
 }
 .sidebar .widget.featured-content ul li span.date,
 .sidebar .widget.widget_recent_entries ul li span.date,
@@ -7303,6 +7297,10 @@ article.entry {
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+.entry-content h2,
+.section-body h2 {
+  color: #FF7D23;
+}
 .entry-content blockquote,
 .section-body blockquote {
   border-image: url(../img/chalkbox.png) 5 stretch;
@@ -7355,7 +7353,6 @@ article.entry {
   border: 4px solid #959595;
 }
 .entry-meta {
-  color: #FFF;
   font-size: 14px;
   font-size: 1.4rem;
 }
@@ -7403,7 +7400,6 @@ article.entry {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 500;
-  color: #FFF;
   line-height: 1;
   margin: 0;
 }
@@ -7983,6 +7979,7 @@ Site Footer
 }
 .page-title-area .banner .entry-title,
 .page-title-area .banner .banner-title {
+  color: #FFF;
   line-height: 1.5;
 }
 .page-title-area .banner .entry-title [class^="doodle-"]:before,
@@ -7993,6 +7990,12 @@ Site Footer
   margin-right: 0.25em;
   position: relative;
   top: 0.25em;
+}
+.page-title-area .banner .entry-title a,
+.page-title-area .banner .banner-title a,
+.page-title-area .banner .entry-title a:hover,
+.page-title-area .banner .banner-title a:hover {
+  color: #FFF;
 }
 body.page.press main.content article .entry-content h2.first-child,
 body.page.resources main.content article .entry-content h2.first-child,
