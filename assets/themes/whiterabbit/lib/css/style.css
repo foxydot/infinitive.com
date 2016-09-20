@@ -7300,6 +7300,7 @@ article.entry {
 .entry-content h2,
 .section-body h2 {
   color: #FF7D23;
+  font-size: 2rem;
 }
 .entry-content blockquote,
 .section-body blockquote {
@@ -7382,14 +7383,8 @@ article.entry {
 .entry-tags {
   display: block;
 }
-.entry-header .entry-title,
-.archive-description .entry-title,
 .banner .entry-title,
-.entry-header .archive-title,
-.archive-description .archive-title,
 .banner .archive-title,
-.entry-header .banner-title,
-.archive-description .banner-title,
 .banner .banner-title {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
@@ -7403,9 +7398,34 @@ article.entry {
   line-height: 1;
   margin: 0;
 }
-.entry-header .entry-subtitle,
-.archive-description .entry-subtitle,
 .banner .entry-subtitle {
+  background: #FF7D23;
+  margin-left: -100rem;
+  padding-left: 100rem;
+  padding-right: 10rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.625;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #FFF;
+}
+.entry-header .entry-title,
+.archive-description .entry-title,
+.entry-header .archive-title,
+.archive-description .archive-title {
+  color: #FF7D23;
+  font-weight: 500;
+  line-height: 1.65;
+  margin: 0;
+}
+.entry-header .entry-subtitle,
+.archive-description .entry-subtitle {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;

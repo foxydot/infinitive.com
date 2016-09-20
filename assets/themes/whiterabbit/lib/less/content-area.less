@@ -34,6 +34,7 @@ article.entry {
   }
   h2{
     color: @orange;
+    font-size: 2rem;
   }
   h3{
   }
@@ -118,12 +119,24 @@ article.entry {
   display: block;
 }
 
-.entry-header, .archive-description, .banner{
+.banner{
   .entry-title, .archive-title, .banner-title{
     .customheader-chalk(5.8);
     //font-size: 6vw;
     font-weight: 500;
     line-height: 1;
+    margin: 0;
+  }
+  .entry-subtitle{
+    .overflow-header();
+  }
+}
+
+.entry-header, .archive-description,{
+  .entry-title, .archive-title,{
+    color: @orange;
+    font-weight: 500;
+    line-height: 1.65;
     margin: 0;
   }
   .entry-subtitle{
