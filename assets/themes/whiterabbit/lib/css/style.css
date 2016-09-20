@@ -5881,7 +5881,7 @@ a img {
   margin-bottom: -0.4rem;
 }
 a:hover {
-  color: #FFF;
+  color: #bc4d00;
 }
 a:focus {
   outline: 0;
@@ -7390,7 +7390,10 @@ article.entry {
 .banner .entry-title,
 .entry-header .archive-title,
 .archive-description .archive-title,
-.banner .archive-title {
+.banner .archive-title,
+.entry-header .banner-title,
+.archive-description .banner-title,
+.banner .banner-title {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 58px;
@@ -7978,11 +7981,14 @@ Site Footer
 .page-title-area {
   background: #7F7F7F;
 }
-.page-title-area .banner .entry-title {
+.page-title-area .banner .entry-title,
+.page-title-area .banner .banner-title {
   line-height: 1.5;
 }
 .page-title-area .banner .entry-title [class^="doodle-"]:before,
-.page-title-area .banner .entry-title [class*=" doodle-"]:before {
+.page-title-area .banner .banner-title [class^="doodle-"]:before,
+.page-title-area .banner .entry-title [class*=" doodle-"]:before,
+.page-title-area .banner .banner-title [class*=" doodle-"]:before {
   font-size: 1em;
   margin-right: 0.25em;
   position: relative;
