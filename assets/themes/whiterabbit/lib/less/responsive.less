@@ -23,7 +23,7 @@
 (min-resolution: 192dpi) { 
     /* Retina-specific stuff here */
    .sidebar{
-      .widget_cta{
+      .widget.widget_cta{
         .widget-wrap{
           .textwidget{
             .readmore{
@@ -31,6 +31,9 @@
             }
           }
         }
+      }
+      .widget.widget_segment .widget-title::before {
+        background-image: url("../img/caseStudyMagGlass46x52@2x.png");
       }
    }
 }
