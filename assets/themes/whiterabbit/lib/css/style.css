@@ -8633,8 +8633,11 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
 ------------------------------------------------------------ */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   /* Retina-specific stuff here */
-  .sidebar .widget_cta .widget-wrap .textwidget .readmore {
+  .sidebar .widget.widget_cta .widget-wrap .textwidget .readmore {
     background-image: url(../img/LetsTalkCTAbubble122x44@2x.png);
+  }
+  .sidebar .widget.widget_segment .widget-title::before {
+    background-image: url("../img/caseStudyMagGlass46x52@2x.png");
   }
 }
 /* Smaller screens */
