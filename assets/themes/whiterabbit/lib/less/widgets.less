@@ -19,6 +19,9 @@ Widgets
 /* Featured Content
 --------------------------------------------- */
 .sidebar{
+  .widget{
+    margin-bottom: 1rem;
+  }
 .widget.featured-content,
 .widget.widget_recent_entries,
 .widget.widget_categories{
@@ -135,7 +138,7 @@ section.layerslider_widget{
     }
   }
 }
-.widget_cta{
+.widget.widget_cta{
   background: @dkgrey;
   padding: 1em;
   color: @orange;
@@ -146,15 +149,54 @@ section.layerslider_widget{
       font-weight: 500;
       .readmore{
         display: block;
-        background: @white url() no-repeat center center;
-        text-align: right;
+        background: url(../img/LetsTalkCTAbubble122x44.png) no-repeat center right;
         font-size: 0.8em;
         color: @dkgrey;
+        min-height: 54px;
+        border: 0;
+        span{
+          display: none;
+        }
         &:hover{
           text-decoration: none;
         }
       }
     }
+  }
+}
+.widget.widget_segment{
+  background: @offwhite;
+  .widget-wrap{
+    padding: 15px;
+    font-size: 1.2em;
+  }
+  .widget-title{
+    background-color: @orange;
+    color: @white;
+    position: relative;
+    padding-left: 62px;
+    line-height: 1;
+    margin: 0 -15px 15px;
+    &:before{
+      content: '';
+      background-image: url(../img/caseStudyMagGlass46x52.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      display: block;
+      min-height: 52px;
+      min-width: 46px;
+      top: -5px;
+      left: 5px;
+    }
+  }
+  .link{
+    text-align: right;
+  }
+  .readmore{
+    .button();
+    display: inline-block;
+    margin-bottom: 0;
   }
 }
 }

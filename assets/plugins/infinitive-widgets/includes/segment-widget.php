@@ -19,8 +19,10 @@ class Segment_Widget extends WP_Widget {
         echo $before_widget; ?>
         <div class="textwidget">
             <?php if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } 
+            echo '<div>';
             echo $instance['filter'] ? wpautop($text) : $text; 
-            if ( !empty( $url ) ) { echo '<a  href="'.$url.'"'.$target.' class="readmore"><span>'.$linktext.'</span></a>'; } ?>
+            echo '</div>';
+            if ( !empty( $url ) ) { echo '<div class="link"><a  href="'.$url.'"'.$target.' class="readmore"><span>'.$linktext.'</span></a></div>'; } ?>
         </div>
         <?php
         echo $after_widget;
