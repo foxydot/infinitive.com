@@ -6366,6 +6366,9 @@ Widgets
 }
 /* Featured Content
 --------------------------------------------- */
+.sidebar .widget {
+  margin-bottom: 1rem;
+}
 .sidebar .widget.featured-content,
 .sidebar .widget.widget_recent_entries,
 .sidebar .widget.widget_categories {
@@ -6568,12 +6571,12 @@ Widgets
   background-color: #FF7D23;
   padding: 0.5em;
 }
-.sidebar .widget_cta {
+.sidebar .widget.widget_cta {
   background: #3D3C3D;
   padding: 1em;
   color: #FF7D23;
 }
-.sidebar .widget_cta .widget-wrap .textwidget {
+.sidebar .widget.widget_cta .widget-wrap .textwidget {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-size: 42px;
   font-size: 4.2rem;
@@ -6584,7 +6587,7 @@ Widgets
   line-height: 1;
   font-weight: 500;
 }
-.sidebar .widget_cta .widget-wrap .textwidget .readmore {
+.sidebar .widget.widget_cta .widget-wrap .textwidget .readmore {
   display: block;
   background: url(../img/LetsTalkCTAbubble122x44.png) no-repeat center right;
   font-size: 0.8em;
@@ -6592,11 +6595,66 @@ Widgets
   min-height: 54px;
   border: 0;
 }
-.sidebar .widget_cta .widget-wrap .textwidget .readmore span {
+.sidebar .widget.widget_cta .widget-wrap .textwidget .readmore span {
   display: none;
 }
-.sidebar .widget_cta .widget-wrap .textwidget .readmore:hover {
+.sidebar .widget.widget_cta .widget-wrap .textwidget .readmore:hover {
   text-decoration: none;
+}
+.sidebar .widget.widget_segment {
+  background: #F2F7FA;
+}
+.sidebar .widget.widget_segment .widget-wrap {
+  padding: 15px;
+  font-size: 1.2em;
+}
+.sidebar .widget.widget_segment .widget-title {
+  background-color: #FF7D23;
+  color: #FFF;
+  position: relative;
+  padding-left: 62px;
+  line-height: 1;
+  margin: 0 -15px 15px;
+}
+.sidebar .widget.widget_segment .widget-title:before {
+  content: '';
+  background-image: url(../img/caseStudyMagGlass46x52.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  display: block;
+  min-height: 52px;
+  min-width: 46px;
+  top: -5px;
+  left: 5px;
+}
+.sidebar .widget.widget_segment .link {
+  text-align: right;
+}
+.sidebar .widget.widget_segment .readmore {
+  padding: 6px 24px;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #FFF;
+  font-weight: 700;
+  display: table;
+  margin: 12px 0;
+  text-decoration: none;
+  background-color: #ff7d23;
+  border: 1px solid #FFF;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  display: inline-block;
+  margin-bottom: 0;
 }
 /*
 Plugins
