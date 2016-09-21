@@ -301,12 +301,6 @@ body.blog main .genesis-grid.post,
 body.archive.category main .genesis-grid.post {
   border-bottom: medium none;
 }
-body.single-post main .post .entry-content {
-  position: relative;
-  padding: 1em;
-  background: rgba(255, 255, 255, 0.9);
-  color: #3D3C3D;
-}
 @media only screen and (min-width: 1023px) {
   body.blog main .genesis-feature a.featured_image_wrapper,
   body.archive.category main .genesis-feature a.featured_image_wrapper {
@@ -315,11 +309,5 @@ body.single-post main .post .entry-content {
   body.blog main .genesis-teaser a.grid_image_wrapper,
   body.archive.category main .genesis-teaser a.grid_image_wrapper {
     min-height: 182px;
-  }
-  body.single-post main .post .entry-content {
-    padding: 1em 1em 1em 100em;
-    margin-left: -100em;
-    top: -5px;
-    border: 2px solid #959595;
   }
 }
