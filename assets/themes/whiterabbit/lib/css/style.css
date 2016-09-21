@@ -5779,18 +5779,19 @@ td.visible-print {
 .button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
@@ -5802,20 +5803,21 @@ td.visible-print {
 .button a:hover {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 125, 35, 0.8);
 }
 /* Special header */
 /* Clears */
@@ -6035,18 +6037,19 @@ input[type="submit"],
 .entry-content .button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
@@ -6062,20 +6065,21 @@ input:hover[type="submit"],
 .entry-content .button:hover {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 125, 35, 0.8);
 }
 .entry-content .button:hover {
   color: #FFF;
@@ -6450,12 +6454,12 @@ Widgets
   padding-right: 0.5em;
   margin: 0;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 32px;
   font-size: 3.2rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 400;
   letter-spacing: 0.05em;
   color: #FFF;
 }
@@ -6473,18 +6477,19 @@ Widgets
 .sidebar .widget.msd_news_widget ul.news-list li .link.alignright {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
@@ -6495,12 +6500,12 @@ Widgets
 .sidebar .widget.widget_pluginbuddyvideoshowcase h4.widget-title {
   background: #7F7F7F;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 32px;
   font-size: 3.2rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 400;
   letter-spacing: 0.05em;
   color: #F2F7FA;
   padding: 0 0.5em;
@@ -6517,12 +6522,11 @@ Widgets
   padding-left: 0.5em;
   padding-right: 0.5em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 32px;
   font-size: 3.2rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  font-weight: 400;
   letter-spacing: 0.05em;
   color: #FF7D23;
   line-height: 1;
@@ -6545,12 +6549,12 @@ Widgets
 }
 .sidebar .widget.widget_msd_experts .widget-title {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 36px;
   font-size: 3.6rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 400;
   letter-spacing: 0.05em;
   color: #FFF;
 }
@@ -6562,6 +6566,32 @@ Widgets
   font-size: 0.8em;
   background-color: #FF7D23;
   padding: 0.5em;
+}
+.sidebar .widget_cta {
+  background: #3D3C3D;
+  padding: 1em;
+  color: #FF7D23;
+}
+.sidebar .widget_cta .widget-wrap .textwidget {
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 42px;
+  font-size: 4.2rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  font-weight: 500;
+}
+.sidebar .widget_cta .widget-wrap .textwidget .readmore {
+  display: block;
+  background: #FFF url() no-repeat center center;
+  text-align: right;
+  font-size: 0.8em;
+  color: #3D3C3D;
+}
+.sidebar .widget_cta .widget-wrap .textwidget .readmore:hover {
+  text-decoration: none;
 }
 /*
 Plugins
@@ -7289,12 +7319,12 @@ article.entry {
 .entry-content h1,
 .section-body h1 {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 39px;
   font-size: 3.9rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 400;
   letter-spacing: 0.05em;
 }
 .entry-content h2,
@@ -7387,12 +7417,11 @@ article.entry {
 .banner .archive-title,
 .banner .banner-title {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 58px;
   font-size: 5.8rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  font-weight: 400;
   letter-spacing: 0.05em;
   font-weight: 500;
   line-height: 1;
@@ -7400,11 +7429,10 @@ article.entry {
 }
 .banner .entry-subtitle {
   background: #FF7D23;
-  margin-left: -100rem;
-  padding-left: 100rem;
-  padding-right: 10rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -7412,7 +7440,6 @@ article.entry {
   line-height: 1.625;
   font-weight: 700;
   line-height: 1.25;
-  text-transform: uppercase;
   color: #FFF;
 }
 .entry-header .entry-title,
@@ -7427,11 +7454,10 @@ article.entry {
 .entry-header .entry-subtitle,
 .archive-description .entry-subtitle {
   background: #FF7D23;
-  margin-left: -100rem;
-  padding-left: 100rem;
-  padding-right: 10rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -7439,19 +7465,13 @@ article.entry {
   line-height: 1.625;
   font-weight: 700;
   line-height: 1.25;
-  text-transform: uppercase;
   color: #FFF;
 }
 /* Pagination
 --------------------------------------------- */
 .archive-pagination,
 .entry-pagination {
-  font-size: 14px;
-  font-size: 1.4rem;
-  margin: 40px 0;
-  margin: 4rem 0;
-  display: block;
-  clear: both;
+  width: 100%;
 }
 .archive-pagination li {
   display: inline;
@@ -7459,18 +7479,19 @@ article.entry {
 .archive-pagination a {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
@@ -7626,18 +7647,19 @@ Sidebars
 .sidebar .widget_text .textwidget .readmore {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
@@ -7695,12 +7717,12 @@ Footer Widgets
 }
 .footer-widgets .widget.msd-connected .connected-form .gform_heading h3.gform_title {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 39px;
   font-size: 3.9rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 400;
   letter-spacing: 0.05em;
 }
 .footer-widgets .widget.msd-connected .connected-form .gform_body li.gfield {
@@ -7743,18 +7765,19 @@ Footer Widgets
 .footer-widgets .widget.msd-connected .connected-form .gform_footer a.button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
@@ -7767,20 +7790,21 @@ Footer Widgets
 .footer-widgets .widget.msd-connected .connected-form .gform_footer a.button:hover {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 125, 35, 0.8);
 }
 .footer-widgets li {
   list-style-type: none;
@@ -7903,12 +7927,12 @@ Site Footer
 .sectioned-page-wrapper .section .section-subtitle,
 .sectioned-page-wrapper .section h4 {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 39px;
   font-size: 3.9rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 400;
   letter-spacing: 0.05em;
   font-weight: 500;
   color: #FFF;
@@ -7921,12 +7945,12 @@ Site Footer
 }
 .sectioned-page-wrapper .section h3 {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 39px;
   font-size: 3.9rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 400;
   letter-spacing: 0.05em;
   font-weight: 700;
   color: #FFF;
@@ -7935,11 +7959,12 @@ Site Footer
 }
 .sectioned-page-wrapper .section .section-title h3 {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 58px;
   font-size: 5.8rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
   letter-spacing: 0.05em;
   text-align: center;
   text-transform: uppercase;
@@ -8406,11 +8431,10 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
 }
 .page.core-values .sectioned-page-wrapper .section.section-header .section-footer-area {
   background: #FF7D23;
-  margin-left: -100rem;
-  padding-left: 100rem;
-  padding-right: 10rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -8418,7 +8442,6 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   line-height: 1.625;
   font-weight: 700;
   line-height: 1.25;
-  text-transform: uppercase;
   color: #FFF;
   margin-left: 0;
   padding-left: 10rem;
@@ -8464,11 +8487,10 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   }
   .page.core-values .sectioned-page-wrapper .section.section-header .section-footer-area {
     background: #FF7D23;
-    margin-left: -100rem;
-    padding-left: 100rem;
-    padding-right: 10rem;
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
     font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -8476,7 +8498,6 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
     line-height: 1.625;
     font-weight: 700;
     line-height: 1.25;
-    text-transform: uppercase;
     color: #FFF;
     margin-left: 0;
     padding-left: 10rem;

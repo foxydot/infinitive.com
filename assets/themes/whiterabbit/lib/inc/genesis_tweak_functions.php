@@ -247,26 +247,18 @@ function msdlab_ro_layout_logic() {
 function msdlab_maybe_move_title(){
     global $post;
     $template_file = get_post_meta($post->ID,'_wp_page_template',TRUE);
-    if(is_page()){
+    //if(is_page()){
         //remove_action('genesis_entry_header','genesis_do_post_title'); //move the title out of the content area
         add_action('msdlab_title_area','msdlab_do_section_title');
         add_action('genesis_after_header','msdlab_do_title_area');
-    }
+    //}
 }
 
 function msdlab_do_title_area(){
     global $post;
-    $postid = is_admin()?$_GET['post']:$post->ID;
-    $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
-    if ($template_file == 'page-sectioned.php') {
-        print '<div id="page-title-area" class="page-title-area">';
-        do_action('msdlab_title_area');
-        print '</div>';
-    } else { 
-        print '<div id="page-title-area" class="page-title-area">';
-        do_action('msdlab_title_area');
-        print '</div>';
-    }
+    print '<div id="page-title-area" class="page-title-area">';
+    do_action('msdlab_title_area');
+    print '</div>';
 }
 
 function msdlab_do_section_title(){
@@ -294,14 +286,18 @@ function msdlab_do_section_title(){
         print $titlestr;
         print '</div>';
         print '</div>';
-    } elseif(is_home() || is_single()) {
+    } elseif(get_post_type() == 'post' || get_section()=='blog'){
+        global $post, $banner_content;
         $blog_home = get_post(get_option( 'page_for_posts' ));
         $title = apply_filters( 'genesis_post_title_text', $blog_home->post_title );//* Wrap in H1 on singular pages
+        $banner_content->the_meta($blog_home->ID);
+        $level = 2;    
+        $type = 'banner';    
+        $doodle = $banner_content->get_the_value('doodle')!=''?'<i class="doodle-'.$banner_content->get_the_value('doodle').'"></i>':'';
+        $titlestr = '<h'.$lvl.' class="'.$type.'-title">'.$doodle.$title.'</h'.$lvl.'>';
         print '<div class="banner clearfix">';
         print '<div class="wrap">';
-        print '<h2 class="section-title">';
-        print $title;
-        print '</h2>';
+        print $titlestr;
         print '</div>';
         print '</div>';
     } else {

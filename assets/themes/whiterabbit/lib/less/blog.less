@@ -1,11 +1,6 @@
 @import 'lesshat';
 @import 'mixins';
 
-.blog,.archive.category{
-  .sidebar{
-    margin-top: 138px;
-  }
-}
 .blog-header{
   h3{
     .customheader-chalk();
@@ -64,7 +59,6 @@ body.blog,body.archive.category{
     .entry-header{
       .entry-title{
         .customserif(1.8);
-        text-transform: uppercase;
         line-height: 1.25;
       }
     }
@@ -73,7 +67,7 @@ body.blog,body.archive.category{
     a.featured_image_wrapper{
       display: block;
       overflow: hidden;
-      background: fade(@white,80%);
+      background: fade(@ltgrey,80%);
       text-align: center;
       img{
         margin: 0 auto;
@@ -82,6 +76,9 @@ body.blog,body.archive.category{
     .entry-header{
       .entry-title{
         .overflow-header();
+        a{
+          color: @white;
+        }
       }
       .entry-subtitle{
         .customheader(3);
@@ -104,7 +101,7 @@ body.blog,body.archive.category{
   .genesis-teaser{
     a.grid_image_wrapper{
       display: block;
-      background: fade(@white,80%);
+      background: fade(@ltgrey,80%);
       text-align: center;
       img{
         margin: 0 auto;

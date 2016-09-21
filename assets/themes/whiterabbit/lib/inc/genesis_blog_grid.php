@@ -221,7 +221,7 @@ function msdlab_get_comments_number(){ //not used
 }
 /*** Blog Header ***/
 
-add_action('genesis_before_loop','msd_add_blog_header');
+//add_action('genesis_before_loop','msd_add_blog_header');
 function msd_add_blog_header(){
     global $post;
     if(get_post_type() == 'post' || get_section()=='blog'){
