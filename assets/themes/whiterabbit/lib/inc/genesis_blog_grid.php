@@ -176,8 +176,10 @@ function msdlab_add_pagination() {
 }
 
 function msdlab_post_navigation_links() {
-    previous_post_link('<div class="prev-link alignleft page-nav"><i class="fa fa-arrow-left"></i> %link</div>', 'Previous'); 
-    next_post_link('<div class="next-link alignright page-nav">%link <i class="fa fa-arrow-right"></i></div>', 'Next');
+    print '<div class="pagination">';
+    previous_post_link('<div class="prev-link alignleft page-nav"><i class="fa fa-arrow-left"></i> %link</div>', 'Previous Post'); 
+    next_post_link('<div class="next-link alignright page-nav">%link <i class="fa fa-arrow-right"></i></div>', 'Next Post');
+    print '</div>';
 }
 
 // Customize Grid Loop Content
@@ -221,7 +223,7 @@ function msdlab_get_comments_number(){ //not used
 }
 /*** Blog Header ***/
 
-add_action('genesis_before_loop','msd_add_blog_header');
+//add_action('genesis_before_loop','msd_add_blog_header');
 function msd_add_blog_header(){
     global $post;
     if(get_post_type() == 'post' || get_section()=='blog'){

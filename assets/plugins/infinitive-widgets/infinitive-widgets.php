@@ -6,7 +6,7 @@
 /*
 Plugin Name: Infinitive Widgets
 Description: Widgets for Infinitive
-Author: Catherine Sandrick
+Author: Catherine OBrien
 Version: 0.1
 Author URI: http://madsciencedept.com
 */
@@ -18,4 +18,5 @@ $msd_wgt_url = plugin_dir_url(__FILE__);
 include_once('includes/infinitive_functions.php');
 
 //Include widget files
-include_once('includes/cta_widget.php');
+include_once('includes/cta-widget.php');
+include_once('includes/segment-widget.php');

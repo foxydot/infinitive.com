@@ -18,38 +18,40 @@
 .button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
 }
 .button:hover,
 .button a:hover {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 125, 35, 0.8);
 }
 /* Special header */
 /* Clears */
@@ -60,23 +62,13 @@
   clear: both;
   visibility: hidden;
 }
-/*
- * Questions
- * 1) On the blog, are we going to use the featured image on the single blog page, or apply the image in the content (as we've done in the past.)
- * 
- */
-.blog .sidebar,
-.archive.category .sidebar {
-  margin-top: 138px;
-}
 .blog-header h3 {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  font-weight: 400;
   letter-spacing: 0.05em;
   font-size: 9.5vw;
   line-height: 1;
@@ -109,12 +101,11 @@
 @media only screen and (min-width: 480px) {
   .blog-header h3 {
     font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-    font-weight: 400;
     font-size: 55px;
     font-size: 5.5rem;
     line-height: 1.625;
     font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-    text-transform: uppercase;
+    font-weight: 400;
     letter-spacing: 0.05em;
     line-height: 1;
     background-size: auto;
@@ -134,7 +125,6 @@ body.archive.category .entry-header .entry-title {
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.625;
-  text-transform: uppercase;
   line-height: 1.25;
 }
 body.blog main,
@@ -146,7 +136,7 @@ body.blog main .genesis-feature a.featured_image_wrapper,
 body.archive.category main .genesis-feature a.featured_image_wrapper {
   display: block;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(149, 149, 149, 0.8);
   text-align: center;
 }
 body.blog main .genesis-feature a.featured_image_wrapper img,
@@ -156,11 +146,10 @@ body.archive.category main .genesis-feature a.featured_image_wrapper img {
 body.blog main .genesis-feature .entry-header .entry-title,
 body.archive.category main .genesis-feature .entry-header .entry-title {
   background: #FF7D23;
-  margin-left: -100rem;
-  padding-left: 100rem;
-  padding-right: 10rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -168,7 +157,10 @@ body.archive.category main .genesis-feature .entry-header .entry-title {
   line-height: 1.625;
   font-weight: 700;
   line-height: 1.25;
-  text-transform: uppercase;
+  color: #FFF;
+}
+body.blog main .genesis-feature .entry-header .entry-title a,
+body.archive.category main .genesis-feature .entry-header .entry-title a {
   color: #FFF;
 }
 body.blog main .genesis-feature .entry-header .entry-subtitle,
@@ -186,11 +178,10 @@ body.archive.category main .genesis-feature .entry-header .entry-subtitle {
 body.blog main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle),
 body.archive.category main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle) {
   background: #FF7D23;
-  margin-left: -100rem;
-  padding-left: 100rem;
-  padding-right: 10rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -198,32 +189,32 @@ body.archive.category main .genesis-feature .entry-header .entry-content h2:not(
   line-height: 1.625;
   font-weight: 700;
   line-height: 1.25;
-  text-transform: uppercase;
   color: #FFF;
 }
 body.blog main .genesis-feature .entry-header .entry-content .readmore-button,
 body.archive.category main .genesis-feature .entry-header .entry-content .readmore-button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
   margin: 0;
 }
 body.blog main .genesis-teaser a.grid_image_wrapper,
 body.archive.category main .genesis-teaser a.grid_image_wrapper {
   display: block;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(149, 149, 149, 0.8);
   text-align: center;
 }
 body.blog main .genesis-teaser a.grid_image_wrapper img,
@@ -249,11 +240,10 @@ body.archive.category main .genesis-teaser .entry-header .entry-subtitle {
 body.blog main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle),
 body.archive.category main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle) {
   background: #FF7D23;
-  margin-left: -100rem;
-  padding-left: 100rem;
-  padding-right: 10rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -261,25 +251,25 @@ body.archive.category main .genesis-teaser .entry-header .entry-content h2:not(.
   line-height: 1.625;
   font-weight: 700;
   line-height: 1.25;
-  text-transform: uppercase;
   color: #FFF;
 }
 body.blog main .genesis-teaser .entry-header .entry-content .readmore-button,
 body.archive.category main .genesis-teaser .entry-header .entry-content .readmore-button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   color: #FFF;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ff7d23;
   border: 1px solid #FFF;
   margin: 0;
 }
@@ -311,12 +301,6 @@ body.blog main .genesis-grid.post,
 body.archive.category main .genesis-grid.post {
   border-bottom: medium none;
 }
-body.single-post main .post .entry-content {
-  position: relative;
-  padding: 1em;
-  background: rgba(255, 255, 255, 0.9);
-  color: #3D3C3D;
-}
 @media only screen and (min-width: 1023px) {
   body.blog main .genesis-feature a.featured_image_wrapper,
   body.archive.category main .genesis-feature a.featured_image_wrapper {
@@ -325,11 +309,5 @@ body.single-post main .post .entry-content {
   body.blog main .genesis-teaser a.grid_image_wrapper,
   body.archive.category main .genesis-teaser a.grid_image_wrapper {
     min-height: 182px;
-  }
-  body.single-post main .post .entry-content {
-    padding: 1em 1em 1em 100em;
-    margin-left: -100em;
-    top: -5px;
-    border: 2px solid #959595;
   }
 }

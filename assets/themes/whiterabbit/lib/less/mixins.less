@@ -29,7 +29,8 @@
 .customheader-chalk(@size:1.6) {
   .customheader(@size);
   font-family: "generally_speakingregular","Trebuchet MS", Calibri, sans-serif;
-  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 400;
   letter-spacing: 0.05em;
 }
 
@@ -97,17 +98,15 @@
 @rss: #F37D2A;
 
 /* Buttons */
-.button(@background:@white,@color:@white) {
+.button(@background:@orange,@color:@white) {
   padding: 6px 24px;
-  .customserif(1.6);
+  .customheader-chalk(2);
   color: @color;
-  font-size: 12px;
   font-weight: 700;
-  text-transform: uppercase;
   display: table;
   margin: 12px 0;
   text-decoration: none;
-  background-color: fade(@background,0%);
+  background-color: fade(@background,100%);
   border: 1px solid @color;
 }
 
@@ -115,9 +114,9 @@
   .button();
 }
 
-.button-hover(@background:@white,@color:@white) {
+.button-hover(@background:@orange,@color:@white) {
   .button(@background,@color);
-  background-color: fade(@background,40%);
+  background-color: fade(@background,80%);
 }
 
 .button:hover,
@@ -128,15 +127,13 @@
 /* Special header */
 .overflow-header(@background-color: @orange,@color: @white){
       background: @background-color;
-      margin-left: -100rem;
-      padding-left: 100rem;
-      padding-right: 10rem;
-      padding-top: 0.4rem;
-      padding-bottom: 0.4rem;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
       .customserif(1.8);
       font-weight: 700;
       line-height: 1.25;
-      text-transform: uppercase;
       color: @color;
      // border-image: url(../img/chalkbox2.png) 5 stretch;
      // border-style: solid;
