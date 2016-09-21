@@ -19,15 +19,13 @@ function be_grid_loop_pagination( $query = false ) {
         
     // Sections of site that should use grid loop   
     if( ! ( $query->is_home() || $query->is_archive() ) )
-        return false;
-    if(!is_cpt('post'))  
         return false;  
     // Specify pagination
     return array(
         'features_on_front' => 1,
-        'teasers_on_front' => 10,
+        'teasers_on_front' => 6,
         'features_inside' => 0,
-        'teasers_inside' => 12,
+        'teasers_inside' => 8,
     );
 }
 
@@ -42,11 +40,12 @@ function be_grid_loop_pagination( $query = false ) {
  */
 function be_grid_loop_query_args( $query ) {
     $grid_args = be_grid_loop_pagination( $query );
-    if( $query->is_main_query() && !is_admin() && $grid_args ) {
 
+    
+    if( $query->is_main_query() && ( $query->is_home() || $query->is_archive() ) && is_array($grid_args) ) {
         // First Page
-        $page = $query->query_vars['paged'];
-        if( ! $page ) {
+        $paged = $query->query_vars['paged'];
+        if( ! $paged ) {
             $query->set( 'posts_per_page', ( $grid_args['features_on_front'] + $grid_args['teasers_on_front'] ) );
         // Other Pages
         } else {
@@ -57,7 +56,7 @@ function be_grid_loop_query_args( $query ) {
 
     }
 }
-add_action( 'pre_get_posts', 'be_grid_loop_query_args' );
+add_action( 'pre_get_posts', 'be_grid_loop_query_args');
 
 /**
  * Grid Loop Post Classes
