@@ -2,8 +2,6 @@
 class Inf_CTA_Widget extends WP_Widget {
 
     function __construct() {
-        add_action('wp_print_styles', array($this,'add_css'));
-        add_action('wp_print_scripts', array($this,'add_js'));
         $widget_ops = array('classname' => 'widget_cta', 'description' => __('Limited text with "Let\'s Talk" link'));
         $control_ops = array('width' => 400, 'height' => 350);
         parent::__construct('cta-widget', __('Call To Action'), $widget_ops, $control_ops);

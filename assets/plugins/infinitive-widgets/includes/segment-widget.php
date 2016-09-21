@@ -2,8 +2,6 @@
 class Segment_Widget extends WP_Widget {
 
     function __construct() {
-        add_action('wp_print_styles', array($this,'add_css'));
-        add_action('wp_print_scripts', array($this,'add_js'));
         $widget_ops = array('classname' => 'widget_segment', 'description' => __('Highlight a segment'));
         $control_ops = array('width' => 400, 'height' => 350);
         parent::__construct('segment-widget', __('Featured Segment'), $widget_ops, $control_ops);
