@@ -5830,8 +5830,8 @@ td.visible-print {
 .button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -5851,11 +5851,12 @@ td.visible-print {
   transition: all 0.1s ease-in-out;
 }
 .button:hover,
+.button:active,
 .button a:hover {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -6088,8 +6089,8 @@ input[type="submit"],
 .entry-content .button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -6116,8 +6117,8 @@ input:hover[type="submit"],
 .entry-content .button:hover {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -6532,8 +6533,8 @@ Widgets
 .sidebar .widget.msd_news_widget ul.news-list li .link.alignright {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -6685,8 +6686,8 @@ Widgets
 .sidebar .widget.widget_segment .readmore {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -7598,8 +7599,8 @@ article.entry {
 .entry-pagination a {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -7759,8 +7760,8 @@ Sidebars
 .sidebar .widget_text .textwidget .readmore {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -7877,8 +7878,8 @@ Footer Widgets
 .footer-widgets .widget.msd-connected .connected-form .gform_footer a.button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -7902,8 +7903,8 @@ Footer Widgets
 .footer-widgets .widget.msd-connected .connected-form .gform_footer a.button:hover {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
