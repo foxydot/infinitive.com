@@ -21,7 +21,37 @@
             <?php $mb->the_field('doodle'); ?>
             <div class="doodle-choice"><span class="radiolabel"><i class="doodle"></i><span class="caption">No Doodle</span></span><input type="radio" name="<?php $mb->the_name(); ?>" value=""<?php $mb->the_select_state(''); ?>></input></div>
             <?php
-                $doodlearray = array('arrowdown','videoplay','atbubble','balance','bargraph','bentarrowup','bullseye','calendar','ideamap','lockkey','piechart','radio','shield','usercycle');
+                $doodlearray = array("arrowdown",
+"videoplay",
+"atbubble",
+"balance",
+"bargraph",
+"bentarrowup",
+"bullseye",
+"calendar",
+"ideamap",
+"lockkey",
+"piechart",
+"radio",
+"shield",
+"usercycle",
+"travel",
+"sales",
+"press",
+"retail",
+"media",
+"marketing",
+"financial",
+"heathcare",
+"ebf",
+"dbf",
+"cpg",
+"core-values",
+"careers",
+"casestudies",
+"community",
+"testimonials",
+"blog");
                 foreach($doodlearray AS $doodlename){
                     $checked = $mb->is_value($doodlename)?' checked="checked"':'';
                     print '
