@@ -5441,6 +5441,9 @@ td.visible-print {
 .doodle-testimonials:before {
   content: "\44";
 }
+.doodle-blog:before {
+  content: "\45";
+}
 .doodle-1x {
   font-size: 1em;
 }
