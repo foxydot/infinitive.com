@@ -83,7 +83,7 @@ function be_grid_loop_post_classes( $classes ) {
         return $classes;  
     // First Page Classes
     if( !$wp_query->query_vars['paged'] ) {
-    
+    remove_action( 'genesis_entry_footer', 'genesis_post_meta');
         // Features
         if( $wp_query->current_post < $grid_args['features_on_front'] ) {
             $classes[] = 'genesis-feature';
@@ -98,7 +98,7 @@ function be_grid_loop_post_classes( $classes ) {
         
     // Inner Pages
     } else {
-
+    remove_action( 'genesis_entry_footer', 'genesis_post_meta');
         // Features
         if( $wp_query->current_post < $grid_args['features_inside'] ) {
             $classes[] = 'genesis-feature';
