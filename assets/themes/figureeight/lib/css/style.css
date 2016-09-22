@@ -7433,6 +7433,9 @@ article.entry {
   border-bottom: 0;
   color: #FF7D23;
 }
+.entry-content .entry-meta {
+  color: #3D3C3D;
+}
 .entry-header .entry-meta {
   margin-bottom: 1rem;
 }

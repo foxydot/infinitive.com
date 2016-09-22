@@ -20,8 +20,6 @@ function be_grid_loop_pagination( $query = false ) {
     // Sections of site that should use grid loop   
     if( ! ( $query->is_home() || $query->is_archive() ) )
         return false;
-    if(!is_cpt('post'))  
-        return false;  
     // Specify pagination
     return array(
         'features_on_front' => 1,
@@ -83,6 +81,7 @@ function be_grid_loop_post_classes( $classes ) {
     if(!is_cpt('post'))  
         return $classes;  
     // First Page Classes
+    remove_action( 'genesis_entry_content', 'genesis_post_meta',14);
     if( !$wp_query->query_vars['paged'] ) {
     
         // Features
