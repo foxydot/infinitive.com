@@ -5726,6 +5726,54 @@ td.visible-print {
 .doodle-usercycle:before {
   content: "\6e";
 }
+.doodle-travel:before {
+  content: "\6f";
+}
+.doodle-sales:before {
+  content: "\70";
+}
+.doodle-press:before {
+  content: "\71";
+}
+.doodle-retail:before {
+  content: "\72";
+}
+.doodle-media:before {
+  content: "\73";
+}
+.doodle-marketing:before {
+  content: "\74";
+}
+.doodle-financial:before {
+  content: "\75";
+}
+.doodle-heathcare:before {
+  content: "\76";
+}
+.doodle-ebf:before {
+  content: "\77";
+}
+.doodle-dbf:before {
+  content: "\78";
+}
+.doodle-cpg:before {
+  content: "\79";
+}
+.doodle-core-values:before {
+  content: "\7a";
+}
+.doodle-careers:before {
+  content: "\41";
+}
+.doodle-casestudies:before {
+  content: "\42";
+}
+.doodle-community:before {
+  content: "\43";
+}
+.doodle-testimonials:before {
+  content: "\44";
+}
 .doodle-1x {
   font-size: 1em;
 }
