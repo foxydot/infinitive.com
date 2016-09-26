@@ -5827,11 +5827,6 @@ td.visible-print {
   visibility: hidden;
 }
 /*
- * Questions
- * 1) On the blog, are we going to use the featured image on the single blog page, or apply the image in the content (as we've done in the past.)
- * 
- */
-/*
 Defaults
 ---------------------------------------------------------------------------------------------------- */
 /* Typographical Elements
@@ -7356,6 +7351,9 @@ article.entry {
 .entry-meta a {
   border-bottom: 0;
   color: #FF7D23;
+}
+.entry-content .entry-meta {
+  color: #3D3C3D;
 }
 .entry-header .entry-meta {
   margin-bottom: 1rem;
