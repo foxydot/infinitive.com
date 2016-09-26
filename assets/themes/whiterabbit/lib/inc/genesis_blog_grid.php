@@ -129,6 +129,7 @@ function be_grid_loop_image( $defaults ) {
     global $wp_query;
     $grid_args = be_grid_loop_pagination();
     if( ! $grid_args )
+        
         return $defaults;
         
     // Feature

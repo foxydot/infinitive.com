@@ -7495,15 +7495,21 @@ article.entry {
 }
 .entry-content ul li:before,
 .section-body ul li:before {
-  margin-left: -1.2em;
-  margin-right: 0.5em;
+  font-family: "FontAwesome";
+  font-size: 0.7em;
+  margin-left: -1.8em;
+  margin-right: 1em;
   line-height: 0;
-  content: "\26AB ";
+  content: "\f111 ";
   color: #FF7D23;
 }
 .entry-content ul ul li:before,
 .section-body ul ul li:before {
-  content: "\25CB ";
+  content: "\f1db ";
+}
+.entry-content ul ul li ul li:before,
+.section-body ul ul li ul li:before {
+  content: "\f192 ";
 }
 .entry-content iframe,
 .section-body iframe {
