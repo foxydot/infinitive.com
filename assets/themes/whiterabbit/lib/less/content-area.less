@@ -78,17 +78,26 @@ article.entry {
     li{
       list-style-type: none;    
       &:before{
-        margin-left: -1.2em;
-        margin-right: 0.5em;
+        .fontawesome;
+        font-size: 0.7em;
+        margin-left: -1.8em;
+        margin-right: 1em;
         line-height: 0;
-        content: "\26AB ";
+        content: "\f111 ";
         color: @orange;
       }
     }
     ul{
       li{
         &:before{
-          content:"\25CB ";
+          content:"\f1db ";
+        }
+        ul{
+          li{
+            &:before{
+              content:"\f192 ";
+            }
+          }
         }
       }
     }
