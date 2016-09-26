@@ -19,9 +19,9 @@ if(!function_exists('ts_var')){
     }
 }
 
-//add_action('genesis_after_entry','msdlab_trace_actions');
+add_action('genesis_after_entry','msdlab_trace_actions');
 function msdlab_trace_actions(){
     global $wp_filter;
     //ts_data(get_post_types());
-    ts_var( $wp_filter['genesis_entry_header'] );
+    ts_var( $wp_filter['the_content'] );
 }
