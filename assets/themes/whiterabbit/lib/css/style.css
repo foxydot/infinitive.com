@@ -6001,20 +6001,20 @@ h4 {
   margin: 0.5em 0 0.25em;
 }
 h1 {
-  font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 34px;
+  font-size: 3.4rem;
 }
 h2 {
-  font-size: 30px;
-  font-size: 3rem;
-}
-h3 {
-  font-size: 24px;
-  font-size: 2.4rem;
-}
-h4 {
   font-size: 20px;
   font-size: 2rem;
+}
+h3 {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+h4 {
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 h5,
 h6 {
@@ -6365,8 +6365,8 @@ img.alignright,
   .banner-title,
   .section-title,
   .entry-title {
-    font-size: 36px;
-    font-size: 3.6rem;
+    font-size: 34px;
+    font-size: 3.4rem;
   }
 }
 .banner-title a,
@@ -7431,17 +7431,6 @@ article.entry {
 .entry-content .search-form {
   width: 50%;
 }
-.entry-content h1,
-.section-body h1 {
-  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 39px;
-  font-size: 3.9rem;
-  line-height: 1.625;
-  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-  line-height: 1;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-}
 .entry-content h2,
 .section-body h2 {
   color: #FF7D23;
@@ -7449,7 +7438,7 @@ article.entry {
 }
 .entry-content blockquote,
 .section-body blockquote {
-  border-image: url(../img/chalkbox.png) 5 stretch;
+  border-image: url(../img/chalkbox-orange.png) 5 stretch;
   border-style: solid;
   border-width: 5px 0;
 }
@@ -7465,7 +7454,7 @@ article.entry {
 .section-body ol,
 .entry-content ul,
 .section-body ul {
-  margin-left: 2em;
+  margin-left: 3.2em;
 }
 .entry-content ol ol,
 .section-body ol ol,
@@ -7477,21 +7466,44 @@ article.entry {
 .section-body ul ul {
   margin-bottom: 0;
 }
+.entry-content ol,
+.section-body ol {
+  counter-reset: item;
+}
 .entry-content ol li,
 .section-body ol li {
-  list-style-type: decimal;
+  list-style-type: none;
 }
-.entry-content ol ol li,
-.section-body ol ol li {
-  list-style-type: lower-alpha;
+.entry-content ol li:before,
+.section-body ol li:before {
+  margin-left: -1.2em;
+  content: counter(item, decimal) ". ";
+  counter-increment: item;
+  color: #FF7D23;
+}
+.entry-content ol ol li:before,
+.section-body ol ol li:before {
+  content: counter(item, lower-alpha) ". ";
+}
+.entry-content ul,
+.section-body ul {
+  counter-reset: item;
 }
 .entry-content ul li,
 .section-body ul li {
-  list-style-type: disc;
+  list-style-type: none;
 }
-.entry-content ul ul li,
-.section-body ul ul li {
-  list-style-type: circle;
+.entry-content ul li:before,
+.section-body ul li:before {
+  margin-left: -1.2em;
+  margin-right: 0.5em;
+  line-height: 0;
+  content: "\26AB ";
+  color: #FF7D23;
+}
+.entry-content ul ul li:before,
+.section-body ul ul li:before {
+  content: "\25CB ";
 }
 .entry-content iframe,
 .section-body iframe {
@@ -7542,21 +7554,6 @@ article.entry {
   line-height: 1;
   margin: 0;
 }
-.banner .entry-subtitle {
-  background: #FF7D23;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.625;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #FFF;
-}
 .entry-header .entry-title,
 .archive-description .entry-title,
 .entry-header .archive-title,
@@ -7565,22 +7562,6 @@ article.entry {
   font-weight: 500;
   line-height: 1.65;
   margin: 0;
-}
-.entry-header .entry-subtitle,
-.archive-description .entry-subtitle {
-  background: #FF7D23;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.625;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #FFF;
 }
 /* Pagination
 --------------------------------------------- */

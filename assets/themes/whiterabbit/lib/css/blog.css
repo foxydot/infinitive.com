@@ -177,22 +177,6 @@ body.archive.category main .genesis-feature .entry-header .entry-subtitle {
   background-color: transparent;
   line-height: 1.25;
 }
-body.blog main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle),
-body.archive.category main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle) {
-  background: #FF7D23;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.625;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #FFF;
-}
 body.blog main .genesis-feature .entry-header .entry-content .readmore-button,
 body.archive.category main .genesis-feature .entry-header .entry-content .readmore-button {
   padding: 6px 24px;
@@ -239,22 +223,6 @@ body.archive.category main .genesis-teaser .entry-header .entry-subtitle {
   color: #FFF;
   background-color: transparent;
   line-height: 1.25;
-}
-body.blog main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle),
-body.archive.category main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle) {
-  background: #FF7D23;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.625;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #FFF;
 }
 body.blog main .genesis-teaser .entry-header .entry-content .readmore-button,
 body.archive.category main .genesis-teaser .entry-header .entry-content .readmore-button {
