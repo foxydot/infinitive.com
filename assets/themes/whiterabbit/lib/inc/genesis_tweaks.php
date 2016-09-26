@@ -6,7 +6,6 @@ require_once('genesis_tweak_functions.php');
 add_theme_support( 'html5' );//* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 add_theme_support( 'genesis-responsive-viewport' );//* Add viewport meta tag for mobile browsers
-add_theme_support( 'custom-background' );//* Add support for custom background
 //* Add support for structural wraps
 add_theme_support( 'genesis-structural-wraps', array(
 'header',
@@ -52,7 +51,7 @@ add_filter('widget_text', 'do_shortcode');//shortcodes in widgets
 /*** CONTENT ***/
 add_filter( 'edit_post_link', '__return_false' );
 
-add_filter('genesis_breadcrumb_args', 'msdlab_breadcrumb_args'); //customize the breadcrumb output
+//add_filter('genesis_breadcrumb_args', 'msdlab_breadcrumb_args'); //customize the breadcrumb output
 remove_action('genesis_before_loop', 'genesis_do_breadcrumbs'); //move the breadcrumbs 
 add_filter( 'genesis_post_info', 'sp_post_info_filter' );
 add_action('template_redirect','msdlab_maybe_move_title');
@@ -61,7 +60,7 @@ add_action('template_redirect','msdlab_maybe_move_title');
     //add_action('msdlab_title_area','msdlab_do_section_title');
     //add_action('genesis_after_header','msdlab_do_title_area');
 
-add_action('genesis_after_header', 'genesis_do_breadcrumbs'); //to outside of the loop area
+//add_action('genesis_after_header', 'genesis_do_breadcrumbs'); //to outside of the loop area
 //add_action('genesis_before_entry','msd_post_image');//add the image above the entry
 //add_action('genesis_entry_header','msdlab_project_gallery',-5);//add the image above the entry
 
@@ -97,7 +96,7 @@ remove_action('genesis_footer','genesis_do_footer'); //replace the footer
 add_action('genesis_footer','msdlab_do_social_footer');//with a msdsocial support one
 
 /*** HOMEPAGE (BACKEND SUPPORT) ***/
-add_action('after_setup_theme','msdlab_add_homepage_hero_flex_sidebars'); //creates widget areas for a hero and flexible widget area
+//add_action('after_setup_theme','msdlab_add_homepage_hero_flex_sidebars'); //creates widget areas for a hero and flexible widget area
 //add_action('after_setup_theme','msdlab_add_homepage_callout_sidebars'); //creates a widget area for a callout bar, usually between the hero and the widget area
 
 /*** SITEMAP ***/
@@ -105,3 +104,7 @@ add_action('after_404','msdlab_sitemap');
 
 /*** Blog Header ***/
 add_action('wp_head', 'msdlab_custom_hooks_management');
+
+add_filter('wpseo_opengraph_image_size',create_function ('' , 'return "facebook";' ));
+add_filter('wpseo_twitter_image_size',create_function ('' , 'return "facebook";' ));
+add_filter('genesis_get_image_default_args',create_function ('' , 'return "thumb";' ));
