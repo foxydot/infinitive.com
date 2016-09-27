@@ -110,4 +110,4 @@ add_action('wp_head', 'msdlab_custom_hooks_management');
 
 add_filter('wpseo_opengraph_image_size',create_function ('' , 'return "facebook";' ));
 add_filter('wpseo_twitter_image_size',create_function ('' , 'return "facebook";' ));
-add_filter('genesis_get_image_default_args',create_function ('' , 'return "thumb";' ));
+add_filter('genesis_get_image_default_args','msdlab_change_genesis_get_image_args');
