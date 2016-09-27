@@ -66,7 +66,9 @@
  * 
  */
 .blog .sidebar,
-.archive.category .sidebar {
+.archive.category .sidebar,
+.archive.tag .sidebar,
+.archive.author .sidebar {
   margin-top: 138px;
 }
 .blog-header h3 {
@@ -124,11 +126,15 @@ article .entry-header .entry-meta {
   font-size: 0.9em;
 }
 body.blog .thumbnail,
-body.archive.category .thumbnail {
+body.archive.category .thumbnail,
+body.archive.tag .thumbnail,
+body.archive.author .thumbnail {
   border-radius: 0;
 }
 body.blog .entry-header .entry-title,
-body.archive.category .entry-header .entry-title {
+body.archive.category .entry-header .entry-title,
+body.archive.tag .entry-header .entry-title,
+body.archive.author .entry-header .entry-title {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -138,23 +144,31 @@ body.archive.category .entry-header .entry-title {
   line-height: 1.25;
 }
 body.blog main,
-body.archive.category main {
+body.archive.category main,
+body.archive.tag main,
+body.archive.author main {
   /* Featured Post Grid
   ------------------------------------------------------------ */
 }
 body.blog main .genesis-feature a.featured_image_wrapper,
-body.archive.category main .genesis-feature a.featured_image_wrapper {
+body.archive.category main .genesis-feature a.featured_image_wrapper,
+body.archive.tag main .genesis-feature a.featured_image_wrapper,
+body.archive.author main .genesis-feature a.featured_image_wrapper {
   display: block;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.8);
   text-align: center;
 }
 body.blog main .genesis-feature a.featured_image_wrapper img,
-body.archive.category main .genesis-feature a.featured_image_wrapper img {
+body.archive.category main .genesis-feature a.featured_image_wrapper img,
+body.archive.tag main .genesis-feature a.featured_image_wrapper img,
+body.archive.author main .genesis-feature a.featured_image_wrapper img {
   margin: 0 auto;
 }
 body.blog main .genesis-feature .entry-header .entry-title,
-body.archive.category main .genesis-feature .entry-header .entry-title {
+body.archive.category main .genesis-feature .entry-header .entry-title,
+body.archive.tag main .genesis-feature .entry-header .entry-title,
+body.archive.author main .genesis-feature .entry-header .entry-title {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;
@@ -172,7 +186,9 @@ body.archive.category main .genesis-feature .entry-header .entry-title {
   color: #FFF;
 }
 body.blog main .genesis-feature .entry-header .entry-subtitle,
-body.archive.category main .genesis-feature .entry-header .entry-subtitle {
+body.archive.category main .genesis-feature .entry-header .entry-subtitle,
+body.archive.tag main .genesis-feature .entry-header .entry-subtitle,
+body.archive.author main .genesis-feature .entry-header .entry-subtitle {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 30px;
@@ -184,7 +200,9 @@ body.archive.category main .genesis-feature .entry-header .entry-subtitle {
   line-height: 1.25;
 }
 body.blog main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle),
-body.archive.category main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle) {
+body.archive.category main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle),
+body.archive.tag main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle),
+body.archive.author main .genesis-feature .entry-header .entry-content h2:not(.entry-subtitle) {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;
@@ -202,7 +220,9 @@ body.archive.category main .genesis-feature .entry-header .entry-content h2:not(
   color: #FFF;
 }
 body.blog main .genesis-feature .entry-header .entry-content .readmore-button,
-body.archive.category main .genesis-feature .entry-header .entry-content .readmore-button {
+body.archive.category main .genesis-feature .entry-header .entry-content .readmore-button,
+body.archive.tag main .genesis-feature .entry-header .entry-content .readmore-button,
+body.archive.author main .genesis-feature .entry-header .entry-content .readmore-button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
@@ -221,21 +241,29 @@ body.archive.category main .genesis-feature .entry-header .entry-content .readmo
   margin: 0;
 }
 body.blog main .genesis-teaser a.grid_image_wrapper,
-body.archive.category main .genesis-teaser a.grid_image_wrapper {
+body.archive.category main .genesis-teaser a.grid_image_wrapper,
+body.archive.tag main .genesis-teaser a.grid_image_wrapper,
+body.archive.author main .genesis-teaser a.grid_image_wrapper {
   display: block;
   background: rgba(255, 255, 255, 0.8);
   text-align: center;
 }
 body.blog main .genesis-teaser a.grid_image_wrapper img,
-body.archive.category main .genesis-teaser a.grid_image_wrapper img {
+body.archive.category main .genesis-teaser a.grid_image_wrapper img,
+body.archive.tag main .genesis-teaser a.grid_image_wrapper img,
+body.archive.author main .genesis-teaser a.grid_image_wrapper img {
   margin: 0 auto;
 }
 body.blog main .genesis-teaser .entry-header .entry-title,
-body.archive.category main .genesis-teaser .entry-header .entry-title {
+body.archive.category main .genesis-teaser .entry-header .entry-title,
+body.archive.tag main .genesis-teaser .entry-header .entry-title,
+body.archive.author main .genesis-teaser .entry-header .entry-title {
   margin-top: 1em;
 }
 body.blog main .genesis-teaser .entry-header .entry-subtitle,
-body.archive.category main .genesis-teaser .entry-header .entry-subtitle {
+body.archive.category main .genesis-teaser .entry-header .entry-subtitle,
+body.archive.tag main .genesis-teaser .entry-header .entry-subtitle,
+body.archive.author main .genesis-teaser .entry-header .entry-subtitle {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 30px;
@@ -247,7 +275,9 @@ body.archive.category main .genesis-teaser .entry-header .entry-subtitle {
   line-height: 1.25;
 }
 body.blog main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle),
-body.archive.category main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle) {
+body.archive.category main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle),
+body.archive.tag main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle),
+body.archive.author main .genesis-teaser .entry-header .entry-content h2:not(.entry-subtitle) {
   background: #FF7D23;
   margin-left: -100rem;
   padding-left: 100rem;
@@ -265,7 +295,9 @@ body.archive.category main .genesis-teaser .entry-header .entry-content h2:not(.
   color: #FFF;
 }
 body.blog main .genesis-teaser .entry-header .entry-content .readmore-button,
-body.archive.category main .genesis-teaser .entry-header .entry-content .readmore-button {
+body.archive.category main .genesis-teaser .entry-header .entry-content .readmore-button,
+body.archive.tag main .genesis-teaser .entry-header .entry-content .readmore-button,
+body.archive.author main .genesis-teaser .entry-header .entry-content .readmore-button {
   padding: 6px 24px;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
@@ -284,18 +316,24 @@ body.archive.category main .genesis-teaser .entry-header .entry-content .readmor
   margin: 0;
 }
 body.blog main .section-header .recent-posts-header,
-body.archive.category main .section-header .recent-posts-header {
+body.archive.category main .section-header .recent-posts-header,
+body.archive.tag main .section-header .recent-posts-header,
+body.archive.author main .section-header .recent-posts-header {
   padding-bottom: 0.6rem;
   border-bottom: 1px solid #FFF;
 }
 body.blog main .genesis-grid-even,
-body.archive.category main .genesis-grid-even {
+body.archive.category main .genesis-grid-even,
+body.archive.tag main .genesis-grid-even,
+body.archive.author main .genesis-grid-even {
   float: right;
   padding: 0 0 15px;
   width: 48%;
 }
 body.blog main .genesis-grid-odd,
-body.archive.category main .genesis-grid-odd {
+body.archive.category main .genesis-grid-odd,
+body.archive.tag main .genesis-grid-odd,
+body.archive.author main .genesis-grid-odd {
   clear: both;
   float: left;
   padding: 0 0 15px;
@@ -303,12 +341,18 @@ body.archive.category main .genesis-grid-odd {
 }
 body.blog main .genesis-grid-even,
 body.archive.category main .genesis-grid-even,
+body.archive.tag main .genesis-grid-even,
+body.archive.author main .genesis-grid-even,
 body.blog main .genesis-grid-odd,
-body.archive.category main .genesis-grid-odd {
+body.archive.category main .genesis-grid-odd,
+body.archive.tag main .genesis-grid-odd,
+body.archive.author main .genesis-grid-odd {
   margin: 0 0 20px;
 }
 body.blog main .genesis-grid.post,
-body.archive.category main .genesis-grid.post {
+body.archive.category main .genesis-grid.post,
+body.archive.tag main .genesis-grid.post,
+body.archive.author main .genesis-grid.post {
   border-bottom: medium none;
 }
 body.single-post main .post .entry-content {
@@ -319,11 +363,15 @@ body.single-post main .post .entry-content {
 }
 @media only screen and (min-width: 1023px) {
   body.blog main .genesis-feature a.featured_image_wrapper,
-  body.archive.category main .genesis-feature a.featured_image_wrapper {
+  body.archive.category main .genesis-feature a.featured_image_wrapper,
+  body.archive.tag main .genesis-feature a.featured_image_wrapper,
+  body.archive.author main .genesis-feature a.featured_image_wrapper {
     min-height: 380px;
   }
   body.blog main .genesis-teaser a.grid_image_wrapper,
-  body.archive.category main .genesis-teaser a.grid_image_wrapper {
+  body.archive.category main .genesis-teaser a.grid_image_wrapper,
+  body.archive.tag main .genesis-teaser a.grid_image_wrapper,
+  body.archive.author main .genesis-teaser a.grid_image_wrapper {
     min-height: 182px;
   }
   body.single-post main .post .entry-content {
