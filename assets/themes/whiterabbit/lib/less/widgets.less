@@ -1,0 +1,203 @@
+/*
+Widgets
+---------------------------------------------------------------------------------------------------- */
+.widget{
+  ul{
+    li{
+      list-style: none inside none;
+    }
+  }
+  .widget-title{
+    background: none;
+    padding: 0.4rem 0;
+    font-weight: normal;
+    margin-bottom: 0;
+    color: @orange;
+  }
+}
+
+/* Featured Content
+--------------------------------------------- */
+.sidebar{
+  .widget{
+    margin-bottom: 1rem;
+  }
+.widget.featured-content,
+.widget.widget_recent_entries,
+.widget.widget_categories{
+  clear: both;
+  h4.widget-title{
+    background: @orange;
+    padding: 0.25em 0.5em 0;
+    color: @white;
+    margin-bottom: 0.5em;
+  }
+  a:link:not(.button){
+        border: 0;
+      }
+  a.post-title, .entry-title a{
+    .custombody();
+    display: block;
+    color: @orange;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  ul li, article{
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid fade(@dkgrey,10%);
+    span.date{
+      display: block;
+      color: @ltgrey;
+    }
+    &.last-child{
+      border: 0;
+    }
+  }
+}
+.widget.msd_news_widget{
+  background-color: @medgrey;
+  .clearfix();
+  h4.widget-title{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin: 0;
+    .customheader-chalk(3.2);
+    color: @white;
+  }
+  ul.news-list{
+    margin: 0 1em 1em;
+    li{
+      color: @white;
+      h3{
+        font-weight: 600;
+        text-transform: none;
+        font-size: 1.2em;
+      }
+      .link.alignright{
+        .button();
+      }
+    }
+  }
+}
+.widget.widget_pluginbuddyvideoshowcase{
+  h4.widget-title{
+    background: @medgrey;
+    .customheader-chalk(3.2);
+    color: @offwhite;
+    padding: 0 0.5em;
+  }
+}
+section.layerslider_widget{
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+  .widget.widget_sp_image{
+    background: @offwhite;
+    h4.widget-title{
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      .customheader-chalk(3.2);
+      color: @orange;
+      line-height: 1;
+    }
+    .widget_sp_image-image-link{
+      display: block;
+      background: @white;
+      border:0;
+      img{
+        margin: 0 auto;
+      }
+    }
+    .widget_sp_image-description{
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    .widget_sp_image-link{
+      display: block;
+      text-align: right;
+    }
+  }
+  
+.widget.widget_msd_experts{
+  .widget-title{
+    .customheader-chalk(3.6);
+    color: @white;
+  }
+  div.links{
+    a:link{
+      color: @white;
+      text-decoration: none;
+      border: 0;
+      display: block;
+      font-size: 0.8em;
+      background-color: @orange;
+      padding: 0.5em;
+    }
+  }
+}
+.widget.widget_cta{
+  background: @dkgrey;
+  padding: 1em;
+  color: @orange;
+  .widget-wrap{
+    .textwidget{
+      .customheader-chalk(4.2);
+      line-height: 1;
+      font-weight: 500;
+      .readmore{
+        display: block;
+        background: url(../img/LetsTalkCTAbubble122x44.png) no-repeat center right;
+        font-size: 0.8em;
+        color: @dkgrey;
+        min-height: 54px;
+        border: 0;
+        span{
+          display: none;
+        }
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.widget.widget_segment{
+  background: @offwhite;
+  .widget-wrap{
+    padding: 15px;
+    font-size: 1.2em;
+  }
+  .widget-title{
+    background-color: @orange;
+    color: @white;
+    position: relative;
+    padding-left: 62px;
+    line-height: 1;
+    margin: 0 -15px 15px;
+    &:before{
+      content: '';
+      background-image: url(../img/caseStudyMagGlass46x52.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: absolute;
+      display: block;
+      min-height: 52px;
+      min-width: 46px;
+      top: -5px;
+      left: 5px;
+    }
+  }
+  .link{
+    text-align: right;
+  }
+  .readmore{
+    .button();
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+}
+
