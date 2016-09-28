@@ -6886,6 +6886,7 @@ Pre Header
 ---------------------------------------------------------------------------------------------------- */
 .pre-header {
   background-color: #3D3C3D;
+  z-index: 900;
 }
 .pre-header .widget-area {
   text-align: center;
@@ -6925,6 +6926,7 @@ Site Header
 ---------------------------------------------------------------------------------------------------- */
 .site-header {
   background-color: #3D3C3D;
+  z-index: 900;
 }
 .site-header .wrap {
   padding: 40px 0;

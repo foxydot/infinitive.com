@@ -33,4 +33,21 @@ jQuery(document).ready(function($) {
     if ( $( '.equalize' ).length ) {
        $('.equalize').equalHeightColumns();
        }
+       
+       
+    var preheaderheight = $(".pre-header").outerHeight();
+    var headerheight = $(".site-header").outerHeight();
+    if($( window ).width() > 480){
+        $(".pre-header").sticky();
+        $(".site-header").sticky({topSpacing:preheaderheight});
+    } else {
+        $(".site-header").sticky();
+    }
+    
+
+    $(window).scroll(function() {
+       if($(window).scrollTop() == 0) {
+           $(".sticky-wrapper").css('height','auto');
+       }
+    });
 });
