@@ -36,7 +36,7 @@ if (!class_exists('MSDTeamCPT')) {
             add_shortcode('teammembers', array(&$this,'msdlab_team_member_special_loop_shortcode_handler'));
             add_shortcode('team-members', array(&$this,'msdlab_team_member_special_loop_shortcode_handler'));
             
-            add_image_size('team-mini-headshot',178,220, array('center','top'));
+            add_image_size('team-headshot',300,370, array('center','top'));
             
         }
         
@@ -252,7 +252,7 @@ if (!class_exists('MSDTeamCPT')) {
                             'xhtml' => '<div class="aside">',
                             'echo' => false,
                         ) ); 
-                    $ret .= get_the_post_thumbnail($result->ID,'team-mini-headshot',array('itemprop'=>'image'));
+                    $ret .= get_the_post_thumbnail($result->ID,'team-headshot',array('itemprop'=>'image'));
                     $ret .= '
                                 <ul>';
                     if($contact_info->get_the_value('_team_linked_in')){

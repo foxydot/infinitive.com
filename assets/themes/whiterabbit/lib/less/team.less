@@ -55,12 +55,17 @@
               &.insights-header{
                 width: 74%;
               }
+              &:before{
+                content: '';
+                margin: 0;
+              }
             }
           }
         }
         main{
           .make-xs-column(8);
           padding: 0;
+          color: @white;
           header,content,footer{
             display: block;
             padding: 1rem;
@@ -86,6 +91,8 @@
           footer{
             text-align: right;
             .button{
+              .customheader(1.4);
+              background-color: transparent;
               display: inline-block;
               margin: 0;
             }
