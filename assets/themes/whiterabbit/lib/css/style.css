@@ -8551,6 +8551,22 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   margin-left: 0;
   padding-left: 10rem;
 }
+div.calloutbox {
+  border: 1px solid #FF7D23;
+  padding: 0 15px 1em;
+  margin: 1em auto;
+}
+div.calloutbox h3 {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 0;
+  margin-bottom: 1em;
+  background: #FF7D23;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  color: #FFF;
+}
 @media only screen and (min-width: 480px) {
   .page.core-values .sectioned-page-wrapper .section {
     position: relative;
