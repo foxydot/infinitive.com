@@ -6005,12 +6005,12 @@ h1 {
   font-size: 3.4rem;
 }
 h2 {
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 30px;
+  font-size: 3rem;
 }
 h3 {
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 24px;
+  font-size: 2.4rem;
 }
 h4 {
   font-size: 16px;
@@ -6180,7 +6180,7 @@ Structure and Layout
 .sidebar-secondary section,
 article {
   margin: 0 auto;
-  max-width: 1140px;
+  max-width: 1240px;
 }
 .site-inner {
   clear: both;
@@ -7435,7 +7435,6 @@ article.entry {
 .entry-content h2,
 .section-body h2 {
   color: #FF7D23;
-  font-size: 2rem;
 }
 .entry-content blockquote,
 .section-body blockquote {
@@ -7568,6 +7567,10 @@ article.entry {
   color: #FF7D23;
   font-weight: 500;
   margin: 0;
+}
+.entry-header .entry-subtitle,
+.archive-description .entry-subtitle {
+  font-size: 1.6em;
 }
 /* Pagination
 --------------------------------------------- */
@@ -8443,7 +8446,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
 }
 .page.core-values .sectioned-page-wrapper {
   margin: 0 auto;
-  max-width: 1140px;
+  max-width: 1240px;
   float: none;
 }
 .page.core-values .sectioned-page-wrapper:after {

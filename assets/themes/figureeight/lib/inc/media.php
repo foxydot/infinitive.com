@@ -110,3 +110,11 @@ function msd_carousel_wrapper($slides,$params = array()){
     </div>
 </div>';
 }
+
+function msdlab_change_genesis_get_image_args($args){
+    global $post;
+    if(is_single() && is_cpt('post')){
+        $args['size'] = 'medium';
+    }
+    return $args;
+}
