@@ -6573,11 +6573,13 @@ Widgets
   margin: 0;
 }
 .sidebar .widget.widget_sp_image {
-  background: #F2F7FA;
+  background: #FFF;
+  border: 1px solid #7F7F7F;
 }
 .sidebar .widget.widget_sp_image h4.widget-title {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-top: 0;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-size: 32px;
   font-size: 3.2rem;
@@ -6601,8 +6603,9 @@ Widgets
   padding-right: 1em;
 }
 .sidebar .widget.widget_sp_image .widget_sp_image-link {
-  display: block;
-  text-align: right;
+  display: inline-flex;
+  text-align: center;
+  color: #FFF;
 }
 .sidebar .widget.widget_msd_experts .widget-title {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
