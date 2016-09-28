@@ -8151,8 +8151,7 @@ Site Footer
   color: #FFF;
 }
 body.page.press main.content article .entry-content h2.first-child,
-body.page.resources main.content article .entry-content h2.first-child,
-body.page.core-values main.content article .entry-content h2.first-child {
+body.page.resources main.content article .entry-content h2.first-child {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -8162,13 +8161,11 @@ body.page.core-values main.content article .entry-content h2.first-child {
   text-transform: none;
 }
 body.page.press main.content article .entry-content ul.publication-list,
-body.page.resources main.content article .entry-content ul.publication-list,
-body.page.core-values main.content article .entry-content ul.publication-list {
+body.page.resources main.content article .entry-content ul.publication-list {
   margin: 1em 0;
 }
 body.page.press main.content article .entry-content ul.publication-list li,
-body.page.resources main.content article .entry-content ul.publication-list li,
-body.page.core-values main.content article .entry-content ul.publication-list li {
+body.page.resources main.content article .entry-content ul.publication-list li {
   margin-left: -15px;
   margin-right: -15px;
   list-style: none outside none;
@@ -8177,44 +8174,36 @@ body.page.core-values main.content article .entry-content ul.publication-list li
 }
 body.page.press main.content article .entry-content ul.publication-list li:before,
 body.page.resources main.content article .entry-content ul.publication-list li:before,
-body.page.core-values main.content article .entry-content ul.publication-list li:before,
 body.page.press main.content article .entry-content ul.publication-list li:after,
-body.page.resources main.content article .entry-content ul.publication-list li:after,
-body.page.core-values main.content article .entry-content ul.publication-list li:after {
+body.page.resources main.content article .entry-content ul.publication-list li:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
 body.page.press main.content article .entry-content ul.publication-list li:after,
-body.page.resources main.content article .entry-content ul.publication-list li:after,
-body.page.core-values main.content article .entry-content ul.publication-list li:after {
+body.page.resources main.content article .entry-content ul.publication-list li:after {
   clear: both;
 }
 body.page.press main.content article .entry-content ul.publication-list li:before,
 body.page.resources main.content article .entry-content ul.publication-list li:before,
-body.page.core-values main.content article .entry-content ul.publication-list li:before,
 body.page.press main.content article .entry-content ul.publication-list li:after,
-body.page.resources main.content article .entry-content ul.publication-list li:after,
-body.page.core-values main.content article .entry-content ul.publication-list li:after {
+body.page.resources main.content article .entry-content ul.publication-list li:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
 body.page.press main.content article .entry-content ul.publication-list li:after,
-body.page.resources main.content article .entry-content ul.publication-list li:after,
-body.page.core-values main.content article .entry-content ul.publication-list li:after {
+body.page.resources main.content article .entry-content ul.publication-list li:after {
   clear: both;
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-info,
-body.page.resources main.content article .entry-content ul.publication-list li .news-info,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info {
+body.page.resources main.content article .entry-content ul.publication-list li .news-info {
   background: rgba(255, 255, 255, 0.05);
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-info h3,
-body.page.resources main.content article .entry-content ul.publication-list li .news-info h3,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info h3 {
+body.page.resources main.content article .entry-content ul.publication-list li .news-info h3 {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -8230,33 +8219,27 @@ body.page.core-values main.content article .entry-content ul.publication-list li
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-info h3 a,
 body.page.resources main.content article .entry-content ul.publication-list li .news-info h3 a,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info h3 a,
 body.page.press main.content article .entry-content ul.publication-list li .news-info h3 a:visited,
-body.page.resources main.content article .entry-content ul.publication-list li .news-info h3 a:visited,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info h3 a:visited {
+body.page.resources main.content article .entry-content ul.publication-list li .news-info h3 a:visited {
   color: #FFF;
   text-decoration: none;
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-info > div,
-body.page.resources main.content article .entry-content ul.publication-list li .news-info > div,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info > div {
+body.page.resources main.content article .entry-content ul.publication-list li .news-info > div {
   padding: 0.5em;
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-info .button,
-body.page.resources main.content article .entry-content ul.publication-list li .news-info .button,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info .button {
+body.page.resources main.content article .entry-content ul.publication-list li .news-info .button {
   margin-right: 0;
   margin-left: auto;
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-logo,
-body.page.resources main.content article .entry-content ul.publication-list li .news-logo,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-logo {
+body.page.resources main.content article .entry-content ul.publication-list li .news-logo {
   background: #FFF;
   padding: 10px;
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-logo a,
-body.page.resources main.content article .entry-content ul.publication-list li .news-logo a,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-logo a {
+body.page.resources main.content article .entry-content ul.publication-list li .news-logo a {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -8449,6 +8432,9 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
 .page-template-page-landing .landing-widgets {
   margin: 1em 0;
 }
+.page.core-values .site-inner {
+  display: none;
+}
 .page.core-values .sectioned-page-wrapper {
   margin: 0 auto;
   max-width: 1240px;
@@ -8485,6 +8471,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
 }
 .page.core-values .sectioned-page-wrapper .section.bkg-white {
   background: #FFF;
+  border: 1px solid #FF7D23;
 }
 .page.core-values .sectioned-page-wrapper .section.bkg-grey,
 .page.core-values .sectioned-page-wrapper .section.bkg-gray {
@@ -8497,8 +8484,15 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
 .page.core-values .sectioned-page-wrapper .section p.first-child {
   margin: 0;
 }
+.page.core-values .sectioned-page-wrapper .section ul li:before {
+  color: #3D3C3D;
+}
 .page.core-values .sectioned-page-wrapper .section ul.last-child {
   margin-bottom: 2em;
+}
+.page.core-values .sectioned-page-wrapper .section.section-video {
+  padding: 0;
+  text-align: center;
 }
 .page.core-values .sectioned-page-wrapper .section.section-header {
   position: relative;
@@ -8514,45 +8508,61 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
     width: 100%;
   }
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul {
-  background: #FF7D23;
-  margin: 0 0 1em 0;
+.page.core-values .sectioned-page-wrapper .section.section-header a.bkg-dkgray {
+  padding: 0.3em;
+  display: block;
+  background: #3D3C3D url(../img/texture-01.png) repeat center center;
+  color: #FF7D23;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 72px;
+  font-size: 7.2rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   text-align: center;
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li {
+.page.core-values .sectioned-page-wrapper .section.section-header a.bkg-dkgray img {
+  margin: 0 0.5em;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header a.bkg-dkgray .white-text {
+  color: #FFF;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header a.bkg-dkgray:hover {
+  text-decoration: none;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header ul {
+  background: #FF7D23;
+  margin: 0;
+  text-align: center;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header ul li {
   display: inline-flex;
   padding: 0;
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3 {
+.page.core-values .sectioned-page-wrapper .section.section-header ul li h3 {
   margin: 0;
   font-size: 3.4em;
+  line-height: 1;
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3 a {
+.page.core-values .sectioned-page-wrapper .section.section-header ul li h3 a {
   color: #FFF;
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3:after {
+.page.core-values .sectioned-page-wrapper .section.section-header ul li h3 a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header ul li h3:after {
   content: ' • ';
   color: #3D3C3D;
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li.last-child h3:after {
+.page.core-values .sectioned-page-wrapper .section.section-header ul li.last-child h3:after {
   content: '';
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-footer-area {
-  background: #FF7D23;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.625;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #FFF;
-  margin-left: 0;
-  padding-left: 10rem;
+.page.core-values .sectioned-page-wrapper .section.section-header ul li:before {
+  content: '';
+  margin: 0;
 }
 div.calloutbox {
   border: 1px solid #FF7D23;
