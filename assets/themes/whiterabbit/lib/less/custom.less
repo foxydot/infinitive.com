@@ -22,8 +22,7 @@
 //Special Pages
 body.page{
   &.press,
-  &.resources,
-  &.core-values{
+  &.resources{
     main.content{
       article{
         .entry-content{
@@ -204,6 +203,9 @@ body.archive.post-type-archive-msd_news{
 }
 
 .page.core-values{
+  .site-inner{
+    display: none;
+  }
   .sectioned-page-wrapper{
     .wrap();
     float: none;
@@ -235,6 +237,7 @@ body.archive.post-type-archive-msd_news{
       }
       &.bkg-white{
         background: @white;
+        border: 1px solid @orange;
       }
       &.bkg-grey,&.bkg-gray{
         background: @vltgrey;
@@ -245,45 +248,73 @@ body.archive.post-type-archive-msd_news{
       p.first-child{
         margin: 0;
       }
+      ul li:before{
+        color: @dkgrey;
+      }
       ul.last-child{
         margin-bottom: 2em;
+      }
+    }
+    .section.section-video{
+      padding: 0;
+      text-align: center;
+      iframe{
       }
     }
     .section.section-header{
       .make-sm-column(12);
       max-width: 100%;
       margin: 0;
-      .section-header-area{
-        ul{
-          background: @orange;
-          margin: 0 0 1em 0;
-          text-align: center;
-          li{
-            display: inline-flex;
-            padding: 0;
-            h3{
-              margin: 0;
-              font-size: 3.4em;
-              a{
-                color: @white;
-              }
-              &:after{
-                content: ' • ';
-                color: @dkgrey;
-              }
-            }
-            &.last-child{
-              h3:after{
-                content: '';
-              }
-            }
-          }
+      a.bkg-dkgray{
+        padding: 0.3em;
+        display: block;
+        background: @dkgrey url(../img/texture-01.png) repeat center center;
+        color: @orange;
+        .customheader-chalk(7.2);
+        text-align: center;
+        img{
+          margin: 0 0.5em;
+        }
+        .white-text{
+          color: @white;
+        }
+        &:hover{
+          text-decoration: none;
         }
       }
-      .section-footer-area{
-        .overflow-header();
-           margin-left: 0;
-           padding-left: 10rem;
+      ul{
+        background: @orange;
+        margin: 0;
+        text-align: center;
+        li{
+          display: inline-flex;
+          padding: 0;
+          h3{
+            margin: 0;
+            font-size: 3.4em;
+            line-height:  1;
+            a{
+              color: @white;
+              &:hover{
+                color: fade(@white,80%);
+                text-decoration: none;
+              }
+            }
+            &:after{
+              content: ' • ';
+              color: @dkgrey;
+            }
+          }
+          &.last-child{
+            h3:after{
+              content: '';
+            }
+          }
+          &:before{
+            content: '';
+            margin: 0;
+          }
+        }
       }
     }
   }
