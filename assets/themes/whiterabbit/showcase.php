@@ -14,7 +14,7 @@ function msd_showcase_post_image(){
     global $post;
     $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
     $background = $featured_image[0];
-    $ret = '<div class="banner" style="background-image:url('.$background.')"></div>';
+    $ret = $background!=''?'<div class="showcase-banner" style="background-image:url('.$background.')"></div>':'';
     print $ret;
 }
 
