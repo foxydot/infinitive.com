@@ -261,69 +261,61 @@ function msdlab_do_title_area(){
 function msdlab_do_section_title(){
     if(is_front_page()){
         return false;
-    } elseif(is_page()){
+    } else {
         global $post, $banner_content;
-        $myid = $post->ID;
         $lvl = 2;
         $titlestr = '';
+        $type = 'banner';
         $banner_content->the_meta();
-        if($banner_content->get_the_value('banner_text_bool')==1){
-            $title = $banner_content->get_the_value('banner_text');
-            $type = 'banner';
-        } else {
-            $lvl = 1;
-            $title = get_the_title();
-            $type = 'entry';
-            remove_action('genesis_entry_header','genesis_do_post_title');
-        }
-        $doodle = $banner_content->get_the_value('doodle')!=''?'<i class="doodle-'.$banner_content->get_the_value('doodle').'"></i>':'';
-        $titlestr = '<h'.$lvl.' class="'.$type.'-title">'.$doodle.$title.'</h'.$lvl.'>';
-        print '<div class="banner clearfix">';
-        print '<div class="wrap">';
-        print $titlestr;
-        print '</div>';
-        print '</div>';
-    } elseif(get_post_type() == 'post' || get_section()=='blog'){
-        global $post, $banner_content;
-        $blog_home = get_post(get_option( 'page_for_posts' ));
-        $title = apply_filters( 'genesis_post_title_text', $blog_home->post_title );//* Wrap in H1 on singular pages
-        $banner_content->the_meta($blog_home->ID);
-        $level = 2;    
-        $type = 'banner';    
-        $doodle = $banner_content->get_the_value('doodle')!=''?'<i class="doodle-'.$banner_content->get_the_value('doodle').'"></i>':'';
-        $titlestr = '<h'.$lvl.' class="'.$type.'-title">'.$doodle.$title.'</h'.$lvl.'>';
-        print '<div class="banner clearfix">';
-        print '<div class="wrap">';
-        print $titlestr;
-        print '</div>';
-        print '</div>';
-    } elseif(is_post_type_archive()) {
-        if ( ! is_post_type_archive() || ! genesis_has_post_type_archive_support() )
-        return;
-
-        if ( get_query_var( 'paged' ) >= 2 )
-            return;
+        //get pieces based on type
+        if(is_page()){
+            $myid = $post->ID;
+            if($banner_content->get_the_value('banner_text_bool')==1){
+                $title = $banner_content->get_the_value('banner_text');
+            } else {
+                $lvl = 1;
+                $title = get_the_title();
+                $type = 'entry';
+                remove_action('genesis_entry_header','genesis_do_post_title');
+            }
+            $doodle_id = $banner_content->get_the_value('doodle')!=''?$banner_content->get_the_value('doodle'):FALSE;
+        } elseif(get_post_type() == 'post' || get_section()=='blog'){
+            $blog_home = get_post(get_option( 'page_for_posts' ));
+            $title = apply_filters( 'genesis_post_title_text', $blog_home->post_title );//* Wrap in H1 on singular pages
+            $banner_content->the_meta($blog_home->ID);
+            $type = 'banner';    
+            $doodle_id = $banner_content->get_the_value('doodle')!=''?$banner_content->get_the_value('doodle'):FALSE;
+        } elseif(is_post_type_archive()) {
+            if ( ! is_post_type_archive() || ! genesis_has_post_type_archive_support() )
+                return;
     
-        $headline   = genesis_get_cpt_option( 'headline' );
-        global $post, $banner_content;
-        $title = $headline?apply_filters( 'genesis_post_title_text', $headline ):'';//* Wrap in H1 on singular pages
-        $level = 2;    
-        $type = 'archive';    
-        $doodle = get_cpt_doodle($post->post_type)!=''?'<i class="doodle-'.get_cpt_doodle($post->post_type).'"></i>':'';        
+            if ( get_query_var( 'paged' ) >= 2 )
+                return;
+            
+            $headline   = genesis_get_cpt_option( 'headline' );
+            $title = $headline?apply_filters( 'genesis_post_title_text', $headline ):'';//* Wrap in H1 on singular pages
+            $type = 'archive';
+            $doodle_id = get_cpt_doodle($post->post_type)!=''?get_cpt_doodle($post->post_type):FALSE;
+        } else {
+            $title = apply_filters( 'genesis_post_title_text', get_the_title() );
+            $doodle_id = get_cpt_doodle($post->post_type)!=''?get_cpt_doodle($post->post_type):FALSE;
+        }
+        //output
+        $doodle = $doodle_id?'<i class="doodle-'.$doodle_id.'"></i>':'';
         $titlestr = '<h'.$lvl.' class="'.$type.'-title">'.$doodle.$title.'</h'.$lvl.'>';
         print '<div class="banner clearfix">';
         print '<div class="wrap">';
         print $titlestr;
         print '</div>';
         print '</div>';
-    } else {
-        genesis_do_post_title();
     }
 }
 
 function get_cpt_doodle($cpt){
     $cpt_doodle = array(
         'msd_news' => 'press',
+        'team_member' => 'team',
+        'case_study' => 'casestudies',
     );
     return $cpt_doodle[$cpt];
 }
