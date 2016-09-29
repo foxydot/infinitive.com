@@ -8582,6 +8582,13 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a:hove
   content: '';
   margin: 0;
 }
+.page.testimonials .entry-content blockquote {
+  border-style: solid;
+  border-width: 0 0 5px 0;
+}
+.page.testimonials .entry-content blockquote.even {
+  border-image: url("../img/chalkbox-orange-flipped.png") 5 5 5 5;
+}
 div.calloutbox {
   border: 1px solid #FF7D23;
   padding: 0 15px 1em;
