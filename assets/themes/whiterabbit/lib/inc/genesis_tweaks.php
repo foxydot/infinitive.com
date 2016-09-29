@@ -48,6 +48,9 @@ add_action('after_setup_theme','msdlab_add_extra_theme_sidebars', 4); //creates 
 add_action('template_redirect','msdlab_select_sidebars');
 add_filter('widget_text', 'do_shortcode');//shortcodes in widgets
 
+remove_action('genesis_before_loop','genesis_do_cpt_archive_title_description');
+add_action('genesis_before_loop','msdlab_do_cpt_archive_title_description');
+
 /*** CONTENT ***/
 add_filter( 'edit_post_link', '__return_false' );
 

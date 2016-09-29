@@ -297,9 +297,72 @@ function msdlab_do_section_title(){
         print $titlestr;
         print '</div>';
         print '</div>';
+    } elseif(is_post_type_archive()) {
+        if ( ! is_post_type_archive() || ! genesis_has_post_type_archive_support() )
+        return;
+
+        if ( get_query_var( 'paged' ) >= 2 )
+            return;
+    
+        $headline   = genesis_get_cpt_option( 'headline' );
+        global $post, $banner_content;
+        $title = $headline?apply_filters( 'genesis_post_title_text', $headline ):'';//* Wrap in H1 on singular pages
+        $level = 2;    
+        $type = 'archive';    
+        $doodle = get_cpt_doodle($post->post_type)!=''?'<i class="doodle-'.get_cpt_doodle($post->post_type).'"></i>':'';        
+        $titlestr = '<h'.$lvl.' class="'.$type.'-title">'.$doodle.$title.'</h'.$lvl.'>';
+        print '<div class="banner clearfix">';
+        print '<div class="wrap">';
+        print $titlestr;
+        print '</div>';
+        print '</div>';
     } else {
         genesis_do_post_title();
     }
+}
+
+function get_cpt_doodle($cpt){
+    $cpt_doodle = array(
+        'msd_news' => 'press',
+    );
+    return $cpt_doodle[$cpt];
+}
+
+
+ /**
+ * Add custom headline and description to relevant custom post type archive pages.
+ *
+ * If we're not on a post type archive page, or not on page 1, then nothing extra is displayed.
+ *
+ * If there's a custom headline to display, it is marked up as a level 1 heading.
+ *
+ * If there's a description (intro text) to display, it is run through wpautop() before being added to a div.
+ *
+ * @since 2.0.0
+ *
+ * @uses genesis_has_post_type_archive_support() Check if a post type should potentially support an archive setting page.
+ * @uses genesis_get_cpt_option()                Get list of custom post types which need an archive settings page.
+ *
+ * @return null Return early if not on relevant post type archive.
+ */
+function msdlab_do_cpt_archive_title_description() {
+
+    if ( ! is_post_type_archive() || ! genesis_has_post_type_archive_support() )
+        return;
+
+    if ( get_query_var( 'paged' ) >= 2 )
+        return;
+
+    $headline   = genesis_get_cpt_option( 'headline' );
+    $intro_text = genesis_get_cpt_option( 'intro_text' );
+
+    $headline   = $headline ? sprintf( '<h1 class="archive-title">%s</h1>', $headline ) : '';
+    $intro_text = $intro_text ? apply_filters( 'genesis_cpt_archive_intro_text_output', $intro_text ) : '';
+
+    if ( $headline || $intro_text )
+        //printf( '<div class="archive-description cpt-archive-description"><div class="wrap">%s</div></div>', $headline .'<div class="sep"></div>'. $intro_text );
+        printf( '<div class="archive-description cpt-archive-description"><div class="wrap">%s</div></div>',  $intro_text );
+
 }
 
 function msdlab_add_portfolio_prefix($content){
@@ -621,44 +684,6 @@ function msdlab_sitemap(){
     </div>';
     print $ret;
 } 
-
-
- /**
- * Add custom headline and description to relevant custom post type archive pages.
- *
- * If we're not on a post type archive page, or not on page 1, then nothing extra is displayed.
- *
- * If there's a custom headline to display, it is marked up as a level 1 heading.
- *
- * If there's a description (intro text) to display, it is run through wpautop() before being added to a div.
- *
- * @since 2.0.0
- *
- * @uses genesis_has_post_type_archive_support() Check if a post type should potentially support an archive setting page.
- * @uses genesis_get_cpt_option()                Get list of custom post types which need an archive settings page.
- *
- * @return null Return early if not on relevant post type archive.
- */
-function msdlab_do_cpt_archive_title_description() {
-
-    if ( ! is_post_type_archive() || ! genesis_has_post_type_archive_support() )
-        return;
-
-    if ( get_query_var( 'paged' ) >= 2 )
-        return;
-
-    $headline   = genesis_get_cpt_option( 'headline' );
-    $intro_text = genesis_get_cpt_option( 'intro_text' );
-
-    $headline   = $headline ? sprintf( '<h1 class="archive-title">%s</h1>', $headline ) : '';
-    $intro_text = $intro_text ? apply_filters( 'genesis_cpt_archive_intro_text_output', $intro_text ) : '';
-
-    if ( $headline || $intro_text )
-        printf( '<div class="archive-description cpt-archive-description"><div class="wrap">%s</div></div>', $headline .'<div class="sep"></div>'. $intro_text );
-
-}
-
-
 
 add_filter( 'gform_pre_render', 'msdlab_gravity_form_shortcode_handler' );
 function msdlab_gravity_form_shortcode_handler($form){
