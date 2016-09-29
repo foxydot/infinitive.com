@@ -224,7 +224,7 @@
   letter-spacing: 0.05em;
 }
 .single-team_member main.content article {
-  background-color: #7F7F7F;
+  border: 1px solid #FF7D23;
 }
 .single-team_member main.content article:before,
 .single-team_member main.content article:after {
@@ -272,10 +272,11 @@
   list-style: none outside none;
   padding: 0 1rem;
   font-weight: 700;
+  display: inline-flex;
 }
 .single-team_member main.content article aside.headshot ul li a {
   text-transform: uppercase;
-  color: #FFF;
+  color: #3D3C3D;
 }
 .single-team_member main.content article aside.headshot ul li a i {
   color: #FF7D23;
@@ -354,7 +355,11 @@
   margin-top: 0;
 }
 .single-team_member aside.sidebar-primary .widget .insights-header {
-  margin: 0;
+  margin: -1rem -1rem 1rem;
+  color: #FFF;
+  background: #FF7D23;
+  padding: 0.5em;
+  font-size: 1.2em;
 }
 .single-team_member aside.sidebar-primary .widget .widget-title {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
@@ -367,30 +372,22 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 700;
-  color: #FFF;
+  color: #3D3C3D;
+  background: transparent;
 }
 .single-team_member aside.sidebar-primary .widget .insights-section article {
   padding-bottom: 0.5em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #959595;
   margin-bottom: 0.5em;
 }
 .single-team_member aside.sidebar-primary .widget a,
 .single-team_member aside.sidebar-primary .widget a:link,
 .single-team_member aside.sidebar-primary .widget a:visited {
-  color: #FFF;
   border-bottom: 0;
 }
-.single-team_member aside.sidebar-primary .widget.widget-insights {
-  padding: 0;
-}
-.single-team_member aside.sidebar-primary .widget.widget-insights #insights {
-  background: #FF7D23;
-  padding: 0.5em;
-  font-size: 1.2em;
-}
 .single-team_member aside.sidebar-primary .widget.widget-news {
-  background: #7F7F7F;
+  background: rgba(149, 149, 149, 0.2);
 }
 .single-team_member aside.sidebar-primary .widget.widget-video {
-  background: #7F7F7F;
+  background: rgba(149, 149, 149, 0.2);
 }

@@ -135,7 +135,7 @@
    }
   main.content{
     article{
-      background-color: @medgrey;
+      border: 1px solid @orange;
       .clearfix();
       aside.headshot{
         .make-sm-column(3);
@@ -162,9 +162,10 @@
             list-style: none outside none;
             padding: 0 1rem;
             font-weight: 700;
+            display: inline-flex;
             a{
               text-transform: uppercase;
-              color: @white;
+              color: @dkgrey;
               i{
                 color: @orange;
               }
@@ -229,39 +230,35 @@
         margin-top: 0;
       }
       .insights-header{
-        margin: 0;
+        margin: -1rem -1rem 1rem;
+        color: @white;
+        background: @orange;
+        padding: 0.5em;
+        font-size: 1.2em;
       }
       .widget-title{
         .customheader-chalk(3.2);
         text-transform: uppercase;
         font-weight: 700;
-        color: @white;
+        color: @dkgrey;
+        background: transparent;
       }
       .insights-section{
         article{
           padding-bottom: 0.5em;
-          border-bottom: 1px solid fade(@white, 10%);
+          border-bottom: 1px solid @ltgrey;
           margin-bottom: 0.5em;
         }
       }
       a,a:link,a:visited{
-        color: @white;
         border-bottom: 0;
       }
       
-      &.widget-insights{
-        padding: 0;
-        #insights{
-          background: @orange;
-          padding: 0.5em;
-          font-size: 1.2em;
-        }
-      }
       &.widget-news{
-        background: @medgrey;
+        background: fade(@ltgrey,20%);
       }
       &.widget-video{
-        background: @medgrey;
+        background: fade(@ltgrey,20%);
       }
     }
   }
