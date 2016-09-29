@@ -5777,6 +5777,12 @@ td.visible-print {
 .doodle-blog:before {
   content: "\45";
 }
+.doodle-team:before {
+  content: "\46";
+}
+.doodle-about:before {
+  content: "\47";
+}
 .doodle-1x {
   font-size: 1em;
 }
