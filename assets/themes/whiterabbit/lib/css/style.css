@@ -6323,12 +6323,12 @@ img.alignright,
 .archive-description,
 .author-box {
   background-color: transparent;
-  margin-bottom: 40px;
-  margin-bottom: 4rem;
-  border-bottom: 2px solid #959595;
+  margin-bottom: 1em;
 }
 .archive-description {
   padding: 0;
+  color: #FF7D23;
+  font-weight: 700;
 }
 .author-box {
   padding: 40px;
@@ -8131,14 +8131,17 @@ Site Footer
   background: #7F7F7F;
 }
 .page-title-area .banner .entry-title,
-.page-title-area .banner .banner-title {
+.page-title-area .banner .banner-title,
+.page-title-area .banner .archive-title {
   color: #FFF;
   line-height: 1.5;
 }
 .page-title-area .banner .entry-title [class^="doodle-"]:before,
 .page-title-area .banner .banner-title [class^="doodle-"]:before,
+.page-title-area .banner .archive-title [class^="doodle-"]:before,
 .page-title-area .banner .entry-title [class*=" doodle-"]:before,
-.page-title-area .banner .banner-title [class*=" doodle-"]:before {
+.page-title-area .banner .banner-title [class*=" doodle-"]:before,
+.page-title-area .banner .archive-title [class*=" doodle-"]:before {
   font-size: 1em;
   margin-right: 0.25em;
   position: relative;
@@ -8146,8 +8149,10 @@ Site Footer
 }
 .page-title-area .banner .entry-title a,
 .page-title-area .banner .banner-title a,
+.page-title-area .banner .archive-title a,
 .page-title-area .banner .entry-title a:hover,
-.page-title-area .banner .banner-title a:hover {
+.page-title-area .banner .banner-title a:hover,
+.page-title-area .banner .archive-title a:hover {
   color: #FFF;
 }
 body.page.press main.content article .entry-content h2.first-child,
@@ -8278,6 +8283,8 @@ body.archive.post-type-archive-msd_news ul.publication-list li:after {
 }
 body.archive.post-type-archive-msd_news ul.publication-list li .news-info {
   background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #FF7D23;
+  min-height: 185px;
 }
 body.archive.post-type-archive-msd_news ul.publication-list li .news-info h3 {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
@@ -8304,8 +8311,10 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-info > div 
 body.archive.post-type-archive-msd_news ul.publication-list li .news-info .button {
   margin-right: 0;
   margin-left: auto;
+  margin-bottom: 0;
 }
 body.archive.post-type-archive-msd_news ul.publication-list li .news-logo {
+  border: 1px solid #959595;
   background: #FFF;
   padding: 10px;
 }
@@ -8315,6 +8324,9 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   background-repeat: no-repeat;
   background-size: contain;
   min-height: 165px;
+}
+body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a:hover {
+  text-decoration: none;
 }
 .page-template-showcase .banner {
   background-position: center center;

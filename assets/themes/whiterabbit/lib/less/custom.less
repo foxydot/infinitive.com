@@ -2,7 +2,7 @@
 .page-title-area{
   background: @medgrey;
   .banner{
-    .entry-title,.banner-title{
+    .entry-title,.banner-title,.archive-title{
       color: @white;
       line-height: 1.5;
       [class^="doodle-"]:before,
@@ -91,6 +91,8 @@ body.archive.post-type-archive-msd_news{
       margin-bottom: 1em;
       .news-info{
         background: fade(@white,5%);
+        border: 1px solid @orange;    
+        min-height: 185px;
         h3{
           .customserif(1.8);
           background: @orange;
@@ -111,9 +113,11 @@ body.archive.post-type-archive-msd_news{
         .button{
           margin-right: 0;
           margin-left: auto;
+          margin-bottom: 0;
         }
       }
       .news-logo{
+        border: 1px solid @ltgrey;
         background: @white;
         padding: 10px;
         a{
@@ -122,6 +126,9 @@ body.archive.post-type-archive-msd_news{
           background-repeat: no-repeat;
           background-size: contain;
           min-height: 165px;
+          &:hover{
+            text-decoration: none;
+          }
         }
       }
     }
