@@ -213,6 +213,8 @@ body {
   content: '\2022';
   color: #FF7D23;
   padding-right: 0.5em;
+  margin: 0;
+  font-size: 1em;
 }
 .sectioned-page-wrapper .section.section-focus .section-body .section-content ul li a {
   color: #FFF;
@@ -399,6 +401,10 @@ body {
   }
   .sectioned-page-wrapper .section.section-obsessed .section-body .column-2 .msd-doodle-wrapper a .msd-doodle-title {
     text-align: center;
+  }
+  .sectioned-page-wrapper .section.section-focus {
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
   .sectioned-page-wrapper .section.section-focus .section-body .section-content .msd-doodle-wrapper i {
     float: left;
