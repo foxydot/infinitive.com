@@ -99,6 +99,21 @@
   margin-left: 3.5em;
   max-width: 28em;
 }
+body.blog .sidebar .widget h4.widget-title,
+body.archive.category .sidebar .widget h4.widget-title,
+body.archive.tag .sidebar .widget h4.widget-title,
+body.archive.author .sidebar .widget h4.widget-title {
+  background: #FF7D23;
+  padding: 0.25em 0.5em 0;
+  color: #FFF;
+  margin-bottom: 0.5em;
+}
+body.blog .sidebar .widget.widget_tag_cloud .tagcloud,
+body.archive.category .sidebar .widget.widget_tag_cloud .tagcloud,
+body.archive.tag .sidebar .widget.widget_tag_cloud .tagcloud,
+body.archive.author .sidebar .widget.widget_tag_cloud .tagcloud {
+  text-align: center;
+}
 @media only screen and (min-width: 480px) {
   .blog-header h3 {
     font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;

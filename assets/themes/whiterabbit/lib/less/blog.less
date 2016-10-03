@@ -30,6 +30,25 @@
   }
 }
 
+//blog sidebar
+
+body.blog,body.archive.category,body.archive.tag,body.archive.author{
+  .sidebar{
+    .widget{
+      h4.widget-title{
+        background: @orange;
+        padding: 0.25em 0.5em 0;
+        color: @white;
+        margin-bottom: 0.5em;
+      }
+      &.widget_tag_cloud{
+        .tagcloud{
+          text-align: center;
+        }
+      }
+    }
+  }
+}
 
 @media only screen and (min-width: 480px) {
   .blog-header{
