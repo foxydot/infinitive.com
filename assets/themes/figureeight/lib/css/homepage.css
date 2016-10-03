@@ -390,6 +390,10 @@
   .sectioned-page-wrapper .section.section-obsessed .section-body .column-2 .msd-doodle-wrapper a .msd-doodle-title {
     text-align: center;
   }
+  .sectioned-page-wrapper .section.section-focus {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
   .sectioned-page-wrapper .section.section-focus .section-body .section-content .msd-doodle-wrapper i {
     float: left;
     font-size: 1.5em;
