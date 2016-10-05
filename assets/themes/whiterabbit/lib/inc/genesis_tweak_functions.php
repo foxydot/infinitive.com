@@ -297,8 +297,10 @@ function msdlab_do_section_title(){
             $type = 'archive';
             $doodle_id = get_cpt_doodle($post->post_type)!=''?get_cpt_doodle($post->post_type):FALSE;
         } else {
+            add_filter('genesis_post_title_text','msd_get_cpt_title');
             $title = apply_filters( 'genesis_post_title_text', get_the_title() );
             $doodle_id = get_cpt_doodle($post->post_type)!=''?get_cpt_doodle($post->post_type):FALSE;
+            remove_filter('genesis_post_title_text','msd_get_cpt_title');
         }
         //output
         $doodle = $doodle_id?'<i class="doodle-'.$doodle_id.'"></i>':'';
@@ -309,6 +311,20 @@ function msdlab_do_section_title(){
         print '</div>';
         print '</div>';
     }
+}
+
+function msd_get_cpt_title($title){
+    global $post;
+    $cpt = $post->post_type;
+    switch($cpt){
+        case 'team_member':
+            $team_page = get_page_by_path( '/about/meet-the-team' );
+            $title = $team_page->post_title;
+            break;
+        default:
+            $title = $title;
+    }
+    return $title;
 }
 
 function get_cpt_doodle($cpt){

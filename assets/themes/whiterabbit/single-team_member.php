@@ -3,21 +3,8 @@ add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_content_side
 remove_action('genesis_sidebar', 'genesis_do_sidebar');
 remove_action('genesis_entry_header','genesis_post_info',12);
 remove_action('genesis_entry_footer','genesis_post_meta');
-add_action('genesis_before_content','msd_add_team_title',5);
 add_action('wp_enqueue_scripts', 'msdlab_add_team_styles');
-function msd_add_team_title(){
-    global $post,$contact_info;
-    /*if($contact_info->get_the_value('_team_position')=='true'){
-        $title = 'Leadership';
-    } else {
-        $title = 'Experts';
-    }*/
-    $team_page = get_page_by_path( '/about/meet-the-team' );
-    $title = $team_page->post_title;
-    print '<div class="section-header first-child odd">
-        <h3>'.$title.'</h3>
-        </div>';
-}
+
 add_action('genesis_entry_header','msdlab_add_single_team_member_left_column', 1);
 function msdlab_add_single_team_member_left_column(){
     print '<aside class="headshot">';
@@ -64,25 +51,25 @@ function msd_team_contact_info(){
     <ul class="team-social-media">
         <?php $contact_info->the_field('_team_twitter'); ?>
         <?php if($contact_info->get_the_value() != ''){ ?>
-            <li class="twitter"><a href="<?php print $contact_info->get_the_value(); ?>"><i class="fa fa-twitter-square fa-2x"></i> Follow</a></li>
+            <li class="twitter"><a href="<?php print $contact_info->get_the_value(); ?>"><i class="fa fa-twitter-square fa-2x"></i></a></li>
         <?php } ?>
         <?php $contact_info->the_field('_team_linked_in'); ?>
         <?php if($contact_info->get_the_value() != ''){ ?>
-            <li class="linkedin"><a href="<?php print $contact_info->get_the_value(); ?>"><i class="fa fa-linkedin-square fa-2x"></i> Connect</a></li>
+            <li class="linkedin"><a href="<?php print $contact_info->get_the_value(); ?>"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+        <?php } ?>
+        <?php $contact_info->the_field('_team_email'); ?>
+        <?php if($contact_info->get_the_value() != ''){ ?>
+            <li class="email"><a href="mailto:<?php print antispambot($contact_info->get_the_value()); ?>"><i class="fa fa-envelope-square fa-2x"></i></a></li>
         <?php } ?>
     </ul>
     <ul class="team-contact-info">
         <?php $contact_info->the_field('_team_phone'); ?>
         <?php if($contact_info->get_the_value() != ''){ ?>
-            <li class="phone"><i class="icon-phone icon-large"></i> <?php print msd_str_fmt($contact_info->get_the_value(),'phone'); ?></li>
+            <li class="phone"><?php print msd_str_fmt($contact_info->get_the_value(),'phone'); ?></li>
         <?php } ?>
         <?php $contact_info->the_field('_team_mobile'); ?>
         <?php if($contact_info->get_the_value() != ''){ ?>
-            <li class="mobile"><i class="icon-mobile-phone icon-large"></i> <?php print msd_str_fmt($contact_info->get_the_value(),'phone'); ?></li>
-        <?php } ?>
-        <?php $contact_info->the_field('_team_email'); ?>
-        <?php if($contact_info->get_the_value() != ''){ ?>
-            <li class="email"><i class="icon-envelope-alt icon-large"></i> <?php print msd_str_fmt($contact_info->get_the_value(),'email'); ?></li>
+            <li class="mobile"><?php print msd_str_fmt($contact_info->get_the_value(),'phone'); ?></li>
         <?php } ?>
     </ul>
     <?php
@@ -152,7 +139,6 @@ function msd_team_insights(){
         }
         //possibly use posts_where filter http://codex.wordpress.org/Plugin_API/Filter_Reference#Advanced_WordPress_Filters
         if($blogs){
-            print '<h3 class="widget-title insights-header">Blog Posts</h3>';
             print '<div class="insights-blogs insights-section">';
             $i = 0;
             foreach($blogs AS $blog){
@@ -160,6 +146,9 @@ function msd_team_insights(){
                 $i++;
             }
             print '</div>';
+            print '<div class="button-wrapper clearfix">
+<a class="button alignright" href="'.get_author_posts_url($contact_info->get_the_value('_team_user_id')).'" target="_self">More Posts ></a>
+</div>';
         }
     print '</section>';
     }
@@ -187,11 +176,13 @@ function msd_team_news(){
             $thumbnail = get_the_post_thumbnail($press->ID,'tiny-post-thumb',array('class' => 'alignleft'));
             
             print '<article>
-                '.$thumbnail.'
                 <a href="'.$link.'">'.$press->post_title.'</a>
                 </article>';
         }
         print '</div>';
+        print '<div class="button-wrapper clearfix">
+<a class="button alignright" href="/about/press/" target="_self">Read More ></a>
+</div>';
         print '</section>';
     }
 }
@@ -210,21 +201,19 @@ function get_post_items_for_team_member($team_id){
     return(get_posts($args));
 }
 
-add_action('genesis_sidebar','msd_team_videos',40);
+add_action('genesis_after_entry','msd_team_videos',40);
 function msd_team_videos(){
     global $post;
     $video = new MSDVideoCPT;
     $videos = $video->get_video_items_for_team_member($post->ID);
     if(count($videos)>0){
         print'<section class="widget-videos insights-section">
-            <h3 class="insights-header">Videos</h3>
-            <div class="insights-videos insights-section">';
+            <div class="insights-videos insights-section row">';
         foreach($videos AS $vid){
-            $class = $i%2==0?'even':'odd';
-            print '<article class="'.$class.'">';
+            print '<article class="col-xs-12 col-sm-6">';
             print wp_oembed_get($vid->youtube_url);
             print '
-<a href="'.get_permalink($vid->ID).'">'.$vid->post_title.'</a>
+<h4 class="video-title">'.$vid->post_title.'</h4>
 ';
             print '</article>';           
         }
