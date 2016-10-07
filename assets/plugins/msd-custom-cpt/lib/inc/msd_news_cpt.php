@@ -29,7 +29,7 @@ class MSDNewsCPT {
         add_shortcode( 'news-items', array(&$this,'list_news_stories') );
         add_shortcode( 'news-display', array(&$this,'display_news_stories') );
         
-        add_filter('the_permalink',array(&$this,'do_news_url'));
+        add_filter('post_type_link',array(&$this,'do_news_url'));
     }
         
 	
