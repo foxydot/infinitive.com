@@ -65,9 +65,11 @@ class MSDNewsWidget extends WP_Widget {
         print '<ul class="news-list">';
 		foreach($items AS $item){ 
 	    	$subtitle->the_meta($item->ID);
-            $excerpt = $subtitle->get_the_value('subtitle')?$subtitle->get_the_value('subtitle'):msdlab_excerpt($item->ID);
+            $excerpt = $subtitle->get_the_value('subtitle')?$subtitle->get_the_value('subtitle'):get_the_excerpt($item->ID);
 	    	$thumb = get_the_post_thumbnail($item->ID)?get_the_post_thumbnail($item->ID):'<img src="'.get_bloginfo('template_url').'/images/news.png" />';
     	
+            $url = get_post_meta($item->ID,'_news_newsurl',1);
+            $link = strlen($url)>4?msdlab_http_sanity_check($url):get_permalink($item->ID);
             if($widget_area == 'homepage-widgets'){
                 $news_list .= '
     	     	<li>
@@ -76,8 +78,8 @@ class MSDNewsWidget extends WP_Widget {
     	     			<div class="img alignleft">'.$thumb.'</div>
     					'.$excerpt.'
     				</div>
-    				<a href="'.get_permalink($item->ID).'" class="link alignright">Learn More ></a>
-    	     		<a href="'.get_permalink($item->ID).'"></a>';
+    				<a href="'.$url.'" class="link alignright">Learn More ></a>
+    	     		<a href="'.$url.'"></a>';
     				$news_list .= '<div class="clear"></div>
     			</li>';
     	     } else {
@@ -88,8 +90,8 @@ class MSDNewsWidget extends WP_Widget {
                     <div class="subtitle">
                         '.$excerpt.'
                     </div>
-                    <a href="'.get_permalink($item->ID).'" class="link alignright">Learn More ></a>
-                    <a href="'.get_permalink($item->ID).'"></a>';
+                    <a href="'.$url.'" class="link alignright">Learn More ></a>
+                    <a href="'.$url.'"></a>';
                     $news_list .= '<div class="clear"></div>
                 </li>';
              }
