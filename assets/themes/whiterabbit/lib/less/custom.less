@@ -5,6 +5,7 @@
     .entry-title,.banner-title,.archive-title{
       color: @white;
       line-height: 1.5;
+      font-size: 8vw;
       [class^="doodle-"]:before,
       [class*=" doodle-"]:before{
         font-size: 1em;
@@ -355,7 +356,15 @@ div.calloutbox{
   }
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 610px) {
+  
+  .page-title-area{
+    .banner{
+      .entry-title,.banner-title,.archive-title{
+        font-size: 5.8rem;
+      }
+    }
+  }
   .page.core-values{
     .sectioned-page-wrapper{
         .section{

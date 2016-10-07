@@ -8144,6 +8144,7 @@ Site Footer
 .page-title-area .banner .archive-title {
   color: #FFF;
   line-height: 1.5;
+  font-size: 8vw;
 }
 .page-title-area .banner .entry-title [class^="doodle-"]:before,
 .page-title-area .banner .banner-title [class^="doodle-"]:before,
@@ -8608,7 +8609,12 @@ div.calloutbox h3 {
   padding: 0.5em 1em;
   color: #FFF;
 }
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 610px) {
+  .page-title-area .banner .entry-title,
+  .page-title-area .banner .banner-title,
+  .page-title-area .banner .archive-title {
+    font-size: 5.8rem;
+  }
   .page.core-values .sectioned-page-wrapper .section {
     position: relative;
     min-height: 1px;
@@ -8665,13 +8671,13 @@ div.calloutbox h3 {
     padding-left: 10rem;
   }
 }
-@media only screen and (min-width: 480px) and (min-width: 768px) {
+@media only screen and (min-width: 610px) and (min-width: 768px) {
   .page.core-values .sectioned-page-wrapper .section {
     float: left;
     width: 50%;
   }
 }
-@media only screen and (min-width: 480px) and (min-width: 768px) {
+@media only screen and (min-width: 610px) and (min-width: 768px) {
   .page.core-values .sectioned-page-wrapper .section.section-header {
     float: left;
     width: 100%;
