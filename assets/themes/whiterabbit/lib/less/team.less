@@ -27,7 +27,7 @@
         aside{
           .make-xs-column(4);
           padding: 0;
-          img.attachment-team-mini-headshot{
+          img.attachment-team-headshot{
              .background-image(linear-gradient(to bottom, @vltgrey 0%,@offwhite 100%));
              -webkit-filter: grayscale(1);
              -webkit-filter: grayscale(100%);
@@ -55,12 +55,17 @@
               &.insights-header{
                 width: 74%;
               }
+              &:before{
+                content: '';
+                margin: 0;
+              }
             }
           }
         }
         main{
           .make-xs-column(8);
           padding: 0;
+          color: @white;
           header,content,footer{
             display: block;
             padding: 1rem;
@@ -86,6 +91,8 @@
           footer{
             text-align: right;
             .button{
+              .customheader(1.4);
+              background-color: transparent;
               display: inline-block;
               margin: 0;
             }
@@ -120,22 +127,15 @@
 
 
 .single-team_member{
-  .section-header{
-    margin: 0 1rem;
-    h3{
-      .customheader-chalk(5.8);
-    }
-   }
   main.content{
     article{
-      background-color: @medgrey;
       .clearfix();
       aside.headshot{
         .make-sm-column(3);
         width: 22%;
         .make-xs-column(12);
         padding: 0;
-        img.attachment-mini-headshot{
+        img.attachment-headshot{
            .background-image(linear-gradient(to bottom, @vltgrey 0%,@offwhite 100%));
            -webkit-filter: grayscale(1);
            -webkit-filter: grayscale(100%);
@@ -153,16 +153,14 @@
         ul{
           li{
             list-style: none outside none;
-            padding: 0 1rem;
+            padding: 0 0.25rem;
             font-weight: 700;
+            display: inline-flex;
             a{
               text-transform: uppercase;
-              color: @white;
+              color: @dkgrey;
               i{
                 color: @orange;
-              }
-              &.email{
-                text-transform: none;
               }
             }
           }
@@ -212,6 +210,20 @@
           }
       }
     }
+    .widget-videos{
+      .insights-videos{
+        article{
+          h4.video-title{
+            background-color: @orange;
+            color: @white;    
+            line-height: 1;
+            margin-bottom: 2em;
+            margin-top: -0.5em;
+            padding: 1em 0.5em;
+          }
+        }
+      }
+    }
   }
   aside.sidebar-primary{
     .widget{
@@ -222,39 +234,28 @@
         margin-top: 0;
       }
       .insights-header{
-        margin: 0;
+        margin: -1rem -1rem 1rem;
+        color: @white;
+        background: @orange;
+        padding: 0.5em;
+        font-size: 1.2em;
       }
       .widget-title{
         .customheader-chalk(3.2);
         text-transform: uppercase;
         font-weight: 700;
-        color: @white;
+        color: @dkgrey;
+        background: transparent;
       }
       .insights-section{
         article{
           padding-bottom: 0.5em;
-          border-bottom: 1px solid fade(@white, 10%);
+          border-bottom: 1px solid @ltgrey;
           margin-bottom: 0.5em;
         }
       }
       a,a:link,a:visited{
-        color: @white;
         border-bottom: 0;
-      }
-      
-      &.widget-insights{
-        padding: 0;
-        #insights{
-          background: @orange;
-          padding: 0.5em;
-          font-size: 1.2em;
-        }
-      }
-      &.widget-news{
-        background: @medgrey;
-      }
-      &.widget-video{
-        background: @medgrey;
       }
     }
   }

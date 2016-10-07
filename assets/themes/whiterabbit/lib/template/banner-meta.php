@@ -51,7 +51,9 @@
 "casestudies",
 "community",
 "testimonials",
-"blog");
+"blog",
+"about",
+"team",);
                 foreach($doodlearray AS $doodlename){
                     $checked = $mb->is_value($doodlename)?' checked="checked"':'';
                     print '

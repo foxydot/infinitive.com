@@ -2,12 +2,13 @@
 .page-title-area{
   background: @medgrey;
   .banner{
-    .entry-title,.banner-title{
+    .entry-title,.banner-title,.archive-title{
       color: @white;
       line-height: 1.5;
+      font-size: 8vw;
       [class^="doodle-"]:before,
       [class*=" doodle-"]:before{
-        font-size: 1em;
+        font-size: 8vw;
         margin-right: 0.25em;
         position: relative;
         top: 0.25em;
@@ -22,8 +23,7 @@
 //Special Pages
 body.page{
   &.press,
-  &.resources,
-  &.core-values{
+  &.resources{
     main.content{
       article{
         .entry-content{
@@ -92,9 +92,11 @@ body.archive.post-type-archive-msd_news{
       margin-bottom: 1em;
       .news-info{
         background: fade(@white,5%);
+        border: 1px solid @medgrey;    
+        min-height: 185px;
         h3{
           .customserif(1.8);
-          background: @orange;
+          background: @medgrey;
           color: @white;
           line-height: 1.25;
           text-transform: none;
@@ -112,9 +114,11 @@ body.archive.post-type-archive-msd_news{
         .button{
           margin-right: 0;
           margin-left: auto;
+          margin-bottom: 0;
         }
       }
       .news-logo{
+        border: 1px solid @ltgrey;
         background: @white;
         padding: 10px;
         a{
@@ -123,6 +127,9 @@ body.archive.post-type-archive-msd_news{
           background-repeat: no-repeat;
           background-size: contain;
           min-height: 165px;
+          &:hover{
+            text-decoration: none;
+          }
         }
       }
     }
@@ -130,7 +137,7 @@ body.archive.post-type-archive-msd_news{
 }
 
 .page-template-showcase{
-  .banner{
+  .showcase-banner{
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -204,6 +211,9 @@ body.archive.post-type-archive-msd_news{
 }
 
 .page.core-values{
+  .site-inner{
+    display: none;
+  }
   .sectioned-page-wrapper{
     .wrap();
     float: none;
@@ -235,6 +245,7 @@ body.archive.post-type-archive-msd_news{
       }
       &.bkg-white{
         background: @white;
+        border: 1px solid @orange;
       }
       &.bkg-grey,&.bkg-gray{
         background: @vltgrey;
@@ -245,51 +256,119 @@ body.archive.post-type-archive-msd_news{
       p.first-child{
         margin: 0;
       }
+      ul li:before{
+        color: @dkgrey;
+      }
       ul.last-child{
         margin-bottom: 2em;
+      }
+    }
+    .section.section-video{
+      padding: 0;
+      text-align: center;
+      iframe{
       }
     }
     .section.section-header{
       .make-sm-column(12);
       max-width: 100%;
       margin: 0;
-      .section-header-area{
-        ul{
-          background: @orange;
-          margin: 0 0 1em 0;
-          text-align: center;
-          li{
-            display: inline-flex;
-            padding: 0;
-            h3{
-              margin: 0;
-              font-size: 3.4em;
-              a{
-                color: @white;
-              }
-              &:after{
-                content: ' • ';
-                color: @dkgrey;
-              }
-            }
-            &.last-child{
-              h3:after{
-                content: '';
-              }
-            }
-          }
+      a.bkg-dkgray{
+        padding: 0.3em;
+        display: block;
+        background: @dkgrey url(../img/texture-01.png) repeat center center;
+        color: @orange;
+        .customheader-chalk(7.2);
+        text-align: center;
+        img{
+          margin: 0 0.5em;
+        }
+        .white-text{
+          color: @white;
+        }
+        &:hover{
+          text-decoration: none;
         }
       }
-      .section-footer-area{
-        .overflow-header();
-           margin-left: 0;
-           padding-left: 10rem;
+      ul{
+        background: @orange;
+        margin: 0;
+        text-align: center;
+        li{
+          display: inline-flex;
+          padding: 0;
+          h3{
+            margin: 0;
+            font-size: 3.4em;
+            line-height:  1;
+            a{
+              color: @white;
+              &:hover{
+                color: fade(@white,80%);
+                text-decoration: none;
+              }
+            }
+            &:after{
+              content: ' • ';
+              color: @dkgrey;
+            }
+          }
+          &.last-child{
+            h3:after{
+              content: '';
+            }
+          }
+          &:before{
+            content: '';
+            margin: 0;
+          }
+        }
       }
     }
   }
 }
+.page.testimonials{
+  .entry-content{
+    blockquote{
+      &.even{
+        border-image: url("../img/chalkbox-orange-flipped.png") 5 5 5 5;
+      }
+      border-style: solid;
+      border-width: 0 0 5px 0;
+    }
+  }
+}
+//shortcode
+div.calloutbox{
+  border: 1px solid @orange;
+  padding: 0 15px 1em;
+  margin: 1em auto;
+  h3{
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 0;
+    margin-bottom: 1em;
+    background: @orange;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    color: @white;
+  }
+}
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 610px) {
+  
+  .page-title-area{
+    .banner{
+      .entry-title,.banner-title,.archive-title{
+        font-size: 5.8rem;
+        [class^="doodle-"]:before,
+        [class*=" doodle-"]:before{
+          font-size: 5.8rem;
+        }
+      }
+    }
+  }
   .page.core-values{
     .sectioned-page-wrapper{
         .section{
@@ -346,6 +425,9 @@ body.archive.post-type-archive-msd_news{
       list-style: none outside none;
       line-height: 1;
       margin-bottom: 1em;
+      &:before{
+        content: '';
+      }
       h4{
         background-color: @orange;
         margin: 0;

@@ -5777,6 +5777,12 @@ td.visible-print {
 .doodle-blog:before {
   content: "\45";
 }
+.doodle-team:before {
+  content: "\46";
+}
+.doodle-about:before {
+  content: "\47";
+}
 .doodle-1x {
   font-size: 1em;
 }
@@ -5828,10 +5834,10 @@ td.visible-print {
 /* Neutrals */
 /* Buttons */
 .button {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -5853,10 +5859,10 @@ td.visible-print {
 .button:hover,
 .button:active,
 .button a:hover {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -6005,12 +6011,12 @@ h1 {
   font-size: 3.4rem;
 }
 h2 {
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 30px;
+  font-size: 3rem;
 }
 h3 {
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 24px;
+  font-size: 2.4rem;
 }
 h4 {
   font-size: 16px;
@@ -6087,10 +6093,10 @@ input[type="reset"],
 input[type="submit"],
 .button,
 .entry-content .button {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -6115,10 +6121,10 @@ input:hover[type="reset"],
 input:hover[type="submit"],
 .button:hover,
 .entry-content .button:hover {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -6180,7 +6186,7 @@ Structure and Layout
 .sidebar-secondary section,
 article {
   margin: 0 auto;
-  max-width: 1140px;
+  max-width: 1240px;
 }
 .site-inner {
   clear: both;
@@ -6225,6 +6231,9 @@ article {
 }
 .sidebar-content-sidebar .sidebar-primary {
   padding-left: 0;
+}
+.content-sidebar .sidebar-primary {
+  float: right;
 }
 .sidebar-content .sidebar-primary,
 .sidebar-sidebar-content .sidebar-primary {
@@ -6323,12 +6332,12 @@ img.alignright,
 .archive-description,
 .author-box {
   background-color: transparent;
-  margin-bottom: 40px;
-  margin-bottom: 4rem;
-  border-bottom: 2px solid #959595;
+  margin-bottom: 1em;
 }
 .archive-description {
   padding: 0;
+  color: #FF7D23;
+  font-weight: 700;
 }
 .author-box {
   padding: 40px;
@@ -6532,10 +6541,10 @@ Widgets
   font-size: 1.2em;
 }
 .sidebar .widget.msd_news_widget ul.news-list li .link.alignright {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -6573,11 +6582,13 @@ Widgets
   margin: 0;
 }
 .sidebar .widget.widget_sp_image {
-  background: #F2F7FA;
+  background: #FFF;
+  border: 1px solid #7F7F7F;
 }
 .sidebar .widget.widget_sp_image h4.widget-title {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-top: 0;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-size: 32px;
   font-size: 3.2rem;
@@ -6601,8 +6612,9 @@ Widgets
   padding-right: 1em;
 }
 .sidebar .widget.widget_sp_image .widget_sp_image-link {
-  display: block;
-  text-align: right;
+  display: inline-flex;
+  text-align: center;
+  color: #FFF;
 }
 .sidebar .widget.widget_msd_experts .widget-title {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
@@ -6685,10 +6697,10 @@ Widgets
   text-align: right;
 }
 .sidebar .widget.widget_segment .readmore {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -6886,6 +6898,7 @@ Pre Header
 ---------------------------------------------------------------------------------------------------- */
 .pre-header {
   background-color: #3D3C3D;
+  z-index: 900;
 }
 .pre-header .widget-area {
   text-align: center;
@@ -6925,6 +6938,7 @@ Site Header
 ---------------------------------------------------------------------------------------------------- */
 .site-header {
   background-color: #3D3C3D;
+  z-index: 900;
 }
 .site-header .wrap {
   padding: 40px 0;
@@ -7435,7 +7449,6 @@ article.entry {
 .entry-content h2,
 .section-body h2 {
   color: #FF7D23;
-  font-size: 2rem;
 }
 .entry-content blockquote,
 .section-body blockquote {
@@ -7569,6 +7582,10 @@ article.entry {
   font-weight: 500;
   margin: 0;
 }
+.entry-header .entry-subtitle,
+.archive-description .entry-subtitle {
+  font-size: 1.6em;
+}
 /* Pagination
 --------------------------------------------- */
 .pagination,
@@ -7584,10 +7601,10 @@ article.entry {
 .pagination a,
 .archive-pagination a,
 .entry-pagination a {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -7745,10 +7762,10 @@ Sidebars
   /*Text Widget with Click */
 }
 .sidebar .widget_text .textwidget .readmore {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -7863,10 +7880,10 @@ Footer Widgets
 .footer-widgets .widget.msd-connected .connected-form .gform_footer input[type="submit"],
 .footer-widgets .widget.msd-connected .connected-form .gform_footer input[type="button"],
 .footer-widgets .widget.msd-connected .connected-form .gform_footer a.button {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -7888,10 +7905,10 @@ Footer Widgets
 .footer-widgets .widget.msd-connected .connected-form .gform_footer input[type="submit"]:hover,
 .footer-widgets .widget.msd-connected .connected-form .gform_footer input[type="button"]:hover,
 .footer-widgets .widget.msd-connected .connected-form .gform_footer a.button:hover {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -8123,28 +8140,33 @@ Site Footer
   background: #7F7F7F;
 }
 .page-title-area .banner .entry-title,
-.page-title-area .banner .banner-title {
+.page-title-area .banner .banner-title,
+.page-title-area .banner .archive-title {
   color: #FFF;
   line-height: 1.5;
+  font-size: 8vw;
 }
 .page-title-area .banner .entry-title [class^="doodle-"]:before,
 .page-title-area .banner .banner-title [class^="doodle-"]:before,
+.page-title-area .banner .archive-title [class^="doodle-"]:before,
 .page-title-area .banner .entry-title [class*=" doodle-"]:before,
-.page-title-area .banner .banner-title [class*=" doodle-"]:before {
-  font-size: 1em;
+.page-title-area .banner .banner-title [class*=" doodle-"]:before,
+.page-title-area .banner .archive-title [class*=" doodle-"]:before {
+  font-size: 8vw;
   margin-right: 0.25em;
   position: relative;
   top: 0.25em;
 }
 .page-title-area .banner .entry-title a,
 .page-title-area .banner .banner-title a,
+.page-title-area .banner .archive-title a,
 .page-title-area .banner .entry-title a:hover,
-.page-title-area .banner .banner-title a:hover {
+.page-title-area .banner .banner-title a:hover,
+.page-title-area .banner .archive-title a:hover {
   color: #FFF;
 }
 body.page.press main.content article .entry-content h2.first-child,
-body.page.resources main.content article .entry-content h2.first-child,
-body.page.core-values main.content article .entry-content h2.first-child {
+body.page.resources main.content article .entry-content h2.first-child {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -8154,13 +8176,11 @@ body.page.core-values main.content article .entry-content h2.first-child {
   text-transform: none;
 }
 body.page.press main.content article .entry-content ul.publication-list,
-body.page.resources main.content article .entry-content ul.publication-list,
-body.page.core-values main.content article .entry-content ul.publication-list {
+body.page.resources main.content article .entry-content ul.publication-list {
   margin: 1em 0;
 }
 body.page.press main.content article .entry-content ul.publication-list li,
-body.page.resources main.content article .entry-content ul.publication-list li,
-body.page.core-values main.content article .entry-content ul.publication-list li {
+body.page.resources main.content article .entry-content ul.publication-list li {
   margin-left: -15px;
   margin-right: -15px;
   list-style: none outside none;
@@ -8169,44 +8189,36 @@ body.page.core-values main.content article .entry-content ul.publication-list li
 }
 body.page.press main.content article .entry-content ul.publication-list li:before,
 body.page.resources main.content article .entry-content ul.publication-list li:before,
-body.page.core-values main.content article .entry-content ul.publication-list li:before,
 body.page.press main.content article .entry-content ul.publication-list li:after,
-body.page.resources main.content article .entry-content ul.publication-list li:after,
-body.page.core-values main.content article .entry-content ul.publication-list li:after {
+body.page.resources main.content article .entry-content ul.publication-list li:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
 body.page.press main.content article .entry-content ul.publication-list li:after,
-body.page.resources main.content article .entry-content ul.publication-list li:after,
-body.page.core-values main.content article .entry-content ul.publication-list li:after {
+body.page.resources main.content article .entry-content ul.publication-list li:after {
   clear: both;
 }
 body.page.press main.content article .entry-content ul.publication-list li:before,
 body.page.resources main.content article .entry-content ul.publication-list li:before,
-body.page.core-values main.content article .entry-content ul.publication-list li:before,
 body.page.press main.content article .entry-content ul.publication-list li:after,
-body.page.resources main.content article .entry-content ul.publication-list li:after,
-body.page.core-values main.content article .entry-content ul.publication-list li:after {
+body.page.resources main.content article .entry-content ul.publication-list li:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
 body.page.press main.content article .entry-content ul.publication-list li:after,
-body.page.resources main.content article .entry-content ul.publication-list li:after,
-body.page.core-values main.content article .entry-content ul.publication-list li:after {
+body.page.resources main.content article .entry-content ul.publication-list li:after {
   clear: both;
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-info,
-body.page.resources main.content article .entry-content ul.publication-list li .news-info,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info {
+body.page.resources main.content article .entry-content ul.publication-list li .news-info {
   background: rgba(255, 255, 255, 0.05);
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-info h3,
-body.page.resources main.content article .entry-content ul.publication-list li .news-info h3,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info h3 {
+body.page.resources main.content article .entry-content ul.publication-list li .news-info h3 {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -8222,33 +8234,27 @@ body.page.core-values main.content article .entry-content ul.publication-list li
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-info h3 a,
 body.page.resources main.content article .entry-content ul.publication-list li .news-info h3 a,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info h3 a,
 body.page.press main.content article .entry-content ul.publication-list li .news-info h3 a:visited,
-body.page.resources main.content article .entry-content ul.publication-list li .news-info h3 a:visited,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info h3 a:visited {
+body.page.resources main.content article .entry-content ul.publication-list li .news-info h3 a:visited {
   color: #FFF;
   text-decoration: none;
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-info > div,
-body.page.resources main.content article .entry-content ul.publication-list li .news-info > div,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info > div {
+body.page.resources main.content article .entry-content ul.publication-list li .news-info > div {
   padding: 0.5em;
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-info .button,
-body.page.resources main.content article .entry-content ul.publication-list li .news-info .button,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-info .button {
+body.page.resources main.content article .entry-content ul.publication-list li .news-info .button {
   margin-right: 0;
   margin-left: auto;
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-logo,
-body.page.resources main.content article .entry-content ul.publication-list li .news-logo,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-logo {
+body.page.resources main.content article .entry-content ul.publication-list li .news-logo {
   background: #FFF;
   padding: 10px;
 }
 body.page.press main.content article .entry-content ul.publication-list li .news-logo a,
-body.page.resources main.content article .entry-content ul.publication-list li .news-logo a,
-body.page.core-values main.content article .entry-content ul.publication-list li .news-logo a {
+body.page.resources main.content article .entry-content ul.publication-list li .news-logo a {
   display: block;
   background-position: center center;
   background-repeat: no-repeat;
@@ -8287,6 +8293,8 @@ body.archive.post-type-archive-msd_news ul.publication-list li:after {
 }
 body.archive.post-type-archive-msd_news ul.publication-list li .news-info {
   background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #7F7F7F;
+  min-height: 185px;
 }
 body.archive.post-type-archive-msd_news ul.publication-list li .news-info h3 {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
@@ -8294,7 +8302,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-info h3 {
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.625;
-  background: #FF7D23;
+  background: #7F7F7F;
   color: #FFF;
   line-height: 1.25;
   text-transform: none;
@@ -8313,8 +8321,10 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-info > div 
 body.archive.post-type-archive-msd_news ul.publication-list li .news-info .button {
   margin-right: 0;
   margin-left: auto;
+  margin-bottom: 0;
 }
 body.archive.post-type-archive-msd_news ul.publication-list li .news-logo {
+  border: 1px solid #959595;
   background: #FFF;
   padding: 10px;
 }
@@ -8325,7 +8335,10 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   background-size: contain;
   min-height: 165px;
 }
-.page-template-showcase .banner {
+body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a:hover {
+  text-decoration: none;
+}
+.page-template-showcase .showcase-banner {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -8441,9 +8454,12 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
 .page-template-page-landing .landing-widgets {
   margin: 1em 0;
 }
+.page.core-values .site-inner {
+  display: none;
+}
 .page.core-values .sectioned-page-wrapper {
   margin: 0 auto;
-  max-width: 1140px;
+  max-width: 1240px;
   float: none;
 }
 .page.core-values .sectioned-page-wrapper:after {
@@ -8477,6 +8493,7 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
 }
 .page.core-values .sectioned-page-wrapper .section.bkg-white {
   background: #FFF;
+  border: 1px solid #FF7D23;
 }
 .page.core-values .sectioned-page-wrapper .section.bkg-grey,
 .page.core-values .sectioned-page-wrapper .section.bkg-gray {
@@ -8489,8 +8506,15 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
 .page.core-values .sectioned-page-wrapper .section p.first-child {
   margin: 0;
 }
+.page.core-values .sectioned-page-wrapper .section ul li:before {
+  color: #3D3C3D;
+}
 .page.core-values .sectioned-page-wrapper .section ul.last-child {
   margin-bottom: 2em;
+}
+.page.core-values .sectioned-page-wrapper .section.section-video {
+  padding: 0;
+  text-align: center;
 }
 .page.core-values .sectioned-page-wrapper .section.section-header {
   position: relative;
@@ -8506,47 +8530,99 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
     width: 100%;
   }
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul {
-  background: #FF7D23;
-  margin: 0 0 1em 0;
+.page.core-values .sectioned-page-wrapper .section.section-header a.bkg-dkgray {
+  padding: 0.3em;
+  display: block;
+  background: #3D3C3D url(../img/texture-01.png) repeat center center;
+  color: #FF7D23;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 72px;
+  font-size: 7.2rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   text-align: center;
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li {
+.page.core-values .sectioned-page-wrapper .section.section-header a.bkg-dkgray img {
+  margin: 0 0.5em;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header a.bkg-dkgray .white-text {
+  color: #FFF;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header a.bkg-dkgray:hover {
+  text-decoration: none;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header ul {
+  background: #FF7D23;
+  margin: 0;
+  text-align: center;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header ul li {
   display: inline-flex;
   padding: 0;
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3 {
+.page.core-values .sectioned-page-wrapper .section.section-header ul li h3 {
   margin: 0;
   font-size: 3.4em;
+  line-height: 1;
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3 a {
+.page.core-values .sectioned-page-wrapper .section.section-header ul li h3 a {
   color: #FFF;
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li h3:after {
+.page.core-values .sectioned-page-wrapper .section.section-header ul li h3 a:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+.page.core-values .sectioned-page-wrapper .section.section-header ul li h3:after {
   content: ' • ';
   color: #3D3C3D;
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-header-area ul li.last-child h3:after {
+.page.core-values .sectioned-page-wrapper .section.section-header ul li.last-child h3:after {
   content: '';
 }
-.page.core-values .sectioned-page-wrapper .section.section-header .section-footer-area {
-  background: #FF7D23;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.625;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #FFF;
-  margin-left: 0;
-  padding-left: 10rem;
+.page.core-values .sectioned-page-wrapper .section.section-header ul li:before {
+  content: '';
+  margin: 0;
 }
-@media only screen and (min-width: 480px) {
+.page.testimonials .entry-content blockquote {
+  border-style: solid;
+  border-width: 0 0 5px 0;
+}
+.page.testimonials .entry-content blockquote.even {
+  border-image: url("../img/chalkbox-orange-flipped.png") 5 5 5 5;
+}
+div.calloutbox {
+  border: 1px solid #FF7D23;
+  padding: 0 15px 1em;
+  margin: 1em auto;
+}
+div.calloutbox h3 {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 0;
+  margin-bottom: 1em;
+  background: #FF7D23;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  color: #FFF;
+}
+@media only screen and (min-width: 610px) {
+  .page-title-area .banner .entry-title,
+  .page-title-area .banner .banner-title,
+  .page-title-area .banner .archive-title {
+    font-size: 5.8rem;
+  }
+  .page-title-area .banner .entry-title [class^="doodle-"]:before,
+  .page-title-area .banner .banner-title [class^="doodle-"]:before,
+  .page-title-area .banner .archive-title [class^="doodle-"]:before,
+  .page-title-area .banner .entry-title [class*=" doodle-"]:before,
+  .page-title-area .banner .banner-title [class*=" doodle-"]:before,
+  .page-title-area .banner .archive-title [class*=" doodle-"]:before {
+    font-size: 5.8rem;
+  }
   .page.core-values .sectioned-page-wrapper .section {
     position: relative;
     min-height: 1px;
@@ -8603,13 +8679,13 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
     padding-left: 10rem;
   }
 }
-@media only screen and (min-width: 480px) and (min-width: 768px) {
+@media only screen and (min-width: 610px) and (min-width: 768px) {
   .page.core-values .sectioned-page-wrapper .section {
     float: left;
     width: 50%;
   }
 }
-@media only screen and (min-width: 480px) and (min-width: 768px) {
+@media only screen and (min-width: 610px) and (min-width: 768px) {
   .page.core-values .sectioned-page-wrapper .section.section-header {
     float: left;
     width: 100%;
@@ -8623,6 +8699,9 @@ body.archive.post-type-archive-msd_news ul.publication-list li .news-logo a {
   list-style: none outside none;
   line-height: 1;
   margin-bottom: 1em;
+}
+.video-grid ul.grid li:before {
+  content: '';
 }
 .video-grid ul.grid li h4 {
   background-color: #FF7D23;
