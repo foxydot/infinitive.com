@@ -168,6 +168,11 @@ body {
 .sectioned-page-wrapper .section.section-clients .section-body .wrap {
   background-color: rgba(255, 255, 255, 0.1);
 }
+.sectioned-page-wrapper .section.section-clients .section-body .section-header-area {
+  font-size: 1.4em;
+  margin-bottom: 0;
+  padding: 2em;
+}
 .sectioned-page-wrapper .section.section-clients .section-body .section-content {
   padding: 2em;
   font-size: 1.4em;
