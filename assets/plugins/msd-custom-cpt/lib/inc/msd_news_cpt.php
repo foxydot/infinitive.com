@@ -155,10 +155,10 @@ class MSDNewsCPT {
  
         function do_news_url($url) {
             global $post;
-            if($post->post_type == 'news'){
-                global $newsurl_metabox;
-                $newsurl_metabox->the_meta($post->ID);
-                $newsurl = $newsurl_metabox->get_the_value('newsurl');
+            if($post->post_type == 'msd_news'){
+                global $news;
+                $news->the_meta($post->ID);
+                $newsurl = $news->get_the_value('newsurl');
                 if ( strlen( $newsurl ) == 0 ){
                     return $url;
                 } else {
@@ -168,7 +168,7 @@ class MSDNewsCPT {
             return $url;
         } 
         function do_news_url_display(){
-            global $newsurl_metabox, $post;$newsurl_metabox->the_meta();
+            global $news, $post;$news->the_meta();
             $newsurl = $newsurl_metabox->get_the_value('newsurl');
             if ( strlen( $newsurl ) == 0 || !is_single())
                 return;
