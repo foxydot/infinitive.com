@@ -28,6 +28,8 @@ class MSDNewsCPT {
         //Shortcodes
         add_shortcode( 'news-items', array(&$this,'list_news_stories') );
         add_shortcode( 'news-display', array(&$this,'display_news_stories') );
+        
+        add_filter('the_permalink',array(&$this,'do_news_url'));
     }
         
 	
@@ -149,4 +151,29 @@ class MSDNewsCPT {
             $the_news = get_posts($args);
             return($the_news);
         }
+
+ 
+        function do_news_url($url) {
+            global $post;
+            if($post->post_type == 'news'){
+                global $newsurl_metabox;
+                $newsurl_metabox->the_meta($post->ID);
+                $newsurl = $newsurl_metabox->get_the_value('newsurl');
+                if ( strlen( $newsurl ) == 0 ){
+                    return $url;
+                } else {
+                    return msdlab_http_sanity_check($newsurl);
+                }
+            }
+            return $url;
+        } 
+        function do_news_url_display(){
+            global $newsurl_metabox, $post;$newsurl_metabox->the_meta();
+            $newsurl = $newsurl_metabox->get_the_value('newsurl');
+            if ( strlen( $newsurl ) == 0 || !is_single())
+                return;
+        
+            $newsurl = sprintf( '<a class="entry-newsurl" href="%s">View Article</a>', msdlab_http_sanity_check($newsurl) );
+            echo $newsurl . "\n";
+        }  
 }
