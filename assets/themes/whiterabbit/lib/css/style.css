@@ -8700,6 +8700,9 @@ div.calloutbox h3 {
   line-height: 1;
   margin-bottom: 1em;
 }
+.video-grid ul.grid li:before {
+  content: '';
+}
 .video-grid ul.grid li h4 {
   background-color: #FF7D23;
   margin: 0;
