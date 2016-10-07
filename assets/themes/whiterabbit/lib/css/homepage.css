@@ -16,10 +16,10 @@
 /* Neutrals */
 /* Buttons */
 .button {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -36,10 +36,10 @@
 .button:hover,
 .button:active,
 .button a:hover {
-  padding: 6px 24px;
+  padding: 0.1em 0.4em;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 30px;
+  font-size: 3rem;
   line-height: 1.625;
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   line-height: 1;
@@ -80,6 +80,7 @@ body {
   font-weight: 400;
   letter-spacing: 0.05em;
   font-size: 11.5vw;
+  color: #FFF;
 }
 .sectioned-page-wrapper .section .section-title h3 {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
@@ -213,6 +214,8 @@ body {
   content: '\2022';
   color: #FF7D23;
   padding-right: 0.5em;
+  margin: 0;
+  font-size: 1em;
 }
 .sectioned-page-wrapper .section.section-focus .section-body .section-content ul li a {
   color: #FFF;
@@ -399,6 +402,10 @@ body {
   }
   .sectioned-page-wrapper .section.section-obsessed .section-body .column-2 .msd-doodle-wrapper a .msd-doodle-title {
     text-align: center;
+  }
+  .sectioned-page-wrapper .section.section-focus {
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
   .sectioned-page-wrapper .section.section-focus .section-body .section-content .msd-doodle-wrapper i {
     float: left;

@@ -8,10 +8,9 @@ add_action('admin_footer','subtitle_footer_hook');
 add_action( 'admin_print_scripts', 'my_metabox_styles' );
 add_action( 'genesis_entry_header', 'msdlab_do_post_subtitle', 13);
 
-
 function add_custom_metaboxes(){
     global $subtitle_metabox,$banner_content;
-    $types = array('post','page','msd_video','team_member','msd_news','msd_casestudy');
+    $types = array('post','page','msd_video','team_member','msd_news','msd_casestudy','msd_news_page_genesis-cpt-archive-msd_news');
     $subtitle_metabox = new WPAlchemy_MetaBox(array
     (
         'id' => '_subtitle',

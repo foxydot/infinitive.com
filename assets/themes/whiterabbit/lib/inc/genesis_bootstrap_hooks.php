@@ -26,7 +26,7 @@ function msdlab_bootstrap_content_sidebar_wrap( $attributes ){
     switch($layout){
         case 'content-sidebar':
         case 'sidebar-content':
-            $attributes['class'] .= ' col-sm-12 row';
+            $attributes['class'] .= ' row';
             break;
         case 'content-sidebar-sidebar':
         case 'sidebar-sidebar-content':
@@ -34,7 +34,7 @@ function msdlab_bootstrap_content_sidebar_wrap( $attributes ){
             $attributes['class'] .= ' col-md-8 col-sm-12';
             break;
         case 'full-width-content':
-            $attributes['class'] .= ' col-md-12 row';
+            $attributes['class'] .= ' row';
             break;
     }
     return $attributes;
@@ -46,7 +46,7 @@ function msdlab_bootstrap_content( $attributes ){
     switch($layout){
         case 'content-sidebar':
         case 'sidebar-content':
-            $attributes['class'] .= ' col-md-9 col-sm-12';
+            $attributes['class'] .= ' row col-md-9 col-sm-12';
             break;
         case 'content-sidebar-sidebar':
         case 'sidebar-sidebar-content':
@@ -54,7 +54,7 @@ function msdlab_bootstrap_content( $attributes ){
             $attributes['class'] .= ' col-md-9 col-sm-12';
             break;
         case 'full-width-content':
-            $attributes['class'] .= ' col-md-12';
+            $attributes['class'] .= ' row col-md-12';
             break;
     }
     return $attributes;

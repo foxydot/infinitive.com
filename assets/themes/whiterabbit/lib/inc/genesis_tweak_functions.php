@@ -261,45 +261,116 @@ function msdlab_do_title_area(){
 function msdlab_do_section_title(){
     if(is_front_page()){
         return false;
-    } elseif(is_page()){
+    } else {
         global $post, $banner_content;
-        $myid = $post->ID;
         $lvl = 2;
         $titlestr = '';
+        $type = 'banner';
         $banner_content->the_meta();
-        if($banner_content->get_the_value('banner_text_bool')==1){
-            $title = $banner_content->get_the_value('banner_text');
-            $type = 'banner';
+        //get pieces based on type
+        if(is_page()){
+            $myid = $post->ID;
+            if($banner_content->get_the_value('banner_text_bool')==1){
+                $title = $banner_content->get_the_value('banner_text');
+            } else {
+                $lvl = 1;
+                $title = get_the_title();
+                $type = 'entry';
+                remove_action('genesis_entry_header','genesis_do_post_title');
+            }
+            $doodle_id = $banner_content->get_the_value('doodle')!=''?$banner_content->get_the_value('doodle'):FALSE;
+        } elseif(get_post_type() == 'post' || get_section()=='blog'){
+            $blog_home = get_post(get_option( 'page_for_posts' ));
+            $title = apply_filters( 'genesis_post_title_text', $blog_home->post_title );//* Wrap in H1 on singular pages
+            $banner_content->the_meta($blog_home->ID);
+            $type = 'banner';    
+            $doodle_id = $banner_content->get_the_value('doodle')!=''?$banner_content->get_the_value('doodle'):FALSE;
+        } elseif(is_post_type_archive()) {
+            if ( ! is_post_type_archive() || ! genesis_has_post_type_archive_support() )
+                return;
+    
+            if ( get_query_var( 'paged' ) >= 2 )
+                return;
+            
+            $headline   = genesis_get_cpt_option( 'headline' );
+            $title = $headline?apply_filters( 'genesis_post_title_text', $headline ):'';//* Wrap in H1 on singular pages
+            $type = 'archive';
+            $doodle_id = get_cpt_doodle($post->post_type)!=''?get_cpt_doodle($post->post_type):FALSE;
         } else {
-            $lvl = 1;
-            $title = get_the_title();
-            $type = 'entry';
-            remove_action('genesis_entry_header','genesis_do_post_title');
+            add_filter('genesis_post_title_text','msd_get_cpt_title');
+            $title = apply_filters( 'genesis_post_title_text', get_the_title() );
+            $doodle_id = get_cpt_doodle($post->post_type)!=''?get_cpt_doodle($post->post_type):FALSE;
+            remove_filter('genesis_post_title_text','msd_get_cpt_title');
         }
-        $doodle = $banner_content->get_the_value('doodle')!=''?'<i class="doodle-'.$banner_content->get_the_value('doodle').'"></i>':'';
+        //output
+        $doodle = $doodle_id?'<i class="doodle-'.$doodle_id.'"></i>':'';
         $titlestr = '<h'.$lvl.' class="'.$type.'-title">'.$doodle.$title.'</h'.$lvl.'>';
         print '<div class="banner clearfix">';
         print '<div class="wrap">';
         print $titlestr;
         print '</div>';
         print '</div>';
-    } elseif(get_post_type() == 'post' || get_section()=='blog'){
-        global $post, $banner_content;
-        $blog_home = get_post(get_option( 'page_for_posts' ));
-        $title = apply_filters( 'genesis_post_title_text', $blog_home->post_title );//* Wrap in H1 on singular pages
-        $banner_content->the_meta($blog_home->ID);
-        $level = 2;    
-        $type = 'banner';    
-        $doodle = $banner_content->get_the_value('doodle')!=''?'<i class="doodle-'.$banner_content->get_the_value('doodle').'"></i>':'';
-        $titlestr = '<h'.$lvl.' class="'.$type.'-title">'.$doodle.$title.'</h'.$lvl.'>';
-        print '<div class="banner clearfix">';
-        print '<div class="wrap">';
-        print $titlestr;
-        print '</div>';
-        print '</div>';
-    } else {
-        genesis_do_post_title();
     }
+}
+
+function msd_get_cpt_title($title){
+    global $post;
+    $cpt = $post->post_type;
+    switch($cpt){
+        case 'team_member':
+            $team_page = get_page_by_path( '/about/meet-the-team' );
+            $title = $team_page->post_title;
+            break;
+        default:
+            $title = $title;
+    }
+    return $title;
+}
+
+function get_cpt_doodle($cpt){
+    $cpt_doodle = array(
+        'msd_news' => 'press',
+        'team_member' => 'team',
+        'case_study' => 'casestudies',
+    );
+    return $cpt_doodle[$cpt];
+}
+
+
+ /**
+ * Add custom headline and description to relevant custom post type archive pages.
+ *
+ * If we're not on a post type archive page, or not on page 1, then nothing extra is displayed.
+ *
+ * If there's a custom headline to display, it is marked up as a level 1 heading.
+ *
+ * If there's a description (intro text) to display, it is run through wpautop() before being added to a div.
+ *
+ * @since 2.0.0
+ *
+ * @uses genesis_has_post_type_archive_support() Check if a post type should potentially support an archive setting page.
+ * @uses genesis_get_cpt_option()                Get list of custom post types which need an archive settings page.
+ *
+ * @return null Return early if not on relevant post type archive.
+ */
+function msdlab_do_cpt_archive_title_description() {
+
+    if ( ! is_post_type_archive() || ! genesis_has_post_type_archive_support() )
+        return;
+
+    if ( get_query_var( 'paged' ) >= 2 )
+        return;
+
+    $headline   = genesis_get_cpt_option( 'headline' );
+    $intro_text = genesis_get_cpt_option( 'intro_text' );
+
+    $headline   = $headline ? sprintf( '<h1 class="archive-title">%s</h1>', $headline ) : '';
+    $intro_text = $intro_text ? apply_filters( 'genesis_cpt_archive_intro_text_output', $intro_text ) : '';
+
+    if ( $headline || $intro_text )
+        //printf( '<div class="archive-description cpt-archive-description"><div class="wrap">%s</div></div>', $headline .'<div class="sep"></div>'. $intro_text );
+        printf( '<div class="archive-description cpt-archive-description"><div class="wrap">%s</div></div>',  $intro_text );
+
 }
 
 function msdlab_add_portfolio_prefix($content){
@@ -621,44 +692,6 @@ function msdlab_sitemap(){
     </div>';
     print $ret;
 } 
-
-
- /**
- * Add custom headline and description to relevant custom post type archive pages.
- *
- * If we're not on a post type archive page, or not on page 1, then nothing extra is displayed.
- *
- * If there's a custom headline to display, it is marked up as a level 1 heading.
- *
- * If there's a description (intro text) to display, it is run through wpautop() before being added to a div.
- *
- * @since 2.0.0
- *
- * @uses genesis_has_post_type_archive_support() Check if a post type should potentially support an archive setting page.
- * @uses genesis_get_cpt_option()                Get list of custom post types which need an archive settings page.
- *
- * @return null Return early if not on relevant post type archive.
- */
-function msdlab_do_cpt_archive_title_description() {
-
-    if ( ! is_post_type_archive() || ! genesis_has_post_type_archive_support() )
-        return;
-
-    if ( get_query_var( 'paged' ) >= 2 )
-        return;
-
-    $headline   = genesis_get_cpt_option( 'headline' );
-    $intro_text = genesis_get_cpt_option( 'intro_text' );
-
-    $headline   = $headline ? sprintf( '<h1 class="archive-title">%s</h1>', $headline ) : '';
-    $intro_text = $intro_text ? apply_filters( 'genesis_cpt_archive_intro_text_output', $intro_text ) : '';
-
-    if ( $headline || $intro_text )
-        printf( '<div class="archive-description cpt-archive-description"><div class="wrap">%s</div></div>', $headline .'<div class="sep"></div>'. $intro_text );
-
-}
-
-
 
 add_filter( 'gform_pre_render', 'msdlab_gravity_form_shortcode_handler' );
 function msdlab_gravity_form_shortcode_handler($form){

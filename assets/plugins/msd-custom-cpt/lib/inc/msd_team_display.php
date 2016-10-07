@@ -60,7 +60,7 @@ if (!class_exists('MSDTeamDisplay')) {
         function team_display($team,$attr = array()){
             global $post,$msd_custom,$contact_info,$primary_practice_area;
             extract($attr);
-            $headshot = get_the_post_thumbnail($team->ID,'team-mini-headshot');
+            $headshot = get_the_post_thumbnail($team->ID,'team-headshot');
             $terms = wp_get_post_terms($team->ID,'team_practice_area');
             $primary_practice_area->the_meta($team->ID);
             $ppa = $primary_practice_area->get_the_value('primary_practice_area');

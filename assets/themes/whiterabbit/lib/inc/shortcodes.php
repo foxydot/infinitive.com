@@ -26,6 +26,15 @@ function msdlab_landing_page_callout($atts, $content = null){
 	$ret = '<div class="callout">'.remove_wpautop($content).'</div>';
 	return $ret;
 }
+add_shortcode('calloutbox','msdlab_calloutbox');
+function msdlab_calloutbox($atts, $content = null){
+    extract( shortcode_atts( array(
+    'title' => false,
+    ), $atts ) );
+    $title = $title?'<h3>'.$title.'</h3>':'';
+    $ret = '<div class="calloutbox">'.$title.remove_wpautop($content).'</div>';
+    return $ret;
+}
 
 add_shortcode('mailto','msdlab_mailto_function');
 function msdlab_mailto_function($atts, $content){
