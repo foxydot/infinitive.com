@@ -8152,7 +8152,7 @@ Site Footer
 .page-title-area .banner .entry-title [class*=" doodle-"]:before,
 .page-title-area .banner .banner-title [class*=" doodle-"]:before,
 .page-title-area .banner .archive-title [class*=" doodle-"]:before {
-  font-size: 1em;
+  font-size: 8vw;
   margin-right: 0.25em;
   position: relative;
   top: 0.25em;
@@ -8613,6 +8613,14 @@ div.calloutbox h3 {
   .page-title-area .banner .entry-title,
   .page-title-area .banner .banner-title,
   .page-title-area .banner .archive-title {
+    font-size: 5.8rem;
+  }
+  .page-title-area .banner .entry-title [class^="doodle-"]:before,
+  .page-title-area .banner .banner-title [class^="doodle-"]:before,
+  .page-title-area .banner .archive-title [class^="doodle-"]:before,
+  .page-title-area .banner .entry-title [class*=" doodle-"]:before,
+  .page-title-area .banner .banner-title [class*=" doodle-"]:before,
+  .page-title-area .banner .archive-title [class*=" doodle-"]:before {
     font-size: 5.8rem;
   }
   .page.core-values .sectioned-page-wrapper .section {
