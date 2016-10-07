@@ -50,7 +50,8 @@ function be_grid_loop_query_args( $query ) {
         // Other Pages
         } else {
             $query->set( 'posts_per_page', ( $grid_args['features_inside'] + $grid_args['teasers_inside'] ) );
-            $query->set( 'offset', ( $grid_args['features_on_front'] + $grid_args['teasers_on_front'] ) + ( $grid_args['features_inside'] + $grid_args['teasers_inside'] ) * ( $page - 2 ) );
+            $offset = ( $grid_args['features_on_front'] + $grid_args['teasers_on_front'] ) + ( $grid_args['features_inside'] + $grid_args['teasers_inside'] ) * ( $paged - 2 );
+            $query->set( 'offset', $offset );
             // Offset is posts on first page + posts on internal pages * ( current page - 2 )
         }
 
