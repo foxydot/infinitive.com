@@ -177,10 +177,6 @@ body {
   padding: 2em;
   font-size: 1.4em;
 }
-.sectioned-page-wrapper .section.section-clients .section-body .section-content.column-2 {
-  visibility: hidden;
-  display: none;
-}
 .sectioned-page-wrapper .section.section-focus .section-title .wrap {
   border-image: url(../img/chalkline-orange.png) 5 stretch;
   border-style: solid;
@@ -319,15 +315,6 @@ body {
     margin-top: 4em;
     position: absolute;
     width: 48%;
-  }
-  .sectioned-page-wrapper .section.section-clients .section-body .section-content.column-2 {
-    visibility: visible;
-    display: block;
-    text-align: center;
-  }
-  .sectioned-page-wrapper .section.section-clients .section-body .section-content.column-2 a img.alignleft {
-    float: none;
-    display: inline-block;
   }
   .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper {
     background-image: url(../img/iphone6.png);
