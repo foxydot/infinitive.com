@@ -29,9 +29,9 @@ function msdlab_news_widget_output($atts){
             $link = strlen($url)>4?msdlab_http_sanity_check($url):get_permalink($item->ID);
             $subtitle->the_meta($item->ID);
             $excerpt = $subtitle->get_the_value('subtitle')?$subtitle->get_the_value('subtitle'):msdlab_excerpt($item->ID);
-            $thumb = get_the_post_thumbnail($item->ID)?get_the_post_thumbnail($item->ID):'<img src="'.get_bloginfo('stylesheet_url').'/images/news.png" />';
+            $thumb = get_the_post_thumbnail($item->ID)?get_the_post_thumbnail($item->ID,'post-thumbnail',array('class'=>'aligncenter')):'<img src="'.get_bloginfo('stylesheet_url').'/images/news.png" />';
             $news_list .= '
-                <div class="alignnone size-full">'.$thumb.'</div>
+                <div>'.$thumb.'</div>
                 <h3>'.$item->post_title.'</h3>
                 <div class="subtitle">
                     '.$excerpt.'
