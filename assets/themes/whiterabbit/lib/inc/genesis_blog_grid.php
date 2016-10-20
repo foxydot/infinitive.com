@@ -39,6 +39,7 @@ function be_grid_loop_pagination( $query = false ) {
  * @return null
  */
 function be_grid_loop_query_args( $query ) {
+    if(is_admin()) return $query;
     $grid_args = be_grid_loop_pagination( $query );
 
     
