@@ -321,6 +321,10 @@ function msd_get_cpt_title($title){
             $team_page = get_page_by_path( '/about/meet-the-team' );
             $title = $team_page->post_title;
             break;
+        case 'msd_casestudy':
+            $cs_page = get_page_by_path( '/client-experience/all-case-studies/' );
+            $title = $cs_page->post_title;
+            break;
         default:
             $title = $title;
     }
@@ -331,7 +335,7 @@ function get_cpt_doodle($cpt){
     $cpt_doodle = array(
         'msd_news' => 'press',
         'team_member' => 'team',
-        'case_study' => 'casestudies',
+        'msd_casestudy' => 'casestudies',
     );
     return $cpt_doodle[$cpt];
 }
