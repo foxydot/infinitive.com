@@ -83,5 +83,6 @@ function msdlab_add_team_styles() {
 
 
 function msdlab_add_admin_styles() {
+        wp_enqueue_style('bootstrap-style','//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
         wp_enqueue_style('admin-style',get_stylesheet_directory_uri().'/lib/css/admin.css');
 }
