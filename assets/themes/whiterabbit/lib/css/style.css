@@ -5783,6 +5783,15 @@ td.visible-print {
 .doodle-about:before {
   content: "\47";
 }
+.doodle-sitemap:before {
+  content: "\48";
+}
+.doodle-privacy:before {
+  content: "\49";
+}
+.doodle-cloud:before {
+  content: "\4a";
+}
 .doodle-1x {
   font-size: 1em;
 }
