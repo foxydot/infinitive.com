@@ -207,8 +207,8 @@ class MSDVideoCPT {
             $args = array( 
                 'post_type' => 'msd_video', 
                 'numberposts' => -1,
-                'order' => 'ASC',
-                'orderby' => 'menu_order',
+                'order' => 'DESC',
+                'orderby' => 'post_date',
                 'meta_query' => array(
                    array(
                        'key' => '_video_team_members',
