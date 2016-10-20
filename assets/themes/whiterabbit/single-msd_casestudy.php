@@ -2,7 +2,7 @@
 function msdlab_custom_case_study_header(){
     print '<div class="section-header"><h3>Case Studies</h3></div>';
 }
-add_action('genesis_before_loop','msdlab_custom_case_study_header');
+//add_action('genesis_before_loop','msdlab_custom_case_study_header');
 
 add_filter('body_class','practice_area_body_class');
 function practice_area_body_class($classes) {
