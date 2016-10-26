@@ -31,14 +31,7 @@ function child_post_title_output( $title ) {
 remove_all_actions( 'genesis_entry_content' );
 add_action( 'genesis_entry_content', 'child_do_post_excerpt' );
 function child_do_post_excerpt() {
-    // Get featured image if page or post
-    the_post_thumbnail( 'medium', array( 'class' => 'alignright' ) );
- 
-    // Get featured image if WooCommerce product category
-    global $post;
-    $thumbnail_id = get_woocommerce_term_meta( $post->term_id, 'thumbnail_id', true );
-    echo wp_get_attachment_image( $thumbnail_id, 'medium', '', array( 'class' => 'alignright' ) );
- 
+
     // Get excerpt rather than the_content() so Relevanssi can grab a snippet and highlight search terms
     the_excerpt();
  
