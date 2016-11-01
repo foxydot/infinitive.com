@@ -8771,7 +8771,7 @@ div.calloutbox h3 {
   }
 }
 /* Smaller screens */
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 1270px) {
   div.wrap {
     padding: 0 15px;
   }
