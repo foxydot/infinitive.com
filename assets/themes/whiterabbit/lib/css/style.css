@@ -7197,6 +7197,8 @@ Site Navigation
 /* Primary Navigation
 --------------------------------------------- */
 .nav-primary {
+  z-index: 200;
+  position: relative;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 14px;
