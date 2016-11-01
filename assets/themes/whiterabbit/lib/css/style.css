@@ -6668,6 +6668,7 @@ Widgets
   color: #3D3C3D;
   min-height: 54px;
   border: 0;
+  background-size: auto;
 }
 .sidebar .widget.widget_cta .widget-wrap .textwidget .readmore span {
   display: none;
@@ -8768,6 +8769,11 @@ div.calloutbox h3 {
   }
 }
 /* Smaller screens */
+@media only screen and (max-width: 1240px) {
+  div.wrap {
+    padding: 0 15px;
+  }
+}
 @media only screen and (max-width: 1023px) {
   /* Enter Your Custom Styles Here */
   div.wrap {
