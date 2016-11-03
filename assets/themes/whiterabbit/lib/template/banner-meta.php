@@ -56,7 +56,10 @@
 "team",
 "sitemap",
 "privacy",
-"cloud");
+"cloud",
+"travel",
+"it",
+"risk");
                 foreach($doodlearray AS $doodlename){
                     $checked = $mb->is_value($doodlename)?' checked="checked"':'';
                     print '
