@@ -5792,6 +5792,15 @@ td.visible-print {
 .doodle-cloud:before {
   content: "\4a";
 }
+.doodle-travel-1:before {
+  content: "\4b";
+}
+.doodle-it:before {
+  content: "\4c";
+}
+.doodle-risk:before {
+  content: "\4d";
+}
 .doodle-1x {
   font-size: 1em;
 }
