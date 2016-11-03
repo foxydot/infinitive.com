@@ -6731,6 +6731,68 @@ Widgets
   display: inline-block;
   margin-bottom: 0;
 }
+.widget.widget_feature_block {
+  border: 1px solid #959595;
+}
+.widget.widget_feature_block a.feature .wrapper {
+  background: #FFF;
+  text-align: center;
+}
+.widget.widget_feature_block a.feature .wrapper .feature-img {
+  height: 200px;
+  width: auto;
+  padding: 1em;
+  overflow: hidden;
+}
+.widget.widget_feature_block a.feature .wrapper .feature-type {
+  color: #FFF;
+  background: #7F7F7F;
+  width: auto;
+  display: inline-block;
+  padding: 0.2em 1em;
+  top: -1em;
+  position: relative;
+}
+.widget.widget_feature_block a.feature .wrapper .feature-title {
+  overflow: hidden;
+  color: #FFF;
+  background: #FF7D23;
+  padding: 1em;
+}
+.widget.widget_feature_block a.feature .wrapper .feature-title h3 {
+  text-transform: none;
+  font-size: 1.25em;
+  line-height: 1.25;
+}
+.widget.widget_feature_block a.feature .wrapper .readmore {
+  padding: 0.1em 0.4em;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 30px;
+  font-size: 3rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #FFF;
+  font-weight: 700;
+  display: table;
+  margin: 12px 0;
+  text-decoration: none;
+  background-color: #ff7d23;
+  border: 1px solid #FFF;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  float: right;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.widget.widget_feature_block a.feature:hover {
+  text-decoration: none;
+}
 /*
 Plugins
 ---------------------------------------------------------------------------------------------------- */
