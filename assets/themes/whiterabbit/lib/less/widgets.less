@@ -205,3 +205,48 @@ section.layerslider_widget{
 }
 }
 
+//Feature Block Widget
+.widget.widget_feature_block{
+  border: 1px solid @ltgrey;
+    a.feature{
+      .wrapper{
+        background: @white;
+        text-align: center;
+        .feature-img{
+          height: 200px;
+          width: auto;
+          padding: 1em;
+          overflow: hidden;
+        }
+        .feature-type{
+          color: @white;
+          background: @medgrey;
+          width: auto;
+          display: inline-block;
+          padding: 0.2em 1em;
+          top: -1em;
+          position: relative;
+        }
+        .feature-title{
+          overflow: hidden;
+          color: @white;
+          background: @orange;
+          padding: 1em;
+          h3{
+            text-transform: none;
+            font-size: 1.25em;
+            line-height: 1.25;
+          }
+        }
+        .readmore{
+          .button();
+          float: right;
+          margin-left: 1em;
+          margin-right: 1em;
+        }
+      }
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }

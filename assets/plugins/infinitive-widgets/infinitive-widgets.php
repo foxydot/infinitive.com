@@ -20,5 +20,5 @@ include_once('includes/infinitive_functions.php');
 //Include widget files
 include_once('includes/cta-widget.php');
 include_once('includes/segment-widget.php');
-//include_once('includes/feature_block_widget.php');
+include_once('includes/feature_block_widget.php');
 include_once('includes/infinitive_custom_req.php');
