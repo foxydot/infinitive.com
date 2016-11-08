@@ -289,6 +289,11 @@ body {
   letter-spacing: 0.15em;
   padding: 0.5em;
 }
+@media only screen and (max-width: 1270px) {
+  .sectioned-page-wrapper .section .section-body div.wrap {
+    padding: 0 15px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .sectioned-page-wrapper .section .section-title h3 {
     font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
