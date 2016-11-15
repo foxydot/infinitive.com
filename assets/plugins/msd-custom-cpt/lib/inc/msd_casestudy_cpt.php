@@ -21,7 +21,7 @@ class MSDCaseStudyCPT {
         $this->plugin_path = plugin_dir_path('msd-custom-cpt/msd-custom-cpt.php');
               
         //Actions
-        add_action( 'init', array(&$this,'register_taxonomy_practice_area') );
+        add_action( 'init', array(&$this,'register_taxonomies') );
         add_action( 'init', array(&$this,'register_cpt_casestudy') );
         
         //Filters
@@ -32,9 +32,9 @@ class MSDCaseStudyCPT {
         add_shortcode('casestudies',  array(&$this,'msdlab_casestudies_special_loop_shortcode_handler'));
     }
 	
-    public function register_taxonomy_practice_area() {
+    public function register_taxonomies() {
     
-        $labels = array( 
+        $solution_labels = array( 
             'name' => _x( 'Solution areas', 'case-study' ),
             'singular_name' => _x( 'Solution area', 'case-study' ),
             'search_items' => _x( 'Search Solution areas', 'case-study' ),
@@ -52,19 +52,84 @@ class MSDCaseStudyCPT {
             'menu_name' => _x( 'Solution areas', 'case-study' ),
         );
     
-        $args = array( 
-            'labels' => $labels,
+        $solution_args = array( 
+            'labels' => $solution_labels,
             'public' => true,
             'show_in_nav_menus' => true,
             'show_ui' => true,
             'show_tagcloud' => false,
             'hierarchical' => true,
     
-            'rewrite' => array('slug'=>'client-experience/by-solution','with_front'=>true),
+            'rewrite' => array('slug'=>'case-study/by-solution','with_front'=>true),
             'query_var' => true
         );
     
-        register_taxonomy( 'msd_practice-area', array('msd_casestudy'), $args );
+        register_taxonomy( 'msd_practice-area', array('msd_casestudy'), $solution_args );
+        
+        $industry_labels = array( 
+            'name' => _x( 'Industries', 'case-study' ),
+            'singular_name' => _x( 'Industry', 'case-study' ),
+            'search_items' => _x( 'Search Industries', 'case-study' ),
+            'popular_items' => _x( 'Popular Industries', 'case-study' ),
+            'all_items' => _x( 'All Industries', 'case-study' ),
+            'parent_item' => _x( 'Parent Industry', 'case-study' ),
+            'parent_item_colon' => _x( 'Parent Industry:', 'case-study' ),
+            'edit_item' => _x( 'Edit Industry', 'case-study' ),
+            'update_item' => _x( 'Update Industry', 'case-study' ),
+            'add_new_item' => _x( 'Add New Industry', 'case-study' ),
+            'new_item_name' => _x( 'New Industry Name', 'case-study' ),
+            'separate_items_with_commas' => _x( 'Separate Industries with commas', 'case-study' ),
+            'add_or_remove_items' => _x( 'Add or remove Industries', 'case-study' ),
+            'choose_from_most_used' => _x( 'Choose from the most used Industries', 'case-study' ),
+            'menu_name' => _x( 'Industries', 'case-study' ),
+        );
+    
+        $industry_args = array( 
+            'labels' => $industry_labels,
+            'public' => true,
+            'show_in_nav_menus' => true,
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'hierarchical' => true,
+    
+            'rewrite' => array('slug'=>'case-study/by-industry','with_front'=>true),
+            'query_var' => true
+        );
+    
+        register_taxonomy( 'msd_industry', array('msd_casestudy'), $industry_args );
+        
+        
+        $function_labels = array( 
+            'name' => _x( 'Functions', 'case-study' ),
+            'singular_name' => _x( 'Function', 'case-study' ),
+            'search_items' => _x( 'Search Functions', 'case-study' ),
+            'popular_items' => _x( 'Popular Functions', 'case-study' ),
+            'all_items' => _x( 'All Functions', 'case-study' ),
+            'parent_item' => _x( 'Parent Function', 'case-study' ),
+            'parent_item_colon' => _x( 'Parent Function:', 'case-study' ),
+            'edit_item' => _x( 'Edit Function', 'case-study' ),
+            'update_item' => _x( 'Update Function', 'case-study' ),
+            'add_new_item' => _x( 'Add New Function', 'case-study' ),
+            'new_item_name' => _x( 'New Function Name', 'case-study' ),
+            'separate_items_with_commas' => _x( 'Separate Functions with commas', 'case-study' ),
+            'add_or_remove_items' => _x( 'Add or remove Functions', 'case-study' ),
+            'choose_from_most_used' => _x( 'Choose from the most used Functions', 'case-study' ),
+            'menu_name' => _x( 'Functions', 'case-study' ),
+        );
+    
+        $function_args = array( 
+            'labels' => $function_labels,
+            'public' => true,
+            'show_in_nav_menus' => true,
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'hierarchical' => true,
+    
+            'rewrite' => array('slug'=>'case-study/by-function','with_front'=>true),
+            'query_var' => true
+        );
+    
+        register_taxonomy( 'msd_function', array('msd_casestudy'), $function_args );
         flush_rewrite_rules();
     }
     
