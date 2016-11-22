@@ -5910,6 +5910,7 @@ Defaults
 /* Typographical Elements
 --------------------------------------------- */
 html {
+  background-color: #3D3C3D;
   font-size: 10px;
   /* use if force needed */
 }

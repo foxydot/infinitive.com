@@ -74,7 +74,7 @@ jQuery(window).load(function() {
   });
 });
 
-
+/*
 jQuery(window).resize(function(){
   equalheight('.col-md-4');
   jQuery('.box').css('height',function(){
@@ -83,7 +83,7 @@ jQuery(window).resize(function(){
      return baseheight + "px"; 
   });
 });
-
+*/
         </script>
     <?php
 }
