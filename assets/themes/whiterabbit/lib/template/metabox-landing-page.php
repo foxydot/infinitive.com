@@ -182,6 +182,8 @@ if (is_admin()){
                     <div class="input_container">
                         <select name="<?php $mb->the_name(); ?>" class="resource-type">
                             <option value="eBOOK"<?php $mb->the_select_state('eBOOK'); ?>>eBook</option>
+                            <option value="CHECK LIST"<?php $mb->the_select_state('eBOOK'); ?>>Check List</option>
+                            <option value="FACT SHEET"<?php $mb->the_select_state('eBOOK'); ?>>Fact Sheet</option>
                             <option value="NEWS"<?php $mb->the_select_state('NEWS'); ?>>News</option>
                             <option value="INFOGRAPHIC"<?php $mb->the_select_state('INFOGRAPHIC'); ?>>Infographic</option>
                             <option value="CASE STUDY"<?php $mb->the_select_state('CASE STUDY'); ?>>Case Study</option>

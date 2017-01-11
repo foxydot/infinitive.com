@@ -6975,6 +6975,15 @@ img#wpstats {
 .social-media a.fa-rss:hover {
   color: #F37D2A;
 }
+/*** GOOGLE SITE SEARCH ***/
+.widget_search table {
+  margin: 0;
+}
+.widget_search td,
+.widget_search input {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
 /*
 Pre Header
 ---------------------------------------------------------------------------------------------------- */
