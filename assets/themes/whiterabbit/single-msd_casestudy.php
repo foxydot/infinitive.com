@@ -24,7 +24,12 @@ function msdlab_npp_navigation_links() {
     next_post_link('<div class="next-link page-nav">%link <i class="fa fa-arrow-right"></i></div>', 'Next', true, '', 'msd_practice-area');
 }
 
-add_action('genesis_entry_footer', 'msdlab_npp_navigation_links' );
+function msdlab_just_back_to_case_study_nav_link() {
+    print('<div class="prev-link page-nav"><a href="/client-experience/all-case-studies/"<i class="fa fa-arrow-left"></i> All Case Studies</div>'); 
+}
+
+//add_action('genesis_entry_footer', 'msdlab_npp_navigation_links' );
+add_action('genesis_entry_footer', 'msdlab_just_back_to_case_study_nav_link' );
 
 
 remove_action('genesis_entry_header','genesis_post_info',12);
