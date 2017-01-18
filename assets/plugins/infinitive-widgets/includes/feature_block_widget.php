@@ -159,10 +159,12 @@ class Feature_Block_Widget extends WP_Widget {
         <label for="<?php echo $this->get_field_id('resource_type'); ?>"><?php _e('Resource Type:'); ?></label>            
         <div class="input_container">
             <select id="<?php echo $this->get_field_id('resource_type'); ?>" name="<?php echo $this->get_field_name('resource_type'); ?>" class="resource-type">
-                <option value="eBOOK"<?php selected( $resource_type, 'eBOOK' ); ?>>eBook</option>
-                <option value="NEWS"<?php selected( $resource_type, 'NEWS' ); ?>>News</option>
-                <option value="INFOGRAPHIC"<?php selected( $resource_type, 'INFOGRAPHIC' ); ?>>Infographic</option>
                 <option value="CASE STUDY"<?php selected( $resource_type, 'CASE STUDY' ); ?>>Case Study</option>
+                <option value="CHECK LIST"<?php selected( $resource_type, 'CHECK LIST' ); ?>>Check List</option>
+                <option value="eBOOK"<?php selected( $resource_type, 'eBOOK' ); ?>>eBook</option>
+                <option value="FACT SHEET"<?php selected( $resource_type, 'FACT SHEET' ); ?>>Fact Sheet</option>
+                <option value="INFOGRAPHIC"<?php selected( $resource_type, 'INFOGRAPHIC' ); ?>>Infographic</option>
+                <option value="NEWS"<?php selected( $resource_type, 'NEWS' ); ?>>News</option>
                 <option value="VIDEO"<?php selected( $resource_type, 'VIDEO' ); ?>>Video</option>
             </select>
         </div>
