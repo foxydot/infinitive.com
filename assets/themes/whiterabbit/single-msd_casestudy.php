@@ -25,7 +25,7 @@ function msdlab_npp_navigation_links() {
 }
 
 function msdlab_just_back_to_case_study_nav_link() {
-    print('<div class="prev-link page-nav"><a href="/client-experience/all-case-studies/"<i class="fa fa-arrow-left"></i> All Case Studies</div>'); 
+    print('<div class="prev-link page-nav"><a href="/client-experience/all-case-studies/"<i class="fa fa-arrow-left"></i> All Case Studies</a></div>'); 
 }
 
 //add_action('genesis_entry_footer', 'msdlab_npp_navigation_links' );
