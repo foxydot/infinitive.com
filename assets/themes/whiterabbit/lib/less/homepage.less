@@ -86,6 +86,47 @@ body{
     visibility: hidden;
     display: none;
   }
+  .section.section-featured{
+    .section-title{
+      .wrap{
+        border-image: url(../img/chalkline-orange.png) 5 stretch;
+        border-style: solid;
+        border-width: 0 0 5px 0;
+        border-color: @orange;
+        text-align: left;
+      }
+    }
+    .section-body{
+      .wrap{
+        padding: 2em 0 4em;
+        .section-content{
+          font-size: 1.4em;
+          .msd-doodle-wrapper{
+            display: block;
+            float: none;
+            .msd-doodle,.msd-doodle-title{
+              display: block;
+              float: left;
+            }
+            .msd-doodle{
+            }
+            .msd-doodle-title{
+              .customheader-chalk(5);
+              margin-left: 0.5em;
+              line-height: 1.65;
+            }
+            &:after{
+              .msd-clearfix;
+            }
+          }
+          .button{
+            margin: 1.5em 0 0;
+            border: 0;
+          }
+        }
+      }
+    }
+  }
   .section.section-clients{
     .section-title{
       .wrap{
