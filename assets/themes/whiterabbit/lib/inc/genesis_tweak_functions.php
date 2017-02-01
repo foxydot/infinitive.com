@@ -415,7 +415,7 @@ function msdlab_breadcrumb_home_link($crumb){
 function sp_post_info_filter($post_info) {
     if ( !is_page() ) {
         $post_info = 'Posted by [post_author_posts_link]<br />
-        [post_date]&nbsp;&nbsp;&nbsp;'.msdlab_get_comments_number();
+        [post_date]';
         return $post_info;
     }
 }
