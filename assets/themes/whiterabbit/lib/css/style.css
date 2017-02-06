@@ -8861,6 +8861,47 @@ div.calloutbox h3 {
   border: 0;
   margin: 0;
 }
+.gcse_search_form .gsc-control-cse {
+  background-color: transparent;
+  border-width: 0;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  padding: 0;
+}
+.gcse_search_form .gsc-control-cse form.gsc-search-box {
+  max-width: 200px;
+}
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box {
+  line-height: 1;
+}
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box tbody {
+  border: none;
+}
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box tbody td.gsc-input {
+  padding: 0 !important;
+  margin: 0;
+}
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box tbody td.gsc-input .gsc-input-box {
+  height: auto;
+}
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box tbody td.gsc-input .gsc-input-box table tbody td.gsib_a,
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box tbody td.gsc-input .gsc-input-box table tbody td.gsib_b {
+  padding: 0 !important;
+  margin: 0;
+}
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box tbody td.gsc-input .gsc-input-box table tbody td.gsib_a input.gsc-input,
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box tbody td.gsc-input .gsc-input-box table tbody td.gsib_b input.gsc-input {
+  font-size: 12px;
+}
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box tbody td.gsc-search-button {
+  padding: 0;
+}
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box tbody td.gsc-search-button input.gsc-search-button,
+.gcse_search_form .gsc-control-cse form.gsc-search-box table.gsc-search-box tbody td.gsc-search-button input.gsc-search-button-v2 {
+  padding: 6px;
+  height: 26px;
+  width: 26px;
+  border-width: 0;
+}
 .nav-responsive ul,
 .nav-responsive li,
 .nav-responsive li a {
