@@ -6989,7 +6989,7 @@ Pre Header
 ---------------------------------------------------------------------------------------------------- */
 .pre-header {
   background-color: #3D3C3D;
-  z-index: 900;
+  z-index: 901;
 }
 .pre-header .widget-area {
   text-align: center;
@@ -8893,6 +8893,12 @@ div.calloutbox h3 {
   width: 26px;
   border-width: 0;
   background-color: #FF7D23 !important;
+}
+.gcse_search_form .gsc-control-cse .gsc-results-wrapper-overlay.gsc-results-wrapper-visible .gsc-wrapper .gsc-resultsbox-visible .gsc-results {
+  text-align: left;
+}
+.gcse_search_form .gsc-control-cse .gsc-results-wrapper-overlay.gsc-results-wrapper-visible tbody {
+  border: 0;
 }
 .nav-responsive ul,
 .nav-responsive li,
