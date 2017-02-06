@@ -897,16 +897,6 @@
 		"oF": 0,
 		"oS": 0
 		},
-	"\/lib\/css\/homepage.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/lib\/css\/homepage-min.css",
-		"oF": 0,
-		"oS": 0
-		},
 	"\/lib\/css\/ie.css": {
 		"aP": 0,
 		"bl": 0,
@@ -984,16 +974,6 @@
 		"ma": 0,
 		"oA": 2,
 		"oAP": "\/lib\/css\/structure-min.css",
-		"oF": 0,
-		"oS": 0
-		},
-	"\/lib\/css\/style.css": {
-		"aP": 0,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/lib\/css\/style-min.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -2053,18 +2033,6 @@
 		"oAP": "\/lib\/inc\/genesis_bootstrap_hooks.php",
 		"oF": 0
 		},
-	"\/lib\/inc\/genesis_tweak_functions.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/lib\/inc\/genesis_tweak_functions.php",
-		"oF": 0
-		},
-	"\/lib\/inc\/genesis_tweaks.php": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/lib\/inc\/genesis_tweaks.php",
-		"oF": 0
-		},
 	"\/lib\/inc\/homepage-layouts.php": {
 		"ft": 8192,
 		"oA": 0,
@@ -2634,23 +2602,6 @@
 		"sM": 0,
 		"sU": 0
 		},
-	"\/lib\/less\/custom.less": {
-		"aP": 0,
-		"bl": 0,
-		"dJ": 0,
-		"ft": 1,
-		"ie": 1,
-		"iI": 0,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/lib\/css\/custom.css",
-		"oF": 3,
-		"oS": 0,
-		"rU": 0,
-		"sI": 0,
-		"sM": 0,
-		"sU": 0
-		},
 	"\/lib\/less\/defaults.less": {
 		"aP": 0,
 		"bl": 0,
@@ -2712,23 +2663,6 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/lib\/css\/header.css",
-		"oF": 3,
-		"oS": 0,
-		"rU": 0,
-		"sI": 0,
-		"sM": 0,
-		"sU": 0
-		},
-	"\/lib\/less\/homepage.less": {
-		"aP": 0,
-		"bl": 0,
-		"dJ": 0,
-		"ft": 1,
-		"ie": 1,
-		"iI": 0,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/lib\/css\/homepage.css",
 		"oF": 3,
 		"oS": 0,
 		"rU": 0,
