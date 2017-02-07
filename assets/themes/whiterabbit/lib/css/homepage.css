@@ -282,6 +282,9 @@ body {
   padding-top: 2em;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
+.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content a:hover {
+  text-decoration: none;
+}
 .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-2 {
   visibility: hidden;
   display: none;
