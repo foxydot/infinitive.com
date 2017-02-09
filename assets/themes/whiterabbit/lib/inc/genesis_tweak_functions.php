@@ -146,7 +146,7 @@ function msdlab_search_button($text) {
  * Customize search form 
  */
 function msdlab_search_form($form, $search_text, $button_text, $label){
-    $form = "<div class=\"gcse_search_form\">
+    $gcsform = "<div class=\"gcse_search_form\">
     <script>
   (function() {
     var cx = '011761416230768144124:ix4du3nfi2g';
@@ -160,13 +160,8 @@ function msdlab_search_form($form, $search_text, $button_text, $label){
 </script>
 <gcse:search></gcse:search>
 </div>";
-   /*if ( genesis_html5() )
-        $form = sprintf( '<form method="get" class="search-form" action="%s" role="search">%s<input type="search" name="s" placeholder="%s" /><input type="submit" value="%s" /></form>', home_url( '/' ), esc_html( $label ), esc_attr( $search_text ), esc_attr( $button_text ) );
-    else
-        $form = sprintf( '<form method="get" class="searchform search-form" action="%s" role="search" >%s<input type="text" value="%s" name="s" class="s search-input" onfocus="%s" onblur="%s" /><input type="submit" class="searchsubmit search-submit" value="%s" /></form>', home_url( '/' ), esc_html( $label ), esc_attr( $search_text ), esc_attr( $onfocus ), esc_attr( $onblur ), esc_attr( $button_text ) );
-    
+    $form = $gcsform;
     return $form;
-    */
 }
 
 function msdlab_get_thumbnail_url($post_id = null, $size = 'post-thumbnail'){
@@ -415,7 +410,7 @@ function msdlab_breadcrumb_home_link($crumb){
 function sp_post_info_filter($post_info) {
     if ( !is_page() ) {
         $post_info = 'Posted by [post_author_posts_link]<br />
-        [post_date]&nbsp;&nbsp;&nbsp;'.msdlab_get_comments_number();
+        [post_date]';
         return $post_info;
     }
 }

@@ -3,7 +3,7 @@ Pre Header
 ---------------------------------------------------------------------------------------------------- */
 .pre-header{
   background-color: @dkgrey;
-  z-index: 900;
+  z-index: 901;
   .widget-area{
     text-align: center;
     .widget{
@@ -11,7 +11,6 @@ Pre Header
       display: inline-block;
     }
     .widget_search{
-      margin-top:0.5em;
     form.search-form{
       input[type="search"]{
         border: 0;
@@ -28,20 +27,12 @@ Pre Header
 @media only screen and (min-width: 1023px) {
 .pre-header{
   .widget-area{
-    text-align: right;
+    float: right;
     .widget{
       width: auto;
+      max-width: 200px;
+      float: left;
     }
-    .widget_search{
-      margin-top:0;
-    form.search-form{
-      input[type="search"]{
-        width: auto;
-        max-width: 90%;
-        float: right;
-      }
-    }
-  }
   }
 }
 }
