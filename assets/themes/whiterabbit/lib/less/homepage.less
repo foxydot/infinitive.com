@@ -216,9 +216,7 @@ body{
     padding-top: 2em;
     border-top: 1px solid fade(@white,30%);
         .section-content{
-          a:hover{
-            text-decoration: none;
-          }
+          &.column-1,
           &.column-2{
             visibility: hidden;
             display: none;
@@ -228,9 +226,6 @@ body{
             iframe{
               margin: 0 auto;
             }
-          }
-          &.column-3{
-            text-align: center;
           }
         }
       }
@@ -453,7 +448,7 @@ body{
       padding-top: 2em;
       border-top: 1px solid fade(@white,30%);
           .section-content{
-            &.column-3{
+            &.column-1{
               visibility: visible;
               display: block;
               background-image: url(../img/bkg-org-paint.png);
@@ -463,13 +458,11 @@ body{
               .customheader(2.2);
               text-transform: none;
               line-height: 1.2;
-              text-align: center;
+              text-align: left;
               color: @dkgrey;
               min-height: 285px;
-                a,a:visited{
-                  color: @white;
-                }
               .msd-doodle-wrapper{
+                text-align: center;
                 color: @white;
               }
             }
@@ -477,6 +470,10 @@ body{
               visibility: visible;
               display: block;
               text-align: center;
+              .msd-doodle-wrapper{
+                padding: 2.8em 0;
+                .customheader-chalk(2.8);
+              }
             }
             .iphone-wrapper{
               iframe{

@@ -282,9 +282,7 @@ body {
   padding-top: 2em;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
-.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content a:hover {
-  text-decoration: none;
-}
+.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1,
 .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-2 {
   visibility: hidden;
   display: none;
@@ -294,9 +292,6 @@ body {
 }
 .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper iframe {
   margin: 0 auto;
-}
-.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-3 {
-  text-align: center;
 }
 .sectioned-page-wrapper .section.section-brainfest .section-title {
   display: none;
@@ -490,7 +485,7 @@ body {
     padding-top: 2em;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
   }
-  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-3 {
+  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1 {
     visibility: visible;
     display: block;
     background-image: url(../img/bkg-org-paint.png);
@@ -504,21 +499,29 @@ body {
     line-height: 1.625;
     text-transform: none;
     line-height: 1.2;
-    text-align: center;
+    text-align: left;
     color: #3D3C3D;
     min-height: 285px;
   }
-  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-3 a,
-  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-3 a:visited {
-    color: #FFF;
-  }
-  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-3 .msd-doodle-wrapper {
+  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1 .msd-doodle-wrapper {
+    text-align: center;
     color: #FFF;
   }
   .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-2 {
     visibility: visible;
     display: block;
     text-align: center;
+  }
+  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-2 .msd-doodle-wrapper {
+    padding: 2.8em 0;
+    font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+    font-size: 28px;
+    font-size: 2.8rem;
+    line-height: 1.625;
+    font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 0.05em;
   }
   .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper iframe {
     max-height: 240px;
