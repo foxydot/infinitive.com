@@ -322,7 +322,7 @@ class MSDVideoCPT {
                 $featured_image = $this->get_video_grid_image($item);
                 $content = $this->get_video_content($item);
                 
-                $lazyyt_embed = '<div class="js-lazyYT" data-youtube-id="'.$video_id.'" data-width="100%"></div>';
+                $lazyyt_embed = '<div class="js-lazyYT" data-youtube-id="'.$video_id.'" data-parameters="rel=0" data-width="100%"></div>';
         
                 $menu .= '<li class="tab-'.$item->post_name.' col-sm-'.(12/$cols).' video-item">'.$lazyyt_embed.'<h4>'.$item->post_title.'</h4></li>'."\n";
                 $i++;
