@@ -102,7 +102,7 @@ add_action('widgets_init', create_function('', 'return register_widget("CustomCo
 /**
  * Recent Posts Widget Class
  */
- 
+if(class_exists('RecentPostsPlus')){
 class MSDLabRecentPostsPlus extends RecentPostsPlus {
     private $my_default_config = array(
         'widget_output_template' => '<li><a title="{TITLE_RAW}" href="{PERMALINK}">{TITLE}</a>{DATE}{EXCERPT}{ELLIPSIS}... <a href="{PERMALINK}">(more)</a>{/ELLIPSIS}</li>', //default format
@@ -129,7 +129,7 @@ class MSDLabRecentPostsPlus extends RecentPostsPlus {
     }
 } // class RecentPostsPlus
 add_action( 'widgets_init', create_function( '', 'return register_widget("MSDLabRecentPostsPlus");' ) );
-
+}
 function add_more_button_to_rpp($output){
     $more = do_shortcode('[button url="/blog"]More Blog Posts[/button]');
     return $output.$more;
