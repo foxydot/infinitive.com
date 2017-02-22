@@ -2137,6 +2137,15 @@
 		"oAP": "\/lib\/inc\/widgets.php",
 		"oF": 0
 		},
+	"\/lib\/js\/admin-jquery.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/lib\/js\/min\/admin-jquery-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/lib\/js\/greensock\/easing\/EasePack.min.js": {
 		"ft": 64,
 		"mi": 1,
