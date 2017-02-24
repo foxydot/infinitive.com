@@ -2443,6 +2443,15 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/lib\/js\/min\/admin-jquery-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/lib\/js\/min\/min\/admin-jquery-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/lib\/js\/min\/press-jquery-min.js": {
 		"ft": 64,
 		"mi": 1,
