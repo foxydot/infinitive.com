@@ -51,6 +51,8 @@ class MSDVideoCPT {
         }
 
         $wpalchemy_media_access = new WPAlchemy_MediaAccess();
+        
+        add_filter('embed_oembed_html', array(&$this,'hijack_oembed'), 99, 4);
     }
     
     public function register_taxonomy_video_tags() {
@@ -162,11 +164,11 @@ class MSDVideoCPT {
     function register_thumbnail(){
         if (class_exists('MultiPostThumbnails')) {
             new MultiPostThumbnails(
-                    array(
-                            'label' => 'Grid Thumbnail',
-                            'id' => 'grid-image',
-                            'post_type' => 'msd_video'
-                    )
+                array(
+                    'label' => 'Grid Thumbnail',
+                    'id' => 'grid-image',
+                    'post_type' => 'msd_video'
+                )
             );
         }
     }
@@ -322,7 +324,7 @@ class MSDVideoCPT {
                 $featured_image = $this->get_video_grid_image($item);
                 $content = $this->get_video_content($item);
                 
-                $lazyyt_embed = '<div class="js-lazyYT" data-youtube-id="'.$video_id.'" data-width="100%"></div>';
+                $lazyyt_embed = '<div class="js-lazyYT" data-youtube-id="'.$video_id.'" data-parameters="rel=0" data-width="100%"></div>';
         
                 $menu .= '<li class="tab-'.$item->post_name.' col-sm-'.(12/$cols).' video-item">'.$lazyyt_embed.'<h4>'.$item->post_title.'</h4></li>'."\n";
                 $i++;
@@ -477,6 +479,7 @@ class MSDVideoCPT {
                 $allowedposttags[$t][$a]=true;
             }
         }
+        $allowedposttags['iframe']['allowfullscreen']=true;
         $content = wp_kses($content,$allowedposttags);
         return $content;
     }   
@@ -516,7 +519,7 @@ class MSDVideoCPT {
             return "\n".'<div class="video-grid video-'.$ID.'">'."\n".'<ul class="nav">'."\n".$menu."\n".'</ul>'."\n".'<div class="content">'."\n".$slides."\n".'</div>'."\n".$nav."\n".'</div>';
         }
             
-function change_default_title( $title ){
+    function change_default_title( $title ){
         $screen = get_current_screen();
         if  ( $screen->post_type == 'msd_video' ) {
             return __('Enter Video Title Here','msd_video');
@@ -531,6 +534,12 @@ function change_default_title( $title ){
             jQuery('#titlediv').after(jQuery('#_video_metabox'));
             jQuery('#postdivrich').hide();
         </script><?php
+    }
+    
+    //OTHER VIDEO
+    function hijack_oembed($html, $url, $attr, $post_ID){
+        $html = preg_replace('/src="(.*)\?(.*?)"/i','src="$1?rel=0"',$html);
+        return $html;
     }
 }
 $video_cpt = new MSDVideoCPT();
