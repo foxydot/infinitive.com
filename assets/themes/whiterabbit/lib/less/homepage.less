@@ -207,24 +207,65 @@ body{
     }
   }
   .section.section-video{
-    .section-title{
-      display: none;
+     .section-title{
+      .wrap{
+        font-weight: 600;
+        background-color: @orange;
+        text-align: left;
+        padding: 0 0.5em;
+      }
     }
     .section-body{
       .wrap{
-    margin-top: 2em;
-    padding-top: 2em;
-    border-top: 1px solid fade(@white,30%);
+        background-color: fade(@white,10%);
+        margin-top: 0;
+        padding-top: 0;
         .section-content{
+<<<<<<< HEAD
           &.column-1,
           &.column-2{
             visibility: hidden;
             display: none;
+=======
+          text-align: center;
+          &.column-1{
+            h3{
+              .custombody(1.8);
+              text-transform: uppercase;
+              font-weight: 500;
+            }
+          }
+          &.column-3{
+            background-image: url(../img/bkg-org-paint.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            display: block;
+            padding: 2em;
+            .customheader-chalk(2.4);
+            text-transform: none;
+            line-height: 1.2;
+            color: @dkgrey;
+            min-height: 305px;
+              a,a:visited{
+                color: @white;
+              }
+            .msd-doodle-wrapper{
+              color: @white;
+              .msd-doodle-title{
+                font-size: 1.6em;
+                margin-top: -0.4em;
+              }
+            }
+          }
+          a:hover{
+            text-decoration: none;
+>>>>>>> homepagevideolayer
           }
           .iphone-wrapper{
             text-align: center;
             iframe{
-              margin: 0 auto;
+              margin: 0;
+              border: 0;
             }
           }
         }
@@ -319,12 +360,16 @@ body{
         .wrap{
           .section-content{
             .iphone-wrapper{
-              background-image: url(../img/iphone6.png);
+              position: inline-block;
+              background-image: url(../img/homepage-video-bkg.png);
+              background-position: center center;
               background-repeat: no-repeat;
-              background-position: top center;
               background-size: contain;
               iframe{
-                margin: 28px auto 20px;
+                margin: 8px;
+                border: 1px solid @white;
+                max-height: 240px;
+                max-width: 440px;
               }
             }
           }
@@ -444,10 +489,8 @@ body{
     .section.section-video{
       .section-body{
         .wrap{
-      margin-top: 2em;
-      padding-top: 2em;
-      border-top: 1px solid fade(@white,30%);
           .section-content{
+<<<<<<< HEAD
             &.column-1{
               visibility: visible;
               display: block;
@@ -481,6 +524,12 @@ body{
                 max-width: 424px;
                 margin: 20px auto;
               }
+=======
+            text-align: center;
+            padding: 2em;
+            &.column-1{
+              text-align: left;
+>>>>>>> homepagevideolayer
             }
           }
         }

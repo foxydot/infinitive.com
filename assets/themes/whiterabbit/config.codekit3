@@ -1955,6 +1955,14 @@
 		"oAP": "\/lib\/img\/favicon.ico",
 		"oF": 0
 		},
+	"\/lib\/img\/homepage-video-bkg.png": {
+		"ft": 32768,
+		"iS": 10061,
+		"oA": 0,
+		"oAP": "\/lib\/img\/homepage-video-bkg.png",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/lib\/img\/images\/blog_bubble_01.png": {
 		"ft": 32768,
 		"iS": 402,
@@ -2747,7 +2755,7 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/lib\/css\/homepage.css",
-		"oF": 0,
+		"oF": 3,
 		"oS": 0,
 		"rU": 0,
 		"sI": 0,
