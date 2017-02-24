@@ -327,26 +327,15 @@ body {
   font-size: 1.6em;
   margin-top: -0.4em;
 }
-<<<<<<< HEAD
-.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1,
-.sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-2 {
-  visibility: hidden;
-  display: none;
-=======
 .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content a:hover {
   text-decoration: none;
->>>>>>> homepagevideolayer
 }
 .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper {
   text-align: center;
 }
 .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper iframe {
-<<<<<<< HEAD
-  margin: 0 auto;
-=======
   margin: 0;
   border: 0;
->>>>>>> homepagevideolayer
 }
 .sectioned-page-wrapper .section.section-brainfest .section-title {
   display: none;
@@ -539,63 +528,12 @@ body {
   .sectioned-page-wrapper .section.section-focus .section-body .section-content.column-2 .msd-doodle-wrapper i {
     font-size: 0.75em;
   }
-<<<<<<< HEAD
-  .sectioned-page-wrapper .section.section-video .section-body .wrap {
-    margin-top: 2em;
-    padding-top: 2em;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1 {
-    visibility: visible;
-    display: block;
-    background-image: url(../img/bkg-org-paint.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    padding: 2em;
-    font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-    font-weight: 400;
-    font-size: 22px;
-    font-size: 2.2rem;
-    line-height: 1.625;
-    text-transform: none;
-    line-height: 1.2;
-    text-align: left;
-    color: #3D3C3D;
-    min-height: 285px;
-  }
-  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1 .msd-doodle-wrapper {
-    text-align: center;
-    color: #FFF;
-  }
-  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-2 {
-    visibility: visible;
-    display: block;
-=======
   .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content {
->>>>>>> homepagevideolayer
     text-align: center;
     padding: 2em;
   }
-<<<<<<< HEAD
-  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-2 .msd-doodle-wrapper {
-    padding: 2.8em 0;
-    font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-    font-size: 28px;
-    font-size: 2.8rem;
-    line-height: 1.625;
-    font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
-    line-height: 1;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-  }
-  .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper iframe {
-    max-height: 240px;
-    max-width: 424px;
-    margin: 20px auto;
-=======
   .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content.column-1 {
     text-align: left;
->>>>>>> homepagevideolayer
   }
   .sectioned-page-wrapper .section.section-brainfest .section-title {
     display: none;
