@@ -188,6 +188,8 @@ if (is_admin()){
                             <option value="INFOGRAPHIC"<?php $mb->the_select_state('INFOGRAPHIC'); ?>>Infographic</option>
                             <option value="NEWS"<?php $mb->the_select_state('NEWS'); ?>>News</option>
                             <option value="VIDEO"<?php $mb->the_select_state('VIDEO'); ?>>Video</option>
+                            <option value="EXECUTIVE BRIEF"<?php $mb->the_select_state('EXECUTIVE BRIEF'); ?>>Executive Brief</option>
+                            <option value="GUIDE"<?php $mb->the_select_state('GUIDE'); ?>>Guide</option>
                         </select>
                     </div>
                 </div>
