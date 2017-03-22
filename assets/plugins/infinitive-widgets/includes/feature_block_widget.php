@@ -166,6 +166,8 @@ class Feature_Block_Widget extends WP_Widget {
                 <option value="INFOGRAPHIC"<?php selected( $resource_type, 'INFOGRAPHIC' ); ?>>Infographic</option>
                 <option value="NEWS"<?php selected( $resource_type, 'NEWS' ); ?>>News</option>
                 <option value="VIDEO"<?php selected( $resource_type, 'VIDEO' ); ?>>Video</option>
+                <option value="EXECUTIVE BRIEF"<?php $mb->the_select_state('EXECUTIVE BRIEF'); ?>>Executive Brief</option>
+                <option value="GUIDE"<?php $mb->the_select_state('GUIDE'); ?>>Guide</option>
             </select>
         </div>
     </div>
