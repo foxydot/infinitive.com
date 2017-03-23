@@ -5,6 +5,8 @@
  */
 
 class MSDNewsCPT {
+    
+    public $cpt;
 
 	/**
     * PHP 4 Compatible Constructor
@@ -17,11 +19,13 @@ class MSDNewsCPT {
     function __construct(){
         global $current_screen;
         //"Constants" setup
+        $this->cpt = 'msd_news';
         $this->plugin_url = plugin_dir_url('msd-custom-cpt/msd-custom-cpt.php');
         $this->plugin_path = plugin_dir_path('msd-custom-cpt/msd-custom-cpt.php');
         
         //Actions
         add_action( 'init', array(&$this,'register_cpt_news') );
+        add_action( 'template_redirect', array(&$this,'hide_single_news') );
         
         //Filters
         
@@ -61,9 +65,9 @@ class MSDNewsCPT {
 	        'show_in_menu' => true,
 	        'menu_position' => 20,
 	        
-	        'show_in_nav_menus' => true,
+	        'show_in_nav_menus' => false,
 	        'publicly_queryable' => true,
-	        'exclude_from_search' => false,
+	        'exclude_from_search' => true,
 	        'has_archive' => true,
 	        'query_var' => true,
 	        'can_export' => true,
@@ -176,4 +180,13 @@ class MSDNewsCPT {
             $newsurl = sprintf( '<a class="entry-newsurl" href="%s">View Article</a>', msdlab_http_sanity_check($newsurl) );
             echo $newsurl . "\n";
         }  
+        
+        function hide_single_news(){
+            if(!is_single())
+                return;
+            if(get_query_var('post_type') == $this->cpt){
+                wp_redirect(get_post_type_archive_link( $this->cpt ));
+            }
+            exit;
+        }
 }
