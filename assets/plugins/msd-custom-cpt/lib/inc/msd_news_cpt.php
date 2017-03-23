@@ -186,7 +186,9 @@ class MSDNewsCPT {
                 return;
             if(get_query_var('post_type') == $this->cpt){
                 wp_redirect(get_post_type_archive_link( $this->cpt ));
+                return;
+            } else {
+                return;
             }
-            exit;
         }
 }

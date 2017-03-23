@@ -542,6 +542,9 @@ class MSDVideoCPT {
             return;
         if(get_query_var('post_type') == $this->cpt){
             wp_redirect('/video-library/');
+            return;
+        } else {
+            return;
         }
         exit;
     }
