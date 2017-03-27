@@ -28,6 +28,7 @@ class MSDVideoCPT {
         add_action( 'init', array(&$this,'register_taxonomy_video_tags') );
         add_action( 'init', array(&$this,'register_thumbnail') );
         add_action( 'init', array(&$this,'register_scripts') );
+        add_action( 'template_redirect', array(&$this,'hide_single_video') );
         
         add_action('wp_footer', array(&$this, 'print_script'));
         //add_action('admin_head', array(&$this,'plugin_header'));
@@ -117,9 +118,9 @@ class MSDVideoCPT {
             'show_in_menu' => true,
             'menu_position' => 20,
             
-            'show_in_nav_menus' => true,
+            'show_in_nav_menus' => false,
             'publicly_queryable' => true,
-            'exclude_from_search' => false,
+            'exclude_from_search' => true,
             'has_archive' => true,
             'query_var' => true,
             'can_export' => true,
@@ -534,6 +535,18 @@ class MSDVideoCPT {
             jQuery('#titlediv').after(jQuery('#_video_metabox'));
             jQuery('#postdivrich').hide();
         </script><?php
+    }
+    
+    function hide_single_video(){
+        if(!is_single())
+            return;
+        if(get_query_var('post_type') == $this->cpt){
+            wp_redirect('/video-library/');
+            return;
+        } else {
+            return;
+        }
+        exit;
     }
     
     //OTHER VIDEO

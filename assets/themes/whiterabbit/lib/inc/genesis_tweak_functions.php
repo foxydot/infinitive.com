@@ -145,7 +145,7 @@ function msdlab_search_button($text) {
 /**
  * Customize search form 
  */
-function msdlab_search_form($form, $search_text, $button_text, $label){
+function msdlab_search_form($form='', $search_text='', $button_text='', $label=''){
     $gcsform = "<div class=\"gcse_search_form\">
     <script>
   (function() {
