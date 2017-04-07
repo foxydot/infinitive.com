@@ -185,7 +185,8 @@ class MSDNewsCPT {
             if(!is_single())
                 return;
             if(get_query_var('post_type') == $this->cpt){
-                wp_redirect(get_post_type_archive_link( $this->cpt ));
+                global $wp_query;
+                wp_redirect(get_post_meta($wp_query->post->ID,'_news_newsurl',true));
                 return;
             } else {
                 return;
