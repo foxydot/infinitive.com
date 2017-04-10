@@ -7,7 +7,7 @@
 		"uuidString": "0BF57BCB-55FF-492E-8D62-FF91DD847B08"
 		}
 	],
-"creatorBuild": "25704",
+"creatorBuild": "25813",
 "files": {
 	"\/-front-page.php": {
 		"ft": 8192,
@@ -1740,91 +1740,100 @@
 	"\/lib\/img\/apple-touch-icon-114x114.png": {
 		"ft": 32768,
 		"iS": 7860,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/apple-touch-icon-114x114.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/apple-touch-icon-120x120.png": {
 		"ft": 32768,
 		"iS": 6933,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/apple-touch-icon-120x120.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/apple-touch-icon-144x144.png": {
 		"ft": 32768,
 		"iS": 11056,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/apple-touch-icon-144x144.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/apple-touch-icon-152x152.png": {
 		"ft": 32768,
 		"iS": 10958,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/apple-touch-icon-152x152.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/apple-touch-icon-180x180.png": {
 		"ft": 32768,
 		"iS": 13434,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/apple-touch-icon-180x180.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/apple-touch-icon-57x57.png": {
 		"ft": 32768,
 		"iS": 2997,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/apple-touch-icon-57x57.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/apple-touch-icon-72x72.png": {
 		"ft": 32768,
 		"iS": 3941,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/apple-touch-icon-72x72.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/apple-touch-icon-76x76.png": {
 		"ft": 32768,
 		"iS": 4247,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/apple-touch-icon-76x76.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/apple-touch-icon.png": {
 		"ft": 32768,
 		"iS": 2997,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/apple-touch-icon.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/bkg-ftr-connect.ai": {
@@ -1836,61 +1845,67 @@
 	"\/lib\/img\/bkg-ftr-connect.png": {
 		"ft": 32768,
 		"iS": 1672,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/bkg-ftr-connect.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/bkg-org-paint.png": {
 		"ft": 32768,
 		"iS": 7627,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/bkg-org-paint.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/bkg-rocket.png": {
 		"ft": 32768,
 		"iS": 116017,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/bkg-rocket.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/blog_bubble.png": {
 		"ft": 32768,
 		"iS": 1410,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/blog_bubble.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/caseStudyMagGlass46x52.png": {
 		"ft": 32768,
 		"iS": 815,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/caseStudyMagGlass46x52.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/caseStudyMagGlass46x52@2x.png": {
 		"ft": 32768,
 		"iS": 1384,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/caseStudyMagGlass46x52@2x.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/chalk.svg": {
@@ -1906,21 +1921,23 @@
 	"\/lib\/img\/chalkbox-orange-flipped.png": {
 		"ft": 32768,
 		"iS": 21841,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/chalkbox-orange-flipped.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/chalkbox-orange.png": {
 		"ft": 32768,
 		"iS": 21397,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/chalkbox-orange.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/chalkbox.ai": {
@@ -1932,11 +1949,12 @@
 	"\/lib\/img\/chalkbox.png": {
 		"ft": 32768,
 		"iS": 6470,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/chalkbox.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/chalkbox2.ai": {
@@ -1948,31 +1966,34 @@
 	"\/lib\/img\/chalkbox2.png": {
 		"ft": 32768,
 		"iS": 3960,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/chalkbox2.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/chalkline-orange.png": {
 		"ft": 32768,
 		"iS": 15981,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/chalkline-orange.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/chalkline.png": {
 		"ft": 32768,
 		"iS": 1076,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/chalkline.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/chalkline.psd": {
@@ -2000,111 +2021,122 @@
 	"\/lib\/img\/homepage-video-bkg.png": {
 		"ft": 32768,
 		"iS": 10061,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/homepage-video-bkg.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/images\/blog_bubble_01.png": {
 		"ft": 32768,
 		"iS": 402,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/images\/blog_bubble_01.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/images\/blog_bubble_02.png": {
 		"ft": 32768,
 		"iS": 1035,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/images\/blog_bubble_02.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/images\/blog_bubble_03.png": {
 		"ft": 32768,
 		"iS": 401,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/images\/blog_bubble_03.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/images\/blog_bubble_04.png": {
 		"ft": 32768,
 		"iS": 253,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/images\/blog_bubble_04.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/iphone6.png": {
 		"ft": 32768,
 		"iS": 11198,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/iphone6.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/LetsTalkCTAbubble122x44.png": {
 		"ft": 32768,
 		"iS": 1243,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/LetsTalkCTAbubble122x44.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/LetsTalkCTAbubble122x44@2x.png": {
 		"ft": 32768,
 		"iS": 2938,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/LetsTalkCTAbubble122x44@2x.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/logo.png": {
 		"ft": 32768,
 		"iS": 9662,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/logo.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/texture-01.png": {
 		"ft": 32768,
 		"iS": 4373,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/texture-01.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/img\/texture.png": {
 		"ft": 32768,
 		"iS": 8460,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/texture.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/lib\/inc\/devel.php": {
@@ -3131,11 +3163,12 @@
 	"\/screenshot.png": {
 		"ft": 32768,
 		"iS": 28572,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/screenshot.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/search.php": {
@@ -4147,6 +4180,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-prototype-builtins": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-redeclare": {
 			"active": 1,
 			"optionString": "{'builtinGlobals': false}"
@@ -4971,14 +5008,6 @@
 		"orderOutput": 0,
 		"outputStyle": 1
 		},
-	"languageDefaultsJSX": {
-		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*.js",
-		"autoOutputPathRelativePath": "",
-		"autoOutputPathReplace1": "jsx",
-		"autoOutputPathReplace2": "js",
-		"autoOutputPathStyle": 0
-		},
 	"languageDefaultsKIT": {
 		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*.html",
@@ -5041,7 +5070,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
-		"enableLossy": 1,
+		"optimizerType": 1,
 		"quality": 100
 		},
 	"languageDefaultsPUG": {

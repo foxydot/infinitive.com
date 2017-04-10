@@ -395,10 +395,14 @@ body {
     line-height: 1;
   }
   .sectioned-page-wrapper .section.section-solving .section-body .column-1 .msd-doodle-wrapper {
-    width: 27%;
+    width: 40%;
     margin: 0 3% 2em;
+    text-align: center;
     display: inline-block;
     display: inline-flex;
+  }
+  .sectioned-page-wrapper .section.section-solving .section-body .column-1 .msd-doodle-wrapper a {
+    margin: 0 auto;
   }
   .sectioned-page-wrapper .section.section-solving .section-body .column-2 p.first-child {
     width: 48%;
