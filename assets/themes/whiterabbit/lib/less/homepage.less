@@ -54,7 +54,7 @@ body{
       .column-2{
         .msd-doodle-wrapper{
           width: 70%;
-          margin: -4em auto 4em;
+          margin: 0 auto 4em;
           display: block;
           text-align: center;
           a{
@@ -64,6 +64,10 @@ body{
             color: @white;
             text-transform: uppercase;
             font-weight: 700;
+            display: block;
+            &:after{
+              .msd-clearfix;
+            }
             strong{
               color: @orange;
               font-weight: 400;

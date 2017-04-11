@@ -124,7 +124,7 @@ body {
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper {
   width: 70%;
-  margin: -4em auto 4em;
+  margin: 0 auto 4em;
   display: block;
   text-align: center;
 }
@@ -141,6 +141,14 @@ body {
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
+  display: block;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a strong {
   color: #FF7D23;
