@@ -169,6 +169,7 @@ body {
   padding: 2em;
   background-color: rgba(255, 255, 255, 0.1);
   text-align: center;
+  min-height: 190px;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half img {
   margin: 0;
