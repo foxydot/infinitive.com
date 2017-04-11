@@ -136,7 +136,7 @@ body {
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   letter-spacing: 0.05em;
-  font-size: 2em;
+  font-size: 2.4em;
   line-height: 1;
   color: #FFF;
   text-transform: uppercase;
@@ -145,15 +145,36 @@ body {
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a strong {
   color: #FF7D23;
   font-weight: 400;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a i {
   color: #FF7D23;
   font-weight: 400;
   font-size: 0.6em;
+  width: 30%;
+  float: left;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a .msd-doodle-title {
+  line-height: 0.8;
   text-align: center;
+  float: left;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 {
+  margin-top: 4em;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 h4 {
+  padding: 0 0.4em;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half {
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half img {
+  margin: 0;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half.first img {
+  margin: 4px auto;
 }
 .sectioned-page-wrapper .section.section-obsessed {
   visibility: hidden;
@@ -437,8 +458,8 @@ body {
     margin-top: -6em;
   }
   .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper {
-    width: 80%;
-    margin: -7em auto 6em;
+    width: 100%;
+    margin: -5em auto 0;
     display: block;
     text-align: center;
     position: relative;
