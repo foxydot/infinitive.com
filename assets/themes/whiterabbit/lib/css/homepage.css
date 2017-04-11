@@ -124,7 +124,7 @@ body {
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper {
   width: 70%;
-  margin: -4em auto 4em;
+  margin: 0 auto 4em;
   display: block;
   text-align: center;
 }
@@ -136,24 +136,58 @@ body {
   font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   letter-spacing: 0.05em;
-  font-size: 2em;
+  font-size: 2.4em;
   line-height: 1;
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
+  display: block;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a strong {
   color: #FF7D23;
   font-weight: 400;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a i {
   color: #FF7D23;
   font-weight: 400;
   font-size: 0.6em;
+  width: 30%;
+  float: left;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper a .msd-doodle-title {
+  line-height: 0.8;
   text-align: center;
+  float: left;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 {
+  margin-top: 4em;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 h4 {
+  padding: 0 0.4em;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half {
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  min-height: 190px;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half a,
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half a:hover {
+  color: #FFF;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half img {
+  margin: 0;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half.last.last-child img {
+  margin: 4px auto;
 }
 .sectioned-page-wrapper .section.section-obsessed {
   visibility: hidden;
@@ -404,15 +438,20 @@ body {
   .sectioned-page-wrapper .section.section-solving .section-body .column-1 .msd-doodle-wrapper a {
     margin: 0 auto;
   }
+  .sectioned-page-wrapper .section.section-solving .section-body .column-2 {
+    text-align: center;
+  }
   .sectioned-page-wrapper .section.section-solving .section-body .column-2 p.first-child {
     width: 48%;
     display: inline-block;
   }
   .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper {
+    width: 50%;
     display: inline-block;
-    margin-top: 4em;
-    position: absolute;
-    width: 48%;
+    margin: 0 auto;
+  }
+  .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper .msd-doodle-title {
+    width: 70%;
   }
   .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper {
     position: inline-block;
@@ -437,8 +476,8 @@ body {
     margin-top: -6em;
   }
   .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper {
-    width: 80%;
-    margin: -7em auto 6em;
+    width: 100%;
+    margin: -5em auto 0;
     display: block;
     text-align: center;
     position: relative;

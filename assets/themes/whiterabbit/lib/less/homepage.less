@@ -54,28 +54,59 @@ body{
       .column-2{
         .msd-doodle-wrapper{
           width: 70%;
-          margin: -4em auto 4em;
+          margin: 0 auto 4em;
           display: block;
           text-align: center;
           a{
             .customheader-chalk();
-            font-size: 2em;
+            font-size: 2.4em;
             line-height: 1;
             color: @white;
             text-transform: uppercase;
             font-weight: 700;
+            display: block;
+            &:after{
+              .msd-clearfix;
+            }
             strong{
               color: @orange;
               font-weight: 400;
-              font-size: 0.8em;
+              font-size: 0.7em;
             }
             i{
               color: @orange;
               font-weight: 400;
               font-size:0.6em;
+              width: 30%;
+              float: left;
             }
             .msd-doodle-title{
+              line-height: 0.8;
               text-align: center;
+              float: left;
+            }
+          }
+        }
+      }
+      .column-3{
+        margin-top: 4em;
+        h4{
+          padding: 0 0.4em;
+        }
+        div.one-half{
+          padding: 2em;
+          background-color: fade(@white,10%);
+          text-align: center;
+          min-height: 190px;
+          a,a:hover{
+            color: @white;
+          }
+          img{
+            margin: 0;
+          }
+          &.last.last-child{
+            img{
+              margin: 4px auto;
             }
           }
         }
@@ -338,15 +369,18 @@ body{
           }
         }
         .column-2{
+          text-align: center;
           p.first-child{
             width: 48%;
             display: inline-block;
           }
           .msd-doodle-wrapper{
+            width: 50%;
             display: inline-block;
-            margin-top: 4em;
-            position: absolute;
-            width: 48%;
+            margin: 0 auto;
+            .msd-doodle-title{
+              width: 70%;
+            }
           }
         }
         
@@ -394,8 +428,8 @@ body{
             margin-top: -6em;
           }
           .msd-doodle-wrapper{
-            width: 80%;
-            margin: -7em auto 6em;
+            width: 100%;
+            margin: -5em auto 0;
             display: block;
             text-align: center;
             position: relative;
