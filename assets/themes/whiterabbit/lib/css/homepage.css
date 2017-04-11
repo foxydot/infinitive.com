@@ -438,15 +438,20 @@ body {
   .sectioned-page-wrapper .section.section-solving .section-body .column-1 .msd-doodle-wrapper a {
     margin: 0 auto;
   }
+  .sectioned-page-wrapper .section.section-solving .section-body .column-2 {
+    text-align: center;
+  }
   .sectioned-page-wrapper .section.section-solving .section-body .column-2 p.first-child {
     width: 48%;
     display: inline-block;
   }
   .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper {
+    width: 50%;
     display: inline-block;
-    margin-top: 4em;
-    position: absolute;
-    width: 48%;
+    margin: 0 auto;
+  }
+  .sectioned-page-wrapper .section.section-solving .section-body .column-2 .msd-doodle-wrapper .msd-doodle-title {
+    width: 70%;
   }
   .sectioned-page-wrapper .section.section-video .section-body .wrap .section-content .iphone-wrapper {
     position: inline-block;
