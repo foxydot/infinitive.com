@@ -65,7 +65,8 @@ class MSDLandingPage{
         </div>'):'';
         $link = $feature['link'];
         $type = $feature['resource-type'];
-        $featured_image = $feature['resource-image'] !=''?'<img src="'.$feature['resource-image'].'" />':'';
+        $attachment_id = get_attachment_id_from_src($feature['resource-image']);
+        $featured_image = $attachment_id != ''?self::get_image_html($attachment_id):'';
         $classes = apply_filters('msdlab_landing_page_output_classes',array(
             'feature',
             'feature-'.$slug,
@@ -108,6 +109,7 @@ class MSDLandingPage{
 
         function info_footer_hook()
         {
+            global $post;
             $postid = is_admin()?$_GET['post']:$post->ID;
             $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
             if($template_file == 'page-landing.php'){
@@ -129,5 +131,48 @@ class MSDLandingPage{
                 wp_enqueue_style('landing-admin',WP_PLUGIN_URL.'/msd-specialty-pages/lib/css/landing.css');
             }
         }
+
+    /**
+     * Render the image html output.
+     *
+     * @param array $instance
+     * @param bool $include_link will only render the link if this is set to true. Otherwise link is ignored.
+     * @return string image html
+     */
+    private function get_image_html( $attachment_id ) {
+
+        $output = '';
+
+        $instance = array();
+        $instance['attachment_id'] = $attachment_id;
+        $alt = get_post_meta($attachment_id,'_wp_attachment_image_alt');
+        $instance['alt'] = $alt[0];
+        $instance['title'] = get_the_title($attachment_id);
+
+        $size = array(303,237);
+        if ( is_array( $size ) ) {
+            $instance['width'] = $size[0];
+            $instance['height'] = $size[1];
+        }
+        $instance['width'] = abs( $instance['width'] );
+        $instance['height'] = abs( $instance['height'] );
+
+        $attr = array();
+        $attr['alt'] = ( !empty( $instance['alt'] ) ) ? $instance['alt'] : $instance['title'];
+        if (is_array($size)) {
+            $attr['class'] = 'attachment-'.join('x',$size);
+        } else {
+            $attr['class'] = 'attachment-'.$size;
+        }
+        $attr['style'] = '';
+
+        $attr = apply_filters( 'landing_page_feature_image_attributes', $attr, $instance );
+
+        if( abs( $instance['attachment_id'] ) > 0 ) {
+            $output .= wp_get_attachment_image($instance['attachment_id'], $size, false, $attr);
+        }
+
+        return $output;
+    }
 }
 add_action( 'init', array( 'MSDLandingPage', 'add_metaboxes' ) );

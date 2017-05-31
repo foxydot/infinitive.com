@@ -62,7 +62,6 @@ class Feature_Block_Widget extends WP_Widget {
      * @return string image html
      */
     private function get_image_html( $instance, $include_link = 0 ) {
-
         $output = '';
 
         $size = array(303,237);
@@ -110,7 +109,6 @@ class Feature_Block_Widget extends WP_Widget {
             'feature',
             'feature-'.$slug,
             $instance['css-classes'],
-            'feature-'.$eo,
             'clearfix',
         ));
         //think about filtering the classes here
