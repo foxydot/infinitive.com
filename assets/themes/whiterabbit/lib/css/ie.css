@@ -1,3 +1,6 @@
 .sectioned-page-wrapper .section-video.section .section-body .wrap .column-3.section-content .doodle:before {
   font-size: 0.3em;
 }
+.widget_feature_block.widget a.feature .wrapper .feature-title {
+  width: 100%;
+}
