@@ -721,3 +721,16 @@ if(!function_exists('msdlab_custom_hooks_management')){
 function get_menu_tree_header($id){
     return get_post_meta($id,'_msdlab_subtitle',true);
 }
+
+//add_filter('genesis_get_image','msdlab_genesis_get_image_add_alt', 10, 6);
+function msdlab_genesis_get_image_add_alt($output, $args, $id, $html, $url, $src){
+    preg_match('/alt="(.*?)"/i',$output,$matches);
+    if($matches[1] == ''){
+        $alt_array = get_post_meta($id,'_wp_attachment_image_alt');
+        ts_data($alt_array);
+        $alt = $alt_array[0];
+        $output = preg_replace('/alt=""/i','alt="'.$alt.'"',$output);
+        ts_data($output);
+    }
+    return $output;
+}

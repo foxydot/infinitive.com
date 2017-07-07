@@ -219,7 +219,8 @@ if (!class_exists('MSDTeamCPT')) {
             $defaults = array(
                 'posts_per_page' => -1,
                 'post_type' => 'team_member',
-                'order_by' => '_team_last_name',
+                'orderby' => 'meta_value',
+                'meta_key' => '_team_member__team_last_name',
                 'order' => ASC
             );
             $args = array_merge($defaults,$args);

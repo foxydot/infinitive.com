@@ -210,11 +210,11 @@ function msdlab_grid_loop_content() {
 function msdlab_grid_loop_header() {
     global $_genesis_loop_args;
     if ( in_array( 'genesis-feature', get_post_class() ) ) {
-                printf( '<a href="%s" title="%s" class="featured_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image() );           
+                printf( '<a href="%s" title="%s" class="featured_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image() );
           
     }
     else {
-        printf( '<a href="%s" title="%s" class="grid_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image() );  
+        printf( '<a href="%s" title="%s" class="grid_image_wrapper">%s</a>', get_permalink(), the_title_attribute('echo=0'), genesis_get_image() );
     }
 }
 function msdlab_get_comments_number(){ //not used
