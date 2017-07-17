@@ -114,3 +114,8 @@ function msdlab_change_genesis_get_image_args($args){
     }
     return $args;
 }
+
+add_filter('img_caption_shortcode_width','msdlab_remove_img_caption_shortcode_width');
+function msdlab_remove_img_caption_shortcode_width($width){
+    return 0;
+}
