@@ -11,9 +11,9 @@ function msdlab_do_social_footer(){
     
     if($msd_social && get_option('msdsocial_street')!=''){
         $address = '| <span itemprop="streetAddress">'.get_option('msdsocial_street').'</span>, <span itemprop="streetAddress">'.get_option('msdsocial_street2').'</span> | <span itemprop="addressLocality">'.get_option('msdsocial_city').'</span>, <span itemprop="addressRegion">'.get_option('msdsocial_state').'</span> <span itemprop="postalCode">'.get_option('msdsocial_zip').'</span> | '.$msd_social->get_digits(true,'');
-        $copyright .= '&copy; Copyright '.date('Y').' '.$msd_social->get_bizname().' &middot; All Rights Reserved ';
+        $copyright .= '&copy; '.date('Y').' '.$msd_social->get_bizname().' &middot; All Rights Reserved ';
     } else {
-        $copyright .= '&copy; Copyright '.date('Y').' '.get_bloginfo('name').' &middot; All Rights Reserved ';
+        $copyright .= '&copy; '.date('Y').' '.get_bloginfo('name').' &middot; All Rights Reserved ';
     }
     print '<div class="row">';  
     print '<div class="copy">';  
