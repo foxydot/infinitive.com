@@ -175,7 +175,7 @@ body {
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-3 > div {
   padding: 2em;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #ffffff;
   text-align: center;
   font-size: 1.25em;
 }
@@ -184,7 +184,7 @@ body {
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-3 > div a,
 .sectioned-page-wrapper .section.section-solving .section-body .column-3 > div a:hover {
-  color: #FFF;
+  color: #FF7D23;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-3 > div img {
   margin: 0;
