@@ -172,12 +172,13 @@ body {
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-3 h4 {
   padding: 0 0.4em;
+  font-size: 3.8rem;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-3 > div {
   padding: 2em;
   background-color: #ffffff;
   text-align: center;
-  font-size: 1.25em;
+  font-size: 1.45em;
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-3 > div br {
   height: 0;
