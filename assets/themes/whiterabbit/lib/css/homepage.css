@@ -172,21 +172,25 @@ body {
 }
 .sectioned-page-wrapper .section.section-solving .section-body .column-3 h4 {
   padding: 0 0.4em;
+  font-size: 3.8rem;
 }
-.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half {
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 > div {
   padding: 2em;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #ffffff;
   text-align: center;
-  min-height: 190px;
+  font-size: 1.45em;
 }
-.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half a,
-.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half a:hover {
-  color: #FFF;
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 > div br {
+  height: 0;
 }
-.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half img {
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 > div a,
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 > div a:hover {
+  color: #FF7D23;
+}
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 > div img {
   margin: 0;
 }
-.sectioned-page-wrapper .section.section-solving .section-body .column-3 div.one-half.last.last-child img {
+.sectioned-page-wrapper .section.section-solving .section-body .column-3 > div.last.last-child img {
   margin: 4px auto;
 }
 .sectioned-page-wrapper .section.section-obsessed {
