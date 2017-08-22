@@ -8110,7 +8110,6 @@ Site Footer
 }
 .page-template-page-sectioned .site-container .site-inner {
   background: transparent;
-  padding: 0;
   margin: 0;
 }
 .page-template-page-sectioned .site-container .site-inner .content-sidebar-wrap {
@@ -8908,6 +8907,102 @@ div.calloutbox h3 {
 }
 .sitemap main.content .hidden-on-sitemap {
   display: none;
+}
+.partition-solutions .site-inner .content {
+  padding: 0;
+}
+.partition-solutions .site-inner .content article.entry {
+  margin: 0;
+  padding: 0;
+}
+.partition-solutions .sectioned-page-wrapper .section .section-subtitle,
+.partition-solutions .sectioned-page-wrapper .section h4 {
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 39px;
+  font-size: 3.9rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: #FFF;
+  background-color: #FF7D23;
+  line-height: 1.25;
+  margin: 0;
+}
+.partition-solutions .sectioned-page-wrapper .section .section-subtitle {
+  margin-bottom: 2rem;
+}
+.partition-solutions .sectioned-page-wrapper .section h3 {
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 1.625;
+  font-weight: 600;
+  color: #7F7F7F;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  text-transform: none;
+  text-align: left;
+}
+.partition-solutions .sectioned-page-wrapper .section .section-body .wrap {
+  padding: 2rem 0;
+}
+.partition-solutions .sectioned-page-wrapper .section .section-body .wrap h4 {
+  background: none;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 1.625;
+  font-weight: 400;
+  color: #7F7F7F;
+}
+.partition-solutions .sectioned-page-wrapper .section .section-body:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.partition-solutions .sectioned-page-wrapper .section.bkg-grey {
+  background-color: #F2F7FA;
+}
+.partition-solutions .sectioned-page-wrapper .section.bkg-blue {
+  background-color: #0F6BAE;
+  color: #FFF;
+}
+.partition-solutions .sectioned-page-wrapper .section.bkg-blue .section-title h3 {
+  color: #FFF;
+}
+.partition-solutions .sectioned-page-wrapper .section.bkg-white {
+  background-color: #FFF;
+}
+.partition-solutions .sectioned-page-wrapper .section.bkg-orange {
+  background-color: #FF7D23;
+  color: #FFF;
+}
+.partition-solutions .sectioned-page-wrapper .section.bkg-orange .wrap {
+  padding-top: 0;
+}
+.partition-solutions .sectioned-page-wrapper .section.bkg-orange h3 {
+  color: #FFF;
+}
+.partition-solutions .sectioned-page-wrapper .section.bkg-orange .section-title h3 {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #FFF;
+  text-align: center;
+}
+.partition-solutions .sectioned-page-wrapper .section.bkg-orange .button {
+  margin: 0 auto;
+  background-color: #FFF;
+  color: #FF7D23;
+}
+.partition-solutions .sectioned-page-wrapper .section.bkg-orange .button:hover {
+  background-color: #FF7D23;
+  color: #FFF;
 }
 .nav-responsive ul,
 .nav-responsive li,
