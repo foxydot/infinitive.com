@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
        var regexp = /href="([(?!https?:\/\/)|(\#)].*)"/i;
        var matches_array = content.match(regexp);
        if(matches_array.length > 0){
-           alert('You have links that start without http(s):// or #. Did you mean to do this?');
+          // alert('You have links that start without http(s):// or #. Did you mean to do this?');
        }
    });
 });
