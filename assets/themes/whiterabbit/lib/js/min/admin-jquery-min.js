@@ -1,1 +1,1 @@
-jQuery(document).ready(function($){$("textarea").blur(function(){var t=$(this).val(),a=/href="([(?!https?:\/\/)|(\#)].*)"/i;t.match(a).length>0&&alert("You have links that start without http(s):// or #. Did you mean to do this?")})});
+jQuery(document).ready(function($){$("textarea").blur(function(){var t=$(this).val(),e=/href="([(?!https?:\/\/)|(\#)].*)"/i;t.match(e).length})});

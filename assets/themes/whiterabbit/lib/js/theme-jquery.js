@@ -50,4 +50,14 @@ jQuery(document).ready(function($) {
            $(".sticky-wrapper").css('height','auto');
        }
     });
+
+    //internal soft scroll
+    $('a[href^="#"]').click(function(){
+        var target = $(this.hash);
+        var headerheight = $(".site-header").outerHeight();
+        $('html,body').animate({
+            scrollTop: target.offset().top - (headerheight + 20)
+        }, 1000);
+        return false;
+    });
 });
