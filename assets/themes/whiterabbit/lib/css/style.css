@@ -8992,13 +8992,13 @@ div.calloutbox h3 {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@offwhite', endColorstr='@white', GradientType=0);
   /* IE6-9 */
 }
+.partition-solutions .sectioned-page-wrapper .section.bkg-grad-white-grey .wrap {
+  padding: 6em 0;
+}
 .partition-solutions .sectioned-page-wrapper .section.bkg-orange {
-  padding: 2em;
+  padding: 6em 0;
   background-color: #FF7D23;
   color: #FFF;
-}
-.partition-solutions .sectioned-page-wrapper .section.bkg-orange .wrap {
-  padding-top: 0;
 }
 .partition-solutions .sectioned-page-wrapper .section.bkg-orange h3 {
   color: #FFF;
