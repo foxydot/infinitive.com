@@ -8953,11 +8953,13 @@ div.calloutbox h3 {
 .partition-solutions .sectioned-page-wrapper .section .section-body .wrap h4 {
   background: none;
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.625;
   font-weight: 400;
   color: #7F7F7F;
+  display: flex;
+  align-items: center;
 }
 .partition-solutions .sectioned-page-wrapper .section .section-body:after {
   content: ".";
@@ -9010,6 +9012,11 @@ div.calloutbox h3 {
   text-align: center;
 }
 .partition-solutions .sectioned-page-wrapper .section.bkg-orange .button {
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.625;
   margin: 0 auto;
   background-color: #FFF;
   color: #FF7D23;

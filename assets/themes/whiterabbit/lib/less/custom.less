@@ -595,11 +595,13 @@ div.calloutbox{
           padding: 2rem 0;
           h4{
             background: none;
-            .customserif(2);
+            .customserif(2.4);
             font-weight: 400;
             color: @mdgrey;
+            display: flex;
+            align-items: center;
+            img{}
           }
-          img{}
         }
         &:after{
           .msd-clearfix;
@@ -646,6 +648,7 @@ div.calloutbox{
         text-align: center;
       }
       .button{
+        .custombody(1.8);
         margin: 0 auto;
         background-color: @white;
         color: @orange;
