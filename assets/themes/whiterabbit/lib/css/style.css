@@ -8962,7 +8962,7 @@ div.calloutbox h3 {
   align-items: center;
 }
 .partition-solutions .sectioned-page-wrapper .section .section-body .wrap h4 img {
-  max-width: 40%;
+  max-width: 33%;
 }
 .partition-solutions .sectioned-page-wrapper .section .section-body:after {
   content: ".";
@@ -9027,6 +9027,10 @@ div.calloutbox h3 {
 .partition-solutions .sectioned-page-wrapper .section.bkg-orange .button:hover {
   background-color: #FF7D23;
   color: #FFF;
+}
+.partition-solutions .sectioned-page-wrapper .section.section-overview > .section-body > .wrap > .row {
+  display: flex;
+  align-items: center;
 }
 .nav-responsive ul,
 .nav-responsive li,
