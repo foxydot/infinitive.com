@@ -8961,6 +8961,9 @@ div.calloutbox h3 {
   display: flex;
   align-items: center;
 }
+.partition-solutions .sectioned-page-wrapper .section .section-body .wrap h4 img {
+  max-width: 40%;
+}
 .partition-solutions .sectioned-page-wrapper .section .section-body:after {
   content: ".";
   display: block;
