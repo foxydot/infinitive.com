@@ -1,0 +1,231 @@
+/* Import Fonts
+------------------------------------------------------------ */
+/* Font Stacks */
+.customsansserif,
+.customsanserif {
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.625;
+}
+.fontawesome {
+  font-family: "FontAwesome";
+}
+/* Colors */
+/* Neutrals */
+/* Buttons */
+.button {
+  padding: 0.1em 0.4em;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 30px;
+  font-size: 3rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #FFF;
+  font-weight: 700;
+  display: table;
+  margin: 12px 0;
+  text-decoration: none;
+  background-color: #ff7d23;
+  border: 1px solid #FFF;
+}
+.button:hover,
+.button:active,
+.button a:hover {
+  padding: 0.1em 0.4em;
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 30px;
+  font-size: 3rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #FFF;
+  font-weight: 700;
+  display: table;
+  margin: 12px 0;
+  text-decoration: none;
+  background-color: #ff7d23;
+  border: 1px solid #FFF;
+  background-color: rgba(255, 125, 35, 0.8);
+}
+/* Special header */
+/* Clears */
+.msd-clearfix {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.nav-responsive ul,
+.nav-responsive li,
+.nav-responsive li a {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.nav-responsive a#pull,
+.subnav-responsive a#subpull {
+  display: none;
+}
+/* Responsive Design Custom Styles
+------------------------------------------------------------ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Retina-specific stuff here */
+  .sidebar .widget.widget_cta .widget-wrap .textwidget .readmore {
+    background-image: url(../img/LetsTalkCTAbubble122x44@2x.png);
+  }
+  .sidebar .widget.widget_segment .widget-title::before {
+    background-image: url("../img/caseStudyMagGlass46x52@2x.png");
+  }
+}
+/* Smaller screens */
+@media only screen and (max-width: 1270px) {
+  div.wrap {
+    padding: 0 15px;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  /* Enter Your Custom Styles Here */
+  div.wrap {
+    padding: 0 15px;
+  }
+  .header-image .site-header {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .header-image .site-header .title-area {
+    width: 100%;
+    margin: 0 auto;
+    float: none;
+  }
+  .header-image .site-header .title-area .site-title a {
+    width: 100%;
+    margin: 1rem auto;
+    float: none;
+  }
+  .header-image .site-header .nav-primary {
+    margin: 0 auto;
+    float: none;
+  }
+  .nav-primary {
+    float: none;
+    display: block;
+  }
+  .nav-responsive {
+    text-align: left;
+    border-bottom: 0;
+  }
+  .nav-responsive ul {
+    display: none;
+    height: auto;
+  }
+  .nav-responsive a#pull {
+    display: inline-block;
+    width: 100%;
+    text-indent: 20px;
+    background: #FF7D23;
+    min-height: 46px;
+    padding-top: 14px;
+    position: relative;
+  }
+  .nav-responsive a#pull > strong {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  .nav-responsive a#pull ul#mobile_menu {
+    margin-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .nav-responsive a#pull ul#mobile_menu li {
+    display: block;
+    list-style: none;
+    padding: 0;
+  }
+  .nav-responsive a#pull ul#mobile_menu li a {
+    background: #FF7D23;
+    color: #FFF;
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.2rem;
+  }
+  .nav-responsive a#pull ul#mobile_menu li a .toggle-switch {
+    right: 15px;
+  }
+  .nav-responsive a#pull ul#mobile_menu li a:hover {
+    background: #ff9b56;
+  }
+  .nav-responsive a#pull ul#mobile_menu li .toggle-switch {
+    margin-right: 12px;
+  }
+  .nav-responsive a#pull ul#mobile_menu li ul.sub-menu {
+    margin-top: 0;
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: none;
+  }
+  .nav-responsive a#pull ul#mobile_menu li ul.sub-menu li {
+    display: block;
+    list-style: none;
+  }
+  .nav-responsive a#pull ul#mobile_menu li ul.sub-menu li a {
+    text-indent: 40px;
+  }
+  .nav-responsive a#pull ul#mobile_menu li ul.sub-menu li ul li a {
+    text-indent: 60px;
+  }
+  .nav-responsive a#pull ul#mobile_menu li ul.sub-menu li ul li ul li a {
+    text-indent: 80px;
+  }
+  .nav-responsive a#pull ul#mobile_menu li.separator {
+    display: none;
+  }
+  .nav-responsive a#pull ul#mobile_menu li.current-menu-item a {
+    background: #ffaa70;
+  }
+  .nav-responsive a#pull:hover {
+    text-decoration: none;
+  }
+  .nav-responsive a#pull:after {
+    content: "\f039";
+    font-family: 'FontAwesome';
+    font-size: 2.2rem;
+    text-indent: 0;
+    color: #FFF;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+}
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  /* Enter Your Custom Styles Here */
+  .mobile-only {
+    display: block;
+  }
+}
+@media only screen and (max-width: 479px) {
+  /* Enter Your Custom Styles Here */
+  .tablepress td,
+  .tablepress th {
+    display: inline-block;
+  }
+}
+@media only screen and (max-width: 319px) {
+  /* Enter Your Custom Styles Here */
+}
