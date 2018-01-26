@@ -1,0 +1,51 @@
+/*
+Site Footer
+---------------------------------------------------------------------------------------------------- */
+.site-footer{
+  background-color: @dkgrey;
+  .customserif(1.2);
+  text-align: center;
+  padding: 0;
+  color: @white;
+  .wrap{
+    position: relative;
+    .copy,.social{
+      .make-sm-column(12);
+    } 
+    .social{
+      text-align: center;
+      .social-media{
+        float: none;
+        margin: 0 auto;
+        a.fa{
+          float: none;
+          display: inline-block;
+        }
+      }
+    }
+    p {
+      margin-bottom: 0;
+    }
+    a {
+      color: @offwhite;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1023px) {
+  .site-footer{
+    text-align: left;
+    .wrap{
+      .copy,.social{
+        .make-sm-column(6);
+      } 
+      .social{
+        text-align: right;
+        .social-media{
+          flaot: right;
+        }
+      }
+    }
+  }
+}
