@@ -3219,6 +3219,13 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/lib\/template\/background-meta.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lib\/template\/background-meta.php",
+		"oF": 0
+		},
 	"\/lib\/template\/banner-meta.php": {
 		"cB": 0,
 		"ft": 8192,

@@ -9,7 +9,7 @@ add_action( 'admin_print_scripts', 'my_metabox_styles' );
 add_action( 'genesis_entry_header', 'msdlab_do_post_subtitle', 13);
 
 function add_custom_metaboxes(){
-    global $subtitle_metabox,$banner_content;
+    global $subtitle_metabox,$banner_content,$content_bkg;
     $types = array('post','page','msd_video','team_member','msd_news','msd_casestudy','msd_news_page_genesis-cpt-archive-msd_news');
     $subtitle_metabox = new WPAlchemy_MetaBox(array
     (
@@ -35,12 +35,26 @@ function add_custom_metaboxes(){
         'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
         'prefix' => '_msdlab_' // defaults to NULL
     ));
+    $content_bkg = new WPAlchemy_MetaBox(array
+    (
+        'id' => '_bkg',
+        'title' => 'Content Background',
+        'types' => $types,
+        'context' => 'normal', // same as above, defaults to "normal"
+        'priority' => 'high', // same as above, defaults to "high"
+        'template' => get_stylesheet_directory() . '/lib/template/background-meta.php',
+        'autosave' => TRUE,
+        'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
+        'prefix' => '_msdlab_' // defaults to NULL
+    ));
+
 }
 
 function subtitle_footer_hook()
 {
     ?><script type="text/javascript">
         jQuery('#titlediv').before(jQuery('#_banner_metabox'));
+        jQuery('#titlediv').after(jQuery('#_bkg_metabox'));
         jQuery('#titlediv').after(jQuery('#_subtitle_metabox'));
     </script><?php
 }
@@ -66,4 +80,15 @@ function msdlab_do_post_subtitle() {
     $subtitle = sprintf( '<h2 class="entry-subtitle">%s</h2>', apply_filters( 'genesis_post_title_text', $subtitle ) );
     echo apply_filters( 'genesis_post_title_output', $subtitle ) . "\n";
 
+}
+
+add_filter( 'genesis_attr_site-inner', 'msdlab_add_content_background_image', 10);
+
+
+function msdlab_add_content_background_image($attributes){
+    global $content_bkg;
+    $content_bkg->the_meta();
+    $img = $content_bkg->get_the_value('background-image');
+    $attributes['style'] = 'background: url('.$img.') center center;background-size: cover;';
+    return $attributes;
 }
