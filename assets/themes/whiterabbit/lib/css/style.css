@@ -8248,6 +8248,82 @@ Site Footer
 .page-title-area .banner .archive-title a:hover {
   color: #FFF;
 }
+.box {
+  border: 1px solid #959595;
+  border-radius: 4px;
+  padding: 1.5em 1.5em 3em;
+  margin-bottom: 1.5em;
+  position: relative;
+}
+.box:after:before,
+.box:after:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.box:after:after {
+  clear: both;
+}
+.box:after:before,
+.box:after:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.box:after:after {
+  clear: both;
+}
+.box .button-wrapper {
+  position: absolute;
+  bottom: 1.5em;
+}
+.box.bkg-white {
+  background-color: #FFF;
+}
+.box.bkg-ltgray {
+  background-color: #959595;
+}
+.box.bkg-medgray {
+  background-color: #7F7F7F;
+}
+.box.bkg-dkgray {
+  background-color: #3D3C3D;
+}
+.box.bkg-orange {
+  background-color: #FF7D23;
+}
+.box.bkg-blue {
+  background-color: #0F6BAE;
+}
+.box.border-white {
+  border-color: #FFF;
+}
+.box.border-ltgray {
+  border-color: #959595;
+}
+.box.border-medgray {
+  border-color: #7F7F7F;
+}
+.box.border-dkgray {
+  border-color: #3D3C3D;
+}
+.box.border-orange {
+  border-color: #FF7D23;
+}
+.box.border-blue {
+  border-color: #0F6BAE;
+}
+.box.align-left {
+  text-align: left;
+}
+.box.align-center {
+  text-align: center;
+}
+.box.align-right {
+  text-align: right;
+}
 body.page.press main.content article .entry-content h2.first-child,
 body.page.resources main.content article .entry-content h2.first-child {
   font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;

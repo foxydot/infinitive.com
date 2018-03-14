@@ -20,6 +20,40 @@
   }
 }
 
+//box shortcode
+
+.box{
+  border: 1px solid @ltgrey;
+  border-radius: 4px;
+  padding: 1.5em 1.5em 3em;
+  margin-bottom: 1.5em;
+  position: relative;
+  &:after{
+    .clearfix;
+  }
+  .button-wrapper{
+    position: absolute;
+    bottom: 1.5em;
+  }
+  &.bkg-white{background-color: @white;}
+  &.bkg-ltgray{background-color: @ltgrey;}
+  &.bkg-medgray{background-color: @medgrey;}
+  &.bkg-dkgray{background-color: @dkgrey;}
+  &.bkg-orange{background-color: @orange;}
+  &.bkg-blue{background-color: @blue;}
+
+  &.border-white{border-color: @white;}
+  &.border-ltgray{border-color: @ltgrey;}
+  &.border-medgray{border-color: @medgrey;}
+  &.border-dkgray{border-color: @dkgrey;}
+  &.border-orange{border-color: @orange;}
+  &.border-blue{border-color: @blue;}
+
+  &.align-left{text-align: left;}
+  &.align-center{text-align: center;}
+  &.align-right{text-align: right;}
+}
+
 //Special Pages
 body.page{
   &.press,
