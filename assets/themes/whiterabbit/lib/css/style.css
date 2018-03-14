@@ -6175,9 +6175,6 @@ table {
   margin-bottom: 4rem;
   width: 100%;
 }
-tbody {
-  border-bottom: 1px solid #ddd;
-}
 th,
 td {
   text-align: left;
@@ -6187,13 +6184,15 @@ th {
   text-transform: uppercase;
 }
 td {
-  border-top: 1px solid #ddd;
   padding: 6px 0;
   padding: 0.6rem 0;
 }
 .container {
   max-width: none;
   width: 100%;
+}
+tbody {
+  border: 0;
 }
 /*
 Structure and Layout
