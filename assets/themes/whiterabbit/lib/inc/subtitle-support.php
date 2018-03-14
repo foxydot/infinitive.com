@@ -89,6 +89,8 @@ function msdlab_add_content_background_image($attributes){
     global $content_bkg;
     $content_bkg->the_meta();
     $img = $content_bkg->get_the_value('background-image');
-    $attributes['style'] = 'background: url('.$img.') center center;background-size: cover;';
+    if(count($img)>0) {
+        $attributes['style'] = 'background: url(' . $img . ') center center;background-size: cover;';
+    }
     return $attributes;
 }
