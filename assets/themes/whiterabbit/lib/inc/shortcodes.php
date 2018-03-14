@@ -357,3 +357,16 @@ function msdlab_phone_wrapped_video($atts){
       $video = wp_oembed_get($video_url,array('width'=>$width));
       return '<div class="iphone-wrapper">'.$video.'</div>';
 }
+
+add_shortcode('box','msdlab_box_shortcode_output');
+
+function msdlab_box_shortcode_output($atts, $content){
+    extract(shortcode_atts( array(
+        'bkg' => 'white',
+        'align' => 'left',
+        'border' => 'orange',
+    ), $atts ));
+    $content = do_shortcode($content);
+    $content = trim_whitespace($content);
+    return '<div class="box align-'.$align.' bkg-'.$bkg.' border-'.$border.'">'.$content.'</div>';
+}
