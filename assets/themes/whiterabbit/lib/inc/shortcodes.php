@@ -339,7 +339,14 @@ function column_shortcode($atts, $content = null){
 add_shortcode('columns','column_shortcode');
 
 function row_shortcode($atts, $content = null){
-    return '<div class="row">'.do_shortcode($content).'</div>';
+    extract(shortcode_atts( array(
+        'bkg' => 'white',
+        'align' => 'left',
+        'border' => 'orange',
+    ), $atts ));
+    $style = '';
+    if($align == 'center'){$style = ' style="margin-left: auto;margin-right: auto;"';}
+    return '<div class="row"'.$style.'>'.do_shortcode($content).'</div>';
 }
 
 add_shortcode('row','row_shortcode'); 
