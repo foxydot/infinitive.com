@@ -60,4 +60,6 @@ jQuery(document).ready(function($) {
         }, 1000);
         return false;
     });
+
+    $('.row .box, .section-content .box').equalHeights();
 });
