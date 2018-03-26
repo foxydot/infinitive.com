@@ -20,7 +20,7 @@ class MSDLandingPage{
         public static function get_instance() {
 
                 if( null == self::$instance ) {
-                        self::$instance = new MSDSectionedPage();
+                        self::$instance = new MSDLandingPage();
                 } 
 
                 return self::$instance;
@@ -30,7 +30,8 @@ class MSDLandingPage{
         /**
          * Initializes the plugin by setting filters and administration functions.
          */
-   function __construct() {    
+   function __construct() {
+       add_shortcode('feature-box',array(&$this,'feature_box_shortcode_callback'));
         }
         
     function add_metaboxes(){
@@ -47,6 +48,18 @@ class MSDLandingPage{
             'mode' => WPALCHEMY_MODE_EXTRACT, // defaults to WPALCHEMY_MODE_ARRAY
             'prefix' => '_msdlab_', // defaults to NULL
         ));
+    }
+
+    function feature_box_shortcode_callback($atts,$content){
+        $feature = (shortcode_atts( array(
+            'resource-type' => '',
+            'resource-title' => '',
+            'link' => '',
+            'resource-image' => '',
+            'css-classes' => '',
+            'count' => '1'
+        ), $atts ));
+        return $this->default_output($feature,$feature['count']);
     }
     
     function default_output($feature,$i){

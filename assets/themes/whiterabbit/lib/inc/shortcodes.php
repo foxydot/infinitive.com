@@ -182,6 +182,9 @@ function msdlab_career_features_handler(){
 //Bootstrap columns//
 add_shortcode('row','bs_row');
 add_shortcode('column','bs_column');
+add_shortcode('_column','bs_column');
+add_shortcode('__column','bs_column');
+add_shortcode('___column','bs_column');
 
   /*--------------------------------------------------------------------------------------
     *
@@ -262,7 +265,7 @@ add_shortcode('column','bs_column');
     $class .= ( $atts['xclass'] )                                       ? ' ' . $atts['xclass'] : '';
       
     $data_props = parse_data_attributes( $atts['data'] );
-      
+      //ts_data($content);
     return sprintf( 
       '<div class="%s"%s>%s</div>',
       esc_attr( $class ),
@@ -372,8 +375,9 @@ function msdlab_box_shortcode_output($atts, $content){
         'bkg' => 'white',
         'align' => 'left',
         'border' => 'orange',
+        'class' => '',
     ), $atts ));
     $content = do_shortcode($content);
     $content = trim_whitespace($content);
-    return '<div class="box align-'.$align.' bkg-'.$bkg.' border-'.$border.'">'.$content.'</div>';
+    return '<div class="box align-'.$align.' bkg-'.$bkg.' border-'.$border.' '.$class.'">'.$content.'</div>';
 }
