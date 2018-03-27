@@ -9516,7 +9516,8 @@ div.calloutbox h3 {
 }
 .new-solutions .sectioned-page-wrapper .section.section-what-how-we-deliver .section-title,
 .new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you .section-title,
-.new-solutions .sectioned-page-wrapper .section.section-what-we-think .section-title {
+.new-solutions .sectioned-page-wrapper .section.section-what-we-think .section-title,
+.new-solutions .sectioned-page-wrapper .section.section-who-we-work-with .section-title {
   padding-top: 5em;
   background-position: center 2em;
   background-repeat: no-repeat;
@@ -9553,6 +9554,9 @@ div.calloutbox h3 {
 }
 .new-solutions .sectioned-page-wrapper .section.section-what-we-think .section-title {
   background-image: url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/thought_icon@2x.png);
+}
+.new-solutions .sectioned-page-wrapper .section.section-who-we-work-with .section-title {
+  background-image: url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/handshake_icon@2x.png);
 }
 .nav-responsive ul,
 .nav-responsive li,
