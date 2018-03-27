@@ -31,7 +31,6 @@ class MSDLandingPage{
          * Initializes the plugin by setting filters and administration functions.
          */
    function __construct() {
-       add_shortcode('feature-box',array(&$this,'feature_box_shortcode_callback'));
         }
         
     function add_metaboxes(){
