@@ -9521,6 +9521,10 @@ div.calloutbox h3 {
 .new-solutions .sectioned-page-wrapper .section.section-what-how-we-deliver .section-title {
   background-image: url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/delivery_icon@2x.png);
 }
+.new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you {
+  margin-top: 2em;
+  border: 1px solid #FF7D23;
+}
 .new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you .section-title {
   background-image: url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/lightbulb_icon@2x.png);
 }
