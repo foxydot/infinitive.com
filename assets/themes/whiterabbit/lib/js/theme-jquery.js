@@ -61,5 +61,5 @@ jQuery(document).ready(function($) {
         return false;
     });
 
-    $('.row .box, .section-content .box').equalHeights();
+    $('.row .box, .section-content .box').equalHeightColumns();
 });
