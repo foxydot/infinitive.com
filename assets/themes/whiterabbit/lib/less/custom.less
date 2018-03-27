@@ -700,3 +700,61 @@ div.calloutbox{
     }
   }
 }
+
+
+.new-solutions{ //custom sections
+  .sectioned-page-wrapper {
+    .section{
+      &.section-what-how-we-deliver,
+      &.section-what-can-we-solve-with-you,
+      &.section-what-we-think{
+        .section-title{
+          padding-top: 5em;
+          background-position: center 2em;
+          background-repeat: no-repeat;
+          background-size: 130px;
+        }
+      }
+      &.section-what-how-we-deliver{
+         .section-title{
+           background-image:url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/delivery_icon@2x.png);
+         }
+       }
+      &.section-what-can-we-solve-with-you{
+        .section-title{
+          background-image:url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/lightbulb_icon@2x.png);
+        }
+        .section-body{
+          .gform_wrapper{
+            form{
+              .gform_heading{
+                text-align: center;
+                font-size: 1.6em;
+              }
+              .gform_body{
+                label.gfield_label{
+                  display: none;
+                }
+                width: 65%;
+                margin: 0 auto;
+                font-size: 1.2em;
+              }
+              .gform_footer{
+                text-align: center;
+                input[type=submit]{
+                  font-size: 1.8em;
+                  padding: 0.4em;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.section-what-we-think{
+        .section-title{
+          background-image:url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/thought_icon@2x.png);
+        }
+      }
+    }
+  }
+}

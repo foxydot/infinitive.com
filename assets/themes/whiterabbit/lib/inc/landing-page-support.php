@@ -76,9 +76,7 @@ class MSDLandingPage{
         $slug = sanitize_title_with_dashes(str_replace('/', '-', $title));
         
         $wrapped_title = trim($title) != ''?apply_filters('msdlab_landing_page_output_title','<div class="feature-title">
-            <h3 class="wrap">
                 '.$title.'
-            </h3>
         </div>'):'';
         $link = $feature['link'];
         $type = $feature['resource-type'];
@@ -95,11 +93,11 @@ class MSDLandingPage{
         $ret = '
         <a id="'.$slug.'" class="'.implode(' ', $classes).'" href="'.$link.'">
             <div class="wrapper">
-            <div class="feature-img">
-                '.$featured_image.'
-            </div>
             <div class="feature-type">
                 '.$type.'
+            </div>
+            <div class="feature-img">
+                '.$featured_image.'
             </div>
                 '.$wrapped_title.'
             </div>

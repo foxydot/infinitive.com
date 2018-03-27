@@ -8218,6 +8218,158 @@ Site Footer
     margin-left: 0px;
   }
 }
+.new-solutions.page-template-page-sectioned .site-container .site-inner {
+  background: transparent;
+  margin: 0;
+}
+.new-solutions.page-template-page-sectioned .site-container .site-inner .content-sidebar-wrap {
+  background: transparent;
+}
+.new-solutions .sectioned-page-wrapper {
+  position: relative;
+  z-index: 10;
+}
+.new-solutions .sectioned-page-wrapper .section {
+  background-repeat: no-repeat;
+  padding: 0;
+  position: relative;
+}
+.new-solutions .sectioned-page-wrapper .section .section-subtitle,
+.new-solutions .sectioned-page-wrapper .section h4 {
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 39px;
+  font-size: 3.9rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  color: #FFF;
+  background-color: #FF7D23;
+  line-height: 1.25;
+  margin: 0;
+}
+.new-solutions .sectioned-page-wrapper .section .section-subtitle {
+  margin-bottom: 2rem;
+}
+.new-solutions .sectioned-page-wrapper .section h3 {
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 39px;
+  font-size: 3.9rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: #FFF;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+}
+.new-solutions .sectioned-page-wrapper .section .section-title h3 {
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 42px;
+  font-size: 4.2rem;
+  line-height: 1.625;
+  font-weight: 700;
+  text-align: center;
+  color: #FF7D23;
+  padding-top: 2rem;
+  margin-bottom: 0;
+}
+.new-solutions .sectioned-page-wrapper .section .section-body .wrap {
+  padding: 2rem 0;
+}
+.new-solutions .sectioned-page-wrapper .section .section-body .wrap table {
+  margin-bottom: 0;
+}
+.new-solutions .sectioned-page-wrapper .section .section-body:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.new-solutions .sectioned-page-wrapper .section.bkg-grey {
+  background-color: #F2F7FA;
+}
+.new-solutions .sectioned-page-wrapper .section.bkg-blue {
+  background-color: #0F6BAE;
+  color: #FFF;
+}
+.new-solutions .sectioned-page-wrapper .section.bkg-blue .section-title h3 {
+  color: #FFF;
+}
+.new-solutions .sectioned-page-wrapper .section.bkg-white {
+  background-color: #FFF;
+}
+.new-solutions .sectioned-page-wrapper .section.title-bar .section-title h3 {
+  padding-bottom: 2rem;
+}
+.new-solutions .sectioned-page-wrapper .section.title-bar.title-bar-blue .section-title {
+  background-color: #0F6BAE;
+}
+.new-solutions .sectioned-page-wrapper .section.title-bar.title-bar-blue .section-title h3 {
+  color: #FFF;
+}
+.new-solutions .sectioned-page-wrapper .section.title-blue .section-title h3 {
+  color: #0F6BAE;
+}
+.new-solutions a.feature {
+  margin-bottom: 1em;
+}
+.new-solutions a.feature .wrapper {
+  background: #FFF;
+  text-align: center;
+  border: 1px solid #FF7D23;
+}
+.new-solutions a.feature .wrapper .feature-type {
+  font-family: "Open Sans", "Open Sans Fallback", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-size: 36px;
+  font-size: 3.6rem;
+  line-height: 1.625;
+  font-family: "generally_speakingregular", "Trebuchet MS", Calibri, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #FFF;
+  background: #FF7D23;
+  width: auto;
+  display: block;
+  padding: 0.2em 1em;
+}
+.new-solutions a.feature .wrapper .feature-img {
+  height: 150px;
+  width: auto;
+  padding: 0.4em;
+  overflow: hidden;
+}
+.new-solutions a.feature .wrapper .feature-img img {
+  height: 100%;
+}
+.new-solutions a.feature .wrapper .feature-title {
+  height: 4em;
+  overflow: hidden;
+  color: #FFF;
+  background: #FF7D23;
+  padding: 0.8em 1em;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1.25;
+  font-weight: 400;
+}
+.new-solutions a.feature:hover {
+  text-decoration: none;
+}
+.new-solutions a.feature.blue .wrapper {
+  border-color: #0F6BAE;
+}
+.new-solutions a.feature.blue .wrapper .feature-type,
+.new-solutions a.feature.blue .wrapper .feature-title {
+  background-color: #0F6BAE;
+}
 .page-title-area {
   background: #7F7F7F;
 }
@@ -9106,6 +9258,42 @@ div.calloutbox h3 {
 .partition-solutions .sectioned-page-wrapper .section.section-overview > .section-body > .wrap > .row {
   display: flex;
   align-items: center;
+}
+.new-solutions .sectioned-page-wrapper .section.section-what-how-we-deliver .section-title,
+.new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you .section-title,
+.new-solutions .sectioned-page-wrapper .section.section-what-we-think .section-title {
+  padding-top: 5em;
+  background-position: center 2em;
+  background-repeat: no-repeat;
+  background-size: 130px;
+}
+.new-solutions .sectioned-page-wrapper .section.section-what-how-we-deliver .section-title {
+  background-image: url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/delivery_icon@2x.png);
+}
+.new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you .section-title {
+  background-image: url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/lightbulb_icon@2x.png);
+}
+.new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you .section-body .gform_wrapper form .gform_heading {
+  text-align: center;
+  font-size: 1.6em;
+}
+.new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you .section-body .gform_wrapper form .gform_body {
+  width: 65%;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+.new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you .section-body .gform_wrapper form .gform_body label.gfield_label {
+  display: none;
+}
+.new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you .section-body .gform_wrapper form .gform_footer {
+  text-align: center;
+}
+.new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you .section-body .gform_wrapper form .gform_footer input[type=submit] {
+  font-size: 1.8em;
+  padding: 0.4em;
+}
+.new-solutions .sectioned-page-wrapper .section.section-what-we-think .section-title {
+  background-image: url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/thought_icon@2x.png);
 }
 .nav-responsive ul,
 .nav-responsive li,
