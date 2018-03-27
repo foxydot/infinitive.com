@@ -210,7 +210,7 @@ function msdlab_tpsquare_shortcode_handler($atts,$content){
     <div class="tp-square" id="'.$id.'">
         <div class="off">
             <div class="icon-holder">
-                <i class="icon icon-'.$icon.'"></i>
+                <img src="'.$icon.'" />
             </div>';
     if(wp_is_mobile()){
         $ret .= '<div class="content-holder">'.do_shortcode(remove_wpautop($content)).'</div>';
