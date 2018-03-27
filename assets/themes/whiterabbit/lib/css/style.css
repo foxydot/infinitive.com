@@ -8278,6 +8278,7 @@ Site Footer
   color: #FF7D23;
   padding-top: 2rem;
   margin-bottom: 0;
+  text-transform: none;
 }
 .new-solutions .sectioned-page-wrapper .section .section-body .wrap {
   padding: 2rem 0;
@@ -9359,6 +9360,9 @@ div.calloutbox h3 {
 .tp-grid .tp-square .off > .title-holder {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+}
+.tp-grid .tp-square .off > .title-holder h3 {
+  color: #7F7F7F;
 }
 .tp-grid .tp-square .off > .title-holder h3:after {
   color: #FF7D23;
