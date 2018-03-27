@@ -59,6 +59,9 @@ class MSDLandingPage{
             'css-classes' => '',
             'count' => '1'
         ), $atts ));
+        if(!substr($feature['resource-image'],0,4)=='http'){
+            $feature['resource-image'] = get_site_url() . $feature['resource-image'];
+        }
         return self::default_output($feature,$feature['count']);
     }
     
