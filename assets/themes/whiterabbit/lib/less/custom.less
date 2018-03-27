@@ -701,6 +701,209 @@ div.calloutbox{
   }
 }
 
+.tp-grid{
+  .make-row();
+  .tp-square{
+    .make-sm-column(4);
+    .make-xs-column(12);
+    &:before{
+      content: "";
+      display: block;
+      margin-top: 100%;
+    }
+    h3{
+      .customheader(1.4);
+      text-align: center;
+      a:hover{
+        text-decoration: none;
+      }
+    }
+    .off{
+      bottom: 15px;
+      left: 15px;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      background: @white;
+      border: 1px solid @ltgrey;
+      .icon-holder{
+        text-align: center;
+        padding: 2em;
+        i.icon{
+          color: @blue;
+          height: 2em;
+          width: 2em;
+          font-size: 4em;
+          display: block;
+          margin: 0 auto;
+          line-height: 2.2;
+        }
+        h3{
+          color: @blue;
+          font-weight: 400;
+          font-size: 1.4em;
+          text-transform: none;
+          line-height: 1.2;
+          text-align: left;
+        }
+      }
+      >.content-holder,>.link-holder{
+        padding: 0 2em;
+      }
+      >.content-holder{
+        text-align: left;
+      }
+      >.link-holder{
+        text-align: right;
+      }
+      >.title-holder{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        h3{
+          &:after{
+            color: @orange;
+            content: " >";
+          }
+        }
+        .author,.date{
+          padding: 0 2em;
+          font-size: 0.9em;
+          line-height: 1.2;
+        }
+        .author{
+          color: @medgrey;
+        }
+        .date{
+        }
+      }
+      .title-holder{
+        h3{
+          font-weight: 700;
+          padding: 0;
+          margin: 0;
+          text-align: center;
+        }
+      }
+      .on{
+        background: @orange;
+        color: @white;
+        height: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        overflow: hidden;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -ms-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+        .icon-holder{
+          text-align: center;
+          padding: 1em 0;
+          i.icon{
+            background-color: transparent;
+            color: @white;
+            border-radius: 0%;
+            height: auto;
+            width: auto;
+            font-size: 4em;
+            line-height: 1;
+          }
+        }
+        .title-holder{
+          h3{
+            padding: 0 0 1em 0;
+            color: @white;
+          }
+        }
+        .content-holder,.link-holder{
+          padding: 0 2em;
+          text-align: center;
+          font-size: 1.2em;
+        }
+        .content-holder{
+          color: @white;
+        }
+        .link-holder{
+          a{
+            color: @orange;
+          }
+        }
+      }
+    }
+    &:hover{
+      .on{
+        height: 100%;
+        top: 0;
+      }
+    }
+  }
+  .tp-column {
+    .make-sm-column(4);
+    .make-xs-column(12);
+    .top,.bottom{
+      border-width: 1px;
+      border-style: solid;
+      border-color: @dkblue;
+      padding: 1em;
+      &.border-orange{
+        border-color: @orange;
+      }
+      &.border-gray,&.border-grey{
+        border-color: @medgrey;
+      }
+    }
+    .top{
+      color: @white;
+      background-color: @dkblue;
+      text-align: center;
+      .icon-holder {
+        text-align: center;
+        padding: 0;
+        i.icon {
+          color: @white;
+          height: 1.5em;
+          width: 2em;
+          font-size: 6em;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      h3, h4 {
+        color: @white;
+        text-align: center;
+        margin: 0;
+      }
+      h3{
+        font-size: 1em;
+        font-weight: 500;
+      }
+      h4{
+        font-size: 0.9em;
+        font-weight: 300;
+        font-style: italic;
+      }
+      &.border-orange{
+        background-color: @orange;
+      }
+      &.border-gray,&.border-grey{
+        background-color: @medgrey;
+      }
+    }
+    .bottom{
+      padding-bottom: 2.6em;
+      ul{
+        margin-left: 1em;
+        li{
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+}
+
 
 .new-solutions{ //custom sections
   .sectioned-page-wrapper {
