@@ -9504,6 +9504,9 @@ div.calloutbox h3 {
 .tp-grid .tp-column .bottom ul li {
   font-size: 0.9em;
 }
+.new-solutions .box.min {
+  min-height: 315px;
+}
 .new-solutions .sectioned-page-wrapper .section.section-what-how-we-deliver .section-title,
 .new-solutions .sectioned-page-wrapper .section.section-what-can-we-solve-with-you .section-title,
 .new-solutions .sectioned-page-wrapper .section.section-what-we-think .section-title {
