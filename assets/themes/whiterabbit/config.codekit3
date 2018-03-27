@@ -2313,6 +2313,13 @@
 		"oAP": "\/lib\/inc\/theme_options.php",
 		"oF": 0
 		},
+	"\/lib\/inc\/tp-grid-squares.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lib\/inc\/tp-grid-squares.php",
+		"oF": 0
+		},
 	"\/lib\/inc\/widgets.php": {
 		"cB": 0,
 		"ft": 8192,
