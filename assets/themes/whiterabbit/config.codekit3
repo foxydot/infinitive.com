@@ -2246,7 +2246,7 @@
 	"\/lib\/inc\/landing-page-support.php": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/lib\/inc\/landing-page-support.php",
 		"oF": 0
 		},
@@ -2295,7 +2295,7 @@
 	"\/lib\/inc\/shortcodes.php": {
 		"cB": 0,
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/lib\/inc\/shortcodes.php",
 		"oF": 0
 		},

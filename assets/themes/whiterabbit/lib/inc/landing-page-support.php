@@ -31,6 +31,7 @@ class MSDLandingPage{
          * Initializes the plugin by setting filters and administration functions.
          */
    function __construct() {
+
         }
         
     function add_metaboxes(){
@@ -58,7 +59,7 @@ class MSDLandingPage{
             'css-classes' => '',
             'count' => '1'
         ), $atts ));
-        return $this->default_output($feature,$feature['count']);
+        return self::default_output($feature,$feature['count']);
     }
     
     function default_output($feature,$i){
