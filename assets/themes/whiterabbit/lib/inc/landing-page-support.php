@@ -57,7 +57,8 @@ class MSDLandingPage{
             'link' => '',
             'resource-image' => '',
             'css-classes' => '',
-            'count' => '1'
+            'count' => '1',
+            'order' => 'shortcode'
         ), $atts ));
         $image = $feature['resource-image'];
         if(substr($image,0,4)!='http'){
@@ -90,20 +91,29 @@ class MSDLandingPage{
             'clearfix',
         ));
         //think about filtering the classes here
-        $ret = '
+        $ret[10] = '
         <a id="'.$slug.'" class="'.implode(' ', $classes).'" href="'.$link.'">
-            <div class="wrapper">
+            <div class="wrapper">';
+        $ret[30] = '
             <div class="feature-type">
                 '.$type.'
-            </div>
+            </div>';
+        $ret[20] = '
             <div class="feature-img">
                 '.$featured_image.'
-            </div>
-                '.$wrapped_title.'
+            </div>';
+        $ret[40] = $wrapped_title;
+        $ret[50] = '
             </div>
         </a>
         ';
-        return $ret;
+
+        if($feature['order'] == 'shortcode'){
+            $ret[15] = $ret[30];
+            unset($ret[30]);
+        }
+        ksort($ret);
+        return implode("\n",$ret);
     }
 
     function landing_page_output(){
