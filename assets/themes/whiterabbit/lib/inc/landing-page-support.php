@@ -58,7 +58,7 @@ class MSDLandingPage{
             'css-classes' => '',
             'count' => '1'
         ), $atts ));
-        return $this->default_output($feature,$feature['count']);
+        return self::default_output($feature,$feature['count']);
     }
     
     function default_output($feature,$i){

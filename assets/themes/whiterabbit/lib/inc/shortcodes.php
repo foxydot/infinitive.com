@@ -382,4 +382,4 @@ function msdlab_box_shortcode_output($atts, $content){
     return '<div class="box align-'.$align.' bkg-'.$bkg.' border-'.$border.' '.$class.'">'.$content.'</div>';
 }
 
-//add_shortcode('feature-box',array('MSDLandingPage','feature_box_shortcode_callback'));
+add_shortcode('feature-box',array('MSDLandingPage','feature_box_shortcode_callback'));
