@@ -7,7 +7,7 @@
 		"uuidString": "0BF57BCB-55FF-492E-8D62-FF91DD847B08"
 		}
 	],
-"creatorBuild": "26330",
+"creatorBuild": "26680",
 "files": {
 	"\/-front-page.php": {
 		"cB": 0,
@@ -3371,7 +3371,8 @@
 	"creationDate": 500310228,
 	"displayValue": "whiterabbit",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "meme-leo"
+	"iconImageName": "\/lib\/img\/apple-touch-icon-114x114.png",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -5174,6 +5175,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
