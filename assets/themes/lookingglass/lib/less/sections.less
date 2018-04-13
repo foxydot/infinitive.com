@@ -1,0 +1,121 @@
+.page-template-page-sectioned{
+  .site-container{
+    .site-inner{
+      background: transparent;
+      margin: 0;
+      .content-sidebar-wrap{
+        background: transparent;
+        main{
+          article{
+            .entry-header{
+              .entry-title{
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.sectioned-page-wrapper{
+  position: relative;
+  z-index: 10;
+  .section{
+    background-repeat: no-repeat;
+    padding: 0;
+    position: relative;
+    .section-subtitle,h4{
+      .customheader-chalk(3.9);
+      font-weight: 500;
+      color: @white;
+      background-color: @orange;
+      line-height: 1.25;
+      margin: 0;
+    }
+    .section-subtitle{
+      margin-bottom: 2rem;
+    }
+      h3{
+      .customheader-chalk(3.9);
+      font-weight: 700;
+      color: @white;
+      line-height: 1.25;
+      margin-bottom: 0.5em;
+      }
+    .section-title h3{
+      .customheader-chalk(5.8);
+      text-align: center;
+      text-transform: uppercase;
+      color: @white;
+      padding-top: 2rem;
+      margin-bottom: 0;
+    }
+    .section-body{
+      .wrap{
+        padding: 2rem 0;
+        img{}
+      }
+    &:after{
+      .msd-clearfix;
+    }
+    }
+  }
+  .section.bkg-grey{
+    background-color: @offwhite;
+  }
+  .section.bkg-blue{
+    background-color: @blue;
+    color: @white;
+    .section-title h3 {
+      color: @white;
+    }
+  }
+  .section.bkg-white{
+    background-color: @white;
+  }
+  .section.title-bar{
+    .section-title{
+      h3{
+        padding-bottom: 2rem;
+      }
+    }
+  }
+  .section.title-bar.title-bar-blue{
+    .section-title{
+      background-color: @blue;
+      h3{
+        color: @white;
+      }
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  .sectioned-page-wrapper{
+    .section.summary{
+      .section-body{
+        .bkg-white{
+          .section-title{
+            h3{
+              text-align: left;
+              text-transform: none;
+              font-size: 1.8rem;
+            }
+          }
+          .section-subtitle{
+            font-size: 1.4rem;
+          }
+          .section-title, .section-subtitle, .content{
+            margin-left: 0px;
+          }
+          .content{
+          }
+          .content.open{
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,45 +7,52 @@
 		"uuidString": "0BF57BCB-55FF-492E-8D62-FF91DD847B08"
 		}
 	],
-"creatorBuild": "25849",
+"creatorBuild": "26680",
 "files": {
 	"\/-front-page.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/-front-page.php",
 		"oF": 0
 		},
 	"\/404.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/404.php",
 		"oF": 0
 		},
 	"\/archive-msd_casestudy.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/archive-msd_casestudy.php",
 		"oF": 0
 		},
 	"\/archive-msd_news.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/archive-msd_news.php",
 		"oF": 0
 		},
 	"\/archive-team_member.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/archive-team_member.php",
 		"oF": 0
 		},
 	"\/functions.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/functions.php",
 		"oF": 0
 		},
 	"\/image-widget\/widget.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/image-widget\/widget.php",
@@ -92,6 +99,7 @@
 		"oS": 0
 		},
 	"\/lib\/bootstrap\/fonts\/glyphicons-halflings-regular.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/bootstrap\/fonts\/glyphicons-halflings-regular.eot",
@@ -108,12 +116,14 @@
 		"prP": 0
 		},
 	"\/lib\/bootstrap\/fonts\/glyphicons-halflings-regular.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/bootstrap\/fonts\/glyphicons-halflings-regular.ttf",
 		"oF": 0
 		},
 	"\/lib\/bootstrap\/fonts\/glyphicons-halflings-regular.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/bootstrap\/fonts\/glyphicons-halflings-regular.woff",
@@ -121,6 +131,7 @@
 		},
 	"\/lib\/bootstrap\/js\/bootstrap.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/bootstrap\/js\/min\/bootstrap-min.js",
@@ -130,6 +141,7 @@
 		},
 	"\/lib\/bootstrap\/js\/bootstrap.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/bootstrap\/js\/min\/bootstrap.min-min.js",
@@ -1038,6 +1050,7 @@
 		"oS": 0
 		},
 	"\/lib\/font-awesome\/fonts\/fontawesome-webfont.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/font-awesome\/fonts\/fontawesome-webfont.eot",
@@ -1054,18 +1067,21 @@
 		"prP": 0
 		},
 	"\/lib\/font-awesome\/fonts\/fontawesome-webfont.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/font-awesome\/fonts\/fontawesome-webfont.ttf",
 		"oF": 0
 		},
 	"\/lib\/font-awesome\/fonts\/fontawesome-webfont.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/font-awesome\/fonts\/fontawesome-webfont.woff",
 		"oF": 0
 		},
 	"\/lib\/font-awesome\/fonts\/FontAwesome.otf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/font-awesome\/fonts\/FontAwesome.otf",
@@ -1462,6 +1478,7 @@
 		"uL": 1
 		},
 	"\/lib\/fonts\/doodle.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/doodle.eot",
@@ -1478,18 +1495,21 @@
 		"prP": 0
 		},
 	"\/lib\/fonts\/doodle.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/doodle.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/doodle.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/doodle.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/generally_speaking-webfont.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/generally_speaking-webfont.eot",
@@ -1506,24 +1526,28 @@
 		"prP": 0
 		},
 	"\/lib\/fonts\/generally_speaking-webfont.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/generally_speaking-webfont.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/generally_speaking-webfont.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/generally_speaking-webfont.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/generally_speaking-webfont.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/generally_speaking-webfont.woff2",
 		"oF": 0
 		},
 	"\/lib\/fonts\/generally_speaking_alternate_endcaps-webfont.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/generally_speaking_alternate_endcaps-webfont.eot",
@@ -1540,198 +1564,231 @@
 		"prP": 0
 		},
 	"\/lib\/fonts\/generally_speaking_alternate_endcaps-webfont.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/generally_speaking_alternate_endcaps-webfont.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/generally_speaking_alternate_endcaps-webfont.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/generally_speaking_alternate_endcaps-webfont.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/generally_speaking_alternate_endcaps-webfont.woff2": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/generally_speaking_alternate_endcaps-webfont.woff2",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Bold.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Bold.eot",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Bold.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Bold.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Bold.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Bold.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-BoldItalic.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-BoldItalic.eot",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-BoldItalic.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-BoldItalic.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-BoldItalic.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-BoldItalic.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Extrabold.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Extrabold.eot",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Extrabold.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Extrabold.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Extrabold.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Extrabold.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-ExtraboldItalic.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-ExtraboldItalic.eot",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-ExtraboldItalic.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-ExtraboldItalic.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-ExtraboldItalic.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-ExtraboldItalic.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Italic.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Italic.eot",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Italic.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Italic.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Italic.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Italic.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Light.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Light.eot",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Light.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Light.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Light.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Light.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Semibold.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Semibold.eot",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Semibold.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Semibold.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-Semibold.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-Semibold.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-SemiboldItalic.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-SemiboldItalic.eot",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-SemiboldItalic.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-SemiboldItalic.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans-SemiboldItalic.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans-SemiboldItalic.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans.eot",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSans.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSans.woff",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSansLight-Italic.eot": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSansLight-Italic.eot",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSansLight-Italic.ttf": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSansLight-Italic.ttf",
 		"oF": 0
 		},
 	"\/lib\/fonts\/OpenSansLight-Italic.woff": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/fonts\/OpenSansLight-Italic.woff",
@@ -1837,6 +1894,7 @@
 		"q": 100
 		},
 	"\/lib\/img\/bkg-ftr-connect.ai": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/img\/bkg-ftr-connect.ai",
@@ -1941,6 +1999,7 @@
 		"q": 100
 		},
 	"\/lib\/img\/chalkbox.ai": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/img\/chalkbox.ai",
@@ -1958,6 +2017,7 @@
 		"q": 100
 		},
 	"\/lib\/img\/chalkbox2.ai": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/img\/chalkbox2.ai",
@@ -1997,6 +2057,7 @@
 		"q": 100
 		},
 	"\/lib\/img\/chalkline.psd": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/img\/chalkline.psd",
@@ -2013,6 +2074,7 @@
 		"prP": 0
 		},
 	"\/lib\/img\/favicon.ico": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/img\/favicon.ico",
@@ -2140,102 +2202,126 @@
 		"q": 100
 		},
 	"\/lib\/inc\/devel.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/devel.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/genesis_blog_grid.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/genesis_blog_grid.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/genesis_bootstrap_hooks.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/genesis_bootstrap_hooks.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/genesis_tweak_functions.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/inc\/genesis_tweak_functions.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/genesis_tweaks.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/lib\/inc\/genesis_tweaks.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/homepage-layouts.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/homepage-layouts.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/landing-page-support.php": {
+		"cB": 0,
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/lib\/inc\/landing-page-support.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/media.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/media.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/mobile.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/mobile.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/msd-functions.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/msd-functions.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/msdlab-social-footer.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/msdlab-social-footer.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/register-scripts.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/register-scripts.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/sectioned.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/sectioned.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/shortcodes.php": {
+		"cB": 0,
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/lib\/inc\/shortcodes.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/subtitle-support.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/subtitle-support.php",
 		"oF": 0
 		},
 	"\/lib\/inc\/theme_options.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/theme_options.php",
 		"oF": 0
 		},
+	"\/lib\/inc\/tp-grid-squares.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lib\/inc\/tp-grid-squares.php",
+		"oF": 0
+		},
 	"\/lib\/inc\/widgets.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/inc\/widgets.php",
@@ -2243,6 +2329,7 @@
 		},
 	"\/lib\/js\/admin-jquery.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/admin-jquery-min.js",
@@ -2252,6 +2339,7 @@
 		},
 	"\/lib\/js\/greensock\/easing\/EasePack.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/easing\/min\/EasePack.min-min.js",
@@ -2261,6 +2349,7 @@
 		},
 	"\/lib\/js\/greensock\/jquery.gsap.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/min\/jquery.gsap.min-min.js",
@@ -2270,6 +2359,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/AttrPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/AttrPlugin.min-min.js",
@@ -2279,6 +2369,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/BezierPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/BezierPlugin.min-min.js",
@@ -2288,6 +2379,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/ColorPropsPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/ColorPropsPlugin.min-min.js",
@@ -2297,6 +2389,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/CSSPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/CSSPlugin.min-min.js",
@@ -2306,6 +2399,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/CSSRulePlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/CSSRulePlugin.min-min.js",
@@ -2315,6 +2409,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/DirectionalRotationPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/DirectionalRotationPlugin.min-min.js",
@@ -2324,6 +2419,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/EaselPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/EaselPlugin.min-min.js",
@@ -2333,6 +2429,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/EndArrayPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/EndArrayPlugin.min-min.js",
@@ -2342,6 +2439,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/KineticPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/KineticPlugin.min-min.js",
@@ -2351,6 +2449,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/RaphaelPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/RaphaelPlugin.min-min.js",
@@ -2360,6 +2459,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/RoundPropsPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/RoundPropsPlugin.min-min.js",
@@ -2369,6 +2469,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/ScrollToPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/ScrollToPlugin.min-min.js",
@@ -2378,6 +2479,7 @@
 		},
 	"\/lib\/js\/greensock\/plugins\/TextPlugin.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/plugins\/min\/TextPlugin.min-min.js",
@@ -2387,6 +2489,7 @@
 		},
 	"\/lib\/js\/greensock\/TimelineLite.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/min\/TimelineLite.min-min.js",
@@ -2396,6 +2499,7 @@
 		},
 	"\/lib\/js\/greensock\/TimelineMax.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/min\/TimelineMax.min-min.js",
@@ -2405,6 +2509,7 @@
 		},
 	"\/lib\/js\/greensock\/TweenLite.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/min\/TweenLite.min-min.js",
@@ -2414,6 +2519,7 @@
 		},
 	"\/lib\/js\/greensock\/TweenMax.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/min\/TweenMax.min-min.js",
@@ -2423,6 +2529,7 @@
 		},
 	"\/lib\/js\/greensock\/utils\/Draggable.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/greensock\/utils\/min\/Draggable.min-min.js",
@@ -2432,6 +2539,7 @@
 		},
 	"\/lib\/js\/homepage-jquery-ck.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/homepage-jquery-ck-min.js",
@@ -2441,6 +2549,7 @@
 		},
 	"\/lib\/js\/homepage-jquery.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/homepage-jquery-min.js",
@@ -2450,6 +2559,7 @@
 		},
 	"\/lib\/js\/ie-jquery-ck.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/ie-jquery-ck-min.js",
@@ -2459,6 +2569,7 @@
 		},
 	"\/lib\/js\/ie-jquery.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/ie-jquery-min.js",
@@ -2468,6 +2579,7 @@
 		},
 	"\/lib\/js\/isotope.pkgd.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/isotope.pkgd-min.js",
@@ -2477,6 +2589,7 @@
 		},
 	"\/lib\/js\/jquery.backgroundSize.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/jquery.backgroundSize-min.js",
@@ -2486,6 +2599,7 @@
 		},
 	"\/lib\/js\/jquery.columnizer.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/jquery.columnizer-min.js",
@@ -2495,6 +2609,7 @@
 		},
 	"\/lib\/js\/jquery.equal-height-columns.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/jquery.equal-height-columns-min.js",
@@ -2504,6 +2619,7 @@
 		},
 	"\/lib\/js\/jquery.path.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/jquery.path-min.js",
@@ -2513,6 +2629,7 @@
 		},
 	"\/lib\/js\/jquery.scrollmagic.debug.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/jquery.scrollmagic.debug-min.js",
@@ -2522,6 +2639,7 @@
 		},
 	"\/lib\/js\/jquery.scrollmagic.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/jquery.scrollmagic-min.js",
@@ -2531,6 +2649,7 @@
 		},
 	"\/lib\/js\/jquery.scrollmagic.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/jquery.scrollmagic.min-min.js",
@@ -2540,6 +2659,7 @@
 		},
 	"\/lib\/js\/jquery.sticky.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/jquery.sticky-min.js",
@@ -2549,6 +2669,7 @@
 		},
 	"\/lib\/js\/min\/admin-jquery-min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/min\/admin-jquery-min-min.js",
@@ -2558,6 +2679,7 @@
 		},
 	"\/lib\/js\/min\/press-jquery-min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/lib\/js\/min\/min\/press-jquery-min-min.js",
@@ -2567,6 +2689,7 @@
 		},
 	"\/lib\/js\/min\/theme-jquery-min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/lib\/js\/min\/min\/theme-jquery-min-min.js",
@@ -2576,6 +2699,7 @@
 		},
 	"\/lib\/js\/modernizr-custom.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/modernizr-custom-min.js",
@@ -2585,6 +2709,7 @@
 		},
 	"\/lib\/js\/nav-scripts.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/nav-scripts-min.js",
@@ -2594,6 +2719,7 @@
 		},
 	"\/lib\/js\/page-jquery.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/page-jquery-min.js",
@@ -2603,6 +2729,7 @@
 		},
 	"\/lib\/js\/press-jquery.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/press-jquery-min.js",
@@ -2612,6 +2739,7 @@
 		},
 	"\/lib\/js\/respond.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/respond.min-min.js",
@@ -2621,6 +2749,7 @@
 		},
 	"\/lib\/js\/theme-jquery-ck.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/theme-jquery-ck-min.js",
@@ -2630,6 +2759,7 @@
 		},
 	"\/lib\/js\/theme-jquery.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/lib\/js\/min\/theme-jquery-min.js",
@@ -3096,7 +3226,15 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/lib\/template\/background-meta.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lib\/template\/background-meta.php",
+		"oF": 0
+		},
 	"\/lib\/template\/banner-meta.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/template\/banner-meta.php",
@@ -3113,48 +3251,56 @@
 		"oS": 0
 		},
 	"\/lib\/template\/metabox-homepage.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/template\/metabox-homepage.php",
 		"oF": 0
 		},
 	"\/lib\/template\/metabox-landing-page.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/template\/metabox-landing-page.php",
 		"oF": 0
 		},
 	"\/lib\/template\/subtitle-meta.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/lib\/template\/subtitle-meta.php",
 		"oF": 0
 		},
 	"\/page-landing.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/page-landing.php",
 		"oF": 0
 		},
 	"\/page-meet-the-team.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/page-meet-the-team.php",
 		"oF": 0
 		},
 	"\/page-resources.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/page-resources.php",
 		"oF": 0
 		},
 	"\/page-sectioned.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/page-sectioned.php",
 		"oF": 0
 		},
 	"\/page.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/page.php",
@@ -3172,24 +3318,28 @@
 		"q": 100
 		},
 	"\/search.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/search.php",
 		"oF": 0
 		},
 	"\/showcase.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/showcase.php",
 		"oF": 0
 		},
 	"\/single-msd_casestudy.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/single-msd_casestudy.php",
 		"oF": 0
 		},
 	"\/single-team_member.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/single-team_member.php",
@@ -3206,6 +3356,7 @@
 		"oS": 0
 		},
 	"\/taxonomy-msd_practice-area.php": {
+		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/taxonomy-msd_practice-area.php",
@@ -3220,7 +3371,8 @@
 	"creationDate": 500310228,
 	"displayValue": "whiterabbit",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "meme-leo"
+	"iconImageName": "\/lib\/img\/apple-touch-icon-114x114.png",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -3228,6 +3380,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -3624,6 +3777,10 @@
 			"active": 0,
 			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
 			},
+		"array-bracket-newline": {
+			"active": 0,
+			"optionString": "{'multiline': true, 'minItems': null}"
+			},
 		"array-bracket-spacing": {
 			"active": 0,
 			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
@@ -3631,6 +3788,10 @@
 		"array-callback-return": {
 			"active": 0,
 			"optionString": ""
+			},
+		"array-element-newline": {
+			"active": 0,
+			"optionString": "'always'"
 			},
 		"arrow-body-style": {
 			"active": 0,
@@ -3728,6 +3889,10 @@
 			"active": 0,
 			"optionString": "'always', {'null': 'always'}"
 			},
+		"for-direction": {
+			"active": 0,
+			"optionString": ""
+			},
 		"func-call-spacing": {
 			"active": 0,
 			"optionString": "'never'"
@@ -3744,9 +3909,17 @@
 			"active": 0,
 			"optionString": "'expression'"
 			},
+		"function-paren-newline": {
+			"active": 0,
+			"optionString": "'multiline'"
+			},
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
+			},
+		"getter-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
 			},
 		"global-require": {
 			"active": 0,
@@ -3771,6 +3944,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,
@@ -3804,9 +3981,9 @@
 			"active": 0,
 			"optionString": "{'beforeBlockComment': true}"
 			},
-		"lines-around-directive": {
+		"lines-between-class-members": {
 			"active": 0,
-			"optionString": "{'before': 'always', 'after': 'always'}"
+			"optionString": "'always', {exceptAfterSingleLine: false}"
 			},
 		"max-depth": {
 			"active": 0,
@@ -3836,6 +4013,10 @@
 			"active": 0,
 			"optionString": "{'max': 1}"
 			},
+		"multiline-comment-style": {
+			"active": 0,
+			"optionString": "'starred-block'"
+			},
 		"multiline-ternary": {
 			"active": 0,
 			"optionString": "'always'"
@@ -3845,14 +4026,6 @@
 			"optionString": "{'newIsCap': true, 'capIsNew': true, 'newIsCapExceptions': [], 'capIsNewExceptions': ['Array', 'Boolean', 'Date', 'Error', 'Function', 'Number', 'Object', 'RegExp', 'String', 'Symbol'], 'properties': true}"
 			},
 		"new-parens": {
-			"active": 0,
-			"optionString": ""
-			},
-		"newline-after-var": {
-			"active": 0,
-			"optionString": "'always'"
-			},
-		"newline-before-return": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -3875,6 +4048,10 @@
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
+			},
+		"no-buffer-constructor": {
+			"active": 0,
+			"optionString": ""
 			},
 		"no-caller": {
 			"active": 0,
@@ -4420,6 +4597,10 @@
 			"active": 0,
 			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
 			},
+		"padding-line-between-statements": {
+			"active": 0,
+			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
+			},
 		"prefer-arrow-callback": {
 			"active": 0,
 			"optionString": ""
@@ -4488,6 +4669,10 @@
 			"active": 0,
 			"optionString": "{'before': false, 'after': true}"
 			},
+		"semi-style": {
+			"active": 0,
+			"optionString": "'last'"
+			},
 		"sort-imports": {
 			"active": 0,
 			"optionString": "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
@@ -4527,6 +4712,10 @@
 		"strict": {
 			"active": 0,
 			"optionString": "'safe'"
+			},
+		"switch-colon-spacing": {
+			"active": 0,
+			"optionString": "{'after': true, 'before': false}"
 			},
 		"symbol-description": {
 			"active": 0,
@@ -4940,7 +5129,8 @@
 		"createSourceMap": 0,
 		"minifyOutput": 1,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 1,
+		"transpilerStyle": 1
 		},
 	"languageDefaultsCSS": {
 		"autoOutputAction": 2,
@@ -4973,6 +5163,7 @@
 		"noEscapeInAttributes": 0,
 		"outputFormat": 2,
 		"outputStyle": 0,
+		"shouldRunCacheBuster": 0,
 		"useCDATA": 0,
 		"useDoubleQuotes": 0,
 		"useUnixNewlines": 0
@@ -4984,6 +5175,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
@@ -5014,7 +5206,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsLESS": {
 		"allowInsecureImports": 0,
@@ -5046,13 +5239,13 @@
 		"enableFootnotes": 1,
 		"enableLabels": 1,
 		"enableSmartQuotes": 1,
-		"escapeLineBreaks": 0,
 		"maskEmailAddresses": 1,
 		"outputFormat": 0,
 		"outputStyle": 0,
 		"parseMetadata": 1,
 		"processHTML": 0,
 		"randomFootnoteNumbers": 0,
+		"shouldRunCacheBuster": 0,
 		"useCompatibilityMode": 0
 		},
 	"languageDefaultsOTHER": {
@@ -5061,7 +5254,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsPNG": {
 		"autoOutputAction": 0,
@@ -5081,7 +5275,8 @@
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
 		"compileDebug": 1,
-		"outputStyle": 0
+		"outputStyle": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsSASS": {
 		"autoOutputAction": 0,
@@ -5109,7 +5304,8 @@
 		"logicless": 0,
 		"outputFormat": 0,
 		"outputStyle": 1,
-		"railsCompatible": 0
+		"railsCompatible": 0,
+		"shouldRunCacheBuster": 0
 		},
 	"languageDefaultsSTYLUS": {
 		"autoOutputAction": 0,
@@ -5160,6 +5356,7 @@
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
+	"susyVersion": 3,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {

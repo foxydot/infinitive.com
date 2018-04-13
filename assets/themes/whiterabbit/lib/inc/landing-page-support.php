@@ -20,7 +20,7 @@ class MSDLandingPage{
         public static function get_instance() {
 
                 if( null == self::$instance ) {
-                        self::$instance = new MSDSectionedPage();
+                        self::$instance = new MSDLandingPage();
                 } 
 
                 return self::$instance;
@@ -30,7 +30,8 @@ class MSDLandingPage{
         /**
          * Initializes the plugin by setting filters and administration functions.
          */
-   function __construct() {    
+   function __construct() {
+
         }
         
     function add_metaboxes(){
@@ -48,6 +49,23 @@ class MSDLandingPage{
             'prefix' => '_msdlab_', // defaults to NULL
         ));
     }
+
+    function feature_box_shortcode_callback($atts,$content){
+        $feature = (shortcode_atts( array(
+            'resource-type' => '',
+            'resource-title' => '',
+            'link' => '',
+            'resource-image' => '',
+            'css-classes' => '',
+            'count' => '1',
+            'order' => 'shortcode'
+        ), $atts ));
+        $image = $feature['resource-image'];
+        if(substr($image,0,4)!='http'){
+            $feature['resource-image'] = get_site_url() . $image;
+        }
+        return self::default_output($feature,$feature['count']);
+    }
     
     function default_output($feature,$i){
         if($feature['resource-title']=='' || $feature['link']==''){
@@ -59,9 +77,7 @@ class MSDLandingPage{
         $slug = sanitize_title_with_dashes(str_replace('/', '-', $title));
         
         $wrapped_title = trim($title) != ''?apply_filters('msdlab_landing_page_output_title','<div class="feature-title">
-            <h3 class="wrap">
                 '.$title.'
-            </h3>
         </div>'):'';
         $link = $feature['link'];
         $type = $feature['resource-type'];
@@ -75,20 +91,29 @@ class MSDLandingPage{
             'clearfix',
         ));
         //think about filtering the classes here
-        $ret = '
+        $ret[10] = '
         <a id="'.$slug.'" class="'.implode(' ', $classes).'" href="'.$link.'">
-            <div class="wrapper">
-            <div class="feature-img">
-                '.$featured_image.'
-            </div>
+            <div class="wrapper">';
+        $ret[30] = '
             <div class="feature-type">
                 '.$type.'
-            </div>
-                '.$wrapped_title.'
+            </div>';
+        $ret[20] = '
+            <div class="feature-img">
+                '.$featured_image.'
+            </div>';
+        $ret[40] = $wrapped_title;
+        $ret[50] = '
             </div>
         </a>
         ';
-        return $ret;
+
+        if($feature['order'] == 'shortcode'){
+            $ret[15] = $ret[30];
+            unset($ret[30]);
+        }
+        ksort($ret);
+        return implode("\n",$ret);
     }
 
     function landing_page_output(){

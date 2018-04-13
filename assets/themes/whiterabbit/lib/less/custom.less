@@ -20,6 +20,40 @@
   }
 }
 
+//box shortcode
+
+.box{
+  border: 1px solid @ltgrey;
+  border-radius: 4px;
+  padding: 1.5em 1.5em 3em;
+  margin-bottom: 1.5em;
+  position: relative;
+  &:after{
+    .clearfix;
+  }
+  .button-wrapper{
+    position: absolute;
+    bottom: 1.5em;
+  }
+  &.bkg-white{background-color: @white;}
+  &.bkg-ltgray{background-color: @ltgrey;}
+  &.bkg-medgray{background-color: @medgrey;}
+  &.bkg-dkgray{background-color: @dkgrey;}
+  &.bkg-orange{background-color: @orange;}
+  &.bkg-blue{background-color: @blue;}
+
+  &.border-white{border-color: @white;}
+  &.border-ltgray{border-color: @ltgrey;}
+  &.border-medgray{border-color: @medgrey;}
+  &.border-dkgray{border-color: @dkgrey;}
+  &.border-orange{border-color: @orange;}
+  &.border-blue{border-color: @blue;}
+
+  &.align-left{text-align: left;}
+  &.align-center{text-align: center;}
+  &.align-right{text-align: right;}
+}
+
 //Special Pages
 body.page{
   &.press,
@@ -554,6 +588,391 @@ div.calloutbox{
   main.content{
     .hidden-on-sitemap{
       display: none;
+    }
+  }
+}
+
+.partition-solutions{
+  .site-inner{
+    .content{
+      padding: 0;
+      article.entry{
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+  .sectioned-page-wrapper{
+    .section{
+      .section-subtitle,h4{
+        .customheader-chalk(3.9);
+        font-weight: 500;
+        color: @white;
+        background-color: @orange;
+        line-height: 1.25;
+        margin: 0;
+      }
+      .section-subtitle{
+        margin-bottom: 2rem;
+      }
+      h3{
+        .customserif(2.4);
+        font-weight: 600;
+        color: @mdgrey;
+        line-height: 1.25;
+        margin-bottom: 0.5em;
+        text-transform: none;
+        text-align: left;
+      }
+      .section-body{
+        .wrap{
+          padding: 2rem 0;
+          h4{
+            background: none;
+            .customserif(2.4);
+            font-weight: 400;
+            color: @mdgrey;
+            display: flex;
+            align-items: center;
+            img{
+              max-width: 33%;
+            }
+          }
+        }
+        &:after{
+          .msd-clearfix;
+        }
+      }
+    }
+    .section.bkg-grey{
+      background-color: @offwhite;
+    }
+    .section.bkg-blue{
+      background-color: @blue;
+      color: @white;
+      .section-title h3 {
+        color: @white;
+      }
+    }
+    .section.bkg-white{
+      background-color: @white;
+    }
+    .section.bkg-grad-white-grey{
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/@offwhite+0,7db9e8+100 */
+      background: @offwhite; /* Old browsers */
+      background: -moz-linear-gradient(top, @offwhite 0%, @white 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, @offwhite 0%,@white 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, @offwhite 0%,@white 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@offwhite', endColorstr='@white',GradientType=0 ); /* IE6-9 */
+      .wrap{
+        padding: 6em 0;
+      }
+    }
+    .section.bkg-orange{
+      padding: 6em 0;
+      background-color: @orange;
+      color: @white;
+      .wrap{
+      }
+      h3{
+        color: @white;
+      }
+      .section-title h3 {
+        font-size: 1.2em;
+        font-weight: 400;
+        color: @white;
+        text-align: center;
+      }
+      .button{
+        .custombody(1.8);
+        margin: 0 auto;
+        background-color: @white;
+        color: @orange;
+        &:hover{
+          background-color: @orange;
+          color: @white;
+        }
+      }
+    }
+    .section.section-overview>.section-body>.wrap>.row{
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.tp-grid{
+  .make-row();
+  .tp-square{
+    .make-sm-column(4);
+    .make-xs-column(12);
+    &:before{
+      content: "";
+      display: block;
+      margin-top: 100%;
+    }
+    h3{
+      .customheader(1.4);
+      text-align: center;
+      a:hover{
+        text-decoration: none;
+      }
+    }
+    .off{
+      bottom: 15px;
+      left: 15px;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      background: @white;
+      border: 1px solid @ltgrey;
+      .icon-holder{
+        text-align: center;
+        padding: 2em;
+        i.icon{
+          color: @blue;
+          height: 2em;
+          width: 2em;
+          font-size: 4em;
+          display: block;
+          margin: 0 auto;
+          line-height: 2.2;
+        }
+        img{
+          height: 8em;
+        }
+        h3{
+          color: @blue;
+          font-weight: 400;
+          font-size: 1.4em;
+          text-transform: none;
+          line-height: 1.2;
+          text-align: left;
+        }
+      }
+      >.content-holder,>.link-holder{
+        padding: 0 2em;
+      }
+      >.content-holder{
+        text-align: left;
+      }
+      >.link-holder{
+        text-align: right;
+      }
+      >.title-holder{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        h3{
+          color: @medgrey;
+          &:after{
+            color: @orange;
+            content: " >";
+          }
+        }
+        .author,.date{
+          padding: 0 2em;
+          font-size: 0.9em;
+          line-height: 1.2;
+        }
+        .author{
+          color: @medgrey;
+        }
+        .date{
+        }
+      }
+      .title-holder{
+        h3{
+          font-weight: 700;
+          padding: 0;
+          margin: 0;
+          text-align: center;
+        }
+      }
+      .on{
+        background: @orange;
+        color: @white;
+        height: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        overflow: hidden;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -ms-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+        .icon-holder{
+          text-align: center;
+          padding: 1em 0;
+          i.icon{
+            background-color: transparent;
+            color: @white;
+            border-radius: 0%;
+            height: auto;
+            width: auto;
+            font-size: 4em;
+            line-height: 1;
+          }
+        }
+        .title-holder{
+          h3{
+            padding: 0 0 1em 0;
+            color: @white;
+          }
+        }
+        .content-holder,.link-holder{
+          padding: 0 2em;
+          text-align: center;
+          font-size: 1.2em;
+        }
+        .content-holder{
+          color: @white;
+        }
+        .link-holder{
+          a{
+            color: @orange;
+          }
+        }
+      }
+    }
+    &:hover{
+      .on{
+        height: 100%;
+        top: 0;
+      }
+    }
+  }
+  .tp-column {
+    .make-sm-column(4);
+    .make-xs-column(12);
+    .top,.bottom{
+      border-width: 1px;
+      border-style: solid;
+      border-color: @dkblue;
+      padding: 1em;
+      &.border-orange{
+        border-color: @orange;
+      }
+      &.border-gray,&.border-grey{
+        border-color: @medgrey;
+      }
+    }
+    .top{
+      color: @white;
+      background-color: @dkblue;
+      text-align: center;
+      .icon-holder {
+        text-align: center;
+        padding: 0;
+        i.icon {
+          color: @white;
+          height: 1.5em;
+          width: 2em;
+          font-size: 6em;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      h3, h4 {
+        color: @white;
+        text-align: center;
+        margin: 0;
+      }
+      h3{
+        font-size: 1em;
+        font-weight: 500;
+      }
+      h4{
+        font-size: 0.9em;
+        font-weight: 300;
+        font-style: italic;
+      }
+      &.border-orange{
+        background-color: @orange;
+      }
+      &.border-gray,&.border-grey{
+        background-color: @medgrey;
+      }
+    }
+    .bottom{
+      padding-bottom: 2.6em;
+      ul{
+        margin-left: 1em;
+        li{
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+}
+
+
+.new-solutions{ //custom sections
+  .box.min{
+    min-height: 315px;
+  }
+  .sectioned-page-wrapper {
+    .section{
+      &.section-what-how-we-deliver,
+      &.section-what-can-we-solve-with-you,
+      &.section-what-we-think,
+      &.section-who-we-work-with{
+        .section-title{
+          padding-top: 5em;
+          background-position: center 2em;
+          background-repeat: no-repeat;
+          background-size: 130px;
+        }
+      }
+      &.section-what-how-we-deliver{
+         .section-title{
+           background-image:url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/delivery_icon@2x.png);
+         }
+       }
+      &.section-what-can-we-solve-with-you{
+        margin-top: 2em;
+        border: 1px solid @orange;
+        .section-title{
+          background-image:url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/lightbulb_icon@2x.png);
+        }
+        .section-body{
+          .gform_wrapper{
+            form{
+              .gform_heading{
+                text-align: center;
+                font-size: 1.6em;
+              }
+              .gform_body{
+                label.gfield_label{
+                  display: none;
+                }
+                width: 65%;
+                margin: 0 auto;
+                font-size: 1.2em;
+              }
+              .gform_footer{
+                text-align: center;
+                input[type=submit]{
+                  font-size: 1.8em;
+                  padding: 0.4em;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.section-what-we-think{
+        .section-title{
+          background-image:url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/thought_icon@2x.png);
+        }
+      }
+      &.section-who-we-work-with{
+        .section-title{
+          background-image: url(http://infinitive2018.msdlab2.com/assets/uploads/2018/03/handshake_icon@2x.png);
+        }
+      }
     }
   }
 }

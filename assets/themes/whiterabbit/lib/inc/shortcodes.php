@@ -182,6 +182,9 @@ function msdlab_career_features_handler(){
 //Bootstrap columns//
 add_shortcode('row','bs_row');
 add_shortcode('column','bs_column');
+add_shortcode('_column','bs_column');
+add_shortcode('__column','bs_column');
+add_shortcode('___column','bs_column');
 
   /*--------------------------------------------------------------------------------------
     *
@@ -262,7 +265,7 @@ add_shortcode('column','bs_column');
     $class .= ( $atts['xclass'] )                                       ? ' ' . $atts['xclass'] : '';
       
     $data_props = parse_data_attributes( $atts['data'] );
-      
+      //ts_data($content);
     return sprintf( 
       '<div class="%s"%s>%s</div>',
       esc_attr( $class ),
@@ -339,7 +342,14 @@ function column_shortcode($atts, $content = null){
 add_shortcode('columns','column_shortcode');
 
 function row_shortcode($atts, $content = null){
-    return '<div class="row">'.do_shortcode($content).'</div>';
+    extract(shortcode_atts( array(
+        'bkg' => 'white',
+        'align' => 'left',
+        'border' => 'orange',
+    ), $atts ));
+    $style = '';
+    if($align == 'center'){$style = ' style="margin-left: auto;margin-right: auto;"';}
+    return '<div class="row"'.$style.'>'.do_shortcode($content).'</div>';
 }
 
 add_shortcode('row','row_shortcode'); 
@@ -357,3 +367,19 @@ function msdlab_phone_wrapped_video($atts){
       $video = wp_oembed_get($video_url,array('width'=>$width));
       return '<div class="iphone-wrapper">'.$video.'</div>';
 }
+
+add_shortcode('box','msdlab_box_shortcode_output');
+
+function msdlab_box_shortcode_output($atts, $content){
+    extract(shortcode_atts( array(
+        'bkg' => 'white',
+        'align' => 'left',
+        'border' => 'orange',
+        'class' => '',
+    ), $atts ));
+    $content = do_shortcode($content);
+    $content = trim_whitespace($content);
+    return '<div class="box align-'.$align.' bkg-'.$bkg.' border-'.$border.' '.$class.'">'.$content.'</div>';
+}
+
+add_shortcode('feature-box',array('MSDLandingPage','feature_box_shortcode_callback'));
