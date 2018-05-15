@@ -42,6 +42,7 @@ class MSDVideoCPT {
         add_shortcode( 'video-all', array(&$this,'all_video_items') );
         add_filter( 'the_content', array(&$this,'add_lazy_src_to_allowed_attributes') );
         add_filter( 'enter_title_here', array(&$this,'change_default_title') );
+        wp_enqueue_script('bootstrap-jquery','//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js',array('jquery'));
         wp_enqueue_script('lazy-bootstrap-carousel',$this->plugin_url.'lib/js/lazy-bootstrap-carousel.js',array('jquery','bootstrap-jquery'));
         wp_enqueue_script('msd-video-jquery',$this->plugin_url.'lib/js/msd-video.jquery.js',array('jquery','bootstrap-jquery'));
         if($screen->post_type == 'msd_video')
@@ -156,7 +157,6 @@ class MSDVideoCPT {
     function print_script() {
         if ( ! self::$add_script )
             return;
-
         wp_print_scripts('jquery-lazyyt');
         wp_print_scripts('jquery-video-shortcode');
         wp_print_styles('css-lazyyt');
