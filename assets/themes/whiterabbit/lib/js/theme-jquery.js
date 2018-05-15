@@ -61,5 +61,7 @@ jQuery(document).ready(function($) {
         return false;
     });
 
-    $('.section-content .box.eq').equalHeightColumns();
+    if ( $( '.section-content .box.eq' ).length ) {
+        $('.section-content .box.eq').equalHeightColumns();
+    }
 });
